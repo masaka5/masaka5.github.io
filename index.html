@@ -82,7 +82,6 @@
     .button._3{
         background: rbd(21,21,21);
     }
-
     .button .back {
         position: absolute;
         width: 0;
@@ -110,20 +109,19 @@
         width: calc(2 * var(--width));
         height: calc(2 * var(--height));
     }
-
     #welcome-text{
         margin-left:4rem;
         align-self:center;
         font-size: 30px;
         color: #fff;
         font-family: "Zhi Mang Xing", cursive;
-        animation:text-blink 10s ;
+        animation:text-blink 9s ;
     }
     @keyframes text-blink{
         0%{
             opacity:0;
         }
-        50%{
+        70%{
           opacity:0;
         }100%{
              opacity:1;
@@ -154,7 +152,7 @@
       position: fixed;
       top:35%;
       left: 17%;
-      animation:text-2 6s;
+      animation:text-2 7s;
     }
     #moji-2 > p{
       font-size: 3rem;
@@ -230,8 +228,6 @@
         border: 1px solid #bdbdbd;
         border-radius: 10%;
         margin-bottom:4rem;
-
-
     }
     #projects > div {
         margin: 10px;
@@ -260,7 +256,6 @@
     .demo > a > i:hover {
         transform: translateY(2px);
     }
-
     .final__slide {
         position: relative;
         display: inline-block;
@@ -300,7 +295,6 @@
         transform: translate(0, -100%);
         -webkit-transform: translate(0, -100%);
     }
-
     #toggle-button {
         display: none;
     }
@@ -328,7 +322,6 @@
         font-size: 18px;
         text-shadow: 0 0 2px #ddd;
     }
-
     .on {
         color: #fff;
         display: none;
@@ -355,7 +348,6 @@
     #toggle-button:checked + label.button-label {
         background-color: rgb(21, 21, 21);
     }
-
     footer {
         display: flex;
         flex-direction: row;
@@ -367,7 +359,6 @@
         right: 0;
         bottom:0;
     }
-
     footer > ul {
         display: flex;
         flex-direction: row;
@@ -382,7 +373,6 @@
         font-size: 1rem;
         margin: 1rem 0;
     }
-
     footer > ul > li > a:last-child {
         padding-right: 2rem;
     }
