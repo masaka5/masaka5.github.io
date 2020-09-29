@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -125,7 +126,7 @@
 
 
 
-
+     
 
     #welcome-text{
         margin-left:4rem;
@@ -133,14 +134,54 @@
         font-size: 30px;
         color: #fff;
         font-family: "Zhi Mang Xing", cursive;
-        animation:text-blink 3s ;
+        animation:text-blink 10s ;
     }
     @keyframes text-blink{
         0%{
             opacity:0;
+        }
+        50%{
+          opacity:0;
         }100%{
              opacity:1;
          }
+    }
+    #moji-1{
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top:35%;
+      left: 10%;
+      animation:text-1 5s;
+    }
+    #moji-1 > p{
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Zhi Mang Xing", cursive;
+      
+    }
+    @keyframes text-1{
+      0%{opacity: 0;}
+      20%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+    #moji-2{
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top:35%;
+      left: 17%;
+      animation:text-2 6s;
+    }
+    #moji-2 > p{
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Zhi Mang Xing", cursive;
+    }
+    @keyframes text-2{
+      0%{opacity: 0;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
     }
     #welcome-section {
         display: none;
@@ -396,7 +437,13 @@
         function change() {
             var x = document.getElementById("welcome-section");
             var y = document.getElementById("welcome-text");
-            y.style.visibility = "hidden";
+            document.getElementById("moji-1").style.display="none";
+            document.getElementById("moji-2").style.display="none";
+            if(y.style.visibility == "hidden"){
+              y.style.visibility = "visible";
+            }else{y.style.visibility = "hidden";}
+            
+           
             if (x.style.display == "block") {
                 x.style.display = "none";
                 if (
@@ -421,6 +468,24 @@
 <header>
   <div id="welcome-text">
     <p>点击下面按钮</p>
+  </div>
+  <div id="moji-1">
+    <p>徐</p>
+    <p>行</p>
+    <p>踏</p>
+    <p>断</p>
+    <p>流</p>
+    <p>水</p>
+    <p>声</p>
+  </div>
+  <div id="moji-2">
+    <p>纵</p>
+    <p>观</p>
+    <p>写</p>
+    <p>出</p>
+    <p>飞</p>
+    <p>禽</p>
+    <p>迹</p>
   </div>
   <nav id="navbar">
     <ul>
