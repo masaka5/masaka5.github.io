@@ -1,36 +1,36 @@
-version: "3.2"
-
+version: "3.8"
+ 
 services:
-# MariaDB Container
-  mariadb:
-    image: mariadb:10.7
-    container_name: mariadb
-    hostname: mariadb
-    volumes:
-      - /docker/glpi/mysql:/var/lib/mysql
-    environment:
-      - MARIADB_ROOT_PASSWORD=glpi
-      - MARIADB_DATABASE=glpi
-      - MARIADB_USER=glpi
-      - MARIADB_PASSWORD=glpi
-    
-    restart: always
-
-# GLPI Container
-  glpi:
-    image: diouxx/glpi
-    container_name : glpi
-    hostname: glpi
-    ports:
-      - "8000:80"
-    links:
-      - mariadb:mariadb
-    volumes:
-#     - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/glpi/html/:/var/www/html/glpi
-    environment:
-      - TIMEZONE=Asia/Shanghai
-    restart: always
-    depends_on:
-      - mariadb
+    mysql:
+      image: mysql:latest
+      container_name: mysql
+      restart: always
+      hostname: mysql
+      volumes:
+        - ./storage/mysql:/var/lib/mysql
+      env_file:
+        - ./mysql.env
+      ports:
+        - "52.69.56.252:3307:3306"
+      networks:
+        - network
+ 
+    glpi:
+      image:  xiemuhou/glpi:latest
+      restart: always
+      container_name : glpi
+      hostname: glpi
+      ports:
+        - "52.69.56.252:9000:80"
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - ./storage/var/www/html/glpi/:/var/www/html/glpi
+      environment:
+        - VERSION_GLPI=10.0.6
+        - TIMEZONE=Asia/Shanghai
+      networks:
+        - network
+ 
+networks:
+  network:
+    driver: bridge
