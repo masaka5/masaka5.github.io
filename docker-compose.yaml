@@ -22,7 +22,7 @@ services:
     container_name : glpi
     hostname: glpi
     ports:
-      - "8088:80"
+      - "8000:80"
     links:
       - mariadb:mariadb
     volumes:
