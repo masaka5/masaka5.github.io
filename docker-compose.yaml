@@ -11,7 +11,7 @@ services:
       env_file:
         - ./mysql.env
       ports:
-        - "52.69.56.252:3307:3306"
+        - "172.31.41.46:3307:3306"
       networks:
         - network
  
