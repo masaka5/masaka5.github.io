@@ -1,0 +1,36 @@
+version: "3.2"
+
+services:
+# MariaDB Container
+  mariadb:
+    image: mariadb:10.7
+    container_name: mariadb
+    hostname: mariadb
+    volumes:
+      - /docker/glpi/mysql:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=glpi
+      - MARIADB_DATABASE=glpi
+      - MARIADB_USER=glpi
+      - MARIADB_PASSWORD=glpi
+    
+    restart: always
+
+# GLPI Container
+  glpi:
+    image: diouxx/glpi
+    container_name : glpi
+    hostname: glpi
+    ports:
+      - "8088:80"
+    links:
+      - mariadb:mariadb
+    volumes:
+#     - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /docker/glpi/html/:/var/www/html/glpi
+    environment:
+      - TIMEZONE=Asia/Shanghai
+    restart: always
+    depends_on:
+      - mariadb
