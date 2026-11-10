@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#f4f6fa" /><title>UID 格式转换 · 工具箱</title><link rel="icon" href="../../assets/favicon.svg" /><link rel="stylesheet" href="../../assets/tool.css" /><script src="../../assets/uid-core.js"></script><script defer src="uid.js"></script></head>
+<body>
+  <div class="tool-shell">
+    <header class="tool-header"><a class="back-link" href="../../">← 返回工具箱</a><h1>UID 格式转换</h1><a class="header-link" href="../nfc/">NFC 读写 ↗</a></header>
+    <main class="tool-main"><div class="intro"><h2>卡号格式，精确互转。</h2><p>支持十六进制、十进制与按字节反转，长 UID 也不丢失精度。</p></div>
+      <div class="tool-panels uid-panels">
+        <section class="panel" aria-labelledby="inputHeading"><h3 id="inputHeading">输入</h3><div class="stack">
+          <label class="field"><span>输入值</span><input id="inputValue" type="text" placeholder="例如 04:A1:00:F2" autocomplete="off" spellcheck="false" maxlength="512" /></label>
+          <div class="format-options"><label class="field"><span>输入格式</span><select id="fromFormat"><option value="hex">十六进制</option><option value="dec">十进制</option><option value="reversedHex">反转十六进制</option><option value="reversedDec">反转十进制</option></select></label><label class="field"><span>输出格式</span><select id="toFormat"><option value="hex">十六进制</option><option value="dec" selected>十进制</option><option value="reversedHex">反转十六进制</option><option value="reversedDec">反转十进制</option></select></label></div>
+          <div class="uid-options"><label class="field"><span>字节长度</span><select id="byteLength"><option value="auto">自动</option><option value="4">4 字节</option><option value="7">7 字节</option><option value="10">10 字节</option></select></label><div class="actions"><button class="secondary" id="swapFormats" type="button">交换格式</button><button class="example-button" id="fillExample" type="button">填入示例</button></div></div>
+          <p class="status" id="conversionError" role="status" data-tone="error"></p>
+        </div><p class="note">固定字节长度可补齐前导零，适合还原卡片 UID。</p></section>
+        <section class="panel" aria-labelledby="outputHeading"><h3 id="outputHeading">转换结果</h3><output class="conversion-value" id="outputValue" for="inputValue fromFormat toFormat byteLength">等待输入</output><div class="copy-row"><span class="status" id="copyStatus" role="status"></span><button class="primary" id="copyOutput" type="button" disabled>复制结果</button></div>
+          <dl class="formats-preview"><div><dt>十六进制</dt><dd id="previewHex">—</dd></div><div><dt>十进制</dt><dd id="previewDec">—</dd></div><div><dt>反转十六进制</dt><dd id="previewReversedHex">—</dd></div><div><dt>反转十进制</dt><dd id="previewReversedDec">—</dd></div></dl>
+        </section>
+      </div>
+    </main>
+    <footer class="tool-footer"><span>仅在当前浏览器中转换</span><a href="../../vendor/masaka5/">查看原版 NFC 工具 ↗</a></footer>
+  </div>
+</body>
+</html>

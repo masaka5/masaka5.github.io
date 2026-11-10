@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#f4f6fa" /><title>NFC 读写 · 工具箱</title><link rel="icon" href="../../assets/favicon.svg" /><link rel="stylesheet" href="../../assets/tool.css" /><script src="../../assets/uid-core.js"></script><script defer src="nfc.js"></script></head>
+<body>
+  <div class="tool-shell">
+    <header class="tool-header"><a class="back-link" href="../../">← 返回工具箱</a><h1>NFC 读写</h1><a class="header-link" href="../uid/" id="converterLink">UID 转换 ↗</a></header>
+    <main class="tool-main"><div class="intro"><h2>读一张卡，也写一条记录。</h2><p>NFC 读写需要支持 Web NFC 的 Android Chrome 设备与 HTTPS。</p></div>
+      <nav class="mobile-tabs" aria-label="NFC 视图"><button type="button" data-nfc-view="control" aria-pressed="true">读写控制</button><button type="button" data-nfc-view="info" aria-pressed="false">卡片信息</button></nav>
+      <div class="tool-panels nfc-panels" id="nfcPanels" data-view="control">
+        <section class="panel nfc-control"><h3>读写控制</h3><div class="nfc-read"><button class="primary" id="scanNfc" type="button">扫描 NFC 标签</button><button class="secondary" id="stopNfc" type="button" disabled>停止扫描</button></div><p class="status" id="nfcStatus" role="status" style="margin-top:12px">正在检查设备…</p>
+          <div class="nfc-separator"></div><label class="field" style="flex:1;min-height:0"><span>写入文本</span><textarea class="nfc-write-field" id="writeData" placeholder="输入要写入 NFC 标签的文本" maxlength="4096"></textarea></label><div class="actions" style="margin-top:14px"><button class="primary" id="writeNfc" type="button" disabled>写入 NFC 标签</button><span class="status" id="writeStatus" role="status"></span></div><p class="note">扫描与写入均由你手动启动，不会自动改写标签。</p>
+        </section>
+        <section class="panel nfc-result"><div class="nfc-details"><h3>卡片信息</h3><button class="text-button" id="copyNfc" type="button" disabled>复制详情</button></div><div class="nfc-info"><label class="field"><span>UID 原始十六进制 <span id="uidSource"></span></span><input class="result-field" id="uidHex" type="text" readonly placeholder="等待扫描" /></label><div class="row"><label class="field"><span>UID 十进制</span><input class="result-field" id="uidDec" type="text" readonly placeholder="—" /></label><label class="field"><span>UID 反转十进制</span><input class="result-field" id="uidReversedDec" type="text" readonly placeholder="—" /></label></div><label class="field" style="min-height:0"><span>NDEF 记录与详细信息</span><textarea class="record-output" id="nfcRecords" readonly placeholder="扫描后显示标签序列号、记录类型、文本及原始数据"></textarea></label></div></section>
+      </div>
+    </main>
+    <footer class="tool-footer"><span>数据仅保留在当前页面</span><a href="../../vendor/masaka5/">查看原版 NFC 工具 ↗</a></footer>
+  </div>
+</body>
+</html>

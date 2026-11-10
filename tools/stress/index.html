@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111515" />
+  <title>硬件压测台</title>
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="toolbox-link.css" />
+  <link rel="icon" href="../../assets/favicon.svg" />
+  <script src="workload-profile.js?v=2"></script>
+  <script src="session-tools.js?v=2"></script>
+</head>
+<body>
+  <div class="app-shell" data-state="idle" data-view="control">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <h1 class="brand-name">硬件压测台</h1>
+        </div>
+      </div>
+      <a class="toolbox-return" href="../../">← 工具箱</a>
+      <div class="topbar-meta">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span id="sessionLabel">未开始</span>
+        <span class="topbar-divider"></span>
+        <span id="clockLabel">--:--:--</span>
+        <div class="quick-actions"><button id="quickPause" type="button" disabled>暂停</button><button id="quickStop" type="button" disabled>停止</button></div>
+      </div>
+    </header>
+
+    <nav class="view-nav" aria-label="工作台视图">
+      <button type="button" data-view-target="control" aria-pressed="true" aria-controls="controlPanel">压测设置</button>
+      <button type="button" data-view-target="resources" aria-pressed="false" aria-controls="resourcePanel">设备状态</button>
+      <button type="button" data-view-target="chart" aria-pressed="false" aria-controls="chartPanel">数据趋势</button>
+      <button type="button" data-view-target="log" aria-pressed="false" aria-controls="logPanel">运行日志</button>
+    </nav>
+    <main class="workspace">
+      <section class="hero-section">
+        <aside class="control-console" id="controlPanel" aria-label="压测控制台">
+          <div class="console-head">
+            <div>
+              <p class="console-kicker">测试状态</p>
+              <strong id="runState">待机</strong>
+            </div>
+            <div class="timer-block">
+              <span>已用时间</span>
+              <strong id="elapsedLabel">00:00</strong>
+            </div>
+          </div>
+
+          <div class="test-progress">
+            <progress id="testProgress" value="0" max="100" aria-label="测试进度"></progress>
+            <div><span id="remainingLabel">剩余 05:00</span><span id="progressLabel">0%</span></div>
+          </div>
+
+          <div class="console-actions">
+            <button class="start-button" id="startBtn" type="button">
+              <span class="start-icon" aria-hidden="true">↗</span>
+              <span id="startLabel">开始压测</span>
+            </button>
+            <div class="secondary-actions">
+              <button class="ghost-button" id="pauseBtn" type="button" disabled>暂停</button>
+              <button class="ghost-button danger" id="stopBtn" type="button" disabled>停止</button>
+            </div>
+          </div>
+          <p class="control-error" id="controlError" role="alert" hidden></p>
+          <p class="session-result" id="sessionResult" role="status" hidden></p>
+
+          <div class="console-config">
+            <div class="field">
+              <label for="duration">测试时长</label>
+              <select id="duration">
+                <option value="60">1 分钟</option>
+                <option value="300" selected>5 分钟</option>
+                <option value="900">15 分钟</option>
+                <option value="1800">30 分钟</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="workers">CPU 线程</label>
+              <select id="workers">
+                <option value="20" selected>20 线程</option><option value="24">24 线程</option><option value="32">32 线程</option><option value="40">40 线程</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="preset-row" aria-label="快速预设">
+            <span class="preset-label">预设</span>
+            <button class="preset-button" type="button" data-preset="balanced">均衡</button>
+            <button class="preset-button" type="button" data-preset="full-extreme">全开极限</button>
+            <button class="preset-button" type="button" data-preset="cpu-memory">CPU + 内存</button>
+          </div>
+          <label class="background-option"><input id="pauseOnHidden" type="checkbox" /><span>切到后台自动暂停</span></label>
+
+          <div class="console-resource-settings">
+            <div class="settings-heading"><span>压测项目</span><span>独立调节负载</span></div>
+            <div class="resource-level-grid">
+              <div class="resource-level"><label><input type="checkbox" data-resource-toggle="cpu" checked /><span>CPU</span></label><select data-level="cpu" aria-label="CPU负载强度"><option value="low">轻度</option><option value="standard">标准</option><option value="high" selected>高负载</option><option value="extreme">极限</option><option value="unlimited">不限制</option></select></div>
+              <div class="resource-level"><label><input type="checkbox" data-resource-toggle="memory" checked /><span>内存</span></label><select data-level="memory" aria-label="内存负载强度"><option value="low">轻度</option><option value="standard">标准</option><option value="high" selected>高负载</option><option value="extreme">极限</option><option value="unlimited">持续增长</option></select></div>
+              <div class="resource-level"><label><input type="checkbox" data-resource-toggle="gpu" checked /><span>GPU</span></label><select data-level="gpu" aria-label="GPU负载强度"><option value="low">轻度</option><option value="standard">标准</option><option value="high" selected>高负载</option><option value="extreme">极限</option><option value="unlimited">不限制</option></select></div>
+              <div class="resource-level"><label><input type="checkbox" data-resource-toggle="disk" checked /><span>磁盘</span></label><select data-level="disk" aria-label="磁盘负载强度"><option value="low">轻度</option><option value="standard">标准</option><option value="high" selected>高负载</option><option value="extreme">极限</option></select></div>
+            </div>
+            <p class="memory-safety-note">内存额度：浏览器估算的 20%，最高 48 GB。<span>无法读取实时可用内存。</span></p>
+            <p class="environment-summary" id="environmentSummary">正在读取本机环境…</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="resources-section" id="resourcePanel" aria-labelledby="resourcesTitle">
+        <div class="section-heading">
+          <h2 id="resourcesTitle">设备状态</h2>
+          <span class="section-note">浏览器实测 · 非系统占用率</span>
+        </div>
+
+        <div class="resource-grid">
+          <div class="resource-empty"><p>尚未选择压测项目</p><button type="button" data-view-target="control">选择压测项目</button></div>
+          <article class="resource-card" data-resource-card="cpu">
+            <div class="card-topline"><span class="resource-id">CPU</span><span class="resource-status" data-status="cpu">就绪</span></div>
+            <div class="resource-title-row"><h3>CPU</h3><span class="resource-glyph">◒</span></div>
+            <div class="metric-row"><strong id="cpuValue">0</strong><span>% 估算负载</span></div>
+            <div class="meter"><i id="cpuMeter"></i></div>
+            <div class="card-bottom"><span id="cpuDetail">20 线程 · 空闲</span><span id="cpuRate">— 次/秒</span></div>
+            <canvas class="sparkline" id="cpuSpark" width="300" height="48" aria-label="CPU 负载趋势"></canvas>
+          </article>
+
+          <article class="resource-card" data-resource-card="memory">
+            <div class="card-topline"><span class="resource-id">内存</span><span class="resource-status" data-status="memory">就绪</span></div>
+            <div class="resource-title-row"><h3>内存</h3><span class="resource-glyph">▦</span></div>
+            <div class="metric-row"><strong id="memoryValue">0 MB</strong><span>已分配</span></div>
+            <div class="meter"><i id="memoryMeter"></i></div>
+            <div class="card-bottom"><span id="memoryDetail">目标占用 640 MB</span><span id="memoryRate">— MB/秒</span></div>
+            <canvas class="sparkline" id="memorySpark" width="300" height="48" aria-label="内存活动趋势"></canvas>
+          </article>
+
+          <article class="resource-card" data-resource-card="gpu">
+            <div class="card-topline"><span class="resource-id">GPU</span><span class="resource-status" data-status="gpu">检测中</span></div>
+            <div class="resource-title-row"><h3>GPU</h3><span class="resource-glyph">✦</span></div>
+            <div class="metric-row"><strong id="gpuValue">—</strong><span>屏幕帧/秒</span></div>
+            <div class="meter"><i id="gpuMeter"></i></div>
+            <div class="card-bottom"><span id="gpuDetail">图形加速检测</span><span id="gpuRate">— 轮/像素</span></div>
+            <canvas class="sparkline" id="gpuSpark" width="300" height="48" aria-label="GPU 活动趋势"></canvas>
+          </article>
+
+          <article class="resource-card" data-resource-card="disk">
+            <div class="card-topline"><span class="resource-id">磁盘</span><span class="resource-status" data-status="disk">受限</span></div>
+            <div class="resource-title-row"><h3>磁盘</h3><span class="resource-glyph">▤</span></div>
+            <div class="metric-row"><strong id="diskValue">0</strong><span>写入 MB/秒</span></div>
+            <div class="meter"><i id="diskMeter"></i></div>
+            <div class="card-bottom"><span id="diskDetail">开测后检测文件读写</span><span id="diskRate">读取 — MB/秒</span><span id="diskTotals">累计写 0 MB / 读 0 MB</span></div>
+            <canvas class="sparkline" id="diskSpark" width="300" height="48" aria-label="磁盘活动趋势"></canvas>
+          </article>
+        </div>
+      </section>
+
+      <section class="analysis-grid" aria-label="压测分析">
+        <article class="chart-panel" id="chartPanel" aria-label="数据趋势">
+          <div class="panel-head">
+            <div><h2>数据趋势</h2></div>
+            <span class="section-note">四项同步显示</span>
+          </div>
+          <div class="chart-legend" id="chartLegend" aria-label="各项最新采样"></div>
+          <div class="chart-wrap"><canvas id="loadChart" width="900" height="280" role="img" aria-label="CPU、内存、GPU、磁盘读写曲线，各项使用独立刻度"></canvas><div class="chart-empty hidden" id="chartEmpty"></div></div>
+          <div class="chart-footer"><span id="sampleLabel">采样 0</span><span>窗口 60 秒</span><span id="peakLabel">峰值 —</span></div>
+        </article>
+
+        <article class="log-panel" id="logPanel" aria-label="运行日志">
+          <div class="panel-head"><div><h2>运行日志</h2></div><span class="log-count" id="logCount">0 条</span></div>
+          <div class="event-log" id="eventLog" role="log" aria-live="polite"><div class="log-empty">等待测试会话…</div></div>
+          <div class="log-pagination" aria-label="日志翻页"><button id="logPrev" type="button" aria-label="上一页日志" disabled>上一页</button><span id="logPage" aria-live="polite">1 / 1</span><button id="logNext" type="button" aria-label="下一页日志" disabled>下一页</button></div>
+          <div class="log-footer"><span class="system-ok"><i></i>网页已就绪</span><div class="export-actions"><span>导出</span><button class="export-button" id="exportBtn" type="button" disabled aria-label="导出 JSON 报告">JSON</button><button class="export-button" id="exportCsvBtn" type="button" disabled aria-label="导出 CSV 数据">CSV</button></div></div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+  <canvas id="gpuCanvas" width="640" height="360" aria-hidden="true"></canvas>
+  <script src="app.js?v=2"></script>
+  <script src="workspace-ui.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
