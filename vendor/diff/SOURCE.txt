@@ -1,0 +1,5 @@
+Package: diff (jsdiff)
+Version: 9.0.0
+Source: https://github.com/kpdecker/jsdiff
+License: BSD-3-Clause; see LICENSE.txt.
+Bundled browser distribution: dist/diff.min.js.

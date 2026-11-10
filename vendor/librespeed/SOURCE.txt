@@ -1,0 +1,4 @@
+LibreSpeed by Federico Dossena
+https://github.com/librespeed/speedtest
+Revision: 06524abd22e4581fb38a32393b80f37beec05f34
+Original source files, GNU LGPL v3. See LICENSE.txt. The main script is minimally patched to resolve its worker from the bundled vendor directory; see LIBRESPEED_WORKER_URL in tools/network/librespeed.js.
