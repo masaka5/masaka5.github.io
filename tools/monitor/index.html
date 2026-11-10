@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7fa" />
+  <title>显示器检测 · 工具箱</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="monitor.css" />
+  <script defer src="monitor.js"></script>
+</head>
+<body>
+  <div class="screen-shell">
+    <header class="screen-header"><a class="back-link" href="../../">← 工具箱</a><h1>显示器检测</h1><button class="primary" id="startTest" type="button">全屏检测</button></header>
+    <main class="screen-main">
+      <div class="test-stage" id="testStage" data-pattern="solid-red" tabindex="-1">
+        <canvas id="patternCanvas" aria-label="纯红色测试画面"></canvas>
+        <div class="test-overlay" id="testOverlay" hidden>
+          <div class="overlay-info"><span id="overlayTitle">纯红色</span><span id="overlayCount"></span><span id="fullscreenHint"></span></div>
+          <div class="overlay-actions"><button id="previousPattern" type="button" aria-label="上一个测试">←</button><button id="nextPattern" type="button" aria-label="下一个测试">→</button><button id="overlayPause" type="button" hidden>暂停</button><button id="retryFullscreen" type="button" hidden>全屏</button><button id="endTest" type="button">结束</button></div>
+          <p>点击切换 · ← → · Esc 退出</p>
+        </div>
+      </div>
+      <section class="settings" aria-label="检测项目">
+        <nav class="group-tabs" id="groupTabs" aria-label="检测分类"></nav>
+        <div class="pattern-options" id="patternOptions" aria-label="测试画面"></div>
+        <div class="motion-settings" id="motionSettings" hidden><div class="motion-rate" id="motionRate"><label for="motionSpeed">速度</label><input id="motionSpeed" type="range" min="100" max="1500" value="600" step="50" /><output id="speedValue" for="motionSpeed">600 px/s</output></div><button id="pauseMotion" type="button">暂停</button></div>
+      </section>
+    </main>
+    <footer class="screen-footer"><span id="patternHint" role="status">观察固定的亮点、暗点或异色点。</span><span id="screenInfo"></span></footer>
+  </div>
+</body>
+</html>

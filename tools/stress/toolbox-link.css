@@ -1,4 +1,4 @@
-.toolbox-return { color:#a0adaa; font-size:12px; border:1px solid #303838; border-radius:5px; padding:5px 10px; text-decoration:none; margin-left:16px; white-space:nowrap; }
-.toolbox-return:hover { color:#deb17a; border-color:#deb17a; }
-.toolbox-return:focus-visible { outline:2px solid #deb17a; outline-offset:3px; }
+.toolbox-return { color:var(--muted); font-size:12px; border:1px solid var(--line); border-radius:5px; padding:5px 10px; text-decoration:none; margin-left:16px; white-space:nowrap; }
+.toolbox-return:hover { color:var(--accent); border-color:var(--accent); }
+.toolbox-return:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 @media(max-width:580px) { .toolbox-return{font-size:10px;padding:4px 7px;margin-left:5px}.brand-name{font-size:12px}.topbar-meta{font-size:10px;gap:4px}.quick-actions button{padding:4px 6px} }

@@ -62,7 +62,7 @@ const state = {
   lastReport: null
 };
 
-const colors = { cpu: '#f59b45', memory: '#79c69a', gpu: '#b69adf', disk: '#73b8d9' };
+const colors = { cpu: '#285de5', memory: '#21866c', gpu: '#945ab8', disk: '#b4771c' };
 
 function selectedProfile() {
   const levels = Object.fromEntries(Array.from(document.querySelectorAll('[data-level]'), (input) => [input.dataset.level, input.value]));
@@ -192,8 +192,8 @@ function logEvent(message, tone = '') {
   const body = document.createElement('strong');
   body.textContent = message;
   entry.append(time, body);
-  if (tone === 'warn') entry.style.color = '#e6b27c';
-  if (tone === 'danger') entry.style.color = '#e57268';
+  if (tone === 'warn') entry.style.color = '#946415';
+  if (tone === 'danger') entry.style.color = '#b23c38';
   refs.log.prepend(entry);
   while (refs.log.children.length > 200) refs.log.lastElementChild.remove();
   if (state.sessionStartedAt) state.sessionLog.push({ time: new Date().toISOString(), message, tone });
@@ -345,20 +345,20 @@ function drawChart() {
     }
     for (let tick = 0; tick <= 2; tick++) {
       const y = bottom - (bottom - top) * tick / 2;
-      ctx.strokeStyle = '#303838';
+      ctx.strokeStyle = '#e4e9f0';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(left, y);
       ctx.lineTo(right, y);
       ctx.stroke();
       if (tick === 1) continue;
-      ctx.fillStyle = '#a0adaa';
+      ctx.fillStyle = '#728095';
       ctx.textAlign = 'right';
       ctx.fillText(number(chart.maximum * tick / 2), left - 7, y + 3);
     }
     if (!chart.hasData) {
       ctx.textAlign = 'center';
-      ctx.fillStyle = '#a0adaa';
+      ctx.fillStyle = '#728095';
       ctx.fillText(state.enabled[chart.key] ? '等待采样' : '未启用', (left + right) / 2, (top + bottom) / 2 + 3);
     }
     for (const series of chart.series) {
@@ -384,7 +384,7 @@ function drawChart() {
       }
     }
   });
-  ctx.fillStyle = '#a0adaa';
+  ctx.fillStyle = '#728095';
   ctx.textAlign = 'left';
   ctx.fillText(formatTime(charts[0].start), left, height - 3);
   ctx.textAlign = 'right';
