@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="查找和复制 Windows CMD、PowerShell 与 Linux 常用系统命令。">
+  <title>系统命令速查 · 工具箱</title>
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="../../assets/ops.css">
+  <link rel="stylesheet" href="../../assets/studio.css">
+  <link rel="stylesheet" href="commands.css">
+  <script defer src="../../assets/ops-ui.js"></script>
+  <script defer src="../../assets/catalog.js"></script>
+  <script defer src="commands-core.js"></script>
+  <script defer src="commands.js"></script>
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="ops-header"><a class="back-link" href="../../">← 工具箱</a><h1>系统命令速查</h1><span class="pill" id="commandCount">0 条</span></header>
+    <main class="studio-main system-commands-main">
+      <aside class="studio-controls system-controls">
+        <div>
+          <h2>系统</h2>
+          <div class="system-platforms" id="platformTabs" role="group" aria-label="选择系统">
+            <button type="button" data-platform="cmd" aria-pressed="true">CMD</button>
+            <button type="button" data-platform="powershell" aria-pressed="false">PowerShell</button>
+            <button type="button" data-platform="linux" aria-pressed="false">Linux</button>
+          </div>
+        </div>
+        <label class="field"><span>命令分类</span><select id="categoryFilter"><option value="all">全部分类</option></select></label>
+        <p class="system-scope" id="platformScope"></p>
+        <a class="system-docs" id="platformDocs" href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener">官方文档 ↗</a>
+        <p class="system-caution">命令只供查阅与复制，不会执行。高风险命令已标记；不同版本和发行版可能有差异。</p>
+      </aside>
+      <section class="studio-stage system-commands-stage">
+        <div class="system-toolbar">
+          <label class="system-search"><span class="sr-only">搜索命令</span><input id="commandSearch" type="search" placeholder="搜索命令、用途或关键词" autocomplete="off"></label>
+          <button class="text-button" id="clearCommandSearch" type="button">清空</button>
+        </div>
+        <p class="status system-status" id="commandStatus" role="status" aria-live="polite"></p>
+        <div class="system-command-results" id="commandResults"></div>
+      </section>
+    </main>
+    <footer class="studio-footer"><span>覆盖常见内置命令与系统工具</span><span>具体参数以本机帮助和官方手册为准</span></footer>
+  </div>
+</body>
+</html>

@@ -4,6 +4,7 @@
   const grid = document.getElementById('toolGrid');
   const viewport = document.getElementById('toolsViewport');
   const nav = document.getElementById('categoryNav');
+  const mobileNav = document.getElementById('mobileCategoryNav');
   const select = document.getElementById('categorySelect');
   const recentKey = 'toolbox-recent-v1';
   const icons = {
@@ -12,6 +13,7 @@
     devices:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h3m-3 3h3m4-2 2-2 2 2m-4 2 2 2 2-2"/>',
     record:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 2v3m10-3v3"/>',
     network:'<rect x="8" y="2" width="8" height="6" rx="1"/><path d="M12 8v5M4 13h16M4 13v3m8-3v3m8-3v3"/><rect x="1" y="16" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><rect x="17" y="16" width="6" height="5" rx="1"/>',
+    terminal:'<path d="m4 5 6 5-6 5m9 1h7"/>',
     windows:'<path d="M3 5 11 4v7H3zm10-1 8-1v8h-8zM3 13h8v7l-8-1zm10 0h8v8l-8-1z"/>',
     monitor:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4M6 7h5m-5 3h8"/>',
     all:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -49,6 +51,12 @@
     button.append(icon(item.icon), element('span', '', item.name), element('small', '', String(tools.filter(tool => item.id === 'all' || tool.category === item.id).length)));
     button.addEventListener('click', () => chooseCategory(item.id));
     nav.append(button);
+    const mobileButton=element('button','');
+    mobileButton.type='button';mobileButton.dataset.category=item.id;
+    mobileButton.setAttribute('aria-pressed',String(item.id===category));
+    mobileButton.append(element('span','',item.name),element('small','',String(tools.filter(tool=>item.id==='all'||tool.category===item.id).length)));
+    mobileButton.addEventListener('click',()=>chooseCategory(item.id));
+    mobileNav.append(mobileButton);
     const option = element('option', '', item.name);
     option.value = item.id;
     select.append(option);
@@ -114,6 +122,7 @@
     category = value;
     select.value = value;
     for (const button of nav.children) button.setAttribute('aria-pressed', String(button.dataset.category === value));
+    for (const button of mobileNav.children) button.setAttribute('aria-pressed',String(button.dataset.category===value));
     page = 0;
     render();
   }

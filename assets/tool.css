@@ -1,3 +1,4 @@
+@import url("design-system.css");
 :root { color-scheme:light; --bg:#f4f6fa; --surface:#fff; --text:#1d2738; --muted:#637187; --line:#e0e6ef; --blue:#245be8; --danger:#b23c38; }
 * { box-sizing:border-box; }
 html,body { margin:0; width:100%; height:100%; overflow:hidden; }

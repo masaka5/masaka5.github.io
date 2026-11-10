@@ -10,7 +10,10 @@
   }
   while(index<changes.length){if(!changes[index].added&&!changes[index].removed){for(const line of partsOf(changes[index++].value))row(line,line,'same');continue;}
    const removed=[],added=[];while(index<changes.length&&(changes[index].added||changes[index].removed)){const part=changes[index++],target=part.removed?removed:added;target.push(...partsOf(part.value));}
-   for(let i=0;i<Math.max(removed.length,added.length);i++)row(removed[i]??null,added[i]??null,'change');
+   for(let i=0;i<Math.max(removed.length,added.length);i++){
+    const oldLine=removed[i]??null,newLine=added[i]??null;
+    row(oldLine,newLine,oldLine===null?'added':newLine===null?'removed':'change');
+   }
   }
   table.append(body);return table;
  }
@@ -20,7 +23,7 @@
   }
   table.append(body);return table;
  }
- function compare(){const old=$('oldText').value,newer=$('newText').value,ignoreWhitespace=$('ignoreWhitespace').checked,changes=Diff.diffLines(old,newer,{ignoreWhitespace});
+ function compare(){const old=$('oldText').value,newer=$('newText').value,ignoreWhitespace=$('ignoreWhitespace').checked,comparable=value=>value&&!value.endsWith('\n')?value+'\n':value,changes=Diff.diffLines(comparable(old),comparable(newer),{ignoreWhitespace});
   const added=changes.filter(part=>part.added).reduce((sum,part)=>sum+partsOf(part.value).length,0),removed=changes.filter(part=>part.removed).reduce((sum,part)=>sum+partsOf(part.value).length,0),changed=added+removed>0;
   $('diffOutput').replaceChildren();$('diffOutput').append(changed?($('diffMode').value==='side'?renderSide(changes):renderUnified(changes)):cell('p','empty',old||newer?'两段文本一致':'请输入需要比较的文本'));
   $('diffSummary').textContent=changed?'有差异':'一致';$('diffCounts').textContent=`新增 ${added} 行 · 删除 ${removed} 行`;

@@ -1,0 +1,50 @@
+/* Shared visual baseline for the toolbox and its browser tools. */
+html:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --surface: #fff;
+  --panel: #fff;
+  --text: #242d3a;
+  --muted: #687588;
+  --line: #e3e7ed;
+  --blue: #315fc9;
+  --danger: #a64742;
+  --red: #a64742;
+  --green: #2d7657;
+  --accent: var(--blue);
+  --radius-panel: 10px;
+  --radius-control: 7px;
+}
+
+html body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+}
+
+html body input,
+html body select,
+html body textarea {
+  border-color: var(--line);
+  border-radius: var(--radius-control);
+}
+
+html body button.primary,
+html body button.secondary,
+html body button.text-button {
+  border-radius: var(--radius-control);
+}
+
+html body .ops-panel,
+html body .studio-controls,
+html body .studio-stage {
+  border-radius: var(--radius-panel);
+}
+
+html body .status[data-tone="error"] {
+  color: var(--danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}

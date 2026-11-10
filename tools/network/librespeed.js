@@ -11,7 +11,9 @@
  function clear(){if(test?.getState()>=3)try{test.abort();}catch(_){}test=null;failure='';selected=null;run++;NetworkSpeedUI.busy(false);}
  function start(){
   if(test)return;
-  const current=++run,engine=new Speedtest();test=engine;selected=null;failure='';NetworkSpeedUI.busy(true);NetworkSpeedUI.progress(0);NetworkSpeedUI.metric('downloadMetric','—');NetworkSpeedUI.metric('uploadMetric','—');
+  if(typeof window.Speedtest!=='function'){NetworkSpeedUI.busy(false);NetworkSpeedUI.status('测速组件未加载，请重新发布完整工具包。',true);NetworkSpeedUI.result('请确认 vendor/librespeed 文件已随发布包上传。',true);return;}
+  const current=++run,engine=new window.Speedtest();let settled=false;test=engine;selected=null;failure='';NetworkSpeedUI.busy(true);NetworkSpeedUI.progress(0);NetworkSpeedUI.metric('downloadMetric','—');NetworkSpeedUI.metric('uploadMetric','—');
+  const workerFailure=()=>{if(current!==run||settled)return;settled=true;test=null;try{engine.worker?.terminate();}catch(_){}NetworkSpeedUI.busy(false);NetworkSpeedUI.status('LibreSpeed 工作线程未加载，请重新发布完整工具包。',true);NetworkSpeedUI.result('请确认测速 Worker 已包含在发布包中。',true);};
   document.getElementById('speedLog').replaceChildren();NetworkSpeedUI.status('正在筛选 LibreSpeed 节点…');NetworkSpeedUI.result('下载、延迟及上传按顺序测试');
   engine.setParameter('telemetry_level',0);engine.setParameter('time_dl_max',8);engine.setParameter('time_ul_max',8);engine.setParameter('time_auto',true);engine.setParameter('count_ping',6);engine.setParameter('getIp_ispInfo',false);engine.setParameter('garbagePhp_chunkSize',32);engine.setParameter('xhr_dlMultistream',4);engine.setParameter('xhr_ulMultistream',2);
   engine.onupdate=data=>{
@@ -34,7 +36,7 @@
    NetworkSpeedUI.status(({0:'连接测速节点…',1:`${selected||'测速节点'} · 正在下载…`,2:'正在测试延迟…',3:'正在测试上传…',4:'测速完成',5:'已停止'})[data.testState]||'正在测速…');
   };
   engine.onend=aborted=>{
-   if(current!==run)return;const server=selected;test=null;NetworkSpeedUI.busy(false);
+   if(current!==run||settled)return;settled=true;const server=selected;test=null;NetworkSpeedUI.busy(false);
    if(failure){NetworkSpeedUI.status(failure,true);NetworkSpeedUI.result(failure,true);NetworkSpeedUI.line(`${server||'LibreSpeed'}：下载 ${document.getElementById('downloadMetric').textContent} Mbps · 上传 ${document.getElementById('uploadMetric').textContent} Mbps`,true);return;}
    if(aborted){NetworkSpeedUI.progress(document.getElementById('speedProgress').value);NetworkSpeedUI.status('已停止');NetworkSpeedUI.result('测速已停止，保留已完成采样。');return;}
    const download=Number(document.getElementById('downloadMetric').textContent),upload=Number(document.getElementById('uploadMetric').textContent);
@@ -48,7 +50,7 @@
    engine.selectServer(server=>{
     if(current!==run)return;
     if(!server){test=null;NetworkSpeedUI.busy(false);NetworkSpeedUI.status('当前网络无法连接 LibreSpeed 节点，请检查跨域或切换测速方式。',true);NetworkSpeedUI.result('所有公共节点连接失败。',true);return;}
-    selected=server.name;document.getElementById('downloadUrl').value=server.name;NetworkSpeedUI.status('已选择 '+server.name+'，开始测速…');engine.start();
+    selected=server.name;document.getElementById('downloadUrl').value=server.name;NetworkSpeedUI.status('已选择 '+server.name+'，开始测速…');try{engine.start();engine.worker?.addEventListener('error',workerFailure,{once:true});engine.worker?.addEventListener('messageerror',workerFailure,{once:true});}catch(_){workerFailure();}
    });
   }catch(_){test=null;NetworkSpeedUI.busy(false);NetworkSpeedUI.status('LibreSpeed 初始化失败，请稍后重试。',true);}
  }
