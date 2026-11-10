@@ -5,7 +5,9 @@ const ToolboxCatalog = {
     { id:'nfc', name:'卡片工具', icon:'nfc' },
     { id:'windows', name:'Windows 运维', icon:'windows' },
     { id:'network', name:'网络工具', icon:'network' },
-    { id:'ai', name:'AI 助手', icon:'chat' }
+    { id:'ai', name:'AI 助手', icon:'chat' },
+    { id:'peripheral', name:'外设工具', icon:'devices' },
+    { id:'text', name:'文本工具', icon:'convert' }
   ],
   tools: [
     {
@@ -37,7 +39,14 @@ const ToolboxCatalog = {
     {id:'ip-batch',category:'network',name:'IP 批量整理',description:'去重排序 · 网段合并',href:'tools/ip-batch/',icon:'network',tags:['IP','CIDR','合并'],keywords:'IPv4 IPv6 批量 地址范围 整理'},
     {id:'mac',category:'network',name:'MAC 地址转换',description:'格式转换 · 地址类型',href:'tools/mac/',icon:'convert',tags:['MAC','OUI','EUI-64'],keywords:'物理地址 网卡 单播 组播 广播'},
     {id:'network',category:'network',name:'网络测速与延迟',description:'上下行测速 · 服务访问延迟',href:'tools/network/',icon:'network',tags:['测速','延迟','网络'],keywords:'带宽 下载 上传 运营商 云服务 游戏 厂商 HTTPS WeGame Steam Epic 战网 EA Ubisoft Xbox'},
-    {id:'ai',category:'ai',name:'AI 助手',description:'对话 · 图片 · 文本附件',href:'tools/ai/',icon:'chat',tags:['AI','图片','文件'],keywords:'ChatGPT 豆包 助手 API 上传 对话'}
+    {id:'ai',category:'ai',name:'AI 助手',description:'对话 · 图片 · 文本附件',href:'tools/ai/',icon:'chat',tags:['AI','图片','文件'],keywords:'ChatGPT 豆包 助手 API 上传 对话'},
+    {id:'scan',category:'peripheral',name:'条码与二维码',description:'摄像头 · 图片 · 扫码枪',href:'tools/scan/',icon:'scan',tags:['QR','条形码','扫码枪'],keywords:'扫码 二维码 QR Code128 EAN UPC PDF417 DataMatrix 摄像头 图片 输入 扫描'},
+    {id:'devices',category:'peripheral',name:'外设检测',description:'键盘 · 鼠标 · 麦克风 · 摄像头',href:'tools/devices/',icon:'devices',tags:['键盘','鼠标','摄像头'],keywords:'外设 声道 手柄 游戏手柄 麦克风 音频 输入测试 USB'},
+    {id:'recorder',category:'peripheral',name:'屏幕录制',description:'录制预览 · 浏览器暂存 · 下载',href:'tools/recorder/',icon:'record',tags:['录屏','暂存','视频'],keywords:'屏幕录制 摄像头 视频 下载 IndexedDB'} ,
+    {id:'dns',category:'network',name:'DNS 查询',description:'多公共节点 · 记录解析对比',href:'tools/dns/',icon:'network',tags:['DNS','DoH','解析'],keywords:'阿里 DNSPod Google Cloudflare Quad9 域名 A AAAA MX TXT CNAME PTR'},
+    {id:'ip-location',category:'network',name:'IP 地理位置',description:'公网 IP · 运营商 · 近似位置',href:'tools/ip-location/',icon:'network',tags:['IP','运营商','位置'],keywords:'IP 归属 ASN IPv4 IPv6 城市 时区'},
+    {id:'switch-commands',category:'network',name:'交换机命令速查',description:'多厂商 CLI · 搜索与复制',href:'tools/switch-commands/',icon:'network',tags:['交换机','命令','网络运维'],keywords:'Cisco 华为 Huawei H3C 新华三 锐捷 Ruijie Juniper Aruba TP-Link Ubiquiti MikroTik VLAN Trunk PoE STP'},
+    {id:'text-diff',category:'text',name:'文本差异对比',description:'并排比较 · 导出 unified diff',href:'tools/text-diff/',icon:'convert',tags:['文本','代码','差异'],keywords:'diff 比较 代码 配置 文件 修改 对比 jsdiff'}
   ]
 };
 if (typeof module !== 'undefined' && module.exports) module.exports = ToolboxCatalog;

@@ -12,12 +12,13 @@
   const targets=presets.map(([name,group,url])=>({name,group,url,samples:[],status:'待检测',median:null}));
   let speedController=null,latencyController=null,speedRun=0,latencyRun=0,targetPage=0;
   const filtered=()=>targets.filter(target=>$('targetGroup').value==='all'||target.group===$('targetGroup').value);
-  function source(){const id=$('speedSource').value;$('downloadUrl').value=id==='npm'?'https://registry.npmmirror.com/typescript/-/typescript-5.7.3.tgz':id==='cloudflare'?'https://speed.cloudflare.com/__down?bytes=25000000':'';$('downloadUrl').readOnly=id!=='custom';$('uploadUrl').value=id==='cloudflare'?'https://speed.cloudflare.com/__up':'';$('uploadUrl').readOnly=id!=='custom';$('uploadField').hidden=id==='npm';}
+  function source(){const id=$('speedSource').value;if(id==='librespeed'){$('downloadUrl').value='LibreSpeed 自动选择测速节点';$('downloadUrl').readOnly=true;$('uploadUrl').value='LibreSpeed 自动测速';$('uploadUrl').readOnly=true;$('uploadField').hidden=false;return;}$('downloadUrl').value=id==='npm'?'https://registry.npmmirror.com/typescript/-/typescript-5.7.3.tgz':id==='cloudflare'?'https://speed.cloudflare.com/__down?bytes=25000000':'';$('downloadUrl').readOnly=id!=='custom';$('uploadUrl').value=id==='cloudflare'?'https://speed.cloudflare.com/__up':'';$('uploadUrl').readOnly=id!=='custom';$('uploadField').hidden=id==='npm';}
   function speedBusy(busy){for(const id of ['speedSource','downloadUrl','uploadUrl','speedSamples','startSpeed'])$(id).disabled=busy;$('stopSpeed').disabled=!busy;}
   function latencyBusy(busy){for(const id of ['targetGroup','probeSamples','customTarget','addTarget','startLatency'])$(id).disabled=busy;$('stopLatency').disabled=!busy;}
   function speedLine(text,error=false){const el=Ops.node('p','status',text);if(error)el.dataset.tone='error';$('speedLog').append(el);}
   $('speedSource').addEventListener('change',source);source();
   $('startSpeed').addEventListener('click',async()=>{
+    if($('speedSource').value==='librespeed'){window.LibrespeedTest?.start();return;}
     let download,upload;try{download=NetworkCore.urlOf($('downloadUrl').value).href;upload=$('uploadUrl').value.trim()?NetworkCore.urlOf($('uploadUrl').value).href:null;}catch(error){Ops.status($('speedStatus'),error.message,true);return;}
     const run=++speedRun,controller=new AbortController();speedController=controller;speedBusy(true);Ops.result();
     $('downloadMetric').textContent=$('uploadMetric').textContent='—';$('speedProgress').value=0;$('speedLog').replaceChildren();Ops.status($('speedStatus'),'正在下载…');Ops.status($('speedResultStatus'),'');
@@ -38,7 +39,7 @@
     }catch(error){if(run===speedRun){failed=true;const message=error.name==='AbortError'?'已停止，显示已完成的采样':`测速失败：${error.message}。可更换节点或使用支持跨域的自定义地址。`;Ops.status($('speedStatus'),message,error.name!=='AbortError');Ops.status($('speedResultStatus'),message,error.name!=='AbortError');speedLine(message,error.name!=='AbortError');}}
     finally{if(run===speedRun){speedBusy(false);speedController=null;if(!failed)$('speedProgress').value=100;}}
   });
-  $('stopSpeed').addEventListener('click',()=>speedController?.abort());
+  $('stopSpeed').addEventListener('click',()=>{$('speedSource').value==='librespeed'?window.LibrespeedTest?.stop():speedController?.abort();});
   function renderTargets(){
     const list=filtered(),size=Math.max(1,Math.floor(($('latencyTable').clientHeight-35)/46)),pages=Math.max(1,Math.ceil(list.length/size));targetPage=Math.max(0,Math.min(targetPage,pages-1));$('latencyRows').replaceChildren();
     for(const target of list.slice(targetPage*size,(targetPage+1)*size)){
@@ -74,4 +75,5 @@
   $('exportLatency').addEventListener('click',()=>Ops.save(Ops.csv([['目标','地址','HTTPS 中位耗时(ms)','已响应请求','已发起请求','状态'],...filtered().map(t=>[t.name,t.url,t.median===null?'':t.median.toFixed(2),t.samples.filter(s=>s.ok).length,t.samples.length,t.status])]),'https-latency.csv','text/csv;charset=utf-8'));
   document.querySelectorAll('[data-network-view]').forEach(button=>button.addEventListener('click',()=>{const view=button.dataset.networkView;document.querySelectorAll('[data-network-view]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('speedView').hidden=view!=='speed';$('latencyView').hidden=view!=='latency';Ops.show('input');renderTargets();}));
   renderTargets();window.addEventListener('pagehide',()=>{speedController?.abort();latencyController?.abort();});
+  window.NetworkSpeedUI={busy:speedBusy,line:speedLine,status:(message,error=false)=>Ops.status($('speedStatus'),message,error),result:(message,error=false)=>Ops.status($('speedResultStatus'),message,error),metric:(id,value)=>$(id).textContent=value,progress:value=>$('speedProgress').value=value};
 })();

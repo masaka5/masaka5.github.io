@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>文本差异对比 · 工具箱</title>
+  <link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/ops.css"><link rel="stylesheet" href="../../assets/studio.css"><link rel="stylesheet" href="diff.css">
+  <script defer src="../../assets/ops-ui.js"></script><script defer src="../../vendor/diff/diff.min.js"></script><script defer src="diff.js"></script>
+</head>
+<body><div class="studio-shell">
+  <header class="ops-header"><a class="back-link" href="../../">← 工具箱</a><h1>文本差异对比</h1><span class="pill" id="diffSummary">待比较</span></header>
+  <main class="studio-main">
+    <aside class="studio-controls diff-controls">
+      <h2>比较选项</h2>
+      <label class="field"><span>结果视图</span><select id="diffMode"><option value="side">并排</option><option value="unified">统一差异</option></select></label>
+      <label class="check"><input type="checkbox" id="ignoreWhitespace">忽略行首尾空白</label>
+      <div class="actions diff-actions"><button id="compareText" class="primary">比较</button><button id="swapText" class="secondary">交换</button></div>
+      <div class="actions diff-actions"><button id="sampleText" class="secondary">示例</button><button id="clearText" class="text-button">清空</button></div>
+      <button id="downloadPatch" class="text-button" disabled>下载 unified diff</button>
+      <p class="status" id="diffStatus" role="status">粘贴两段文本后比较。</p>
+      <p class="inline-note">文本仅在本机处理。引擎：jsdiff 9.0.0 · BSD-3-Clause。</p>
+    </aside>
+    <section class="studio-stage diff-stage">
+      <div class="diff-editors">
+        <label><span>原文</span><textarea id="oldText" spellcheck="false" placeholder="粘贴原始文本"></textarea></label>
+        <label><span>修改后</span><textarea id="newText" spellcheck="false" placeholder="粘贴修改后的文本"></textarea></label>
+      </div>
+      <section class="diff-result" aria-label="差异结果">
+        <div class="panel-head"><h2>差异结果</h2><span id="diffCounts" class="inline-note">—</span></div>
+        <div id="diffOutput" class="diff-output"><p class="empty">比较结果会显示在这里</p></div>
+      </section>
+    </section>
+  </main>
+  <footer class="studio-footer"><span>新增内容以绿色标记 · 删除内容以红色标记</span><span>支持复制、粘贴与 unified diff 导出</span></footer>
+</div></body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>交换机命令速查 · 工具箱</title>
+  <link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/ops.css"><link rel="stylesheet" href="../../assets/studio.css"><link rel="stylesheet" href="commands.css">
+  <script defer src="../../assets/ops-ui.js"></script><script defer src="commands-core.js"></script><script defer src="commands.js"></script>
+</head>
+<body><div class="studio-shell">
+  <header class="ops-header"><a class="back-link" href="../../">← 工具箱</a><h1>交换机命令速查</h1><span class="pill" id="commandCount">0 条</span></header>
+  <main class="studio-main">
+    <aside class="studio-controls">
+      <h2>筛选</h2>
+      <label class="field"><span>厂商与系统</span><select id="vendorFilter"><option value="all">全部厂商</option></select></label>
+      <label class="field"><span>命令分类</span><select id="categoryFilter"><option value="all">全部分类</option></select></label>
+      <p class="status" id="commandStatus" role="status">搜索命令或筛选厂商。</p>
+      <p class="inline-note">不同型号、软件版本和权限级别的命令可能不同。执行前请先在对应设备手册中核对。</p>
+      <p class="inline-note">示例只供查阅与复制，不会连接设备或执行配置。</p>
+    </aside>
+    <section class="studio-stage switch-stage">
+      <div class="switch-toolbar"><label class="switch-search"><span class="sr-only">搜索命令</span><input id="commandSearch" type="search" placeholder="搜索厂商、功能或命令" autocomplete="off"></label><button id="clearCommandSearch" class="text-button" type="button">清空</button></div>
+      <div id="commandResults" class="command-results" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="studio-footer"><span>本地检索 · 命令仅供参考</span><span>涵盖 Cisco、华为、H3C、锐捷、Juniper 等</span></footer>
+</div></body>
+</html>
