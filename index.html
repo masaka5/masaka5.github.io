@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7fa" />
+  <meta name="description" content="按分类查找硬件压测、NFC 读写与 UID 格式转换等浏览器工具。" />
+  <title>工具箱 · 工具目录</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/home.css" />
+  <script defer src="assets/catalog.js"></script>
+  <script defer src="assets/home.js"></script>
+</head>
+<body>
+  <div class="toolbox">
+    <aside class="sidebar">
+      <a class="brand" href="./" aria-label="工具箱首页"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>工具箱</span></a>
+      <div class="nav-region">
+        <nav class="category-nav" id="categoryNav" aria-label="工具分类"></nav>
+      </div>
+      <label class="category-picker"><span>分类</span><select id="categorySelect" aria-label="工具分类"></select></label>
+    </aside>
+    <main class="main">
+      <header class="page-header">
+        <div class="heading"><h1 id="toolsHeading">全部工具</h1><span id="resultCount" class="sr-only" aria-live="polite"></span><button id="resetFilters" type="button" hidden>清除筛选</button></div>
+        <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="toolSearch" type="search" placeholder="搜索工具" autocomplete="off" aria-label="搜索工具" /></label>
+      </header>
+      <section class="tools-region" aria-labelledby="toolsHeading">
+        <div class="tools-viewport" id="toolsViewport">
+          <div class="tool-grid" id="toolGrid"></div>
+          <div class="empty-state" id="emptyState" hidden><h3>未找到工具</h3><button id="resetSearch" type="button">显示全部</button></div>
+        </div>
+        <nav class="pagination" id="pagination" aria-label="工具分页"><div><button id="prevPage" type="button" aria-label="上一页">←</button><span id="pageStatus" role="status" aria-live="polite"></span><button id="nextPage" type="button" aria-label="下一页">→</button></div></nav>
+      </section>
+      <footer class="home-footer" hidden><div class="recent-tools"><span>最近使用</span><div id="recentTools"></div></div></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript">请启用 JavaScript，以查看工具目录。</p></noscript>
+</body>
+</html>
