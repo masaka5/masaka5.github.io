@@ -1,5 +1,5 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.WebVMCore=api;})(globalThis,()=>{
- const config=Object.freeze({store:'toolbox-v86-v1',sharedMount:'/mnt/共享',runtimeVersion:'c3945744',profileKey:'toolbox-v86-profiles-v1'});
+ const config=Object.freeze({store:'toolbox-v86-v1',sharedMount:'/mnt/共享',runtimeVersion:'c3945744',guestVersion:'c44bacb5e746e723',profileKey:'toolbox-v86-profiles-v1'});
  const builtin={schema:'v86-machine/1',id:'toolbox-linux-x64-v1',name:'工具箱 Linux',description:'Alpine x64 · PowerShell 7 · 中文终端',os:{family:'Linux',arch:'x86_64',ui:'text'},machine:{memory_mb:1024,vram_mb:8,acpi:false,net_device_type:'virtio',relay_url:'fetch',disable_audio:true,boot_order:0x123},media:{bzimage:{url:'images/vmlinuz.bin'},initrd_parts:[1,2,3].map(i=>({url:`images/toolbox-x64-pwsh.part${i}.bin`}))},cmdline:'console=ttyS0,115200 earlyprintk=serial,ttyS0,115200 rdinit=/init loglevel=3 random.trust_cpu=on acpi=off net.ifnames=0'};
  function relay(raw){const value=String(raw||'').trim();if(['','fetch','inbrowser'].includes(value))return value;const url=new URL(value);if(!['wss:','wisps:'].includes(url.protocol)||url.username||url.password||url.hash)throw Error('代理地址需使用 wss:// 或 wisps://');return url.href;}
  function mediaSource(raw,base){if(typeof raw==='string')raw={url:raw};if(!raw||typeof raw.url!=='string')throw Error('镜像缺少 URL');const url=new URL(raw.url,base);if(!['https:','http:'].includes(url.protocol)||url.username||url.password)throw Error('镜像需使用 HTTP 或 HTTPS 地址');if(url.protocol==='http:'&&new URL(base).protocol==='https:')throw Error('HTTPS 页面不能加载 HTTP 镜像');const result={url:url.href};if(raw.async)result.async=true;if(raw.size!==undefined){if(!Number.isSafeInteger(raw.size)||raw.size<=0)throw Error('镜像大小无效');result.size=raw.size;}return result;}
@@ -12,7 +12,7 @@
   if(raw.media?.initrd_parts){if(!Array.isArray(raw.media.initrd_parts)||raw.media.initrd_parts.length>10)throw Error('镜像分片无效');p.media.initrd_parts=raw.media.initrd_parts.map(x=>mediaSource(x,base));}
   return p;
  }
- function fingerprint(p){const normalized=JSON.stringify({machine:p.machine,media:p.media,localMedia:p.localMedia,cmdline:p.cmdline});let hash=2166136261;for(let i=0;i<normalized.length;i++)hash=Math.imul(hash^normalized.charCodeAt(i),16777619);return (hash>>>0).toString(16);}
+ function fingerprint(p){const normalized=JSON.stringify({machine:p.machine,media:p.media,localMedia:p.localMedia,cmdline:p.cmdline,guest:p.id===builtin.id?config.guestVersion:undefined});let hash=2166136261;for(let i=0;i<normalized.length;i++)hash=Math.imul(hash^normalized.charCodeAt(i),16777619);return (hash>>>0).toString(16);}
  function sendInput(text,read){for(const byte of new TextEncoder().encode(text))read(byte);}
  function shellQuote(text){return "'"+String(text).replaceAll("'","'\\''")+"'";}
  function fileName(raw){const name=String(raw);if(!name||name==='.'||name==='..'||/[\/\\\x00-\x1f\x7f]/.test(name)||new TextEncoder().encode(name).length>240)throw Error('文件名不能包含路径、控制字符或超过 240 字节');return name;}

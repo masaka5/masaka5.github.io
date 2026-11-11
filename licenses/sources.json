@@ -76,8 +76,8 @@
       "libunwind": "1.8.1-r0"
     },
     "kernel_sha256": "2743b9622b2e6a3b9dd09817baaf2c1f98dfc2e0fa5241a4285303f22d3433e5",
-    "initrd_sha256": "677440d72490231c671760ad0363a233c039779f4a0f783c42fbb850b360c8ea",
-    "initrd_bytes": 122802213,
+    "initrd_sha256": "c44bacb5e746e723dcd98dbfb76d8eb5485061e6a56cae34dfa807a7ff30a00a",
+    "initrd_bytes": 122801676,
     "parts": [
       "toolbox-x64-pwsh.part1.bin",
       "toolbox-x64-pwsh.part2.bin",
