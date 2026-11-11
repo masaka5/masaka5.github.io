@@ -1,0 +1,3 @@
+function h(r,f){const n=r.split(`
+`),i=f.split(`
+`),l=n.length,p=i.length,d=Array.from({length:l+1},()=>new Array(p+1).fill(0));for(let o=l-1;o>=0;o--)for(let s=p-1;s>=0;s--)d[o][s]=n[o]===i[s]?d[o+1][s+1]+1:Math.max(d[o+1][s],d[o][s+1]);const a=[];let e=0,t=0;for(;e<l&&t<p;)n[e]===i[t]?(a.push({op:"eq",text:n[e],aLine:e+1,bLine:t+1}),e++,t++):d[e+1][t]>=d[e][t+1]?(a.push({op:"del",text:n[e],aLine:e+1}),e++):(a.push({op:"add",text:i[t],bLine:t+1}),t++);for(;e<l;)a.push({op:"del",text:n[e],aLine:++e});for(;t<p;)a.push({op:"add",text:i[t],bLine:++t});return a}function u(r){let f=0,n=0,i=0;for(const l of r)l.op==="add"?f++:l.op==="del"?n++:i++;return{added:f,removed:n,unchanged:i}}export{u as a,h as d};

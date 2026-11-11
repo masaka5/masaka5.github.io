@@ -1,0 +1,4 @@
+import{r as i,j as m}from"./toolbox-V8Mb6zl3.js";import{T as n}from"./text-tool-BNJ1nLL1.js";import"./button-yaYS2cEr.js";import"./panel-BVEEuXxF.js";import"./textarea-DS_6qMYC.js";import"./copy-button-fBYmOqAm.js";import"./download-CsFYzBl3.js";import"./check-BojDDYCk.js";import"./createLucideIcon-CafGK0QX.js";import"./copy-CqpKjZ2k.js";import"./download-button-zTRTit45.js";import"./loader-circle-CLWSKXpK.js";import"./download-B6F43DuY.js";import"./error-banner-Bc4B1z3u.js";import"./upload-Bfq75gxE.js";import"./eraser-B_sdRlX8.js";function O(){const t=i.useCallback(o=>{if(!o.trim())return"";try{return JSON.stringify(JSON.parse(o))}catch(r){throw new Error(r instanceof Error?r.message:"Invalid JSON")}},[]);return m.jsx(n,{transform:t,inputLabel:"JSON",outputLabel:"缩小化",sample:`{
+  "hello": "world",
+  "nums": [1, 2, 3]
+}`,downloadName:"min.json",downloadMime:"application/json"})}export{O as default};

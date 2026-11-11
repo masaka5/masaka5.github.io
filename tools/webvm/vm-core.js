@@ -1,0 +1,24 @@
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.WebVMCore=api;})(globalThis,()=>{
+ const config=Object.freeze({store:'toolbox-v86-v1',sharedMount:'/mnt/共享',runtimeVersion:'c3945744',profileKey:'toolbox-v86-profiles-v1'});
+ const builtin={schema:'v86-machine/1',id:'toolbox-linux-x64-v1',name:'工具箱 Linux',description:'Alpine x64 · PowerShell 7 · 中文终端',os:{family:'Linux',arch:'x86_64',ui:'text'},machine:{memory_mb:1024,vram_mb:8,acpi:false,net_device_type:'virtio',relay_url:'',disable_audio:true,boot_order:0x123},media:{bzimage:{url:'images/vmlinuz.bin'},initrd_parts:[1,2,3].map(i=>({url:`images/toolbox-x64-pwsh.part${i}.bin`}))},cmdline:'console=ttyS0,115200 earlyprintk=serial,ttyS0,115200 rdinit=/init loglevel=3 random.trust_cpu=on acpi=off net.ifnames=0'};
+ function relay(raw){const value=String(raw||'').trim();if(['','fetch','inbrowser'].includes(value))return value;const url=new URL(value);if(!['wss:','wisps:'].includes(url.protocol)||url.username||url.password||url.hash)throw Error('代理地址需使用 wss:// 或 wisps://');return url.href;}
+ function mediaSource(raw,base){if(typeof raw==='string')raw={url:raw};if(!raw||typeof raw.url!=='string')throw Error('镜像缺少 URL');const url=new URL(raw.url,base);if(!['https:','http:'].includes(url.protocol)||url.username||url.password)throw Error('镜像需使用 HTTP 或 HTTPS 地址');if(url.protocol==='http:'&&new URL(base).protocol==='https:')throw Error('HTTPS 页面不能加载 HTTP 镜像');const result={url:url.href};if(raw.async)result.async=true;if(raw.size!==undefined){if(!Number.isSafeInteger(raw.size)||raw.size<=0)throw Error('镜像大小无效');result.size=raw.size;}return result;}
+ function profile(raw,base='https://toolbox.invalid/tools/webvm/'){
+  if(!raw||typeof raw!=='object'||Array.isArray(raw)||raw.schema&&raw.schema!=='v86-machine/1')throw Error('不是有效的 v86 配置');
+  const name=String(raw.name||'自定义虚拟机').trim().slice(0,80),m=raw.machine||{};
+  const integer=(v,d,min,max)=>{v=v??d;if(!Number.isInteger(v)||v<min||v>max)throw Error(`数值需在 ${min}–${max} 之间`);return v;};
+  const p={schema:'v86-machine/1',id:String(raw.id||'vm-'+Date.now().toString(36)).replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,100),name,description:String(raw.description||'').slice(0,200),os:{family:String(raw.os?.family||'自定义').slice(0,40),arch:String(raw.os?.arch||'x86_64').slice(0,20),ui:raw.os?.ui==='graphical'?'graphical':'text'},machine:{memory_mb:integer(m.memory_mb,512,64,3072),vram_mb:integer(m.vram_mb,8,1,128),acpi:m.acpi!==false,disable_audio:m.disable_audio!==false,net_device_type:m.net_device_type==='virtio'?'virtio':'ne2k',relay_url:relay(m.relay_url),boot_order:integer(m.boot_order,0x123,0,0xfff)},media:{},cmdline:String(raw.cmdline||'').slice(0,8192)};
+  for(const key of ['cdrom','hda','hdb','fda','fdb','bzimage','initrd'])if(raw.media?.[key])p.media[key]=mediaSource(raw.media[key],base);
+  if(raw.media?.initrd_parts){if(!Array.isArray(raw.media.initrd_parts)||raw.media.initrd_parts.length>10)throw Error('镜像分片无效');p.media.initrd_parts=raw.media.initrd_parts.map(x=>mediaSource(x,base));}
+  return p;
+ }
+ function fingerprint(p){const normalized=JSON.stringify({machine:p.machine,media:p.media,localMedia:p.localMedia,cmdline:p.cmdline});let hash=2166136261;for(let i=0;i<normalized.length;i++)hash=Math.imul(hash^normalized.charCodeAt(i),16777619);return (hash>>>0).toString(16);}
+ function sendInput(text,read){for(const byte of new TextEncoder().encode(text))read(byte);}
+ function shellQuote(text){return "'"+String(text).replaceAll("'","'\\''")+"'";}
+ function fileName(raw){const name=String(raw);if(!name||name==='.'||name==='..'||/[\/\\\x00-\x1f\x7f]/.test(name)||new TextEncoder().encode(name).length>240)throw Error('文件名不能包含路径、控制字符或超过 240 字节');return name;}
+ function sharedPath(raw){let path=String(raw).trim();if(path.startsWith(config.sharedMount+'/'))path=path.slice(config.sharedMount.length+1);if(!path||path.startsWith('/')||path.includes('\\'))throw Error('请输入共享目录中的相对文件路径');for(const part of path.split('/'))fileName(part);return path;}
+ function readableBytes(bytes){if(!Number.isFinite(bytes))return '—';const units=['B','KB','MB','GB'];let i=0;while(bytes>=1024&&i<3){bytes/=1024;i++;}return bytes.toFixed(i?1:0)+' '+units[i];}
+ function safeLoginUrl(raw){const url=new URL(raw);if(url.protocol!=='https:'||url.username||url.password)throw Error('联网服务返回了无效的登录地址');return url.href;}
+ function endpoint(raw){const url=new URL(raw);if(url.protocol!=='https:'&&!(url.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(url.hostname)))throw Error('接口需使用 HTTPS，或本机调试地址');if(url.username||url.password||url.hash)throw Error('接口地址不能包含账户信息或片段');if(/(^|\.)(chatgpt\.com|doubao\.com)$/.test(url.hostname))throw Error('请填写模型 API 地址，网页版不能用作接口');return url.href;}
+ return {config,builtin,profile,relay,fingerprint,sendInput,shellQuote,fileName,sharedPath,readableBytes,endpoint};
+});

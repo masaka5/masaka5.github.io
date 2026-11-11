@@ -1,0 +1,158 @@
+[
+  {
+    "project": "browsersnip-upstream",
+    "url": "https://github.com/ningtoba/BrowserSnip",
+    "commit": "b313b890a3aeec0febcb574e2341ee19e5e3e9d3",
+    "license": "MIT (declared in README)",
+    "modified": true
+  },
+  {
+    "project": "openutility-upstream",
+    "url": "https://github.com/saikiranreddyuppula/open-utility-tools",
+    "commit": "e65e47c36c77335a293dca8be2d9ad1031a2618d",
+    "license": "MIT",
+    "modified": true
+  },
+  {
+    "project": "localconvert-upstream",
+    "url": "https://github.com/Sp3llC0d3/localconvert",
+    "commit": "d3fd6ea358e14f6d31e144a290e13eb592fb487c",
+    "license": "AGPL-3.0",
+    "modified": true
+  },
+  {
+    "project": "v86-64-upstream",
+    "url": "https://github.com/portlandhodl/v86_64",
+    "commit": "c394574477b57eadfc859f593b4aecb08fa37cb6",
+    "license": "BSD-2-Clause",
+    "modified": true
+  },
+  {
+    "project": "toolbox-linux-image",
+    "alpine": "3.22.8",
+    "powershell": "7.4.13",
+    "packages": {
+      "bash": "5.2.37-r0",
+      "busybox-binsh": "1.37.0-r20",
+      "busybox": "1.37.0-r20",
+      "musl": "1.2.5-r13",
+      "readline": "8.2.13-r1",
+      "libncursesw": "6.5_p20250503-r0",
+      "ncurses-terminfo-base": "6.5_p20250503-r0",
+      "curl": "8.14.1-r4",
+      "libcurl": "8.14.1-r4",
+      "ca-certificates-bundle": "20261020-r0",
+      "brotli-libs": "1.1.1-r0",
+      "c-ares": "1.34.9-r0",
+      "libcrypto3": "3.5.9-r0",
+      "libidn2": "2.3.7-r0",
+      "libunistring": "1.3-r0",
+      "nghttp2-libs": "1.69.0-r0",
+      "libpsl": "0.21.5-r3",
+      "libssl3": "3.5.9-r0",
+      "zlib": "1.4-r0",
+      "zstd-libs": "1.5.7-r0",
+      "libgcc": "14.2.0-r6",
+      "libstdc++": "14.2.0-r6",
+      "icu-libs": "76.1-r1",
+      "icu-data-en": "76.1-r1",
+      "icu-data-full": "76.1-r1",
+      "tzdata": "2026f-r0",
+      "iproute2": "6.15.0-r0",
+      "iproute2-minimal": "6.15.0-r0",
+      "libcap2": "2.78-r0",
+      "libelf": "0.193-r0",
+      "libmnl": "1.0.5-r2",
+      "iproute2-tc": "6.15.0-r0",
+      "libxtables": "1.8.11-r1",
+      "iproute2-ss": "6.15.0-r0",
+      "procps-ng": "4.0.4-r3",
+      "libintl": "0.24.1-r0",
+      "libproc2": "4.0.4-r3",
+      "utmps-libs": "0.1.3.1-r0",
+      "skalibs-libs": "2.14.4.0-r0",
+      "kmod": "34.2-r0",
+      "xz-libs": "5.8.4-r0",
+      "libunwind": "1.8.1-r0"
+    },
+    "kernel_sha256": "2743b9622b2e6a3b9dd09817baaf2c1f98dfc2e0fa5241a4285303f22d3433e5",
+    "initrd_sha256": "677440d72490231c671760ad0363a233c039779f4a0f783c42fbb850b360c8ea",
+    "initrd_bytes": 122802213,
+    "parts": [
+      "toolbox-x64-pwsh.part1.bin",
+      "toolbox-x64-pwsh.part2.bin",
+      "toolbox-x64-pwsh.part3.bin"
+    ],
+    "powershellSource": "https://github.com/PowerShell/PowerShell/tree/v7.4.13",
+    "kernelVersion": "6.6.142",
+    "kernelSource": "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.142.tar.xz",
+    "alpineSources": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/3.19-stable/main/linux-lts",
+    "alpinePackageSources": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/3.22-stable"
+  },
+  {
+    "project": "vendor/v86",
+    "files": [
+      {
+        "file": "BIOS-LICENSE.txt",
+        "sha256": "319917f5ccd09878db6f67c9a77dee846055644ca49eb535628b9e020a87261e"
+      },
+      {
+        "file": "libv86.js",
+        "sha256": "135db10e8b0e045747d8962664f0dfd9260f1f7ee6483b8396cdde29bb2a9be7"
+      },
+      {
+        "file": "LICENSE.txt",
+        "sha256": "ab0ae2b7c4e571e1fc5ff8df5579032ee943c13743cec34f4719286cbe352a53"
+      },
+      {
+        "file": "MIT-LICENSE.txt",
+        "sha256": "5015819a1c2d3ce62af5397ef7d044c16dcfe3cbadcb647e88c18c2983403e19"
+      },
+      {
+        "file": "seabios.bin",
+        "sha256": "73e3f359102e3a9982c35fce98eb7cd08f18303ac7f1ba6ebfbe6cdc1c244d98"
+      },
+      {
+        "file": "v86.wasm",
+        "sha256": "fc9e655c68eaf8aed50ccf987897bfb211ae793832b498a6d9c6a4733618ad2b"
+      },
+      {
+        "file": "vgabios.bin",
+        "sha256": "a4bc0d80cc3ca028c73dafa8fee396b8d054ce87ebd8abfbd31b06b437607880"
+      }
+    ]
+  },
+  {
+    "project": "vendor/xterm",
+    "files": [
+      {
+        "file": "addon-fit.js",
+        "sha256": "bdaefa370b1bfc42ee88d46fe6072400902a4d4b2d45cd93438dda9b23c97089"
+      },
+      {
+        "file": "addon-unicode11.js",
+        "sha256": "b0c3be540a9984713aea996966c24ed1a639d11f60d44986b22661e3a8a148d0"
+      },
+      {
+        "file": "FIT-LICENSE.txt",
+        "sha256": "e256f01188af527e4d06d21d06fbf785ae9c50d4b328bf03cbe0ba7f0aa4228f"
+      },
+      {
+        "file": "LICENSE.txt",
+        "sha256": "b569f629d00f2626a8100df2a1798210535621e42164dfd426a6fe5aac7b0ccd"
+      },
+      {
+        "file": "UNICODE-LICENSE.txt",
+        "sha256": "e256f01188af527e4d06d21d06fbf785ae9c50d4b328bf03cbe0ba7f0aa4228f"
+      },
+      {
+        "file": "xterm.css",
+        "sha256": "ba8e6985669488981ccf40c0cefe3aba80722cb6c92de7ad628b0bd717faf2b6"
+      },
+      {
+        "file": "xterm.js",
+        "sha256": "1f991ac3b4b283ebf96e60ae23a00a52765dd3a2e46fa6fdda9f1aab032f7495"
+      }
+    ]
+  }
+]

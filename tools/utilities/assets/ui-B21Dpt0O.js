@@ -1,0 +1,15 @@
+import{r as p,j as a}from"./toolbox-V8Mb6zl3.js";import{T as g}from"./text-tool-BNJ1nLL1.js";import{F as l}from"./panel-BVEEuXxF.js";import{S as h}from"./switch-Cd7u-X1w.js";import{S as b}from"./slider-CJpjz3zP.js";import"./button-yaYS2cEr.js";import"./textarea-DS_6qMYC.js";import"./copy-button-fBYmOqAm.js";import"./download-CsFYzBl3.js";import"./check-BojDDYCk.js";import"./createLucideIcon-CafGK0QX.js";import"./copy-CqpKjZ2k.js";import"./download-button-zTRTit45.js";import"./loader-circle-CLWSKXpK.js";import"./download-B6F43DuY.js";import"./error-banner-Bc4B1z3u.js";import"./upload-Bfq75gxE.js";import"./eraser-B_sdRlX8.js";import"./index-B5fXPDQ_.js";import"./index-D17hSi50.js";import"./index-DWeD1Tma.js";const S=`{
+  "resource": {
+    "aws_instance": {
+      "web": {
+        "ami": "ami-12345",
+        "instance_count": 2,
+        "monitoring": true,
+        "tags": { "Name": "web", "Env": "prod" }
+      }
+    }
+  },
+  "ports": [80, 443]
+}`;function f(t){return typeof t=="object"&&t!==null&&!Array.isArray(t)}function j(t){return t.length>0&&t.every(r=>f(r))}function x(t,r){return r.quoteKeys?JSON.stringify(t):/^[A-Za-z_][A-Za-z0-9_-]*$/.test(t)?t:JSON.stringify(t)}function $(t){return t===null?"null":typeof t=="boolean"?t?"true":"false":typeof t=="number"?Number.isFinite(t)?String(t):`"${String(t)}"`:`"${t.replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\$\{/g,"$${").replace(/%\{/g,"%%{")}"`}function O(t,r){return" ".repeat(t*r.indentWidth)}function m(t){if(t===null||typeof t=="string"||typeof t=="number"||typeof t=="boolean")return $(t);if(Array.isArray(t))return`[${t.map(e=>m(e)).join(", ")}]`;const r=[];for(const e of Object.keys(t)){const n=t[e];n!==void 0&&r.push(`${e} = ${m(n)}`)}return`{ ${r.join(", ")} }`}function d(t,r,e,n){for(const c of Object.keys(t)){const o=t[c];if(o===void 0)continue;const s=O(r,n),i=x(c,n);if(f(o)){n.blocks?(e.push(`${s}${i} {`),d(o,r+1,e,n),e.push(`${s}}`)):e.push(`${s}${i} = ${m(o)}`);continue}if(Array.isArray(o)){if(n.blocks&&j(o))for(const u of o)f(u)&&(e.push(`${s}${i} {`),d(u,r+1,e,n),e.push(`${s}}`));else e.push(`${s}${i} = ${m(o)}`);continue}e.push(`${s}${i} = ${$(o)}`)}}function k(t,r){if(!f(t))throw new Error("顶级JSON必须是要转换为HCL的对象。");const e=[];return d(t,0,e,r),e.join(`
+`)+(e.length?`
+`:"")}function R(){const[t,r]=p.useState(!0),[e,n]=p.useState(2),[c,o]=p.useState(!1),s=p.useCallback(i=>{if(!i.trim())return"";let u;try{u=JSON.parse(i)}catch(y){throw new Error(`Invalid JSON: ${y.message}`)}return k(u,{blocks:t,indentWidth:e,quoteKeys:c})},[t,e,c]);return a.jsx(g,{transform:s,deps:[t,e,c],inputLabel:"JSON",outputLabel:"HCL",inputPlaceholder:"粘贴 JSON 对象...",sample:S,downloadName:"config.tf",downloadMime:"text/plain",options:a.jsxs(a.Fragment,{children:[a.jsx(l,{label:"作为块的嵌套对象",children:a.jsx(h,{checked:t,onCheckedChange:r})}),a.jsx(l,{label:"引用所有键",children:a.jsx(h,{checked:c,onCheckedChange:o})}),a.jsx(l,{label:`Indent: ${e}`,className:"min-w-[180px]",children:a.jsx(b,{value:[e],min:1,max:8,step:1,onValueChange:i=>n(i[0]??2)})})]})})}export{R as default};
