@@ -80,7 +80,7 @@ export class QemuEngine{
   await this.host.start({profile:this.profile,kernel:this.kernel,image:this.image,rom:this.rom,wasm:this.wasm,snapshot:snapshot?new Uint8Array(snapshot):null,shared,onEvent:(name,event)=>this.event(name,event)});
   abort(this.signal);await this.sync_shared();
   if(!this.screen){
-   const canvas=this.container.querySelector('canvas')||document.createElement('canvas');this.container.replaceChildren(canvas);canvas.hidden=false;
+   const canvas=this.container.querySelector('canvas')||document.createElement('canvas');this.container.replaceChildren(canvas);canvas.hidden=false;canvas.style.display='block';
    this.screen=new QemuTextScreen({canvas,viewport:this.container.parentElement,readScreen:async()=>{try{return this.host.read('.toolbox-screen');}catch{return null;}},sendKeys:keys=>this.host.keys(keys),sendMouse:event=>this.host.mouse?.(event),onSize:(width,height)=>this.emit('screen-set-size',[width,height,0]),onError:error=>this.emit('screen-error',error)});
   }
  }
