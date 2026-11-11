@@ -1,0 +1,18 @@
+QEMU Wasm third-party software
+
+QEMU 8.2.0 + ktock WebAssembly patches: GPL version 2 and component-specific
+licenses. Copyright QEMU contributors; see full source headers and COPYING.
+Local modifications: 2026-11-11, shared-memory import size, unsigned pointers,
+thread lifecycle and browser fetch adapter. No warranty is provided.
+
+SeaBIOS/SeaVGABIOS, iPXE, QEMU option ROMs, EDK2 packaging utility, GLib,
+libffi, zlib, pixman, PCRE2, gvdb, Emscripten runtime, browser_wasi_shim,
+xterm-pty and container2wasm retain their respective copyright/license terms.
+
+Full preserved license texts, source archives, exact SHA256 manifests, local
+patches and build instructions are available at ../../licenses/qemu/index.html
+and ../../licenses/qemu/README.md on this same distribution.
+
+The original prebuilt QEMU/proxy source-build correspondence is unverified.
+See README for the explicit provenance limits; reproducible build or complete
+corresponding source compliance is not claimed.

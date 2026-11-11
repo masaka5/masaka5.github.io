@@ -1,0 +1,10 @@
+{
+  "name": "Ubuntu Server 24.04 LTS Minimal",
+  "source": "https://cloud-images.ubuntu.com/minimal/releases/noble/release/ubuntu-24.04-minimal-cloudimg-amd64-root.tar.xz",
+  "source_sha256": "10c5f5cdef565404592ff17ba836cfc1b12f45f736db17fe7781cf32b1760dca",
+  "initrd_sha256": "4b4f872edb3fecf30cceeeeee382f662f53d41650b92b582c515316710b3a582",
+  "initrd_bytes": 168971333,
+  "expanded_bytes": 407730232,
+  "kernel": "Alpine Linux 6.6.142 virt, GPL-2.0-only",
+  "compression": "gzip; browser-side decompression"
+}

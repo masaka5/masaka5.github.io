@@ -1,0 +1,210 @@
+[
+  {
+    "file": "browser-wasi-shim-source.tgz",
+    "url": "https://registry.npmjs.org/@bjorn3/browser_wasi_shim/-/browser_wasi_shim-0.2.21.tgz",
+    "bytes": 33542,
+    "sha256": "d8ab2d3fa081161be724aa86ace84f9294e439dba25c0ce6d15f505d0d2f5fe8",
+    "licensePaths": [
+      "package/LICENSE-APACHE",
+      "package/LICENSE-MIT"
+    ]
+  },
+  {
+    "file": "container2wasm-source.tar.gz",
+    "url": "https://codeload.github.com/ktock/container2wasm/tar.gz/da372f28342f73be1857e1ab5f67eae56280b021",
+    "bytes": 762639,
+    "sha256": "71604a52207a75f63d8521aa9f4aea207ab9af36676868466f04a8c3137609ea",
+    "licensePaths": [
+      "container2wasm-da372f28342f73be1857e1ab5f67eae56280b021/LICENSE"
+    ]
+  },
+  {
+    "file": "dtc-source.tar.gz",
+    "url": "https://codeload.github.com/qemu/dtc/tar.gz/b6910bec11614980a21e46fbccc35934b671bd81",
+    "bytes": 205556,
+    "sha256": "e115f987eec23a1ba25150a46ced1675de3716072d3b4905afb3a9cda0f007c7",
+    "licensePaths": [
+      "dtc-b6910bec11614980a21e46fbccc35934b671bd81/README.license"
+    ]
+  },
+  {
+    "file": "edk2-source.tar.gz",
+    "url": "https://codeload.github.com/tianocore/edk2/tar.gz/819cfc6b42a68790a23509e4fcc58ceb70e1965e",
+    "bytes": 16820435,
+    "sha256": "dd122ae01508349c35580411cd16b0f5d6cb8adcb83eb6f62bc64e2f015e089d",
+    "licensePaths": [
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/.pytool/Plugin/LicenseCheck/LicenseCheck.py",
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/.pytool/Plugin/LicenseCheck/LicenseCheck_plug_in.yaml",
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/License-History.txt",
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/License.txt",
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/OvmfPkg/Bhyve/License.txt",
+      "edk2-819cfc6b42a68790a23509e4fcc58ceb70e1965e/OvmfPkg/License.txt"
+    ]
+  },
+  {
+    "file": "emscripten-source.tar.gz",
+    "url": "https://codeload.github.com/emscripten-core/emscripten/tar.gz/3.1.50",
+    "bytes": 29204845,
+    "sha256": "6cebaac67c957441152c3075a901c91c41460c2d2df3d4ba45e6309fbc3b1e18",
+    "licensePaths": [
+      "emscripten-3.1.50/LICENSE",
+      "emscripten-3.1.50/site/source/docs/introducing_emscripten/emscripten_license.rst",
+      "emscripten-3.1.50/system/include/SDL/COPYING",
+      "emscripten-3.1.50/system/include/SDL/SDL_copying.h",
+      "emscripten-3.1.50/system/include/fakesdl/SDL_copying.h",
+      "emscripten-3.1.50/system/lib/compiler-rt/LICENSE.TXT",
+      "emscripten-3.1.50/system/lib/libc/musl/COPYRIGHT",
+      "emscripten-3.1.50/system/lib/libcxx/LICENSE.TXT",
+      "emscripten-3.1.50/system/lib/libcxxabi/LICENSE.TXT",
+      "emscripten-3.1.50/system/lib/libunwind/LICENSE.TXT",
+      "emscripten-3.1.50/system/lib/mimalloc/LICENSE",
+      "emscripten-3.1.50/test/freetype/LiberationSansBoldLICENSE.txt",
+      "emscripten-3.1.50/test/sounds/LICENSE.txt",
+      "emscripten-3.1.50/test/third_party/box2d/License.txt",
+      "emscripten-3.1.50/test/third_party/box2d/freeglut/COPYING",
+      "emscripten-3.1.50/test/third_party/bullet/BulletLicense.txt",
+      "emscripten-3.1.50/test/third_party/bullet/COPYING",
+      "emscripten-3.1.50/test/third_party/bullet/LICENSE",
+      "emscripten-3.1.50/test/third_party/coremark/LICENSE.md",
+      "emscripten-3.1.50/test/third_party/enet/LICENSE",
+      "emscripten-3.1.50/test/third_party/enet/docs/license.dox",
+      "emscripten-3.1.50/test/third_party/freealut/COPYING",
+      "emscripten-3.1.50/test/third_party/freetype/docs/LICENSE.TXT",
+      "emscripten-3.1.50/test/third_party/notofont/LICENSE_OFL.txt",
+      "emscripten-3.1.50/test/third_party/openjpeg/LICENSE",
+      "emscripten-3.1.50/test/third_party/poppler/COPYING",
+      "emscripten-3.1.50/test/third_party/poppler/cmake/modules/COPYING-CMAKE-SCRIPTS",
+      "emscripten-3.1.50/third_party/closure-compiler/node-externs/LICENSE",
+      "emscripten-3.1.50/third_party/leb128/LICENSE",
+      "emscripten-3.1.50/third_party/terser/LICENSE",
+      "emscripten-3.1.50/tools/maint/add_license.py"
+    ]
+  },
+  {
+    "file": "glib-source.tar.xz",
+    "url": "https://download.gnome.org/sources/glib/2.75/glib-2.75.0.tar.xz",
+    "bytes": 5218704,
+    "sha256": "6dde8e55cc4a2c83d96797120b08bcffb5f645b2e212164ae22d63c40e0e6360",
+    "licensePaths": [
+      "glib-2.75.0/LICENSES/LicenseRef-old-glib-tests.txt",
+      "glib-2.75.0/docs/reference/COPYING",
+      "glib-2.75.0/subprojects/gvdb/COPYING"
+    ]
+  },
+  {
+    "file": "gvdb-source.tar.gz",
+    "url": "https://codeload.github.com/GNOME/gvdb/tar.gz/0854af0fdb6d527a8d1999835ac2c5059976c210",
+    "bytes": 20837,
+    "sha256": "08352e54e8216d9001820c627c62858585465b51dc557cc22f0f4770ed182ebd",
+    "licensePaths": [
+      "gvdb-0854af0fdb6d527a8d1999835ac2c5059976c210/COPYING"
+    ]
+  },
+  {
+    "file": "ipxe-source.tar.gz",
+    "url": "https://codeload.github.com/ipxe/ipxe/tar.gz/4bd064de239dab2426b31c9789a1f4d78087dc63",
+    "bytes": 3894850,
+    "sha256": "4850691d6f196eaf4d6210f2de01383251b3ea1b928141da9ce28c0b06a90938",
+    "licensePaths": [
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/COPYING",
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/COPYING.GPLv2",
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/COPYING.UBDL",
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/src/include/ipxe/efi/LICENCE",
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/src/util/licence.pl",
+      "ipxe-4bd064de239dab2426b31c9789a1f4d78087dc63/src/util/relicense.pl"
+    ]
+  },
+  {
+    "file": "keycodemapdb-source.tar.gz",
+    "url": "https://codeload.github.com/qemu/keycodemapdb/tar.gz/f5772a62ec52591ff6870b7e8ef32482371f22c6",
+    "bytes": 29580,
+    "sha256": "d014b53382dbb17b8196ad12f50de7f20d0ef1b9f7d54b0be51a6cbb14209195",
+    "licensePaths": [
+      "keycodemapdb-f5772a62ec52591ff6870b7e8ef32482371f22c6/LICENSE.BSD",
+      "keycodemapdb-f5772a62ec52591ff6870b7e8ef32482371f22c6/LICENSE.GPL2"
+    ]
+  },
+  {
+    "file": "libffi-source.tar.gz",
+    "url": "https://codeload.github.com/libffi/libffi/tar.gz/adbcf2b247696dde2667ab552cb93e0c79455c84",
+    "bytes": 595605,
+    "sha256": "1f5e7a1231b6cb9f747189c48b15bbf17afdda6e2f9684b386fd19e9bbe78649",
+    "licensePaths": [
+      "libffi-adbcf2b247696dde2667ab552cb93e0c79455c84/LICENSE",
+      "libffi-adbcf2b247696dde2667ab552cb93e0c79455c84/LICENSE-BUILDTOOLS"
+    ]
+  },
+  {
+    "file": "pcre2-source.tar.bz2",
+    "url": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.bz2",
+    "bytes": 1765440,
+    "sha256": "14e4b83c4783933dc17e964318e6324f7cae1bc75d8f3c79bc6969f00c159d68",
+    "licensePaths": [
+      "pcre2-10.40/LICENCE",
+      "pcre2-10.40/cmake/COPYING-CMAKE-SCRIPTS",
+      "pcre2-10.40/COPYING"
+    ]
+  },
+  {
+    "file": "pixman-source.tar.gz",
+    "url": "https://xorg.freedesktop.org/archive/individual/lib/pixman-0.42.2.tar.gz",
+    "bytes": 959669,
+    "sha256": "ea1480efada2fd948bc75366f7c349e1c96d3297d09a3fe62626e38e234a625e",
+    "licensePaths": [
+      "pixman-0.42.2/COPYING"
+    ]
+  },
+  {
+    "file": "qemu-wasm-source.tar.gz",
+    "url": "https://codeload.github.com/ktock/qemu-wasm/tar.gz/0ef7b4e2814b231705d8371dd7997f5b72e70baf",
+    "bytes": 39081882,
+    "sha256": "e78094503df31cd373f5609247c1a0c9bf771b75f68398c679e361bd3b4808c2",
+    "licensePaths": [
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/COPYING",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/COPYING.LIB",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/LICENSE",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/docs/about/license.rst",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/linux-headers/COPYING",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/pc-bios/edk2-licenses.txt",
+      "qemu-wasm-0ef7b4e2814b231705d8371dd7997f5b72e70baf/tests/uefi-test-tools/LICENSE"
+    ]
+  },
+  {
+    "file": "seabios-source.tar.gz",
+    "url": "https://codeload.github.com/coreboot/seabios/tar.gz/a6ed6b701f0a57db0569ab98b0661c12a6ec3ff8",
+    "bytes": 637031,
+    "sha256": "bcd1870471d10c3fdd8ce7875545a1bad9c87f1ce69f283a15a7e803a414d9c2",
+    "licensePaths": [
+      "seabios-a6ed6b701f0a57db0569ab98b0661c12a6ec3ff8/COPYING",
+      "seabios-a6ed6b701f0a57db0569ab98b0661c12a6ec3ff8/COPYING.LESSER"
+    ]
+  },
+  {
+    "file": "xterm-pty-source.tgz",
+    "url": "https://registry.npmjs.org/xterm-pty/-/xterm-pty-0.10.1.tgz",
+    "bytes": 22306,
+    "sha256": "ca1c31fd4c9ab1506c0e6619ee358d4260775b7045f10a5631b36f0ba9a8434a",
+    "licensePaths": [
+      "package/LICENSE.txt"
+    ]
+  },
+  {
+    "file": "xterm-pty-typescript-source.tar.gz",
+    "url": "https://codeload.github.com/mame/xterm-pty/tar.gz/v0.10.1",
+    "bytes": 7168076,
+    "sha256": "6442cdeaa3071f3cc20ed1f1c66618bf4850896bcfcca91d47c016fb8244379f",
+    "licensePaths": [
+      "xterm-pty-0.10.1/LICENSE.txt"
+    ]
+  },
+  {
+    "file": "zlib-source.tar.gz",
+    "url": "https://codeload.github.com/madler/zlib/tar.gz/v1.3.1",
+    "bytes": 1572744,
+    "sha256": "17e88863f3600672ab49182f217281b6fc4d3c762bde361935e436a95214d05c",
+    "licensePaths": [
+      "zlib-1.3.1/LICENSE",
+      "zlib-1.3.1/contrib/dotzlib/LICENSE_1_0.txt"
+    ]
+  }
+]

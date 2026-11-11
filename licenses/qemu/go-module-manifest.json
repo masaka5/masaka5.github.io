@@ -1,0 +1,146 @@
+[
+  {
+    "module": "github.com/containers/gvisor-tap-vsock",
+    "version": "v0.7.3",
+    "url": "https://proxy.golang.org/github.com/containers/gvisor-tap-vsock/@v/v0.7.3.zip",
+    "file": "go-modules/github.com_containers_gvisor-tap-vsock-v0.7.3.zip",
+    "bytes": 129347,
+    "sha256": "02f2a0b179dbb1fe0f9c7914242ef5e60bed965d3c9bc81cdcda8f404c2038b2"
+  },
+  {
+    "module": "github.com/Microsoft/go-winio",
+    "version": "v0.6.1",
+    "url": "https://proxy.golang.org/github.com/!microsoft/go-winio/@v/v0.6.1.zip",
+    "file": "go-modules/github.com_Microsoft_go-winio-v0.6.1.zip",
+    "bytes": 149727,
+    "sha256": "fdfec88b9eb61895ab39ed3a6181d99d78366638f86a609170d76417ba018f53"
+  },
+  {
+    "module": "github.com/apparentlymart/go-cidr",
+    "version": "v1.1.0",
+    "url": "https://proxy.golang.org/github.com/apparentlymart/go-cidr/@v/v1.1.0.zip",
+    "file": "go-modules/github.com_apparentlymart_go-cidr-v1.1.0.zip",
+    "bytes": 7362,
+    "sha256": "84da336ffb78c12924aaae117f3d307078b0d8352886fd99d1077e2c1860b046"
+  },
+  {
+    "module": "github.com/google/btree",
+    "version": "v1.1.2",
+    "url": "https://proxy.golang.org/github.com/google/btree/@v/v1.1.2.zip",
+    "file": "go-modules/github.com_google_btree-v1.1.2.zip",
+    "bytes": 31293,
+    "sha256": "faee8550c5fffb4ae1dadde5ccaccb13298726f9fad226bb4eed0c03c90a481d"
+  },
+  {
+    "module": "github.com/google/gopacket",
+    "version": "v1.1.19",
+    "url": "https://proxy.golang.org/github.com/google/gopacket/@v/v1.1.19.zip",
+    "file": "go-modules/github.com_google_gopacket-v1.1.19.zip",
+    "bytes": 1104735,
+    "sha256": "fc8cbe2239683199e677cb39f9303ae8d4a365f3c8cd8a2dcfa1f14c41bcff88"
+  },
+  {
+    "module": "github.com/miekg/dns",
+    "version": "v1.1.58",
+    "url": "https://proxy.golang.org/github.com/miekg/dns/@v/v1.1.58.zip",
+    "file": "go-modules/github.com_miekg_dns-v1.1.58.zip",
+    "bytes": 252198,
+    "sha256": "179bd419d011fd90802355756f59fff70ddf9a5886a4db6336a6d05783552b16"
+  },
+  {
+    "module": "github.com/pkg/errors",
+    "version": "v0.9.1",
+    "url": "https://proxy.golang.org/github.com/pkg/errors/@v/v0.9.1.zip",
+    "file": "go-modules/github.com_pkg_errors-v0.9.1.zip",
+    "bytes": 17866,
+    "sha256": "d4c36b8bcd0616290a3913215e0f53b931bd6e00670596f2960df1b44af2bd07"
+  },
+  {
+    "module": "golang.org/x/crypto",
+    "version": "v0.18.0",
+    "url": "https://proxy.golang.org/golang.org/x/crypto/@v/v0.18.0.zip",
+    "file": "go-modules/golang.org_x_crypto-v0.18.0.zip",
+    "bytes": 1797935,
+    "sha256": "5413479720bbf5183144652805203a3df74800d2f281f611e82d3a7ec15f4325"
+  },
+  {
+    "module": "golang.org/x/mod",
+    "version": "v0.14.0",
+    "url": "https://proxy.golang.org/golang.org/x/mod/@v/v0.14.0.zip",
+    "file": "go-modules/golang.org_x_mod-v0.14.0.zip",
+    "bytes": 165104,
+    "sha256": "98a122c92ad55deef674f6546b4c295ed93d106178dd24ec40449ae33b41037a"
+  },
+  {
+    "module": "golang.org/x/net",
+    "version": "v0.20.0",
+    "url": "https://proxy.golang.org/golang.org/x/net/@v/v0.20.0.zip",
+    "file": "go-modules/golang.org_x_net-v0.20.0.zip",
+    "bytes": 1868707,
+    "sha256": "00adca2fa3315d397ecb886989998f03fefda7b81a0b5ebb3586acef273e0f29"
+  },
+  {
+    "module": "golang.org/x/sys",
+    "version": "v0.16.0",
+    "url": "https://proxy.golang.org/golang.org/x/sys/@v/v0.16.0.zip",
+    "file": "go-modules/golang.org_x_sys-v0.16.0.zip",
+    "bytes": 1902594,
+    "sha256": "0175809134fc12e040ea427e927036692127f2891b72e224e5153da543af604a"
+  },
+  {
+    "module": "golang.org/x/time",
+    "version": "v0.3.0",
+    "url": "https://proxy.golang.org/golang.org/x/time/@v/v0.3.0.zip",
+    "file": "go-modules/golang.org_x_time-v0.3.0.zip",
+    "bytes": 14618,
+    "sha256": "fa9a1fcd03a4acb817faa5d44e95f0a73182a96cb81012c9b94f832d70f7296b"
+  },
+  {
+    "module": "golang.org/x/tools",
+    "version": "v0.17.0",
+    "url": "https://proxy.golang.org/golang.org/x/tools/@v/v0.17.0.zip",
+    "file": "go-modules/golang.org_x_tools-v0.17.0.zip",
+    "bytes": 3148561,
+    "sha256": "f4c5fce4cd013419429592043ce0549f47060dfe6f44cca940224cd48c3e28ad"
+  },
+  {
+    "module": "gvisor.dev/gvisor",
+    "version": "v0.0.0-20231023213702-2691a8f9b1cf",
+    "url": "https://proxy.golang.org/gvisor.dev/gvisor/@v/v0.0.0-20231023213702-2691a8f9b1cf.zip",
+    "file": "go-modules/gvisor.dev_gvisor-v0.0.0-20231023213702-2691a8f9b1cf.zip",
+    "bytes": 13988764,
+    "sha256": "ad9544355fdcd33f8035bfd59ea4c84823fc9c686a71bf4279911ac797e86ab1"
+  },
+  {
+    "module": "inet.af/tcpproxy",
+    "version": "v0.0.0-20220326234310-be3ee21c9fa0",
+    "url": "https://proxy.golang.org/inet.af/tcpproxy/@v/v0.0.0-20220326234310-be3ee21c9fa0.zip",
+    "file": "go-modules/inet.af_tcpproxy-v0.0.0-20220326234310-be3ee21c9fa0.zip",
+    "bytes": 39641,
+    "sha256": "1c9565b3959c388bf7442354ee2c36600e7ace22ecd69774bb699d8bb7849686"
+  },
+  {
+    "module": "github.com/sirupsen/logrus",
+    "version": "v1.9.3-0.20230531171720-7165f5e779a5",
+    "url": "https://proxy.golang.org/github.com/sirupsen/logrus/@v/v1.9.3-0.20230531171720-7165f5e779a5.zip",
+    "file": "go-modules/github.com_sirupsen_logrus-v1.9.3-0.20230531171720-7165f5e779a5.zip",
+    "bytes": 72809,
+    "sha256": "96ed50e56bdabd8a43eac6fd7bad68e37f4f11299597a560afd356671536fdc6"
+  },
+  {
+    "module": "github.com/ktock/insomniacslk-dhcp",
+    "version": "v0.0.0-20230911142651-b86573a014b1",
+    "url": "https://proxy.golang.org/github.com/ktock/insomniacslk-dhcp/@v/v0.0.0-20230911142651-b86573a014b1.zip",
+    "file": "go-modules/github.com_ktock_insomniacslk-dhcp-v0.0.0-20230911142651-b86573a014b1.zip",
+    "bytes": 251948,
+    "sha256": "d72455f15ae9c08b82db932e2381065f8b5353e96a45479bd82001691ab91d23"
+  },
+  {
+    "module": "github.com/ktock/u-root-uio",
+    "version": "v0.0.0-20230911142931-5cf720bc8a29",
+    "url": "https://proxy.golang.org/github.com/ktock/u-root-uio/@v/v0.0.0-20230911142931-5cf720bc8a29.zip",
+    "file": "go-modules/github.com_ktock_u-root-uio-v0.0.0-20230911142931-5cf720bc8a29.zip",
+    "bytes": 25732,
+    "sha256": "2ba9470ef689dcaf6b1abee498ef0316481066c243f5c6e844bf7f8ca9b051ad"
+  }
+]
