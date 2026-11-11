@@ -19,7 +19,7 @@ const ToolboxCatalog = {
     {
       "id": "peripheral",
       "name": "设备与采集",
-      "icon": "devices"
+      "icon": "keyboard"
     },
     {
       "id": "nfc",
@@ -29,67 +29,67 @@ const ToolboxCatalog = {
     {
       "id": "text",
       "name": "文本与代码",
-      "icon": "convert"
+      "icon": "text-cursor-input"
     },
     {
       "id": "pdf",
       "name": "PDF 文档",
-      "icon": "convert"
+      "icon": "file-text"
     },
     {
       "id": "image",
       "name": "图片设计",
-      "icon": "convert"
+      "icon": "image"
     },
     {
       "id": "media",
       "name": "音频视频",
-      "icon": "record"
+      "icon": "clapperboard"
     },
     {
       "id": "data",
       "name": "数据处理",
-      "icon": "convert"
+      "icon": "database"
     },
     {
       "id": "encoding",
       "name": "编码与校验",
-      "icon": "convert"
+      "icon": "binary"
     },
     {
       "id": "web",
       "name": "开发工具",
-      "icon": "convert"
+      "icon": "code-xml"
     },
     {
       "id": "time",
       "name": "时间日期",
-      "icon": "monitor"
+      "icon": "calendar-days"
     },
     {
       "id": "math",
       "name": "计算换算",
-      "icon": "convert"
+      "icon": "calculator"
     },
     {
       "id": "color",
       "name": "颜色工具",
-      "icon": "convert"
+      "icon": "palette"
     },
     {
       "id": "convert",
       "name": "格式转换",
-      "icon": "convert"
+      "icon": "files"
     },
     {
       "id": "studio",
       "name": "创作与辅助",
-      "icon": "convert"
+      "icon": "pen-tool"
     },
     {
       "id": "ai",
       "name": "AI 助手",
-      "icon": "chat"
+      "icon": "messages-square"
     }
   ],
   "tools": [
@@ -114,7 +114,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "stress"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "monitor",
@@ -122,7 +123,7 @@ const ToolboxCatalog = {
       "name": "显示器检测",
       "description": "坏点 · 漏光 · 色阶 · 拖影",
       "href": "tools/monitor/",
-      "icon": "monitor",
+      "icon": "monitor-check",
       "tags": [
         "屏幕",
         "坏点",
@@ -138,7 +139,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "monitor"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "nfc",
@@ -159,7 +161,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "nfc"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "uid",
@@ -167,7 +170,7 @@ const ToolboxCatalog = {
       "name": "UID 格式转换",
       "description": "进制与字节顺序转换",
       "href": "tools/uid/",
-      "icon": "convert",
+      "icon": "contactless",
       "tags": [
         "进制转换",
         "字节反转"
@@ -180,7 +183,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "uid"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "windows-errors",
@@ -188,7 +192,7 @@ const ToolboxCatalog = {
       "name": "Windows 错误码",
       "description": "错误查询 · 中文排查建议",
       "href": "tools/windows-errors/",
-      "icon": "windows",
+      "icon": "badge-alert",
       "tags": [
         "错误码",
         "蓝屏",
@@ -202,7 +206,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "windows-errors"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "system-commands",
@@ -225,7 +230,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "system-commands"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "webvm",
@@ -233,7 +239,7 @@ const ToolboxCatalog = {
       "name": "浏览器虚拟机",
       "description": "Linux x64 · PowerShell 7 · 中文终端",
       "href": "tools/webvm/",
-      "icon": "terminal",
+      "icon": "computer",
       "tags": [
         "v86",
         "Linux",
@@ -247,7 +253,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "webvm"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "subnet",
@@ -255,7 +262,7 @@ const ToolboxCatalog = {
       "name": "IP／子网计算器",
       "description": "IPv4 · IPv6 · 子网掩码",
       "href": "tools/tool/?id=subnet",
-      "icon": "network",
+      "icon": "waypoints",
       "tags": [
         "IP",
         "CIDR",
@@ -281,7 +288,8 @@ const ToolboxCatalog = {
           "source": "openutility",
           "sourceId": "web-cidr-calculator"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "ip-batch",
@@ -289,7 +297,7 @@ const ToolboxCatalog = {
       "name": "IP 批量整理",
       "description": "去重排序 · 网段合并",
       "href": "tools/ip-batch/",
-      "icon": "network",
+      "icon": "list-filter",
       "tags": [
         "IP",
         "CIDR",
@@ -303,7 +311,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "ip-batch"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "mac",
@@ -311,7 +320,7 @@ const ToolboxCatalog = {
       "name": "MAC 地址转换",
       "description": "格式转换 · 地址类型",
       "href": "tools/tool/?id=mac",
-      "icon": "convert",
+      "icon": "ethernet-port",
       "tags": [
         "MAC",
         "OUI",
@@ -331,7 +340,8 @@ const ToolboxCatalog = {
           "source": "openutility",
           "sourceId": "web-mac-address-formatter"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "network",
@@ -339,7 +349,7 @@ const ToolboxCatalog = {
       "name": "网络测速与延迟",
       "description": "上下行测速 · 服务访问延迟",
       "href": "tools/network/",
-      "icon": "network",
+      "icon": "gauge",
       "tags": [
         "测速",
         "延迟",
@@ -353,7 +363,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "network"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "ai",
@@ -361,7 +372,7 @@ const ToolboxCatalog = {
       "name": "AI 助手",
       "description": "对话 · 图片 · 文本附件",
       "href": "tools/ai/",
-      "icon": "chat",
+      "icon": "messages-square",
       "tags": [
         "AI",
         "图片",
@@ -375,7 +386,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "ai"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "scan",
@@ -383,7 +395,7 @@ const ToolboxCatalog = {
       "name": "条码与二维码",
       "description": "摄像头 · 图片 · 扫码枪",
       "href": "tools/scan/",
-      "icon": "scan",
+      "icon": "scan-barcode",
       "tags": [
         "QR",
         "条形码",
@@ -397,7 +409,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "scan"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "devices",
@@ -405,7 +418,7 @@ const ToolboxCatalog = {
       "name": "外设检测",
       "description": "键盘 · 鼠标 · 麦克风 · 摄像头",
       "href": "tools/devices/",
-      "icon": "devices",
+      "icon": "keyboard",
       "tags": [
         "键盘",
         "鼠标",
@@ -419,7 +432,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "devices"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "recorder",
@@ -427,7 +441,7 @@ const ToolboxCatalog = {
       "name": "屏幕录制",
       "description": "录制预览 · 浏览器暂存 · 下载",
       "href": "tools/recorder/",
-      "icon": "record",
+      "icon": "screen-share",
       "tags": [
         "录屏",
         "暂存",
@@ -441,7 +455,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "recorder"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "dns",
@@ -449,7 +464,7 @@ const ToolboxCatalog = {
       "name": "DNS 查询",
       "description": "多公共节点 · 记录解析对比",
       "href": "tools/tool/?id=dns",
-      "icon": "network",
+      "icon": "server-cog",
       "tags": [
         "DNS",
         "DoH",
@@ -475,7 +490,8 @@ const ToolboxCatalog = {
           "source": "openutility",
           "sourceId": "dns-record-dig-ui"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "ip-location",
@@ -483,7 +499,7 @@ const ToolboxCatalog = {
       "name": "IP 地理位置",
       "description": "公网 IP · 运营商 · 近似位置",
       "href": "tools/ip-location/",
-      "icon": "network",
+      "icon": "map-pin",
       "tags": [
         "IP",
         "运营商",
@@ -497,7 +513,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "ip-location"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "switch-commands",
@@ -519,7 +536,8 @@ const ToolboxCatalog = {
           "source": "toolbox",
           "sourceId": "switch-commands"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "text-diff",
@@ -527,7 +545,7 @@ const ToolboxCatalog = {
       "name": "文本差异对比",
       "description": "并排比较 · 导出 unified diff",
       "href": "tools/tool/?id=text-diff",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [
         "文本",
         "代码",
@@ -553,14 +571,15 @@ const ToolboxCatalog = {
           "source": "localconvert",
           "sourceId": "dev-tools/diff"
         }
-      ]
+      ],
+      "iconBadge": ""
     },
     {
       "id": "aba-routing-validator",
       "category": "encoding",
       "name": "ABA 路由号码验证器",
       "description": "使用 mod-10 校验和验证美国银行 ABA/路由转接号码。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "aba routing number transit rtn bank checksum federal reserve mod-10 aba-routing-validator ABA 路由号码验证器",
       "variants": [
@@ -571,14 +590,15 @@ const ToolboxCatalog = {
           "sourceId": "aba-routing-validator"
         }
       ],
-      "href": "tools/tool/?id=aba-routing-validator"
+      "href": "tools/tool/?id=aba-routing-validator",
+      "iconBadge": ""
     },
     {
       "id": "acceleration-converter",
       "category": "convert",
       "name": "加速度转换器",
       "description": "在m/s2、g力、ft/s2和gal之间转换加速度。",
-      "icon": "convert",
+      "icon": "trending-up",
       "tags": [],
       "keywords": "m/s2 gal galileo gravity ft/s2 milligal mph kph acceleration physics units g-force converter acceleration-converter 加速度转换器",
       "variants": [
@@ -589,14 +609,15 @@ const ToolboxCatalog = {
           "sourceId": "acceleration-converter"
         }
       ],
-      "href": "tools/tool/?id=acceleration-converter"
+      "href": "tools/tool/?id=acceleration-converter",
+      "iconBadge": ""
     },
     {
       "id": "accessible-text-color",
       "category": "color",
       "name": "无障碍文本颜色选择器",
       "description": "确定黑色或白色文本在任何背景颜色上是否更可读。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "accessible text black or white wcag contrast readable foreground color a11y luminance accessibility accessible-text-color 无障碍文本颜色选择器",
       "variants": [
@@ -607,14 +628,15 @@ const ToolboxCatalog = {
           "sourceId": "accessible-text-color"
         }
       ],
-      "href": "tools/tool/?id=accessible-text-color"
+      "href": "tools/tool/?id=accessible-text-color",
+      "iconBadge": ""
     },
     {
       "id": "acronym-expander-finder",
       "category": "text",
       "name": "缩写词提取器",
       "description": "在文本中查找首字母缩略词并将它们与附近定义的扩展配对。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "acronym finder expand abbreviation list definition all caps tokens initialism glossary extract acronym-expander-finder 缩写词提取器",
       "variants": [
@@ -625,14 +647,15 @@ const ToolboxCatalog = {
           "sourceId": "acronym-expander-finder"
         }
       ],
-      "href": "tools/tool/?id=acronym-expander-finder"
+      "href": "tools/tool/?id=acronym-expander-finder",
+      "iconBadge": "CRON"
     },
     {
       "id": "acronym-maker",
       "category": "text",
       "name": "缩写词制作器",
       "description": "使用可配置的规则从短语构建首字母缩略词或首字母缩略词。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "make acronym first letters initialism abbreviate phrase stop words abbreviation generator acronym-maker 缩写词制作器",
       "variants": [
@@ -643,14 +666,15 @@ const ToolboxCatalog = {
           "sourceId": "acronym-maker"
         }
       ],
-      "href": "tools/tool/?id=acronym-maker"
+      "href": "tools/tool/?id=acronym-maker",
+      "iconBadge": "CRON"
     },
     {
       "id": "add-business-days",
       "category": "time",
       "name": "添加工作日",
       "description": "在日期中添加或减去多个工作日，跳过周末和自定义假期。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "add business days working skip weekends holidays date offset deadline calculator workday workdays add-business-days 添加工作日",
       "variants": [
@@ -661,14 +685,15 @@ const ToolboxCatalog = {
           "sourceId": "add-business-days"
         }
       ],
-      "href": "tools/tool/?id=add-business-days"
+      "href": "tools/tool/?id=add-business-days",
+      "iconBadge": ""
     },
     {
       "id": "add-line-numbers-advanced",
       "category": "text",
       "name": "行编号（高级）",
       "description": "使用自定义开始、步长、零填充、格式模板和空行处理为行添加数字前缀。",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": "number lines zero pad cat -b line counter numbered list step start numbers numbering format template prefix add-line-numbers-advanced 行编号（高级）",
       "variants": [
@@ -679,14 +704,15 @@ const ToolboxCatalog = {
           "sourceId": "add-line-numbers-advanced"
         }
       ],
-      "href": "tools/tool/?id=add-line-numbers-advanced"
+      "href": "tools/tool/?id=add-line-numbers-advanced",
+      "iconBadge": ""
     },
     {
       "id": "adler32-checksum",
       "category": "encoding",
       "name": "Adler-32 校验和",
       "description": "计算zlib使用的文本或文件的Adler-32校验和。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "adler-32 rfc 1950 zlib checksum file integrity adler32 hash adler32-checksum Adler-32 校验和",
       "variants": [
@@ -697,14 +723,15 @@ const ToolboxCatalog = {
           "sourceId": "adler32-checksum"
         }
       ],
-      "href": "tools/tool/?id=adler32-checksum"
+      "href": "tools/tool/?id=adler32-checksum",
+      "iconBadge": ""
     },
     {
       "id": "aes-cbc-text",
       "category": "encoding",
       "name": "AES-CBC文本加密/解密",
       "description": "使用密码导出的密钥和显式IV通过AES-CBC加密或解密文本。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "aes-cbc pbkdf2 symmetric encryption iv pkcs7 passphrase aes cbc encrypt decrypt aes-cbc-text AES-CBC文本加密/解密",
       "variants": [
@@ -715,14 +742,15 @@ const ToolboxCatalog = {
           "sourceId": "aes-cbc-text"
         }
       ],
-      "href": "tools/tool/?id=aes-cbc-text"
+      "href": "tools/tool/?id=aes-cbc-text",
+      "iconBadge": "AES"
     },
     {
       "id": "aes-encrypt-decrypt",
       "category": "encoding",
       "name": "AES加密/解密",
       "description": "使用密码短语通过AES-GCM加密和解密文本，产生具有嵌入盐和IV的独立Base64输出。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "aes encrypt decrypt aes-gcm cipher passphrase aes-encrypt-decrypt AES加密/解密",
       "variants": [
@@ -733,14 +761,15 @@ const ToolboxCatalog = {
           "sourceId": "aes-encrypt-decrypt"
         }
       ],
-      "href": "tools/tool/?id=aes-encrypt-decrypt"
+      "href": "tools/tool/?id=aes-encrypt-decrypt",
+      "iconBadge": "AES"
     },
     {
       "id": "aes-gcm-file",
       "category": "encoding",
       "name": "AES-GCM 文件加密/解密",
       "description": "使用密码短语通过 AES-GCM 加密或解密浏览器中选定的文件。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "aes-gcm file encryption pbkdf2 authenticated passphrase in-browser aes gcm encrypt decrypt aes-gcm-file AES-GCM 文件加密/解密",
       "variants": [
@@ -751,14 +780,15 @@ const ToolboxCatalog = {
           "sourceId": "aes-gcm-file"
         }
       ],
-      "href": "tools/tool/?id=aes-gcm-file"
+      "href": "tools/tool/?id=aes-gcm-file",
+      "iconBadge": "AES"
     },
     {
       "id": "age-calculator",
       "category": "time",
       "name": "年龄计算器",
       "description": "根据出生日期以年、月、日计算精确年龄，加上总天数、小时数和下一个生日倒计时。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "age birthday years old calculate date of birth age-calculator 年龄计算器",
       "variants": [
@@ -769,14 +799,15 @@ const ToolboxCatalog = {
           "sourceId": "age-calculator"
         }
       ],
-      "href": "tools/tool/?id=age-calculator"
+      "href": "tools/tool/?id=age-calculator",
+      "iconBadge": ""
     },
     {
       "id": "alpha-blend-over-background",
       "category": "color",
       "name": "背景上的 Alpha 混合",
       "description": "计算由背景上的半透明颜色产生的实心不透明颜色。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "alpha blend source over flatten color rgba background opacity compositing transparent alpha-blend-over-background 背景上的 Alpha 混合",
       "variants": [
@@ -787,14 +818,15 @@ const ToolboxCatalog = {
           "sourceId": "alpha-blend-over-background"
         }
       ],
-      "href": "tools/tool/?id=alpha-blend-over-background"
+      "href": "tools/tool/?id=alpha-blend-over-background",
+      "iconBadge": ""
     },
     {
       "id": "alternating-case-converter",
       "category": "text",
       "name": "交替和反转大小写",
       "description": "将模拟sPoNgEbOb交替大小写、相反大小写或随机大小写应用于文本。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "spongebob case mocking text inverse swap random alternating alternating-case-converter 交替和反转大小写",
       "variants": [
@@ -805,14 +837,15 @@ const ToolboxCatalog = {
           "sourceId": "alternating-case-converter"
         }
       ],
-      "href": "tools/tool/?id=alternating-case-converter"
+      "href": "tools/tool/?id=alternating-case-converter",
+      "iconBadge": ""
     },
     {
       "id": "anagram-checker",
       "category": "text",
       "name": "字谜检查器",
       "description": "确定两个单词或短语是否是彼此的字谜。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "anagram checker is rearrange letters word play letter count compare phrases wordplay puzzle anagram-checker 字谜检查器",
       "variants": [
@@ -823,14 +856,15 @@ const ToolboxCatalog = {
           "sourceId": "anagram-checker"
         }
       ],
-      "href": "tools/tool/?id=anagram-checker"
+      "href": "tools/tool/?id=anagram-checker",
+      "iconBadge": ""
     },
     {
       "id": "anagram-solver",
       "category": "text",
       "name": "字谜和字母重新排列器",
       "description": "离线生成字母的重新排列并从一组字母中查找子词。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "anagram permutation rearrange letters combinations scramble wordplay anagram-solver 字谜和字母重新排列器",
       "variants": [
@@ -841,14 +875,15 @@ const ToolboxCatalog = {
           "sourceId": "anagram-solver"
         }
       ],
-      "href": "tools/tool/?id=anagram-solver"
+      "href": "tools/tool/?id=anagram-solver",
+      "iconBadge": ""
     },
     {
       "id": "analogous-color-scheme",
       "category": "color",
       "name": "类似配色方案生成器",
       "description": "围绕基色创建和谐的邻近色调调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "analogous color scheme palette generator hue harmony neighboring colors hsl analogous-color-scheme 类似配色方案生成器",
       "variants": [
@@ -859,14 +894,15 @@ const ToolboxCatalog = {
           "sourceId": "analogous-color-scheme"
         }
       ],
-      "href": "tools/tool/?id=analogous-color-scheme"
+      "href": "tools/tool/?id=analogous-color-scheme",
+      "iconBadge": ""
     },
     {
       "id": "angle-converter",
       "category": "math",
       "name": "角度转换器",
       "description": "在度、弧度、梯度、圈数和弧分/弧秒之间转换角度。",
-      "icon": "convert",
+      "icon": "protractor",
       "tags": [],
       "keywords": "angle degrees radians gradians trigonometry convert math geometry angle-converter 角度转换器",
       "variants": [
@@ -877,14 +913,15 @@ const ToolboxCatalog = {
           "sourceId": "angle-converter"
         }
       ],
-      "href": "tools/tool/?id=angle-converter"
+      "href": "tools/tool/?id=angle-converter",
+      "iconBadge": ""
     },
     {
       "id": "angle-subunits-converter",
       "category": "convert",
       "name": "度-分-秒转换器",
       "description": "在十进制度和度-分-秒(DMS)表示法之间转换角度。",
-      "icon": "convert",
+      "icon": "protractor",
       "tags": [],
       "keywords": "degrees minutes seconds sexagesimal latitude longitude radians gradians angle dms gps coordinates surveying angle-subunits-converter 度-分-秒转换器",
       "variants": [
@@ -895,14 +932,15 @@ const ToolboxCatalog = {
           "sourceId": "angle-subunits-converter"
         }
       ],
-      "href": "tools/tool/?id=angle-subunits-converter"
+      "href": "tools/tool/?id=angle-subunits-converter",
+      "iconBadge": ""
     },
     {
       "id": "api-key-generator",
       "category": "web",
       "name": "API密钥生成器",
       "description": "以常见SaaS格式生成带前缀的秘密式API密钥。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "api key secret token generator stripe github base62 api-key random api-key-generator API密钥生成器",
       "variants": [
@@ -913,14 +951,15 @@ const ToolboxCatalog = {
           "sourceId": "api-key-generator"
         }
       ],
-      "href": "tools/tool/?id=api-key-generator"
+      "href": "tools/tool/?id=api-key-generator",
+      "iconBadge": ""
     },
     {
       "id": "api-key-pair-generator",
       "category": "encoding",
       "name": "API 密钥 + 秘密生成器",
       "description": "生成具有前缀和导出的校验和的匹配的公钥ID和秘密对。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "public key sk_ pk_ checksum sha-256 base62 token api-key secret generator random api-key-pair-generator API 密钥 + 秘密生成器",
       "variants": [
@@ -931,14 +970,15 @@ const ToolboxCatalog = {
           "sourceId": "api-key-pair-generator"
         }
       ],
-      "href": "tools/tool/?id=api-key-pair-generator"
+      "href": "tools/tool/?id=api-key-pair-generator",
+      "iconBadge": ""
     },
     {
       "id": "arbitrary-base-converter",
       "category": "math",
       "name": "任意基数转换器(2-36)",
       "description": "在完全数字集支持的情况下将任意两个基数之间的整数从基数2转换为基数36。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "arbitrary base radix converter 36 conversion bigint number system arbitrary-base-converter 任意基数转换器(2-36)",
       "variants": [
@@ -949,14 +989,15 @@ const ToolboxCatalog = {
           "sourceId": "arbitrary-base-converter"
         }
       ],
-      "href": "tools/tool/?id=arbitrary-base-converter"
+      "href": "tools/tool/?id=arbitrary-base-converter",
+      "iconBadge": ""
     },
     {
       "id": "area-converter",
       "category": "convert",
       "name": "面积转换器",
       "description": "在平方米、英亩、公顷、平方英尺等之间转换面积。",
-      "icon": "convert",
+      "icon": "square-dashed",
       "tags": [],
       "keywords": "square meter feet acre hectare mile are land area unit measurement area-converter 面积转换器",
       "variants": [
@@ -967,14 +1008,15 @@ const ToolboxCatalog = {
           "sourceId": "area-converter"
         }
       ],
-      "href": "tools/tool/?id=area-converter"
+      "href": "tools/tool/?id=area-converter",
+      "iconBadge": ""
     },
     {
       "id": "arithmetic-geometric-sequence",
       "category": "math",
       "name": "算术和几何数列计算器",
       "description": "求算术或几何序列的第n项和和。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "arithmetic sequence geometric nth term series sum common ratio difference progression arithmetic-geometric-sequence 算术和几何数列计算器",
       "variants": [
@@ -985,14 +1027,15 @@ const ToolboxCatalog = {
           "sourceId": "arithmetic-geometric-sequence"
         }
       ],
-      "href": "tools/tool/?id=arithmetic-geometric-sequence"
+      "href": "tools/tool/?id=arithmetic-geometric-sequence",
+      "iconBadge": ""
     },
     {
       "id": "ascii-table",
       "category": "text",
       "name": "ASCII 表",
       "description": "十进制、十六进制、八进制和二进制的ASCII码的可搜索参考。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "ascii table character codes charcode dec hex oct reference ascii-table ASCII 表",
       "variants": [
@@ -1003,14 +1046,15 @@ const ToolboxCatalog = {
           "sourceId": "ascii-table"
         }
       ],
-      "href": "tools/tool/?id=ascii-table"
+      "href": "tools/tool/?id=ascii-table",
+      "iconBadge": ""
     },
     {
       "id": "ascii-table-from-csv",
       "category": "data",
       "name": "来自 CSV 的 ASCII 框表",
       "description": "将CSV渲染为自述文件、代码注释和终端的有边框的ASCII或Unicode方框图表。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv to ascii table box drawing unicode pretty terminal readme tabulate aligned columns box-drawing markdown ascii-table-from-csv 来自 CSV 的 ASCII 框表",
       "variants": [
@@ -1021,14 +1065,15 @@ const ToolboxCatalog = {
           "sourceId": "ascii-table-from-csv"
         }
       ],
-      "href": "tools/tool/?id=ascii-table-from-csv"
+      "href": "tools/tool/?id=ascii-table-from-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "ascii-table-to-json",
       "category": "convert",
       "name": "ASCII/盒表到 JSON",
       "description": "将固定宽度或盒式绘制的 ASCII 表（如 psql、MySQL 或无 markdown 控制台输出）解析为 JSON 行。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "ascii table box psql mysql console output fixed width json parse ascii-table-to-json ASCII/盒表到 JSON",
       "variants": [
@@ -1039,14 +1084,15 @@ const ToolboxCatalog = {
           "sourceId": "ascii-table-to-json"
         }
       ],
-      "href": "tools/tool/?id=ascii-table-to-json"
+      "href": "tools/tool/?id=ascii-table-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "ascii85",
       "category": "encoding",
       "name": "Ascii85 / Base85 编码",
       "description": "使用Ascii85(Adobe变体)对文本进行编码和解码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "ascii85 base85 btoa encode decode adobe Ascii85 / Base85 编码",
       "variants": [
@@ -1057,14 +1103,15 @@ const ToolboxCatalog = {
           "sourceId": "ascii85"
         }
       ],
-      "href": "tools/tool/?id=ascii85"
+      "href": "tools/tool/?id=ascii85",
+      "iconBadge": ""
     },
     {
       "id": "aspect-ratio-calculator",
       "category": "math",
       "name": "纵横比计算器",
       "description": "找到目标纵横比缺失的宽度或高度并将任何分辨率降低到其最简单的比率。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "aspect ratio resolution 16:9 width height screen math image video aspect-ratio-calculator 纵横比计算器",
       "variants": [
@@ -1075,14 +1122,15 @@ const ToolboxCatalog = {
           "sourceId": "aspect-ratio-calculator"
         }
       ],
-      "href": "tools/tool/?id=aspect-ratio-calculator"
+      "href": "tools/tool/?id=aspect-ratio-calculator",
+      "iconBadge": ""
     },
     {
       "id": "astronomical-distance-converter",
       "category": "convert",
       "name": "天文距离转换器",
       "description": "转换AU、光年、秒差距和公里之间的宇宙距离。",
-      "icon": "convert",
+      "icon": "map-pinned",
       "tags": [],
       "keywords": "light year astronomical unit au parsec kiloparsec megaparsec space distance astronomy astronomical-distance-converter 天文距离转换器",
       "variants": [
@@ -1093,14 +1141,15 @@ const ToolboxCatalog = {
           "sourceId": "astronomical-distance-converter"
         }
       ],
-      "href": "tools/tool/?id=astronomical-distance-converter"
+      "href": "tools/tool/?id=astronomical-distance-converter",
+      "iconBadge": ""
     },
     {
       "id": "asyncapi-validator-preview",
       "category": "web",
       "name": "AsyncAPI 验证器预览",
       "description": "验证通用AsyncAPI结构并总结通道、操作、消息和服务器。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "asyncapi events api yaml asyncapi-validator-preview AsyncAPI 验证器预览",
       "variants": [
@@ -1111,14 +1160,15 @@ const ToolboxCatalog = {
           "sourceId": "asyncapi-validator-preview"
         }
       ],
-      "href": "tools/tool/?id=asyncapi-validator-preview"
+      "href": "tools/tool/?id=asyncapi-validator-preview",
+      "iconBadge": ""
     },
     {
       "id": "at-mention-extractor",
       "category": "text",
       "name": "提及、标签和 URL 提取器",
       "description": "从社交文本中提取@mentions、#hashtags、$cashtags和URL到干净的去重列表中。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "extract mentions hashtags twitter handles cashtag url extractor social media cashtags urls at-mention-extractor 提及、标签和 URL 提取器",
       "variants": [
@@ -1129,14 +1179,15 @@ const ToolboxCatalog = {
           "sourceId": "at-mention-extractor"
         }
       ],
-      "href": "tools/tool/?id=at-mention-extractor"
+      "href": "tools/tool/?id=at-mention-extractor",
+      "iconBadge": ""
     },
     {
       "id": "automated-readability-index",
       "category": "text",
       "name": "自动可读性索引(ARI)",
       "description": "根据字符、单词和句子计数计算ARI等级水平。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "automated readability index ari score reading grade level text difficulty age test grade-level analysis prose automated-readability-index 自动可读性索引(ARI)",
       "variants": [
@@ -1147,14 +1198,15 @@ const ToolboxCatalog = {
           "sourceId": "automated-readability-index"
         }
       ],
-      "href": "tools/tool/?id=automated-readability-index"
+      "href": "tools/tool/?id=automated-readability-index",
+      "iconBadge": ""
     },
     {
       "id": "avro-schema-evolution-checker",
       "category": "web",
       "name": "Avro 架构演变检查器",
       "description": "比较已添加、已删除、已更改和无默认字段的 Avro 记录模式。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "avro schema compatibility diff avro-schema-evolution-checker Avro 架构演变检查器",
       "variants": [
@@ -1165,14 +1217,15 @@ const ToolboxCatalog = {
           "sourceId": "avro-schema-evolution-checker"
         }
       ],
-      "href": "tools/tool/?id=avro-schema-evolution-checker"
+      "href": "tools/tool/?id=avro-schema-evolution-checker",
+      "iconBadge": ""
     },
     {
       "id": "avro-schema-validator",
       "category": "web",
       "name": "Avro 模式验证器",
       "description": "验证通用Avro模式结构并总结记录、字段、枚举和联合。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "avro schema json events avro-schema-validator Avro 模式验证器",
       "variants": [
@@ -1183,14 +1236,15 @@ const ToolboxCatalog = {
           "sourceId": "avro-schema-validator"
         }
       ],
-      "href": "tools/tool/?id=avro-schema-validator"
+      "href": "tools/tool/?id=avro-schema-validator",
+      "iconBadge": ""
     },
     {
       "id": "base-n-arithmetic",
       "category": "math",
       "name": "N 进制算术计算器",
       "description": "以2-36为基数的数字的加法、减法、乘法和除法。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "base arithmetic hex math binary radix calculator 36 add multiply bigint base-n-arithmetic N 进制算术计算器",
       "variants": [
@@ -1201,14 +1255,15 @@ const ToolboxCatalog = {
           "sourceId": "base-n-arithmetic"
         }
       ],
-      "href": "tools/tool/?id=base-n-arithmetic"
+      "href": "tools/tool/?id=base-n-arithmetic",
+      "iconBadge": ""
     },
     {
       "id": "base32-text",
       "category": "encoding",
       "name": "Base32编码/解码",
       "description": "将文本编码为RFC 4648 Base32并将其解码回来。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base32 rfc 4648 encode decode rfc4648 base32-text Base32编码/解码",
       "variants": [
@@ -1219,14 +1274,15 @@ const ToolboxCatalog = {
           "sourceId": "base32-text"
         }
       ],
-      "href": "tools/tool/?id=base32-text"
+      "href": "tools/tool/?id=base32-text",
+      "iconBadge": "B32"
     },
     {
       "id": "base58",
       "category": "encoding",
       "name": "Base58编码/解码",
       "description": "将字节/文本编码为Base58(比特币字母表)并将其解码回来。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base58 bitcoin btc encode decode base58check Base58编码/解码",
       "variants": [
@@ -1237,14 +1293,15 @@ const ToolboxCatalog = {
           "sourceId": "base58"
         }
       ],
-      "href": "tools/tool/?id=base58"
+      "href": "tools/tool/?id=base58",
+      "iconBadge": ""
     },
     {
       "id": "base64-text",
       "category": "encoding",
       "name": "Base64编码/解码",
       "description": "将文本编码为Base64（标准或URL安全）并将其解码回来——实时。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base64 b64 atob btoa url safe encode decode url-safe base64-text Base64编码/解码 Base64 编码 / 解码",
       "variants": [
@@ -1261,14 +1318,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/base64"
         }
       ],
-      "href": "tools/tool/?id=base64-text"
+      "href": "tools/tool/?id=base64-text",
+      "iconBadge": "B64"
     },
     {
       "id": "base64-to-file",
       "category": "convert",
       "name": "Base64/文件的数据 URI",
       "description": "解码base64或数据URI并将其保存为命名文件。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base64 to file data uri decode blob download mime binary base64-to-file Base64/文件的数据 URI",
       "variants": [
@@ -1279,14 +1337,15 @@ const ToolboxCatalog = {
           "sourceId": "base64-to-file"
         }
       ],
-      "href": "tools/tool/?id=base64-to-file"
+      "href": "tools/tool/?id=base64-to-file",
+      "iconBadge": ""
     },
     {
       "id": "base64url-jwk-encoder",
       "category": "encoding",
       "name": "Base64url JWK 字段编码器",
       "description": "在Base64url和大整数/字节值之间进行转换以用于手动编辑JWK字段。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "jwk base64url rfc 4648 big integer jose modulus exponent n e x y d bigint encoding base64url-jwk-encoder Base64url JWK 字段编码器",
       "variants": [
@@ -1297,14 +1356,15 @@ const ToolboxCatalog = {
           "sourceId": "base64url-jwk-encoder"
         }
       ],
-      "href": "tools/tool/?id=base64url-jwk-encoder"
+      "href": "tools/tool/?id=base64url-jwk-encoder",
+      "iconBadge": ""
     },
     {
       "id": "basic-auth-generator",
       "category": "web",
       "name": "基本验证生成器",
       "description": "根据用户名和密码构建HTTP基本授权标头。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "basic auth authorization header http credentials base64 basic-auth-generator 基本验证生成器",
       "variants": [
@@ -1315,14 +1375,15 @@ const ToolboxCatalog = {
           "sourceId": "basic-auth-generator"
         }
       ],
-      "href": "tools/tool/?id=basic-auth-generator"
+      "href": "tools/tool/?id=basic-auth-generator",
+      "iconBadge": ""
     },
     {
       "id": "bcrypt",
       "category": "encoding",
       "name": "Bcrypt 哈希和验证",
       "description": "使用bcrypt对密码进行哈希处理并在本地根据哈希值验证密码。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "bcrypt password hash verify salt rounds Bcrypt 哈希和验证",
       "variants": [
@@ -1333,14 +1394,15 @@ const ToolboxCatalog = {
           "sourceId": "bcrypt"
         }
       ],
-      "href": "tools/tool/?id=bcrypt"
+      "href": "tools/tool/?id=bcrypt",
+      "iconBadge": ""
     },
     {
       "id": "bearer-token-generator",
       "category": "web",
       "name": "随机令牌生成器",
       "description": "生成编码为十六进制、Base64、Base64URL或Base62的加密随机令牌。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "bearer token api access secret base62 base64url hex random api-key crypto bearer-token-generator 随机令牌生成器",
       "variants": [
@@ -1351,14 +1413,15 @@ const ToolboxCatalog = {
           "sourceId": "bearer-token-generator"
         }
       ],
-      "href": "tools/tool/?id=bearer-token-generator"
+      "href": "tools/tool/?id=bearer-token-generator",
+      "iconBadge": ""
     },
     {
       "id": "bic-swift-test-generator",
       "category": "web",
       "name": "BIC/SWIFT代码测试生成器",
       "description": "生成结构有效的测试 BIC/SWIFT 代码（8 或 11 个字符），其中包含银行、国家/地区、位置、分行部分。",
-      "icon": "convert",
+      "icon": "credit-card",
       "tags": [],
       "keywords": "bic generator swift code iso 9362 bank identifier test mock banking data iso-9362 test-data fake bic-swift-test-generator BIC/SWIFT代码测试生成器",
       "variants": [
@@ -1369,14 +1432,15 @@ const ToolboxCatalog = {
           "sourceId": "bic-swift-test-generator"
         }
       ],
-      "href": "tools/tool/?id=bic-swift-test-generator"
+      "href": "tools/tool/?id=bic-swift-test-generator",
+      "iconBadge": ""
     },
     {
       "id": "bimi-record-checker",
       "category": "web",
       "name": "BIMI记录检查器",
       "description": "检查 BIMI TXT 记录的版本、徽标 URL、权限 URL 和部署清单。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "bimi dns email brand bimi-record-checker BIMI记录检查器",
       "variants": [
@@ -1387,14 +1451,15 @@ const ToolboxCatalog = {
           "sourceId": "bimi-record-checker"
         }
       ],
-      "href": "tools/tool/?id=bimi-record-checker"
+      "href": "tools/tool/?id=bimi-record-checker",
+      "iconBadge": ""
     },
     {
       "id": "binary-text",
       "category": "encoding",
       "name": "文本到二进制",
       "description": "使用可配置的分隔符将文本转换为其二进制（并返回）。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "text to binary bits ascii utf-8 convert encode binary-text 文本到二进制",
       "variants": [
@@ -1405,14 +1470,15 @@ const ToolboxCatalog = {
           "sourceId": "binary-text"
         }
       ],
-      "href": "tools/tool/?id=binary-text"
+      "href": "tools/tool/?id=binary-text",
+      "iconBadge": ""
     },
     {
       "id": "binary-to-gray-code",
       "category": "math",
       "name": "二进制 ↔ 格雷码转换器",
       "description": "在任何位宽的标准二进制和反射格雷码之间进行转换。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "gray code binary to reflected rotary encoder karnaugh encoding bits converter binary-to-gray-code 二进制 ↔ 格雷码转换器",
       "variants": [
@@ -1423,14 +1489,15 @@ const ToolboxCatalog = {
           "sourceId": "binary-to-gray-code"
         }
       ],
-      "href": "tools/tool/?id=binary-to-gray-code"
+      "href": "tools/tool/?id=binary-to-gray-code",
+      "iconBadge": ""
     },
     {
       "id": "bip39-mnemonic-generator",
       "category": "encoding",
       "name": "BIP39助记符生成器",
       "description": "生成 12、15、18、21 或 24 个单词的 BIP39 种子短语，并具有用于加密钱包备份的有效校验和。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "bip39 mnemonic seed phrase wallet crypto recovery bip39-mnemonic-generator BIP39助记符生成器",
       "variants": [
@@ -1441,14 +1508,15 @@ const ToolboxCatalog = {
           "sourceId": "bip39-mnemonic-generator"
         }
       ],
-      "href": "tools/tool/?id=bip39-mnemonic-generator"
+      "href": "tools/tool/?id=bip39-mnemonic-generator",
+      "iconBadge": ""
     },
     {
       "id": "bit-rotate-shift",
       "category": "math",
       "name": "位旋转和移位可视化器",
       "description": "对固定宽度整数应用逻辑/算术移位和循环旋转并观察每一位移动。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "bit shift logical arithmetic rotate left right bitwise rol ror shl shr binary visualizer bit-rotate-shift 位旋转和移位可视化器",
       "variants": [
@@ -1459,14 +1527,15 @@ const ToolboxCatalog = {
           "sourceId": "bit-rotate-shift"
         }
       ],
-      "href": "tools/tool/?id=bit-rotate-shift"
+      "href": "tools/tool/?id=bit-rotate-shift",
+      "iconBadge": ""
     },
     {
       "id": "bitwise-calculator",
       "category": "math",
       "name": "按位计算器",
       "description": "对两个整数执行AND、OR、XOR、NOT和移位，以所有基数显示。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "bitwise and or xor bit shift binary operations mask bitwise-calculator 按位计算器",
       "variants": [
@@ -1477,14 +1546,15 @@ const ToolboxCatalog = {
           "sourceId": "bitwise-calculator"
         }
       ],
-      "href": "tools/tool/?id=bitwise-calculator"
+      "href": "tools/tool/?id=bitwise-calculator",
+      "iconBadge": ""
     },
     {
       "id": "bmi-calculator",
       "category": "math",
       "name": "体重指数计算器",
       "description": "根据具有类别标签的公制或英制单位的身高和体重计算身体质量指数。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "bmi body mass index health weight height math bmi-calculator 体重指数计算器",
       "variants": [
@@ -1495,14 +1565,15 @@ const ToolboxCatalog = {
           "sourceId": "bmi-calculator"
         }
       ],
-      "href": "tools/tool/?id=bmi-calculator"
+      "href": "tools/tool/?id=bmi-calculator",
+      "iconBadge": ""
     },
     {
       "id": "box-shadow-generator",
       "category": "color",
       "name": "盒子阴影发生器",
       "description": "通过调整偏移、模糊、扩散、颜色和插入来直观地设计CSS盒阴影，然后复制现成的盒阴影规则。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "box shadow css blur spread generator box-shadow-generator 盒子阴影发生器 box-shadow preview design web-box-shadow-generator CSS盒子阴影生成器",
       "variants": [
@@ -1519,14 +1590,15 @@ const ToolboxCatalog = {
           "sourceId": "web-box-shadow-generator"
         }
       ],
-      "href": "tools/tool/?id=box-shadow-generator"
+      "href": "tools/tool/?id=box-shadow-generator",
+      "iconBadge": ""
     },
     {
       "id": "braille-text",
       "category": "text",
       "name": "盲文（1级）翻译器",
       "description": "使用一级（非收缩）映射将文本与Unicode盲文点图案相互转换。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "braille translator grade 1 unicode dot patterns text to accessibility translate encode braille-text 盲文（1级）翻译器",
       "variants": [
@@ -1537,14 +1609,15 @@ const ToolboxCatalog = {
           "sourceId": "braille-text"
         }
       ],
-      "href": "tools/tool/?id=braille-text"
+      "href": "tools/tool/?id=braille-text",
+      "iconBadge": ""
     },
     {
       "id": "break-even-calculator",
       "category": "math",
       "name": "盈亏平衡点计算器",
       "description": "找出覆盖固定成本和可变成本所需的单位和收入。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "break even break-even point contribution margin fixed costs variable profit cvp analysis finance business break-even-calculator 盈亏平衡点计算器",
       "variants": [
@@ -1555,14 +1628,15 @@ const ToolboxCatalog = {
           "sourceId": "break-even-calculator"
         }
       ],
-      "href": "tools/tool/?id=break-even-calculator"
+      "href": "tools/tool/?id=break-even-calculator",
+      "iconBadge": ""
     },
     {
       "id": "bsb-validator",
       "category": "encoding",
       "name": "澳大利亚 BSB 查找",
       "description": "验证澳大利亚银行州分行（BSB)号码并将其解析为银行、州和分行。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "bsb bank state branch australian routing sort code australia lookup parse bsb-validator 澳大利亚 BSB 查找",
       "variants": [
@@ -1573,14 +1647,15 @@ const ToolboxCatalog = {
           "sourceId": "bsb-validator"
         }
       ],
-      "href": "tools/tool/?id=bsb-validator"
+      "href": "tools/tool/?id=bsb-validator",
+      "iconBadge": ""
     },
     {
       "id": "business-days-calculator",
       "category": "time",
       "name": "工作日计算器",
       "description": "计算两个日期之间的工作日（不包括周末），或者将多个工作日添加到开始日期。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "business days working weekdays exclude weekends calculate business-days-calculator 工作日计算器",
       "variants": [
@@ -1591,14 +1666,15 @@ const ToolboxCatalog = {
           "sourceId": "business-days-calculator"
         }
       ],
-      "href": "tools/tool/?id=business-days-calculator"
+      "href": "tools/tool/?id=business-days-calculator",
+      "iconBadge": ""
     },
     {
       "id": "bytes-to-human-converter",
       "category": "convert",
       "name": "字节到人类可读转换器",
       "description": "将原始字节计数格式化为人类可读的大小，十进制和二进制。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "file size KB MB GB KiB MiB GiB humanize bytes parse filesize format bytes-to-human-converter 字节到人类可读转换器",
       "variants": [
@@ -1609,14 +1685,15 @@ const ToolboxCatalog = {
           "sourceId": "bytes-to-human-converter"
         }
       ],
-      "href": "tools/tool/?id=bytes-to-human-converter"
+      "href": "tools/tool/?id=bytes-to-human-converter",
+      "iconBadge": ""
     },
     {
       "id": "caesar-cipher",
       "category": "text",
       "name": "凯撒密码",
       "description": "使用任意移位量的凯撒密码、经典的可逆字母旋转以及所有25个移位的可选强力来对文本进行编码或解码。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "caesar cipher shift encrypt decode caesar-cipher 凯撒密码",
       "variants": [
@@ -1627,14 +1704,15 @@ const ToolboxCatalog = {
           "sourceId": "caesar-cipher"
         }
       ],
-      "href": "tools/tool/?id=caesar-cipher"
+      "href": "tools/tool/?id=caesar-cipher",
+      "iconBadge": "AES"
     },
     {
       "id": "cagr-calculator",
       "category": "math",
       "name": "复合年增长率计算器",
       "description": "计算两个值之间随时间的复合年增长率。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "cagr compound annual growth rate doubling time rule of 72 annualized return finance investment returns cagr-calculator 复合年增长率计算器",
       "variants": [
@@ -1645,14 +1723,15 @@ const ToolboxCatalog = {
           "sourceId": "cagr-calculator"
         }
       ],
-      "href": "tools/tool/?id=cagr-calculator"
+      "href": "tools/tool/?id=cagr-calculator",
+      "iconBadge": ""
     },
     {
       "id": "camel-snake-kebab-converter",
       "category": "text",
       "name": "代码标识符大小写转换器",
       "description": "在camelCase、PascalCase、snake_case、SCREAMING_SNAKE_CASE、kebab-case、dot.case和Train-Case之间转换编程标识符。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "camelCase PascalCase snake_case kebab-case SCREAMING_SNAKE dot.case naming convention case identifier camelcase snake-case camel-snake-kebab-converter 代码标识符大小写转换器",
       "variants": [
@@ -1663,14 +1742,15 @@ const ToolboxCatalog = {
           "sourceId": "camel-snake-kebab-converter"
         }
       ],
-      "href": "tools/tool/?id=camel-snake-kebab-converter"
+      "href": "tools/tool/?id=camel-snake-kebab-converter",
+      "iconBadge": ""
     },
     {
       "id": "case-converter",
       "category": "text",
       "name": "大小写转换器",
       "description": "在驼峰命名法、蛇形命名法、短横线命名法、标题大小写等之间转换文本。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "camelcase snake_case kebab pascal title case uppercase lowercase camel snake case-converter 大小写转换器",
       "variants": [
@@ -1681,14 +1761,15 @@ const ToolboxCatalog = {
           "sourceId": "case-converter"
         }
       ],
-      "href": "tools/tool/?id=case-converter"
+      "href": "tools/tool/?id=case-converter",
+      "iconBadge": ""
     },
     {
       "id": "certificate-chain-builder",
       "category": "encoding",
       "name": "证书链生成器",
       "description": "检查粘贴的PEM证书链和标志排序、重复的主题和缺失的中间体。",
-      "icon": "convert",
+      "icon": "badge-check",
       "tags": [],
       "keywords": "certificate chain tls pem certificate-chain-builder 证书链生成器",
       "variants": [
@@ -1699,14 +1780,15 @@ const ToolboxCatalog = {
           "sourceId": "certificate-chain-builder"
         }
       ],
-      "href": "tools/tool/?id=certificate-chain-builder"
+      "href": "tools/tool/?id=certificate-chain-builder",
+      "iconBadge": ""
     },
     {
       "id": "certificate-decoder-x509",
       "category": "encoding",
       "name": "X.509证书解码器",
       "description": "解码PEM证书结构并在可见时提取主体、颁发者、有效性、SAN提示和指纹。",
-      "icon": "convert",
+      "icon": "badge-check",
       "tags": [],
       "keywords": "certificate x509 tls pem certificate-decoder-x509 X.509证书解码器",
       "variants": [
@@ -1717,14 +1799,15 @@ const ToolboxCatalog = {
           "sourceId": "certificate-decoder-x509"
         }
       ],
-      "href": "tools/tool/?id=certificate-decoder-x509"
+      "href": "tools/tool/?id=certificate-decoder-x509",
+      "iconBadge": ""
     },
     {
       "id": "character-ngram-counter",
       "category": "text",
       "name": "字符N元语法计数器",
       "description": "对用于语言学、密码分析和指纹识别的字符级n-gram进行计数。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "character ngram bigram trigram frequency analysis cipher fingerprint language detection cryptanalysis linguistics character-ngram-counter 字符N元语法计数器",
       "variants": [
@@ -1735,14 +1818,15 @@ const ToolboxCatalog = {
           "sourceId": "character-ngram-counter"
         }
       ],
-      "href": "tools/tool/?id=character-ngram-counter"
+      "href": "tools/tool/?id=character-ngram-counter",
+      "iconBadge": ""
     },
     {
       "id": "chmod-calculator",
       "category": "web",
       "name": "Chmod 计算器",
       "description": "切换Unix权限位并获取八进制+符号chmod值。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "chmod file permissions octal rwx unix 755 chmod-calculator Chmod 计算器",
       "variants": [
@@ -1753,14 +1837,15 @@ const ToolboxCatalog = {
           "sourceId": "chmod-calculator"
         }
       ],
-      "href": "tools/tool/?id=chmod-calculator"
+      "href": "tools/tool/?id=chmod-calculator",
+      "iconBadge": ""
     },
     {
       "id": "circle-calculator",
       "category": "math",
       "name": "圆计算器",
       "description": "根据任一输入计算面积、周长、直径、弧度和扇形。",
-      "icon": "convert",
+      "icon": "circle",
       "tags": [],
       "keywords": "circle radius diameter circumference area arc length sector chord geometry circle-calculator 圆计算器",
       "variants": [
@@ -1771,14 +1856,15 @@ const ToolboxCatalog = {
           "sourceId": "circle-calculator"
         }
       ],
-      "href": "tools/tool/?id=circle-calculator"
+      "href": "tools/tool/?id=circle-calculator",
+      "iconBadge": ""
     },
     {
       "id": "clothing-size-converter",
       "category": "convert",
       "name": "服装尺码转换器",
       "description": "转换男士和女士服装的服装尺码（XS-XXL、美国、英国、欧盟）。",
-      "icon": "convert",
+      "icon": "shirt",
       "tags": [],
       "keywords": "shirt size dress us uk eu small medium large chest bust chart international sizes clothing reference apparel fashion clothing-size-converter 服装尺码转换器",
       "variants": [
@@ -1789,14 +1875,15 @@ const ToolboxCatalog = {
           "sourceId": "clothing-size-converter"
         }
       ],
-      "href": "tools/tool/?id=clothing-size-converter"
+      "href": "tools/tool/?id=clothing-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "cloudevents-validator",
       "category": "web",
       "name": "CloudEvents验证器",
       "description": "验证 CloudEvents JSON 事件的所需属性和常见内容类型问题。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "cloudevents events json api cloudevents-validator CloudEvents验证器",
       "variants": [
@@ -1807,14 +1894,15 @@ const ToolboxCatalog = {
           "sourceId": "cloudevents-validator"
         }
       ],
-      "href": "tools/tool/?id=cloudevents-validator"
+      "href": "tools/tool/?id=cloudevents-validator",
+      "iconBadge": ""
     },
     {
       "id": "coleman-liau-index",
       "category": "text",
       "name": "科尔曼-廖指数",
       "description": "计算没有音节计数的基于字符的Coleman-Liau可读性等级。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "coleman liau readability grade level reading letters per word writing score metrics analysis coleman-liau-index 科尔曼-廖指数",
       "variants": [
@@ -1825,14 +1913,15 @@ const ToolboxCatalog = {
           "sourceId": "coleman-liau-index"
         }
       ],
-      "href": "tools/tool/?id=coleman-liau-index"
+      "href": "tools/tool/?id=coleman-liau-index",
+      "iconBadge": ""
     },
     {
       "id": "collatz-calculator",
       "category": "math",
       "name": "Collatz猜想步进器",
       "description": "生成任意起始值的完整Collatz(3n+1)序列并报告其统计数据。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "collatz hailstone 3n+1 conjecture stopping time trajectory syracuse sequence number-theory iteration collatz-calculator Collatz猜想步进器",
       "variants": [
@@ -1843,14 +1932,15 @@ const ToolboxCatalog = {
           "sourceId": "collatz-calculator"
         }
       ],
-      "href": "tools/tool/?id=collatz-calculator"
+      "href": "tools/tool/?id=collatz-calculator",
+      "iconBadge": ""
     },
     {
       "id": "color-ansi-256-to-rgb",
       "category": "color",
       "name": "ANSI 256色至RGB",
       "description": "将xterm 256色调色板索引映射到RGB十六进制并返回到最近的索引。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "ansi 256 xterm color terminal sgr escape index nearest rgb color-ansi-256-to-rgb ANSI 256色至RGB",
       "variants": [
@@ -1861,14 +1951,15 @@ const ToolboxCatalog = {
           "sourceId": "color-ansi-256-to-rgb"
         }
       ],
-      "href": "tools/tool/?id=color-ansi-256-to-rgb"
+      "href": "tools/tool/?id=color-ansi-256-to-rgb",
+      "iconBadge": "RGB"
     },
     {
       "id": "color-blend-modes-calculator",
       "category": "color",
       "name": "颜色混合模式计算器",
       "description": "计算用Photoshop风格的混合模式混合两种颜色的结果。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "blend mode multiply screen overlay soft light photoshop mix colors color color-blend-modes-calculator 颜色混合模式计算器",
       "variants": [
@@ -1879,14 +1970,15 @@ const ToolboxCatalog = {
           "sourceId": "color-blend-modes-calculator"
         }
       ],
-      "href": "tools/tool/?id=color-blend-modes-calculator"
+      "href": "tools/tool/?id=color-blend-modes-calculator",
+      "iconBadge": ""
     },
     {
       "id": "color-blindness",
       "category": "color",
       "name": "色盲模拟器",
       "description": "预览颜色在常见色觉缺陷下的显示方式。",
-      "icon": "convert",
+      "icon": "eye-off",
       "tags": [],
       "keywords": "color blindness deuteranopia protanopia tritanopia accessibility cvd a11y simulate color-blindness 色盲模拟器",
       "variants": [
@@ -1897,14 +1989,15 @@ const ToolboxCatalog = {
           "sourceId": "color-blindness"
         }
       ],
-      "href": "tools/tool/?id=color-blindness"
+      "href": "tools/tool/?id=color-blindness",
+      "iconBadge": ""
     },
     {
       "id": "color-contrast-suggester",
       "category": "color",
       "name": "可用的对比度固定器",
       "description": "调整前景色的亮度直到其满足WCAG对比度目标。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "contrast ratio aa aaa wcag accessible color fix lightness accessibility a11y color-contrast-suggester 可用的对比度固定器",
       "variants": [
@@ -1915,14 +2008,15 @@ const ToolboxCatalog = {
           "sourceId": "color-contrast-suggester"
         }
       ],
-      "href": "tools/tool/?id=color-contrast-suggester"
+      "href": "tools/tool/?id=color-contrast-suggester",
+      "iconBadge": ""
     },
     {
       "id": "color-converter",
       "category": "color",
       "name": "颜色转换器",
       "description": "通过实时预览在HEX、RGB、HSL、HSV、CMYK和OKLCH之间转换颜色。",
-      "icon": "convert",
+      "icon": "pipette",
       "tags": [],
       "keywords": "color converter hex to rgb hsl oklch cmyk hsv picker convert color-converter 颜色转换器 rgba hwb named srgb oklab function css web-css-color-format-converter CSS颜色格式转换器",
       "variants": [
@@ -1939,14 +2033,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-color-format-converter"
         }
       ],
-      "href": "tools/tool/?id=color-converter"
+      "href": "tools/tool/?id=color-converter",
+      "iconBadge": ""
     },
     {
       "id": "color-css-gradient-extract-stops",
       "category": "color",
       "name": "CSS梯度解析器",
       "description": "将CSS线性/径向渐变字符串解析为结构化角度、类型和色标。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "gradient linear-gradient radial-gradient conic-gradient color stops parse css extract color-css-gradient-extract-stops CSS梯度解析器",
       "variants": [
@@ -1957,14 +2052,15 @@ const ToolboxCatalog = {
           "sourceId": "color-css-gradient-extract-stops"
         }
       ],
-      "href": "tools/tool/?id=color-css-gradient-extract-stops"
+      "href": "tools/tool/?id=color-css-gradient-extract-stops",
+      "iconBadge": "CSS"
     },
     {
       "id": "color-distance-deltae",
       "category": "color",
       "name": "色差(Delta-E)",
       "description": "使用CIE76、CIE94和CIEDE2000测量两种颜色的不同程度。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "deltae de76 de94 de2000 lab perceptual difference color distance delta-e cielab ciede2000 color-distance-deltae 色差(Delta-E)",
       "variants": [
@@ -1975,14 +2071,15 @@ const ToolboxCatalog = {
           "sourceId": "color-distance-deltae"
         }
       ],
-      "href": "tools/tool/?id=color-distance-deltae"
+      "href": "tools/tool/?id=color-distance-deltae",
+      "iconBadge": ""
     },
     {
       "id": "color-format-allinone",
       "category": "color",
       "name": "通用颜色格式转换器",
       "description": "粘贴任何CSS颜色并立即看到HEX、RGB、HSL、HSV、HWB、CMYK、LAB、LCH和OKLCH。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb hsl hsv hwb cmyk lab lch oklch oklab named color convert converter css hex color-format-allinone 通用颜色格式转换器",
       "variants": [
@@ -1993,14 +2090,15 @@ const ToolboxCatalog = {
           "sourceId": "color-format-allinone"
         }
       ],
-      "href": "tools/tool/?id=color-format-allinone"
+      "href": "tools/tool/?id=color-format-allinone",
+      "iconBadge": ""
     },
     {
       "id": "color-gradient-css-to-svg",
       "category": "color",
       "name": "CSS渐变到SVG",
       "description": "将CSS线性或径向渐变转换为等效的SVG渐变定义。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "css to svg linear-gradient radial-gradient gradient linearGradient radialGradient export convert color color-gradient-css-to-svg CSS渐变到SVG",
       "variants": [
@@ -2011,14 +2109,15 @@ const ToolboxCatalog = {
           "sourceId": "color-gradient-css-to-svg"
         }
       ],
-      "href": "tools/tool/?id=color-gradient-css-to-svg"
+      "href": "tools/tool/?id=color-gradient-css-to-svg",
+      "iconBadge": "SVG"
     },
     {
       "id": "color-harmony",
       "category": "color",
       "name": "色彩和谐/调色板生成器",
       "description": "使用互补、类似、三色、四色、分裂互补和单色方案从基色构建和谐的调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "palette harmony complementary analogous triadic scheme color color-harmony 色彩和谐/调色板生成器",
       "variants": [
@@ -2029,14 +2128,15 @@ const ToolboxCatalog = {
           "sourceId": "color-harmony"
         }
       ],
-      "href": "tools/tool/?id=color-harmony"
+      "href": "tools/tool/?id=color-harmony",
+      "iconBadge": ""
     },
     {
       "id": "color-image-free-dominant-from-hexlist",
       "category": "color",
       "name": "列表中的平均颜色和主颜色",
       "description": "计算十六进制颜色列表中的算术平均颜色和最常见的颜色。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "average dominant most frequent mix list palette linear light color mean histogram color-image-free-dominant-from-hexlist 列表中的平均颜色和主颜色",
       "variants": [
@@ -2047,14 +2147,15 @@ const ToolboxCatalog = {
           "sourceId": "color-image-free-dominant-from-hexlist"
         }
       ],
-      "href": "tools/tool/?id=color-image-free-dominant-from-hexlist"
+      "href": "tools/tool/?id=color-image-free-dominant-from-hexlist",
+      "iconBadge": ""
     },
     {
       "id": "color-invert-calculator",
       "category": "color",
       "name": "颜色反转计算器",
       "description": "计算颜色的RGB反转和亮度反转版本。",
-      "icon": "convert",
+      "icon": "arrow-down-up",
       "tags": [],
       "keywords": "invert color negative css flip lightness complement dark mode token filter color-invert-calculator 颜色反转计算器",
       "variants": [
@@ -2065,14 +2166,15 @@ const ToolboxCatalog = {
           "sourceId": "color-invert-calculator"
         }
       ],
-      "href": "tools/tool/?id=color-invert-calculator"
+      "href": "tools/tool/?id=color-invert-calculator",
+      "iconBadge": ""
     },
     {
       "id": "color-luminance-calculator",
       "category": "color",
       "name": "相对亮度计算器",
       "description": "计算任何颜色的WCAG相对亮度和感知亮度。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "relative luminance perceived brightness hsp luma light or dark text color wcag color-luminance-calculator 相对亮度计算器",
       "variants": [
@@ -2083,14 +2185,15 @@ const ToolboxCatalog = {
           "sourceId": "color-luminance-calculator"
         }
       ],
-      "href": "tools/tool/?id=color-luminance-calculator"
+      "href": "tools/tool/?id=color-luminance-calculator",
+      "iconBadge": ""
     },
     {
       "id": "color-mix-css-builder",
       "category": "color",
       "name": "CSS颜色混合()生成器",
       "description": "构建并预览CSS color-mix()函数并计算其解析的颜色。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "color-mix mix colors interpolate srgb oklab lab lch css generator interpolation blend oklch color-mix-css-builder CSS颜色混合()生成器",
       "variants": [
@@ -2101,14 +2204,15 @@ const ToolboxCatalog = {
           "sourceId": "color-mix-css-builder"
         }
       ],
-      "href": "tools/tool/?id=color-mix-css-builder"
+      "href": "tools/tool/?id=color-mix-css-builder",
+      "iconBadge": "CSS"
     },
     {
       "id": "color-mixer",
       "category": "color",
       "name": "混色器/搅拌器",
       "description": "以任意比例混合两种颜色以找到所得的混合，其中混合颜色的百分比和实时HEX/RGB输出。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "mix blend interpolate average two colors color color-mixer 混色器/搅拌器",
       "variants": [
@@ -2119,14 +2223,15 @@ const ToolboxCatalog = {
           "sourceId": "color-mixer"
         }
       ],
-      "href": "tools/tool/?id=color-mixer"
+      "href": "tools/tool/?id=color-mixer",
+      "iconBadge": ""
     },
     {
       "id": "color-name-finder",
       "category": "color",
       "name": "颜色名称查找器",
       "description": "使用CSS命名颜色集找到任何HEX或RGB值的最接近人类可读的颜色名称（例如“矢车菊蓝”）。",
-      "icon": "convert",
+      "icon": "tags",
       "tags": [],
       "keywords": "color name nearest css colors what identify color-name-finder 颜色名称查找器",
       "variants": [
@@ -2137,14 +2242,15 @@ const ToolboxCatalog = {
           "sourceId": "color-name-finder"
         }
       ],
-      "href": "tools/tool/?id=color-name-finder"
+      "href": "tools/tool/?id=color-name-finder",
+      "iconBadge": ""
     },
     {
       "id": "color-palette-to-svg-swatches",
       "category": "color",
       "name": "调色板到 SVG 样本",
       "description": "将颜色列表渲染为带有十六进制标题的带标签的 SVG 样本条。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "palette to svg color swatches export hex labels image data uri color-palette-to-svg-swatches 调色板到 SVG 样本",
       "variants": [
@@ -2155,14 +2261,15 @@ const ToolboxCatalog = {
           "sourceId": "color-palette-to-svg-swatches"
         }
       ],
-      "href": "tools/tool/?id=color-palette-to-svg-swatches"
+      "href": "tools/tool/?id=color-palette-to-svg-swatches",
+      "iconBadge": "SVG"
     },
     {
       "id": "color-picker",
       "category": "color",
       "name": "颜色选择器",
       "description": "目视选择颜色并读取其HEX、RGB、HSL和OKLCH值。",
-      "icon": "convert",
+      "icon": "pipette",
       "tags": [],
       "keywords": "color picker eyedropper hex swatch pick color-picker 颜色选择器",
       "variants": [
@@ -2173,14 +2280,15 @@ const ToolboxCatalog = {
           "sourceId": "color-picker"
         }
       ],
-      "href": "tools/tool/?id=color-picker"
+      "href": "tools/tool/?id=color-picker",
+      "iconBadge": ""
     },
     {
       "id": "color-rgb-to-rgb565",
       "category": "color",
       "name": "RGB至RGB565转换器",
       "description": "将24位RGB颜色与16位RGB565相互转换以用于嵌入式显示器。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb565 565 16 bit color tft display oled arduino embedded 16-bit color-rgb-to-rgb565 RGB至RGB565转换器",
       "variants": [
@@ -2191,14 +2299,15 @@ const ToolboxCatalog = {
           "sourceId": "color-rgb-to-rgb565"
         }
       ],
-      "href": "tools/tool/?id=color-rgb-to-rgb565"
+      "href": "tools/tool/?id=color-rgb-to-rgb565",
+      "iconBadge": ""
     },
     {
       "id": "color-scale-generator",
       "category": "color",
       "name": "色标生成器",
       "description": "通过选择步数和插值空间，生成两种颜色之间均匀步进的色标。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "color scale steps interpolate ramp between gradient stops color-scale-generator 色标生成器",
       "variants": [
@@ -2209,14 +2318,15 @@ const ToolboxCatalog = {
           "sourceId": "color-scale-generator"
         }
       ],
-      "href": "tools/tool/?id=color-scale-generator"
+      "href": "tools/tool/?id=color-scale-generator",
+      "iconBadge": ""
     },
     {
       "id": "color-shade-namer",
       "category": "color",
       "name": "颜色色调命名器",
       "description": "从其HSL生成任何颜色的人类可读的描述性名称。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "color name descriptive hsl what is this label describe shade color-shade-namer 颜色色调命名器",
       "variants": [
@@ -2227,14 +2337,15 @@ const ToolboxCatalog = {
           "sourceId": "color-shade-namer"
         }
       ],
-      "href": "tools/tool/?id=color-shade-namer"
+      "href": "tools/tool/?id=color-shade-namer",
+      "iconBadge": ""
     },
     {
       "id": "color-shades",
       "category": "color",
       "name": "色调和色调生成器",
       "description": "从基色生成具有可复制值的色调/阴影渐变。",
-      "icon": "convert",
+      "icon": "paintbrush",
       "tags": [],
       "keywords": "shades tints color scale palette lighten darken tailwind ramp color-shades 色调和色调生成器",
       "variants": [
@@ -2245,14 +2356,15 @@ const ToolboxCatalog = {
           "sourceId": "color-shades"
         }
       ],
-      "href": "tools/tool/?id=color-shades"
+      "href": "tools/tool/?id=color-shades",
+      "iconBadge": ""
     },
     {
       "id": "color-sort-by-hue",
       "category": "color",
       "name": "颜色列表排序器",
       "description": "按照色调、亮度、饱和度或亮度对粘贴的颜色列表进行排序。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "sort colors hue step palette order luminance saturation lightness color color-sort-by-hue 颜色列表排序器",
       "variants": [
@@ -2263,14 +2375,15 @@ const ToolboxCatalog = {
           "sourceId": "color-sort-by-hue"
         }
       ],
-      "href": "tools/tool/?id=color-sort-by-hue"
+      "href": "tools/tool/?id=color-sort-by-hue",
+      "iconBadge": ""
     },
     {
       "id": "color-temperature-shift",
       "category": "color",
       "name": "色温偏移",
       "description": "通过将颜色移向目标白点来加热或冷却颜色。",
-      "icon": "convert",
+      "icon": "thermometer",
       "tags": [],
       "keywords": "white balance warm color cool temperature tint kelvin color-temperature-shift 色温偏移",
       "variants": [
@@ -2281,14 +2394,15 @@ const ToolboxCatalog = {
           "sourceId": "color-temperature-shift"
         }
       ],
-      "href": "tools/tool/?id=color-temperature-shift"
+      "href": "tools/tool/?id=color-temperature-shift",
+      "iconBadge": ""
     },
     {
       "id": "color-tints-generator",
       "category": "color",
       "name": "色彩生成器",
       "description": "通过将基色与白色混合来生成一行浅色调。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tint lighter white mix shades css variables swatches color tints palette lighten generator color-tints-generator 色彩生成器",
       "variants": [
@@ -2299,14 +2413,15 @@ const ToolboxCatalog = {
           "sourceId": "color-tints-generator"
         }
       ],
-      "href": "tools/tool/?id=color-tints-generator"
+      "href": "tools/tool/?id=color-tints-generator",
+      "iconBadge": ""
     },
     {
       "id": "color-tones-generator",
       "category": "color",
       "name": "色调发生器",
       "description": "通过将基色混合成中性灰色来生成柔和的色调。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tone gray desaturate mix mute css variables swatches color tones palette muted generator color-tones-generator 色调发生器",
       "variants": [
@@ -2317,14 +2432,15 @@ const ToolboxCatalog = {
           "sourceId": "color-tones-generator"
         }
       ],
-      "href": "tools/tool/?id=color-tones-generator"
+      "href": "tools/tool/?id=color-tones-generator",
+      "iconBadge": ""
     },
     {
       "id": "color-wcag-apca-lightness-contrast",
       "category": "color",
       "name": "感知亮度和对比度对",
       "description": "计算两种颜色的相对亮度、感知亮度(L*)和WCAG对比度。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "wcag contrast relative luminance cie l* aa aaa a11y color check lightness accessibility color-wcag-apca-lightness-contrast 感知亮度和对比度对",
       "variants": [
@@ -2335,14 +2451,15 @@ const ToolboxCatalog = {
           "sourceId": "color-wcag-apca-lightness-contrast"
         }
       ],
-      "href": "tools/tool/?id=color-wcag-apca-lightness-contrast"
+      "href": "tools/tool/?id=color-wcag-apca-lightness-contrast",
+      "iconBadge": ""
     },
     {
       "id": "column-aligner",
       "category": "text",
       "name": "柱对准器（弹性止动片）",
       "description": "通过将每列填充到其最宽的单元格，将分隔的列对齐成整齐的固定宽度表格。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "align columns elastic tabstops fixed width pad tabular markdown table pretty print format column-aligner 柱对准器（弹性止动片）",
       "variants": [
@@ -2353,14 +2470,15 @@ const ToolboxCatalog = {
           "sourceId": "column-aligner"
         }
       ],
-      "href": "tools/tool/?id=column-aligner"
+      "href": "tools/tool/?id=column-aligner",
+      "iconBadge": ""
     },
     {
       "id": "column-extractor",
       "category": "text",
       "name": "列/字段提取器（剪切）",
       "description": "通过索引或字符范围从分隔行中提取字段或重新排序字段，如Unix cut命令。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "cut command extract fields select columns reorder character range csv delimited column-extractor 列/字段提取器（剪切）",
       "variants": [
@@ -2371,14 +2489,15 @@ const ToolboxCatalog = {
           "sourceId": "column-extractor"
         }
       ],
-      "href": "tools/tool/?id=column-extractor"
+      "href": "tools/tool/?id=column-extractor",
+      "iconBadge": ""
     },
     {
       "id": "complementary-color-finder",
       "category": "color",
       "name": "互补色查找器",
       "description": "找到任何输入颜色的精确互补（相反色调）颜色。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "opposite color complement hue rotate 180 rgb invert wheel complementary hsl inverse palette complementary-color-finder 互补色查找器",
       "variants": [
@@ -2389,14 +2508,15 @@ const ToolboxCatalog = {
           "sourceId": "complementary-color-finder"
         }
       ],
-      "href": "tools/tool/?id=complementary-color-finder"
+      "href": "tools/tool/?id=complementary-color-finder",
+      "iconBadge": ""
     },
     {
       "id": "complex-number-calculator",
       "category": "math",
       "name": "复数计算器",
       "description": "复数在直角坐标形式和极坐标形式之间进行加、乘、除以及转换。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "complex number imaginary a+bi polar form modulus argument de moivre conjugate algebra arithmetic complex-number-calculator 复数计算器",
       "variants": [
@@ -2407,14 +2527,15 @@ const ToolboxCatalog = {
           "sourceId": "complex-number-calculator"
         }
       ],
-      "href": "tools/tool/?id=complex-number-calculator"
+      "href": "tools/tool/?id=complex-number-calculator",
+      "iconBadge": ""
     },
     {
       "id": "compound-interest-calculator",
       "category": "math",
       "name": "复利计算器",
       "description": "以复利、可选的定期缴款和年度细目来预测储蓄增长。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "compound interest savings investment growth apy finance compound-interest-calculator 复利计算器",
       "variants": [
@@ -2425,14 +2546,15 @@ const ToolboxCatalog = {
           "sourceId": "compound-interest-calculator"
         }
       ],
-      "href": "tools/tool/?id=compound-interest-calculator"
+      "href": "tools/tool/?id=compound-interest-calculator",
+      "iconBadge": ""
     },
     {
       "id": "consecutive-duplicate-collapse",
       "category": "text",
       "name": "折叠连续重复行",
       "description": "将相同的相邻行折叠成一行，如uniq命令。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "uniq collapse duplicates consecutive lines adjacent -c count repeated duplicate dedupe consecutive-duplicate-collapse 折叠连续重复行",
       "variants": [
@@ -2443,14 +2565,15 @@ const ToolboxCatalog = {
           "sourceId": "consecutive-duplicate-collapse"
         }
       ],
-      "href": "tools/tool/?id=consecutive-duplicate-collapse"
+      "href": "tools/tool/?id=consecutive-duplicate-collapse",
+      "iconBadge": ""
     },
     {
       "id": "continued-fraction-converter",
       "category": "math",
       "name": "连分数转换器",
       "description": "将小数或分数表示为连分数并重建其最佳有理近似值。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "continued fraction convergents best rational approximation euclidean decimal continued-fraction number-theory continued-fraction-converter 连分数转换器",
       "variants": [
@@ -2461,14 +2584,15 @@ const ToolboxCatalog = {
           "sourceId": "continued-fraction-converter"
         }
       ],
-      "href": "tools/tool/?id=continued-fraction-converter"
+      "href": "tools/tool/?id=continued-fraction-converter",
+      "iconBadge": ""
     },
     {
       "id": "contrast-checker",
       "category": "color",
       "name": "对比检查器",
       "description": "检查两种颜色之间的WCAG对比度以及AA/AAA通过/失败。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "contrast wcag accessibility a11y aa aaa ratio contrast-checker 对比检查器",
       "variants": [
@@ -2479,14 +2603,15 @@ const ToolboxCatalog = {
           "sourceId": "contrast-checker"
         }
       ],
-      "href": "tools/tool/?id=contrast-checker"
+      "href": "tools/tool/?id=contrast-checker",
+      "iconBadge": ""
     },
     {
       "id": "contrast-ratio-grid",
       "category": "color",
       "name": "对比度网格",
       "description": "为一组调色板颜色构建N×N WCAG对比矩阵。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "contrast grid a11y aa aaa color pairs palette csv ratio wcag matrix accessibility contrast-ratio-grid 对比度网格",
       "variants": [
@@ -2497,14 +2622,15 @@ const ToolboxCatalog = {
           "sourceId": "contrast-ratio-grid"
         }
       ],
-      "href": "tools/tool/?id=contrast-ratio-grid"
+      "href": "tools/tool/?id=contrast-ratio-grid",
+      "iconBadge": ""
     },
     {
       "id": "convert-color-list-to-tailwind-config",
       "category": "convert",
       "name": "Tailwind 配置的颜色列表",
       "description": "将 name=hex 颜色对的列表转换为 Tailwind theme.extend.colors 配置对象。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tailwind colors theme.extend palette hex config design tokens color theme css convert-color-list-to-tailwind-config Tailwind 配置的颜色列表",
       "variants": [
@@ -2515,14 +2641,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-color-list-to-tailwind-config"
         }
       ],
-      "href": "tools/tool/?id=convert-color-list-to-tailwind-config"
+      "href": "tools/tool/?id=convert-color-list-to-tailwind-config",
+      "iconBadge": ""
     },
     {
       "id": "convert-cron-to-human-and-quartz",
       "category": "convert",
       "name": "Cron 方言翻译器",
       "description": "在标准5字段cron和6/7字段Quartz/Spring cron表达式之间转换。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron quartz spring unix seconds field day of week translate schedule convert convert-cron-to-human-and-quartz Cron 方言翻译器",
       "variants": [
@@ -2533,14 +2660,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-cron-to-human-and-quartz"
         }
       ],
-      "href": "tools/tool/?id=convert-cron-to-human-and-quartz"
+      "href": "tools/tool/?id=convert-cron-to-human-and-quartz",
+      "iconBadge": "CRON"
     },
     {
       "id": "convert-cron-to-human-multi",
       "category": "convert",
       "name": "Crontab 文件解释器",
       "description": "用简单的英语解释crontab文件的每一行，包括特殊字符串。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "crontab cron explain human readable @daily @reboot schedule plain english convert-cron-to-human-multi Crontab 文件解释器",
       "variants": [
@@ -2551,14 +2679,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-cron-to-human-multi"
         }
       ],
-      "href": "tools/tool/?id=convert-cron-to-human-multi"
+      "href": "tools/tool/?id=convert-cron-to-human-multi",
+      "iconBadge": "CRON"
     },
     {
       "id": "convert-csv-to-json-objects",
       "category": "convert",
       "name": "CSV 到 JSON 对象",
       "description": "将带有标题行的CSV转换为带有键入值的对象的JSON数组。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "csv to json rfc 4180 header row array of objects type coercion delimiter convert parse convert-csv-to-json-objects CSV 到 JSON 对象",
       "variants": [
@@ -2569,14 +2698,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-csv-to-json-objects"
         }
       ],
-      "href": "tools/tool/?id=convert-csv-to-json-objects"
+      "href": "tools/tool/?id=convert-csv-to-json-objects",
+      "iconBadge": "JSON"
     },
     {
       "id": "convert-csv-to-sql-insert-batch",
       "category": "convert",
       "name": "CSV 到批量 SQL INSERT",
       "description": "从具有可配置批量大小的CSV生成多行批量SQL INSERT语句。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv to sql bulk insert seed data mysql postgres sqlite ndjson database batch migration convert-csv-to-sql-insert-batch CSV 到批量 SQL INSERT",
       "variants": [
@@ -2587,14 +2717,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-csv-to-sql-insert-batch"
         }
       ],
-      "href": "tools/tool/?id=convert-csv-to-sql-insert-batch"
+      "href": "tools/tool/?id=convert-csv-to-sql-insert-batch",
+      "iconBadge": "SQL"
     },
     {
       "id": "convert-graphql-query-to-curl",
       "category": "convert",
       "name": "GraphQL 查询 cURL",
       "description": "将GraphQL查询和变量包装到POST cURL命令中。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "graphql to curl request query mutation variables post http api fetch convert-graphql-query-to-curl GraphQL 查询 cURL",
       "variants": [
@@ -2605,14 +2736,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-graphql-query-to-curl"
         }
       ],
-      "href": "tools/tool/?id=convert-graphql-query-to-curl"
+      "href": "tools/tool/?id=convert-graphql-query-to-curl",
+      "iconBadge": ""
     },
     {
       "id": "convert-har-to-curl",
       "category": "convert",
       "name": "cURL 的 HAR 条目",
       "description": "从HAR文件或单个HAR条目提取请求并发出等效的cURL命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "har to curl network log request replay devtools export fiddler http convert-har-to-curl cURL 的 HAR 条目",
       "variants": [
@@ -2623,14 +2755,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-har-to-curl"
         }
       ],
-      "href": "tools/tool/?id=convert-har-to-curl"
+      "href": "tools/tool/?id=convert-har-to-curl",
+      "iconBadge": ""
     },
     {
       "id": "convert-jsonl-to-sql-insert",
       "category": "convert",
       "name": "JSON 行到 SQL INSERT",
       "description": "使用每个对象的键作为列从NDJSON记录生成SQL INSERT语句。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "jsonl to sql ndjson json lines bulk insert seed import database convert-jsonl-to-sql-insert JSON 行到 SQL INSERT",
       "variants": [
@@ -2641,14 +2774,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-jsonl-to-sql-insert"
         }
       ],
-      "href": "tools/tool/?id=convert-jsonl-to-sql-insert"
+      "href": "tools/tool/?id=convert-jsonl-to-sql-insert",
+      "iconBadge": "SQL"
     },
     {
       "id": "convert-openapi-to-curl",
       "category": "convert",
       "name": "cURL 的 OpenAPI 路径",
       "description": "将OpenAPI路径操作转变为具有占位符值的示例cURL命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "openapi to curl swagger api examples endpoints paths operations rest convert-openapi-to-curl cURL 的 OpenAPI 路径",
       "variants": [
@@ -2659,14 +2793,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-openapi-to-curl"
         }
       ],
-      "href": "tools/tool/?id=convert-openapi-to-curl"
+      "href": "tools/tool/?id=convert-openapi-to-curl",
+      "iconBadge": ""
     },
     {
       "id": "convert-svg-to-jsx",
       "category": "convert",
       "name": "SVG 到 JSX/React 组件",
       "description": "将原始SVG标记转换为具有camelCased属性的React JSX组件。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "svg to jsx react svgr camelcase attributes icon component tsx convert-svg-to-jsx SVG 到 JSX/React 组件",
       "variants": [
@@ -2677,14 +2812,15 @@ const ToolboxCatalog = {
           "sourceId": "convert-svg-to-jsx"
         }
       ],
-      "href": "tools/tool/?id=convert-svg-to-jsx"
+      "href": "tools/tool/?id=convert-svg-to-jsx",
+      "iconBadge": "JSX"
     },
     {
       "id": "cookie-parser",
       "category": "web",
       "name": "Cookie解析器",
       "description": "将Cookie或Set-Cookie标头解析成可读的属性表。",
-      "icon": "convert",
+      "icon": "cookie",
       "tags": [],
       "keywords": "cookie parser set-cookie http attributes samesite header parse cookie-parser Cookie解析器",
       "variants": [
@@ -2695,14 +2831,15 @@ const ToolboxCatalog = {
           "sourceId": "cookie-parser"
         }
       ],
-      "href": "tools/tool/?id=cookie-parser"
+      "href": "tools/tool/?id=cookie-parser",
+      "iconBadge": ""
     },
     {
       "id": "cooking-converter",
       "category": "math",
       "name": "烹饪测量转换器",
       "description": "在杯、汤匙、茶匙、毫升、盎司和克之间转换厨房测量值。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "cooking cups tablespoons recipe milliliters kitchen converter everyday cooking-converter 烹饪测量转换器",
       "variants": [
@@ -2713,14 +2850,15 @@ const ToolboxCatalog = {
           "sourceId": "cooking-converter"
         }
       ],
-      "href": "tools/tool/?id=cooking-converter"
+      "href": "tools/tool/?id=cooking-converter",
+      "iconBadge": ""
     },
     {
       "id": "cooking-pan-size-converter",
       "category": "convert",
       "name": "烤盘尺寸转换器",
       "description": "转换烤盘尺寸并在盘形状之间缩放配方体积。",
-      "icon": "convert",
+      "icon": "cooking-pot",
       "tags": [],
       "keywords": "baking pan cake size recipe scale round square loaf area cooking cooking-pan-size-converter 烤盘尺寸转换器",
       "variants": [
@@ -2731,14 +2869,15 @@ const ToolboxCatalog = {
           "sourceId": "cooking-pan-size-converter"
         }
       ],
-      "href": "tools/tool/?id=cooking-pan-size-converter"
+      "href": "tools/tool/?id=cooking-pan-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "cooking-temperature-converter",
       "category": "convert",
       "name": "烤箱温度转换器",
       "description": "在摄氏度、华氏度和英国燃气标记之间转换烤箱温度。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "oven temperature gas mark celsius fahrenheit fan convection baking temp cooking cooking-temperature-converter 烤箱温度转换器",
       "variants": [
@@ -2749,14 +2888,15 @@ const ToolboxCatalog = {
           "sourceId": "cooking-temperature-converter"
         }
       ],
-      "href": "tools/tool/?id=cooking-temperature-converter"
+      "href": "tools/tool/?id=cooking-temperature-converter",
+      "iconBadge": ""
     },
     {
       "id": "count-occurrences",
       "category": "text",
       "name": "计数出现次数",
       "description": "计算子串或正则表达式模式在文本中出现的次数。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "count occurrences matches word substring how many find frequency search count-occurrences 计数出现次数",
       "variants": [
@@ -2767,14 +2907,15 @@ const ToolboxCatalog = {
           "sourceId": "count-occurrences"
         }
       ],
-      "href": "tools/tool/?id=count-occurrences"
+      "href": "tools/tool/?id=count-occurrences",
+      "iconBadge": ""
     },
     {
       "id": "countdown-timer-builder",
       "category": "time",
       "name": "倒计时快照生成器",
       "description": "计算从现在到目标日期时间的准确剩余时间，分成单位。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "countdown time remaining until days deadline duration breakdown event timer countdown-timer-builder 倒计时快照生成器",
       "variants": [
@@ -2785,14 +2926,15 @@ const ToolboxCatalog = {
           "sourceId": "countdown-timer-builder"
         }
       ],
-      "href": "tools/tool/?id=countdown-timer-builder"
+      "href": "tools/tool/?id=countdown-timer-builder",
+      "iconBadge": ""
     },
     {
       "id": "crc32-checksum",
       "category": "encoding",
       "name": "CRC32校验和",
       "description": "计算任何文本的CRC-32校验和，输出为十六进制或无符号十进制以进行快速完整性检查。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "crc32 checksum integrity hash verify polynomial crc32-checksum CRC32校验和",
       "variants": [
@@ -2803,14 +2945,15 @@ const ToolboxCatalog = {
           "sourceId": "crc32-checksum"
         }
       ],
-      "href": "tools/tool/?id=crc32-checksum"
+      "href": "tools/tool/?id=crc32-checksum",
+      "iconBadge": ""
     },
     {
       "id": "cron-builder",
       "category": "time",
       "name": "Cron 表达式生成器",
       "description": "从具有人类可读预览的分钟、小时、天、月和工作日的下拉列表中构建标准cron表达式。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron crontab schedule builder expression cron-builder Cron 表达式生成器",
       "variants": [
@@ -2821,14 +2964,15 @@ const ToolboxCatalog = {
           "sourceId": "cron-builder"
         }
       ],
-      "href": "tools/tool/?id=cron-builder"
+      "href": "tools/tool/?id=cron-builder",
+      "iconBadge": "CRON"
     },
     {
       "id": "cron-field-expander",
       "category": "time",
       "name": "Cron字段扩展器",
       "description": "将cron表达式的每个字段扩展为显式匹配值集合。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron expression crontab expand values fields fire times schedule cron-field-expander Cron字段扩展器",
       "variants": [
@@ -2839,14 +2983,15 @@ const ToolboxCatalog = {
           "sourceId": "cron-field-expander"
         }
       ],
-      "href": "tools/tool/?id=cron-field-expander"
+      "href": "tools/tool/?id=cron-field-expander",
+      "iconBadge": "CRON"
     },
     {
       "id": "cron-next-runs-preview",
       "category": "time",
       "name": "Cron Next 运行预览",
       "description": "列出从选定的开始时间开始的 5 字段 cron 表达式的接下来的 N 个执行日期时间。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron next run schedule preview crontab fire times execution simulator next-runs cron-next-runs-preview Cron Next 运行预览",
       "variants": [
@@ -2857,14 +3002,15 @@ const ToolboxCatalog = {
           "sourceId": "cron-next-runs-preview"
         }
       ],
-      "href": "tools/tool/?id=cron-next-runs-preview"
+      "href": "tools/tool/?id=cron-next-runs-preview",
+      "iconBadge": "CRON"
     },
     {
       "id": "cron-parser",
       "category": "time",
       "name": "Cron表达式解释器",
       "description": "用简单的英语解释cron表达式并预览下一个运行时间。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron crontab schedule expression next run explain parser cron-parser Cron表达式解释器",
       "variants": [
@@ -2875,14 +3021,15 @@ const ToolboxCatalog = {
           "sourceId": "cron-parser"
         }
       ],
-      "href": "tools/tool/?id=cron-parser"
+      "href": "tools/tool/?id=cron-parser",
+      "iconBadge": "CRON"
     },
     {
       "id": "crontab-recipe-generator",
       "category": "web",
       "name": "crontab 配方生成器",
       "description": "生成包含多个作业、调度预设、环境行和人工注释的完整 crontab 文件。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "crontab cron file jobs scheduler expression cronjob linux devops crontab-recipe-generator 配方生成器",
       "variants": [
@@ -2893,14 +3040,15 @@ const ToolboxCatalog = {
           "sourceId": "crontab-recipe-generator"
         }
       ],
-      "href": "tools/tool/?id=crontab-recipe-generator"
+      "href": "tools/tool/?id=crontab-recipe-generator",
+      "iconBadge": "CRON"
     },
     {
       "id": "crypto-argon2-params-advisor",
       "category": "encoding",
       "name": "Argon2参数顾问",
       "description": "为目标环境推荐Argon2id存储器、迭代和并行性参数。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "argon2 argon2id rfc 9106 owasp password hashing memory cost time phc kdf crypto-argon2-params-advisor Argon2参数顾问",
       "variants": [
@@ -2911,14 +3059,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-argon2-params-advisor"
         }
       ],
-      "href": "tools/tool/?id=crypto-argon2-params-advisor"
+      "href": "tools/tool/?id=crypto-argon2-params-advisor",
+      "iconBadge": ""
     },
     {
       "id": "crypto-bcrypt-cost-benchmark",
       "category": "encoding",
       "name": "Bcrypt成本估计器",
       "description": "估计每个成本因素的bcrypt散列时间并推荐目标工作因素。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "bcrypt cost factor work rounds password hashing benchmark tuning work-factor crypto-bcrypt-cost-benchmark Bcrypt成本估计器",
       "variants": [
@@ -2929,14 +3078,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-bcrypt-cost-benchmark"
         }
       ],
-      "href": "tools/tool/?id=crypto-bcrypt-cost-benchmark"
+      "href": "tools/tool/?id=crypto-bcrypt-cost-benchmark",
+      "iconBadge": ""
     },
     {
       "id": "crypto-key-fingerprint",
       "category": "encoding",
       "name": "密钥指纹生成器",
       "description": "计算公钥的SSH样式和证书样式指纹（MD5冒号十六进制和SHA-256 base64）。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "ssh fingerprint sha256 base64 md5 colon hex authorized_keys pem spki jwk public key crypto-key-fingerprint 密钥指纹生成器",
       "variants": [
@@ -2947,14 +3097,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-key-fingerprint"
         }
       ],
-      "href": "tools/tool/?id=crypto-key-fingerprint"
+      "href": "tools/tool/?id=crypto-key-fingerprint",
+      "iconBadge": ""
     },
     {
       "id": "crypto-mod10-mod11-check-digit",
       "category": "encoding",
       "name": "Mod-10 / Mod-11 校验位计算器",
       "description": "计算并验证任意数字字符串的Mod-10(Luhn)和Mod-11校验位。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "check digit luhn mod 10 11 checksum verify isbn weighted check-digit mod-10 mod-11 crypto-mod10-mod11-check-digit Mod-10 / Mod-11 校验位计算器",
       "variants": [
@@ -2965,14 +3116,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-mod10-mod11-check-digit"
         }
       ],
-      "href": "tools/tool/?id=crypto-mod10-mod11-check-digit"
+      "href": "tools/tool/?id=crypto-mod10-mod11-check-digit",
+      "iconBadge": ""
     },
     {
       "id": "crypto-passwd-shadow-parser",
       "category": "encoding",
       "name": "/etc/passwd 和影子解析器",
       "description": "逐个字段地解析和解释Unix密码和影子文件行。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "/etc/passwd /etc/shadow uid gid gecos password hash crypt id linux passwd shadow unix parser crypto-passwd-shadow-parser 和影子解析器",
       "variants": [
@@ -2983,14 +3135,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-passwd-shadow-parser"
         }
       ],
-      "href": "tools/tool/?id=crypto-passwd-shadow-parser"
+      "href": "tools/tool/?id=crypto-passwd-shadow-parser",
+      "iconBadge": ""
     },
     {
       "id": "crypto-rsa-key-size-strength",
       "category": "encoding",
       "name": "RSA/ECC密钥强度比较器",
       "description": "通过等效的安全位来比较RSA、ECC和对称密钥大小。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "nist sp 800-57 equivalent strength secp256r1 aes modulus curve rsa ecc key-size security reference crypto-rsa-key-size-strength RSA/ECC密钥强度比较器",
       "variants": [
@@ -3001,14 +3154,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-rsa-key-size-strength"
         }
       ],
-      "href": "tools/tool/?id=crypto-rsa-key-size-strength"
+      "href": "tools/tool/?id=crypto-rsa-key-size-strength",
+      "iconBadge": ""
     },
     {
       "id": "crypto-sha3-keccak-hash",
       "category": "encoding",
       "name": "SHA-3 / Keccak 哈希",
       "description": "使用纯 JS 实现计算文本的 SHA3-224/256/384/512 和 Keccak-256 哈希值。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "sha3-256 keccak-256 keccak256 sponge fips 202 checksum sha3 keccak hash digest ethereum crypto-sha3-keccak-hash SHA-3 / Keccak 哈希",
       "variants": [
@@ -3019,14 +3173,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-sha3-keccak-hash"
         }
       ],
-      "href": "tools/tool/?id=crypto-sha3-keccak-hash"
+      "href": "tools/tool/?id=crypto-sha3-keccak-hash",
+      "iconBadge": "SHA3"
     },
     {
       "id": "crypto-text-checksum-multi",
       "category": "encoding",
       "name": "多算法文本校验和",
       "description": "在一个视图中计算文本的CRC-8、CRC-16、CRC-32、Adler-32以及简单的XOR/和校验和。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "crc8 crc16 crc32 modbus ccitt xor bsd sum integrity checksum crc adler32 hash crypto-text-checksum-multi 多算法文本校验和",
       "variants": [
@@ -3037,14 +3192,15 @@ const ToolboxCatalog = {
           "sourceId": "crypto-text-checksum-multi"
         }
       ],
-      "href": "tools/tool/?id=crypto-text-checksum-multi"
+      "href": "tools/tool/?id=crypto-text-checksum-multi",
+      "iconBadge": ""
     },
     {
       "id": "csr-generator-validator",
       "category": "encoding",
       "name": "CSR生成器和验证器",
       "description": "生成OpenSSL CSR命令并检查粘贴的CSR PEM块。",
-      "icon": "convert",
+      "icon": "badge-check",
       "tags": [],
       "keywords": "csr certificate openssl tls csr-generator-validator CSR生成器和验证器",
       "variants": [
@@ -3055,14 +3211,15 @@ const ToolboxCatalog = {
           "sourceId": "csr-generator-validator"
         }
       ],
-      "href": "tools/tool/?id=csr-generator-validator"
+      "href": "tools/tool/?id=csr-generator-validator",
+      "iconBadge": ""
     },
     {
       "id": "css-color-function-builder",
       "category": "color",
       "name": "CSS 颜色函数生成器",
       "description": "交互式构建现代 CSS color()、rgb()、hsl()、lab()、lch()、oklch() 字符串。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "css color function oklch builder lch hwb display-p3 modern lab css-color-function-builder CSS 颜色函数生成器",
       "variants": [
@@ -3073,14 +3230,15 @@ const ToolboxCatalog = {
           "sourceId": "css-color-function-builder"
         }
       ],
-      "href": "tools/tool/?id=css-color-function-builder"
+      "href": "tools/tool/?id=css-color-function-builder",
+      "iconBadge": "CSS"
     },
     {
       "id": "css-minify",
       "category": "web",
       "name": "CSS缩小/美化",
       "description": "将CSS缩小为一行或用一致的缩进来美化它。",
-      "icon": "convert",
+      "icon": "minimize-2",
       "tags": [],
       "keywords": "css minify beautify format compress prettify css-minify CSS缩小/美化 CSS 压缩器",
       "variants": [
@@ -3097,14 +3255,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/css-minify"
         }
       ],
-      "href": "tools/tool/?id=css-minify"
+      "href": "tools/tool/?id=css-minify",
+      "iconBadge": "CSS"
     },
     {
       "id": "css-shorthand-expander",
       "category": "convert",
       "name": "CSS速记扩展器",
       "description": "将CSS简写属性（边距、填充、边框、字体、背景等）展开到它们的普通声明中，或者将普通书写折叠回去。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css shorthand expand margin longhand border font collapse stylesheet css-shorthand-expander CSS速记扩展器",
       "variants": [
@@ -3115,14 +3274,15 @@ const ToolboxCatalog = {
           "sourceId": "css-shorthand-expander"
         }
       ],
-      "href": "tools/tool/?id=css-shorthand-expander"
+      "href": "tools/tool/?id=css-shorthand-expander",
+      "iconBadge": "CSS"
     },
     {
       "id": "csv-add-row-numbers",
       "category": "data",
       "name": "CSV 添加行号",
       "description": "使用可配置的开始、步长、填充和前缀/后缀将顺序ID/行号列前置或附加到CSV。",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": "csv row numbers add id column sequence auto increment index numbering zero pad row-number csv-add-row-numbers CSV 添加行号",
       "variants": [
@@ -3133,14 +3293,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-add-row-numbers"
         }
       ],
-      "href": "tools/tool/?id=csv-add-row-numbers"
+      "href": "tools/tool/?id=csv-add-row-numbers",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-column-math",
       "category": "data",
       "name": "CSV列数学",
       "description": "使用现有数值列上的算术表达式将计算列添加到CSV，无需eval即可安全地进行评估。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv formula computed column arithmetic spreadsheet derive price times quantity expression evaluator calculate csv-column-math CSV列数学",
       "variants": [
@@ -3151,14 +3312,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-column-math"
         }
       ],
-      "href": "tools/tool/?id=csv-column-math"
+      "href": "tools/tool/?id=csv-column-math",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-column-selector",
       "category": "data",
       "name": "CSV 列选择器",
       "description": "按标题名称或索引保留、删除或重新排序 CSV 列。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "csv columns select reorder filter csv-column-selector CSV 列选择器",
       "variants": [
@@ -3169,14 +3331,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-column-selector"
         }
       ],
-      "href": "tools/tool/?id=csv-column-selector"
+      "href": "tools/tool/?id=csv-column-selector",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-column-stats",
       "category": "data",
       "name": "CSV列统计",
       "description": "计算 CSV 中每列的每列统计数据（类型、计数、空值、非重复、最小/最大、平均值、中值、std-dev）。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv stats column profiling describe data summary mean median standard deviation distinct count quality statistics analytics csv-column-stats CSV列统计",
       "variants": [
@@ -3187,14 +3350,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-column-stats"
         }
       ],
-      "href": "tools/tool/?id=csv-column-stats"
+      "href": "tools/tool/?id=csv-column-stats",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-dedupe",
       "category": "data",
       "name": "CSV 去重复行",
       "description": "从CSV中删除重复的行，这些行要么完全相同，要么与选定的关键列匹配。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "csv duplicate dedupe unique rows csv-dedupe CSV 去重复行",
       "variants": [
@@ -3205,14 +3369,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-dedupe"
         }
       ],
-      "href": "tools/tool/?id=csv-dedupe"
+      "href": "tools/tool/?id=csv-dedupe",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-delimiter-converter",
       "category": "data",
       "name": "CSV分隔符转换器",
       "description": "在逗号、制表符、分号或管道之间重新定界表格数据，同时保留引用。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "csv tsv delimiter convert tab csv-delimiter-converter CSV分隔符转换器",
       "variants": [
@@ -3223,14 +3388,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-delimiter-converter"
         }
       ],
-      "href": "tools/tool/?id=csv-delimiter-converter"
+      "href": "tools/tool/?id=csv-delimiter-converter",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-fill-blanks",
       "category": "data",
       "name": "CSV填充空白单元格",
       "description": "通过前向填充、后向填充、常数值或每列平均值/中值来填充CSV中的空单元格。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv fill blanks forward back fillna impute missing empty cells replace null data cleaning cleanup csv-fill-blanks CSV填充空白单元格",
       "variants": [
@@ -3241,14 +3407,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-fill-blanks"
         }
       ],
-      "href": "tools/tool/?id=csv-fill-blanks"
+      "href": "tools/tool/?id=csv-fill-blanks",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-filter-rows",
       "category": "data",
       "name": "CSV行过滤器",
       "description": "保留或删除与所选列上的条件（等于、包含、正则表达式、数字范围）匹配的CSV行。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "csv filter where clause grep row condition numeric range regex rows conditions query csv-filter-rows CSV行过滤器",
       "variants": [
@@ -3259,14 +3426,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-filter-rows"
         }
       ],
-      "href": "tools/tool/?id=csv-filter-rows"
+      "href": "tools/tool/?id=csv-filter-rows",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-merge-columns",
       "category": "data",
       "name": "CSV 合并列",
       "description": "使用选择的分隔符和模板将两个或更多个CSV列连接成单个列。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "csv merge combine columns concatenate join template column csv-merge-columns CSV 合并列",
       "variants": [
@@ -3277,14 +3445,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-merge-columns"
         }
       ],
-      "href": "tools/tool/?id=csv-merge-columns"
+      "href": "tools/tool/?id=csv-merge-columns",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-pivot-table",
       "category": "data",
       "name": "CSV 数据透视表生成器",
       "description": "通过选择具有聚合的行、列和值字段，从CSV构建电子表格样式的数据透视表。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "pivot table csv group by crosstab aggregate sum count average summary csv-pivot-table CSV 数据透视表生成器",
       "variants": [
@@ -3295,14 +3464,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-pivot-table"
         }
       ],
-      "href": "tools/tool/?id=csv-pivot-table"
+      "href": "tools/tool/?id=csv-pivot-table",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-rename-headers",
       "category": "data",
       "name": "CSV 标头重命名器",
       "description": "重命名、重新排序以及将命名约定转换应用于CSV列标题。",
-      "icon": "convert",
+      "icon": "replace",
       "tags": [],
       "keywords": "csv headers rename columns snake case camelcase reorder column names csv-rename-headers CSV 标头重命名器",
       "variants": [
@@ -3313,14 +3483,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-rename-headers"
         }
       ],
-      "href": "tools/tool/?id=csv-rename-headers"
+      "href": "tools/tool/?id=csv-rename-headers",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-sample-rows",
       "category": "data",
       "name": "CSV行采样器",
       "description": "从CSV中提取行的前N个、后N个、每第N个或随机样本。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv sample head tail every nth row random subset rows seeded csv-sample-rows CSV行采样器",
       "variants": [
@@ -3331,14 +3502,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-sample-rows"
         }
       ],
-      "href": "tools/tool/?id=csv-sample-rows"
+      "href": "tools/tool/?id=csv-sample-rows",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-sort",
       "category": "data",
       "name": "CSV排序器",
       "description": "按所选列以数字/文本模式以及升序或降序对 CSV 行进行排序。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "csv sort rows order column csv-sort CSV排序器",
       "variants": [
@@ -3349,14 +3521,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-sort"
         }
       ],
-      "href": "tools/tool/?id=csv-sort"
+      "href": "tools/tool/?id=csv-sort",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-split-column",
       "category": "data",
       "name": "CSV 拆分列",
       "description": "在分隔符、正则表达式或固定字符位置上将一个 CSV 列拆分为多列。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "csv split column explode text to columns fixed position delimiter regex csv-split-column CSV 拆分列",
       "variants": [
@@ -3367,14 +3540,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-split-column"
         }
       ],
-      "href": "tools/tool/?id=csv-split-column"
+      "href": "tools/tool/?id=csv-split-column",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-to-fixed-width",
       "category": "data",
       "name": "CSV 到固定宽度",
       "description": "将CSV转换为具有每列宽度和对齐方式的固定宽度/列对齐文本。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "fixed width column aligned ascii table monospace padded columns flat file csv fixed-width align csv-to-fixed-width CSV 到固定宽度",
       "variants": [
@@ -3385,14 +3559,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-fixed-width"
         }
       ],
-      "href": "tools/tool/?id=csv-to-fixed-width"
+      "href": "tools/tool/?id=csv-to-fixed-width",
+      "iconBadge": ""
     },
     {
       "id": "csv-to-html",
       "category": "data",
       "name": "CSV到HTML表",
       "description": "将CSV转换为带有标题行的干净的HTML表格元素，准备粘贴到页面中。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "csv html table convert export csv-to-html CSV到HTML表",
       "variants": [
@@ -3403,14 +3578,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-html"
         }
       ],
-      "href": "tools/tool/?id=csv-to-html"
+      "href": "tools/tool/?id=csv-to-html",
+      "iconBadge": "HTML"
     },
     {
       "id": "csv-to-json",
       "category": "data",
       "name": "CSV 到 JSON",
       "description": "将CSV（带有标题行）转换成对象的JSON数组。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "csv to json parse import array of objects convert csv-to-json CSV 到 JSON",
       "variants": [
@@ -3421,14 +3597,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-json"
         }
       ],
-      "href": "tools/tool/?id=csv-to-json"
+      "href": "tools/tool/?id=csv-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "csv-to-markdown",
       "category": "convert",
       "name": "CSV 到 Markdown 表",
       "description": "将 CSV 转换为 GitHub 风格的 Markdown 表。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "csv to markdown table gfm convert csv-to-markdown CSV 到 Markdown 表",
       "variants": [
@@ -3439,14 +3616,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-markdown"
         }
       ],
-      "href": "tools/tool/?id=csv-to-markdown"
+      "href": "tools/tool/?id=csv-to-markdown",
+      "iconBadge": ""
     },
     {
       "id": "csv-to-ndjson",
       "category": "data",
       "name": "CSV 到 NDJSON",
       "description": "将具有标题行的CSV转换为换行符分隔的JSON(每行一个JSON对象)。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "csv to ndjson json lines jsonl newline delimited convert streaming jsonlines csv-to-ndjson CSV 到 NDJSON",
       "variants": [
@@ -3457,14 +3635,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-ndjson"
         }
       ],
-      "href": "tools/tool/?id=csv-to-ndjson"
+      "href": "tools/tool/?id=csv-to-ndjson",
+      "iconBadge": ""
     },
     {
       "id": "csv-to-sql",
       "category": "data",
       "name": "CSV到SQL插入",
       "description": "使用可配置的表名称和引用从CSV生成SQL INSERT语句。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv sql insert database generate csv-to-sql CSV到SQL插入",
       "variants": [
@@ -3475,14 +3654,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-sql"
         }
       ],
-      "href": "tools/tool/?id=csv-to-sql"
+      "href": "tools/tool/?id=csv-to-sql",
+      "iconBadge": "SQL"
     },
     {
       "id": "csv-to-tsv",
       "category": "convert",
       "name": "CSV 到 TSV",
       "description": "使用适当的引号处理在逗号分隔值和制表符分隔值之间进行转换，在任一方向上，准备粘贴到电子表格中。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv tsv tab convert spreadsheet delimiter csv-to-tsv CSV 到 TSV",
       "variants": [
@@ -3493,14 +3673,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-tsv"
         }
       ],
-      "href": "tools/tool/?id=csv-to-tsv"
+      "href": "tools/tool/?id=csv-to-tsv",
+      "iconBadge": "TSV"
     },
     {
       "id": "csv-to-xml",
       "category": "convert",
       "name": "CSV 到 XML",
       "description": "将 CSV 行转换为 XML 文档。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "csv to xml tabular rows spreadsheet rfc 4180 convert data export csv-to-xml CSV 到 XML",
       "variants": [
@@ -3511,14 +3692,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-xml"
         }
       ],
-      "href": "tools/tool/?id=csv-to-xml"
+      "href": "tools/tool/?id=csv-to-xml",
+      "iconBadge": "XML"
     },
     {
       "id": "csv-to-yaml",
       "category": "convert",
       "name": "CSV 到 YAML",
       "description": "将 CSV 行转换为 YAML 对象列表。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv2yaml spreadsheet rfc4180 records mapping csv yaml convert data transform csv-to-yaml CSV 到 YAML",
       "variants": [
@@ -3529,14 +3711,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-yaml"
         }
       ],
-      "href": "tools/tool/?id=csv-to-yaml"
+      "href": "tools/tool/?id=csv-to-yaml",
+      "iconBadge": "YAML"
     },
     {
       "id": "csv-transpose",
       "category": "data",
       "name": "CSV 转置",
       "description": "交换 CSV 的行和列，使第一列成为标题行，反之亦然。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv tsv transpose pivot rotate flip rows columns matrix csv-transpose CSV 转置",
       "variants": [
@@ -3547,14 +3730,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-transpose"
         }
       ],
-      "href": "tools/tool/?id=csv-transpose"
+      "href": "tools/tool/?id=csv-transpose",
+      "iconBadge": "CSV"
     },
     {
       "id": "csv-viewer",
       "category": "data",
       "name": "CSV 查看器",
       "description": "粘贴 CSV 并将其作为可排序、可搜索的表格查看。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv viewer view table tsv parse spreadsheet csv-viewer CSV 查看器",
       "variants": [
@@ -3565,14 +3749,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-viewer"
         }
       ],
-      "href": "tools/tool/?id=csv-viewer"
+      "href": "tools/tool/?id=csv-viewer",
+      "iconBadge": "CSV"
     },
     {
       "id": "cuid2-generator",
       "category": "web",
       "name": "CUID2生成器",
       "description": "生成具有可调整长度的抗冲突、URL安全的CUID2标识符。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "cuid2 cuid unique id collision resistant url safe short url-safe collision-resistant cuid2-generator CUID2生成器",
       "variants": [
@@ -3583,14 +3768,15 @@ const ToolboxCatalog = {
           "sourceId": "cuid2-generator"
         }
       ],
-      "href": "tools/tool/?id=cuid2-generator"
+      "href": "tools/tool/?id=cuid2-generator",
+      "iconBadge": ""
     },
     {
       "id": "curl-to-httpie",
       "category": "convert",
       "name": "cURL 到 HTTPie",
       "description": "将curl命令转换为等效的HTTPie命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "curl2httpie request rest command cli curl httpie http convert api curl-to-httpie cURL 到 HTTPie",
       "variants": [
@@ -3601,14 +3787,15 @@ const ToolboxCatalog = {
           "sourceId": "curl-to-httpie"
         }
       ],
-      "href": "tools/tool/?id=curl-to-httpie"
+      "href": "tools/tool/?id=curl-to-httpie",
+      "iconBadge": ""
     },
     {
       "id": "currency-amount-to-words",
       "category": "math",
       "name": "货币金额换算为单词",
       "description": "以法定/支票形式拼写货币金额，例如“一千二百美元和50/100”。",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": "amount in words cheque check writing dollars rupees lakh crore spell legal currency currency-amount-to-words 货币金额换算为单词",
       "variants": [
@@ -3619,14 +3806,15 @@ const ToolboxCatalog = {
           "sourceId": "currency-amount-to-words"
         }
       ],
-      "href": "tools/tool/?id=currency-amount-to-words"
+      "href": "tools/tool/?id=currency-amount-to-words",
+      "iconBadge": ""
     },
     {
       "id": "currency-split-calculator",
       "category": "math",
       "name": "账单和金额分割计算器",
       "description": "在人们之间公平分配一定数额，包括不等权重份额。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "split bill divide money weighted shares fair remainder cents currency-split-calculator 账单和金额分割计算器",
       "variants": [
@@ -3637,14 +3825,15 @@ const ToolboxCatalog = {
           "sourceId": "currency-split-calculator"
         }
       ],
-      "href": "tools/tool/?id=currency-split-calculator"
+      "href": "tools/tool/?id=currency-split-calculator",
+      "iconBadge": ""
     },
     {
       "id": "currency-unit-naming",
       "category": "convert",
       "name": "货币子单位和命名参考",
       "description": "查找世界货币、其子单位、符号和ISO 4217代码。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "currency code cent penny paisa kopeck minor unit decimal digits symbol iso 4217 reference subunit symbols currency-unit-naming 货币子单位和命名参考",
       "variants": [
@@ -3655,14 +3844,15 @@ const ToolboxCatalog = {
           "sourceId": "currency-unit-naming"
         }
       ],
-      "href": "tools/tool/?id=currency-unit-naming"
+      "href": "tools/tool/?id=currency-unit-naming",
+      "iconBadge": ""
     },
     {
       "id": "data-csv-detect-types",
       "category": "data",
       "name": "CSV列类型检测器",
       "description": "从其值推断每个CSV列的数据类型（整数、浮点、布尔值、日期、字符串）。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "csv type detect infer schema sql typescript column data types inference data-csv-detect-types CSV列类型检测器",
       "variants": [
@@ -3673,14 +3863,15 @@ const ToolboxCatalog = {
           "sourceId": "data-csv-detect-types"
         }
       ],
-      "href": "tools/tool/?id=data-csv-detect-types"
+      "href": "tools/tool/?id=data-csv-detect-types",
+      "iconBadge": "CSV"
     },
     {
       "id": "data-csv-group-by-aggregate",
       "category": "data",
       "name": "CSV分组聚合器",
       "description": "按列对CSV行进行分组并在另一列上计算计数、总和、平均值、最小值和最大值。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "csv group by aggregate sum count average mean min max pivot group-by sql data-csv-group-by-aggregate CSV分组聚合器",
       "variants": [
@@ -3691,14 +3882,15 @@ const ToolboxCatalog = {
           "sourceId": "data-csv-group-by-aggregate"
         }
       ],
-      "href": "tools/tool/?id=data-csv-group-by-aggregate"
+      "href": "tools/tool/?id=data-csv-group-by-aggregate",
+      "iconBadge": "CSV"
     },
     {
       "id": "data-json-array-chunk",
       "category": "data",
       "name": "JSON数组分块器",
       "description": "将大的JSON数组分割成固定大小的小数组块。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json array chunk split batch partition paginate data-json-array-chunk JSON数组分块器",
       "variants": [
@@ -3709,14 +3901,15 @@ const ToolboxCatalog = {
           "sourceId": "data-json-array-chunk"
         }
       ],
-      "href": "tools/tool/?id=data-json-array-chunk"
+      "href": "tools/tool/?id=data-json-array-chunk",
+      "iconBadge": "JSON"
     },
     {
       "id": "data-json-array-flatten-nested",
       "category": "data",
       "name": "JSON嵌套数组展平器",
       "description": "将深度嵌套的JSON数组展平为单个平面数组至选定的深度。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json array flatten nested depth flat merge data-json-array-flatten-nested JSON嵌套数组展平器",
       "variants": [
@@ -3727,14 +3920,15 @@ const ToolboxCatalog = {
           "sourceId": "data-json-array-flatten-nested"
         }
       ],
-      "href": "tools/tool/?id=data-json-array-flatten-nested"
+      "href": "tools/tool/?id=data-json-array-flatten-nested",
+      "iconBadge": "JSON"
     },
     {
       "id": "data-json-to-csv-explode-array",
       "category": "data",
       "name": "JSON 对象数组到 CSV（分解）",
       "description": "将对象的JSON数组转换为CSV，将嵌套对象分解为虚线列。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json csv convert flatten explode nested dot path export data-json-to-csv-explode-array JSON 对象数组到 CSV（分解）",
       "variants": [
@@ -3745,14 +3939,15 @@ const ToolboxCatalog = {
           "sourceId": "data-json-to-csv-explode-array"
         }
       ],
-      "href": "tools/tool/?id=data-json-to-csv-explode-array"
+      "href": "tools/tool/?id=data-json-to-csv-explode-array",
+      "iconBadge": "CSV"
     },
     {
       "id": "data-json-to-csv-flat-nested",
       "category": "data",
       "name": "将 JSON 嵌套到平面 CSV",
       "description": "使用点路径列标题将嵌套JSON对象的数组展平为CSV。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json csv flatten nested dot path convert export spreadsheet data-json-to-csv-flat-nested 将 JSON 嵌套到平面 CSV",
       "variants": [
@@ -3763,14 +3958,15 @@ const ToolboxCatalog = {
           "sourceId": "data-json-to-csv-flat-nested"
         }
       ],
-      "href": "tools/tool/?id=data-json-to-csv-flat-nested"
+      "href": "tools/tool/?id=data-json-to-csv-flat-nested",
+      "iconBadge": "CSV"
     },
     {
       "id": "data-jsonl-deduplicate",
       "category": "data",
       "name": "JSONL记录重复数据删除器",
       "description": "从JSON行输入中删除重复的JSON对象，可选地由所选字段键入。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "jsonl ndjson dedupe duplicate unique json lines records distinct data-jsonl-deduplicate JSONL记录重复数据删除器",
       "variants": [
@@ -3781,14 +3977,15 @@ const ToolboxCatalog = {
           "sourceId": "data-jsonl-deduplicate"
         }
       ],
-      "href": "tools/tool/?id=data-jsonl-deduplicate"
+      "href": "tools/tool/?id=data-jsonl-deduplicate",
+      "iconBadge": "JSONL"
     },
     {
       "id": "data-jsonl-validate-lint",
       "category": "data",
       "name": "JSON行验证器",
       "description": "将 NDJSON/JSONL 文件的每一行验证为独立 JSON 并报告行级错误。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "json lines newline delimited ndjson validator jsonl lint per line streaming validate data-jsonl-validate-lint JSON行验证器",
       "variants": [
@@ -3799,14 +3996,15 @@ const ToolboxCatalog = {
           "sourceId": "data-jsonl-validate-lint"
         }
       ],
-      "href": "tools/tool/?id=data-jsonl-validate-lint"
+      "href": "tools/tool/?id=data-jsonl-validate-lint",
+      "iconBadge": "JSONL"
     },
     {
       "id": "data-rate-converter",
       "category": "math",
       "name": "数据传输速率转换器",
       "description": "在bps、Kbps、Mbps、Gbps和字节每秒等效值之间转换数据传输速率。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "data rate bandwidth mbps bitrate convert converter networking data-rate-converter 数据传输速率转换器",
       "variants": [
@@ -3817,14 +4015,15 @@ const ToolboxCatalog = {
           "sourceId": "data-rate-converter"
         }
       ],
-      "href": "tools/tool/?id=data-rate-converter"
+      "href": "tools/tool/?id=data-rate-converter",
+      "iconBadge": ""
     },
     {
       "id": "data-size-converter",
       "category": "convert",
       "name": "数据大小转换器",
       "description": "在位、字节、KB/MB/GB/TB 和 KiB/MiB/GiB 之间转换数字存储，清楚地区分十进制 SI 和二进制 IEC 单位。",
-      "icon": "convert",
+      "icon": "hard-drive",
       "tags": [],
       "keywords": "bytes data size gigabyte gibibyte convert storage data-size-converter 数据大小转换器",
       "variants": [
@@ -3835,14 +4034,15 @@ const ToolboxCatalog = {
           "sourceId": "data-size-converter"
         }
       ],
-      "href": "tools/tool/?id=data-size-converter"
+      "href": "tools/tool/?id=data-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "data-storage-units-converter",
       "category": "convert",
       "name": "数据存储单位转换器",
       "description": "在位、字节和十进制/二进制倍数之间转换数字存储，例如MB与MiB。",
-      "icon": "convert",
+      "icon": "hard-drive",
       "tags": [],
       "keywords": "MB vs MiB gigabyte gibibyte nibble bit byte decimal binary storage data units bytes bits SI IEC data-storage-units-converter 数据存储单位转换器",
       "variants": [
@@ -3853,14 +4053,15 @@ const ToolboxCatalog = {
           "sourceId": "data-storage-units-converter"
         }
       ],
-      "href": "tools/tool/?id=data-storage-units-converter"
+      "href": "tools/tool/?id=data-storage-units-converter",
+      "iconBadge": ""
     },
     {
       "id": "data-transfer-time-calculator",
       "category": "convert",
       "name": "下载/传输时间计算器",
       "description": "估计在给定连接速度下传输文件需要多长时间。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "download time transfer mbps connection speed file size throughput bandwidth data-transfer-time-calculator 下载/传输时间计算器",
       "variants": [
@@ -3871,14 +4072,15 @@ const ToolboxCatalog = {
           "sourceId": "data-transfer-time-calculator"
         }
       ],
-      "href": "tools/tool/?id=data-transfer-time-calculator"
+      "href": "tools/tool/?id=data-transfer-time-calculator",
+      "iconBadge": ""
     },
     {
       "id": "data-tsv-column-reorder",
       "category": "data",
       "name": "分隔列重新排序",
       "description": "按索引或标题名称重新排序、删除或复制 CSV/TSV 数据中的列。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "rearrange columns select drop column duplicate order csv projection tsv reorder delimited data-tsv-column-reorder 分隔列重新排序",
       "variants": [
@@ -3889,14 +4091,15 @@ const ToolboxCatalog = {
           "sourceId": "data-tsv-column-reorder"
         }
       ],
-      "href": "tools/tool/?id=data-tsv-column-reorder"
+      "href": "tools/tool/?id=data-tsv-column-reorder",
+      "iconBadge": "TSV"
     },
     {
       "id": "data-tsv-to-markdown-table",
       "category": "data",
       "name": "TSV 到 Markdown 表",
       "description": "将制表符分隔值转换为 GitHub 风格的 Markdown 表。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "tab separated to markdown spreadsheet table generator github excel tsv convert gfm data-tsv-to-markdown-table TSV 到 Markdown 表",
       "variants": [
@@ -3907,14 +4110,15 @@ const ToolboxCatalog = {
           "sourceId": "data-tsv-to-markdown-table"
         }
       ],
-      "href": "tools/tool/?id=data-tsv-to-markdown-table"
+      "href": "tools/tool/?id=data-tsv-to-markdown-table",
+      "iconBadge": ""
     },
     {
       "id": "data-yaml-anchor-expander",
       "category": "data",
       "name": "YAML 锚点和别名扩展器",
       "description": "通过内联其引用值来解析YAML锚点和别名。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "yaml anchor expand alias resolve merge key dereference inline anchors flatten data-yaml-anchor-expander YAML 锚点和别名扩展器",
       "variants": [
@@ -3925,14 +4129,15 @@ const ToolboxCatalog = {
           "sourceId": "data-yaml-anchor-expander"
         }
       ],
-      "href": "tools/tool/?id=data-yaml-anchor-expander"
+      "href": "tools/tool/?id=data-yaml-anchor-expander",
+      "iconBadge": "YAML"
     },
     {
       "id": "data-yaml-frontmatter-extractor",
       "category": "data",
       "name": "Markdown 前端内容提取器",
       "description": "将Markdown拆分为其YAML/TOML前题和正文，并将前题解析为JSON。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "front matter yaml frontmatter toml jekyll hugo markdown metadata parse data-yaml-frontmatter-extractor Markdown 前端内容提取器",
       "variants": [
@@ -3943,14 +4148,15 @@ const ToolboxCatalog = {
           "sourceId": "data-yaml-frontmatter-extractor"
         }
       ],
-      "href": "tools/tool/?id=data-yaml-frontmatter-extractor"
+      "href": "tools/tool/?id=data-yaml-frontmatter-extractor",
+      "iconBadge": "YAML"
     },
     {
       "id": "date-add-subtract",
       "category": "time",
       "name": "添加或减去天数",
       "description": "从日期中添加或减去天、周、月或年并获得多种格式的结果日期。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "date math add days subtract calculator offset date-add-subtract 添加或减去天数",
       "variants": [
@@ -3961,14 +4167,15 @@ const ToolboxCatalog = {
           "sourceId": "date-add-subtract"
         }
       ],
-      "href": "tools/tool/?id=date-add-subtract"
+      "href": "tools/tool/?id=date-add-subtract",
+      "iconBadge": ""
     },
     {
       "id": "date-difference",
       "category": "time",
       "name": "日期差异",
       "description": "计算两个日期之间的持续时间（以年、日、小时等为单位）。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "date difference duration days between age calculator time date-difference 日期差异",
       "variants": [
@@ -3979,14 +4186,15 @@ const ToolboxCatalog = {
           "sourceId": "date-difference"
         }
       ],
-      "href": "tools/tool/?id=date-difference"
+      "href": "tools/tool/?id=date-difference",
+      "iconBadge": ""
     },
     {
       "id": "date-format-converter",
       "category": "time",
       "name": "日期格式转换器",
       "description": "一次性解析任何日期字符串并将其重新格式化为通用模式（ISO 8601、RFC 2822、美国、欧盟、区域设置字符串）。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "date format iso 8601 rfc 2822 reformat convert date-format-converter 日期格式转换器",
       "variants": [
@@ -3997,14 +4205,15 @@ const ToolboxCatalog = {
           "sourceId": "date-format-converter"
         }
       ],
-      "href": "tools/tool/?id=date-format-converter"
+      "href": "tools/tool/?id=date-format-converter",
+      "iconBadge": ""
     },
     {
       "id": "date-format-playground",
       "category": "time",
       "name": "Unicode 日期模式游乐场",
       "description": "使用 Intl.DateTimeFormat 样式或 LDML 模式渲染日期时间并预览结果。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "date format intl datetimeformat ldml pattern locale preview tokens date-format-playground Unicode 日期模式游乐场",
       "variants": [
@@ -4015,14 +4224,15 @@ const ToolboxCatalog = {
           "sourceId": "date-format-playground"
         }
       ],
-      "href": "tools/tool/?id=date-format-playground"
+      "href": "tools/tool/?id=date-format-playground",
+      "iconBadge": ""
     },
     {
       "id": "date-format-token-reference",
       "category": "time",
       "name": "日期格式令牌参考",
       "description": "跨时刻、日期-fns、strftime、Java和Unicode LDML的日期格式标记的可搜索备忘单。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "moment date-fns strftime Java DateTimeFormatter LDML CLDR format tokens yyyy %Y date cheatsheet reference date-format-token-reference 日期格式令牌参考",
       "variants": [
@@ -4033,14 +4243,15 @@ const ToolboxCatalog = {
           "sourceId": "date-format-token-reference"
         }
       ],
-      "href": "tools/tool/?id=date-format-token-reference"
+      "href": "tools/tool/?id=date-format-token-reference",
+      "iconBadge": ""
     },
     {
       "id": "date-range-splitter",
       "category": "time",
       "name": "日期范围分割器",
       "description": "将日期范围分割成相等的块或固定长度的间隔（例如，每周的桶）。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "date range split buckets weekly chunk dates reporting periods intervals date-range-splitter 日期范围分割器",
       "variants": [
@@ -4051,14 +4262,15 @@ const ToolboxCatalog = {
           "sourceId": "date-range-splitter"
         }
       ],
-      "href": "tools/tool/?id=date-range-splitter"
+      "href": "tools/tool/?id=date-range-splitter",
+      "iconBadge": ""
     },
     {
       "id": "day-of-year",
       "category": "time",
       "name": "一年中的某一天计算器",
       "description": "查找任意日期的一年中的序数日、一年中剩余的天数，并将序数日转换回日期。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "day of year ordinal date julian remaining calendar day-of-year 一年中的某一天计算器",
       "variants": [
@@ -4069,14 +4281,15 @@ const ToolboxCatalog = {
           "sourceId": "day-of-year"
         }
       ],
-      "href": "tools/tool/?id=day-of-year"
+      "href": "tools/tool/?id=day-of-year",
+      "iconBadge": ""
     },
     {
       "id": "day-percentage-elapsed",
       "category": "time",
       "name": "已过去的天数百分比",
       "description": "显示给定时刻已经过去了一天、一周、一个月、一年、一小时或一分钟的时间。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "percent of year day elapsed progress time week percentage date day-percentage-elapsed 已过去的天数百分比",
       "variants": [
@@ -4087,14 +4300,15 @@ const ToolboxCatalog = {
           "sourceId": "day-percentage-elapsed"
         }
       ],
-      "href": "tools/tool/?id=day-percentage-elapsed"
+      "href": "tools/tool/?id=day-percentage-elapsed",
+      "iconBadge": ""
     },
     {
       "id": "days-between-units",
       "category": "time",
       "name": "许多单位之间的天数",
       "description": "同时测量两个日期时间之间的跨度（以年、月、周、日、小时、分钟和秒为单位）。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "days between time dates date difference units weeks hours business duration days-between-units 许多单位之间的天数",
       "variants": [
@@ -4105,14 +4319,15 @@ const ToolboxCatalog = {
           "sourceId": "days-between-units"
         }
       ],
-      "href": "tools/tool/?id=days-between-units"
+      "href": "tools/tool/?id=days-between-units",
+      "iconBadge": ""
     },
     {
       "id": "days-until",
       "category": "time",
       "name": "截止日期的天数",
       "description": "计算今天与目标未来或过去日期之间的确切天数、周数、小时数和分钟数。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "countdown days until deadline remaining date diff days-until 截止日期的天数",
       "variants": [
@@ -4123,14 +4338,15 @@ const ToolboxCatalog = {
           "sourceId": "days-until"
         }
       ],
-      "href": "tools/tool/?id=days-until"
+      "href": "tools/tool/?id=days-until",
+      "iconBadge": ""
     },
     {
       "id": "decimal-fraction-percent",
       "category": "math",
       "name": "小数 ↔ 分数 ↔ 百分比转换器",
       "description": "在一个面板中在小数、精确分数和百分比之间自由转换。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "decimal to fraction percent repeating reduce gcd percentage converter decimal-fraction-percent 小数 ↔ 分数 百分比转换器",
       "variants": [
@@ -4141,14 +4357,15 @@ const ToolboxCatalog = {
           "sourceId": "decimal-fraction-percent"
         }
       ],
-      "href": "tools/tool/?id=decimal-fraction-percent"
+      "href": "tools/tool/?id=decimal-fraction-percent",
+      "iconBadge": ""
     },
     {
       "id": "deduplicate-words",
       "category": "text",
       "name": "删除重复的单词",
       "description": "从文本中去除重复的单词，同时保留顺序，可选地不区分大小写或仅连续的重复项。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "remove duplicate words repeated unique double word typo the fix dedup dedupe cleanup deduplicate-words 删除重复的单词",
       "variants": [
@@ -4159,14 +4376,15 @@ const ToolboxCatalog = {
           "sourceId": "deduplicate-words"
         }
       ],
-      "href": "tools/tool/?id=deduplicate-words"
+      "href": "tools/tool/?id=deduplicate-words",
+      "iconBadge": ""
     },
     {
       "id": "delimiter-converter",
       "category": "text",
       "name": "定界文本转换器",
       "description": "在逗号、制表符、竖线、分号、换行符和自定义分隔符之间转换分隔文本，非常适合重塑CSV样式列表。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "delimiter csv tab separated comma convert delimiter-converter 定界文本转换器",
       "variants": [
@@ -4177,14 +4395,15 @@ const ToolboxCatalog = {
           "sourceId": "delimiter-converter"
         }
       ],
-      "href": "tools/tool/?id=delimiter-converter"
+      "href": "tools/tool/?id=delimiter-converter",
+      "iconBadge": ""
     },
     {
       "id": "density-converter",
       "category": "convert",
       "name": "密度转换器",
       "description": "在kg/m 3 、g/cm 3 、lb/ft 3 和lb/加仑之间转换密度。",
-      "icon": "convert",
+      "icon": "layers",
       "tags": [],
       "keywords": "kg/m3 g/cm3 lb/ft3 lb/gallon specific gravity mass per volume density unit measurement physics engineering density-converter 密度转换器",
       "variants": [
@@ -4195,14 +4414,15 @@ const ToolboxCatalog = {
           "sourceId": "density-converter"
         }
       ],
-      "href": "tools/tool/?id=density-converter"
+      "href": "tools/tool/?id=density-converter",
+      "iconBadge": ""
     },
     {
       "id": "desaturate-color",
       "category": "color",
       "name": "去饱和颜色",
       "description": "将颜色的饱和度降低一定百分比并预览柔和的结果。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "reduce saturation mute color grayscale partial css saturate filter tone down desaturate muted desaturate-color 去饱和颜色",
       "variants": [
@@ -4213,14 +4433,15 @@ const ToolboxCatalog = {
           "sourceId": "desaturate-color"
         }
       ],
-      "href": "tools/tool/?id=desaturate-color"
+      "href": "tools/tool/?id=desaturate-color",
+      "iconBadge": ""
     },
     {
       "id": "diacritics-toggle",
       "category": "text",
       "name": "添加/删除变音符号",
       "description": "将重音符号剥离为纯ASCII，或将文本折叠为ASCII安全形式，并带有常见音译的映射。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "strip diacritics ascii fold remove accents ligatures slug safe transliterate normalize nfd diacritics-toggle 添加/删除变音符号",
       "variants": [
@@ -4231,14 +4452,15 @@ const ToolboxCatalog = {
           "sourceId": "diacritics-toggle"
         }
       ],
-      "href": "tools/tool/?id=diacritics-toggle"
+      "href": "tools/tool/?id=diacritics-toggle",
+      "iconBadge": ""
     },
     {
       "id": "dice-probability",
       "category": "math",
       "name": "骰子概率计算器",
       "description": "计算掷骰子总和和目标结果的精确概率。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "dice probability sum distribution odds ndk roll convolution chance statistics dice-probability 骰子概率计算器",
       "variants": [
@@ -4249,14 +4471,15 @@ const ToolboxCatalog = {
           "sourceId": "dice-probability"
         }
       ],
-      "href": "tools/tool/?id=dice-probability"
+      "href": "tools/tool/?id=dice-probability",
+      "iconBadge": ""
     },
     {
       "id": "diceware-passphrase",
       "category": "encoding",
       "name": "Diceware 密码生成器",
       "description": "使用加密随机性从捆绑的 Diceware 风格的 7776 字列表生成难忘的密码短语。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "diceware passphrase word password eff wordlist 7776 dice memorable random words entropy security diceware-passphrase Diceware 密码生成器",
       "variants": [
@@ -4267,14 +4490,15 @@ const ToolboxCatalog = {
           "sourceId": "diceware-passphrase"
         }
       ],
-      "href": "tools/tool/?id=diceware-passphrase"
+      "href": "tools/tool/?id=diceware-passphrase",
+      "iconBadge": ""
     },
     {
       "id": "digit-sum-root",
       "category": "math",
       "name": "数字和及数字根",
       "description": "计算数字的数字和、迭代数字根、以及抛九检查。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "digit sum digital root casting out nines multiplicative persistence alternating base digit-sum digital-root number-theory digit-sum-root 数字和及数字根",
       "variants": [
@@ -4285,14 +4509,15 @@ const ToolboxCatalog = {
           "sourceId": "digit-sum-root"
         }
       ],
-      "href": "tools/tool/?id=digit-sum-root"
+      "href": "tools/tool/?id=digit-sum-root",
+      "iconBadge": ""
     },
     {
       "id": "discount-calculator",
       "category": "math",
       "name": "折扣和促销价计算器",
       "description": "查找销售价格、节省和有效折扣，包括叠加折扣。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "markdown coupon stacked discount final price off reduction sale savings percent discount-calculator 折扣和促销价计算器",
       "variants": [
@@ -4303,14 +4528,15 @@ const ToolboxCatalog = {
           "sourceId": "discount-calculator"
         }
       ],
-      "href": "tools/tool/?id=discount-calculator"
+      "href": "tools/tool/?id=discount-calculator",
+      "iconBadge": ""
     },
     {
       "id": "distance-2d-3d",
       "category": "math",
       "name": "距离计算器(2D/3D)",
       "description": "计算2D或3D空间中的两点之间的欧几里得距离。",
-      "icon": "convert",
+      "icon": "map-pinned",
       "tags": [],
       "keywords": "manhattan chebyshev midpoint point pythagoras 3d distance geometry euclidean coordinates vector distance-2d-3d 距离计算器(2D/3D)",
       "variants": [
@@ -4321,14 +4547,15 @@ const ToolboxCatalog = {
           "sourceId": "distance-2d-3d"
         }
       ],
-      "href": "tools/tool/?id=distance-2d-3d"
+      "href": "tools/tool/?id=distance-2d-3d",
+      "iconBadge": ""
     },
     {
       "id": "divisibility-rules-checker",
       "category": "math",
       "name": "整除规则检查器",
       "description": "测试数字能否被2-13整除并显示哪个心算规则适用。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "divisible modulo digit sum factor tricks multiple divisibility rules number-theory remainder mental-math divisibility-rules-checker 整除规则检查器",
       "variants": [
@@ -4339,14 +4566,15 @@ const ToolboxCatalog = {
           "sourceId": "divisibility-rules-checker"
         }
       ],
-      "href": "tools/tool/?id=divisibility-rules-checker"
+      "href": "tools/tool/?id=divisibility-rules-checker",
+      "iconBadge": ""
     },
     {
       "id": "divisor-lister",
       "category": "math",
       "name": "除数列表器和计数器",
       "description": "列出数字的每个除数以及总数、除数计数和除数对。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "factor list divisor count sum proper divisors perfect number factors number-theory sigma aliquot divisor-lister 除数列表器和计数器",
       "variants": [
@@ -4357,14 +4585,15 @@ const ToolboxCatalog = {
           "sourceId": "divisor-lister"
         }
       ],
-      "href": "tools/tool/?id=divisor-lister"
+      "href": "tools/tool/?id=divisor-lister",
+      "iconBadge": ""
     },
     {
       "id": "dkim-record-decoder",
       "category": "web",
       "name": "DKIM记录解码器",
       "description": "解码 DKIM TXT 记录并提取版本、密钥类型、标志、哈希列表、服务和公钥提示。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "dkim dns email txt dkim-record-decoder DKIM记录解码器",
       "variants": [
@@ -4375,14 +4604,15 @@ const ToolboxCatalog = {
           "sourceId": "dkim-record-decoder"
         }
       ],
-      "href": "tools/tool/?id=dkim-record-decoder"
+      "href": "tools/tool/?id=dkim-record-decoder",
+      "iconBadge": ""
     },
     {
       "id": "dmarc-record-builder",
       "category": "web",
       "name": "DMARC 记录生成器",
       "description": "使用报告 URI、对齐、百分比和子域策略构建 DMARC TXT 策略。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "dmarc dns email txt dmarc-record-builder DMARC 记录生成器",
       "variants": [
@@ -4393,14 +4623,15 @@ const ToolboxCatalog = {
           "sourceId": "dmarc-record-builder"
         }
       ],
-      "href": "tools/tool/?id=dmarc-record-builder"
+      "href": "tools/tool/?id=dmarc-record-builder",
+      "iconBadge": ""
     },
     {
       "id": "dmarc-report-xml-parser",
       "category": "web",
       "name": "DMARC报告XML解析器",
       "description": "将聚合 DMARC XML 报告解析为源 IP、计数、处置和验证结果。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "dmarc xml email reports dmarc-report-xml-parser DMARC报告XML解析器",
       "variants": [
@@ -4411,14 +4642,15 @@ const ToolboxCatalog = {
           "sourceId": "dmarc-report-xml-parser"
         }
       ],
-      "href": "tools/tool/?id=dmarc-report-xml-parser"
+      "href": "tools/tool/?id=dmarc-report-xml-parser",
+      "iconBadge": "XML"
     },
     {
       "id": "dns-zone-file-validator",
       "category": "web",
       "name": "DNS 区域文件验证器",
       "description": "检查区域文件记录中常见的 SOA、NS、MX、CNAME、TTL 和语法问题。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "dns zone records validation dns-zone-file-validator DNS 区域文件验证器",
       "variants": [
@@ -4429,14 +4661,15 @@ const ToolboxCatalog = {
           "sourceId": "dns-zone-file-validator"
         }
       ],
-      "href": "tools/tool/?id=dns-zone-file-validator"
+      "href": "tools/tool/?id=dns-zone-file-validator",
+      "iconBadge": ""
     },
     {
       "id": "dnssec-chain-visualizer",
       "category": "web",
       "name": "DNSSEC 链可视化工具",
       "description": "检查粘贴的DS、DNSKEY、RRSIG和NSEC记录并概述信任链。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "dnssec dns security records dnssec-chain-visualizer DNSSEC 链可视化工具",
       "variants": [
@@ -4447,14 +4680,15 @@ const ToolboxCatalog = {
           "sourceId": "dnssec-chain-visualizer"
         }
       ],
-      "href": "tools/tool/?id=dnssec-chain-visualizer"
+      "href": "tools/tool/?id=dnssec-chain-visualizer",
+      "iconBadge": ""
     },
     {
       "id": "dominant-color-math",
       "category": "color",
       "name": "调色板的主色",
       "description": "根据输入颜色列表计算平均颜色和主颜色。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "average color mean k-means colors palette gamma correct dominant kmeans dominant-color-math 调色板的主色",
       "variants": [
@@ -4465,14 +4699,15 @@ const ToolboxCatalog = {
           "sourceId": "dominant-color-math"
         }
       ],
-      "href": "tools/tool/?id=dominant-color-math"
+      "href": "tools/tool/?id=dominant-color-math",
+      "iconBadge": ""
     },
     {
       "id": "dpi-ppi-size-converter",
       "category": "convert",
       "name": "DPI/PPI像素尺寸转换器",
       "description": "在物理打印尺寸、像素尺寸和DPI之间进行转换——或者根据屏幕的分辨率和对角线计算屏幕的PPI。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "dots per inch pixels print size screen density dot pitch dpi ppi resolution dpi-ppi-size-converter DPI/PPI像素尺寸转换器",
       "variants": [
@@ -4483,14 +4718,15 @@ const ToolboxCatalog = {
           "sourceId": "dpi-ppi-size-converter"
         }
       ],
-      "href": "tools/tool/?id=dpi-ppi-size-converter"
+      "href": "tools/tool/?id=dpi-ppi-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "duotone-css-generator",
       "category": "color",
       "name": "双色调 CSS 生成器",
       "description": "构建双色双色调映射和CSS/SVG过滤器以将其应用到图像。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "duotone tritone feColorMatrix feComponentTransfer image filter gradient color svg css duotone-css-generator 双色调 CSS 生成器",
       "variants": [
@@ -4501,14 +4737,15 @@ const ToolboxCatalog = {
           "sourceId": "duotone-css-generator"
         }
       ],
-      "href": "tools/tool/?id=duotone-css-generator"
+      "href": "tools/tool/?id=duotone-css-generator",
+      "iconBadge": "CSS"
     },
     {
       "id": "duration-converter",
       "category": "math",
       "name": "持续时间转换器",
       "description": "在毫秒、秒、分钟、小时、天和周之间转换持续时间。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "duration time seconds minutes hours milliseconds convert math duration-converter 持续时间转换器",
       "variants": [
@@ -4519,14 +4756,15 @@ const ToolboxCatalog = {
           "sourceId": "duration-converter"
         }
       ],
-      "href": "tools/tool/?id=duration-converter"
+      "href": "tools/tool/?id=duration-converter",
+      "iconBadge": ""
     },
     {
       "id": "duration-humanizer",
       "category": "time",
       "name": "持续时间人性化器",
       "description": "将原始的秒数或毫秒数转换成人类短语，例如“2天，3小时，5分钟”。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "humanize duration seconds to human milliseconds time format pretty ago duration-humanizer 持续时间人性化器",
       "variants": [
@@ -4537,14 +4775,15 @@ const ToolboxCatalog = {
           "sourceId": "duration-humanizer"
         }
       ],
-      "href": "tools/tool/?id=duration-humanizer"
+      "href": "tools/tool/?id=duration-humanizer",
+      "iconBadge": ""
     },
     {
       "id": "duration-parser",
       "category": "time",
       "name": "持续时间字符串解析器",
       "description": "将诸如“1h30m”、“2天4小时”或“90s”之类的人类持续时间文本解析为总秒和毫秒。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "parse duration human 1h30m time string to seconds ms parser milliseconds duration-parser 持续时间字符串解析器",
       "variants": [
@@ -4555,14 +4794,15 @@ const ToolboxCatalog = {
           "sourceId": "duration-parser"
         }
       ],
-      "href": "tools/tool/?id=duration-parser"
+      "href": "tools/tool/?id=duration-parser",
+      "iconBadge": ""
     },
     {
       "id": "ean-upc-barcode-data-generator",
       "category": "web",
       "name": "EAN/UPC校验位和号码生成器",
       "description": "生成具有正确校验位的有效EAN-13、EAN-8、UPC-A和ISBN-13号码，或者修复部分代码。",
-      "icon": "convert",
+      "icon": "scan-barcode",
       "tags": [],
       "keywords": "ean-13 ean-8 upc-a isbn-13 isbn-10 check digit gs1 mod-10 mod-11 gtin product code barcode ean upc isbn check-digit ean-upc-barcode-data-generator EAN/UPC校验位和号码生成器",
       "variants": [
@@ -4573,14 +4813,15 @@ const ToolboxCatalog = {
           "sourceId": "ean-upc-barcode-data-generator"
         }
       ],
-      "href": "tools/tool/?id=ean-upc-barcode-data-generator"
+      "href": "tools/tool/?id=ean-upc-barcode-data-generator",
+      "iconBadge": ""
     },
     {
       "id": "ean-upc-check-digit",
       "category": "encoding",
       "name": "EAN/UPC校验位",
       "description": "验证或计算EAN-13、EAN-8和UPC-A条形码的校验位。",
-      "icon": "convert",
+      "icon": "barcode",
       "tags": [],
       "keywords": "ean-13 ean-8 upc-a barcode check digit gs1 gtin mod 10 ean upc check-digit ean-upc-check-digit EAN/UPC校验位",
       "variants": [
@@ -4591,14 +4832,15 @@ const ToolboxCatalog = {
           "sourceId": "ean-upc-check-digit"
         }
       ],
-      "href": "tools/tool/?id=ean-upc-check-digit"
+      "href": "tools/tool/?id=ean-upc-check-digit",
+      "iconBadge": ""
     },
     {
       "id": "ecdsa-keypair-generator",
       "category": "encoding",
       "name": "ECDSA密钥对生成器",
       "description": "生成椭圆曲线(P-256/P-384/P-521)密钥对作为用于ECDSA签名的PEM。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "ecdsa elliptic curve key pair pem p-256 signing ecdsa-keypair-generator ECDSA密钥对生成器",
       "variants": [
@@ -4609,14 +4851,15 @@ const ToolboxCatalog = {
           "sourceId": "ecdsa-keypair-generator"
         }
       ],
-      "href": "tools/tool/?id=ecdsa-keypair-generator"
+      "href": "tools/tool/?id=ecdsa-keypair-generator",
+      "iconBadge": ""
     },
     {
       "id": "ecdsa-sign-verify",
       "category": "encoding",
       "name": "ECDSA 签名和验证",
       "description": "在P-256/P-384/P-521曲线上用ECDSA对消息进行签名和验证。",
-      "icon": "convert",
+      "icon": "signature",
       "tags": [],
       "keywords": "p-256 p-384 p-521 pkcs8 spki webcrypto r||s signing ecdsa signature sign verify pem ecdsa-sign-verify ECDSA 签名和验证",
       "variants": [
@@ -4627,14 +4870,15 @@ const ToolboxCatalog = {
           "sourceId": "ecdsa-sign-verify"
         }
       ],
-      "href": "tools/tool/?id=ecdsa-sign-verify"
+      "href": "tools/tool/?id=ecdsa-sign-verify",
+      "iconBadge": ""
     },
     {
       "id": "ellipse-calculator",
       "category": "math",
       "name": "椭圆计算器",
       "description": "计算椭圆的面积、周长、偏心率和焦点。",
-      "icon": "convert",
+      "icon": "circle",
       "tags": [],
       "keywords": "foci semi-major semi-minor ramanujan oval conic ellipse geometry area perimeter eccentricity ellipse-calculator 椭圆计算器",
       "variants": [
@@ -4645,14 +4889,15 @@ const ToolboxCatalog = {
           "sourceId": "ellipse-calculator"
         }
       ],
-      "href": "tools/tool/?id=ellipse-calculator"
+      "href": "tools/tool/?id=ellipse-calculator",
+      "iconBadge": ""
     },
     {
       "id": "email-alias-generator",
       "category": "web",
       "name": "电子邮件别名生成器",
       "description": "从一封基本电子邮件生成加地址和点技巧Gmail别名以及包罗万象的变体。",
-      "icon": "convert",
+      "icon": "mail",
       "tags": [],
       "keywords": "email alias plus addressing gmail dot trick subaddressing catch-all tag throwaway mailbox plus-addressing privacy email-alias-generator 电子邮件别名生成器",
       "variants": [
@@ -4663,14 +4908,15 @@ const ToolboxCatalog = {
           "sourceId": "email-alias-generator"
         }
       ],
-      "href": "tools/tool/?id=email-alias-generator"
+      "href": "tools/tool/?id=email-alias-generator",
+      "iconBadge": ""
     },
     {
       "id": "email-obfuscator",
       "category": "web",
       "name": "电子邮件混淆器",
       "description": "混淆电子邮件地址（实体/JS）以阻止抓取者。",
-      "icon": "convert",
+      "icon": "mail",
       "tags": [],
       "keywords": "email obfuscator hide anti spam html entities protect obfuscate anti-spam email-obfuscator 电子邮件混淆器",
       "variants": [
@@ -4681,14 +4927,15 @@ const ToolboxCatalog = {
           "sourceId": "email-obfuscator"
         }
       ],
-      "href": "tools/tool/?id=email-obfuscator"
+      "href": "tools/tool/?id=email-obfuscator",
+      "iconBadge": ""
     },
     {
       "id": "emoji-extractor",
       "category": "text",
       "name": "表情符号提取器",
       "description": "从文本中提取每个表情符号并用计数和代码点列出它们。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "extract emoji find list frequency code points zwj sequence count unicode codepoints emoji-extractor 表情符号提取器",
       "variants": [
@@ -4699,14 +4946,15 @@ const ToolboxCatalog = {
           "sourceId": "emoji-extractor"
         }
       ],
-      "href": "tools/tool/?id=emoji-extractor"
+      "href": "tools/tool/?id=emoji-extractor",
+      "iconBadge": ""
     },
     {
       "id": "emoji-stripper",
       "category": "text",
       "name": "表情符号去除器",
       "description": "从文本中去除所有表情符号和象形符号，同时保持单词完整。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "remove emoji strip delete cleaner pictographs unicode symbols clean emoji-stripper 表情符号去除器",
       "variants": [
@@ -4717,14 +4965,15 @@ const ToolboxCatalog = {
           "sourceId": "emoji-stripper"
         }
       ],
-      "href": "tools/tool/?id=emoji-stripper"
+      "href": "tools/tool/?id=emoji-stripper",
+      "iconBadge": ""
     },
     {
       "id": "encoding-ascii-code-point",
       "category": "encoding",
       "name": "ASCII/代码点转换器",
       "description": "将文本转换为ASCII/Unicode代码点数字并将数字列表转换回文本。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "ascii code point char convert decimal unicode encoding-ascii-code-point ASCII/代码点转换器",
       "variants": [
@@ -4735,14 +4984,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-ascii-code-point"
         }
       ],
-      "href": "tools/tool/?id=encoding-ascii-code-point"
+      "href": "tools/tool/?id=encoding-ascii-code-point",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base16-encode",
       "category": "encoding",
       "name": "Base16编码/解码",
       "description": "将文本编码为大写Base16(RFC 4648十六进制)并将其解码回来，并进行严格验证。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base16 hexadecimal hex rfc 4648 encode decode bytes rfc4648 encoding-base16-encode Base16编码/解码",
       "variants": [
@@ -4753,14 +5003,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base16-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-base16-encode"
+      "href": "tools/tool/?id=encoding-base16-encode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base32hex-encode",
       "category": "encoding",
       "name": "Base32hex(扩展十六进制)编码/解码",
       "description": "使用RFC 4648 Base32hex扩展十六进制字母表(0-9A-V)进行编码/解码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base32hex extended hex rfc 4648 nsec3 dnssec sort order encode rfc4648 decode encoding-base32hex-encode Base32hex(扩展十六进制)编码/解码",
       "variants": [
@@ -4771,14 +5022,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base32hex-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-base32hex-encode"
+      "href": "tools/tool/?id=encoding-base32hex-encode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base36-encode",
       "category": "encoding",
       "name": "Base36编码/解码",
       "description": "在任意长度整数和Base36(0-9，a-z)字符串之间进行转换。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base36 base 36 radix bigint alphanumeric encode decode encoding-base36-encode Base36编码/解码",
       "variants": [
@@ -4789,14 +5041,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base36-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-base36-encode"
+      "href": "tools/tool/?id=encoding-base36-encode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base45",
       "category": "encoding",
       "name": "Base45编码/解码",
       "description": "将文本编码为RFC 9285 Base45或将Base45解码回文本，如QR码数据有效负载中所使用的。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base45 rfc 9285 qr code encode decode encoding-base45 Base45编码/解码",
       "variants": [
@@ -4807,14 +5060,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base45"
         }
       ],
-      "href": "tools/tool/?id=encoding-base45"
+      "href": "tools/tool/?id=encoding-base45",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base62-encode",
       "category": "encoding",
       "name": "Base62编码/解码",
       "description": "将字节或大整数编码为Base62 (0-9A-Za-z)并解码回来，就像短URL ID使用的那样。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base62 base 62 short url id alphanumeric bigint encode shorturl decode encoding-base62-encode Base62编码/解码",
       "variants": [
@@ -4825,14 +5079,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base62-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-base62-encode"
+      "href": "tools/tool/?id=encoding-base62-encode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base64-base32-cross",
       "category": "encoding",
       "name": "Base64 ↔ Base32 交叉转换器",
       "description": "在相同字节的Base64和Base32表示之间直接转码，无需手动解码/编码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base64 base32 transcode cross convert url-safe base32hex rfc 4648 rfc4648 encoding-base64-base32-cross Base64 ↔ Base32 交叉转换器",
       "variants": [
@@ -4843,14 +5098,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base64-base32-cross"
         }
       ],
-      "href": "tools/tool/?id=encoding-base64-base32-cross"
+      "href": "tools/tool/?id=encoding-base64-base32-cross",
+      "iconBadge": "B64"
     },
     {
       "id": "encoding-base64-image-inspector",
       "category": "encoding",
       "name": "Base64/数据URI图像检查器",
       "description": "解码Base64或data:URI图像字符串并报告其真实格式、维度和大小。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base64 image data uri decode magic bytes dimensions mime sniff data-uri inspector magic-bytes encoding-base64-image-inspector Base64/数据URI图像检查器",
       "variants": [
@@ -4861,14 +5117,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base64-image-inspector"
         }
       ],
-      "href": "tools/tool/?id=encoding-base64-image-inspector"
+      "href": "tools/tool/?id=encoding-base64-image-inspector",
+      "iconBadge": "B64"
     },
     {
       "id": "encoding-base64-to-hex",
       "category": "encoding",
       "name": "Base64 到十六进制转换器",
       "description": "在 Base64 编码数据及其十六进制字节表示之间双向转换。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base64 hex hexadecimal convert bytes encoding-base64-to-hex Base64 到十六进制转换器",
       "variants": [
@@ -4879,14 +5136,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base64-to-hex"
         }
       ],
-      "href": "tools/tool/?id=encoding-base64-to-hex"
+      "href": "tools/tool/?id=encoding-base64-to-hex",
+      "iconBadge": "HEX"
     },
     {
       "id": "encoding-base64url",
       "category": "encoding",
       "name": "Base64 URL安全编码/解码",
       "description": "使用URL安全的Base64字母表对文本进行编码或解码，并具有用于令牌和URL的可选填充。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "base64url url safe base64 encode decode token encoding-base64url Base64 URL安全编码/解码",
       "variants": [
@@ -4897,14 +5155,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base64url"
         }
       ],
-      "href": "tools/tool/?id=encoding-base64url"
+      "href": "tools/tool/?id=encoding-base64url",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base85-rfc1924",
       "category": "encoding",
       "name": "Base85 (RFC 1924/ZeroMQ)变体",
       "description": "跨Base85字母表对数据进行编码和解码：并排的ASCII85、RFC 1924和Z85。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base85 ascii85 z85 rfc 1924 zeromq adobe encode decode rfc1924 encoding-base85-rfc1924 Base85 (RFC 1924/ZeroMQ)变体",
       "variants": [
@@ -4915,14 +5174,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base85-rfc1924"
         }
       ],
-      "href": "tools/tool/?id=encoding-base85-rfc1924"
+      "href": "tools/tool/?id=encoding-base85-rfc1924",
+      "iconBadge": ""
     },
     {
       "id": "encoding-base91-encode",
       "category": "encoding",
       "name": "basE91编码/解码",
       "description": "将二进制文本编码为basE91，这是一种比Base64更密集的ASCII编码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "base91 base 91 basE91 henke binary to text compact encoding encode decode ascii encoding-base91-encode basE91编码/解码",
       "variants": [
@@ -4933,14 +5193,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-base91-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-base91-encode"
+      "href": "tools/tool/?id=encoding-base91-encode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-braille-converter",
       "category": "encoding",
       "name": "盲文（统一码）翻译器",
       "description": "将可打印文本与Unicode盲文图案相互转换（1级）。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "braille unicode dot patterns grade 1 u+2800 accessibility translate grade-1 encoding-braille-converter 盲文（统一码）翻译器",
       "variants": [
@@ -4951,14 +5212,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-braille-converter"
         }
       ],
-      "href": "tools/tool/?id=encoding-braille-converter"
+      "href": "tools/tool/?id=encoding-braille-converter",
+      "iconBadge": ""
     },
     {
       "id": "encoding-rot-n-cipher",
       "category": "encoding",
       "name": "凯撒密码移位",
       "description": "利用可配置的凯撒移位对文本进行编码或解码，将字母旋转任意量，同时保留大小写和符号。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "caesar cipher shift rotate encode decode encoding-caesar-cipher 凯撒密码移位 rot13 rot-n brute force rot18 rot5 rot rotation brute-force encoding-rot-n-cipher ROT-N 密码（自定义旋转）",
       "variants": [
@@ -4975,14 +5237,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-rot-n-cipher"
         }
       ],
-      "href": "tools/tool/?id=encoding-rot-n-cipher"
+      "href": "tools/tool/?id=encoding-rot-n-cipher",
+      "iconBadge": ""
     },
     {
       "id": "encoding-codepoint-utf-converter",
       "category": "encoding",
       "name": "代码点 ↔ UTF-8/UTF-16 字节",
       "description": "将 Unicode 代码点转换为其 UTF-8 和 UTF-16 字节编码并返回。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "code point utf8 utf16 utf32 surrogate pair unicode bytes u+ utf-8 utf-16 code-point encoding-codepoint-utf-converter 代码点 ↔ UTF-8/UTF-16 字节",
       "variants": [
@@ -4993,14 +5256,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-codepoint-utf-converter"
         }
       ],
-      "href": "tools/tool/?id=encoding-codepoint-utf-converter"
+      "href": "tools/tool/?id=encoding-codepoint-utf-converter",
+      "iconBadge": ""
     },
     {
       "id": "encoding-csv-field-escape",
       "category": "encoding",
       "name": "CSV字段逃逸器/Unescaper",
       "description": "转义单个值以实现安全CSV嵌入（RFC 4180引用）并取消转义CSV字段。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "csv escape rfc 4180 quote field spreadsheet delimiter rfc-4180 quoting encoding-csv-field-escape CSV字段逃逸器/Unescaper",
       "variants": [
@@ -5011,14 +5275,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-csv-field-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-csv-field-escape"
+      "href": "tools/tool/?id=encoding-csv-field-escape",
+      "iconBadge": "CSV"
     },
     {
       "id": "encoding-data-uri-builder",
       "category": "encoding",
       "name": "Base64图像/数据URI生成器",
       "description": "将Base64内容包装到具有所选MIME类型的data:URI中，或者从现有数据URI中提取MIME和解码的有效负载。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "data uri url base64 mime inline encoding-data-uri-builder Base64图像/数据URI生成器",
       "variants": [
@@ -5029,14 +5294,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-data-uri-builder"
         }
       ],
-      "href": "tools/tool/?id=encoding-data-uri-builder"
+      "href": "tools/tool/?id=encoding-data-uri-builder",
+      "iconBadge": ""
     },
     {
       "id": "encoding-decimal-binary-octal-hex",
       "category": "encoding",
       "name": "字符多基数编码器(十进制/二进制/十进制/十六进制)",
       "description": "同时以十进制、二进制、八进制和十六进制显示每个字符的值。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "radix base conversion char codes binary octal hex decimal ascii values multi encoding-decimal-binary-octal-hex 字符多基数编码器(十进制/二进制/十进制/十六进制)",
       "variants": [
@@ -5047,14 +5313,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-decimal-binary-octal-hex"
         }
       ],
-      "href": "tools/tool/?id=encoding-decimal-binary-octal-hex"
+      "href": "tools/tool/?id=encoding-decimal-binary-octal-hex",
+      "iconBadge": "HEX"
     },
     {
       "id": "encoding-ebcdic-converter",
       "category": "encoding",
       "name": "ASCII ↔ EBCDIC 转换器",
       "description": "在ASCII/Latin-1和IBM EBCDIC代码页之间逐字节转换文本。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "ebcdic cp037 cp500 cp1047 ibm mainframe ascii to code page code-page encoding-ebcdic-converter ASCII ↔ EBCDIC 转换器",
       "variants": [
@@ -5065,14 +5332,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-ebcdic-converter"
         }
       ],
-      "href": "tools/tool/?id=encoding-ebcdic-converter"
+      "href": "tools/tool/?id=encoding-ebcdic-converter",
+      "iconBadge": ""
     },
     {
       "id": "encoding-gzip-base64",
       "category": "encoding",
       "name": "Gzip Base64 压缩/解压缩",
       "description": "使用gzip压缩文本并输出Base64，或者将Base64 gzip解码回原始文本。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "gzip compress decompress base64 deflate shrink encoding-gzip-base64 Gzip Base64 压缩/解压缩",
       "variants": [
@@ -5083,14 +5351,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-gzip-base64"
         }
       ],
-      "href": "tools/tool/?id=encoding-gzip-base64"
+      "href": "tools/tool/?id=encoding-gzip-base64",
+      "iconBadge": "B64"
     },
     {
       "id": "encoding-html-named-numeric",
       "category": "encoding",
       "name": "HTML 命名 ↔ 数字实体转换器",
       "description": "以两种方式将HTML命名实体与其十进制和十六进制数字字符引用相互转换。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html entity named numeric character reference amp nbsp hex decimal entities convert encoding-html-named-numeric HTML 命名 ↔ 数字实体转换器",
       "variants": [
@@ -5101,14 +5370,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-html-named-numeric"
         }
       ],
-      "href": "tools/tool/?id=encoding-html-named-numeric"
+      "href": "tools/tool/?id=encoding-html-named-numeric",
+      "iconBadge": "HTML"
     },
     {
       "id": "encoding-js-string-escape",
       "category": "encoding",
       "name": "JavaScript字符串转义器/Unescaper",
       "description": "将任意文本转义为安全的JS字符串文字并将其转义回来。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "js escape string literal backslash unicode hex unescape json quote javascript encoding-js-string-escape JavaScript字符串转义器/Unescaper",
       "variants": [
@@ -5119,14 +5389,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-js-string-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-js-string-escape"
+      "href": "tools/tool/?id=encoding-js-string-escape",
+      "iconBadge": ""
     },
     {
       "id": "encoding-json-pointer-escape",
       "category": "encoding",
       "name": "JSON 指针转义器（RFC 6901）",
       "description": "使用~0/~1转义规则对JSON指针引用标记进行编码和解码。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "json pointer rfc 6901 reference token tilde escape uri fragment path encode decode json-pointer rfc6901 reference-token encoding-json-pointer-escape JSON 指针转义器（RFC 6901）",
       "variants": [
@@ -5137,14 +5408,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-json-pointer-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-json-pointer-escape"
+      "href": "tools/tool/?id=encoding-json-pointer-escape",
+      "iconBadge": "JSON"
     },
     {
       "id": "encoding-jwt-inspector",
       "category": "encoding",
       "name": "JWT解码器和检查器",
       "description": "将JSON Web令牌解码为其可读标头和有效负载声明，并具有exp/iat/nbf的人类友好时间戳。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jwt token decode claims payload inspect encoding-jwt-inspector JWT解码器和检查器",
       "variants": [
@@ -5155,14 +5427,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-jwt-inspector"
         }
       ],
-      "href": "tools/tool/?id=encoding-jwt-inspector"
+      "href": "tools/tool/?id=encoding-jwt-inspector",
+      "iconBadge": "JWT"
     },
     {
       "id": "encoding-numeric-char-references",
       "category": "encoding",
       "name": "数字 HTML 字符参考",
       "description": "将文本转换为数字HTML字符引用（十进制或十六进制）并将它们解码回纯文本。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "html numeric character reference ncr decimal hex encoding-numeric-char-references 数字 HTML 字符参考",
       "variants": [
@@ -5173,14 +5446,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-numeric-char-references"
         }
       ],
-      "href": "tools/tool/?id=encoding-numeric-char-references"
+      "href": "tools/tool/?id=encoding-numeric-char-references",
+      "iconBadge": ""
     },
     {
       "id": "encoding-octal-text",
       "category": "encoding",
       "name": "八进制编码/解码",
       "description": "将UTF-8文本编码为空格分隔的八进制字节值或将八进制数解码回可读文本。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "octal base 8 encode decode bytes text encoding-octal-text 八进制编码/解码",
       "variants": [
@@ -5191,14 +5465,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-octal-text"
         }
       ],
-      "href": "tools/tool/?id=encoding-octal-text"
+      "href": "tools/tool/?id=encoding-octal-text",
+      "iconBadge": ""
     },
     {
       "id": "encoding-percent-encoding-table",
       "category": "encoding",
       "name": "百分比编码参考表",
       "description": "ASCII和常见保留字符的百分比编码(%XX)值的可搜索表。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "percent encoding url encode ascii table rfc 3986 reserved characters %xx percent-encoding url-encoding rfc3986 reference encoding-percent-encoding-table 百分比编码参考表",
       "variants": [
@@ -5209,14 +5484,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-percent-encoding-table"
         }
       ],
-      "href": "tools/tool/?id=encoding-percent-encoding-table"
+      "href": "tools/tool/?id=encoding-percent-encoding-table",
+      "iconBadge": ""
     },
     {
       "id": "encoding-punycode",
       "category": "encoding",
       "name": "Punycode 编码/解码",
       "description": "将国际化域名转换为ASCII Punycode(xn--)并返回其Unicode形式。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "punycode idn domain xn-- unicode encode encoding-punycode Punycode 编码/解码",
       "variants": [
@@ -5227,14 +5503,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-punycode"
         }
       ],
-      "href": "tools/tool/?id=encoding-punycode"
+      "href": "tools/tool/?id=encoding-punycode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-quoted-printable",
       "category": "encoding",
       "name": "引用-可打印编码/解码",
       "description": "将文本编码为MIME引用可打印或将引用可打印电子邮件内容解码回文本。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "quoted printable mime email encode decode =XX encoding-quoted-printable 引用-可打印编码/解码",
       "variants": [
@@ -5245,14 +5522,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-quoted-printable"
         }
       ],
-      "href": "tools/tool/?id=encoding-quoted-printable"
+      "href": "tools/tool/?id=encoding-quoted-printable",
+      "iconBadge": ""
     },
     {
       "id": "encoding-regex-literal-escape",
       "category": "encoding",
       "name": "正则表达式特殊字符转义符",
       "description": "对文本进行转义，使其在正则表达式内按字面匹配，以实现多种风格。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regex escape metacharacter literal quotemeta re.escape pcre character class pattern developer encoding-regex-literal-escape 正则表达式特殊字符转义符 regexp special characters unescape metacharacters text web-regex-escape 正则表达式转义/Unescape",
       "variants": [
@@ -5269,14 +5547,15 @@ const ToolboxCatalog = {
           "sourceId": "web-regex-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-regex-literal-escape"
+      "href": "tools/tool/?id=encoding-regex-literal-escape",
+      "iconBadge": ".*"
     },
     {
       "id": "encoding-shell-arg-escape",
       "category": "encoding",
       "name": "Shell 参数转义符/引用者",
       "description": "安全地引用文本作为 POSIX sh/bash 或 PowerShell 的单个 shell 参数。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "shell bash sh posix powershell escape quote argument shlex encoding-shell-arg-escape Shell 参数转义符/引用者 cmd command line injection quoting web-shell-arg-escaper 壳牌争论逃脱者",
       "variants": [
@@ -5293,14 +5572,15 @@ const ToolboxCatalog = {
           "sourceId": "web-shell-arg-escaper"
         }
       ],
-      "href": "tools/tool/?id=encoding-shell-arg-escape"
+      "href": "tools/tool/?id=encoding-shell-arg-escape",
+      "iconBadge": ""
     },
     {
       "id": "encoding-sql-string-escape",
       "category": "encoding",
       "name": "SQL 字符串转义器",
       "description": "将文本转义为常见数据库方言的安全SQL字符串文字。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "sql escape string literal quote mysql postgres sqlite server injection database developer encoding-sql-string-escape SQL 字符串转义器",
       "variants": [
@@ -5311,14 +5591,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-sql-string-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-sql-string-escape"
+      "href": "tools/tool/?id=encoding-sql-string-escape",
+      "iconBadge": "SQL"
     },
     {
       "id": "encoding-unicode-confusables-detector",
       "category": "encoding",
       "name": "Unicode易混淆/同形文字检测器",
       "description": "检测并规范化文本中视觉上具有欺骗性的相似字符。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "homoglyph confusable lookalike cyrillic spoof phishing idn skeleton unicode confusables security spoofing encoding-unicode-confusables-detector Unicode易混淆/同形文字检测器",
       "variants": [
@@ -5329,14 +5610,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-unicode-confusables-detector"
         }
       ],
-      "href": "tools/tool/?id=encoding-unicode-confusables-detector"
+      "href": "tools/tool/?id=encoding-unicode-confusables-detector",
+      "iconBadge": ""
     },
     {
       "id": "encoding-unicode-escape",
       "category": "encoding",
       "name": "Unicode转义/Unescape",
       "description": "将字符转换为\\uXXXX转义序列或将它们转义回可读的Unicode文本。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "unicode escape unescape \\u code point javascript encoding-unicode-escape Unicode转义/Unescape",
       "variants": [
@@ -5347,14 +5629,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-unicode-escape"
         }
       ],
-      "href": "tools/tool/?id=encoding-unicode-escape"
+      "href": "tools/tool/?id=encoding-unicode-escape",
+      "iconBadge": ""
     },
     {
       "id": "encoding-unicode-normalization",
       "category": "encoding",
       "name": "Unicode 标准化 (NFC/NFD/NFKC/NFKD)",
       "description": "将四种Unicode规范化形式应用于文本并进行比较。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "normalize nfc nfd nfkc nfkd composition decomposition diacritics ligature unicode normalization text encoding-unicode-normalization Unicode 标准化 (NFC/NFD/NFKC/NFKD)",
       "variants": [
@@ -5365,14 +5648,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-unicode-normalization"
         }
       ],
-      "href": "tools/tool/?id=encoding-unicode-normalization"
+      "href": "tools/tool/?id=encoding-unicode-normalization",
+      "iconBadge": ""
     },
     {
       "id": "encoding-uri-template-expander",
       "category": "encoding",
       "name": "URI 模板扩展器（RFC 6570）",
       "description": "使用变量扩展RFC 6570 URI模板，对每个操作符应用正确的百分比编码。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "uri template rfc 6570 rfc6570 url expansion percent encoding query path expand encoding-uri-template-expander URI 模板扩展器（RFC 6570）",
       "variants": [
@@ -5383,14 +5667,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-uri-template-expander"
         }
       ],
-      "href": "tools/tool/?id=encoding-uri-template-expander"
+      "href": "tools/tool/?id=encoding-uri-template-expander",
+      "iconBadge": ""
     },
     {
       "id": "encoding-url-component-variants",
       "category": "encoding",
       "name": "URL编码变体(encodeURI与encodeURIComponent)",
       "description": "在同一输入上并排比较并应用三个JavaScript URL编码函数。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "encodeuri encodeuricomponent escape unescape percent encoding url encode decodeuri compare encoding-url-component-variants URL编码变体(encodeURI与encodeURIComponent)",
       "variants": [
@@ -5401,14 +5686,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-url-component-variants"
         }
       ],
-      "href": "tools/tool/?id=encoding-url-component-variants"
+      "href": "tools/tool/?id=encoding-url-component-variants",
+      "iconBadge": ""
     },
     {
       "id": "encoding-utf16-code-units",
       "category": "encoding",
       "name": "UTF-8/UTF-16代码单位转换器",
       "description": "显示文本的UTF-16代码单元(和代理对)并将十六进制代码单元列表转换回字符。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "utf-16 code unit surrogate encode decode unicode encoding-utf16-code-units UTF-8/UTF-16代码单位转换器",
       "variants": [
@@ -5419,14 +5705,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-utf16-code-units"
         }
       ],
-      "href": "tools/tool/?id=encoding-utf16-code-units"
+      "href": "tools/tool/?id=encoding-utf16-code-units",
+      "iconBadge": "UTF16"
     },
     {
       "id": "encoding-utf8-byte-inspector",
       "category": "encoding",
       "name": "UTF-8字节检查器",
       "description": "使用每个字符的十六进制、二进制和代码点将文本分解为其UTF-8字节序列。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "utf-8 byte hex binary code point encode decode textencoder utf8 bytes inspector encoding-utf8-byte-inspector UTF-8字节检查器",
       "variants": [
@@ -5437,14 +5724,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-utf8-byte-inspector"
         }
       ],
-      "href": "tools/tool/?id=encoding-utf8-byte-inspector"
+      "href": "tools/tool/?id=encoding-utf8-byte-inspector",
+      "iconBadge": "UTF8"
     },
     {
       "id": "encoding-uuencode-xxencode",
       "category": "encoding",
       "name": "UU编码/UU解码",
       "description": "以经典的Unix uuencode格式对数据进行编码和解码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "uuencode uudecode uu unix binary email usenet encode decode encoding-uuencode UU编码/UU解码 xxencode xx encoding-uuencode-xxencode Uuencode / Xxencode 转换器 xxdecode to text ascii armor legacy encoding-xxencode XX编码/XX解码",
       "variants": [
@@ -5467,14 +5755,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-xxencode"
         }
       ],
-      "href": "tools/tool/?id=encoding-uuencode-xxencode"
+      "href": "tools/tool/?id=encoding-uuencode-xxencode",
+      "iconBadge": ""
     },
     {
       "id": "encoding-xor-cipher",
       "category": "encoding",
       "name": "异或密码（文本）",
       "description": "使用重复密钥异或密码加密或解密文本，输出或读取十六进制或Base64。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "xor cipher key encrypt decrypt encode encoding-xor-cipher 异或密码（文本）",
       "variants": [
@@ -5485,14 +5774,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-xor-cipher"
         }
       ],
-      "href": "tools/tool/?id=encoding-xor-cipher"
+      "href": "tools/tool/?id=encoding-xor-cipher",
+      "iconBadge": ""
     },
     {
       "id": "encoding-z85-encode",
       "category": "encoding",
       "name": "Z85编码/解码",
       "description": "使用 ZeroMQ Z85 进行编码/解码，ZeroMQ Z85 是对源代码安全的可打印 Base85 变体。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "z85 base85 zeromq rfc 32 ascii85 binary to text encode decode encoding-z85-encode Z85编码/解码",
       "variants": [
@@ -5503,14 +5793,15 @@ const ToolboxCatalog = {
           "sourceId": "encoding-z85-encode"
         }
       ],
-      "href": "tools/tool/?id=encoding-z85-encode"
+      "href": "tools/tool/?id=encoding-z85-encode",
+      "iconBadge": ""
     },
     {
       "id": "energy-converter",
       "category": "convert",
       "name": "能量转换器",
       "description": "在焦耳、卡路里、kWh、BTU和电子伏特之间转换能量。",
-      "icon": "convert",
+      "icon": "zap",
       "tags": [],
       "keywords": "energy joule kilojoule calorie kilocalorie watt hour kilowatt kwh btu electronvolt ev erg foot pound physics energy-converter 能量转换器",
       "variants": [
@@ -5521,14 +5812,15 @@ const ToolboxCatalog = {
           "sourceId": "energy-converter"
         }
       ],
-      "href": "tools/tool/?id=energy-converter"
+      "href": "tools/tool/?id=energy-converter",
+      "iconBadge": ""
     },
     {
       "id": "engineering-notation-converter",
       "category": "math",
       "name": "工程符号转换器",
       "description": "将数字转换为具有SI度量前缀的工程符号(1000的幂)。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "kilo mega milli micro powers of 1000 exponent mantissa engineering notation si-prefix scientific metric engineering-notation-converter 工程符号转换器",
       "variants": [
@@ -5539,14 +5831,15 @@ const ToolboxCatalog = {
           "sourceId": "engineering-notation-converter"
         }
       ],
-      "href": "tools/tool/?id=engineering-notation-converter"
+      "href": "tools/tool/?id=engineering-notation-converter",
+      "iconBadge": ""
     },
     {
       "id": "env-example-generator",
       "category": "web",
       "name": ".env.example 生成器",
       "description": "将环境变量名称/值列表转换为带有注释和分组的经过编辑的 .env.example。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "env.example dotenv .env environment variables redact placeholder secrets template env config env-example-generator .env.example 生成器",
       "variants": [
@@ -5557,14 +5850,15 @@ const ToolboxCatalog = {
           "sourceId": "env-example-generator"
         }
       ],
-      "href": "tools/tool/?id=env-example-generator"
+      "href": "tools/tool/?id=env-example-generator",
+      "iconBadge": ""
     },
     {
       "id": "env-to-shell-exports",
       "category": "convert",
       "name": ".env 到 Shell 导出",
       "description": "将.env文件转换为bash/zsh、fish或PowerShell的复制粘贴shell导出语句。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "dotenv zsh fish powershell environment variables env shell bash export convert env-to-shell-exports .env 到 Shell 导出",
       "variants": [
@@ -5575,14 +5869,15 @@ const ToolboxCatalog = {
           "sourceId": "env-to-shell-exports"
         }
       ],
-      "href": "tools/tool/?id=env-to-shell-exports"
+      "href": "tools/tool/?id=env-to-shell-exports",
+      "iconBadge": ""
     },
     {
       "id": "epoch-precision-converter",
       "category": "time",
       "name": "Epoch精密转换器",
       "description": "通过自动检测在秒、毫秒、微秒和纳秒之间转换Unix时间戳。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "epoch converter unix timestamp milliseconds microseconds nanoseconds auto detect precision epoch-precision-converter Epoch精密转换器",
       "variants": [
@@ -5593,14 +5888,15 @@ const ToolboxCatalog = {
           "sourceId": "epoch-precision-converter"
         }
       ],
-      "href": "tools/tool/?id=epoch-precision-converter"
+      "href": "tools/tool/?id=epoch-precision-converter",
+      "iconBadge": ""
     },
     {
       "id": "exponent-power-calculator",
       "category": "math",
       "name": "指数和幂计算器",
       "description": "对数字求幂、求根并评估科学指数表达式。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "nth root square pow base solve exponent index power logarithm radical exponent-power-calculator 指数和幂计算器",
       "variants": [
@@ -5611,14 +5907,15 @@ const ToolboxCatalog = {
           "sourceId": "exponent-power-calculator"
         }
       ],
-      "href": "tools/tool/?id=exponent-power-calculator"
+      "href": "tools/tool/?id=exponent-power-calculator",
+      "iconBadge": ""
     },
     {
       "id": "expression-calculator",
       "category": "math",
       "name": "科学计算器",
       "description": "用函数、常量和运算符评估数学表达式。",
-      "icon": "convert",
+      "icon": "function-square",
       "tags": [],
       "keywords": "calculator expression evaluator math sin cos sqrt scientific evaluate expression-calculator 科学计算器",
       "variants": [
@@ -5629,14 +5926,15 @@ const ToolboxCatalog = {
           "sourceId": "expression-calculator"
         }
       ],
-      "href": "tools/tool/?id=expression-calculator"
+      "href": "tools/tool/?id=expression-calculator",
+      "iconBadge": ""
     },
     {
       "id": "extended-gcd-multi",
       "category": "math",
       "name": "多数GCD和LCM",
       "description": "使用Bezout组合计算任意整数列表的GCD和LCM。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "greatest common divisor least multiple coprime extended euclid gcd lcm bezout number-theory extended-gcd-multi 多数GCD和LCM",
       "variants": [
@@ -5647,14 +5945,15 @@ const ToolboxCatalog = {
           "sourceId": "extended-gcd-multi"
         }
       ],
-      "href": "tools/tool/?id=extended-gcd-multi"
+      "href": "tools/tool/?id=extended-gcd-multi",
+      "iconBadge": ""
     },
     {
       "id": "extract-data",
       "category": "text",
       "name": "提取电子邮件、URL 和号码",
       "description": "将所有电子邮件地址、URL、电话号码、IP或号码从文本块中提取到干净的去重复列表中。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "extract emails urls scrape phone numbers extract-data 提取电子邮件、URL 和号码",
       "variants": [
@@ -5665,14 +5964,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-data"
         }
       ],
-      "href": "tools/tool/?id=extract-data"
+      "href": "tools/tool/?id=extract-data",
+      "iconBadge": ""
     },
     {
       "id": "factorial-binomial-calculator",
       "category": "math",
       "name": "阶乘、排列和组合",
       "description": "精确计算大n的阶乘、nPr排列和nCr组合。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "nPr nCr pascal binomial coefficient double factorial choose n! combinatorics permutation combination factorial-binomial-calculator 阶乘、排列和组合",
       "variants": [
@@ -5683,14 +5983,15 @@ const ToolboxCatalog = {
           "sourceId": "factorial-binomial-calculator"
         }
       ],
-      "href": "tools/tool/?id=factorial-binomial-calculator"
+      "href": "tools/tool/?id=factorial-binomial-calculator",
+      "iconBadge": ""
     },
     {
       "id": "factorial-calculator",
       "category": "math",
       "name": "阶乘计算器",
       "description": "计算大整数的精确n!、双阶乘和次阶乘。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "n! double factorial subfactorial derangement exact big number combinatorics bigint factorial-calculator 阶乘计算器",
       "variants": [
@@ -5701,14 +6002,15 @@ const ToolboxCatalog = {
           "sourceId": "factorial-calculator"
         }
       ],
-      "href": "tools/tool/?id=factorial-calculator"
+      "href": "tools/tool/?id=factorial-calculator",
+      "iconBadge": ""
     },
     {
       "id": "fake-address-generator",
       "category": "web",
       "name": "假地址生成器",
       "description": "从静态列表中按国家格式生成假邮政地址（街道、城市、地区、邮政编码、国家）。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "fake address test data mock postal code zip street city sample placeholder test-data fake-address-generator 假地址生成器",
       "variants": [
@@ -5719,14 +6021,15 @@ const ToolboxCatalog = {
           "sourceId": "fake-address-generator"
         }
       ],
-      "href": "tools/tool/?id=fake-address-generator"
+      "href": "tools/tool/?id=fake-address-generator",
+      "iconBadge": ""
     },
     {
       "id": "fake-company-generator",
       "category": "web",
       "name": "假公司生成器",
       "description": "从静态词库生成虚假公司记录：名称、行业、流行语、域、EIN格式的税号。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "fake company test data mock business name industry catchphrase domain ein sample test-data fake-company-generator 假公司生成器",
       "variants": [
@@ -5737,14 +6040,15 @@ const ToolboxCatalog = {
           "sourceId": "fake-company-generator"
         }
       ],
-      "href": "tools/tool/?id=fake-company-generator"
+      "href": "tools/tool/?id=fake-company-generator",
+      "iconBadge": ""
     },
     {
       "id": "fake-ipv4-ipv6-generator",
       "category": "web",
       "name": "随机IP地址生成器",
       "description": "生成随机IPv4和IPv6地址，可选地限制在私有或公共范围。",
-      "icon": "convert",
+      "icon": "ethernet-port",
       "tags": [],
       "keywords": "ip address random cidr rfc1918 test data fake subnet ipv4 ipv6 network fake-ipv4-ipv6-generator 随机IP地址生成器",
       "variants": [
@@ -5755,14 +6059,15 @@ const ToolboxCatalog = {
           "sourceId": "fake-ipv4-ipv6-generator"
         }
       ],
-      "href": "tools/tool/?id=fake-ipv4-ipv6-generator"
+      "href": "tools/tool/?id=fake-ipv4-ipv6-generator",
+      "iconBadge": ""
     },
     {
       "id": "fake-user-profile-generator",
       "category": "web",
       "name": "假用户配置文件生成器",
       "description": "从内置静态姓名列表生成真实的虚假用户记录（姓名、电子邮件、用户名、电话、头像种子）。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "fake users mock data seed faker test accounts csv json ndjson user profile test-data fake-user-profile-generator 假用户配置文件生成器",
       "variants": [
@@ -5773,14 +6078,15 @@ const ToolboxCatalog = {
           "sourceId": "fake-user-profile-generator"
         }
       ],
-      "href": "tools/tool/?id=fake-user-profile-generator"
+      "href": "tools/tool/?id=fake-user-profile-generator",
+      "iconBadge": ""
     },
     {
       "id": "fibonacci-calculator",
       "category": "math",
       "name": "斐波那契和卢卡斯数生成器",
       "description": "计算第n个斐波那契/卢卡斯数并准确列出该序列。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "fib nth fibonacci lucas numbers golden ratio phi fast doubling sequence golden-ratio bigint fibonacci-calculator 斐波那契和卢卡斯数生成器",
       "variants": [
@@ -5791,14 +6097,15 @@ const ToolboxCatalog = {
           "sourceId": "fibonacci-calculator"
         }
       ],
-      "href": "tools/tool/?id=fibonacci-calculator"
+      "href": "tools/tool/?id=fibonacci-calculator",
+      "iconBadge": ""
     },
     {
       "id": "figlet-banner",
       "category": "text",
       "name": "ASCII 横幅文本（Figlet 样式）",
       "description": "使用内置块字体将短文本渲染为大的 ASCII-art 字母，完全离线。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "figlet ascii art banner text big block letters to terminal figlet-banner ASCII 横幅文本（Figlet 样式）",
       "variants": [
@@ -5809,14 +6116,15 @@ const ToolboxCatalog = {
           "sourceId": "figlet-banner"
         }
       ],
-      "href": "tools/tool/?id=figlet-banner"
+      "href": "tools/tool/?id=figlet-banner",
+      "iconBadge": ""
     },
     {
       "id": "file-hash",
       "category": "encoding",
       "name": "文件散列",
       "description": "通过将任何本地文件放入MD5、SHA-1、SHA-256或SHA-512中，对任何本地文件进行哈希处理，并使用与预期校验和进行比较的字段。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "file hash checksum sha256 md5 verify integrity file-hash 文件散列",
       "variants": [
@@ -5827,14 +6135,15 @@ const ToolboxCatalog = {
           "sourceId": "file-hash"
         }
       ],
-      "href": "tools/tool/?id=file-hash"
+      "href": "tools/tool/?id=file-hash",
+      "iconBadge": ""
     },
     {
       "id": "find-replace",
       "category": "text",
       "name": "查找和替换",
       "description": "用纯文本或正则表达式匹配来查找和替换文本。",
-      "icon": "convert",
+      "icon": "replace",
       "tags": [],
       "keywords": "find and replace search regex substitute find-replace 查找和替换",
       "variants": [
@@ -5845,14 +6154,15 @@ const ToolboxCatalog = {
           "sourceId": "find-replace"
         }
       ],
-      "href": "tools/tool/?id=find-replace"
+      "href": "tools/tool/?id=find-replace",
+      "iconBadge": ""
     },
     {
       "id": "fixed-offset-timezone-math",
       "category": "time",
       "name": "固定UTC偏移转换器",
       "description": "跨固定UTC偏移量（例如+05:30到-08:00）转换日期时间，无需猜测DST。",
-      "icon": "convert",
+      "icon": "globe",
       "tags": [],
       "keywords": "utc offset converter time zone math fixed no dst half hour gmt timezone datetime conversion fixed-offset-timezone-math 固定UTC偏移转换器",
       "variants": [
@@ -5863,14 +6173,15 @@ const ToolboxCatalog = {
           "sourceId": "fixed-offset-timezone-math"
         }
       ],
-      "href": "tools/tool/?id=fixed-offset-timezone-math"
+      "href": "tools/tool/?id=fixed-offset-timezone-math",
+      "iconBadge": ""
     },
     {
       "id": "fixed-point-converter",
       "category": "math",
       "name": "定点(Qm.n)转换器",
       "description": "将实数与有符号/无符号Qm.n定点整数表示相互转换。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "Qm.n fixed point quantization twos complement fractional bits Q15 fixed-point q-format dsp binary embedded fixed-point-converter 定点(Qm.n)转换器",
       "variants": [
@@ -5881,14 +6192,15 @@ const ToolboxCatalog = {
           "sourceId": "fixed-point-converter"
         }
       ],
-      "href": "tools/tool/?id=fixed-point-converter"
+      "href": "tools/tool/?id=fixed-point-converter",
+      "iconBadge": ""
     },
     {
       "id": "fixed-width-to-csv",
       "category": "data",
       "name": "固定宽度至 CSV",
       "description": "通过定义字段宽度或剪切位置将固定宽度/列对齐的文本解析为CSV。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "fixed width to csv column aligned flat file field widths cut positions mainframe fixed-width columns parse convert fixed-width-to-csv 固定宽度至 CSV",
       "variants": [
@@ -5899,14 +6211,15 @@ const ToolboxCatalog = {
           "sourceId": "fixed-width-to-csv"
         }
       ],
-      "href": "tools/tool/?id=fixed-width-to-csv"
+      "href": "tools/tool/?id=fixed-width-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "flesch-reading-ease",
       "category": "text",
       "name": "Flesch 阅读轻松度分数",
       "description": "计算任何文本的Flesch阅读轻松分数和年级水平。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "flesch reading ease kincaid readability level grade syllables writing score analysis flesch-reading-ease Flesch 阅读轻松度分数",
       "variants": [
@@ -5917,14 +6230,15 @@ const ToolboxCatalog = {
           "sourceId": "flesch-reading-ease"
         }
       ],
-      "href": "tools/tool/?id=flesch-reading-ease"
+      "href": "tools/tool/?id=flesch-reading-ease",
+      "iconBadge": ""
     },
     {
       "id": "fletcher-checksum",
       "category": "encoding",
       "name": "Fletcher-16/32/64 校验和",
       "description": "计算输入字节的Fletcher校验和（16、32和64位）。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "fletcher-16 fletcher-32 fletcher-64 modular sum error detection fletcher checksum hash integrity fletcher-checksum Fletcher-16/32/64 校验和",
       "variants": [
@@ -5935,14 +6249,15 @@ const ToolboxCatalog = {
           "sourceId": "fletcher-checksum"
         }
       ],
-      "href": "tools/tool/?id=fletcher-checksum"
+      "href": "tools/tool/?id=fletcher-checksum",
+      "iconBadge": ""
     },
     {
       "id": "flow-rate-converter",
       "category": "convert",
       "name": "流量转换器",
       "description": "在L/s、m3/h、GPM和CFM之间转换体积流量。",
-      "icon": "convert",
+      "icon": "waves",
       "tags": [],
       "keywords": "flow rate volumetric liters per second cubic meters hour gallons minute gpm cfm feet discharge flow-rate plumbing flow-rate-converter 流量转换器",
       "variants": [
@@ -5953,14 +6268,15 @@ const ToolboxCatalog = {
           "sourceId": "flow-rate-converter"
         }
       ],
-      "href": "tools/tool/?id=flow-rate-converter"
+      "href": "tools/tool/?id=flow-rate-converter",
+      "iconBadge": ""
     },
     {
       "id": "force-converter",
       "category": "convert",
       "name": "力转换器",
       "description": "在牛顿、千克力、磅力和达因之间转换力。",
-      "icon": "convert",
+      "icon": "move-up-right",
       "tags": [],
       "keywords": "force newton kilonewton dyne kilogram gram pound lbf ounce poundal kip pound-force physics engineering force-converter 力转换器",
       "variants": [
@@ -5971,14 +6287,15 @@ const ToolboxCatalog = {
           "sourceId": "force-converter"
         }
       ],
-      "href": "tools/tool/?id=force-converter"
+      "href": "tools/tool/?id=force-converter",
+      "iconBadge": ""
     },
     {
       "id": "fraction-arithmetic",
       "category": "math",
       "name": "分数算术计算器",
       "description": "分数和带分数的加、减、乘、除具有精确的简化结果。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "add fractions subtract multiply divide mixed number common denominator fraction arithmetic mixed-number rational exact fraction-arithmetic 分数算术计算器",
       "variants": [
@@ -5989,14 +6306,15 @@ const ToolboxCatalog = {
           "sourceId": "fraction-arithmetic"
         }
       ],
-      "href": "tools/tool/?id=fraction-arithmetic"
+      "href": "tools/tool/?id=fraction-arithmetic",
+      "iconBadge": ""
     },
     {
       "id": "fraction-decimal-converter",
       "category": "math",
       "name": "分数和小数转换器",
       "description": "将分数转换为小数并将小数转换为简化分数，检测重复小数。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "fraction decimal simplify ratio repeating math convert numbers fraction-decimal-converter 分数和小数转换器",
       "variants": [
@@ -6007,14 +6325,15 @@ const ToolboxCatalog = {
           "sourceId": "fraction-decimal-converter"
         }
       ],
-      "href": "tools/tool/?id=fraction-decimal-converter"
+      "href": "tools/tool/?id=fraction-decimal-converter",
+      "iconBadge": ""
     },
     {
       "id": "fraction-simplifier",
       "category": "math",
       "name": "分数简化器",
       "description": "将任意分数简化为最低项并显示带分数和小数形式。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "lowest terms simplify fraction repeating decimal repetend gcd reduce mixed-number fraction-simplifier 分数简化器",
       "variants": [
@@ -6025,14 +6344,15 @@ const ToolboxCatalog = {
           "sourceId": "fraction-simplifier"
         }
       ],
-      "href": "tools/tool/?id=fraction-simplifier"
+      "href": "tools/tool/?id=fraction-simplifier",
+      "iconBadge": ""
     },
     {
       "id": "frequency-converter",
       "category": "convert",
       "name": "变频器",
       "description": "在Hz、kHz、MHz、GHz、RPM和角rad/s之间转换频率。",
-      "icon": "convert",
+      "icon": "radio",
       "tags": [],
       "keywords": "frequency hertz hz kilohertz megahertz gigahertz rpm rps radian per second angular bpm degree physics frequency-converter 变频器",
       "variants": [
@@ -6043,14 +6363,15 @@ const ToolboxCatalog = {
           "sourceId": "frequency-converter"
         }
       ],
-      "href": "tools/tool/?id=frequency-converter"
+      "href": "tools/tool/?id=frequency-converter",
+      "iconBadge": ""
     },
     {
       "id": "fuel-economy-converter",
       "category": "math",
       "name": "燃油经济性转换器",
       "description": "在 MPG（美国/英国）、km/L 和每 100 公里升之间转换燃油效率。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "fuel economy mpg l/100km km/l mileage math conversion automotive fuel-economy-converter 燃油经济性转换器",
       "variants": [
@@ -6061,14 +6382,15 @@ const ToolboxCatalog = {
           "sourceId": "fuel-economy-converter"
         }
       ],
-      "href": "tools/tool/?id=fuel-economy-converter"
+      "href": "tools/tool/?id=fuel-economy-converter",
+      "iconBadge": ""
     },
     {
       "id": "fuel-volume-converter",
       "category": "convert",
       "name": "燃料和石油体积转换器",
       "description": "在升、美制/英制加仑和油桶之间转换燃料体积。",
-      "icon": "convert",
+      "icon": "box",
       "tags": [],
       "keywords": "fuel volume liter us gallon imperial oil barrel petroleum cubic meter quart gas tank fuel-volume-converter 燃料和石油体积转换器",
       "variants": [
@@ -6079,14 +6401,15 @@ const ToolboxCatalog = {
           "sourceId": "fuel-volume-converter"
         }
       ],
-      "href": "tools/tool/?id=fuel-volume-converter"
+      "href": "tools/tool/?id=fuel-volume-converter",
+      "iconBadge": ""
     },
     {
       "id": "fuzzy-dedupe-lines",
       "category": "text",
       "name": "模糊重复线去除器",
       "description": "去除仅大小写、空格或标点符号不同的近似重复的行。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "fuzzy dedupe near duplicate remove similar lines normalize unique case insensitive fuzzy-dedupe-lines 模糊重复线去除器",
       "variants": [
@@ -6097,14 +6420,15 @@ const ToolboxCatalog = {
           "sourceId": "fuzzy-dedupe-lines"
         }
       ],
-      "href": "tools/tool/?id=fuzzy-dedupe-lines"
+      "href": "tools/tool/?id=fuzzy-dedupe-lines",
+      "iconBadge": ""
     },
     {
       "id": "gcd-lcm",
       "category": "math",
       "name": "GCD & LCM 计算器",
       "description": "求数字的最大公约数和最小公倍数。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "gcd lcm greatest common divisor least multiple hcf factor gcd-lcm GCD & LCM 计算器",
       "variants": [
@@ -6115,14 +6439,15 @@ const ToolboxCatalog = {
           "sourceId": "gcd-lcm"
         }
       ],
-      "href": "tools/tool/?id=gcd-lcm"
+      "href": "tools/tool/?id=gcd-lcm",
+      "iconBadge": ""
     },
     {
       "id": "generate-barcode",
       "category": "web",
       "name": "条形码生成器",
       "description": "从输入文本/数字生成Code 39和EAN-13条形码，呈现为具有可调整条宽度和高度的可下载SVG/PNG。",
-      "icon": "convert",
+      "icon": "barcode",
       "tags": [],
       "keywords": "barcode code39 ean13 scan product svg generator image generate-barcode 条形码生成器",
       "variants": [
@@ -6133,14 +6458,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-barcode"
         }
       ],
-      "href": "tools/tool/?id=generate-barcode"
+      "href": "tools/tool/?id=generate-barcode",
+      "iconBadge": ""
     },
     {
       "id": "generate-credit-card",
       "category": "web",
       "name": "信用卡号生成器",
       "description": "按品牌（Visa、Mastercard、Amex、Discover）生成 Luhn 有效的假测试卡号，并具有可选的到期日和 CVV，仅用于支付形式测试。",
-      "icon": "convert",
+      "icon": "credit-card",
       "tags": [],
       "keywords": "credit card luhn test fake visa mastercard generate-credit-card 信用卡号生成器 amex discover cvv credit-card test-data mock payment generators-fake-credit-card-luhn-set 测试卡号码组生成器",
       "variants": [
@@ -6157,14 +6483,15 @@ const ToolboxCatalog = {
           "sourceId": "generators-fake-credit-card-luhn-set"
         }
       ],
-      "href": "tools/tool/?id=generate-credit-card"
+      "href": "tools/tool/?id=generate-credit-card",
+      "iconBadge": ""
     },
     {
       "id": "generate-cron-expression",
       "category": "web",
       "name": "Cron 计划生成器",
       "description": "从人性化的时间表控件（分钟、小时、日、月、工作日）构建 cron 表达式，并查看其运行时间的简单英语描述。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron schedule crontab builder expression job generator generate-cron-expression Cron 计划生成器",
       "variants": [
@@ -6175,14 +6502,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-cron-expression"
         }
       ],
-      "href": "tools/tool/?id=generate-cron-expression"
+      "href": "tools/tool/?id=generate-cron-expression",
+      "iconBadge": "CRON"
     },
     {
       "id": "generate-css-gradient",
       "category": "web",
       "name": "CSS渐变生成器",
       "description": "构建具有多个色标、角度和类型的线性或径向CSS渐变，产生具有实时预览的复制就绪背景CSS。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "css gradient linear radial color background generator generate-css-gradient CSS渐变生成器",
       "variants": [
@@ -6193,14 +6521,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-css-gradient"
         }
       ],
-      "href": "tools/tool/?id=generate-css-gradient"
+      "href": "tools/tool/?id=generate-css-gradient",
+      "iconBadge": "CSS"
     },
     {
       "id": "random-hex-color-palette",
       "category": "web",
       "name": "十六进制颜色生成器",
       "description": "生成随机颜色作为HEX、RGB和HSL，并具有控制设计调色板和占位符的色调范围、亮度和饱和度的选项。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "color hex rgb hsl random palette generate-hex-color 十六进制颜色生成器 analogous complementary triadic monochromatic tetradic scheme design random-hex-color-palette 随机调色板生成器",
       "variants": [
@@ -6217,14 +6546,15 @@ const ToolboxCatalog = {
           "sourceId": "random-hex-color-palette"
         }
       ],
-      "href": "tools/tool/?id=random-hex-color-palette"
+      "href": "tools/tool/?id=random-hex-color-palette",
+      "iconBadge": "HEX"
     },
     {
       "id": "generate-iban",
       "category": "web",
       "name": "IBAN发生器",
       "description": "生成每个国家的具有正确长度和ISO 7064 mod-97校验位的有效格式测试IBAN，这对于银行和表格验证测试有用。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "iban bank mod-97 test account validation generate-iban IBAN发生器",
       "variants": [
@@ -6235,14 +6565,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-iban"
         }
       ],
-      "href": "tools/tool/?id=generate-iban"
+      "href": "tools/tool/?id=generate-iban",
+      "iconBadge": ""
     },
     {
       "id": "generate-mac-address",
       "category": "web",
       "name": "MAC地址生成器",
       "description": "生成具有可选分隔符（冒号、连字符、点）、大小写和本地管理/单播位控制的随机MAC地址以用于网络测试。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "mac address network ethernet hardware random generate-mac-address MAC地址生成器",
       "variants": [
@@ -6253,14 +6584,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-mac-address"
         }
       ],
-      "href": "tools/tool/?id=generate-mac-address"
+      "href": "tools/tool/?id=generate-mac-address",
+      "iconBadge": ""
     },
     {
       "id": "generate-markdown-table",
       "category": "web",
       "name": "Markdown 表生成器",
       "description": "从粘贴的 CSV/TSV 或行/列计数生成干净的 GitHub 风格的 Markdown 表，并具有列对齐和自动填充列。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown table csv github alignment convert generator generate-markdown-table Markdown 表生成器",
       "variants": [
@@ -6271,14 +6603,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-markdown-table"
         }
       ],
-      "href": "tools/tool/?id=generate-markdown-table"
+      "href": "tools/tool/?id=generate-markdown-table",
+      "iconBadge": ""
     },
     {
       "id": "generate-mock-json",
       "category": "web",
       "name": "JSON 模拟数据生成器",
       "description": "从字段模式（名称、电子邮件、uuid、数字、日期、布尔值）生成真实的假 JSON 记录数组，并具有用于 API 模拟的可配置行数。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "mock json fake data api seed generator generate-mock-json JSON 模拟数据生成器",
       "variants": [
@@ -6289,14 +6622,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-mock-json"
         }
       ],
-      "href": "tools/tool/?id=generate-mock-json"
+      "href": "tools/tool/?id=generate-mock-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "generate-nanoid",
       "category": "web",
       "name": "NanoID发生器",
       "description": "生成具有可配置长度和字母表的紧凑的、URL安全的NanoID，这是用于密钥和短链接的UUID的流行的较小替代品。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "nanoid id short url-safe unique key generate-nanoid NanoID发生器 nano url safe nanoid-generator 纳米ID发生器",
       "variants": [
@@ -6313,14 +6647,15 @@ const ToolboxCatalog = {
           "sourceId": "nanoid-generator"
         }
       ],
-      "href": "tools/tool/?id=generate-nanoid"
+      "href": "tools/tool/?id=generate-nanoid",
+      "iconBadge": ""
     },
     {
       "id": "generate-passphrase",
       "category": "web",
       "name": "安全密码生成器",
       "description": "从具有可配置字数、分隔符、大写和附加数字的内置单词列表生成令人难忘的 Diceware 式密码短语。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "passphrase diceware password memorable words secure generate-passphrase 安全密码生成器 word xkcd passphrase-generator 密码短语生成器",
       "variants": [
@@ -6337,14 +6672,15 @@ const ToolboxCatalog = {
           "sourceId": "passphrase-generator"
         }
       ],
-      "href": "tools/tool/?id=generate-passphrase"
+      "href": "tools/tool/?id=generate-passphrase",
+      "iconBadge": ""
     },
     {
       "id": "generate-pin",
       "category": "web",
       "name": "PIN码生成器",
       "description": "批量生成选定长度(例如4/6/8位数字)的随机数字PIN码，并可以选择避免琐碎的序列和重复。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "pin code numeric otp random digits generate-pin PIN码生成器",
       "variants": [
@@ -6355,14 +6691,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-pin"
         }
       ],
-      "href": "tools/tool/?id=generate-pin"
+      "href": "tools/tool/?id=generate-pin",
+      "iconBadge": ""
     },
     {
       "id": "placeholder-image",
       "category": "web",
       "name": "占位符图像生成器",
       "description": "以选定的尺寸、背景/文本颜色和标签文本生成可下载的占位符图像，将其绘制在画布上作为模型的数据URL。",
-      "icon": "convert",
+      "icon": "image-plus",
       "tags": [],
       "keywords": "placeholder image mockup canvas dummy thumbnail generator generate-placeholder-image 占位符图像生成器 svg placehold placeholder-image SVG占位符生成器",
       "variants": [
@@ -6379,14 +6716,15 @@ const ToolboxCatalog = {
           "sourceId": "placeholder-image"
         }
       ],
-      "href": "tools/tool/?id=placeholder-image"
+      "href": "tools/tool/?id=placeholder-image",
+      "iconBadge": ""
     },
     {
       "id": "generate-random-date",
       "category": "web",
       "name": "随机日期生成器",
       "description": "使用选定的输出格式（ISO、区域设置、Unix时间戳）和播种数据的数量，生成开始和结束边界之间的随机日期和时间。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "date random time timestamp iso seed generator generate-random-date 随机日期生成器",
       "variants": [
@@ -6397,14 +6735,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-random-date"
         }
       ],
-      "href": "tools/tool/?id=generate-random-date"
+      "href": "tools/tool/?id=generate-random-date",
+      "iconBadge": ""
     },
     {
       "id": "generate-random-number",
       "category": "web",
       "name": "随机数发生器",
       "description": "生成最小/最大范围内的密码随机整数或小数，具有数量、唯一性和小数位数的选项。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random number integer rng range dice generate-random-number 随机数发生器",
       "variants": [
@@ -6415,14 +6754,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-random-number"
         }
       ],
-      "href": "tools/tool/?id=generate-random-number"
+      "href": "tools/tool/?id=generate-random-number",
+      "iconBadge": ""
     },
     {
       "id": "generate-random-string",
       "category": "web",
       "name": "随机字符串生成器",
       "description": "生成具有可切换字符集（小写、大写、数字、符号）、自定义长度以及API密钥、秘密和测试数据的数量的随机字符串/令牌。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random string token secret key alphanumeric generate-random-string 随机字符串生成器 hex api random-string 随机字符串生成器（字母表）",
       "variants": [
@@ -6439,14 +6779,15 @@ const ToolboxCatalog = {
           "sourceId": "random-string"
         }
       ],
-      "href": "tools/tool/?id=generate-random-string"
+      "href": "tools/tool/?id=generate-random-string",
+      "iconBadge": ""
     },
     {
       "id": "generate-slug",
       "category": "web",
       "name": "弹头发生器",
       "description": "将每行文本转换为干净的URL slugs，具有分隔符、小写、重音去除和最大长度选项，一次处理多个标题。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "slug url permalink seo kebab friendly generate-slug 弹头发生器",
       "variants": [
@@ -6457,14 +6798,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-slug"
         }
       ],
-      "href": "tools/tool/?id=generate-slug"
+      "href": "tools/tool/?id=generate-slug",
+      "iconBadge": ""
     },
     {
       "id": "generate-svg-pattern",
       "category": "web",
       "name": "SVG图案生成器",
       "description": "生成具有可调整颜色、尺寸和间距的可平铺SVG背景图案（点、网格、条纹、棋盘），输出为即用型SVG标记。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "svg pattern background tile css design generator generate-svg-pattern SVG图案生成器",
       "variants": [
@@ -6475,14 +6817,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-svg-pattern"
         }
       ],
-      "href": "tools/tool/?id=generate-svg-pattern"
+      "href": "tools/tool/?id=generate-svg-pattern",
+      "iconBadge": "SVG"
     },
     {
       "id": "generate-ulid",
       "category": "web",
       "name": "ULID发生器",
       "description": "生成ULID（通用唯一字典式可排序标识符）：具有毫秒时间戳前缀和随机后缀的26字符Crockford base32 ID，可按创建时间排序。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "ulid id sortable identifier unique timestamp generate-ulid ULID发生器 ulid-generator ULID发生器(散装)",
       "variants": [
@@ -6499,14 +6842,15 @@ const ToolboxCatalog = {
           "sourceId": "ulid-generator"
         }
       ],
-      "href": "tools/tool/?id=generate-ulid"
+      "href": "tools/tool/?id=generate-ulid",
+      "iconBadge": ""
     },
     {
       "id": "generate-uuid-v5",
       "category": "web",
       "name": "UUID v5/v3生成器",
       "description": "从命名空间UUID加上名称生成确定性命名空间UUID(v5 SHA-1和v3 MD5)，因此相同的输入总是产生相同的UUID。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "uuid v5 v3 namespace deterministic sha1 generate-uuid-v5 UUID v5/v3生成器",
       "variants": [
@@ -6517,14 +6861,15 @@ const ToolboxCatalog = {
           "sourceId": "generate-uuid-v5"
         }
       ],
-      "href": "tools/tool/?id=generate-uuid-v5"
+      "href": "tools/tool/?id=generate-uuid-v5",
+      "iconBadge": "UUID"
     },
     {
       "id": "generators-json-server-routes",
       "category": "web",
       "name": "REST 模拟路由生成器",
       "description": "从资源名称列表生成 CRUD REST 路由的 JSON 配置。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "rest routes crud json-server openapi endpoints mock api resources generators-json-server-routes REST 模拟路由生成器",
       "variants": [
@@ -6535,14 +6880,15 @@ const ToolboxCatalog = {
           "sourceId": "generators-json-server-routes"
         }
       ],
-      "href": "tools/tool/?id=generators-json-server-routes"
+      "href": "tools/tool/?id=generators-json-server-routes",
+      "iconBadge": "JSON"
     },
     {
       "id": "generators-ssh-config-builder",
       "category": "web",
       "name": "SSH配置块生成器",
       "description": "从表单字段构建格式良好的~/.ssh/config主机块。",
-      "icon": "convert",
+      "icon": "git-branch",
       "tags": [],
       "keywords": "ssh config host block identityfile proxyjump forwardagent aliases devops generators-ssh-config-builder SSH配置块生成器",
       "variants": [
@@ -6553,14 +6899,15 @@ const ToolboxCatalog = {
           "sourceId": "generators-ssh-config-builder"
         }
       ],
-      "href": "tools/tool/?id=generators-ssh-config-builder"
+      "href": "tools/tool/?id=generators-ssh-config-builder",
+      "iconBadge": ""
     },
     {
       "id": "generators-svg-qr-style-placeholder",
       "category": "web",
       "name": "随机标识符(SVG)",
       "description": "从种子字符串生成确定性对称像素标识SVG。",
-      "icon": "convert",
+      "icon": "qr-code",
       "tags": [],
       "keywords": "identicon avatar svg gravatar pixel art seed github placeholder deterministic generators-svg-qr-style-placeholder 随机标识符(SVG)",
       "variants": [
@@ -6571,14 +6918,15 @@ const ToolboxCatalog = {
           "sourceId": "generators-svg-qr-style-placeholder"
         }
       ],
-      "href": "tools/tool/?id=generators-svg-qr-style-placeholder"
+      "href": "tools/tool/?id=generators-svg-qr-style-placeholder",
+      "iconBadge": "SVG"
     },
     {
       "id": "gitignore-generator",
       "category": "web",
       "name": ".gitignore 生成器",
       "description": "从公共语言和工具模板组装.gitignore。",
-      "icon": "convert",
+      "icon": "git-branch",
       "tags": [],
       "keywords": "gitignore git ignore template node python rust gitignore-generator .gitignore 生成器",
       "variants": [
@@ -6589,14 +6937,15 @@ const ToolboxCatalog = {
           "sourceId": "gitignore-generator"
         }
       ],
-      "href": "tools/tool/?id=gitignore-generator"
+      "href": "tools/tool/?id=gitignore-generator",
+      "iconBadge": ""
     },
     {
       "id": "gradient-generator",
       "category": "color",
       "name": "CSS渐变生成器",
       "description": "通过实时预览构建线性、径向和圆锥CSS渐变。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "gradient css linear radial conic background gradient-generator CSS渐变生成器",
       "variants": [
@@ -6607,14 +6956,15 @@ const ToolboxCatalog = {
           "sourceId": "gradient-generator"
         }
       ],
-      "href": "tools/tool/?id=gradient-generator"
+      "href": "tools/tool/?id=gradient-generator",
+      "iconBadge": ""
     },
     {
       "id": "gradient-stops-generator",
       "category": "color",
       "name": "梯度停止发生器",
       "description": "计算两种或更多种颜色之间的均匀或缓和的中间颜色停止点。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "gradient stops oklch hsl easing linear-gradient interpolate color interpolation css gradient-stops-generator 梯度停止发生器",
       "variants": [
@@ -6625,14 +6975,15 @@ const ToolboxCatalog = {
           "sourceId": "gradient-stops-generator"
         }
       ],
-      "href": "tools/tool/?id=gradient-stops-generator"
+      "href": "tools/tool/?id=gradient-stops-generator",
+      "iconBadge": ""
     },
     {
       "id": "graphql-introspection-viewer",
       "category": "web",
       "name": "GraphQL 自省查看器",
       "description": "总结GraphQL自省JSON类型、查询、突变、接口和标量。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "graphql schema introspection json graphql-introspection-viewer GraphQL 自省查看器",
       "variants": [
@@ -6643,14 +6994,15 @@ const ToolboxCatalog = {
           "sourceId": "graphql-introspection-viewer"
         }
       ],
-      "href": "tools/tool/?id=graphql-introspection-viewer"
+      "href": "tools/tool/?id=graphql-introspection-viewer",
+      "iconBadge": ""
     },
     {
       "id": "graphql-operation-complexity-estimator",
       "category": "web",
       "name": "GraphQL操作复杂度估计器",
       "description": "估计GraphQL查询深度、字段计数、别名、片段和重复选择。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "graphql query complexity api graphql-operation-complexity-estimator GraphQL操作复杂度估计器",
       "variants": [
@@ -6661,14 +7013,15 @@ const ToolboxCatalog = {
           "sourceId": "graphql-operation-complexity-estimator"
         }
       ],
-      "href": "tools/tool/?id=graphql-operation-complexity-estimator"
+      "href": "tools/tool/?id=graphql-operation-complexity-estimator",
+      "iconBadge": ""
     },
     {
       "id": "graphql-variables-validator",
       "category": "web",
       "name": "GraphQL变量验证器",
       "description": "将 GraphQL 变量定义与变量 JSON 负载进行比较。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "graphql variables json validation graphql-variables-validator GraphQL变量验证器",
       "variants": [
@@ -6679,14 +7032,15 @@ const ToolboxCatalog = {
           "sourceId": "graphql-variables-validator"
         }
       ],
-      "href": "tools/tool/?id=graphql-variables-validator"
+      "href": "tools/tool/?id=graphql-variables-validator",
+      "iconBadge": ""
     },
     {
       "id": "grayscale-converter",
       "category": "color",
       "name": "灰度转换器",
       "description": "使用亮度、平均或去饱和方法以及并排预览将任何颜色转换为其等效灰度。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "grayscale greyscale desaturate luminance black and white grayscale-converter 灰度转换器",
       "variants": [
@@ -6697,14 +7051,15 @@ const ToolboxCatalog = {
           "sourceId": "grayscale-converter"
         }
       ],
-      "href": "tools/tool/?id=grayscale-converter"
+      "href": "tools/tool/?id=grayscale-converter",
+      "iconBadge": ""
     },
     {
       "id": "grpc-proto-viewer",
       "category": "web",
       "name": "gRPC 原型查看器",
       "description": "解析.proto文本并列出包、服务、RPC、消息、字段和枚举。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "grpc protobuf proto api grpc-proto-viewer gRPC 原型查看器",
       "variants": [
@@ -6715,14 +7070,15 @@ const ToolboxCatalog = {
           "sourceId": "grpc-proto-viewer"
         }
       ],
-      "href": "tools/tool/?id=grpc-proto-viewer"
+      "href": "tools/tool/?id=grpc-proto-viewer",
+      "iconBadge": ""
     },
     {
       "id": "grpcurl-command-builder",
       "category": "web",
       "name": "grpcurl 命令生成器",
       "description": "使用主机、服务方法、标头、TLS和JSON主体构建grpcurl命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "grpc grpcurl command api grpcurl-command-builder 命令生成器",
       "variants": [
@@ -6733,14 +7089,15 @@ const ToolboxCatalog = {
           "sourceId": "grpcurl-command-builder"
         }
       ],
-      "href": "tools/tool/?id=grpcurl-command-builder"
+      "href": "tools/tool/?id=grpcurl-command-builder",
+      "iconBadge": ""
     },
     {
       "id": "gunning-fog-index",
       "category": "text",
       "name": "喷雾指数",
       "description": "估计第一次阅读时理解文本所需的正规教育年数。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "gunning fog index readability complex words reading level grade syllables writing analysis gunning-fog-index 喷雾指数",
       "variants": [
@@ -6751,14 +7108,15 @@ const ToolboxCatalog = {
           "sourceId": "gunning-fog-index"
         }
       ],
-      "href": "tools/tool/?id=gunning-fog-index"
+      "href": "tools/tool/?id=gunning-fog-index",
+      "iconBadge": ""
     },
     {
       "id": "hash-compare-verify",
       "category": "encoding",
       "name": "散列比较和验证",
       "description": "粘贴预期的校验和以及您的文本或文件散列，以确认它们与恒定时间样式的比较匹配。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "md5 sha-1 sha-256 sha-512 file hash match digest verify checksum compare integrity hash-compare-verify 散列比较和验证",
       "variants": [
@@ -6769,14 +7127,15 @@ const ToolboxCatalog = {
           "sourceId": "hash-compare-verify"
         }
       ],
-      "href": "tools/tool/?id=hash-compare-verify"
+      "href": "tools/tool/?id=hash-compare-verify",
+      "iconBadge": ""
     },
     {
       "id": "hash-text",
       "category": "encoding",
       "name": "散列文本",
       "description": "在浏览器中实时计算文本的 MD5、SHA-1、SHA-256/384/512、SHA-3、BLAKE3 和 CRC32 摘要。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "hash checksum digest sha md5 blake3 fingerprint sha256 sha512 crc32 hash-text 散列文本",
       "variants": [
@@ -6787,14 +7146,15 @@ const ToolboxCatalog = {
           "sourceId": "hash-text"
         }
       ],
-      "href": "tools/tool/?id=hash-text"
+      "href": "tools/tool/?id=hash-text",
+      "iconBadge": ""
     },
     {
       "id": "hashtag-generator",
       "category": "text",
       "name": "标签生成器",
       "description": "将短语变成干净的主题标签，并选择大小写、删除标点符号以及合并或拆分单词。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "hashtag generator social media tags camelcase instagram twitter hashtags pascalcase casing cleanup hashtag-generator 标签生成器",
       "variants": [
@@ -6805,14 +7165,15 @@ const ToolboxCatalog = {
           "sourceId": "hashtag-generator"
         }
       ],
-      "href": "tools/tool/?id=hashtag-generator"
+      "href": "tools/tool/?id=hashtag-generator",
+      "iconBadge": ""
     },
     {
       "id": "hex-shorthand-converter",
       "category": "color",
       "name": "十六进制速记扩展器",
       "description": "将 3/4 位速记十六进制扩展为 6/8 位，并在可能的情况下缩小回来。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "hex shorthand expand minify 3 digit 8 alpha normalize color hex-shorthand-converter 十六进制速记扩展器",
       "variants": [
@@ -6823,14 +7184,15 @@ const ToolboxCatalog = {
           "sourceId": "hex-shorthand-converter"
         }
       ],
-      "href": "tools/tool/?id=hex-shorthand-converter"
+      "href": "tools/tool/?id=hex-shorthand-converter",
+      "iconBadge": "HEX"
     },
     {
       "id": "hex-text",
       "category": "encoding",
       "name": "十六进制编码/解码",
       "description": "将文本转换为十六进制并返回，可选大写。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "hex hexadecimal base16 bytes encode decode hex-text 十六进制编码/解码",
       "variants": [
@@ -6841,14 +7203,15 @@ const ToolboxCatalog = {
           "sourceId": "hex-text"
         }
       ],
-      "href": "tools/tool/?id=hex-text"
+      "href": "tools/tool/?id=hex-text",
+      "iconBadge": "HEX"
     },
     {
       "id": "hex-to-rgb-code",
       "category": "convert",
       "name": "十六进制到 RGB 代码片段",
       "description": "将十六进制颜色转换成多种语言的可直接粘贴的代码。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "css swift flutter android uicolor snippet tailwind color hex rgb code convert hex-to-rgb-code 十六进制到 RGB 代码片段",
       "variants": [
@@ -6859,14 +7222,15 @@ const ToolboxCatalog = {
           "sourceId": "hex-to-rgb-code"
         }
       ],
-      "href": "tools/tool/?id=hex-to-rgb-code"
+      "href": "tools/tool/?id=hex-to-rgb-code",
+      "iconBadge": "RGB"
     },
     {
       "id": "hex-to-rgba",
       "category": "color",
       "name": "十六进制到RGBA转换器",
       "description": "将十六进制颜色代码(包括带有alpha的8位十六进制)与rgba()相互转换，以百分比值控制不透明度。",
-      "icon": "convert",
+      "icon": "pipette",
       "tags": [],
       "keywords": "hex rgba alpha opacity convert hex-to-rgba 十六进制到RGBA转换器",
       "variants": [
@@ -6877,14 +7241,15 @@ const ToolboxCatalog = {
           "sourceId": "hex-to-rgba"
         }
       ],
-      "href": "tools/tool/?id=hex-to-rgba"
+      "href": "tools/tool/?id=hex-to-rgba",
+      "iconBadge": "RGBA"
     },
     {
       "id": "hkdf-key-derivation",
       "category": "encoding",
       "name": "HKDF密钥导出",
       "description": "使用HKDF(RFC 5869)将输入密钥材料扩展为一个或多个输出密钥。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "hkdf key derivation rfc 5869 extract expand derive sha-256 okm ikm kdf key-derivation rfc-5869 sha hkdf-key-derivation HKDF密钥导出",
       "variants": [
@@ -6895,14 +7260,15 @@ const ToolboxCatalog = {
           "sourceId": "hkdf-key-derivation"
         }
       ],
-      "href": "tools/tool/?id=hkdf-key-derivation"
+      "href": "tools/tool/?id=hkdf-key-derivation",
+      "iconBadge": ""
     },
     {
       "id": "hmac-generator",
       "category": "encoding",
       "name": "HMAC发生器",
       "description": "使用秘密密钥计算消息的HMAC(SHA-1/256/384/512)。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "hmac message authentication sign secret key sha mac sha256 signature hash hmac-generator HMAC发生器",
       "variants": [
@@ -6913,14 +7279,15 @@ const ToolboxCatalog = {
           "sourceId": "hmac-generator"
         }
       ],
-      "href": "tools/tool/?id=hmac-generator"
+      "href": "tools/tool/?id=hmac-generator",
+      "iconBadge": "HMAC"
     },
     {
       "id": "hmac-verify",
       "category": "encoding",
       "name": "HMAC验证",
       "description": "根据消息和密钥重新计算HMAC，然后将其与预期MAC进行比较以验证真实性。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "hmac-sha256 sha-1 sha-512 message authentication compare webcrypto hmac verify mac integrity hmac-verify HMAC验证",
       "variants": [
@@ -6931,14 +7298,15 @@ const ToolboxCatalog = {
           "sourceId": "hmac-verify"
         }
       ],
-      "href": "tools/tool/?id=hmac-verify"
+      "href": "tools/tool/?id=hmac-verify",
+      "iconBadge": "HMAC"
     },
     {
       "id": "hsl-to-hex",
       "category": "color",
       "name": "HSL 到 HEX 转换器",
       "description": "将HSL颜色值转换为HEX和RGB，接受标准hsl()表示法并输出干净的网络就绪代码。",
-      "icon": "convert",
+      "icon": "swatch-book",
       "tags": [],
       "keywords": "hsl hex rgb convert color hsl-to-hex HSL 到 HEX 转换器",
       "variants": [
@@ -6949,14 +7317,15 @@ const ToolboxCatalog = {
           "sourceId": "hsl-to-hex"
         }
       ],
-      "href": "tools/tool/?id=hsl-to-hex"
+      "href": "tools/tool/?id=hsl-to-hex",
+      "iconBadge": "HEX"
     },
     {
       "id": "hsts-preload-checker",
       "category": "web",
       "name": "HSTS预载检查器",
       "description": "对照常见预加载要求检查严格传输安全标头。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "hsts headers security tls hsts-preload-checker HSTS预载检查器",
       "variants": [
@@ -6967,14 +7336,15 @@ const ToolboxCatalog = {
           "sourceId": "hsts-preload-checker"
         }
       ],
-      "href": "tools/tool/?id=hsts-preload-checker"
+      "href": "tools/tool/?id=hsts-preload-checker",
+      "iconBadge": ""
     },
     {
       "id": "html-entities",
       "category": "encoding",
       "name": "HTML实体编码/解码",
       "description": "将文本转义为HTML实体并将实体转义回文本。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "html entities escape unescape ampersand nbsp html-entities HTML实体编码/解码 amp lt gt numeric entity attribute safe encode decode web-html-escape-unescape HTML 转义/代码的 Unescape",
       "variants": [
@@ -6991,14 +7361,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-escape-unescape"
         }
       ],
-      "href": "tools/tool/?id=html-entities"
+      "href": "tools/tool/?id=html-entities",
+      "iconBadge": "HTML"
     },
     {
       "id": "html-table-to-csv",
       "category": "data",
       "name": "HTML表格到CSV",
       "description": "将一个或所有<table>元素从粘贴的HTML提取到CSV中。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html table to csv extract scrape colspan rowspan web export parse convert html-table-to-csv HTML表格到CSV",
       "variants": [
@@ -7009,14 +7380,15 @@ const ToolboxCatalog = {
           "sourceId": "html-table-to-csv"
         }
       ],
-      "href": "tools/tool/?id=html-table-to-csv"
+      "href": "tools/tool/?id=html-table-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "html-table-to-json",
       "category": "data",
       "name": "HTML表到JSON",
       "description": "将HTML <table>转换成由标题行作为关键字的对象的JSON数组。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html table to json objects scrape colspan rowspan parse web convert html-table-to-json HTML表到JSON",
       "variants": [
@@ -7027,14 +7399,15 @@ const ToolboxCatalog = {
           "sourceId": "html-table-to-json"
         }
       ],
-      "href": "tools/tool/?id=html-table-to-json"
+      "href": "tools/tool/?id=html-table-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "html-table-to-markdown",
       "category": "convert",
       "name": "HTML 表格到 Markdown",
       "description": "从 HTML 中提取 <table> 元素并将它们呈现为 GitHub 风格的 Markdown 管道表。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "pipe table thead alignment tbody github html markdown convert gfm html-table-to-markdown HTML 表格到 Markdown",
       "variants": [
@@ -7045,14 +7418,15 @@ const ToolboxCatalog = {
           "sourceId": "html-table-to-markdown"
         }
       ],
-      "href": "tools/tool/?id=html-table-to-markdown"
+      "href": "tools/tool/?id=html-table-to-markdown",
+      "iconBadge": ""
     },
     {
       "id": "html-to-markdown",
       "category": "convert",
       "name": "HTML 到 Markdown",
       "description": "将HTML转换为干净的Markdown，将标题、链接、图像、列表、块引用、代码和强调映射回纯Markdown语法。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "html markdown md convert reverse transform html-to-markdown HTML 到 Markdown",
       "variants": [
@@ -7063,14 +7437,15 @@ const ToolboxCatalog = {
           "sourceId": "html-to-markdown"
         }
       ],
-      "href": "tools/tool/?id=html-to-markdown"
+      "href": "tools/tool/?id=html-to-markdown",
+      "iconBadge": ""
     },
     {
       "id": "html-to-pug",
       "category": "convert",
       "name": "HTML 到 Pug",
       "description": "将HTML标记转换成Pug(Jade)模板语法。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html2pug markup view indent shorthand html pug jade convert template html-to-pug HTML 到 Pug",
       "variants": [
@@ -7081,14 +7456,15 @@ const ToolboxCatalog = {
           "sourceId": "html-to-pug"
         }
       ],
-      "href": "tools/tool/?id=html-to-pug"
+      "href": "tools/tool/?id=html-to-pug",
+      "iconBadge": ""
     },
     {
       "id": "html-to-text",
       "category": "web",
       "name": "HTML到文本",
       "description": "剥离HTML标签并解码实体以获得干净的纯文本。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html to text strip tags remove plain extract html-to-text HTML到文本",
       "variants": [
@@ -7099,14 +7475,15 @@ const ToolboxCatalog = {
           "sourceId": "html-to-text"
         }
       ],
-      "href": "tools/tool/?id=html-to-text"
+      "href": "tools/tool/?id=html-to-text",
+      "iconBadge": ""
     },
     {
       "id": "htpasswd-generator",
       "category": "web",
       "name": ".htpasswd 生成器",
       "description": "使用bcrypt、SHA-1或MD5(APR1)散列完全在浏览器内生成Apache/Nginx htpasswd条目。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "htpasswd basic auth apache password nginx bcrypt apr1 md5 crypt sha1 htpasswd-generator .htpasswd 生成器",
       "variants": [
@@ -7117,14 +7494,15 @@ const ToolboxCatalog = {
           "sourceId": "htpasswd-generator"
         }
       ],
-      "href": "tools/tool/?id=htpasswd-generator"
+      "href": "tools/tool/?id=htpasswd-generator",
+      "iconBadge": ""
     },
     {
       "id": "http-multipart-form-data-builder",
       "category": "web",
       "name": "多部分表格数据生成器",
       "description": "从字段定义构建多部分/表单数据主体和cURL片段。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "http multipart form-data api http-multipart-form-data-builder 多部分表格数据生成器",
       "variants": [
@@ -7135,14 +7513,15 @@ const ToolboxCatalog = {
           "sourceId": "http-multipart-form-data-builder"
         }
       ],
-      "href": "tools/tool/?id=http-multipart-form-data-builder"
+      "href": "tools/tool/?id=http-multipart-form-data-builder",
+      "iconBadge": ""
     },
     {
       "id": "http-request-replay-sanitizer",
       "category": "web",
       "name": "HTTP请求重放消毒剂",
       "description": "从捕获的HTTP请求中编辑秘密并发出更安全的重放片段。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "http request redact debug http-request-replay-sanitizer HTTP请求重放消毒剂",
       "variants": [
@@ -7153,14 +7532,15 @@ const ToolboxCatalog = {
           "sourceId": "http-request-replay-sanitizer"
         }
       ],
-      "href": "tools/tool/?id=http-request-replay-sanitizer"
+      "href": "tools/tool/?id=http-request-replay-sanitizer",
+      "iconBadge": ""
     },
     {
       "id": "http-status-codes",
       "category": "web",
       "name": "HTTP状态代码",
       "description": "HTTP 状态代码及其含义的可搜索参考。",
-      "icon": "convert",
+      "icon": "badge-alert",
       "tags": [],
       "keywords": "http status codes 404 500 200 reference response http-status-codes HTTP状态代码 code reason phrase class too many requests express res.status line rest web-status-code-explainer HTTP 状态代码解释器",
       "variants": [
@@ -7177,14 +7557,15 @@ const ToolboxCatalog = {
           "sourceId": "web-status-code-explainer"
         }
       ],
-      "href": "tools/tool/?id=http-status-codes"
+      "href": "tools/tool/?id=http-status-codes",
+      "iconBadge": ""
     },
     {
       "id": "httpie-to-curl",
       "category": "convert",
       "name": "HTTPie到cURL",
       "description": "将HTTPie命令转换成等效的curl命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "httpie2curl request rest command cli httpie curl http convert api httpie-to-curl HTTPie到cURL",
       "variants": [
@@ -7195,14 +7576,15 @@ const ToolboxCatalog = {
           "sourceId": "httpie-to-curl"
         }
       ],
-      "href": "tools/tool/?id=httpie-to-curl"
+      "href": "tools/tool/?id=httpie-to-curl",
+      "iconBadge": ""
     },
     {
       "id": "hue-rotate-calculator",
       "category": "color",
       "name": "色调旋转计算器",
       "description": "将颜色的色调旋转选定的角度并获得CSS色调旋转等效项。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "hue rotation css hue-rotate rotate color shift wheel filter hue-rotate-calculator 色调旋转计算器",
       "variants": [
@@ -7213,14 +7595,15 @@ const ToolboxCatalog = {
           "sourceId": "hue-rotate-calculator"
         }
       ],
-      "href": "tools/tool/?id=hue-rotate-calculator"
+      "href": "tools/tool/?id=hue-rotate-calculator",
+      "iconBadge": ""
     },
     {
       "id": "iban-validator",
       "category": "encoding",
       "name": "IBAN 验证器",
       "description": "使用ISO 13616 mod-97校验和验证IBAN并显示其结构。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "iban international bank account number mod 97 iso 13616 bban checksum mod-97 iso-13616 validate iban-validator IBAN 验证器",
       "variants": [
@@ -7231,14 +7614,15 @@ const ToolboxCatalog = {
           "sourceId": "iban-validator"
         }
       ],
-      "href": "tools/tool/?id=iban-validator"
+      "href": "tools/tool/?id=iban-validator",
+      "iconBadge": ""
     },
     {
       "id": "ieee754-float-inspector",
       "category": "math",
       "name": "IEEE-754浮子检查器",
       "description": "将十进制数分解为IEEE-754单精度和双精度符号位、指数位和尾数位。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "floating point binary32 binary64 sign exponent mantissa hex float ULP subnormal ieee-754 binary ieee754-float-inspector IEEE-754浮子检查器",
       "variants": [
@@ -7249,14 +7633,15 @@ const ToolboxCatalog = {
           "sourceId": "ieee754-float-inspector"
         }
       ],
-      "href": "tools/tool/?id=ieee754-float-inspector"
+      "href": "tools/tool/?id=ieee754-float-inspector",
+      "iconBadge": ""
     },
     {
       "id": "illuminance-converter",
       "category": "convert",
       "name": "照度转换器",
       "description": "在勒克斯、英尺烛光和照片之间转换照度。",
-      "icon": "convert",
+      "icon": "sun",
       "tags": [],
       "keywords": "illuminance lux kilolux foot candle lumen per square meter phot nox lighting photometry foot-candle illuminance-converter 照度转换器",
       "variants": [
@@ -7267,14 +7652,15 @@ const ToolboxCatalog = {
           "sourceId": "illuminance-converter"
         }
       ],
-      "href": "tools/tool/?id=illuminance-converter"
+      "href": "tools/tool/?id=illuminance-converter",
+      "iconBadge": ""
     },
     {
       "id": "image-add-border",
       "category": "image",
       "name": "添加边框和填充",
       "description": "在图像周围添加纯色边框或填充框。",
-      "icon": "convert",
+      "icon": "frame",
       "tags": [],
       "keywords": "add border to image padding photo frame white matte generator margin colored image-add-border 添加边框和填充",
       "variants": [
@@ -7285,14 +7671,15 @@ const ToolboxCatalog = {
           "sourceId": "image-add-border"
         }
       ],
-      "href": "tools/tool/?id=image-add-border"
+      "href": "tools/tool/?id=image-add-border",
+      "iconBadge": ""
     },
     {
       "id": "image-aspect-fit-cover-calculator",
       "category": "image",
       "name": "图像适合/覆盖框计算器",
       "description": "计算放置在具有包含或覆盖配合的盒子中的图像的渲染尺寸和偏移。",
-      "icon": "convert",
+      "icon": "scan",
       "tags": [],
       "keywords": "object-fit calculator contain cover fill letterbox image scale offset background-size aspect ratio fit crop amount image-aspect-fit-cover-calculator 图像适合/覆盖框计算器",
       "variants": [
@@ -7303,14 +7690,15 @@ const ToolboxCatalog = {
           "sourceId": "image-aspect-fit-cover-calculator"
         }
       ],
-      "href": "tools/tool/?id=image-aspect-fit-cover-calculator"
+      "href": "tools/tool/?id=image-aspect-fit-cover-calculator",
+      "iconBadge": ""
     },
     {
       "id": "image-canvas-grid-overlay",
       "category": "image",
       "name": "图像网格和指南覆盖",
       "description": "将三分法、像素网格或自定义指南叠加到上传的图像上。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "rule of thirds golden ratio grid overlay pixel composition guides crop image-canvas-grid-overlay 图像网格和指南覆盖",
       "variants": [
@@ -7321,14 +7709,15 @@ const ToolboxCatalog = {
           "sourceId": "image-canvas-grid-overlay"
         }
       ],
-      "href": "tools/tool/?id=image-canvas-grid-overlay"
+      "href": "tools/tool/?id=image-canvas-grid-overlay",
+      "iconBadge": ""
     },
     {
       "id": "image-checkerboard-svg",
       "category": "image",
       "name": "棋盘和图案生成器",
       "description": "生成具有自定义颜色的棋盘、条纹、点或网格SVG/PNG图案。",
-      "icon": "convert",
+      "icon": "grid-2x2",
       "tags": [],
       "keywords": "checkerboard generator stripes pattern polka dots grid lines svg tileable background css transparent placeholder png tile image-checkerboard-svg 棋盘和图案生成器",
       "variants": [
@@ -7339,14 +7728,15 @@ const ToolboxCatalog = {
           "sourceId": "image-checkerboard-svg"
         }
       ],
-      "href": "tools/tool/?id=image-checkerboard-svg"
+      "href": "tools/tool/?id=image-checkerboard-svg",
+      "iconBadge": "SVG"
     },
     {
       "id": "image-color-extractor",
       "category": "color",
       "name": "图像颜色提取器",
       "description": "上传图像并提取其主色和自动调色板，准备复制为十六进制样本。",
-      "icon": "convert",
+      "icon": "pipette",
       "tags": [],
       "keywords": "image extract dominant palette swatch picker color image-color-extractor 图像颜色提取器",
       "variants": [
@@ -7357,14 +7747,15 @@ const ToolboxCatalog = {
           "sourceId": "image-color-extractor"
         }
       ],
-      "href": "tools/tool/?id=image-color-extractor"
+      "href": "tools/tool/?id=image-color-extractor",
+      "iconBadge": ""
     },
     {
       "id": "image-color-overlay",
       "category": "image",
       "name": "颜色叠加/色调",
       "description": "使用画布混合模式在图像上应用色调或双色调。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "color tint blend mode multiply screen overlay photo filter image-color-overlay 颜色叠加/色调",
       "variants": [
@@ -7375,14 +7766,15 @@ const ToolboxCatalog = {
           "sourceId": "image-color-overlay"
         }
       ],
-      "href": "tools/tool/?id=image-color-overlay"
+      "href": "tools/tool/?id=image-color-overlay",
+      "iconBadge": ""
     },
     {
       "id": "image-compress-quality",
       "category": "image",
       "name": "JPEG/WebP压缩器",
       "description": "利用质量滑块和实时字节比较之前/之后减小图像文件大小。",
-      "icon": "convert",
+      "icon": "minimize-2",
       "tags": [],
       "keywords": "image compression reduce file size jpeg quality webp encode optimize photo compress image-compress-quality JPEG/WebP压缩器",
       "variants": [
@@ -7393,14 +7785,15 @@ const ToolboxCatalog = {
           "sourceId": "image-compress-quality"
         }
       ],
-      "href": "tools/tool/?id=image-compress-quality"
+      "href": "tools/tool/?id=image-compress-quality",
+      "iconBadge": ""
     },
     {
       "id": "image-contact-sheet-builder",
       "category": "image",
       "name": "图像联系表生成器",
       "description": "将多个上传的图像排列到单个网格联系表PNG中。",
-      "icon": "convert",
+      "icon": "gallery-horizontal-end",
       "tags": [],
       "keywords": "contact sheet photo grid image montage thumbnail collage maker thumbnails image-contact-sheet-builder 图像联系表生成器",
       "variants": [
@@ -7411,14 +7804,15 @@ const ToolboxCatalog = {
           "sourceId": "image-contact-sheet-builder"
         }
       ],
-      "href": "tools/tool/?id=image-contact-sheet-builder"
+      "href": "tools/tool/?id=image-contact-sheet-builder",
+      "iconBadge": ""
     },
     {
       "id": "image-converter",
       "category": "image",
       "name": "图像转换器",
       "description": "在 PNG、JPEG、WebP、GIF、BMP、TIFF 和 ICO 之间转换图像 — 调整大小、设置质量、批量和压缩。一切都在您的浏览器中。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "image converter png to jpg webp resize ico favicon batch convert jpeg gif bmp tiff image-converter 图像转换器",
       "variants": [
@@ -7429,14 +7823,15 @@ const ToolboxCatalog = {
           "sourceId": "image-converter"
         }
       ],
-      "href": "tools/tool/?id=image-converter"
+      "href": "tools/tool/?id=image-converter",
+      "iconBadge": ""
     },
     {
       "id": "image-crop-aspect",
       "category": "image",
       "name": "裁剪与纵横比",
       "description": "利用中心/锚点控制将图像裁剪为选定的纵横比(1:1、4:3、16:9、自定义)。",
-      "icon": "convert",
+      "icon": "crop",
       "tags": [],
       "keywords": "crop image aspect ratio square 16:9 thumbnail anchor resize image-crop-aspect 裁剪与纵横比 裁剪图片",
       "variants": [
@@ -7453,14 +7848,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/crop"
         }
       ],
-      "href": "tools/tool/?id=image-crop-aspect"
+      "href": "tools/tool/?id=image-crop-aspect",
+      "iconBadge": ""
     },
     {
       "id": "image-dominant-color",
       "category": "image",
       "name": "主色和平均颜色",
       "description": "将图像的单一主色和平均颜色提取为十六进制/RGB。",
-      "icon": "convert",
+      "icon": "pipette",
       "tags": [],
       "keywords": "dominant color average picker hex from image extract swatch image-dominant-color 主色和平均颜色 color-picker 取色器",
       "variants": [
@@ -7477,14 +7873,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/color-picker"
         }
       ],
-      "href": "tools/tool/?id=image-dominant-color"
+      "href": "tools/tool/?id=image-dominant-color",
+      "iconBadge": ""
     },
     {
       "id": "image-duotone",
       "category": "image",
       "name": "双色调效果",
       "description": "将图像的阴影和高光映射到两种自定义颜色（双色调）。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "duotone gradient map two tone photo effect shadow highlight color filter image-duotone 双色调效果",
       "variants": [
@@ -7495,14 +7892,15 @@ const ToolboxCatalog = {
           "sourceId": "image-duotone"
         }
       ],
-      "href": "tools/tool/?id=image-duotone"
+      "href": "tools/tool/?id=image-duotone",
+      "iconBadge": ""
     },
     {
       "id": "image-exif-viewer",
       "category": "image",
       "name": "EXIF 元数据查看器",
       "description": "无需上传即可查看嵌入在JPEG(相机、曝光、GPS)中的EXIF/JFIF元数据。",
-      "icon": "convert",
+      "icon": "file-search",
       "tags": [],
       "keywords": "exif viewer image metadata jpeg camera info gps coordinates exposure image-exif-viewer EXIF 元数据查看器",
       "variants": [
@@ -7513,14 +7911,15 @@ const ToolboxCatalog = {
           "sourceId": "image-exif-viewer"
         }
       ],
-      "href": "tools/tool/?id=image-exif-viewer"
+      "href": "tools/tool/?id=image-exif-viewer",
+      "iconBadge": ""
     },
     {
       "id": "image-favicon-generator",
       "category": "image",
       "name": "网站图标集生成器",
       "description": "从一张图像加上HTML链接标签生成标准尺寸(16-512px)的favicon PNG。",
-      "icon": "convert",
+      "icon": "app-window",
       "tags": [],
       "keywords": "favicon generator apple touch icon site webmanifest link rel app png apple-touch manifest image-favicon-generator 网站图标集生成器",
       "variants": [
@@ -7531,14 +7930,15 @@ const ToolboxCatalog = {
           "sourceId": "image-favicon-generator"
         }
       ],
-      "href": "tools/tool/?id=image-favicon-generator"
+      "href": "tools/tool/?id=image-favicon-generator",
+      "iconBadge": ""
     },
     {
       "id": "image-filter-adjust",
       "category": "image",
       "name": "亮度/对比度/饱和度调节器",
       "description": "使用实时滑块调整图像的亮度、对比度、饱和度和色调。",
-      "icon": "convert",
+      "icon": "sliders-horizontal",
       "tags": [],
       "keywords": "brightness contrast saturation hue rotate image adjust photo filter color correction image-filter-adjust 亮度/对比度/饱和度调节器 filters 图片滤镜",
       "variants": [
@@ -7555,14 +7955,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/filters"
         }
       ],
-      "href": "tools/tool/?id=image-filter-adjust"
+      "href": "tools/tool/?id=image-filter-adjust",
+      "iconBadge": ""
     },
     {
       "id": "image-gaussian-blur",
       "category": "image",
       "name": "图像模糊",
       "description": "使用画布模糊过滤器将可调整的模糊应用到图像。",
-      "icon": "convert",
+      "icon": "droplets",
       "tags": [],
       "keywords": "blur gaussian soften image defocus photo filter canvas image-gaussian-blur 图像模糊 区域模糊",
       "variants": [
@@ -7579,14 +7980,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/blur"
         }
       ],
-      "href": "tools/tool/?id=image-gaussian-blur"
+      "href": "tools/tool/?id=image-gaussian-blur",
+      "iconBadge": ""
     },
     {
       "id": "image-gradient-svg-generator",
       "category": "image",
       "name": "渐变SVG/PNG生成器",
       "description": "创建线性/径向多级渐变并导出为SVG、PNG或CSS。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "gradient generator linear svg radial multi stop png export css design asset image-gradient-svg-generator 渐变SVG/PNG生成器",
       "variants": [
@@ -7597,14 +7999,15 @@ const ToolboxCatalog = {
           "sourceId": "image-gradient-svg-generator"
         }
       ],
-      "href": "tools/tool/?id=image-gradient-svg-generator"
+      "href": "tools/tool/?id=image-gradient-svg-generator",
+      "iconBadge": "SVG"
     },
     {
       "id": "image-histogram",
       "category": "image",
       "name": "图像直方图",
       "description": "在画布上绘制图像的RGB和亮度直方图。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "histogram rgb luminance tonal range image levels clipping photo analysis image-histogram 图像直方图",
       "variants": [
@@ -7615,14 +8018,15 @@ const ToolboxCatalog = {
           "sourceId": "image-histogram"
         }
       ],
-      "href": "tools/tool/?id=image-histogram"
+      "href": "tools/tool/?id=image-histogram",
+      "iconBadge": ""
     },
     {
       "id": "image-invert-colors",
       "category": "image",
       "name": "反转颜色（负片）",
       "description": "通过反转每个像素的RGB值来创建照相负片。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "invert colors negative image photo luminance film color filter pixels image-invert-colors 反转颜色（负片）",
       "variants": [
@@ -7633,14 +8037,15 @@ const ToolboxCatalog = {
           "sourceId": "image-invert-colors"
         }
       ],
-      "href": "tools/tool/?id=image-invert-colors"
+      "href": "tools/tool/?id=image-invert-colors",
+      "iconBadge": ""
     },
     {
       "id": "image-meme-text",
       "category": "image",
       "name": "Meme 字幕制作器",
       "description": "将经典的顶部/底部冲击式标题文本添加到图像。",
-      "icon": "convert",
+      "icon": "captions",
       "tags": [],
       "keywords": "meme generator caption impact font top bottom text image overlay image-meme-text Meme 字幕制作器 表情包生成器",
       "variants": [
@@ -7657,14 +8062,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/meme"
         }
       ],
-      "href": "tools/tool/?id=image-meme-text"
+      "href": "tools/tool/?id=image-meme-text",
+      "iconBadge": ""
     },
     {
       "id": "image-mirror-collage",
       "category": "image",
       "name": "镜子与反射拼贴",
       "description": "从一幅图像创建对称镜像拼贴画（2合一、4合万花筒）。",
-      "icon": "convert",
+      "icon": "flip-horizontal-2",
       "tags": [],
       "keywords": "mirror reflection kaleidoscope symmetry collage flip image image-mirror-collage 镜子与反射拼贴",
       "variants": [
@@ -7675,14 +8081,15 @@ const ToolboxCatalog = {
           "sourceId": "image-mirror-collage"
         }
       ],
-      "href": "tools/tool/?id=image-mirror-collage"
+      "href": "tools/tool/?id=image-mirror-collage",
+      "iconBadge": ""
     },
     {
       "id": "image-noise-texture-svg",
       "category": "image",
       "name": "噪声和颗粒 SVG 生成器",
       "description": "生成可平铺的分形噪声/颗粒纹理作为内联SVG或PNG。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "noise texture film grain feTurbulence fractal svg overlay css background tileable turbulence image-noise-texture-svg 噪声和颗粒 SVG 生成器",
       "variants": [
@@ -7693,14 +8100,15 @@ const ToolboxCatalog = {
           "sourceId": "image-noise-texture-svg"
         }
       ],
-      "href": "tools/tool/?id=image-noise-texture-svg"
+      "href": "tools/tool/?id=image-noise-texture-svg",
+      "iconBadge": "SVG"
     },
     {
       "id": "image-palette-extractor",
       "category": "image",
       "name": "图像调色板提取器",
       "description": "通过中值切割量化从图像中提取平衡的N调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "palette color median cut dominant colors extract css variables scheme median-cut quantization swatches image-palette-extractor 图像调色板提取器",
       "variants": [
@@ -7711,14 +8119,15 @@ const ToolboxCatalog = {
           "sourceId": "image-palette-extractor"
         }
       ],
-      "href": "tools/tool/?id=image-palette-extractor"
+      "href": "tools/tool/?id=image-palette-extractor",
+      "iconBadge": ""
     },
     {
       "id": "image-pixel-ruler",
       "category": "image",
       "name": "像素尺和颜色探针",
       "description": "通过点击加载的图像来测量像素距离并读取像素颜色。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "pixel ruler measure distance color picker eyedropper image measurement angle inspect image-pixel-ruler 像素尺和颜色探针",
       "variants": [
@@ -7729,14 +8138,15 @@ const ToolboxCatalog = {
           "sourceId": "image-pixel-ruler"
         }
       ],
-      "href": "tools/tool/?id=image-pixel-ruler"
+      "href": "tools/tool/?id=image-pixel-ruler",
+      "iconBadge": ""
     },
     {
       "id": "image-pixelate",
       "category": "image",
       "name": "像素化/马赛克",
       "description": "使用可调整的块大小对图像进行像素化（或模拟审查）。",
-      "icon": "convert",
+      "icon": "grid-2x2",
       "tags": [],
       "keywords": "pixelate image mosaic censor blur face block size redact nearest neighbor privacy image-pixelate 像素化/马赛克",
       "variants": [
@@ -7747,14 +8157,15 @@ const ToolboxCatalog = {
           "sourceId": "image-pixelate"
         }
       ],
-      "href": "tools/tool/?id=image-pixelate"
+      "href": "tools/tool/?id=image-pixelate",
+      "iconBadge": ""
     },
     {
       "id": "image-resize-pixels",
       "category": "image",
       "name": "图像调整器（像素和百分比）",
       "description": "使用可选的宽高比锁定将图像大小调整为精确的像素尺寸或按百分比。",
-      "icon": "convert",
+      "icon": "scaling",
       "tags": [],
       "keywords": "resize image scale dimensions aspect ratio lock percent png jpeg export pixels image-resize-pixels 图像调整器（像素和百分比） batch 批量处理",
       "variants": [
@@ -7771,14 +8182,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/batch"
         }
       ],
-      "href": "tools/tool/?id=image-resize-pixels"
+      "href": "tools/tool/?id=image-resize-pixels",
+      "iconBadge": ""
     },
     {
       "id": "image-resize-to-filesize",
       "category": "image",
       "name": "调整大小至目标文件大小",
       "description": "迭代地重新编码图像以使其低于目标KB限制（例如上传限制）。",
-      "icon": "convert",
+      "icon": "file-down",
       "tags": [],
       "keywords": "resize to file size compress kb target upload limit jpeg quality webp shrink image filesize image-resize-to-filesize 调整大小至目标文件大小",
       "variants": [
@@ -7789,14 +8201,15 @@ const ToolboxCatalog = {
           "sourceId": "image-resize-to-filesize"
         }
       ],
-      "href": "tools/tool/?id=image-resize-to-filesize"
+      "href": "tools/tool/?id=image-resize-to-filesize",
+      "iconBadge": ""
     },
     {
       "id": "image-rgb-channel-split",
       "category": "image",
       "name": "RGB通道分配器",
       "description": "将图像分割成单独的红色、绿色、蓝色和阿尔法通道图像。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "rgb channel split color channels red green blue alpha mask separation isolate grayscale compositing image-rgb-channel-split RGB通道分配器",
       "variants": [
@@ -7807,14 +8220,15 @@ const ToolboxCatalog = {
           "sourceId": "image-rgb-channel-split"
         }
       ],
-      "href": "tools/tool/?id=image-rgb-channel-split"
+      "href": "tools/tool/?id=image-rgb-channel-split",
+      "iconBadge": "RGB"
     },
     {
       "id": "image-rotate-flip",
       "category": "image",
       "name": "旋转和翻转图像",
       "description": "将图像旋转90/180/270度或自由角度并水平/垂直翻转。",
-      "icon": "convert",
+      "icon": "rotate-cw",
       "tags": [],
       "keywords": "rotate image flip mirror free angle rotation orientation fix horizontal vertical transform image-rotate-flip 旋转和翻转图像 旋转图片",
       "variants": [
@@ -7831,14 +8245,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/rotate"
         }
       ],
-      "href": "tools/tool/?id=image-rotate-flip"
+      "href": "tools/tool/?id=image-rotate-flip",
+      "iconBadge": ""
     },
     {
       "id": "image-round-corners",
       "category": "image",
       "name": "圆角和圆形裁剪",
       "description": "按半径将图像的角变圆或将其裁剪为完美的圆形/椭圆形。",
-      "icon": "convert",
+      "icon": "square-round-corner",
       "tags": [],
       "keywords": "round corners rounded image circle crop avatar maker ellipse border radius transparent png mask image-round-corners 圆角和圆形裁剪",
       "variants": [
@@ -7849,14 +8264,15 @@ const ToolboxCatalog = {
           "sourceId": "image-round-corners"
         }
       ],
-      "href": "tools/tool/?id=image-round-corners"
+      "href": "tools/tool/?id=image-round-corners",
+      "iconBadge": ""
     },
     {
       "id": "image-sepia-vintage",
       "category": "image",
       "name": "棕褐色和复古滤镜",
       "description": "对照片应用棕褐色、复古色、暖色调和冷色调。",
-      "icon": "convert",
+      "icon": "sunset",
       "tags": [],
       "keywords": "sepia filter vintage photo warm tone cool faded look color tint retro image-sepia-vintage 棕褐色和复古滤镜",
       "variants": [
@@ -7867,14 +8283,15 @@ const ToolboxCatalog = {
           "sourceId": "image-sepia-vintage"
         }
       ],
-      "href": "tools/tool/?id=image-sepia-vintage"
+      "href": "tools/tool/?id=image-sepia-vintage",
+      "iconBadge": ""
     },
     {
       "id": "image-sprite-merger",
       "category": "image",
       "name": "图像精灵表合并",
       "description": "使用CSS/JSON坐标图将多个图像组合成一个精灵表。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "sprite sheet texture atlas css sprites combine images background-position frame map spritesheet merge image-sprite-merger 图像精灵表合并",
       "variants": [
@@ -7885,14 +8302,15 @@ const ToolboxCatalog = {
           "sourceId": "image-sprite-merger"
         }
       ],
-      "href": "tools/tool/?id=image-sprite-merger"
+      "href": "tools/tool/?id=image-sprite-merger",
+      "iconBadge": ""
     },
     {
       "id": "image-sprite-splitter",
       "category": "image",
       "name": "精灵表分割器",
       "description": "按行/列或单元尺寸将子画面片切成单独图像的网格。",
-      "icon": "convert",
+      "icon": "scissors",
       "tags": [],
       "keywords": "sprite sheet slice sprites split image tileset extract frames cell grid spritesheet image-sprite-splitter 精灵表分割器",
       "variants": [
@@ -7903,14 +8321,15 @@ const ToolboxCatalog = {
           "sourceId": "image-sprite-splitter"
         }
       ],
-      "href": "tools/tool/?id=image-sprite-splitter"
+      "href": "tools/tool/?id=image-sprite-splitter",
+      "iconBadge": ""
     },
     {
       "id": "image-svg-optimizer-cleaner",
       "category": "image",
       "name": "SVG清理器/优化器",
       "description": "从 SVG 标记中去除注释、元数据和编辑器残渣，并缩小空白。",
-      "icon": "convert",
+      "icon": "brush-cleaning",
       "tags": [],
       "keywords": "svg optimizer cleaner svgo minify remove metadata inkscape sodipodi whitespace optimize clean editor image-svg-optimizer-cleaner SVG清理器/优化器",
       "variants": [
@@ -7921,14 +8340,15 @@ const ToolboxCatalog = {
           "sourceId": "image-svg-optimizer-cleaner"
         }
       ],
-      "href": "tools/tool/?id=image-svg-optimizer-cleaner"
+      "href": "tools/tool/?id=image-svg-optimizer-cleaner",
+      "iconBadge": "SVG"
     },
     {
       "id": "image-svg-to-png",
       "category": "image",
       "name": "SVG 转 PNG/JPEG",
       "description": "通过画布以选择的比例将SVG（粘贴或上传）光栅化为PNG/JPEG。",
-      "icon": "convert",
+      "icon": "file-image",
       "tags": [],
       "keywords": "svg to png jpeg rasterize vector raster export image convert image-svg-to-png SVG 转 PNG/JPEG",
       "variants": [
@@ -7939,14 +8359,15 @@ const ToolboxCatalog = {
           "sourceId": "image-svg-to-png"
         }
       ],
-      "href": "tools/tool/?id=image-svg-to-png"
+      "href": "tools/tool/?id=image-svg-to-png",
+      "iconBadge": "PNG"
     },
     {
       "id": "image-threshold-bw",
       "category": "image",
       "name": "黑白阈值",
       "description": "使用亮度阈值或抖动将图像转换为纯1位黑白。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "black and white 1-bit floyd steinberg dithering e-ink thermal printer threshold dither monochrome binary filter image-threshold-bw 黑白阈值",
       "variants": [
@@ -7957,14 +8378,15 @@ const ToolboxCatalog = {
           "sourceId": "image-threshold-bw"
         }
       ],
-      "href": "tools/tool/?id=image-threshold-bw"
+      "href": "tools/tool/?id=image-threshold-bw",
+      "iconBadge": ""
     },
     {
       "id": "image-thumbnail-batch",
       "category": "image",
       "name": "批量缩略图制作器",
       "description": "一次从多个图像生成固定尺寸的封面/包含缩略图。",
-      "icon": "convert",
+      "icon": "images",
       "tags": [],
       "keywords": "batch thumbnails cover crop contain fit resize many images square bulk thumbnail image-thumbnail-batch 批量缩略图制作器",
       "variants": [
@@ -7975,14 +8397,15 @@ const ToolboxCatalog = {
           "sourceId": "image-thumbnail-batch"
         }
       ],
-      "href": "tools/tool/?id=image-thumbnail-batch"
+      "href": "tools/tool/?id=image-thumbnail-batch",
+      "iconBadge": ""
     },
     {
       "id": "image-to-ascii-art",
       "category": "image",
       "name": "图像到 ASCII 艺术",
       "description": "将图像转换为宽度可调的等宽ASCII(或块)艺术。",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": "image to ascii art generator photo text ramp block luminance monospace convert image-to-ascii-art 图像到 ASCII 艺术",
       "variants": [
@@ -7993,14 +8416,15 @@ const ToolboxCatalog = {
           "sourceId": "image-to-ascii-art"
         }
       ],
-      "href": "tools/tool/?id=image-to-ascii-art"
+      "href": "tools/tool/?id=image-to-ascii-art",
+      "iconBadge": ""
     },
     {
       "id": "image-to-base64",
       "category": "image",
       "name": "图像到Base64",
       "description": "将图像编码为Base64数据-URI以供在CSS/HTML/JSON中内联使用。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "image to base64 data uri inline embed css background image-to-base64 图像到Base64",
       "variants": [
@@ -8011,14 +8435,15 @@ const ToolboxCatalog = {
           "sourceId": "image-to-base64"
         }
       ],
-      "href": "tools/tool/?id=image-to-base64"
+      "href": "tools/tool/?id=image-to-base64",
+      "iconBadge": "B64"
     },
     {
       "id": "image-to-data-uri-variants",
       "category": "image",
       "name": "图像到数据 URI (CSS/HTML/JSX)",
       "description": "将图像编码为base64数据URI并将其包装为CSS、HTML img、Markdown或JSX。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "data uri base64 image inline css background-image html img jsx snippet data-uri embed image-to-data-uri-variants 图像到数据 URI (CSS/HTML/JSX)",
       "variants": [
@@ -8029,14 +8454,15 @@ const ToolboxCatalog = {
           "sourceId": "image-to-data-uri-variants"
         }
       ],
-      "href": "tools/tool/?id=image-to-data-uri-variants"
+      "href": "tools/tool/?id=image-to-data-uri-variants",
+      "iconBadge": ""
     },
     {
       "id": "images-to-pdf",
       "category": "pdf",
       "name": "图片转 PDF",
       "description": "将 JPG、PNG 和其他图像合并为一个 PDF — 每页一个图像，完全在您的浏览器中。",
-      "icon": "convert",
+      "icon": "image-plus",
       "tags": [],
       "keywords": "image to pdf jpg jpeg png photos images convert picture image-to-pdf 图像至PDF 图像到PDF jpg-to-pdf JPG 转 PDF png-to-pdf PNG webp-to-pdf WEBP heic-to-pdf HEIC bmp-to-pdf BMP tiff-to-pdf TIFF psd-to-pdf PSD images-to-pdf 图片 →",
       "variants": [
@@ -8101,14 +8527,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/images-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=images-to-pdf"
+      "href": "tools/tool/?id=images-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "image-vignette",
       "category": "image",
       "name": "晕影效果",
       "description": "在照片边缘周围添加可调节的深色或浅色晕影。",
-      "icon": "convert",
+      "icon": "circle-dashed",
       "tags": [],
       "keywords": "vignette darken edges photo effect radial gradient border fade lomo filter image-vignette 晕影效果",
       "variants": [
@@ -8119,14 +8546,15 @@ const ToolboxCatalog = {
           "sourceId": "image-vignette"
         }
       ],
-      "href": "tools/tool/?id=image-vignette"
+      "href": "tools/tool/?id=image-vignette",
+      "iconBadge": ""
     },
     {
       "id": "image-watermark-text",
       "category": "image",
       "name": "文字水印",
       "description": "用不透明度、角度和平铺覆盖重复或单个文本水印。",
-      "icon": "convert",
+      "icon": "stamp",
       "tags": [],
       "keywords": "text watermark tiled image overlay copyright stamp diagonal protect images image-watermark-text 文字水印 图片水印",
       "variants": [
@@ -8143,14 +8571,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/watermark"
         }
       ],
-      "href": "tools/tool/?id=image-watermark-text"
+      "href": "tools/tool/?id=image-watermark-text",
+      "iconBadge": ""
     },
     {
       "id": "indent-text",
       "category": "text",
       "name": "缩进和缩进文本",
       "description": "添加或删除每行上的前导缩进，将制表符转换为空格或将空格转换为具有可配置宽度的制表符。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "indent dedent tabs to spaces format whitespace indent-text 缩进和缩进文本",
       "variants": [
@@ -8161,14 +8590,15 @@ const ToolboxCatalog = {
           "sourceId": "indent-text"
         }
       ],
-      "href": "tools/tool/?id=indent-text"
+      "href": "tools/tool/?id=indent-text",
+      "iconBadge": ""
     },
     {
       "id": "ingredient-weight-volume-converter",
       "category": "convert",
       "name": "成分重量至体积转换器",
       "description": "使用每种成分的密度在克、盎司、杯、汤匙、茶匙和毫升之间转换烹饪成分。",
-      "icon": "convert",
+      "icon": "box",
       "tags": [],
       "keywords": "flour sugar butter weight volume baking grams to cups cooking ingredient density ingredient-weight-volume-converter 成分重量至体积转换器",
       "variants": [
@@ -8179,14 +8609,15 @@ const ToolboxCatalog = {
           "sourceId": "ingredient-weight-volume-converter"
         }
       ],
-      "href": "tools/tool/?id=ingredient-weight-volume-converter"
+      "href": "tools/tool/?id=ingredient-weight-volume-converter",
+      "iconBadge": ""
     },
     {
       "id": "ini-to-json",
       "category": "convert",
       "name": "INI 到 JSON",
       "description": "将INI/配置文件解析为结构化JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "ini2json sections settings conf properties ini json config convert parse ini-to-json INI 到 JSON",
       "variants": [
@@ -8197,14 +8628,15 @@ const ToolboxCatalog = {
           "sourceId": "ini-to-json"
         }
       ],
-      "href": "tools/tool/?id=ini-to-json"
+      "href": "tools/tool/?id=ini-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "integer-factorization",
       "category": "math",
       "name": "整数因式分解浏览器",
       "description": "将整数完全因式分解为素数并探索所有导出的乘法性质。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "prime factors euler totient phi divisors sigma omega radical pollard rho factorization primes number-theory integer-factorization 整数因式分解浏览器",
       "variants": [
@@ -8215,14 +8647,15 @@ const ToolboxCatalog = {
           "sourceId": "integer-factorization"
         }
       ],
-      "href": "tools/tool/?id=integer-factorization"
+      "href": "tools/tool/?id=integer-factorization",
+      "iconBadge": ""
     },
     {
       "id": "interleave-lines",
       "category": "text",
       "name": "交错/高空滑索",
       "description": "通过使用可配置的分隔符交替它们的行（如拉链）来合并两个或多个行列表。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "interleave lines zip lists merge alternate round robin side by combine interleave-lines 交错/高空滑索",
       "variants": [
@@ -8233,14 +8666,15 @@ const ToolboxCatalog = {
           "sourceId": "interleave-lines"
         }
       ],
-      "href": "tools/tool/?id=interleave-lines"
+      "href": "tools/tool/?id=interleave-lines",
+      "iconBadge": ""
     },
     {
       "id": "ip-cidr-list-generator",
       "category": "web",
       "name": "IP/CIDR 测试范围生成器",
       "description": "生成随机IPv4/IPv6地址的列表或将CIDR块扩展为测试数据的主机地址。",
-      "icon": "convert",
+      "icon": "waypoints",
       "tags": [],
       "keywords": "ip generator cidr expand ipv4 ipv6 random rfc1918 test addresses subnet hosts test-data ip-cidr-list-generator IP/CIDR 测试范围生成器",
       "variants": [
@@ -8251,14 +8685,15 @@ const ToolboxCatalog = {
           "sourceId": "ip-cidr-list-generator"
         }
       ],
-      "href": "tools/tool/?id=ip-cidr-list-generator"
+      "href": "tools/tool/?id=ip-cidr-list-generator",
+      "iconBadge": ""
     },
     {
       "id": "isbn-validator",
       "category": "encoding",
       "name": "ISBN-10/ISBN-13验证器",
       "description": "验证ISBN-10和ISBN-13校验位并在两种格式之间进行转换。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "isbn10 isbn13 ean check digit book number convert isbn validator checksum check-digit isbn-validator ISBN-10/ISBN-13验证器",
       "variants": [
@@ -8269,14 +8704,15 @@ const ToolboxCatalog = {
           "sourceId": "isbn-validator"
         }
       ],
-      "href": "tools/tool/?id=isbn-validator"
+      "href": "tools/tool/?id=isbn-validator",
+      "iconBadge": ""
     },
     {
       "id": "iso-8601-parser",
       "category": "time",
       "name": "ISO 8601解析器",
       "description": "将ISO 8601日期时间字符串分解为其组成部分（年、月、日、小时、偏移量、周）并验证它。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "iso 8601 parse datetime offset validate iso-8601-parser ISO 8601解析器",
       "variants": [
@@ -8287,14 +8723,15 @@ const ToolboxCatalog = {
           "sourceId": "iso-8601-parser"
         }
       ],
-      "href": "tools/tool/?id=iso-8601-parser"
+      "href": "tools/tool/?id=iso-8601-parser",
+      "iconBadge": ""
     },
     {
       "id": "iso-duration-parser",
       "category": "time",
       "name": "ISO 8601持续时间解析器",
       "description": "将诸如P1Y2M10DT2H30M之类的ISO 8601持续时间字符串解析为总秒数和人类可读的细分。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "iso 8601 duration P1Y period parse iso-duration-parser ISO 8601持续时间解析器",
       "variants": [
@@ -8305,14 +8742,15 @@ const ToolboxCatalog = {
           "sourceId": "iso-duration-parser"
         }
       ],
-      "href": "tools/tool/?id=iso-duration-parser"
+      "href": "tools/tool/?id=iso-duration-parser",
+      "iconBadge": ""
     },
     {
       "id": "iso-week-date-converter",
       "category": "time",
       "name": "ISO周日期转换器",
       "description": "在日历日期与其ISO-8601周日期形式(YYYY-Www-D)之间进行转换。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "iso week date yyyy-www-d year 53 number converter 8601 calendar conversion iso-week-date-converter ISO周日期转换器",
       "variants": [
@@ -8323,14 +8761,15 @@ const ToolboxCatalog = {
           "sourceId": "iso-week-date-converter"
         }
       ],
-      "href": "tools/tool/?id=iso-week-date-converter"
+      "href": "tools/tool/?id=iso-week-date-converter",
+      "iconBadge": ""
     },
     {
       "id": "jmespath-lite-query",
       "category": "data",
       "name": "JSON查询(JMESPath-lite)",
       "description": "使用JMESPath样式路径和过滤器表达式查询JSON。",
-      "icon": "convert",
+      "icon": "database",
       "tags": [],
       "keywords": "json query jmespath filter projection jsonpath select wildcard path jmespath-lite-query JSON查询(JMESPath-lite)",
       "variants": [
@@ -8341,14 +8780,15 @@ const ToolboxCatalog = {
           "sourceId": "jmespath-lite-query"
         }
       ],
-      "href": "tools/tool/?id=jmespath-lite-query"
+      "href": "tools/tool/?id=jmespath-lite-query",
+      "iconBadge": ""
     },
     {
       "id": "join-lines",
       "category": "text",
       "name": "加入线路",
       "description": "使用选定的分隔符以及可选的引号将多行连接成一行（或分组）。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "join lines merge one line comma separate sql in list array literal concatenate separator csv join-lines 加入线路",
       "variants": [
@@ -8359,14 +8799,15 @@ const ToolboxCatalog = {
           "sourceId": "join-lines"
         }
       ],
-      "href": "tools/tool/?id=join-lines"
+      "href": "tools/tool/?id=join-lines",
+      "iconBadge": ""
     },
     {
       "id": "js-object-to-json",
       "category": "convert",
       "name": "JS对象到JSON",
       "description": "将宽松的JavaScript对象文字（不带引号的键、单引号、尾随逗号、注释）转换为严格的、有效的JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "javascript object json convert json5 literal js-object-to-json JS对象到JSON",
       "variants": [
@@ -8377,14 +8818,15 @@ const ToolboxCatalog = {
           "sourceId": "js-object-to-json"
         }
       ],
-      "href": "tools/tool/?id=js-object-to-json"
+      "href": "tools/tool/?id=js-object-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-array-dedupe",
       "category": "data",
       "name": "JSON 数组去重",
       "description": "从 JSON 数组中删除重复元素（可选）通过键删除。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "json array dedupe deduplicate unique distinct remove duplicates by key json-array-dedupe JSON 数组去重",
       "variants": [
@@ -8395,14 +8837,15 @@ const ToolboxCatalog = {
           "sourceId": "json-array-dedupe"
         }
       ],
-      "href": "tools/tool/?id=json-array-dedupe"
+      "href": "tools/tool/?id=json-array-dedupe",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-array-to-key-value",
       "category": "data",
       "name": "JSON 数组到查找映射",
       "description": "使用一个字段作为键将对象的JSON数组转换为键控查找对象。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json array lookup map keyby index by dictionary object json-array-to-key-value JSON 数组到查找映射",
       "variants": [
@@ -8413,14 +8856,15 @@ const ToolboxCatalog = {
           "sourceId": "json-array-to-key-value"
         }
       ],
-      "href": "tools/tool/?id=json-array-to-key-value"
+      "href": "tools/tool/?id=json-array-to-key-value",
+      "iconBadge": ""
     },
     {
       "id": "json-array-to-list",
       "category": "convert",
       "name": "要列出的 JSON 数组",
       "description": "将JSON数组转换为分隔或行分隔的列表。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json array to list flatten join extract key csv convert delimiter json-array-to-list 要列出的 JSON 数组",
       "variants": [
@@ -8431,14 +8875,15 @@ const ToolboxCatalog = {
           "sourceId": "json-array-to-list"
         }
       ],
-      "href": "tools/tool/?id=json-array-to-list"
+      "href": "tools/tool/?id=json-array-to-list",
+      "iconBadge": ""
     },
     {
       "id": "json-array-to-object",
       "category": "data",
       "name": "JSON 数组到对象",
       "description": "将对象的JSON数组索引到带键的对象/映射中。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json array object index by keyby lookup group projection map json-array-to-object JSON 数组到对象",
       "variants": [
@@ -8449,14 +8894,15 @@ const ToolboxCatalog = {
           "sourceId": "json-array-to-object"
         }
       ],
-      "href": "tools/tool/?id=json-array-to-object"
+      "href": "tools/tool/?id=json-array-to-object",
+      "iconBadge": ""
     },
     {
       "id": "json-column-extractor",
       "category": "data",
       "name": "JSON数组列拔取",
       "description": "从JSON数组中的每个对象中提取一个或多个字段。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "json array pluck select extract columns fields project map json-column-extractor JSON数组列拔取",
       "variants": [
@@ -8467,14 +8913,15 @@ const ToolboxCatalog = {
           "sourceId": "json-column-extractor"
         }
       ],
-      "href": "tools/tool/?id=json-column-extractor"
+      "href": "tools/tool/?id=json-column-extractor",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-deep-clean",
       "category": "data",
       "name": "JSON深度清洁",
       "description": "从JSON中递归地去除null、empty或falsy值。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "json clean strip remove null empty falsy prune compact json-deep-clean JSON深度清洁",
       "variants": [
@@ -8485,32 +8932,34 @@ const ToolboxCatalog = {
           "sourceId": "json-deep-clean"
         }
       ],
-      "href": "tools/tool/?id=json-deep-clean"
+      "href": "tools/tool/?id=json-deep-clean",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-diff",
       "category": "data",
-      "name": "JSON Diff",
+      "name": "JSON 对比",
       "description": "比较两个 JSON 文档（规范化和排序）并查看更改。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
-      "keywords": "json diff compare changes difference json-diff JSON Diff",
+      "keywords": "json diff compare changes difference json-diff JSON 对比",
       "variants": [
         {
-          "name": "JSON Diff",
+          "name": "JSON 对比",
           "href": "../utilities/?tool=json-diff&embed=1",
           "source": "openutility",
           "sourceId": "json-diff"
         }
       ],
-      "href": "tools/tool/?id=json-diff"
+      "href": "tools/tool/?id=json-diff",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-dot-path-get-set",
       "category": "data",
       "name": "JSON 点路径获取/设置",
       "description": "获取、设置或删除 JSON 中点/括号路径处的值。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json dot path get set delete bracket edit mutate lodash json-dot-path-get-set JSON 点路径获取/设置",
       "variants": [
@@ -8521,14 +8970,15 @@ const ToolboxCatalog = {
           "sourceId": "json-dot-path-get-set"
         }
       ],
-      "href": "tools/tool/?id=json-dot-path-get-set"
+      "href": "tools/tool/?id=json-dot-path-get-set",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-escape",
       "category": "data",
       "name": "JSON 字符串转义/Unescape",
       "description": "将文本转义为 JSON 字符串文字，或者将其转义回原始文本。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "json escape unescape stringify string quote json-escape JSON 字符串转义/Unescape",
       "variants": [
@@ -8539,14 +8989,15 @@ const ToolboxCatalog = {
           "sourceId": "json-escape"
         }
       ],
-      "href": "tools/tool/?id=json-escape"
+      "href": "tools/tool/?id=json-escape",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-extract-keys",
       "category": "data",
       "name": "JSON密钥提取器",
       "description": "列出JSON文档中的每个唯一键路径，可选地具有每个键路径的推断类型。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "json keys paths extract schema json-extract-keys JSON密钥提取器",
       "variants": [
@@ -8557,14 +9008,15 @@ const ToolboxCatalog = {
           "sourceId": "json-extract-keys"
         }
       ],
-      "href": "tools/tool/?id=json-extract-keys"
+      "href": "tools/tool/?id=json-extract-keys",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-flatten",
       "category": "data",
       "name": "JSON 展平/取消展平",
       "description": "将嵌套JSON展平为点符号键或从展平键重建嵌套对象。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json flatten unflatten nested dot notation json-flatten JSON 展平/取消展平 dot-notation transform web-json-flatten 展平/取消展平（Web）",
       "variants": [
@@ -8581,14 +9033,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-flatten"
         }
       ],
-      "href": "tools/tool/?id=json-flatten"
+      "href": "tools/tool/?id=json-flatten",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-formatter",
       "category": "data",
       "name": "JSON格式化程序",
       "description": "使用可配置的缩进来美化、缩小和验证 JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json pretty prettify beautify minify validate lint format json-formatter JSON格式化程序 compact compress strip whitespace json-minify JSON 缩小 syntax error json-validator JSON验证器 格式化",
       "variants": [
@@ -8617,14 +9070,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/json"
         }
       ],
-      "href": "tools/tool/?id=json-formatter"
+      "href": "tools/tool/?id=json-formatter",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-key-case-converter",
       "category": "data",
       "name": "JSON钥匙包转换器",
       "description": "将所有JSON对象键递归地转换为选定的情况。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "json keys case camelcase snake_case kebab-case pascalcase rename json-key-case-converter JSON钥匙包转换器",
       "variants": [
@@ -8635,14 +9089,15 @@ const ToolboxCatalog = {
           "sourceId": "json-key-case-converter"
         }
       ],
-      "href": "tools/tool/?id=json-key-case-converter"
+      "href": "tools/tool/?id=json-key-case-converter",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-merge",
       "category": "data",
       "name": "JSON合并",
       "description": "深度合并两个JSON对象，并提供如何组合数组和冲突键的选项。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "json merge combine deep objects json-merge JSON合并",
       "variants": [
@@ -8653,14 +9108,15 @@ const ToolboxCatalog = {
           "sourceId": "json-merge"
         }
       ],
-      "href": "tools/tool/?id=json-merge"
+      "href": "tools/tool/?id=json-merge",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-merge-patch",
       "category": "data",
       "name": "JSON 合并补丁",
       "description": "将 RFC 7386 JSON 合并补丁应用于文档。",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": "merge patch rfc 7386 json apply diff rfc7386 json-merge-patch JSON 合并补丁",
       "variants": [
@@ -8671,14 +9127,15 @@ const ToolboxCatalog = {
           "sourceId": "json-merge-patch"
         }
       ],
-      "href": "tools/tool/?id=json-merge-patch"
+      "href": "tools/tool/?id=json-merge-patch",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-patch-apply",
       "category": "data",
       "name": "JSON 补丁应用",
       "description": "将RFC 6902 JSON补丁应用到JSON文档。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json patch rfc 6902 apply pointer add remove replace move rfc6902 json-pointer json-patch-apply JSON 补丁应用",
       "variants": [
@@ -8689,14 +9146,15 @@ const ToolboxCatalog = {
           "sourceId": "json-patch-apply"
         }
       ],
-      "href": "tools/tool/?id=json-patch-apply"
+      "href": "tools/tool/?id=json-patch-apply",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-patch-diff",
       "category": "data",
       "name": "JSON补丁生成器",
       "description": "在两个JSON文档之间生成RFC 6902 JSON补丁。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "json patch diff rfc 6902 generate compare rfc6902 json-pointer json-patch-diff JSON补丁生成器",
       "variants": [
@@ -8707,14 +9165,15 @@ const ToolboxCatalog = {
           "sourceId": "json-patch-diff"
         }
       ],
-      "href": "tools/tool/?id=json-patch-diff"
+      "href": "tools/tool/?id=json-patch-diff",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-path-extractor",
       "category": "data",
       "name": "JSON路径提取器",
       "description": "使用像data.items",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "json jsonpath query extract path json-path-extractor JSON路径提取器 filter web-json-path-extractor JSON 路径提取器（高级）",
       "variants": [
@@ -8731,14 +9190,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-path-extractor"
         }
       ],
-      "href": "tools/tool/?id=json-path-extractor"
+      "href": "tools/tool/?id=json-path-extractor",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-pointer-resolver",
       "category": "data",
       "name": "JSON指针解析器",
       "description": "针对JSON文档解析RFC 6901 JSON指针。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json pointer rfc 6901 resolve path token lookup value json-pointer rfc6901 json-pointer-resolver JSON指针解析器",
       "variants": [
@@ -8749,14 +9209,15 @@ const ToolboxCatalog = {
           "sourceId": "json-pointer-resolver"
         }
       ],
-      "href": "tools/tool/?id=json-pointer-resolver"
+      "href": "tools/tool/?id=json-pointer-resolver",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-repair",
       "category": "data",
       "name": "JSON修复",
       "description": "修复带有单引号、尾随逗号、不带引号的键和注释的损坏的 JSON，然后输出有效的 JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json repair fix trailing comma json5 json-repair JSON修复",
       "variants": [
@@ -8767,14 +9228,15 @@ const ToolboxCatalog = {
           "sourceId": "json-repair"
         }
       ],
-      "href": "tools/tool/?id=json-repair"
+      "href": "tools/tool/?id=json-repair",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-schema-compatibility-diff",
       "category": "web",
       "name": "JSON 模式兼容性差异",
       "description": "比较 JSON 模式的必填字段、属性更改和枚举缩小。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "json schema compatibility diff json-schema-compatibility-diff JSON 模式兼容性差异",
       "variants": [
@@ -8785,14 +9247,15 @@ const ToolboxCatalog = {
           "sourceId": "json-schema-compatibility-diff"
         }
       ],
-      "href": "tools/tool/?id=json-schema-compatibility-diff"
+      "href": "tools/tool/?id=json-schema-compatibility-diff",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-schema-faker",
       "category": "web",
       "name": "来自 JSON 模式的虚假数据",
       "description": "生成符合粘贴的JSON模式（类型、枚举、格式、约束）的示例JSON实例。",
-      "icon": "convert",
+      "icon": "braces",
       "tags": [],
       "keywords": "json schema faker mock data sample draft-07 test fixtures fake api response generate json-schema fake-data testing json-schema-faker 来自 JSON 模式的虚假数据",
       "variants": [
@@ -8803,14 +9266,15 @@ const ToolboxCatalog = {
           "sourceId": "json-schema-faker"
         }
       ],
-      "href": "tools/tool/?id=json-schema-faker"
+      "href": "tools/tool/?id=json-schema-faker",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-schema-sample-generator",
       "category": "data",
       "name": "JSON 模式示例生成器",
       "description": "生成满足JSON模式的示例JSON实例。",
-      "icon": "convert",
+      "icon": "braces",
       "tags": [],
       "keywords": "json schema sample data mock fake draft 07 example instance json-schema generator draft-07 json-schema-sample-generator JSON 模式示例生成器",
       "variants": [
@@ -8821,14 +9285,15 @@ const ToolboxCatalog = {
           "sourceId": "json-schema-sample-generator"
         }
       ],
-      "href": "tools/tool/?id=json-schema-sample-generator"
+      "href": "tools/tool/?id=json-schema-sample-generator",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-sort-keys",
       "category": "data",
       "name": "JSON排序键",
       "description": "按字母顺序递归地对 JSON 文档中的所有对象键进行排序。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "json sort keys alphabetize canonical normalize json-sort-keys JSON排序键",
       "variants": [
@@ -8839,14 +9304,15 @@ const ToolboxCatalog = {
           "sourceId": "json-sort-keys"
         }
       ],
-      "href": "tools/tool/?id=json-sort-keys"
+      "href": "tools/tool/?id=json-sort-keys",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-stats-summary",
       "category": "data",
       "name": "JSON结构统计",
       "description": "总结JSON文档的结构、深度和类型计数。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json stats analyzer type counts depth key frequency schema skeleton analysis structure json-stats-summary JSON结构统计",
       "variants": [
@@ -8857,14 +9323,15 @@ const ToolboxCatalog = {
           "sourceId": "json-stats-summary"
         }
       ],
-      "href": "tools/tool/?id=json-stats-summary"
+      "href": "tools/tool/?id=json-stats-summary",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-stringify",
       "category": "data",
       "name": "JSON 字符串化/解析",
       "description": "将原始文本转换为转义的JSON字符串文字，或者将JSON字符串解析回其原始值。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json stringify parse escape string json-stringify JSON 字符串化/解析",
       "variants": [
@@ -8875,14 +9342,15 @@ const ToolboxCatalog = {
           "sourceId": "json-stringify"
         }
       ],
-      "href": "tools/tool/?id=json-stringify"
+      "href": "tools/tool/?id=json-stringify",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-to-csharp",
       "category": "data",
       "name": "JSON 到 C# 类",
       "description": "从JSON生成具有System.Text.Json属性的C#类。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to csharp c# class dotnet model JsonPropertyName POCO codegen json-to-csharp JSON 到 C# 类",
       "variants": [
@@ -8893,14 +9361,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-csharp"
         }
       ],
-      "href": "tools/tool/?id=json-to-csharp"
+      "href": "tools/tool/?id=json-to-csharp",
+      "iconBadge": ""
     },
     {
       "id": "json-to-csv",
       "category": "data",
       "name": "JSON 到 CSV",
       "description": "使用选定的分隔符将对象的JSON数组转换为CSV。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to csv export flatten array of objects tabular convert table json-to-csv JSON 到 CSV",
       "variants": [
@@ -8911,14 +9380,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-csv"
         }
       ],
-      "href": "tools/tool/?id=json-to-csv"
+      "href": "tools/tool/?id=json-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "json-to-csv-headers",
       "category": "data",
       "name": "CSV 标头的 JSON 键",
       "description": "从对象的JSON数组导出统一的CSV/平面标题行。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json keys csv header union field map row sparse headers flatten json-to-csv-headers CSV 标头的 JSON 键",
       "variants": [
@@ -8929,14 +9399,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-csv-headers"
         }
       ],
-      "href": "tools/tool/?id=json-to-csv-headers"
+      "href": "tools/tool/?id=json-to-csv-headers",
+      "iconBadge": "CSV"
     },
     {
       "id": "json-to-dart",
       "category": "data",
       "name": "JSON 到 Dart 类",
       "description": "使用 fromJson/toJson 从 JSON 示例生成 Dart 类。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to dart flutter model fromjson tojson data class serialization codegen json-to-dart JSON 到 Dart 类",
       "variants": [
@@ -8947,14 +9418,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-dart"
         }
       ],
-      "href": "tools/tool/?id=json-to-dart"
+      "href": "tools/tool/?id=json-to-dart",
+      "iconBadge": ""
     },
     {
       "id": "json-to-env",
       "category": "data",
       "name": "JSON 到 .env",
       "description": "将 JSON 对象展平为 dotenv KEY=VALUE 行。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to env dotenv environment variables flatten config KEY=VALUE json-to-env JSON 到 .env",
       "variants": [
@@ -8965,14 +9437,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-env"
         }
       ],
-      "href": "tools/tool/?id=json-to-env"
+      "href": "tools/tool/?id=json-to-env",
+      "iconBadge": ""
     },
     {
       "id": "json-to-go",
       "category": "convert",
       "name": "JSON 到 Go 结构",
       "description": "从 JSON 样本推断 Go 结构（带有 json 标签）。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to go struct golang tags codegen json-to-go JSON 到 Go 结构",
       "variants": [
@@ -8983,14 +9456,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-go"
         }
       ],
-      "href": "tools/tool/?id=json-to-go"
+      "href": "tools/tool/?id=json-to-go",
+      "iconBadge": "GO"
     },
     {
       "id": "json-to-graphql-sdl",
       "category": "data",
       "name": "JSON 到 GraphQL 类型",
       "description": "从JSON样本生成GraphQL SDL类型定义。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "json to graphql sdl type schema definition codegen json-to-graphql-sdl JSON 到 GraphQL 类型",
       "variants": [
@@ -9001,14 +9475,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-graphql-sdl"
         }
       ],
-      "href": "tools/tool/?id=json-to-graphql-sdl"
+      "href": "tools/tool/?id=json-to-graphql-sdl",
+      "iconBadge": ""
     },
     {
       "id": "json-to-hcl",
       "category": "data",
       "name": "JSON 到 HCL/Terraform",
       "description": "将JSON对象转换为HCL2(Terraform风格)语法。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to hcl terraform hcl2 config infrastructure as code convert json-to-hcl JSON 到 HCL/Terraform",
       "variants": [
@@ -9019,14 +9494,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-hcl"
         }
       ],
-      "href": "tools/tool/?id=json-to-hcl"
+      "href": "tools/tool/?id=json-to-hcl",
+      "iconBadge": ""
     },
     {
       "id": "json-to-ini",
       "category": "convert",
       "name": "JSON 到 INI",
       "description": "将JSON对象转换成INI/配置文件语法。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to ini config sections key value settings file convert json-to-ini JSON 到 INI",
       "variants": [
@@ -9037,14 +9513,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-ini"
         }
       ],
-      "href": "tools/tool/?id=json-to-ini"
+      "href": "tools/tool/?id=json-to-ini",
+      "iconBadge": "INI"
     },
     {
       "id": "json-to-jsdoc-typedef",
       "category": "data",
       "name": "JSON 到 JSDoc Typedef",
       "description": "从 JSON 示例生成 JSDoc @typedef 注释。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "json to jsdoc typedef property javascript types codegen json-to-jsdoc-typedef JSON 到 JSDoc Typedef",
       "variants": [
@@ -9055,14 +9532,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-jsdoc-typedef"
         }
       ],
-      "href": "tools/tool/?id=json-to-jsdoc-typedef"
+      "href": "tools/tool/?id=json-to-jsdoc-typedef",
+      "iconBadge": ""
     },
     {
       "id": "json-to-json-schema",
       "category": "data",
       "name": "JSON模式生成器",
       "description": "从具有类型和必填字段的示例JSON文档推断JSON模式(draft-07)。",
-      "icon": "convert",
+      "icon": "braces",
       "tags": [],
       "keywords": "json schema generate validation json-to-json-schema JSON模式生成器 jsonschema infer draft web-json-to-jsonschema JSON到JSON模式",
       "variants": [
@@ -9079,14 +9557,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-to-jsonschema"
         }
       ],
-      "href": "tools/tool/?id=json-to-json-schema"
+      "href": "tools/tool/?id=json-to-json-schema",
+      "iconBadge": "JSON"
     },
     {
       "id": "json-to-kotlin",
       "category": "data",
       "name": "JSON 到 Kotlin 数据类",
       "description": "使用 kotlinx.serialization 从 JSON 生成 Kotlin 数据类。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to kotlin data class kotlinx serialization serialname codegen json-to-kotlin JSON 到 Kotlin 数据类",
       "variants": [
@@ -9097,14 +9576,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-kotlin"
         }
       ],
-      "href": "tools/tool/?id=json-to-kotlin"
+      "href": "tools/tool/?id=json-to-kotlin",
+      "iconBadge": ""
     },
     {
       "id": "json-to-kv-pairs",
       "category": "convert",
       "name": "JSON 到键值对",
       "description": "将JSON对象转换为平面键：值文本行。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to key value flatten dotted keys kv pairs leaf values key-value convert json-to-kv-pairs JSON 到键值对",
       "variants": [
@@ -9115,14 +9595,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-kv-pairs"
         }
       ],
-      "href": "tools/tool/?id=json-to-kv-pairs"
+      "href": "tools/tool/?id=json-to-kv-pairs",
+      "iconBadge": ""
     },
     {
       "id": "json-to-markdown-table",
       "category": "data",
       "name": "JSON到Markdown表",
       "description": "Render an array of JSON objects as a GitHub-flavored Markdown table.",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "json markdown table convert github json-to-markdown-table JSON到Markdown表",
       "variants": [
@@ -9133,14 +9614,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-markdown-table"
         }
       ],
-      "href": "tools/tool/?id=json-to-markdown-table"
+      "href": "tools/tool/?id=json-to-markdown-table",
+      "iconBadge": ""
     },
     {
       "id": "json-to-mongoose-schema",
       "category": "data",
       "name": "JSON 到 Mongoose 模式",
       "description": "从 JSON 示例生成 Mongoose 架构定义。",
-      "icon": "convert",
+      "icon": "braces",
       "tags": [],
       "keywords": "json to mongoose mongodb schema model odm codegen json-to-mongoose-schema JSON 到 Mongoose 模式",
       "variants": [
@@ -9151,14 +9633,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-mongoose-schema"
         }
       ],
-      "href": "tools/tool/?id=json-to-mongoose-schema"
+      "href": "tools/tool/?id=json-to-mongoose-schema",
+      "iconBadge": ""
     },
     {
       "id": "json-to-ndjson",
       "category": "data",
       "name": "JSON 到 NDJSON / JSON 行",
       "description": "在JSON数组和换行符分隔的JSON(NDJSON/JSON行)之间转换。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "ndjson jsonl json lines array convert json-to-ndjson JSON 到 NDJSON / 行",
       "variants": [
@@ -9169,14 +9652,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-ndjson"
         }
       ],
-      "href": "tools/tool/?id=json-to-ndjson"
+      "href": "tools/tool/?id=json-to-ndjson",
+      "iconBadge": ""
     },
     {
       "id": "json-to-php-array",
       "category": "convert",
       "name": "JSON 到 PHP 数组",
       "description": "将JSON转换为PHP数组文字。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to php array literal short syntax export convert code json-to-php-array JSON 到 PHP 数组",
       "variants": [
@@ -9187,14 +9671,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-php-array"
         }
       ],
-      "href": "tools/tool/?id=json-to-php-array"
+      "href": "tools/tool/?id=json-to-php-array",
+      "iconBadge": "PHP"
     },
     {
       "id": "json-to-plist",
       "category": "convert",
       "name": "JSON 到 Apple plist",
       "description": "将 JSON 转换为 Apple XML 属性列表。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to plist property list apple macos ios config xml convert json-to-plist JSON 到 Apple",
       "variants": [
@@ -9205,14 +9690,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-plist"
         }
       ],
-      "href": "tools/tool/?id=json-to-plist"
+      "href": "tools/tool/?id=json-to-plist",
+      "iconBadge": ""
     },
     {
       "id": "json-to-properties",
       "category": "convert",
       "name": "JSON 到 Java .properties",
       "description": "将嵌套的 JSON 转换为 Java/Spring .properties 行。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to properties java spring config application.properties flatten convert json-to-properties JSON 到 Java .properties",
       "variants": [
@@ -9223,14 +9709,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-properties"
         }
       ],
-      "href": "tools/tool/?id=json-to-properties"
+      "href": "tools/tool/?id=json-to-properties",
+      "iconBadge": ""
     },
     {
       "id": "json-to-protobuf",
       "category": "data",
       "name": "JSON 到 Protobuf",
       "description": "从JSON样本生成proto3.proto消息定义。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "json to protobuf proto3 proto file message definition grpc codegen json-to-protobuf JSON 到 Protobuf",
       "variants": [
@@ -9241,14 +9728,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-protobuf"
         }
       ],
-      "href": "tools/tool/?id=json-to-protobuf"
+      "href": "tools/tool/?id=json-to-protobuf",
+      "iconBadge": ""
     },
     {
       "id": "json-to-pydantic",
       "category": "data",
       "name": "JSON 到 Pydantic 模型",
       "description": "从JSON样本生成Pydantic v2 BaseModel类。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to pydantic basemodel v2 python model schema dto codegen json-to-pydantic JSON 到 Pydantic 模型",
       "variants": [
@@ -9259,14 +9747,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-pydantic"
         }
       ],
-      "href": "tools/tool/?id=json-to-pydantic"
+      "href": "tools/tool/?id=json-to-pydantic",
+      "iconBadge": ""
     },
     {
       "id": "json-to-python-dataclass",
       "category": "data",
       "name": "JSON 到 Python 数据类",
       "description": "从 JSON 样本生成 Python @dataclass 定义。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to dataclass python codegen typing dto types json-to-python-dataclass JSON 到 Python 数据类",
       "variants": [
@@ -9277,14 +9766,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-python-dataclass"
         }
       ],
-      "href": "tools/tool/?id=json-to-python-dataclass"
+      "href": "tools/tool/?id=json-to-python-dataclass",
+      "iconBadge": ""
     },
     {
       "id": "json-to-query-string",
       "category": "data",
       "name": "JSON 到查询字符串",
       "description": "使用数组和编码选项将平面JSON对象转换为URL查询字符串。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "json query string url params convert json-to-query-string JSON 到查询字符串 encode nested web-json-to-query-string 用于查询参数的",
       "variants": [
@@ -9301,14 +9791,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-to-query-string"
         }
       ],
-      "href": "tools/tool/?id=json-to-query-string"
+      "href": "tools/tool/?id=json-to-query-string",
+      "iconBadge": ""
     },
     {
       "id": "json-to-ruby-hash",
       "category": "convert",
       "name": "JSON 到 Ruby 哈希",
       "description": "将 JSON 转换为 Ruby 哈希文本。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "json to ruby hash symbol keys hashrocket rails convert code json-to-ruby-hash JSON 到 Ruby 哈希",
       "variants": [
@@ -9319,14 +9810,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-ruby-hash"
         }
       ],
-      "href": "tools/tool/?id=json-to-ruby-hash"
+      "href": "tools/tool/?id=json-to-ruby-hash",
+      "iconBadge": "RUBY"
     },
     {
       "id": "json-to-rust-serde",
       "category": "data",
       "name": "JSON 到 Rust 结构",
       "description": "使用源自 JSON 样本的 serde 生成 Rust 结构。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to rust serde struct serialize deserialize codegen json-to-rust-serde JSON 到 Rust 结构",
       "variants": [
@@ -9337,14 +9829,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-rust-serde"
         }
       ],
-      "href": "tools/tool/?id=json-to-rust-serde"
+      "href": "tools/tool/?id=json-to-rust-serde",
+      "iconBadge": ""
     },
     {
       "id": "json-to-swift-codable",
       "category": "data",
       "name": "JSON 到 Swift Codable",
       "description": "从 JSON 示例生成符合 Codable 的 Swift 结构。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to swift codable struct codingkeys decodable codegen json-to-swift-codable JSON 到 Swift Codable",
       "variants": [
@@ -9355,14 +9848,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-swift-codable"
         }
       ],
-      "href": "tools/tool/?id=json-to-swift-codable"
+      "href": "tools/tool/?id=json-to-swift-codable",
+      "iconBadge": ""
     },
     {
       "id": "json-to-toml",
       "category": "data",
       "name": "JSON 到 TOML",
       "description": "将 JSON 转换为带有表、数组和类型化标量的 TOML 配置格式。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json toml convert config serialize json-to-toml JSON 到 TOML cargo settings web-json-to-toml TOML（Web）",
       "variants": [
@@ -9379,14 +9873,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-to-toml"
         }
       ],
-      "href": "tools/tool/?id=json-to-toml"
+      "href": "tools/tool/?id=json-to-toml",
+      "iconBadge": "TOML"
     },
     {
       "id": "json-to-typescript",
       "category": "data",
       "name": "JSON 到 TypeScript",
       "description": "从JSON样本推断TypeScript接口。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "json to typescript types interface codegen dto json-to-typescript JSON 到 TypeScript",
       "variants": [
@@ -9397,14 +9892,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-typescript"
         }
       ],
-      "href": "tools/tool/?id=json-to-typescript"
+      "href": "tools/tool/?id=json-to-typescript",
+      "iconBadge": ""
     },
     {
       "id": "json-to-xml",
       "category": "convert",
       "name": "JSON 到 XML",
       "description": "通过适当的转义将JSON转换为XML标记。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "json to xml convert markup serialize json-to-xml JSON 到 XML",
       "variants": [
@@ -9415,14 +9911,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-xml"
         }
       ],
-      "href": "tools/tool/?id=json-to-xml"
+      "href": "tools/tool/?id=json-to-xml",
+      "iconBadge": "XML"
     },
     {
       "id": "json-to-xml-attributes",
       "category": "convert",
       "name": "JSON到XML(属性模式)",
       "description": "选择属性与子元素将JSON转换为XML。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "json to xml attributes @text convention scalars as markup convert serialize json-to-xml-attributes JSON到XML(属性模式)",
       "variants": [
@@ -9433,14 +9930,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-xml-attributes"
         }
       ],
-      "href": "tools/tool/?id=json-to-xml-attributes"
+      "href": "tools/tool/?id=json-to-xml-attributes",
+      "iconBadge": "XML"
     },
     {
       "id": "json-to-yaml",
       "category": "convert",
       "name": "JSON 到 YAML",
       "description": "将JSON转换为可读的YAML。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to yaml convert config json-to-yaml JSON 到 YAML",
       "variants": [
@@ -9451,14 +9949,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-yaml"
         }
       ],
-      "href": "tools/tool/?id=json-to-yaml"
+      "href": "tools/tool/?id=json-to-yaml",
+      "iconBadge": "YAML"
     },
     {
       "id": "json-to-zod",
       "category": "data",
       "name": "JSON 到 Zod 模式",
       "description": "从JSON样本生成Zod验证模式。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json to zod schema validation z.object typescript codegen json-to-zod JSON 到 Zod 模式",
       "variants": [
@@ -9469,14 +9968,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-zod"
         }
       ],
-      "href": "tools/tool/?id=json-to-zod"
+      "href": "tools/tool/?id=json-to-zod",
+      "iconBadge": ""
     },
     {
       "id": "json-tree-viewer",
       "category": "data",
       "name": "JSON树查看器",
       "description": "将JSON探索为具有类型标记和大型文档的值计数的可折叠树。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json viewer tree explore inspect json-tree-viewer JSON树查看器 visualize collapse web-json-tree-viewer JSON 到漂亮/树",
       "variants": [
@@ -9493,14 +9993,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-tree-viewer"
         }
       ],
-      "href": "tools/tool/?id=json-tree-viewer"
+      "href": "tools/tool/?id=json-tree-viewer",
+      "iconBadge": "JSON"
     },
     {
       "id": "jsonc-to-json",
       "category": "data",
       "name": "JSONC/JSON5转JSON",
       "description": "从JSONC或JSON5中去除注释和尾随逗号以产生严格、有效的JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "jsonc json5 comments strip convert json jsonc-to-json JSONC/JSON5转JSON",
       "variants": [
@@ -9511,14 +10012,15 @@ const ToolboxCatalog = {
           "sourceId": "jsonc-to-json"
         }
       ],
-      "href": "tools/tool/?id=jsonc-to-json"
+      "href": "tools/tool/?id=jsonc-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "jsx-to-html",
       "category": "convert",
       "name": "JSX 到 HTML",
       "description": "将 JSX/React 元素标记转换回纯 HTML。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "jsx html react className htmlFor convert markup jsx-to-html JSX 到 HTML",
       "variants": [
@@ -9529,14 +10031,15 @@ const ToolboxCatalog = {
           "sourceId": "jsx-to-html"
         }
       ],
-      "href": "tools/tool/?id=jsx-to-html"
+      "href": "tools/tool/?id=jsx-to-html",
+      "iconBadge": "HTML"
     },
     {
       "id": "julian-day-number",
       "category": "time",
       "name": "儒略日数转换器",
       "description": "将公历日期转换为天文儒略日数/儒略日期并返回。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "julian day number date jdn mjd astronomical gregorian to astronomy modified julian-day-number 儒略日数转换器",
       "variants": [
@@ -9547,14 +10050,15 @@ const ToolboxCatalog = {
           "sourceId": "julian-day-number"
         }
       ],
-      "href": "tools/tool/?id=julian-day-number"
+      "href": "tools/tool/?id=julian-day-number",
+      "iconBadge": ""
     },
     {
       "id": "jwk-pem-viewer",
       "category": "encoding",
       "name": "JWK / PEM 密钥查看器",
       "description": "检查JWK和PEM密钥表示之间并进行转换并显示它们的参数。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "spki pkcs8 public key fingerprint webcrypto convert inspect jwk pem rsa ec jwk-pem-viewer JWK / PEM 密钥查看器",
       "variants": [
@@ -9565,14 +10069,15 @@ const ToolboxCatalog = {
           "sourceId": "jwk-pem-viewer"
         }
       ],
-      "href": "tools/tool/?id=jwk-pem-viewer"
+      "href": "tools/tool/?id=jwk-pem-viewer",
+      "iconBadge": ""
     },
     {
       "id": "jwk-rotation-diff",
       "category": "encoding",
       "name": "JWK旋转差速器",
       "description": "比较旧的和新的JWKS文档并识别添加的、移除的和改变的键。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "jwks jwk rotation diff jwk-rotation-diff JWK旋转差速器",
       "variants": [
@@ -9583,14 +10088,15 @@ const ToolboxCatalog = {
           "sourceId": "jwk-rotation-diff"
         }
       ],
-      "href": "tools/tool/?id=jwk-rotation-diff"
+      "href": "tools/tool/?id=jwk-rotation-diff",
+      "iconBadge": ""
     },
     {
       "id": "jwk-thumbprint",
       "category": "encoding",
       "name": "JWK 指纹（RFC 7638）",
       "description": "根据 RFC 7638 计算 JSON Web 密钥的规范 SHA-256 指纹。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "jwk thumbprint kid canonical sha-256 base64url key id rfc7638 hash fingerprint jwk-thumbprint JWK 指纹（RFC 7638）",
       "variants": [
@@ -9601,14 +10107,15 @@ const ToolboxCatalog = {
           "sourceId": "jwk-thumbprint"
         }
       ],
-      "href": "tools/tool/?id=jwk-thumbprint"
+      "href": "tools/tool/?id=jwk-thumbprint",
+      "iconBadge": ""
     },
     {
       "id": "jwks-inspector",
       "category": "encoding",
       "name": "JWKS检查员",
       "description": "检查JSON Web密钥集、密钥ID、算法、使用、密钥类型和轮换准备情况。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "jwks jwk jwt keys jwks-inspector JWKS检查员",
       "variants": [
@@ -9619,14 +10126,15 @@ const ToolboxCatalog = {
           "sourceId": "jwks-inspector"
         }
       ],
-      "href": "tools/tool/?id=jwks-inspector"
+      "href": "tools/tool/?id=jwks-inspector",
+      "iconBadge": ""
     },
     {
       "id": "jwt-builder-rsa-es",
       "category": "encoding",
       "name": "JWT 构建器(RS/ES)",
       "description": "使用RSA或ECDSA密钥(RS256/384/512、ES256/384/512、PS256)构建并签署JSON Web令牌。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jws rs256 es256 ps256 pkcs8 asymmetric json web token jwt rsa ecdsa sign jwt-builder-rsa-es JWT 构建器(RS/ES)",
       "variants": [
@@ -9637,14 +10145,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-builder-rsa-es"
         }
       ],
-      "href": "tools/tool/?id=jwt-builder-rsa-es"
+      "href": "tools/tool/?id=jwt-builder-rsa-es",
+      "iconBadge": "JWT"
     },
     {
       "id": "jwt-claims-validator",
       "category": "encoding",
       "name": "JWT 声明验证器",
       "description": "解码JWT并检查其注册声明(exp、nbf、iat、aud、iss)而不验证签名。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "exp nbf iat audience issuer expiry json web token jwt claims validate decode jwt-claims-validator JWT 声明验证器",
       "variants": [
@@ -9655,14 +10164,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-claims-validator"
         }
       ],
-      "href": "tools/tool/?id=jwt-claims-validator"
+      "href": "tools/tool/?id=jwt-claims-validator",
+      "iconBadge": "JWT"
     },
     {
       "id": "jwt-decoder",
       "category": "web",
       "name": "JWT解码器",
       "description": "解码并检查 JSON Web Token 标头和有效负载（无验证）。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jwt jws bearer claims token auth oauth json web decode jwt-decoder JWT解码器",
       "variants": [
@@ -9673,14 +10183,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-decoder"
         }
       ],
-      "href": "tools/tool/?id=jwt-decoder"
+      "href": "tools/tool/?id=jwt-decoder",
+      "iconBadge": "JWT"
     },
     {
       "id": "jwt-generator",
       "category": "encoding",
       "name": "智威汤逊发电机",
       "description": "根据有效负载和秘密创建签名的HS256/384/512 JSON Web令牌。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jwt generator sign create token hs256 json web hmac jwt-generator 智威汤逊发电机",
       "variants": [
@@ -9691,14 +10202,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-generator"
         }
       ],
-      "href": "tools/tool/?id=jwt-generator"
+      "href": "tools/tool/?id=jwt-generator",
+      "iconBadge": "JWT"
     },
     {
       "id": "jwt-verify-hmac",
       "category": "encoding",
       "name": "JWT 签名验证器 (HS256)",
       "description": "对照秘密验证HMAC签名的JWT(HS256/384/512)并报告签名和到期是否有效。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jwt verify hs256 hmac signature validate jwt-verify-hmac JWT 签名验证器 (HS256)",
       "variants": [
@@ -9709,14 +10221,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-verify-hmac"
         }
       ],
-      "href": "tools/tool/?id=jwt-verify-hmac"
+      "href": "tools/tool/?id=jwt-verify-hmac",
+      "iconBadge": "JWT"
     },
     {
       "id": "jwt-verify-rsa-es",
       "category": "encoding",
       "name": "JWT验证器(RS/ES)",
       "description": "对照RSA或ECDSA公钥验证JWT签名并检查标准声明。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "rs256 es256 ps256 spki jwk public key json web token jwt verify rsa ecdsa signature jwt-verify-rsa-es JWT验证器(RS/ES)",
       "variants": [
@@ -9727,14 +10240,15 @@ const ToolboxCatalog = {
           "sourceId": "jwt-verify-rsa-es"
         }
       ],
-      "href": "tools/tool/?id=jwt-verify-rsa-es"
+      "href": "tools/tool/?id=jwt-verify-rsa-es",
+      "iconBadge": "JWT"
     },
     {
       "id": "kafka-message-header-viewer",
       "category": "web",
       "name": "Kafka消息头查看器",
       "description": "解析Kafka标头键/值对和有效负载元数据以用于调试消费者。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "kafka headers events debug kafka-message-header-viewer Kafka消息头查看器",
       "variants": [
@@ -9745,14 +10259,15 @@ const ToolboxCatalog = {
           "sourceId": "kafka-message-header-viewer"
         }
       ],
-      "href": "tools/tool/?id=kafka-message-header-viewer"
+      "href": "tools/tool/?id=kafka-message-header-viewer",
+      "iconBadge": ""
     },
     {
       "id": "kelvin-to-rgb",
       "category": "color",
       "name": "色温(开尔文)转换器",
       "description": "将开尔文色温转换为其近似RGB/HEX颜色，这对于照明、白平衡和暖/冷色调工作有用。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "kelvin temperature white balance rgb warm kelvin-to-rgb 色温(开尔文)转换器",
       "variants": [
@@ -9763,14 +10278,15 @@ const ToolboxCatalog = {
           "sourceId": "kelvin-to-rgb"
         }
       ],
-      "href": "tools/tool/?id=kelvin-to-rgb"
+      "href": "tools/tool/?id=kelvin-to-rgb",
+      "iconBadge": "RGB"
     },
     {
       "id": "key-value-to-json",
       "category": "convert",
       "name": "key=value 行到 JSON",
       "description": "将普通的 key=value 或 key:value 配置行转换为 JSON 对象，并使用类型强制和嵌套在点键上。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "key value config json ini nested dotted coerce convert key-value key-value-to-json key=value 行到 JSON",
       "variants": [
@@ -9781,14 +10297,15 @@ const ToolboxCatalog = {
           "sourceId": "key-value-to-json"
         }
       ],
-      "href": "tools/tool/?id=key-value-to-json"
+      "href": "tools/tool/?id=key-value-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "keyword-density-analyzer",
       "category": "text",
       "name": "关键词密度分析器",
       "description": "通过用于SEO的停用词过滤来测量单词和短语关键词密度。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "keyword density seo stop words word frequency content optimization phrase keyword-density-analyzer 关键词密度分析器",
       "variants": [
@@ -9799,14 +10316,15 @@ const ToolboxCatalog = {
           "sourceId": "keyword-density-analyzer"
         }
       ],
-      "href": "tools/tool/?id=keyword-density-analyzer"
+      "href": "tools/tool/?id=keyword-density-analyzer",
+      "iconBadge": ""
     },
     {
       "id": "ksuid-generator",
       "category": "web",
       "name": "KSUID生成器",
       "description": "将K可排序唯一标识符生成为27个字符的Base62字符串。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "ksuid k-sortable unique id base62 segment identifier ulid alternative sortable ksuid-generator KSUID生成器",
       "variants": [
@@ -9817,14 +10335,15 @@ const ToolboxCatalog = {
           "sourceId": "ksuid-generator"
         }
       ],
-      "href": "tools/tool/?id=ksuid-generator"
+      "href": "tools/tool/?id=ksuid-generator",
+      "iconBadge": ""
     },
     {
       "id": "kv-pairs-to-json",
       "category": "convert",
       "name": "键值对到JSON",
       "description": "将 key:value 或 key=value 行转换为 JSON 对象。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "key value pairs json convert separator coerce nested array key-value parse kv-pairs-to-json 键值对到JSON",
       "variants": [
@@ -9835,14 +10354,15 @@ const ToolboxCatalog = {
           "sourceId": "kv-pairs-to-json"
         }
       ],
-      "href": "tools/tool/?id=kv-pairs-to-json"
+      "href": "tools/tool/?id=kv-pairs-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "leap-year-checker",
       "category": "time",
       "name": "闰年检查器",
       "description": "检查是否有任何年份是闰年并列出邻近的闰年并解释规则。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "leap year checker is 366 days february 29 gregorian rule calendar date leap-year-checker 闰年检查器",
       "variants": [
@@ -9853,14 +10373,15 @@ const ToolboxCatalog = {
           "sourceId": "leap-year-checker"
         }
       ],
-      "href": "tools/tool/?id=leap-year-checker"
+      "href": "tools/tool/?id=leap-year-checker",
+      "iconBadge": ""
     },
     {
       "id": "leetspeak",
       "category": "text",
       "name": "Leetspeak转换器",
       "description": "将文本与leetspeak",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "leetspeak 1337 hacker text convert fun Leetspeak转换器",
       "variants": [
@@ -9871,14 +10392,15 @@ const ToolboxCatalog = {
           "sourceId": "leetspeak"
         }
       ],
-      "href": "tools/tool/?id=leetspeak"
+      "href": "tools/tool/?id=leetspeak",
+      "iconBadge": ""
     },
     {
       "id": "length-converter",
       "category": "convert",
       "name": "长度和距离转换器",
       "description": "通过实时多单位输出在公制和英制长度之间进行转换，例如毫米、厘米、米、公里、英寸、英尺、码、英里和海里。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "length distance metric imperial convert units length-converter 长度和距离转换器",
       "variants": [
@@ -9889,14 +10411,15 @@ const ToolboxCatalog = {
           "sourceId": "length-converter"
         }
       ],
-      "href": "tools/tool/?id=length-converter"
+      "href": "tools/tool/?id=length-converter",
+      "iconBadge": ""
     },
     {
       "id": "lexical-diversity-calculator",
       "category": "text",
       "name": "词汇多样性计算器",
       "description": "使用类型标记比和相关度量来测量词汇丰富度。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "type token ratio lexical diversity vocabulary richness guiraud herdan hapax legomena ttr linguistics metrics lexical-diversity-calculator 词汇多样性计算器",
       "variants": [
@@ -9907,14 +10430,15 @@ const ToolboxCatalog = {
           "sourceId": "lexical-diversity-calculator"
         }
       ],
-      "href": "tools/tool/?id=lexical-diversity-calculator"
+      "href": "tools/tool/?id=lexical-diversity-calculator",
+      "iconBadge": ""
     },
     {
       "id": "license-key-generator",
       "category": "web",
       "name": "许可证密钥生成器",
       "description": "生成具有可配置校验和组的分组许可证/序列密钥。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "license key serial number product activation code crockford base32 checksum crc32 product-key license-key-generator 许可证密钥生成器",
       "variants": [
@@ -9925,14 +10449,15 @@ const ToolboxCatalog = {
           "sourceId": "license-key-generator"
         }
       ],
-      "href": "tools/tool/?id=license-key-generator"
+      "href": "tools/tool/?id=license-key-generator",
+      "iconBadge": ""
     },
     {
       "id": "lighten-darken-color",
       "category": "color",
       "name": "使颜色变亮/变暗",
       "description": "按选定的百分比调亮或调暗任何颜色，并以十六进制和 RGB 形式获取调整后的颜色，并提供之前/之后的预览。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "lighten darken brighten adjust lightness color lighten-darken-color 使颜色变亮/变暗",
       "variants": [
@@ -9943,14 +10468,15 @@ const ToolboxCatalog = {
           "sourceId": "lighten-darken-color"
         }
       ],
-      "href": "tools/tool/?id=lighten-darken-color"
+      "href": "tools/tool/?id=lighten-darken-color",
+      "iconBadge": ""
     },
     {
       "id": "line-length-checker",
       "category": "text",
       "name": "线长度检查器",
       "description": "标记超出代码或散文风格指南的最大字符宽度的行。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "line length checker max width 80 columns too long column limit wrap check lint style line-length-checker 线长度检查器",
       "variants": [
@@ -9961,14 +10487,15 @@ const ToolboxCatalog = {
           "sourceId": "line-length-checker"
         }
       ],
-      "href": "tools/tool/?id=line-length-checker"
+      "href": "tools/tool/?id=line-length-checker",
+      "iconBadge": ""
     },
     {
       "id": "line-operations",
       "category": "text",
       "name": "线路操作",
       "description": "每行文本的编号、前缀、后缀或换行。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "number lines add prefix suffix wrap line operations line-operations 线路操作",
       "variants": [
@@ -9979,14 +10506,15 @@ const ToolboxCatalog = {
           "sourceId": "line-operations"
         }
       ],
-      "href": "tools/tool/?id=line-operations"
+      "href": "tools/tool/?id=line-operations",
+      "iconBadge": ""
     },
     {
       "id": "list-formatter",
       "category": "text",
       "name": "列表格式化程序",
       "description": "将普通列表转换为具有自定义标记和缩进的项目符号、编号、字母或罗马数字列表。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "list bullets numbered roman numerals markdown list-formatter 列表格式化程序",
       "variants": [
@@ -9997,14 +10525,15 @@ const ToolboxCatalog = {
           "sourceId": "list-formatter"
         }
       ],
-      "href": "tools/tool/?id=list-formatter"
+      "href": "tools/tool/?id=list-formatter",
+      "iconBadge": ""
     },
     {
       "id": "list-to-json-array",
       "category": "convert",
       "name": "列表到 JSON 数组",
       "description": "将行/逗号列表转换为 JSON 数组。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "list json array lines comma split dedupe convert list-to-json-array 列表到 JSON 数组",
       "variants": [
@@ -10015,14 +10544,15 @@ const ToolboxCatalog = {
           "sourceId": "list-to-json-array"
         }
       ],
-      "href": "tools/tool/?id=list-to-json-array"
+      "href": "tools/tool/?id=list-to-json-array",
+      "iconBadge": "JSON"
     },
     {
       "id": "loan-emi-calculator",
       "category": "math",
       "name": "贷款和 EMI 计算器",
       "description": "根据本金、利率和期限计算每月贷款支付、总利息和总还款额。",
-      "icon": "convert",
+      "icon": "landmark",
       "tags": [],
       "keywords": "loan calculator emi mortgage interest monthly payment math finance loan-emi-calculator 贷款和 EMI 计算器",
       "variants": [
@@ -10033,14 +10563,15 @@ const ToolboxCatalog = {
           "sourceId": "loan-emi-calculator"
         }
       ],
-      "href": "tools/tool/?id=loan-emi-calculator"
+      "href": "tools/tool/?id=loan-emi-calculator",
+      "iconBadge": ""
     },
     {
       "id": "logarithm-calculator",
       "category": "math",
       "name": "对数和反对数计算器",
       "description": "评估任何碱基的对数加上自然/普通对数及其反对数。",
-      "icon": "convert",
+      "icon": "function-square",
       "tags": [],
       "keywords": "log ln log10 log2 natural common antilogarithm base logarithm antilog math change-of-base exponent logarithm-calculator 对数和反对数计算器",
       "variants": [
@@ -10051,14 +10582,15 @@ const ToolboxCatalog = {
           "sourceId": "logarithm-calculator"
         }
       ],
-      "href": "tools/tool/?id=logarithm-calculator"
+      "href": "tools/tool/?id=logarithm-calculator",
+      "iconBadge": ""
     },
     {
       "id": "lorem-bytes-generator",
       "category": "web",
       "name": "Lorem Ipsum（按字节大小）",
       "description": "生成修剪为精确目标字节或字符大小的填充Lorem Ipsum文本。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "lorem ipsum byte size fill bytes dummy text placeholder exact padding filler lorem-bytes-generator Lorem Ipsum（按字节大小）",
       "variants": [
@@ -10069,14 +10601,15 @@ const ToolboxCatalog = {
           "sourceId": "lorem-bytes-generator"
         }
       ],
-      "href": "tools/tool/?id=lorem-bytes-generator"
+      "href": "tools/tool/?id=lorem-bytes-generator",
+      "iconBadge": ""
     },
     {
       "id": "lorem-ipsum",
       "category": "text",
       "name": "Lorem Ipsum 生成器",
       "description": "通过段落、句子或单词生成占位符lorem ipsum文本。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "lorem ipsum placeholder text dummy filler mockup lorem-ipsum Lorem Ipsum 生成器",
       "variants": [
@@ -10087,14 +10620,15 @@ const ToolboxCatalog = {
           "sourceId": "lorem-ipsum"
         }
       ],
-      "href": "tools/tool/?id=lorem-ipsum"
+      "href": "tools/tool/?id=lorem-ipsum",
+      "iconBadge": ""
     },
     {
       "id": "luhn-validator",
       "category": "encoding",
       "name": "Luhn 校验和验证器",
       "description": "验证任何基于Luhn的号码（信用卡、IMEI等）并计算其校验位。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "luhn algorithm mod 10 imei credit card check digit iin checksum credit-card validator mod10 luhn-validator Luhn 校验和验证器",
       "variants": [
@@ -10105,14 +10639,15 @@ const ToolboxCatalog = {
           "sourceId": "luhn-validator"
         }
       ],
-      "href": "tools/tool/?id=luhn-validator"
+      "href": "tools/tool/?id=luhn-validator",
+      "iconBadge": ""
     },
     {
       "id": "luminance-converter",
       "category": "convert",
       "name": "亮度转换器",
       "description": "在坎德拉/平方米(尼特)、英尺朗伯和斯蒂尔布之间转换亮度。",
-      "icon": "convert",
+      "icon": "sun-medium",
       "tags": [],
       "keywords": "nit candela cd/m2 foot-lambert stilb apostilb lambert screen luminance brightness units display converter luminance-converter 亮度转换器",
       "variants": [
@@ -10123,14 +10658,15 @@ const ToolboxCatalog = {
           "sourceId": "luminance-converter"
         }
       ],
-      "href": "tools/tool/?id=luminance-converter"
+      "href": "tools/tool/?id=luminance-converter",
+      "iconBadge": ""
     },
     {
       "id": "magnet-uri-builder",
       "category": "web",
       "name": "磁铁和数据 URI 生成器",
       "description": "组装磁铁：来自离线信息散列和元数据字段的链接。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "magnet link uri btih info hash tracker torrent xt urn infohash builder magnet-uri-builder 磁铁和数据 URI 生成器",
       "variants": [
@@ -10141,14 +10677,15 @@ const ToolboxCatalog = {
           "sourceId": "magnet-uri-builder"
         }
       ],
-      "href": "tools/tool/?id=magnet-uri-builder"
+      "href": "tools/tool/?id=magnet-uri-builder",
+      "iconBadge": ""
     },
     {
       "id": "magnetic-field-converter",
       "category": "convert",
       "name": "磁场转换器",
       "description": "在特斯拉、高斯和毫高斯之间转换磁通密度。",
-      "icon": "convert",
+      "icon": "magnet",
       "tags": [],
       "keywords": "tesla gauss milligauss weber maxwell flux density magnetism magnetic units physics converter magnetic-field-converter 磁场转换器",
       "variants": [
@@ -10159,14 +10696,15 @@ const ToolboxCatalog = {
           "sourceId": "magnetic-field-converter"
         }
       ],
-      "href": "tools/tool/?id=magnetic-field-converter"
+      "href": "tools/tool/?id=magnetic-field-converter",
+      "iconBadge": ""
     },
     {
       "id": "markdown-list-renumber",
       "category": "text",
       "name": "Markdown 列表重新编号器",
       "description": "修复并重新编号有序Markdown列表，在项目符号和编号之间转换，以及规范化标记。",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": "markdown list renumber fix ordered bullet to number normalize markers md bullets markdown-list-renumber Markdown 列表重新编号器",
       "variants": [
@@ -10177,14 +10715,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-list-renumber"
         }
       ],
-      "href": "tools/tool/?id=markdown-list-renumber"
+      "href": "tools/tool/?id=markdown-list-renumber",
+      "iconBadge": ""
     },
     {
       "id": "markdown-list-to-json",
       "category": "convert",
       "name": "Markdown 列表 ↔ JSON 树",
       "description": "将缩进的 Markdown 项目符号/编号列表转换为嵌套的 JSON 数组（反之亦然）。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown list json tree nested outline bullet convert markdown-list-to-json Markdown 列表 ↔ JSON 树",
       "variants": [
@@ -10195,14 +10734,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-list-to-json"
         }
       ],
-      "href": "tools/tool/?id=markdown-list-to-json"
+      "href": "tools/tool/?id=markdown-list-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "markdown-table-formatter",
       "category": "data",
       "name": "Markdown 表格式化程序",
       "description": "将杂乱的 Markdown 表重新格式化为具有所选对齐方式的干净的列对齐管道。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown table format align columns gfm pretty pipe formatter markdown-table-formatter Markdown 表格式化程序",
       "variants": [
@@ -10213,14 +10753,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-table-formatter"
         }
       ],
-      "href": "tools/tool/?id=markdown-table-formatter"
+      "href": "tools/tool/?id=markdown-table-formatter",
+      "iconBadge": ""
     },
     {
       "id": "markdown-table-to-csv",
       "category": "convert",
       "name": "Markdown 表转为 CSV",
       "description": "提取GitHub样式的Markdown表并将其行转换为CSV，处理管道转义、对齐分隔符和修剪单元格。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown table csv convert github export markdown-table-to-csv Markdown 表转为 CSV",
       "variants": [
@@ -10231,14 +10772,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-table-to-csv"
         }
       ],
-      "href": "tools/tool/?id=markdown-table-to-csv"
+      "href": "tools/tool/?id=markdown-table-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "markdown-table-to-html",
       "category": "convert",
       "name": "Markdown 表转为 HTML",
       "description": "将 GitHub 风格的 Markdown 管道表转换为具有对齐方式的干净语义 HTML 表。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown table html gfm pipe thead alignment convert markdown-table-to-html Markdown 表转为 HTML",
       "variants": [
@@ -10249,14 +10791,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-table-to-html"
         }
       ],
-      "href": "tools/tool/?id=markdown-table-to-html"
+      "href": "tools/tool/?id=markdown-table-to-html",
+      "iconBadge": "HTML"
     },
     {
       "id": "markdown-table-to-json",
       "category": "data",
       "name": "Markdown 表到 JSON",
       "description": "将 Markdown 表转换为由标题行作为键控的对象的 JSON 数组。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown table to json gfm parse convert markdown-table-to-json Markdown 表到 JSON",
       "variants": [
@@ -10267,14 +10810,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-table-to-json"
         }
       ],
-      "href": "tools/tool/?id=markdown-table-to-json"
+      "href": "tools/tool/?id=markdown-table-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "markdown-to-html",
       "category": "web",
       "name": "Markdown 到 HTML",
       "description": "通过实时预览和可复制输出将 Markdown 渲染为 HTML。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown md to html preview render gfm markdown-to-html Markdown 到 HTML",
       "variants": [
@@ -10285,14 +10829,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-to-html"
         }
       ],
-      "href": "tools/tool/?id=markdown-to-html"
+      "href": "tools/tool/?id=markdown-to-html",
+      "iconBadge": "HTML"
     },
     {
       "id": "markdown-to-jsx",
       "category": "convert",
       "name": "Markdown 到 JSX",
       "description": "将 Markdown 转换为 JSX/React 组件片段。",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": "markdown jsx react component className convert md markdown-to-jsx Markdown 到 JSX",
       "variants": [
@@ -10303,14 +10848,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-to-jsx"
         }
       ],
-      "href": "tools/tool/?id=markdown-to-jsx"
+      "href": "tools/tool/?id=markdown-to-jsx",
+      "iconBadge": "JSX"
     },
     {
       "id": "markup-margin-calculator",
       "category": "math",
       "name": "加价和保证金计算器",
       "description": "在成本、价格、加价和利润率之间进行转换。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "markup vs margin gross cost selling price profit retail pricing business markup-margin-calculator 加价和保证金计算器",
       "variants": [
@@ -10321,14 +10867,15 @@ const ToolboxCatalog = {
           "sourceId": "markup-margin-calculator"
         }
       ],
-      "href": "tools/tool/?id=markup-margin-calculator"
+      "href": "tools/tool/?id=markup-margin-calculator",
+      "iconBadge": ""
     },
     {
       "id": "mass-weight-converter",
       "category": "convert",
       "name": "质量和重量转换器",
       "description": "在公制和英制质量单位之间转换，例如千克、磅、盎司和英石。",
-      "icon": "convert",
+      "icon": "weight",
       "tags": [],
       "keywords": "kilogram pound lb ounce oz stone gram tonne carat grain mass weight units metric imperial mass-weight-converter 质量和重量转换器",
       "variants": [
@@ -10339,14 +10886,15 @@ const ToolboxCatalog = {
           "sourceId": "mass-weight-converter"
         }
       ],
-      "href": "tools/tool/?id=mass-weight-converter"
+      "href": "tools/tool/?id=mass-weight-converter",
+      "iconBadge": ""
     },
     {
       "id": "material-colors",
       "category": "color",
       "name": "材料设计调色板",
       "description": "浏览并复制完整的 Material Design 调色板，其中包含所有色调和色调（50-900，加上强调色）作为十六进制样本。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "material design palette colors google swatch reference material-colors 材料设计调色板",
       "variants": [
@@ -10357,14 +10905,15 @@ const ToolboxCatalog = {
           "sourceId": "material-colors"
         }
       ],
-      "href": "tools/tool/?id=material-colors"
+      "href": "tools/tool/?id=material-colors",
+      "iconBadge": ""
     },
     {
       "id": "math-aspect-ratio-resizer",
       "category": "math",
       "name": "尺寸纵横比解算器",
       "description": "解决保留给定纵横比的缺失宽度或高度。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "aspect ratio resize proportional width height scale factor gcd aspect-ratio dimensions scaling pixels math-aspect-ratio-resizer 尺寸纵横比解算器",
       "variants": [
@@ -10375,14 +10924,15 @@ const ToolboxCatalog = {
           "sourceId": "math-aspect-ratio-resizer"
         }
       ],
-      "href": "tools/tool/?id=math-aspect-ratio-resizer"
+      "href": "tools/tool/?id=math-aspect-ratio-resizer",
+      "iconBadge": ""
     },
     {
       "id": "math-base-converter-fractional",
       "category": "math",
       "name": "小数基数转换器",
       "description": "在任意基数2到36之间转换带有小数部分的数字。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "base converter radix point fraction binary hex numeral system base-conversion fractional math-base-converter-fractional 小数基数转换器",
       "variants": [
@@ -10393,14 +10943,15 @@ const ToolboxCatalog = {
           "sourceId": "math-base-converter-fractional"
         }
       ],
-      "href": "tools/tool/?id=math-base-converter-fractional"
+      "href": "tools/tool/?id=math-base-converter-fractional",
+      "iconBadge": ""
     },
     {
       "id": "math-dms-decimal-degrees",
       "category": "math",
       "name": "DMS ↔ 十进制度转换器",
       "description": "在度-分-秒和十进制度之间转换地理坐标。",
-      "icon": "convert",
+      "icon": "protractor",
       "tags": [],
       "keywords": "dms decimal degrees latitude longitude gps coordinates minutes seconds decimal-degrees geography math-dms-decimal-degrees DMS ↔ 十进制度转换器",
       "variants": [
@@ -10411,14 +10962,15 @@ const ToolboxCatalog = {
           "sourceId": "math-dms-decimal-degrees"
         }
       ],
-      "href": "tools/tool/?id=math-dms-decimal-degrees"
+      "href": "tools/tool/?id=math-dms-decimal-degrees",
+      "iconBadge": ""
     },
     {
       "id": "math-gpa-calculator",
       "category": "math",
       "name": "GPA计算器",
       "description": "根据课程、学分和成绩计算加权平均绩点。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "gpa grade point average weighted credit hours letter school grades education credits math-gpa-calculator GPA计算器",
       "variants": [
@@ -10429,14 +10981,15 @@ const ToolboxCatalog = {
           "sourceId": "math-gpa-calculator"
         }
       ],
-      "href": "tools/tool/?id=math-gpa-calculator"
+      "href": "tools/tool/?id=math-gpa-calculator",
+      "iconBadge": ""
     },
     {
       "id": "math-great-circle-distance",
       "category": "math",
       "name": "大圆距离计算器",
       "description": "计算两个纬度/经度点之间的距离和初始方位。",
-      "icon": "convert",
+      "icon": "map-pinned",
       "tags": [],
       "keywords": "great circle haversine distance between coordinates bearing lat lng nautical miles geography math-great-circle-distance 大圆距离计算器",
       "variants": [
@@ -10447,14 +11000,15 @@ const ToolboxCatalog = {
           "sourceId": "math-great-circle-distance"
         }
       ],
-      "href": "tools/tool/?id=math-great-circle-distance"
+      "href": "tools/tool/?id=math-great-circle-distance",
+      "iconBadge": ""
     },
     {
       "id": "math-linear-system-solver",
       "category": "math",
       "name": "线性系统求解器 (Ax = b)",
       "description": "使用高斯消去法求解线性方程组并报告解。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "linear system gaussian elimination simultaneous equations matrix solve Ax=b pivoting linear-algebra gaussian-elimination solver math-linear-system-solver 线性系统求解器 (Ax = b)",
       "variants": [
@@ -10465,14 +11019,15 @@ const ToolboxCatalog = {
           "sourceId": "math-linear-system-solver"
         }
       ],
-      "href": "tools/tool/?id=math-linear-system-solver"
+      "href": "tools/tool/?id=math-linear-system-solver",
+      "iconBadge": ""
     },
     {
       "id": "math-loan-amortization-schedule",
       "category": "math",
       "name": "贷款摊销表",
       "description": "生成固定利率贷款的完整的逐月摊销表。",
-      "icon": "convert",
+      "icon": "landmark",
       "tags": [],
       "keywords": "amortization loan mortgage monthly payment interest principal schedule finance math-loan-amortization-schedule 贷款摊销表",
       "variants": [
@@ -10483,14 +11038,15 @@ const ToolboxCatalog = {
           "sourceId": "math-loan-amortization-schedule"
         }
       ],
-      "href": "tools/tool/?id=math-loan-amortization-schedule"
+      "href": "tools/tool/?id=math-loan-amortization-schedule",
+      "iconBadge": ""
     },
     {
       "id": "math-matrix-determinant-inverse",
       "category": "math",
       "name": "矩阵行列式和逆矩阵",
       "description": "计算小方阵的行列式、逆矩阵和秩。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "matrix determinant inverse rank linear algebra gaussian elimination gauss jordan math-matrix-determinant-inverse 矩阵行列式和逆矩阵",
       "variants": [
@@ -10501,14 +11057,15 @@ const ToolboxCatalog = {
           "sourceId": "math-matrix-determinant-inverse"
         }
       ],
-      "href": "tools/tool/?id=math-matrix-determinant-inverse"
+      "href": "tools/tool/?id=math-matrix-determinant-inverse",
+      "iconBadge": ""
     },
     {
       "id": "math-numeral-system-clock",
       "category": "math",
       "name": "数字系统可视化工具",
       "description": "同时以二进制、八进制、十进制、十六进制和自定义基数显示一个整数。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "binary hex hexadecimal octal decimal base converter twos complement radix number system math-numeral-system-clock 数字系统可视化工具",
       "variants": [
@@ -10519,14 +11076,15 @@ const ToolboxCatalog = {
           "sourceId": "math-numeral-system-clock"
         }
       ],
-      "href": "tools/tool/?id=math-numeral-system-clock"
+      "href": "tools/tool/?id=math-numeral-system-clock",
+      "iconBadge": ""
     },
     {
       "id": "math-tax-bracket-calculator",
       "category": "math",
       "name": "累进税级计算器",
       "description": "计算用户定义的累进收入等级的总税收。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "tax bracket progressive marginal rate effective income brackets finance math-tax-bracket-calculator 累进税级计算器",
       "variants": [
@@ -10537,14 +11095,15 @@ const ToolboxCatalog = {
           "sourceId": "math-tax-bracket-calculator"
         }
       ],
-      "href": "tools/tool/?id=math-tax-bracket-calculator"
+      "href": "tools/tool/?id=math-tax-bracket-calculator",
+      "iconBadge": ""
     },
     {
       "id": "math-tip-free-percent-of-total",
       "category": "math",
       "name": "反向百分比计算器",
       "description": "在给定百分比和结果的情况下查找原始金额，以及相关的反向百分比问题。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "percentage reverse percent original amount of before increase discount calculator math-tip-free-percent-of-total 反向百分比计算器",
       "variants": [
@@ -10555,14 +11114,15 @@ const ToolboxCatalog = {
           "sourceId": "math-tip-free-percent-of-total"
         }
       ],
-      "href": "tools/tool/?id=math-tip-free-percent-of-total"
+      "href": "tools/tool/?id=math-tip-free-percent-of-total",
+      "iconBadge": ""
     },
     {
       "id": "matrix-calculator",
       "category": "math",
       "name": "矩阵计算器",
       "description": "小矩阵的加法、减法、乘法、转置以及求行列式和逆矩阵。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "matrix determinant inverse transpose linear algebra math matrix-calculator 矩阵计算器",
       "variants": [
@@ -10573,14 +11133,15 @@ const ToolboxCatalog = {
           "sourceId": "matrix-calculator"
         }
       ],
-      "href": "tools/tool/?id=matrix-calculator"
+      "href": "tools/tool/?id=matrix-calculator",
+      "iconBadge": ""
     },
     {
       "id": "md5-hash",
       "category": "encoding",
       "name": "MD5哈希生成器",
       "description": "生成任何文本的MD5散列，具有小写或大写的十六进制输出（Web Crypto算法省略）。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "md5 hash checksum digest fingerprint message md5-hash MD5哈希生成器",
       "variants": [
@@ -10591,14 +11152,15 @@ const ToolboxCatalog = {
           "sourceId": "md5-hash"
         }
       ],
-      "href": "tools/tool/?id=md5-hash"
+      "href": "tools/tool/?id=md5-hash",
+      "iconBadge": "MD5"
     },
     {
       "id": "mean-median-mode",
       "category": "math",
       "name": "平均值、中值、众数和范围",
       "description": "根据数字列表计算集中趋势测量。",
-      "icon": "convert",
+      "icon": "barcode",
       "tags": [],
       "keywords": "mean median mode range average central tendency geometric harmonic statistics mean-median-mode 平均值、中值、众数和范围",
       "variants": [
@@ -10609,14 +11171,15 @@ const ToolboxCatalog = {
           "sourceId": "mean-median-mode"
         }
       ],
-      "href": "tools/tool/?id=mean-median-mode"
+      "href": "tools/tool/?id=mean-median-mode",
+      "iconBadge": ""
     },
     {
       "id": "memorable-password-generator",
       "category": "web",
       "name": "好记的密码生成器",
       "description": "从具有分隔符和数字/符号注入的单词组构建易于键入的难忘密码。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "memorable password word xkcd correct horse passphrase secure words entropy security memorable-password-generator 好记的密码生成器",
       "variants": [
@@ -10627,14 +11190,15 @@ const ToolboxCatalog = {
           "sourceId": "memorable-password-generator"
         }
       ],
-      "href": "tools/tool/?id=memorable-password-generator"
+      "href": "tools/tool/?id=memorable-password-generator",
+      "iconBadge": ""
     },
     {
       "id": "pdf-merge",
       "category": "pdf",
       "name": "PDF 合并",
       "description": "将多个 PDF 合并为一个，通过拖动重新排序 — 完全在您的浏览器中。",
-      "icon": "convert",
+      "icon": "files",
       "tags": [],
       "keywords": "merge pdf combine join concatenate merge-pdf 合并PDF 合并 PDF",
       "variants": [
@@ -10657,14 +11221,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/merge"
         }
       ],
-      "href": "tools/tool/?id=pdf-merge"
+      "href": "tools/tool/?id=pdf-merge",
+      "iconBadge": "PDF"
     },
     {
       "id": "midpoint-calculator",
       "category": "math",
       "name": "中点和截面点计算器",
       "description": "找到线段的中点或任意比例分割点。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "midpoint section formula division point coordinate geometry segment length ratio midpoint-calculator 中点和截面点计算器",
       "variants": [
@@ -10675,14 +11240,15 @@ const ToolboxCatalog = {
           "sourceId": "midpoint-calculator"
         }
       ],
-      "href": "tools/tool/?id=midpoint-calculator"
+      "href": "tools/tool/?id=midpoint-calculator",
+      "iconBadge": ""
     },
     {
       "id": "mime-types",
       "category": "web",
       "name": "MIME类型查找",
       "description": "查找文件扩展名的MIME/内容类型，反之亦然。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "mime type content file extension media lookup reference mime-types MIME类型查找 filename octet-stream iana reverse content-type web-mimetype-from-extension 来自扩展的 MIME 类型",
       "variants": [
@@ -10699,14 +11265,15 @@ const ToolboxCatalog = {
           "sourceId": "web-mimetype-from-extension"
         }
       ],
-      "href": "tools/tool/?id=mime-types"
+      "href": "tools/tool/?id=mime-types",
+      "iconBadge": ""
     },
     {
       "id": "mnemonic-pin-generator",
       "category": "web",
       "name": "助记符 PIN 生成器",
       "description": "生成数字 PIN 以及单词助记符以帮助您记住每个数字。",
-      "icon": "convert",
+      "icon": "shield-ellipsis",
       "tags": [],
       "keywords": "pin code memorable numeric password digit words mnemonic remember memory numbers security mnemonic-pin-generator 助记符 PIN 生成器",
       "variants": [
@@ -10717,14 +11284,15 @@ const ToolboxCatalog = {
           "sourceId": "mnemonic-pin-generator"
         }
       ],
-      "href": "tools/tool/?id=mnemonic-pin-generator"
+      "href": "tools/tool/?id=mnemonic-pin-generator",
+      "iconBadge": ""
     },
     {
       "id": "mock-data",
       "category": "web",
       "name": "模拟数据生成器",
       "description": "以 JSON 形式生成一组真实的虚假记录（姓名、电子邮件、日期）。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "fake data mock test faker seed json generator mock-data 模拟数据生成器",
       "variants": [
@@ -10735,14 +11303,15 @@ const ToolboxCatalog = {
           "sourceId": "mock-data"
         }
       ],
-      "href": "tools/tool/?id=mock-data"
+      "href": "tools/tool/?id=mock-data",
+      "iconBadge": ""
     },
     {
       "id": "modular-exponentiation",
       "category": "math",
       "name": "模幂计算器",
       "description": "使用快速平方乘法有效地计算非常大的数的(基数^指数)mod m。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "modular exponentiation modpow square and multiply rsa cryptography power mod bigint modular-exponentiation 模幂计算器",
       "variants": [
@@ -10753,14 +11322,15 @@ const ToolboxCatalog = {
           "sourceId": "modular-exponentiation"
         }
       ],
-      "href": "tools/tool/?id=modular-exponentiation"
+      "href": "tools/tool/?id=modular-exponentiation",
+      "iconBadge": ""
     },
     {
       "id": "modular-inverse",
       "category": "math",
       "name": "模乘法逆",
       "description": "使用扩展欧几里德算法找到x，使得a*x^1(mod m)。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "mod inverse modular arithmetic extended euclid bezout gcd rsa number-theory euclidean cryptography modular-inverse 模乘法逆",
       "variants": [
@@ -10771,14 +11341,15 @@ const ToolboxCatalog = {
           "sourceId": "modular-inverse"
         }
       ],
-      "href": "tools/tool/?id=modular-inverse"
+      "href": "tools/tool/?id=modular-inverse",
+      "iconBadge": ""
     },
     {
       "id": "modulo-calculator",
       "category": "math",
       "name": "模数算术计算器",
       "description": "计算真模、模加、乘法和具有非负结果的幂。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "modulo modular arithmetic remainder mod exponentiation math number theory cryptography modulo-calculator 模数算术计算器",
       "variants": [
@@ -10789,14 +11360,15 @@ const ToolboxCatalog = {
           "sourceId": "modulo-calculator"
         }
       ],
-      "href": "tools/tool/?id=modulo-calculator"
+      "href": "tools/tool/?id=modulo-calculator",
+      "iconBadge": ""
     },
     {
       "id": "monochrome-scale-generator",
       "category": "color",
       "name": "单色标度发生器",
       "description": "通过以均匀的步长改变亮度和饱和度来建立单一色调等级。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "monochromatic single hue lightness ramp tailwind scale oklch css variables color monochrome palette generator monochrome-scale-generator 单色标度发生器",
       "variants": [
@@ -10807,14 +11379,15 @@ const ToolboxCatalog = {
           "sourceId": "monochrome-scale-generator"
         }
       ],
-      "href": "tools/tool/?id=monochrome-scale-generator"
+      "href": "tools/tool/?id=monochrome-scale-generator",
+      "iconBadge": ""
     },
     {
       "id": "moon-phase-calculator",
       "category": "time",
       "name": "月相计算器",
       "description": "通过算法估计任何日期的月相、照明百分比和月龄。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "moon phase lunar age illumination new full synodic month astronomy calendar moon-phase-calculator 月相计算器",
       "variants": [
@@ -10825,14 +11398,15 @@ const ToolboxCatalog = {
           "sourceId": "moon-phase-calculator"
         }
       ],
-      "href": "tools/tool/?id=moon-phase-calculator"
+      "href": "tools/tool/?id=moon-phase-calculator",
+      "iconBadge": ""
     },
     {
       "id": "morse-code",
       "category": "text",
       "name": "莫尔斯电码翻译器",
       "description": "将文本翻译成国际莫尔斯电码并返回。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "morse code translate dots dashes cipher morse-code 莫尔斯电码翻译器",
       "variants": [
@@ -10843,14 +11417,15 @@ const ToolboxCatalog = {
           "sourceId": "morse-code"
         }
       ],
-      "href": "tools/tool/?id=morse-code"
+      "href": "tools/tool/?id=morse-code",
+      "iconBadge": ""
     },
     {
       "id": "mortgage-extra-payment",
       "category": "math",
       "name": "抵押贷款额外付款计算器",
       "description": "了解额外的每月付款如何缩短您的贷款期限和利息。",
-      "icon": "convert",
+      "icon": "landmark",
       "tags": [],
       "keywords": "extra payment pay off mortgage early interest saved amortization schedule home loan finance prepayment mortgage-extra-payment 抵押贷款额外付款计算器",
       "variants": [
@@ -10861,14 +11436,15 @@ const ToolboxCatalog = {
           "sourceId": "mortgage-extra-payment"
         }
       ],
-      "href": "tools/tool/?id=mortgage-extra-payment"
+      "href": "tools/tool/?id=mortgage-extra-payment",
+      "iconBadge": ""
     },
     {
       "id": "mqtt-topic-matcher",
       "category": "web",
       "name": "MQTT主题匹配器",
       "description": "针对示例主题使用+和#通配符测试MQTT主题过滤器。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "mqtt topic wildcard events mqtt-topic-matcher MQTT主题匹配器",
       "variants": [
@@ -10879,14 +11455,15 @@ const ToolboxCatalog = {
           "sourceId": "mqtt-topic-matcher"
         }
       ],
-      "href": "tools/tool/?id=mqtt-topic-matcher"
+      "href": "tools/tool/?id=mqtt-topic-matcher",
+      "iconBadge": ""
     },
     {
       "id": "mta-sts-policy-checker",
       "category": "web",
       "name": "MTA-STS策略检查器",
       "description": "验证MTA-STS TXT和策略文件内容以用于安全入站邮件递送。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "mta-sts email tls dns mta-sts-policy-checker MTA-STS策略检查器",
       "variants": [
@@ -10897,14 +11474,15 @@ const ToolboxCatalog = {
           "sourceId": "mta-sts-policy-checker"
         }
       ],
-      "href": "tools/tool/?id=mta-sts-policy-checker"
+      "href": "tools/tool/?id=mta-sts-policy-checker",
+      "iconBadge": ""
     },
     {
       "id": "named-colors",
       "category": "color",
       "name": "CSS命名颜色",
       "description": "浏览并搜索所有CSS命名颜色及其十六进制/RGB值。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "css named colors color names web hex reference x11 named-colors CSS命名颜色",
       "variants": [
@@ -10915,14 +11493,15 @@ const ToolboxCatalog = {
           "sourceId": "named-colors"
         }
       ],
-      "href": "tools/tool/?id=named-colors"
+      "href": "tools/tool/?id=named-colors",
+      "iconBadge": ""
     },
     {
       "id": "nanoid-custom-alphabet",
       "category": "web",
       "name": "NanoID 定制字母生成器",
       "description": "使用无偏拒绝采样算法从您自己的字母表生成NanoID。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "nanoid custom alphabet unique id short rejection sampling url safe random nanoid-custom-alphabet NanoID 定制字母生成器",
       "variants": [
@@ -10933,14 +11512,15 @@ const ToolboxCatalog = {
           "sourceId": "nanoid-custom-alphabet"
         }
       ],
-      "href": "tools/tool/?id=nanoid-custom-alphabet"
+      "href": "tools/tool/?id=nanoid-custom-alphabet",
+      "iconBadge": ""
     },
     {
       "id": "nato-phonetic",
       "category": "text",
       "name": "北约音标",
       "description": "使用北约拼音字母表（Alpha、Bravo、Charlie…）来拼写文本。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "nato phonetic alpha bravo charlie spelling alphabet radio spell nato-phonetic 北约音标",
       "variants": [
@@ -10951,14 +11531,15 @@ const ToolboxCatalog = {
           "sourceId": "nato-phonetic"
         }
       ],
-      "href": "tools/tool/?id=nato-phonetic"
+      "href": "tools/tool/?id=nato-phonetic",
+      "iconBadge": ""
     },
     {
       "id": "natural-sort-lines",
       "category": "text",
       "name": "自然/数字排序行",
       "description": "使用人类友好的自然顺序对行进行排序，使得文件2位于文件10之前，并具有区域设置和键选项。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "natural sort numeric human alphanumeric collator lines by field length order natural-sort-lines 自然/数字排序行",
       "variants": [
@@ -10969,14 +11550,15 @@ const ToolboxCatalog = {
           "sourceId": "natural-sort-lines"
         }
       ],
-      "href": "tools/tool/?id=natural-sort-lines"
+      "href": "tools/tool/?id=natural-sort-lines",
+      "iconBadge": ""
     },
     {
       "id": "ndjson-field-filter",
       "category": "data",
       "name": "NDJSON字段过滤器",
       "description": "跨NDJSON记录选择、删除或重命名字段。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "ndjson jsonl field filter pick fields drop rename transform ndjson-field-filter NDJSON字段过滤器",
       "variants": [
@@ -10987,14 +11569,15 @@ const ToolboxCatalog = {
           "sourceId": "ndjson-field-filter"
         }
       ],
-      "href": "tools/tool/?id=ndjson-field-filter"
+      "href": "tools/tool/?id=ndjson-field-filter",
+      "iconBadge": ""
     },
     {
       "id": "ndjson-to-csv",
       "category": "data",
       "name": "NDJSON 到 CSV",
       "description": "将换行符分隔的 JSON 对象转换为具有统一标头的 CSV 表。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "jsonl jsonlines ndjson to csv json lines tabular spreadsheet json-lines convert flatten ndjson-to-csv NDJSON 到 CSV",
       "variants": [
@@ -11005,14 +11588,15 @@ const ToolboxCatalog = {
           "sourceId": "ndjson-to-csv"
         }
       ],
-      "href": "tools/tool/?id=ndjson-to-csv"
+      "href": "tools/tool/?id=ndjson-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "ndjson-to-json-array",
       "category": "data",
       "name": "NDJSON 到 JSON 数组",
       "description": "将 NDJSON/JSON 行转换为单个 JSON 数组并返回。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "jsonl jsonlines ndjson to array round trip json lines json-lines convert ndjson-to-json-array NDJSON 到 JSON 数组",
       "variants": [
@@ -11023,14 +11607,15 @@ const ToolboxCatalog = {
           "sourceId": "ndjson-to-json-array"
         }
       ],
-      "href": "tools/tool/?id=ndjson-to-json-array"
+      "href": "tools/tool/?id=ndjson-to-json-array",
+      "iconBadge": "JSON"
     },
     {
       "id": "nearest-named-color",
       "category": "color",
       "name": "最近的 CSS 命名颜色",
       "description": "通过感知距离找到与任何输入颜色最接近的CSS/X11命名颜色。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "nearest color css colors x11 lab cie76 closest name named-color delta-e nearest-named-color 最近的 CSS 命名颜色",
       "variants": [
@@ -11041,14 +11626,15 @@ const ToolboxCatalog = {
           "sourceId": "nearest-named-color"
         }
       ],
-      "href": "tools/tool/?id=nearest-named-color"
+      "href": "tools/tool/?id=nearest-named-color",
+      "iconBadge": ""
     },
     {
       "id": "nearest-pantone-name",
       "category": "color",
       "name": "最近的 Pantone 风格名称（大约）",
       "description": "从离线策划的颜色名称词典中近似命名最接近的样本。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "pantone color name nearest swatch lab cie76 unofficial dictionary color-name delta-e approximate palette nearest-pantone-name 最近的 Pantone 风格名称（大约）",
       "variants": [
@@ -11059,14 +11645,15 @@ const ToolboxCatalog = {
           "sourceId": "nearest-pantone-name"
         }
       ],
-      "href": "tools/tool/?id=nearest-pantone-name"
+      "href": "tools/tool/?id=nearest-pantone-name",
+      "iconBadge": ""
     },
     {
       "id": "nearest-tailwind-color",
       "category": "color",
       "name": "最近的顺风颜色",
       "description": "将任何颜色映射到最接近的Tailwind CSS调色板标记（例如blue-500)。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tailwind nearest token blue-500 palette lab cie76 shade class color delta-e css nearest-tailwind-color 最近的顺风颜色",
       "variants": [
@@ -11077,14 +11664,15 @@ const ToolboxCatalog = {
           "sourceId": "nearest-tailwind-color"
         }
       ],
-      "href": "tools/tool/?id=nearest-tailwind-color"
+      "href": "tools/tool/?id=nearest-tailwind-color",
+      "iconBadge": ""
     },
     {
       "id": "next-prime-finder",
       "category": "math",
       "name": "下一个和上一个 Prime 查找器",
       "description": "Find the nearest prime above and below any number, plus the gap to each.",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "next prime previous gap primality test big integer number-theory miller-rabin search next-prime-finder 下一个和上一个 Prime 查找器",
       "variants": [
@@ -11095,14 +11683,15 @@ const ToolboxCatalog = {
           "sourceId": "next-prime-finder"
         }
       ],
-      "href": "tools/tool/?id=next-prime-finder"
+      "href": "tools/tool/?id=next-prime-finder",
+      "iconBadge": ""
     },
     {
       "id": "next-weekday-occurrence",
       "category": "time",
       "name": "下一个工作日发生的情况",
       "description": "查找从开始日期算起的选定工作日的下一个（或第N个）日期。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "next monday nth weekday upcoming day find date calendar occurrence next-weekday-occurrence 下一个工作日发生的情况",
       "variants": [
@@ -11113,14 +11702,15 @@ const ToolboxCatalog = {
           "sourceId": "next-weekday-occurrence"
         }
       ],
-      "href": "tools/tool/?id=next-weekday-occurrence"
+      "href": "tools/tool/?id=next-weekday-occurrence",
+      "iconBadge": ""
     },
     {
       "id": "ngram-counter",
       "category": "text",
       "name": "N-Gram频率计数器",
       "description": "提取并计算文本中最常见的单词n元组（二元组、三元组等）。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "ngram bigram trigram word frequency phrase collocation stop words phrases ngram-counter N-Gram频率计数器",
       "variants": [
@@ -11131,14 +11721,15 @@ const ToolboxCatalog = {
           "sourceId": "ngram-counter"
         }
       ],
-      "href": "tools/tool/?id=ngram-counter"
+      "href": "tools/tool/?id=ngram-counter",
+      "iconBadge": ""
     },
     {
       "id": "nth-weekday-of-month",
       "category": "time",
       "name": "该月的第 N 个工作日",
       "description": "查找诸如“十一月的第三个星期四”或“五月的最后一个星期一”之类的日期。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "nth weekday last monday third thursday recurring meeting thanksgiving holiday rule calendar holidays schedule nth-weekday-of-month 该月的第 N 个工作日",
       "variants": [
@@ -11149,14 +11740,15 @@ const ToolboxCatalog = {
           "sourceId": "nth-weekday-of-month"
         }
       ],
-      "href": "tools/tool/?id=nth-weekday-of-month"
+      "href": "tools/tool/?id=nth-weekday-of-month",
+      "iconBadge": ""
     },
     {
       "id": "number-base-converter",
       "category": "math",
       "name": "数基转换器",
       "description": "在二进制、八进制、十进制、十六进制和任意基数之间转换数字。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "number base binary hexadecimal octal radix convert bin dec hex decimal number-base-converter 数基转换器",
       "variants": [
@@ -11167,14 +11759,15 @@ const ToolboxCatalog = {
           "sourceId": "number-base-converter"
         }
       ],
-      "href": "tools/tool/?id=number-base-converter"
+      "href": "tools/tool/?id=number-base-converter",
+      "iconBadge": ""
     },
     {
       "id": "number-base-words",
       "category": "convert",
       "name": "口语基本单词的数量",
       "description": "将任何基数（2-36)中的数字拼写为位值词，例如二进制 1011 作为一零一一或分组半字节。",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": "base radix binary hex octal digits spoken words convert number number-base-words 口语基本单词的数量",
       "variants": [
@@ -11185,14 +11778,15 @@ const ToolboxCatalog = {
           "sourceId": "number-base-words"
         }
       ],
-      "href": "tools/tool/?id=number-base-words"
+      "href": "tools/tool/?id=number-base-words",
+      "iconBadge": ""
     },
     {
       "id": "number-lines",
       "category": "text",
       "name": "每行编号",
       "description": "使用起始值、步长和零填充来生成具有自动递增数字的序列和前缀行。",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": "line numbers numbering sequence enumerate increment text lines number-lines 每行编号",
       "variants": [
@@ -11203,14 +11797,15 @@ const ToolboxCatalog = {
           "sourceId": "number-lines"
         }
       ],
-      "href": "tools/tool/?id=number-lines"
+      "href": "tools/tool/?id=number-lines",
+      "iconBadge": ""
     },
     {
       "id": "number-to-base64",
       "category": "math",
       "name": "数字到 Base64 编码器",
       "description": "将整数编码为紧凑的Base64字节并将Base64解码回数字。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "number to base64 big integer encode url-safe byte order compact id encoding bytes token number-to-base64 数字到 Base64 编码器",
       "variants": [
@@ -11221,14 +11816,15 @@ const ToolboxCatalog = {
           "sourceId": "number-to-base64"
         }
       ],
-      "href": "tools/tool/?id=number-to-base64"
+      "href": "tools/tool/?id=number-to-base64",
+      "iconBadge": "B64"
     },
     {
       "id": "number-to-roman-words-variants",
       "category": "convert",
       "name": "数字拼写变体",
       "description": "将数字拼写为英语单词、序数词、货币单词和计数计数。",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": "number to words ordinal currency tally marks british and spell cardinal number-to-roman-words-variants 数字拼写变体",
       "variants": [
@@ -11239,14 +11835,15 @@ const ToolboxCatalog = {
           "sourceId": "number-to-roman-words-variants"
         }
       ],
-      "href": "tools/tool/?id=number-to-roman-words-variants"
+      "href": "tools/tool/?id=number-to-roman-words-variants",
+      "iconBadge": ""
     },
     {
       "id": "number-to-words",
       "category": "convert",
       "name": "数字到单词",
       "description": "将数字拼写为英文单词，包括负数、小数和大数值，并具有可选的货币美分模式。",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": "number words spell currency convert english number-to-words 数字到单词",
       "variants": [
@@ -11257,14 +11854,15 @@ const ToolboxCatalog = {
           "sourceId": "number-to-words"
         }
       ],
-      "href": "tools/tool/?id=number-to-words"
+      "href": "tools/tool/?id=number-to-words",
+      "iconBadge": ""
     },
     {
       "id": "oauth-authorization-url-builder",
       "category": "web",
       "name": "OAuth授权URL生成器",
       "description": "构建具有范围、PKCE、状态和随机数的OAuth 2.0或OIDC授权URL。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "oauth oidc url auth oauth-authorization-url-builder OAuth授权URL生成器",
       "variants": [
@@ -11275,14 +11873,15 @@ const ToolboxCatalog = {
           "sourceId": "oauth-authorization-url-builder"
         }
       ],
-      "href": "tools/tool/?id=oauth-authorization-url-builder"
+      "href": "tools/tool/?id=oauth-authorization-url-builder",
+      "iconBadge": ""
     },
     {
       "id": "oauth-pkce-generator",
       "category": "web",
       "name": "OAuth PKCE 生成器",
       "description": "生成用于OAuth授权代码流的PKCE验证器和S256代码质询。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "oauth pkce security generator oauth-pkce-generator OAuth PKCE 生成器",
       "variants": [
@@ -11293,14 +11892,15 @@ const ToolboxCatalog = {
           "sourceId": "oauth-pkce-generator"
         }
       ],
-      "href": "tools/tool/?id=oauth-pkce-generator"
+      "href": "tools/tool/?id=oauth-pkce-generator",
+      "iconBadge": ""
     },
     {
       "id": "oauth-token-response-inspector",
       "category": "web",
       "name": "OAuth令牌响应检查器",
       "description": "检查OAuth令牌响应、令牌类型、范围和到期日。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "oauth token json auth oauth-token-response-inspector OAuth令牌响应检查器",
       "variants": [
@@ -11311,14 +11911,15 @@ const ToolboxCatalog = {
           "sourceId": "oauth-token-response-inspector"
         }
       ],
-      "href": "tools/tool/?id=oauth-token-response-inspector"
+      "href": "tools/tool/?id=oauth-token-response-inspector",
+      "iconBadge": ""
     },
     {
       "id": "ocsp-response-decoder",
       "category": "encoding",
       "name": "OCSP响应解码器",
       "description": "解码Base64或PEM OCSP响应字节并总结可见的ASN.1/状态提示。",
-      "icon": "convert",
+      "icon": "badge-check",
       "tags": [],
       "keywords": "ocsp certificate tls decode ocsp-response-decoder OCSP响应解码器",
       "variants": [
@@ -11329,14 +11930,15 @@ const ToolboxCatalog = {
           "sourceId": "ocsp-response-decoder"
         }
       ],
-      "href": "tools/tool/?id=ocsp-response-decoder"
+      "href": "tools/tool/?id=ocsp-response-decoder",
+      "iconBadge": ""
     },
     {
       "id": "oidc-discovery-inspector",
       "category": "web",
       "name": "OIDC发现检查员",
       "description": "解析OpenID Connect发现元数据并总结端点、算法和授权。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "oidc openid oauth json oidc-discovery-inspector OIDC发现检查员",
       "variants": [
@@ -11347,14 +11949,15 @@ const ToolboxCatalog = {
           "sourceId": "oidc-discovery-inspector"
         }
       ],
-      "href": "tools/tool/?id=oidc-discovery-inspector"
+      "href": "tools/tool/?id=oidc-discovery-inspector",
+      "iconBadge": ""
     },
     {
       "id": "oidc-id-token-validator",
       "category": "web",
       "name": "OIDC ID令牌验证器",
       "description": "解码ID令牌并检查发行者、受众、随机数、到期日和时钟声明。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "oidc jwt token auth oidc-id-token-validator OIDC ID令牌验证器",
       "variants": [
@@ -11365,14 +11968,15 @@ const ToolboxCatalog = {
           "sourceId": "oidc-id-token-validator"
         }
       ],
-      "href": "tools/tool/?id=oidc-id-token-validator"
+      "href": "tools/tool/?id=oidc-id-token-validator",
+      "iconBadge": ""
     },
     {
       "id": "oklch-converter",
       "category": "color",
       "name": "OKLCH颜色转换器",
       "description": "将sRGB/HEX转换为OKLCH和OKLab并返回，这是现代感知模型。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "oklch oklab hex to css color 4 perceptual ottosson converter oklch-converter OKLCH颜色转换器",
       "variants": [
@@ -11383,14 +11987,15 @@ const ToolboxCatalog = {
           "sourceId": "oklch-converter"
         }
       ],
-      "href": "tools/tool/?id=oklch-converter"
+      "href": "tools/tool/?id=oklch-converter",
+      "iconBadge": ""
     },
     {
       "id": "openapi-breaking-change-diff",
       "category": "web",
       "name": "OpenAPI重大变化差异",
       "description": "比较两个OpenAPI规范并识别移除的路径、方法、参数和响应代码。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "openapi diff breaking api openapi-breaking-change-diff OpenAPI重大变化差异",
       "variants": [
@@ -11401,14 +12006,15 @@ const ToolboxCatalog = {
           "sourceId": "openapi-breaking-change-diff"
         }
       ],
-      "href": "tools/tool/?id=openapi-breaking-change-diff"
+      "href": "tools/tool/?id=openapi-breaking-change-diff",
+      "iconBadge": ""
     },
     {
       "id": "openapi-schema-example-generator",
       "category": "web",
       "name": "OpenAPI模式示例生成器",
       "description": "从OpenAPI组件模式生成JSON示例。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "openapi schema example json openapi-schema-example-generator OpenAPI模式示例生成器",
       "variants": [
@@ -11419,14 +12025,15 @@ const ToolboxCatalog = {
           "sourceId": "openapi-schema-example-generator"
         }
       ],
-      "href": "tools/tool/?id=openapi-schema-example-generator"
+      "href": "tools/tool/?id=openapi-schema-example-generator",
+      "iconBadge": ""
     },
     {
       "id": "openapi-security-scheme-inspector",
       "category": "web",
       "name": "OpenAPI安全方案检查器",
       "description": "总结 API 密钥、HTTP 身份验证、OAuth 流程、OpenID Connect URL 和操作安全性。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "openapi security oauth api openapi-security-scheme-inspector OpenAPI安全方案检查器",
       "variants": [
@@ -11437,14 +12044,15 @@ const ToolboxCatalog = {
           "sourceId": "openapi-security-scheme-inspector"
         }
       ],
-      "href": "tools/tool/?id=openapi-security-scheme-inspector"
+      "href": "tools/tool/?id=openapi-security-scheme-inspector",
+      "iconBadge": ""
     },
     {
       "id": "openapi-validator-linter",
       "category": "web",
       "name": "OpenAPI 验证器和 Linter",
       "description": "验证常见的OpenAPI结构并标记缺失的信息、路径、响应和模式。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "openapi swagger api lint openapi-validator-linter OpenAPI 验证器和 Linter",
       "variants": [
@@ -11455,14 +12063,15 @@ const ToolboxCatalog = {
           "sourceId": "openapi-validator-linter"
         }
       ],
-      "href": "tools/tool/?id=openapi-validator-linter"
+      "href": "tools/tool/?id=openapi-validator-linter",
+      "iconBadge": ""
     },
     {
       "id": "ordinal-date-converter",
       "category": "time",
       "name": "序数日期转换器",
       "description": "在日历日期和序数日期（年+年中的日期，YYYY-DDD）之间转换。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "ordinal date yyyy-ddd day of year julian iso to 8601 calendar convert ordinal-date-converter 序数日期转换器",
       "variants": [
@@ -11473,14 +12082,15 @@ const ToolboxCatalog = {
           "sourceId": "ordinal-date-converter"
         }
       ],
-      "href": "tools/tool/?id=ordinal-date-converter"
+      "href": "tools/tool/?id=ordinal-date-converter",
+      "iconBadge": ""
     },
     {
       "id": "ordinal-number-converter",
       "category": "math",
       "name": "序数转换器",
       "description": "将基数词变成序数词：21→第21和第21。",
-      "icon": "convert",
+      "icon": "whole-word",
       "tags": [],
       "keywords": "ordinal suffix st nd rd th twenty-first number to spelled words spelling ordinal-number-converter 序数转换器",
       "variants": [
@@ -11491,14 +12101,15 @@ const ToolboxCatalog = {
           "sourceId": "ordinal-number-converter"
         }
       ],
-      "href": "tools/tool/?id=ordinal-number-converter"
+      "href": "tools/tool/?id=ordinal-number-converter",
+      "iconBadge": ""
     },
     {
       "id": "otp-secret-generator",
       "category": "web",
       "name": "OTP秘密生成器",
       "description": "生成Base32 TOTP/HOTP共享秘密和匹配的otpauth://URI。",
-      "icon": "convert",
+      "icon": "shield-ellipsis",
       "tags": [],
       "keywords": "otp secret totp hotp 2fa authenticator base32 otpauth uri mfa otp-secret-generator OTP秘密生成器",
       "variants": [
@@ -11509,14 +12120,15 @@ const ToolboxCatalog = {
           "sourceId": "otp-secret-generator"
         }
       ],
-      "href": "tools/tool/?id=otp-secret-generator"
+      "href": "tools/tool/?id=otp-secret-generator",
+      "iconBadge": ""
     },
     {
       "id": "otp-uri-builder",
       "category": "encoding",
       "name": "OTPAuth URI 和 QR 生成器",
       "description": "从Base32秘密构建用于TOTP/HOTP验证器应用程序的otpauth://配置URI并呈现可扫描的QR码。",
-      "icon": "convert",
+      "icon": "shield-ellipsis",
       "tags": [],
       "keywords": "otpauth totp hotp two factor 2fa authenticator qr code provisioning uri base32 secret google otp otp-uri-builder OTPAuth URI 和 QR 生成器",
       "variants": [
@@ -11527,14 +12139,15 @@ const ToolboxCatalog = {
           "sourceId": "otp-uri-builder"
         }
       ],
-      "href": "tools/tool/?id=otp-uri-builder"
+      "href": "tools/tool/?id=otp-uri-builder",
+      "iconBadge": ""
     },
     {
       "id": "outline-to-list",
       "category": "text",
       "name": "缩进轮廓 ↔ 嵌套列表",
       "description": "将制表符/空格缩进轮廓转换为Markdown/HTML嵌套列表，或将嵌套列表展平为轮廓。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "outline nested list markdown html ul ol indent tree flatten breadcrumb path outline-to-list 缩进轮廓 ↔ 嵌套列表",
       "variants": [
@@ -11545,14 +12158,15 @@ const ToolboxCatalog = {
           "sourceId": "outline-to-list"
         }
       ],
-      "href": "tools/tool/?id=outline-to-list"
+      "href": "tools/tool/?id=outline-to-list",
+      "iconBadge": ""
     },
     {
       "id": "pace-calculator",
       "category": "math",
       "name": "配速和速度计算器",
       "description": "在跑步、步行和骑自行车的跑步配速、速度、距离和时间之间进行转换。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "pace calculator running speed min per km marathon math fitness pace-calculator 配速和速度计算器",
       "variants": [
@@ -11563,14 +12177,15 @@ const ToolboxCatalog = {
           "sourceId": "pace-calculator"
         }
       ],
-      "href": "tools/tool/?id=pace-calculator"
+      "href": "tools/tool/?id=pace-calculator",
+      "iconBadge": ""
     },
     {
       "id": "pad-lines",
       "category": "text",
       "name": "垫和对齐线",
       "description": "用填充字符或零填充数字将每行向左/右/中心填充至目标宽度。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "pad lines align text padstart padend zero fill character fixed width columns pad-lines 垫和对齐线",
       "variants": [
@@ -11581,14 +12196,15 @@ const ToolboxCatalog = {
           "sourceId": "pad-lines"
         }
       ],
-      "href": "tools/tool/?id=pad-lines"
+      "href": "tools/tool/?id=pad-lines",
+      "iconBadge": ""
     },
     {
       "id": "palette-from-numbers",
       "category": "color",
       "name": "数字调色板",
       "description": "将任何数字、ID或种子字符串转变为确定性的可再现调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "seed hash avatar colors tag golden angle reproducible fnv color palette deterministic generator palette-from-numbers 数字调色板",
       "variants": [
@@ -11599,14 +12215,15 @@ const ToolboxCatalog = {
           "sourceId": "palette-from-numbers"
         }
       ],
-      "href": "tools/tool/?id=palette-from-numbers"
+      "href": "tools/tool/?id=palette-from-numbers",
+      "iconBadge": ""
     },
     {
       "id": "palindrome-checker",
       "category": "text",
       "name": "回文检查器",
       "description": "检查文本是否是回文并找到回文单词和子串。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "palindrome reverse mirror longest palindromic substring racecar word text analysis string wordplay palindrome-checker 回文检查器",
       "variants": [
@@ -11617,14 +12234,15 @@ const ToolboxCatalog = {
           "sourceId": "palindrome-checker"
         }
       ],
-      "href": "tools/tool/?id=palindrome-checker"
+      "href": "tools/tool/?id=palindrome-checker",
+      "iconBadge": ""
     },
     {
       "id": "paper-size-converter",
       "category": "convert",
       "name": "纸张尺寸参考和转换器",
       "description": "查找 ISO A/B/C、US Letter 和其他纸张尺寸（以毫米、英寸和像素为单位）。",
-      "icon": "convert",
+      "icon": "file",
       "tags": [],
       "keywords": "a4 a3 letter legal tabloid dpi pixels paper dimensions iso 216 sizes reference print paper-size-converter 纸张尺寸参考和转换器",
       "variants": [
@@ -11635,14 +12253,15 @@ const ToolboxCatalog = {
           "sourceId": "paper-size-converter"
         }
       ],
-      "href": "tools/tool/?id=paper-size-converter"
+      "href": "tools/tool/?id=paper-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "paragraph-splitter",
       "category": "text",
       "name": "段落分割器和连接器",
       "description": "将文本分割成单独的段落或将换行重新连接成段落。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "paragraph splitter join lines unwrap text rewrap hard wrap blank reflow split paragraph-splitter 段落分割器和连接器",
       "variants": [
@@ -11653,14 +12272,15 @@ const ToolboxCatalog = {
           "sourceId": "paragraph-splitter"
         }
       ],
-      "href": "tools/tool/?id=paragraph-splitter"
+      "href": "tools/tool/?id=paragraph-splitter",
+      "iconBadge": ""
     },
     {
       "id": "passphrase-entropy-meter",
       "category": "encoding",
       "name": "密码短语熵计",
       "description": "基于密码短语的字符集和长度来估计密码短语中的熵位。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "password strength bits of entropy crack time guess charset security passphrase passphrase-entropy-meter 密码短语熵计",
       "variants": [
@@ -11671,14 +12291,15 @@ const ToolboxCatalog = {
           "sourceId": "passphrase-entropy-meter"
         }
       ],
-      "href": "tools/tool/?id=passphrase-entropy-meter"
+      "href": "tools/tool/?id=passphrase-entropy-meter",
+      "iconBadge": ""
     },
     {
       "id": "password-generator",
       "category": "encoding",
       "name": "密码生成器",
       "description": "在本地生成强随机密码或骰子软件密码。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "password passphrase generator random secure diceware strength password-generator 密码生成器",
       "variants": [
@@ -11689,32 +12310,34 @@ const ToolboxCatalog = {
           "sourceId": "password-generator"
         }
       ],
-      "href": "tools/tool/?id=password-generator"
+      "href": "tools/tool/?id=password-generator",
+      "iconBadge": ""
     },
     {
       "id": "password-strength-checker",
       "category": "encoding",
-      "name": "密码强度检查器",
+      "name": "密码强度检测",
       "description": "使用组合规则和常见模式检测以及可操作的反馈来对密码进行评分。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
-      "keywords": "weak strong common password keyboard sequence feedback strength security entropy audit password-strength-checker 密码强度检查器",
+      "keywords": "weak strong common password keyboard sequence feedback strength security entropy audit password-strength-checker 密码强度检测",
       "variants": [
         {
-          "name": "密码强度检查器",
+          "name": "密码强度检测",
           "href": "../utilities/?tool=password-strength-checker&embed=1",
           "source": "openutility",
           "sourceId": "password-strength-checker"
         }
       ],
-      "href": "tools/tool/?id=password-strength-checker"
+      "href": "tools/tool/?id=password-strength-checker",
+      "iconBadge": ""
     },
     {
       "id": "pattern-password-generator",
       "category": "web",
       "name": "基于模式的密码生成器",
       "description": "从占位符模式生成字符串，其中每个标记映射到一个字符类。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "pattern password license key ticket code mask token placeholder template random license-key pattern-password-generator 基于模式的密码生成器",
       "variants": [
@@ -11725,14 +12348,15 @@ const ToolboxCatalog = {
           "sourceId": "pattern-password-generator"
         }
       ],
-      "href": "tools/tool/?id=pattern-password-generator"
+      "href": "tools/tool/?id=pattern-password-generator",
+      "iconBadge": ""
     },
     {
       "id": "pbkdf2-key-derivation",
       "category": "encoding",
       "name": "PBKDF2密钥推导",
       "description": "使用具有可配置迭代和散列的PBKDF2从密码短语和盐导出密钥。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "derive key salt iterations sha-256 webcrypto deriveBits pbkdf2 kdf key-derivation hash password pbkdf2-key-derivation PBKDF2密钥推导",
       "variants": [
@@ -11743,14 +12367,15 @@ const ToolboxCatalog = {
           "sourceId": "pbkdf2-key-derivation"
         }
       ],
-      "href": "tools/tool/?id=pbkdf2-key-derivation"
+      "href": "tools/tool/?id=pbkdf2-key-derivation",
+      "iconBadge": ""
     },
     {
       "id": "pdf-metadata",
       "category": "pdf",
       "name": "PDF 元数据",
       "description": "检查PDF的页数、版本和文档元数据。",
-      "icon": "convert",
+      "icon": "file-search",
       "tags": [],
       "keywords": "pdf metadata info page count document properties inspect pdf-metadata PDF信息和元数据 view-metadata 查看元数据 edit-metadata 编辑元数据 remove-metadata 删除元数据",
       "variants": [
@@ -11779,14 +12404,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-metadata"
         }
       ],
-      "href": "tools/tool/?id=pdf-metadata"
+      "href": "tools/tool/?id=pdf-metadata",
+      "iconBadge": "PDF"
     },
     {
       "id": "percent-change",
       "category": "math",
       "name": "百分比变化计算器",
       "description": "计算旧值和新值之间的百分比差异。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "percentage change percent difference growth factor increase decrease points finance percent-change 百分比变化计算器",
       "variants": [
@@ -11797,14 +12423,15 @@ const ToolboxCatalog = {
           "sourceId": "percent-change"
         }
       ],
-      "href": "tools/tool/?id=percent-change"
+      "href": "tools/tool/?id=percent-change",
+      "iconBadge": ""
     },
     {
       "id": "percent-error",
       "category": "math",
       "name": "百分比误差计算器",
       "description": "将实验准确度测量为百分比误差与真实值的关系。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "percent error relative absolute experimental value accuracy measurement science percent-error 百分比误差计算器",
       "variants": [
@@ -11815,14 +12442,15 @@ const ToolboxCatalog = {
           "sourceId": "percent-error"
         }
       ],
-      "href": "tools/tool/?id=percent-error"
+      "href": "tools/tool/?id=percent-error",
+      "iconBadge": ""
     },
     {
       "id": "percent-increase-decrease",
       "category": "math",
       "name": "增加和减少百分比",
       "description": "对数字应用百分比增加或减少并将其反转。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "percentage increase decrease add percent subtract reverse undo discount finance percent-increase-decrease 增加和减少百分比",
       "variants": [
@@ -11833,14 +12461,15 @@ const ToolboxCatalog = {
           "sourceId": "percent-increase-decrease"
         }
       ],
-      "href": "tools/tool/?id=percent-increase-decrease"
+      "href": "tools/tool/?id=percent-increase-decrease",
+      "iconBadge": ""
     },
     {
       "id": "percentage-calculator",
       "category": "math",
       "name": "百分比计算器",
       "description": "计算出百分比、百分比变化以及百分比计算。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "percentage percent increase decrease change of calculator percentage-calculator 百分比计算器",
       "variants": [
@@ -11851,14 +12480,15 @@ const ToolboxCatalog = {
           "sourceId": "percentage-calculator"
         }
       ],
-      "href": "tools/tool/?id=percentage-calculator"
+      "href": "tools/tool/?id=percentage-calculator",
+      "iconBadge": ""
     },
     {
       "id": "perfect-number-classifier",
       "category": "math",
       "name": "完美/丰富/不足分类器",
       "description": "将数字分类为完美、丰富或不足，并探索相关的数字类型。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "aliquot sum proper divisors perfect number abundant deficient amicable semiprime harshad triangular fibonacci number-theory perfect-number-classifier 完美/丰富/不足分类器",
       "variants": [
@@ -11869,14 +12499,15 @@ const ToolboxCatalog = {
           "sourceId": "perfect-number-classifier"
         }
       ],
-      "href": "tools/tool/?id=perfect-number-classifier"
+      "href": "tools/tool/?id=perfect-number-classifier",
+      "iconBadge": ""
     },
     {
       "id": "permutation-combination",
       "category": "math",
       "name": "排列与组合计算器",
       "description": "计算nPr、nCr以及n和r的相关计数值。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "nPr nCr binomial coefficient with repetition without multiset choose arrangements permutations combinations counting factorial probability permutation-combination 排列与组合计算器",
       "variants": [
@@ -11887,14 +12518,15 @@ const ToolboxCatalog = {
           "sourceId": "permutation-combination"
         }
       ],
-      "href": "tools/tool/?id=permutation-combination"
+      "href": "tools/tool/?id=permutation-combination",
+      "iconBadge": ""
     },
     {
       "id": "phone-number-format-generator",
       "category": "web",
       "name": "电话号码格式生成器",
       "description": "从保留的测试范围生成按照国家/风格（E.164、国家、虚线）格式化的假电话号码。",
-      "icon": "convert",
+      "icon": "contact",
       "tags": [],
       "keywords": "phone number fake e.164 test dial code mock data csv fake-data e164 test-data qa phone-number-format-generator 电话号码格式生成器",
       "variants": [
@@ -11905,14 +12537,15 @@ const ToolboxCatalog = {
           "sourceId": "phone-number-format-generator"
         }
       ],
-      "href": "tools/tool/?id=phone-number-format-generator"
+      "href": "tools/tool/?id=phone-number-format-generator",
+      "iconBadge": ""
     },
     {
       "id": "php-array-to-json",
       "category": "convert",
       "name": "PHP 数组到 JSON",
       "description": "将PHP数组文字转换为JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "php array to json var_export literal convert parser php-array-to-json PHP 数组到 JSON",
       "variants": [
@@ -11923,14 +12556,15 @@ const ToolboxCatalog = {
           "sourceId": "php-array-to-json"
         }
       ],
-      "href": "tools/tool/?id=php-array-to-json"
+      "href": "tools/tool/?id=php-array-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "plist-to-json",
       "category": "convert",
       "name": "Apple plist 到 JSON",
       "description": "将Apple XML属性列表转换为JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "plist to json property list apple xml macos ios config convert plist-to-json Apple 到 JSON",
       "variants": [
@@ -11941,14 +12575,15 @@ const ToolboxCatalog = {
           "sourceId": "plist-to-json"
         }
       ],
-      "href": "tools/tool/?id=plist-to-json"
+      "href": "tools/tool/?id=plist-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "polar-cartesian-converter",
       "category": "math",
       "name": "极坐标 ↔ 笛卡尔转换器",
       "description": "在极坐标(r，θ)和笛卡尔(x，y)坐标之间转换2D点。",
-      "icon": "convert",
+      "icon": "circle",
       "tags": [],
       "keywords": "polar to cartesian radius angle atan2 degrees radians quadrant r theta coordinates geometry trigonometry polar-cartesian-converter 极坐标 ↔ 笛卡尔转换器",
       "variants": [
@@ -11959,14 +12594,15 @@ const ToolboxCatalog = {
           "sourceId": "polar-cartesian-converter"
         }
       ],
-      "href": "tools/tool/?id=polar-cartesian-converter"
+      "href": "tools/tool/?id=polar-cartesian-converter",
+      "iconBadge": ""
     },
     {
       "id": "polynomial-evaluator",
       "category": "math",
       "name": "多项式求值器(Horner)",
       "description": "在某个值处评估多项式并通过霍纳方法获得其导数。",
-      "icon": "convert",
+      "icon": "function-square",
       "tags": [],
       "keywords": "horner method evaluate polynomial derivative coefficients P(x) P'(x) synthetic division algebra polynomial-evaluator 多项式求值器(Horner)",
       "variants": [
@@ -11977,14 +12613,15 @@ const ToolboxCatalog = {
           "sourceId": "polynomial-evaluator"
         }
       ],
-      "href": "tools/tool/?id=polynomial-evaluator"
+      "href": "tools/tool/?id=polynomial-evaluator",
+      "iconBadge": ""
     },
     {
       "id": "postman-collection-viewer",
       "category": "web",
       "name": "邮差收藏查看器",
       "description": "汇总 Postman 集合而不将其导入 Postman。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "postman api collection json postman-collection-viewer 邮差收藏查看器",
       "variants": [
@@ -11995,14 +12632,15 @@ const ToolboxCatalog = {
           "sourceId": "postman-collection-viewer"
         }
       ],
-      "href": "tools/tool/?id=postman-collection-viewer"
+      "href": "tools/tool/?id=postman-collection-viewer",
+      "iconBadge": ""
     },
     {
       "id": "power-converter",
       "category": "convert",
       "name": "电源转换器",
       "description": "在瓦特、千瓦、马力和BTU/小时之间转换功率。",
-      "icon": "convert",
+      "icon": "plug-zap",
       "tags": [],
       "keywords": "watt kilowatt megawatt horsepower hp btu ps volt-ampere power units energy converter power-converter 电源转换器",
       "variants": [
@@ -12013,14 +12651,15 @@ const ToolboxCatalog = {
           "sourceId": "power-converter"
         }
       ],
-      "href": "tools/tool/?id=power-converter"
+      "href": "tools/tool/?id=power-converter",
+      "iconBadge": ""
     },
     {
       "id": "prefix-suffix-lines",
       "category": "text",
       "name": "前缀和后缀行",
       "description": "一次向每一行添加前缀和/或后缀，非常适合用引号、逗号、括号或标记包装列表项。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "prefix suffix wrap lines quote append prefix-suffix-lines 前缀和后缀行",
       "variants": [
@@ -12031,14 +12670,15 @@ const ToolboxCatalog = {
           "sourceId": "prefix-suffix-lines"
         }
       ],
-      "href": "tools/tool/?id=prefix-suffix-lines"
+      "href": "tools/tool/?id=prefix-suffix-lines",
+      "iconBadge": ""
     },
     {
       "id": "pressure-converter",
       "category": "convert",
       "name": "压力转换器",
       "description": "在帕斯卡、巴、psi、atm、mmHg和托之间转换压力。",
-      "icon": "convert",
+      "icon": "gauge",
       "tags": [],
       "keywords": "pascal bar psi atm atmosphere mmhg torr inhg kpa mpa pressure units physics engineering converter pressure-converter 压力转换器",
       "variants": [
@@ -12049,14 +12689,15 @@ const ToolboxCatalog = {
           "sourceId": "pressure-converter"
         }
       ],
-      "href": "tools/tool/?id=pressure-converter"
+      "href": "tools/tool/?id=pressure-converter",
+      "iconBadge": ""
     },
     {
       "id": "prime-checker",
       "category": "math",
       "name": "素数检查器和因子分解器",
       "description": "检查一个数是否为质数并查看其质因数分解。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "prime is factors factorization composite factor number prime-checker 素数检查器和因子分解器",
       "variants": [
@@ -12067,14 +12708,15 @@ const ToolboxCatalog = {
           "sourceId": "prime-checker"
         }
       ],
-      "href": "tools/tool/?id=prime-checker"
+      "href": "tools/tool/?id=prime-checker",
+      "iconBadge": ""
     },
     {
       "id": "prime-sieve-generator",
       "category": "math",
       "name": "优质筛发生器",
       "description": "用埃拉托斯特尼筛法生成最多N个素数(或前K个素数)。",
-      "icon": "convert",
+      "icon": "sigma",
       "tags": [],
       "keywords": "prime numbers sieve of eratosthenes first n primes twin gap list generate number-theory generator math prime-sieve-generator 优质筛发生器",
       "variants": [
@@ -12085,14 +12727,15 @@ const ToolboxCatalog = {
           "sourceId": "prime-sieve-generator"
         }
       ],
-      "href": "tools/tool/?id=prime-sieve-generator"
+      "href": "tools/tool/?id=prime-sieve-generator",
+      "iconBadge": ""
     },
     {
       "id": "prism-cylinder-volume",
       "category": "math",
       "name": "棱镜和圆柱体体积计算器",
       "description": "计算圆柱体、立方体和箱形棱柱的体积和表面积。",
-      "icon": "convert",
+      "icon": "box",
       "tags": [],
       "keywords": "cube volume rectangular box cylinder surface area lateral geometry calculator cuboid surface-area prism prism-cylinder-volume 棱镜和圆柱体体积计算器",
       "variants": [
@@ -12103,14 +12746,15 @@ const ToolboxCatalog = {
           "sourceId": "prism-cylinder-volume"
         }
       ],
-      "href": "tools/tool/?id=prism-cylinder-volume"
+      "href": "tools/tool/?id=prism-cylinder-volume",
+      "iconBadge": ""
     },
     {
       "id": "profanity-placeholder",
       "category": "text",
       "name": "亵渎言论审查（离线）",
       "description": "使用用户可编辑的单词列表，用符号掩盖文本中标记的单词。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "profanity filter censor words bad mask text redact bleep word list profanity-placeholder 亵渎言论审查（离线）",
       "variants": [
@@ -12121,14 +12765,15 @@ const ToolboxCatalog = {
           "sourceId": "profanity-placeholder"
         }
       ],
-      "href": "tools/tool/?id=profanity-placeholder"
+      "href": "tools/tool/?id=profanity-placeholder",
+      "iconBadge": ""
     },
     {
       "id": "pronounceable-password-generator",
       "category": "web",
       "name": "可发音的密码生成器",
       "description": "通过交替辅音和元音模式来生成可发音的密码。",
-      "icon": "convert",
+      "icon": "key-round",
       "tags": [],
       "keywords": "pronounceable password memorable syllable consonant vowel entropy random security pronounceable-password-generator 可发音的密码生成器",
       "variants": [
@@ -12139,14 +12784,15 @@ const ToolboxCatalog = {
           "sourceId": "pronounceable-password-generator"
         }
       ],
-      "href": "tools/tool/?id=pronounceable-password-generator"
+      "href": "tools/tool/?id=pronounceable-password-generator",
+      "iconBadge": ""
     },
     {
       "id": "properties-to-json",
       "category": "convert",
       "name": "Java .properties 到 JSON",
       "description": "将Java/Spring .properties文件转换为嵌套JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "properties to json java spring config application.properties dotted keys nested convert properties-to-json Java .properties 到 JSON",
       "variants": [
@@ -12157,14 +12803,15 @@ const ToolboxCatalog = {
           "sourceId": "properties-to-json"
         }
       ],
-      "href": "tools/tool/?id=properties-to-json"
+      "href": "tools/tool/?id=properties-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "properties-to-yaml",
       "category": "convert",
       "name": "Java属性到YAML",
       "description": "通过将点分键展开为树，将Java.properties文件转换为嵌套YAML。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "properties to yaml java spring config application.properties application.yml dotted keys convert properties-to-yaml Java属性到YAML",
       "variants": [
@@ -12175,14 +12822,15 @@ const ToolboxCatalog = {
           "sourceId": "properties-to-yaml"
         }
       ],
-      "href": "tools/tool/?id=properties-to-yaml"
+      "href": "tools/tool/?id=properties-to-yaml",
+      "iconBadge": "YAML"
     },
     {
       "id": "proportion-solver",
       "category": "math",
       "name": "比例（叉乘）求解器",
       "description": "使用交叉乘法求解未知数的a/b=c/d。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "cross multiplication solve for x a/b = c/d ratio proportion missing term equivalent fractions cross-multiply algebra solver proportion-solver 比例（叉乘）求解器",
       "variants": [
@@ -12193,14 +12841,15 @@ const ToolboxCatalog = {
           "sourceId": "proportion-solver"
         }
       ],
-      "href": "tools/tool/?id=proportion-solver"
+      "href": "tools/tool/?id=proportion-solver",
+      "iconBadge": ""
     },
     {
       "id": "protobuf-binary-decoder",
       "category": "encoding",
       "name": "Protobuf二进制解码器",
       "description": "将protobuf线路字节解码为字段号、线路类型和原始标量值。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "protobuf binary decode wire protobuf-binary-decoder Protobuf二进制解码器",
       "variants": [
@@ -12211,14 +12860,15 @@ const ToolboxCatalog = {
           "sourceId": "protobuf-binary-decoder"
         }
       ],
-      "href": "tools/tool/?id=protobuf-binary-decoder"
+      "href": "tools/tool/?id=protobuf-binary-decoder",
+      "iconBadge": ""
     },
     {
       "id": "protobuf-json-converter",
       "category": "web",
       "name": "Protobuf JSON 转换器",
       "description": "规范化 protobuf JSON 字段名称和标量包装器以进行调试。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "protobuf json api convert protobuf-json-converter Protobuf JSON 转换器",
       "variants": [
@@ -12229,14 +12879,15 @@ const ToolboxCatalog = {
           "sourceId": "protobuf-json-converter"
         }
       ],
-      "href": "tools/tool/?id=protobuf-json-converter"
+      "href": "tools/tool/?id=protobuf-json-converter",
+      "iconBadge": "JSON"
     },
     {
       "id": "pug-to-html",
       "category": "convert",
       "name": "哈巴狗转 HTML",
       "description": "将基本 Pug (Jade) 模板转换为 HTML。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "pug to html jade template markup compile convert pug-to-html 哈巴狗转 HTML",
       "variants": [
@@ -12247,14 +12898,15 @@ const ToolboxCatalog = {
           "sourceId": "pug-to-html"
         }
       ],
-      "href": "tools/tool/?id=pug-to-html"
+      "href": "tools/tool/?id=pug-to-html",
+      "iconBadge": "HTML"
     },
     {
       "id": "px-rem-converter",
       "category": "web",
       "name": "PX↔REM转换器",
       "description": "给定可配置的根字体大小，在px、rem和em之间进行转换。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "px to rem em css units font size px-rem-converter PX↔REM转换器",
       "variants": [
@@ -12265,14 +12917,15 @@ const ToolboxCatalog = {
           "sourceId": "px-rem-converter"
         }
       ],
-      "href": "tools/tool/?id=px-rem-converter"
+      "href": "tools/tool/?id=px-rem-converter",
+      "iconBadge": ""
     },
     {
       "id": "pythagorean-theorem",
       "category": "math",
       "name": "勾股定理计算器",
       "description": "从任意两条已知边中找出直角三角形的缺失边。",
-      "icon": "convert",
+      "icon": "barcode",
       "tags": [],
       "keywords": "a squared plus b hypotenuse calculator right triangle sides missing leg angles a2 b2 c2 pythagorean right-triangle geometry trigonometry pythagorean-theorem 勾股定理计算器",
       "variants": [
@@ -12283,14 +12936,15 @@ const ToolboxCatalog = {
           "sourceId": "pythagorean-theorem"
         }
       ],
-      "href": "tools/tool/?id=pythagorean-theorem"
+      "href": "tools/tool/?id=pythagorean-theorem",
+      "iconBadge": ""
     },
     {
       "id": "quadratic-equation-solver",
       "category": "math",
       "name": "二次方程求解器",
       "description": "根据系数a、b和c求解二次方程的实根或复根。",
-      "icon": "convert",
+      "icon": "function-square",
       "tags": [],
       "keywords": "quadratic equation roots discriminant solver calculator algebra equations quadratic-equation-solver 二次方程求解器",
       "variants": [
@@ -12301,14 +12955,15 @@ const ToolboxCatalog = {
           "sourceId": "quadratic-equation-solver"
         }
       ],
-      "href": "tools/tool/?id=quadratic-equation-solver"
+      "href": "tools/tool/?id=quadratic-equation-solver",
+      "iconBadge": ""
     },
     {
       "id": "quarter-of-date",
       "category": "time",
       "name": "季度和财政期间查找器",
       "description": "确定任意日期的日历或财政季度、半期和期间日期。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "quarter fiscal year q1 q2 q3 q4 half period dates calendar finance quarter-of-date 季度和财政期间查找器",
       "variants": [
@@ -12319,14 +12974,15 @@ const ToolboxCatalog = {
           "sourceId": "quarter-of-date"
         }
       ],
-      "href": "tools/tool/?id=quarter-of-date"
+      "href": "tools/tool/?id=quarter-of-date",
+      "iconBadge": ""
     },
     {
       "id": "query-params",
       "category": "web",
       "name": "查询字符串 ↔ JSON",
       "description": "将 URL 查询字符串转换为 JSON 并返回，处理重复的键。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "query string querystring params to json url searchparams query-params 查询字符串 ↔ JSON editor edit sort dedupe builder table web-query-string-editor 查询字符串编辑器 parse web-query-string-parser 查询字符串解析器",
       "variants": [
@@ -12349,14 +13005,15 @@ const ToolboxCatalog = {
           "sourceId": "web-query-string-parser"
         }
       ],
-      "href": "tools/tool/?id=query-params"
+      "href": "tools/tool/?id=query-params",
+      "iconBadge": ""
     },
     {
       "id": "query-string-to-json",
       "category": "convert",
       "name": "查询字符串转 JSON",
       "description": "将URL查询字符串解析为结构化JSON，解码值，将重复的键分组到数组中，并重建括号内的嵌套。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "query string json url params parse convert query-string-to-json 查询字符串转 JSON",
       "variants": [
@@ -12367,14 +13024,15 @@ const ToolboxCatalog = {
           "sourceId": "query-string-to-json"
         }
       ],
-      "href": "tools/tool/?id=query-string-to-json"
+      "href": "tools/tool/?id=query-string-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "querystring-to-curl",
       "category": "convert",
       "name": "到 cURL 的查询字符串",
       "description": "根据基本URL和查询字符串构建curl命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "querystring to curl builder data-urlencode http request url params query string convert querystring-to-curl 到 cURL 的查询字符串",
       "variants": [
@@ -12385,14 +13043,15 @@ const ToolboxCatalog = {
           "sourceId": "querystring-to-curl"
         }
       ],
-      "href": "tools/tool/?id=querystring-to-curl"
+      "href": "tools/tool/?id=querystring-to-curl",
+      "iconBadge": ""
     },
     {
       "id": "quotient-remainder-calculator",
       "category": "math",
       "name": "商和余数计算器",
       "description": "执行显示商和余数的整数（欧几里得）除法。",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "integer division euclidean floored truncated identity divisibility bigint quotient remainder quotient-remainder-calculator 商和余数计算器",
       "variants": [
@@ -12403,14 +13062,15 @@ const ToolboxCatalog = {
           "sourceId": "quotient-remainder-calculator"
         }
       ],
-      "href": "tools/tool/?id=quotient-remainder-calculator"
+      "href": "tools/tool/?id=quotient-remainder-calculator",
+      "iconBadge": ""
     },
     {
       "id": "radiation-dose-converter",
       "category": "convert",
       "name": "辐射剂量转换器",
       "description": "在西弗特、雷姆、戈瑞和拉德之间转换辐射剂量。",
-      "icon": "convert",
+      "icon": "radiation",
       "tags": [],
       "keywords": "sievert sv rem gray gy rad absorbed equivalent dosimetry radiation dose units physics converter radiation-dose-converter 辐射剂量转换器",
       "variants": [
@@ -12421,14 +13081,15 @@ const ToolboxCatalog = {
           "sourceId": "radiation-dose-converter"
         }
       ],
-      "href": "tools/tool/?id=radiation-dose-converter"
+      "href": "tools/tool/?id=radiation-dose-converter",
+      "iconBadge": ""
     },
     {
       "id": "radioactivity-converter",
       "category": "convert",
       "name": "放射性转换器",
       "description": "在贝克勒尔和居里之间转换放射性。",
-      "icon": "convert",
+      "icon": "radiation",
       "tags": [],
       "keywords": "becquerel bq curie ci rutherford dpm disintegrations activity radioactivity units physics nuclear converter radioactivity-converter 放射性转换器",
       "variants": [
@@ -12439,14 +13100,15 @@ const ToolboxCatalog = {
           "sourceId": "radioactivity-converter"
         }
       ],
-      "href": "tools/tool/?id=radioactivity-converter"
+      "href": "tools/tool/?id=radioactivity-converter",
+      "iconBadge": ""
     },
     {
       "id": "random-bytes-generator",
       "category": "encoding",
       "name": "随机字节发生器",
       "description": "生成加密安全随机字节作为十六进制、Base64、Base64URL或选定长度的C型字节数组。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random bytes secure hex nonce iv entropy crypto random-bytes-generator 随机字节发生器",
       "variants": [
@@ -12457,14 +13119,15 @@ const ToolboxCatalog = {
           "sourceId": "random-bytes-generator"
         }
       ],
-      "href": "tools/tool/?id=random-bytes-generator"
+      "href": "tools/tool/?id=random-bytes-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-color",
       "category": "color",
       "name": "随机颜色发生器",
       "description": "生成具有可复制的HEX/RGB/HSL值的随机颜色。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "random color generator hex swatch random-color 随机颜色发生器",
       "variants": [
@@ -12475,14 +13138,15 @@ const ToolboxCatalog = {
           "sourceId": "random-color"
         }
       ],
-      "href": "tools/tool/?id=random-color"
+      "href": "tools/tool/?id=random-color",
+      "iconBadge": ""
     },
     {
       "id": "random-coordinates-generator",
       "category": "web",
       "name": "随机坐标生成器",
       "description": "生成随机纬度/经度点，可选地约束到边界框。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "lat lng latlong geojson bounding box gps points random location geographic geo coordinates latitude longitude map random-coordinates-generator 随机坐标生成器",
       "variants": [
@@ -12493,14 +13157,15 @@ const ToolboxCatalog = {
           "sourceId": "random-coordinates-generator"
         }
       ],
-      "href": "tools/tool/?id=random-coordinates-generator"
+      "href": "tools/tool/?id=random-coordinates-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-date-range-generator",
       "category": "web",
       "name": "随机日期时间生成器",
       "description": "以您选择的格式生成一定范围内的随机日期和时间戳。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "random date unix timestamp epoch iso 8601 generator sample dates business days datetime range iso8601 random-date-range-generator 随机日期时间生成器",
       "variants": [
@@ -12511,14 +13176,15 @@ const ToolboxCatalog = {
           "sourceId": "random-date-range-generator"
         }
       ],
-      "href": "tools/tool/?id=random-date-range-generator"
+      "href": "tools/tool/?id=random-date-range-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-distribution-generator",
       "category": "math",
       "name": "随机分布发生器",
       "description": "从均匀分布、正态分布、指数分布或泊松分布生成随机样本。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "random sample normal distribution gaussian box-muller exponential poisson uniform histogram rng statistics sampling generator random-distribution-generator 随机分布发生器",
       "variants": [
@@ -12529,14 +13195,15 @@ const ToolboxCatalog = {
           "sourceId": "random-distribution-generator"
         }
       ],
-      "href": "tools/tool/?id=random-distribution-generator"
+      "href": "tools/tool/?id=random-distribution-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-line-picker",
       "category": "text",
       "name": "随机线选择器",
       "description": "从列表中挑选一个或多个随机线，非常适合抽奖、选择获胜者或抽样，以及可选的无重复抽奖。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random picker raffle winner sample text fun random-line-picker 随机线选择器",
       "variants": [
@@ -12547,14 +13214,15 @@ const ToolboxCatalog = {
           "sourceId": "random-line-picker"
         }
       ],
-      "href": "tools/tool/?id=random-line-picker"
+      "href": "tools/tool/?id=random-line-picker",
+      "iconBadge": ""
     },
     {
       "id": "random-name-generator",
       "category": "text",
       "name": "随机名称和用户名生成器",
       "description": "从嵌入的音节和单词列表中生成随机人名、幻想名称或用户名句柄。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random name username generator handle fantasy gamertag nickname screen fake random-name-generator 随机名称和用户名生成器",
       "variants": [
@@ -12565,14 +13233,15 @@ const ToolboxCatalog = {
           "sourceId": "random-name-generator"
         }
       ],
-      "href": "tools/tool/?id=random-name-generator"
+      "href": "tools/tool/?id=random-name-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-number-generator",
       "category": "math",
       "name": "随机数生成器（安全）",
       "description": "生成自定义范围内的加密安全随机整数，具有可选的唯一性。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random number generator integer range secure math random-number-generator 随机数生成器（安全）",
       "variants": [
@@ -12583,14 +13252,15 @@ const ToolboxCatalog = {
           "sourceId": "random-number-generator"
         }
       ],
-      "href": "tools/tool/?id=random-number-generator"
+      "href": "tools/tool/?id=random-number-generator",
+      "iconBadge": ""
     },
     {
       "id": "random-palette-by-mood",
       "category": "color",
       "name": "按心情随机调色板",
       "description": "生成适应所选择的情绪（如平静、充满活力或柔和）的随机调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "palette mood pastel vibrant muted warm cool seed css variables color random generator random-palette-by-mood 按心情随机调色板",
       "variants": [
@@ -12601,14 +13271,15 @@ const ToolboxCatalog = {
           "sourceId": "random-palette-by-mood"
         }
       ],
-      "href": "tools/tool/?id=random-palette-by-mood"
+      "href": "tools/tool/?id=random-palette-by-mood",
+      "iconBadge": ""
     },
     {
       "id": "random-token-formats",
       "category": "encoding",
       "name": "随机令牌生成器（格式）",
       "description": "使用前缀和分组以多种开发者格式（十六进制、base64url、Base32、API密钥样式）生成加密随机令牌。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "random token api key secret base64url base32 crockford hex access sk_live entropy api-key base64 random-token-formats 随机令牌生成器（格式）",
       "variants": [
@@ -12619,14 +13290,15 @@ const ToolboxCatalog = {
           "sourceId": "random-token-formats"
         }
       ],
-      "href": "tools/tool/?id=random-token-formats"
+      "href": "tools/tool/?id=random-token-formats",
+      "iconBadge": ""
     },
     {
       "id": "random-username-generator",
       "category": "web",
       "name": "用户名生成器",
       "description": "通过组合形容词、名词和可选数字来生成句柄式用户名。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "username generator random handle screen name gamertag nickname adjective noun random-username-generator 用户名生成器",
       "variants": [
@@ -12637,14 +13309,15 @@ const ToolboxCatalog = {
           "sourceId": "random-username-generator"
         }
       ],
-      "href": "tools/tool/?id=random-username-generator"
+      "href": "tools/tool/?id=random-username-generator",
+      "iconBadge": ""
     },
     {
       "id": "ratio-proportion-solver",
       "category": "math",
       "name": "比率和比例解算器",
       "description": "简化比率并通过叉乘求解比例中缺少的第四项。",
-      "icon": "convert",
+      "icon": "percent",
       "tags": [],
       "keywords": "ratio proportion cross multiply rule of three simplify calculator algebra ratio-proportion-solver 比率和比例解算器",
       "variants": [
@@ -12655,14 +13328,15 @@ const ToolboxCatalog = {
           "sourceId": "ratio-proportion-solver"
         }
       ],
-      "href": "tools/tool/?id=ratio-proportion-solver"
+      "href": "tools/tool/?id=ratio-proportion-solver",
+      "iconBadge": ""
     },
     {
       "id": "reading-time-estimator",
       "category": "text",
       "name": "阅读和口语时间估算器",
       "description": "估计默读和大声朗读文本需要多长时间。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "reading time speaking words per minute wpm speech duration estimate reading-time-estimator 阅读和口语时间估算器",
       "variants": [
@@ -12673,14 +13347,15 @@ const ToolboxCatalog = {
           "sourceId": "reading-time-estimator"
         }
       ],
-      "href": "tools/tool/?id=reading-time-estimator"
+      "href": "tools/tool/?id=reading-time-estimator",
+      "iconBadge": ""
     },
     {
       "id": "rectangle-square-calculator",
       "category": "math",
       "name": "矩形和正方形计算器",
       "description": "计算矩形和正方形的面积、周长和对角线。",
-      "icon": "convert",
+      "icon": "shapes",
       "tags": [],
       "keywords": "rectangle square area perimeter diagonal aspect ratio geometry length width rectangle-square-calculator 矩形和正方形计算器",
       "variants": [
@@ -12691,14 +13366,15 @@ const ToolboxCatalog = {
           "sourceId": "rectangle-square-calculator"
         }
       ],
-      "href": "tools/tool/?id=rectangle-square-calculator"
+      "href": "tools/tool/?id=rectangle-square-calculator",
+      "iconBadge": ""
     },
     {
       "id": "recurring-event-dates",
       "category": "time",
       "name": "重复事件日期生成器",
       "description": "生成简单重复的接下来的N个日期（每日、每周、每月、每年，有间隔）。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "recurring dates every N days weekly schedule monthly recurrence rrule occurrences generator recurring-event-dates 重复事件日期生成器",
       "variants": [
@@ -12709,14 +13385,15 @@ const ToolboxCatalog = {
           "sourceId": "recurring-event-dates"
         }
       ],
-      "href": "tools/tool/?id=recurring-event-dates"
+      "href": "tools/tool/?id=recurring-event-dates",
+      "iconBadge": ""
     },
     {
       "id": "regex-tester",
       "category": "text",
       "name": "正则表达式测试器",
       "description": "使用匹配突出显示和组来测试JavaScript正则表达式。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regex tester regular expression pattern match capture groups regexp test regex-tester 正则表达式测试器",
       "variants": [
@@ -12727,14 +13404,15 @@ const ToolboxCatalog = {
           "sourceId": "regex-tester"
         }
       ],
-      "href": "tools/tool/?id=regex-tester"
+      "href": "tools/tool/?id=regex-tester",
+      "iconBadge": ".*"
     },
     {
       "id": "regular-polygon-calculator",
       "category": "math",
       "name": "正多边形计算器",
       "description": "计算任何正n边多边形的面积、周长和角度。",
-      "icon": "convert",
+      "icon": "shapes",
       "tags": [],
       "keywords": "regular polygon pentagon hexagon octagon apothem circumradius interior angle exterior perimeter area geometry angles regular-polygon-calculator 正多边形计算器",
       "variants": [
@@ -12745,14 +13423,15 @@ const ToolboxCatalog = {
           "sourceId": "regular-polygon-calculator"
         }
       ],
-      "href": "tools/tool/?id=regular-polygon-calculator"
+      "href": "tools/tool/?id=regular-polygon-calculator",
+      "iconBadge": ""
     },
     {
       "id": "relative-time-formatter",
       "category": "time",
       "name": "相对时间格式化程序",
       "description": "将时间戳或日期转换为人类友好的相对短语，例如跨区域的“3小时前”或“2天内”。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "relative time ago since intl human readable relative-time-formatter 相对时间格式化程序",
       "variants": [
@@ -12763,14 +13442,15 @@ const ToolboxCatalog = {
           "sourceId": "relative-time-formatter"
         }
       ],
-      "href": "tools/tool/?id=relative-time-formatter"
+      "href": "tools/tool/?id=relative-time-formatter",
+      "iconBadge": ""
     },
     {
       "id": "remove-accents",
       "category": "text",
       "name": "删除重音",
       "description": "从文本中去除变音符号和重音符号，将诸如e-acute、n-tilde和u-umlaut的字符转换为纯ASCII等价物。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "accents diacritics ascii normalize transliterate remove-accents 删除重音",
       "variants": [
@@ -12781,14 +13461,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-accents"
         }
       ],
-      "href": "tools/tool/?id=remove-accents"
+      "href": "tools/tool/?id=remove-accents",
+      "iconBadge": ""
     },
     {
       "id": "remove-duplicates",
       "category": "text",
       "name": "删除重复行",
       "description": "去除重复行，保留第一次出现，并且可选地不区分大小写。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "remove duplicates dedupe unique lines distinct duplicate remove-duplicates 删除重复行",
       "variants": [
@@ -12799,14 +13480,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-duplicates"
         }
       ],
-      "href": "tools/tool/?id=remove-duplicates"
+      "href": "tools/tool/?id=remove-duplicates",
+      "iconBadge": ""
     },
     {
       "id": "remove-line-breaks",
       "category": "text",
       "name": "删除换行符",
       "description": "去除或规范化换行符、将换行连接成带有空格的行、折叠多个空行或将段落转换为单行。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "line breaks newlines join lines strip paragraph remove-line-breaks 删除换行符",
       "variants": [
@@ -12817,14 +13499,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-line-breaks"
         }
       ],
-      "href": "tools/tool/?id=remove-line-breaks"
+      "href": "tools/tool/?id=remove-line-breaks",
+      "iconBadge": ""
     },
     {
       "id": "repeating-decimal-to-fraction",
       "category": "math",
       "name": "重复小数到分数",
       "description": "使用9分母法将像0.1",
-      "icon": "convert",
+      "icon": "divide",
       "tags": [],
       "keywords": "repeating decimal recurring fraction vinculum overline rational nines denominator exact conversion repeating-decimal-to-fraction 重复小数到分数",
       "variants": [
@@ -12835,14 +13518,15 @@ const ToolboxCatalog = {
           "sourceId": "repeating-decimal-to-fraction"
         }
       ],
-      "href": "tools/tool/?id=repeating-decimal-to-fraction"
+      "href": "tools/tool/?id=repeating-decimal-to-fraction",
+      "iconBadge": ""
     },
     {
       "id": "reverse-lines",
       "category": "text",
       "name": "反转和翻转线",
       "description": "反转行的顺序、反转每行内的字符、或将行旋转一定偏移量。",
-      "icon": "convert",
+      "icon": "arrow-down-up",
       "tags": [],
       "keywords": "reverse lines flip text rotate characters last first shift grapheme order reverse-lines 反转和翻转线",
       "variants": [
@@ -12853,14 +13537,15 @@ const ToolboxCatalog = {
           "sourceId": "reverse-lines"
         }
       ],
-      "href": "tools/tool/?id=reverse-lines"
+      "href": "tools/tool/?id=reverse-lines",
+      "iconBadge": ""
     },
     {
       "id": "reverse-text",
       "category": "text",
       "name": "反向文本",
       "description": "反转文本中的字符、单词或行顺序。",
-      "icon": "convert",
+      "icon": "arrow-down-up",
       "tags": [],
       "keywords": "reverse text backwards flip mirror words lines reverse-text 反向文本",
       "variants": [
@@ -12871,14 +13556,15 @@ const ToolboxCatalog = {
           "sourceId": "reverse-text"
         }
       ],
-      "href": "tools/tool/?id=reverse-text"
+      "href": "tools/tool/?id=reverse-text",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-cmyk-converter",
       "category": "color",
       "name": "RGB至CMYK转换器",
       "description": "将sRGB转换为原始打印CMYK百分比并转换回来。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to cmyk print color cyan magenta yellow key process converter rgb-to-cmyk-converter RGB至CMYK转换器",
       "variants": [
@@ -12889,14 +13575,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-cmyk-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-cmyk-converter"
+      "href": "tools/tool/?id=rgb-to-cmyk-converter",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-hex",
       "category": "color",
       "name": "RGB 到 HEX 转换器",
       "description": "将rgb()/rgba()颜色值转换为十六进制(当存在阿尔法时为8位十六进制)，接受逗号或空格分隔的通道。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb hex rgba convert color rgb-to-hex RGB 到 HEX 转换器",
       "variants": [
@@ -12907,14 +13594,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-hex"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-hex"
+      "href": "tools/tool/?id=rgb-to-hex",
+      "iconBadge": "HEX"
     },
     {
       "id": "rgb-to-hsl-converter",
       "category": "color",
       "name": "RGB至HSL转换器",
       "description": "通过实时样本预览将sRGB颜色值转换为HSL并返回。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to hsl hue saturation lightness color model css hsl() converter rgb-to-hsl-converter RGB至HSL转换器",
       "variants": [
@@ -12925,14 +13613,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-hsl-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-hsl-converter"
+      "href": "tools/tool/?id=rgb-to-hsl-converter",
+      "iconBadge": "HSL"
     },
     {
       "id": "rgb-to-hsv-converter",
       "category": "color",
       "name": "RGB至HSV转换器",
       "description": "利用预览样本在sRGB和HSV/HSB颜色模型之间进行转换。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to hsv hsb hue saturation value brightness color model converter rgb-to-hsv-converter RGB至HSV转换器",
       "variants": [
@@ -12943,14 +13632,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-hsv-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-hsv-converter"
+      "href": "tools/tool/?id=rgb-to-hsv-converter",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-hwb-converter",
       "category": "color",
       "name": "RGB至HWB转换器",
       "description": "将sRGB转换为CSS HWB(色调、白度、黑度)并转换回来。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to hwb hue whiteness blackness css color 4 hwb() converter rgb-to-hwb-converter RGB至HWB转换器",
       "variants": [
@@ -12961,14 +13651,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-hwb-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-hwb-converter"
+      "href": "tools/tool/?id=rgb-to-hwb-converter",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-lab-converter",
       "category": "color",
       "name": "RGB至CIELAB转换器",
       "description": "在D65下将sRGB转换为CIELAB(L*a*b*)并返回。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to lab cielab l*a*b* d65 perceptual color converter rgb-to-lab-converter RGB至CIELAB转换器",
       "variants": [
@@ -12979,14 +13670,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-lab-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-lab-converter"
+      "href": "tools/tool/?id=rgb-to-lab-converter",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-lch-converter",
       "category": "color",
       "name": "RGB至LCH转换器",
       "description": "将sRGB转换为CIELCH(亮度、色度、色调)并转换回来。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to lch cielch lightness chroma hue lab polar lch() color converter rgb-to-lch-converter RGB至LCH转换器",
       "variants": [
@@ -12997,14 +13689,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-lch-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-lch-converter"
+      "href": "tools/tool/?id=rgb-to-lch-converter",
+      "iconBadge": ""
     },
     {
       "id": "rgb-to-xyz-converter",
       "category": "color",
       "name": "RGB到CIE XYZ转换器",
       "description": "将sRGB转换为CIE 1931 XYZ三刺激值(D65)并转换回来。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "rgb to xyz cie 1931 tristimulus d65 color space converter rgb-to-xyz-converter RGB到CIE XYZ转换器",
       "variants": [
@@ -13015,14 +13708,15 @@ const ToolboxCatalog = {
           "sourceId": "rgb-to-xyz-converter"
         }
       ],
-      "href": "tools/tool/?id=rgb-to-xyz-converter"
+      "href": "tools/tool/?id=rgb-to-xyz-converter",
+      "iconBadge": ""
     },
     {
       "id": "ring-size-converter",
       "category": "convert",
       "name": "戒指尺寸转换器",
       "description": "转换美国、英国、欧盟的戒指尺寸以及内径/周长。",
-      "icon": "convert",
+      "icon": "circle",
       "tags": [],
       "keywords": "ring size us uk eu inner diameter circumference iso 8653 japan jewelry conversion reference ring-size-converter 戒指尺寸转换器",
       "variants": [
@@ -13033,14 +13727,15 @@ const ToolboxCatalog = {
           "sourceId": "ring-size-converter"
         }
       ],
-      "href": "tools/tool/?id=ring-size-converter"
+      "href": "tools/tool/?id=ring-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "roi-calculator",
       "category": "math",
       "name": "投资回报率计算器",
       "description": "计算投资回报率、净利润和年化投资回报率。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "roi return on investment net profit annualized gain loss profitability finance roi-calculator 投资回报率计算器",
       "variants": [
@@ -13051,14 +13746,15 @@ const ToolboxCatalog = {
           "sourceId": "roi-calculator"
         }
       ],
-      "href": "tools/tool/?id=roi-calculator"
+      "href": "tools/tool/?id=roi-calculator",
+      "iconBadge": ""
     },
     {
       "id": "roman-numeral-variants",
       "category": "math",
       "name": "罗马数字变体转换器",
       "description": "与标准、加法(IIII)和vinculum(上划线×1000)罗马数字之间的转换。",
-      "icon": "convert",
+      "icon": "whole-word",
       "tags": [],
       "keywords": "roman numerals vinculum overline additive subtractive IIII clock face large numbers decode numeral conversion roman-numeral-variants 罗马数字变体转换器",
       "variants": [
@@ -13069,14 +13765,15 @@ const ToolboxCatalog = {
           "sourceId": "roman-numeral-variants"
         }
       ],
-      "href": "tools/tool/?id=roman-numeral-variants"
+      "href": "tools/tool/?id=roman-numeral-variants",
+      "iconBadge": ""
     },
     {
       "id": "roman-numerals",
       "category": "math",
       "name": "罗马数字转换器",
       "description": "在罗马数字和整数(1-3999)之间转换。",
-      "icon": "convert",
+      "icon": "whole-word",
       "tags": [],
       "keywords": "roman numerals convert integer mcmxciv number roman-numerals 罗马数字转换器",
       "variants": [
@@ -13087,14 +13784,15 @@ const ToolboxCatalog = {
           "sourceId": "roman-numerals"
         }
       ],
-      "href": "tools/tool/?id=roman-numerals"
+      "href": "tools/tool/?id=roman-numerals",
+      "iconBadge": ""
     },
     {
       "id": "rot13",
       "category": "text",
       "name": "ROT13 / 凯撒密码",
       "description": "将ROT13或凯撒移位密码应用于文本（可逆）。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "rot13 caesar cipher shift rotate letters encode ROT13 / 凯撒密码",
       "variants": [
@@ -13105,14 +13803,15 @@ const ToolboxCatalog = {
           "sourceId": "rot13"
         }
       ],
-      "href": "tools/tool/?id=rot13"
+      "href": "tools/tool/?id=rot13",
+      "iconBadge": ""
     },
     {
       "id": "rot47",
       "category": "text",
       "name": "ROT47 密码",
       "description": "使用ROT47对文本进行编码或解码，将所有可见的ASCII字符旋转47个位置以实现可逆混淆。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "rot47 cipher obfuscate encode ascii text encoding ROT47 密码",
       "variants": [
@@ -13123,14 +13822,15 @@ const ToolboxCatalog = {
           "sourceId": "rot47"
         }
       ],
-      "href": "tools/tool/?id=rot47"
+      "href": "tools/tool/?id=rot47",
+      "iconBadge": ""
     },
     {
       "id": "rot47-encoder",
       "category": "encoding",
       "name": "ROT47编码器",
       "description": "使用ROT47对文本进行编码或解码，ROT47是可打印的ASCII旋转密码（其自身的逆密码）。",
-      "icon": "convert",
+      "icon": "brackets",
       "tags": [],
       "keywords": "rot47 cipher rotation ascii encode decode rot47-encoder ROT47编码器",
       "variants": [
@@ -13141,14 +13841,15 @@ const ToolboxCatalog = {
           "sourceId": "rot47-encoder"
         }
       ],
-      "href": "tools/tool/?id=rot47-encoder"
+      "href": "tools/tool/?id=rot47-encoder",
+      "iconBadge": ""
     },
     {
       "id": "pdf-rotate",
       "category": "pdf",
       "name": "PDF 旋转",
       "description": "将PDF的所有或选定页面旋转90度、180度或270度。",
-      "icon": "convert",
+      "icon": "rotate-cw",
       "tags": [],
       "keywords": "rotate pdf turn pages orientation landscape portrait rotate-pdf 旋转PDF 旋转页面",
       "variants": [
@@ -13171,14 +13872,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/rotate"
         }
       ],
-      "href": "tools/tool/?id=pdf-rotate"
+      "href": "tools/tool/?id=pdf-rotate",
+      "iconBadge": "PDF"
     },
     {
       "id": "rounding-calculator",
       "category": "math",
       "name": "四舍五入和有效数字",
       "description": "按小数、有效数字或选择的规则对数字进行舍入。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "rounding significant figures sig figs bankers half even up ceil floor truncate nearest multiple precision decimals math rounding-calculator 四舍五入和有效数字",
       "variants": [
@@ -13189,14 +13891,15 @@ const ToolboxCatalog = {
           "sourceId": "rounding-calculator"
         }
       ],
-      "href": "tools/tool/?id=rounding-calculator"
+      "href": "tools/tool/?id=rounding-calculator",
+      "iconBadge": ""
     },
     {
       "id": "rsa-keypair-generator",
       "category": "encoding",
       "name": "RSA密钥对生成器",
       "description": "生成具有可选密钥大小(2048/3072/4096)和散列的PEM格式的RSA公钥/私钥对。",
-      "icon": "convert",
+      "icon": "key-square",
       "tags": [],
       "keywords": "rsa key pair pem public private asymmetric rsa-keypair-generator RSA密钥对生成器",
       "variants": [
@@ -13207,14 +13910,15 @@ const ToolboxCatalog = {
           "sourceId": "rsa-keypair-generator"
         }
       ],
-      "href": "tools/tool/?id=rsa-keypair-generator"
+      "href": "tools/tool/?id=rsa-keypair-generator",
+      "iconBadge": ""
     },
     {
       "id": "rsa-sign-verify",
       "category": "encoding",
       "name": "RSA签名和验证",
       "description": "用RSA私钥对消息进行签名并用公钥(RSASSA-PKCS1/PSS)验证签名。",
-      "icon": "convert",
+      "icon": "signature",
       "tags": [],
       "keywords": "rsassa pkcs1 pkcs8 spki pem digital signature rsa sign verify pss rsa-sign-verify RSA签名和验证",
       "variants": [
@@ -13225,14 +13929,15 @@ const ToolboxCatalog = {
           "sourceId": "rsa-sign-verify"
         }
       ],
-      "href": "tools/tool/?id=rsa-sign-verify"
+      "href": "tools/tool/?id=rsa-sign-verify",
+      "iconBadge": ""
     },
     {
       "id": "ruby-hash-to-json",
       "category": "convert",
       "name": "Ruby 哈希到 JSON",
       "description": "将Ruby哈希/数组文字转换为JSON。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "ruby hash to json symbol literal convert parser ruby-hash-to-json Ruby 哈希到 JSON",
       "variants": [
@@ -13243,14 +13948,15 @@ const ToolboxCatalog = {
           "sourceId": "ruby-hash-to-json"
         }
       ],
-      "href": "tools/tool/?id=ruby-hash-to-json"
+      "href": "tools/tool/?id=ruby-hash-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "saml-assertion-inspector",
       "category": "web",
       "name": "SAML 断言检查器",
       "description": "从SAML断言中提取主题、发行者、受众、会话和属性。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml assertion attributes sso saml-assertion-inspector SAML 断言检查器",
       "variants": [
@@ -13261,14 +13967,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-assertion-inspector"
         }
       ],
-      "href": "tools/tool/?id=saml-assertion-inspector"
+      "href": "tools/tool/?id=saml-assertion-inspector",
+      "iconBadge": ""
     },
     {
       "id": "saml-attribute-mapper",
       "category": "web",
       "name": "SAML属性映射器",
       "description": "使用简单的映射表将SAML属性映射到应用程序声明。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml attributes mapping sso saml-attribute-mapper SAML属性映射器",
       "variants": [
@@ -13279,14 +13986,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-attribute-mapper"
         }
       ],
-      "href": "tools/tool/?id=saml-attribute-mapper"
+      "href": "tools/tool/?id=saml-attribute-mapper",
+      "iconBadge": ""
     },
     {
       "id": "saml-condition-time-validator",
       "category": "web",
       "name": "SAML条件时间验证器",
       "description": "使用可配置的时钟偏差来验证NotBefore和NotOnOrAfter时间戳。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml time condition sso saml-condition-time-validator SAML条件时间验证器",
       "variants": [
@@ -13297,14 +14005,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-condition-time-validator"
         }
       ],
-      "href": "tools/tool/?id=saml-condition-time-validator"
+      "href": "tools/tool/?id=saml-condition-time-validator",
+      "iconBadge": ""
     },
     {
       "id": "saml-metadata-builder-idp",
       "category": "web",
       "name": "SAML IdP 元数据生成器",
       "description": "使用SSO端点和签名证书构建身份提供者元数据。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml metadata idp xml saml-metadata-builder-idp SAML IdP 元数据生成器",
       "variants": [
@@ -13315,14 +14024,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-metadata-builder-idp"
         }
       ],
-      "href": "tools/tool/?id=saml-metadata-builder-idp"
+      "href": "tools/tool/?id=saml-metadata-builder-idp",
+      "iconBadge": ""
     },
     {
       "id": "saml-metadata-builder-sp",
       "category": "web",
       "name": "SAML SP元数据生成器",
       "description": "构建用于SAML集成的服务提供商元数据。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml metadata sp xml saml-metadata-builder-sp SAML SP元数据生成器",
       "variants": [
@@ -13333,14 +14043,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-metadata-builder-sp"
         }
       ],
-      "href": "tools/tool/?id=saml-metadata-builder-sp"
+      "href": "tools/tool/?id=saml-metadata-builder-sp",
+      "iconBadge": ""
     },
     {
       "id": "saml-metadata-parser",
       "category": "web",
       "name": "SAML元数据解析器",
       "description": "解析SAML实体元数据并列出端点、证书、绑定和实体ID。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml metadata xml sso saml-metadata-parser SAML元数据解析器",
       "variants": [
@@ -13351,14 +14062,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-metadata-parser"
         }
       ],
-      "href": "tools/tool/?id=saml-metadata-parser"
+      "href": "tools/tool/?id=saml-metadata-parser",
+      "iconBadge": ""
     },
     {
       "id": "saml-post-form-generator",
       "category": "web",
       "name": "SAML POST 表单生成器",
       "description": "生成用于SAML HTTP-POST绑定的本地HTML表单。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml post binding autosubmit form html sso saml-post-form-generator SAML POST 表单生成器",
       "variants": [
@@ -13369,14 +14081,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-post-form-generator"
         }
       ],
-      "href": "tools/tool/?id=saml-post-form-generator"
+      "href": "tools/tool/?id=saml-post-form-generator",
+      "iconBadge": ""
     },
     {
       "id": "saml-redirect-binding-builder",
       "category": "web",
       "name": "SAML重定向绑定生成器",
       "description": "构建SAML HTTP重定向绑定使用的URL参数。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "saml redirect relaystate samlrequest binding sso saml-redirect-binding-builder SAML重定向绑定生成器",
       "variants": [
@@ -13387,14 +14100,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-redirect-binding-builder"
         }
       ],
-      "href": "tools/tool/?id=saml-redirect-binding-builder"
+      "href": "tools/tool/?id=saml-redirect-binding-builder",
+      "iconBadge": ""
     },
     {
       "id": "saml-request-decoder",
       "category": "web",
       "name": "SAML请求解码器",
       "description": "从URL、查询字符串或表单输入解码SAMLRequest并检查XML。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "samlrequest redirect binding base64 deflate saml sso decode xml saml-request-decoder SAML请求解码器",
       "variants": [
@@ -13405,14 +14119,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-request-decoder"
         }
       ],
-      "href": "tools/tool/?id=saml-request-decoder"
+      "href": "tools/tool/?id=saml-request-decoder",
+      "iconBadge": ""
     },
     {
       "id": "saml-response-decoder",
       "category": "web",
       "name": "SAML响应解码器",
       "description": "解码SAMLResponse有效负载并提取断言、发布者、受众和主题细节。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "samlresponse assertion base64 xml saml sso response saml-response-decoder SAML响应解码器",
       "variants": [
@@ -13423,14 +14138,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-response-decoder"
         }
       ],
-      "href": "tools/tool/?id=saml-response-decoder"
+      "href": "tools/tool/?id=saml-response-decoder",
+      "iconBadge": ""
     },
     {
       "id": "saml-signature-reference-inspector",
       "category": "web",
       "name": "SAML签名参考检查器",
       "description": "检查XML签名方法、引用、转换、摘要和嵌入证书。",
-      "icon": "convert",
+      "icon": "signature",
       "tags": [],
       "keywords": "saml signature xml security saml-signature-reference-inspector SAML签名参考检查器",
       "variants": [
@@ -13441,14 +14157,15 @@ const ToolboxCatalog = {
           "sourceId": "saml-signature-reference-inspector"
         }
       ],
-      "href": "tools/tool/?id=saml-signature-reference-inspector"
+      "href": "tools/tool/?id=saml-signature-reference-inspector",
+      "iconBadge": ""
     },
     {
       "id": "savings-goal-calculator",
       "category": "math",
       "name": "储蓄目标计算器",
       "description": "找出在某个日期之前达到储蓄目标所需的每月存款。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "savings goal monthly deposit annuity future value interest target amount contribution schedule finance savings-goal-calculator 储蓄目标计算器",
       "variants": [
@@ -13459,14 +14176,15 @@ const ToolboxCatalog = {
           "sourceId": "savings-goal-calculator"
         }
       ],
-      "href": "tools/tool/?id=savings-goal-calculator"
+      "href": "tools/tool/?id=savings-goal-calculator",
+      "iconBadge": ""
     },
     {
       "id": "scientific-notation-arithmetic",
       "category": "math",
       "name": "科学记数法算术",
       "description": "以科学计数法书写的数字的加法、乘法和除法。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "scientific notation arithmetic mantissa exponent engineering multiply divide add powers of ten math scientific-notation-arithmetic 科学记数法算术",
       "variants": [
@@ -13477,14 +14195,15 @@ const ToolboxCatalog = {
           "sourceId": "scientific-notation-arithmetic"
         }
       ],
-      "href": "tools/tool/?id=scientific-notation-arithmetic"
+      "href": "tools/tool/?id=scientific-notation-arithmetic",
+      "iconBadge": ""
     },
     {
       "id": "scientific-notation-converter",
       "category": "math",
       "name": "科学计数法转换器",
       "description": "在普通十进制、科学电子记数法和工程记数法之间转换数字。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "scientific notation exponential engineering decimal convert math numbers scientific-notation-converter 科学计数法转换器",
       "variants": [
@@ -13495,14 +14214,15 @@ const ToolboxCatalog = {
           "sourceId": "scientific-notation-converter"
         }
       ],
-      "href": "tools/tool/?id=scientific-notation-converter"
+      "href": "tools/tool/?id=scientific-notation-converter",
+      "iconBadge": ""
     },
     {
       "id": "scim-filter-tester",
       "category": "web",
       "name": "SCIM 过滤器测试仪",
       "description": "针对粘贴的示例用户测试基本 SCIM 过滤器表达式。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "scim filter identity json scim-filter-tester SCIM 过滤器测试仪",
       "variants": [
@@ -13513,14 +14233,15 @@ const ToolboxCatalog = {
           "sourceId": "scim-filter-tester"
         }
       ],
-      "href": "tools/tool/?id=scim-filter-tester"
+      "href": "tools/tool/?id=scim-filter-tester",
+      "iconBadge": ""
     },
     {
       "id": "scim-user-payload-builder",
       "category": "web",
       "name": "SCIM 用户有效负载构建器",
       "description": "构建用于配置测试的 SCIM 2.0 用户 JSON 有效负载。",
-      "icon": "convert",
+      "icon": "workflow",
       "tags": [],
       "keywords": "scim identity json provisioning scim-user-payload-builder SCIM 用户有效负载构建器",
       "variants": [
@@ -13531,14 +14252,15 @@ const ToolboxCatalog = {
           "sourceId": "scim-user-payload-builder"
         }
       ],
-      "href": "tools/tool/?id=scim-user-payload-builder"
+      "href": "tools/tool/?id=scim-user-payload-builder",
+      "iconBadge": ""
     },
     {
       "id": "scrypt-style-kdf-params",
       "category": "encoding",
       "name": "KDF参数规划器",
       "description": "计算PBKDF2/scrypt/Argon2参数集的内存、时间和输出大小而不运行它们。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "key derivation memory cost owasp n r p parameters tuning kdf scrypt argon2 pbkdf2 planner scrypt-style-kdf-params KDF参数规划器",
       "variants": [
@@ -13549,14 +14271,15 @@ const ToolboxCatalog = {
           "sourceId": "scrypt-style-kdf-params"
         }
       ],
-      "href": "tools/tool/?id=scrypt-style-kdf-params"
+      "href": "tools/tool/?id=scrypt-style-kdf-params",
+      "iconBadge": ""
     },
     {
       "id": "security-headers-auditor",
       "category": "web",
       "name": "安全标头审核器",
       "description": "审核粘贴的 CSP、HSTS、框架、MIME、引荐来源网址和权限策略的 HTTP 响应标头。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "security headers http csp audit security-headers-auditor 安全标头审核器",
       "variants": [
@@ -13567,14 +14290,15 @@ const ToolboxCatalog = {
           "sourceId": "security-headers-auditor"
         }
       ],
-      "href": "tools/tool/?id=security-headers-auditor"
+      "href": "tools/tool/?id=security-headers-auditor",
+      "iconBadge": ""
     },
     {
       "id": "sentence-case-converter",
       "category": "text",
       "name": "句子大小写转换器",
       "description": "小写文本然后将每个句子的第一个字母大写，保留常见的首字母缩略词和代词 I。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "sentence case capitalize sentences first letter lowercase acronym pronoun i text format sentence-case-converter 句子大小写转换器",
       "variants": [
@@ -13585,14 +14309,15 @@ const ToolboxCatalog = {
           "sourceId": "sentence-case-converter"
         }
       ],
-      "href": "tools/tool/?id=sentence-case-converter"
+      "href": "tools/tool/?id=sentence-case-converter",
+      "iconBadge": ""
     },
     {
       "id": "sentence-splitter",
       "category": "text",
       "name": "句子分割器",
       "description": "使用标点符号和缩写规则将段落分成每行一个句子。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "sentence split segment tokenize one per line paragraph punctuation text sentences nlp sentence-splitter 句子分割器",
       "variants": [
@@ -13603,14 +14328,15 @@ const ToolboxCatalog = {
           "sourceId": "sentence-splitter"
         }
       ],
-      "href": "tools/tool/?id=sentence-splitter"
+      "href": "tools/tool/?id=sentence-splitter",
+      "iconBadge": ""
     },
     {
       "id": "sepia-tone-css",
       "category": "color",
       "name": "棕褐色调颜色计算器",
       "description": "将标准棕褐色矩阵应用于颜色并获得等效的CSS过滤器。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "sepia fecolormatrix css filter tone photo brown antique color-matrix vintage sepia-tone-css 棕褐色调颜色计算器",
       "variants": [
@@ -13621,14 +14347,15 @@ const ToolboxCatalog = {
           "sourceId": "sepia-tone-css"
         }
       ],
-      "href": "tools/tool/?id=sepia-tone-css"
+      "href": "tools/tool/?id=sepia-tone-css",
+      "iconBadge": "CSS"
     },
     {
       "id": "server-sent-events-event-parser",
       "category": "web",
       "name": "服务器发送的事件解析器",
       "description": "将SSE流解析为事件、ID、重试提示、注释和数据有效负载。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "sse events http parser server-sent-events-event-parser 服务器发送的事件解析器",
       "variants": [
@@ -13639,14 +14366,15 @@ const ToolboxCatalog = {
           "sourceId": "server-sent-events-event-parser"
         }
       ],
-      "href": "tools/tool/?id=server-sent-events-event-parser"
+      "href": "tools/tool/?id=server-sent-events-event-parser",
+      "iconBadge": ""
     },
     {
       "id": "sha-multi-hash-text",
       "category": "encoding",
       "name": "SHA 多重哈希（文本）",
       "description": "同时计算粘贴文本的SHA-1、SHA-256、SHA-384和SHA-512摘要。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "sha1 sha384 sha512 base64 hex fingerprint sha hash digest checksum sha256 sha-multi-hash-text SHA 多重哈希（文本）",
       "variants": [
@@ -13657,14 +14385,15 @@ const ToolboxCatalog = {
           "sourceId": "sha-multi-hash-text"
         }
       ],
-      "href": "tools/tool/?id=sha-multi-hash-text"
+      "href": "tools/tool/?id=sha-multi-hash-text",
+      "iconBadge": "SHA"
     },
     {
       "id": "shamir-secret-sharing",
       "category": "encoding",
       "name": "沙米尔秘密分享",
       "description": "使用有限域多项式插值将秘密分割成需要K重建的N份。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "sss gf256 lagrange reconstruct shares key splitting shamir secret sharing threshold split shamir-secret-sharing 沙米尔秘密分享",
       "variants": [
@@ -13675,14 +14404,15 @@ const ToolboxCatalog = {
           "sourceId": "shamir-secret-sharing"
         }
       ],
-      "href": "tools/tool/?id=shamir-secret-sharing"
+      "href": "tools/tool/?id=shamir-secret-sharing",
+      "iconBadge": ""
     },
     {
       "id": "shoe-size-converter",
       "category": "convert",
       "name": "鞋码转换器",
       "description": "转换美国、英国、欧盟的鞋码和厘米脚长系统。",
-      "icon": "convert",
+      "icon": "footprints",
       "tags": [],
       "keywords": "shoe size us uk eu foot length cm mondopoint brannock mens womens conversion footwear reference shoe-size-converter 鞋码转换器",
       "variants": [
@@ -13693,14 +14423,15 @@ const ToolboxCatalog = {
           "sourceId": "shoe-size-converter"
         }
       ],
-      "href": "tools/tool/?id=shoe-size-converter"
+      "href": "tools/tool/?id=shoe-size-converter",
+      "iconBadge": ""
     },
     {
       "id": "shuffle-lines",
       "category": "text",
       "name": "随机播放线",
       "description": "随机打乱行的顺序，可以选择选择随机子集或单个随机行。",
-      "icon": "convert",
+      "icon": "dices",
       "tags": [],
       "keywords": "shuffle randomize random order lines scramble shuffle-lines 随机播放线",
       "variants": [
@@ -13711,14 +14442,15 @@ const ToolboxCatalog = {
           "sourceId": "shuffle-lines"
         }
       ],
-      "href": "tools/tool/?id=shuffle-lines"
+      "href": "tools/tool/?id=shuffle-lines",
+      "iconBadge": ""
     },
     {
       "id": "significant-figures-rounder",
       "category": "math",
       "name": "有效数字四舍五入",
       "description": "将数字四舍五入到选定数量的有效数字并计算其有效数字。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "sig figs fig round precision scientific notation banker rounding significant-figures sigfigs science significant-figures-rounder 有效数字四舍五入",
       "variants": [
@@ -13729,14 +14461,15 @@ const ToolboxCatalog = {
           "sourceId": "significant-figures-rounder"
         }
       ],
-      "href": "tools/tool/?id=significant-figures-rounder"
+      "href": "tools/tool/?id=significant-figures-rounder",
+      "iconBadge": ""
     },
     {
       "id": "simple-interest-calculator",
       "category": "math",
       "name": "单利计算器",
       "description": "计算单利、总计或求解任何缺失的变量。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "simple interest principal rate time I=Prt finance loan simple-interest calculator simple-interest-calculator 单利计算器",
       "variants": [
@@ -13747,14 +14480,15 @@ const ToolboxCatalog = {
           "sourceId": "simple-interest-calculator"
         }
       ],
-      "href": "tools/tool/?id=simple-interest-calculator"
+      "href": "tools/tool/?id=simple-interest-calculator",
+      "iconBadge": ""
     },
     {
       "id": "slope-line-equation",
       "category": "math",
       "name": "斜率和线方程查找器",
       "description": "求通过两点的直线的斜率、截距和方程。",
-      "icon": "convert",
+      "icon": "function-square",
       "tags": [],
       "keywords": "slope line equation y=mx+b intercept point standard form gradient geometry coordinate slope-line-equation 斜率和线方程查找器",
       "variants": [
@@ -13765,32 +14499,34 @@ const ToolboxCatalog = {
           "sourceId": "slope-line-equation"
         }
       ],
-      "href": "tools/tool/?id=slope-line-equation"
+      "href": "tools/tool/?id=slope-line-equation",
+      "iconBadge": ""
     },
     {
       "id": "slugify",
       "category": "text",
-      "name": "斯拉格化",
+      "name": "网址短名称",
       "description": "将任何文本变成干净的、URL安全的slug。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
-      "keywords": "slug url safe permalink seo kebab slugify 斯拉格化",
+      "keywords": "slug url safe permalink seo kebab slugify 网址短名称",
       "variants": [
         {
-          "name": "斯拉格化",
+          "name": "网址短名称",
           "href": "../utilities/?tool=slugify&embed=1",
           "source": "openutility",
           "sourceId": "slugify"
         }
       ],
-      "href": "tools/tool/?id=slugify"
+      "href": "tools/tool/?id=slugify",
+      "iconBadge": ""
     },
     {
       "id": "smart-quotes",
       "category": "text",
       "name": "智能报价转换器",
       "description": "将直引号和撇号转换为印刷的弯引号，或者将弯引号转换回纯ASCII直引号。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "smart quotes curly typography apostrophe straighten smart-quotes 智能报价转换器",
       "variants": [
@@ -13801,14 +14537,15 @@ const ToolboxCatalog = {
           "sourceId": "smart-quotes"
         }
       ],
-      "href": "tools/tool/?id=smart-quotes"
+      "href": "tools/tool/?id=smart-quotes",
+      "iconBadge": ""
     },
     {
       "id": "smog-readability-grade",
       "category": "text",
       "name": "烟雾可读性等级",
       "description": "计算SMOG等级，即医疗保健和消费者文本的标准可读性测量。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "smog readability grade level polysyllable reading age healthcare text analysis smog-readability-grade 烟雾可读性等级",
       "variants": [
@@ -13819,14 +14556,15 @@ const ToolboxCatalog = {
           "sourceId": "smog-readability-grade"
         }
       ],
-      "href": "tools/tool/?id=smog-readability-grade"
+      "href": "tools/tool/?id=smog-readability-grade",
+      "iconBadge": ""
     },
     {
       "id": "snowflake-id-generator",
       "category": "web",
       "name": "雪花 ID 生成器",
       "description": "生成具有可配置纪元、工作者和序列位的Twitter风格的64位Snowflake ID。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "snowflake id twitter distributed 64-bit worker sequence discord bigint timestamp snowflake-id-generator 雪花 ID 生成器",
       "variants": [
@@ -13837,14 +14575,15 @@ const ToolboxCatalog = {
           "sourceId": "snowflake-id-generator"
         }
       ],
-      "href": "tools/tool/?id=snowflake-id-generator"
+      "href": "tools/tool/?id=snowflake-id-generator",
+      "iconBadge": ""
     },
     {
       "id": "soap-action-header-builder",
       "category": "web",
       "name": "SOAPAction 标头生成器",
       "description": "为 SOAP 1.1 或 1.2 请求构建 SOAPAction 和 Content-Type 标头。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "soap headers http api soap-action-header-builder SOAPAction 标头生成器",
       "variants": [
@@ -13855,14 +14594,15 @@ const ToolboxCatalog = {
           "sourceId": "soap-action-header-builder"
         }
       ],
-      "href": "tools/tool/?id=soap-action-header-builder"
+      "href": "tools/tool/?id=soap-action-header-builder",
+      "iconBadge": ""
     },
     {
       "id": "soap-envelope-builder",
       "category": "web",
       "name": "SOAP 信封生成器",
       "description": "从名称空间、操作和正文 XML 构建 SOAP 1.1 或 1.2 信封。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "soap xml request api soap-envelope-builder SOAP 信封生成器",
       "variants": [
@@ -13873,14 +14613,15 @@ const ToolboxCatalog = {
           "sourceId": "soap-envelope-builder"
         }
       ],
-      "href": "tools/tool/?id=soap-envelope-builder"
+      "href": "tools/tool/?id=soap-envelope-builder",
+      "iconBadge": ""
     },
     {
       "id": "soap-fault-parser",
       "category": "web",
       "name": "SOAP错误解析器",
       "description": "将SOAP 1.1/1.2故障解析为代码、原因、参与者/节点、角色和细节。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "soap fault xml debug soap-fault-parser SOAP错误解析器",
       "variants": [
@@ -13891,14 +14632,15 @@ const ToolboxCatalog = {
           "sourceId": "soap-fault-parser"
         }
       ],
-      "href": "tools/tool/?id=soap-fault-parser"
+      "href": "tools/tool/?id=soap-fault-parser",
+      "iconBadge": ""
     },
     {
       "id": "soap-request-debugger",
       "category": "web",
       "name": "SOAP请求调试器",
       "description": "检查SOAP HTTP标头、信封版本、操作和主体有效负载。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "soap http xml debug soap-request-debugger SOAP请求调试器",
       "variants": [
@@ -13909,14 +14651,15 @@ const ToolboxCatalog = {
           "sourceId": "soap-request-debugger"
         }
       ],
-      "href": "tools/tool/?id=soap-request-debugger"
+      "href": "tools/tool/?id=soap-request-debugger",
+      "iconBadge": ""
     },
     {
       "id": "sort-lines",
       "category": "text",
       "name": "排序和删除重复行",
       "description": "按字母顺序、数字顺序、长度顺序、反向或随机顺序对行进行排序，并进行重复数据删除。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "sort lines dedupe unique alphabetical shuffle reverse sort-lines 排序和删除重复行",
       "variants": [
@@ -13927,14 +14670,15 @@ const ToolboxCatalog = {
           "sourceId": "sort-lines"
         }
       ],
-      "href": "tools/tool/?id=sort-lines"
+      "href": "tools/tool/?id=sort-lines",
+      "iconBadge": ""
     },
     {
       "id": "speed-converter",
       "category": "convert",
       "name": "速度转换器",
       "description": "在km/h、mph、m/s、节和马赫之间转换速度。",
-      "icon": "convert",
+      "icon": "gauge",
       "tags": [],
       "keywords": "kmh mph m/s knot mach fps kilometers per hour miles speed velocity units travel converter speed-converter 速度转换器",
       "variants": [
@@ -13945,14 +14689,15 @@ const ToolboxCatalog = {
           "sourceId": "speed-converter"
         }
       ],
-      "href": "tools/tool/?id=speed-converter"
+      "href": "tools/tool/?id=speed-converter",
+      "iconBadge": ""
     },
     {
       "id": "spf-flattening-analyzer",
       "category": "web",
       "name": "SPF平展分析仪",
       "description": "在扁平化之前对SPF机制进行计数并估计DNS查找压力。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "spf dns email analysis spf-flattening-analyzer SPF平展分析仪",
       "variants": [
@@ -13963,14 +14708,15 @@ const ToolboxCatalog = {
           "sourceId": "spf-flattening-analyzer"
         }
       ],
-      "href": "tools/tool/?id=spf-flattening-analyzer"
+      "href": "tools/tool/?id=spf-flattening-analyzer",
+      "iconBadge": ""
     },
     {
       "id": "spf-record-builder",
       "category": "web",
       "name": "SPF记录生成器",
       "description": "从机制构建SPF TXT记录，包括IPv4、IPv6和全策略。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "spf dns email txt spf-record-builder SPF记录生成器",
       "variants": [
@@ -13981,14 +14727,15 @@ const ToolboxCatalog = {
           "sourceId": "spf-record-builder"
         }
       ],
-      "href": "tools/tool/?id=spf-record-builder"
+      "href": "tools/tool/?id=spf-record-builder",
+      "iconBadge": ""
     },
     {
       "id": "sphere-cone-pyramid-volume",
       "category": "math",
       "name": "球体、圆锥体和金字塔体积",
       "description": "计算球体、圆锥体和棱锥体的体积和表面积。",
-      "icon": "convert",
+      "icon": "box",
       "tags": [],
       "keywords": "volume surface area sphere cone pyramid slant height geometry surface-area sphere-cone-pyramid-volume 球体、圆锥体和金字塔体积",
       "variants": [
@@ -13999,14 +14746,15 @@ const ToolboxCatalog = {
           "sourceId": "sphere-cone-pyramid-volume"
         }
       ],
-      "href": "tools/tool/?id=sphere-cone-pyramid-volume"
+      "href": "tools/tool/?id=sphere-cone-pyramid-volume",
+      "iconBadge": ""
     },
     {
       "id": "split-complementary-scheme",
       "category": "color",
       "name": "分裂互补方案生成器",
       "description": "生成底色加上与其补色相邻的两种颜色。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "split complementary color wheel complement accent harmony hsl scheme palette split-complementary-scheme 分裂互补方案生成器",
       "variants": [
@@ -14017,14 +14765,15 @@ const ToolboxCatalog = {
           "sourceId": "split-complementary-scheme"
         }
       ],
-      "href": "tools/tool/?id=split-complementary-scheme"
+      "href": "tools/tool/?id=split-complementary-scheme",
+      "iconBadge": ""
     },
     {
       "id": "pdf-split",
       "category": "pdf",
       "name": "PDF 拆分",
       "description": "从PDF中提取或删除页面的选择(例如1、3、5-8)。",
-      "icon": "convert",
+      "icon": "scissors",
       "tags": [],
       "keywords": "split pdf extract pages delete remove split-pdf 分割/提取PDF页面 分割PDF 拆分 PDF",
       "variants": [
@@ -14047,14 +14796,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/split"
         }
       ],
-      "href": "tools/tool/?id=pdf-split"
+      "href": "tools/tool/?id=pdf-split",
+      "iconBadge": "PDF"
     },
     {
       "id": "split-text-chunks",
       "category": "text",
       "name": "将文本分割成块",
       "description": "通过字符数、字数或行数将文本分成固定大小的片段，并带有可选的编号标签。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "split chunk segment sms tweet character limit word count paginate text split-text-chunks 将文本分割成块",
       "variants": [
@@ -14065,14 +14815,15 @@ const ToolboxCatalog = {
           "sourceId": "split-text-chunks"
         }
       ],
-      "href": "tools/tool/?id=split-text-chunks"
+      "href": "tools/tool/?id=split-text-chunks",
+      "iconBadge": ""
     },
     {
       "id": "sql-create-table-from-csv",
       "category": "data",
       "name": "SQL 从 CSV 创建表",
       "description": "从CSV标题和示例行生成CREATE TABLE语句（具有推断的列类型）。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "create table csv to sql infer types ddl postgres mysql sqlite schema create-table sql-create-table-from-csv SQL 从 CSV 创建表",
       "variants": [
@@ -14083,14 +14834,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-create-table-from-csv"
         }
       ],
-      "href": "tools/tool/?id=sql-create-table-from-csv"
+      "href": "tools/tool/?id=sql-create-table-from-csv",
+      "iconBadge": "SQL"
     },
     {
       "id": "sql-create-table-from-json",
       "category": "data",
       "name": "SQL 从 JSON 创建表",
       "description": "通过从对象的JSON数组推断列和类型来生成CREATE TABLE语句。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "create table json to sql infer schema ddl postgres mysql sqlite create-table sql-create-table-from-json SQL 从 JSON 创建表",
       "variants": [
@@ -14101,14 +14853,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-create-table-from-json"
         }
       ],
-      "href": "tools/tool/?id=sql-create-table-from-json"
+      "href": "tools/tool/?id=sql-create-table-from-json",
+      "iconBadge": "SQL"
     },
     {
       "id": "sql-formatter",
       "category": "data",
       "name": "SQL 格式化程序",
       "description": "使用关键字大小写格式化和缩进SQL查询。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "sql formatter format beautify pretty indent query prettify sql-formatter SQL 格式化程序",
       "variants": [
@@ -14119,14 +14872,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-formatter"
         }
       ],
-      "href": "tools/tool/?id=sql-formatter"
+      "href": "tools/tool/?id=sql-formatter",
+      "iconBadge": "SQL"
     },
     {
       "id": "sql-insert-from-json",
       "category": "data",
       "name": "从 JSON 进行 SQL 插入",
       "description": "使用类型感知值引用从对象的JSON数组生成INSERT语句。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "insert into json to sql bulk multi-row postgres mysql sqlite dml convert sql-insert-from-json 从 JSON 进行 SQL 插入",
       "variants": [
@@ -14137,14 +14891,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-insert-from-json"
         }
       ],
-      "href": "tools/tool/?id=sql-insert-from-json"
+      "href": "tools/tool/?id=sql-insert-from-json",
+      "iconBadge": "SQL"
     },
     {
       "id": "sql-select-builder",
       "category": "data",
       "name": "SQL选择生成器",
       "description": "可视化地构建具有列、WHERE条件、ORDER BY和LIMIT的SELECT查询，然后复制SQL。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "select query sql builder where order by limit postgres mysql sql-select-builder SQL选择生成器",
       "variants": [
@@ -14155,14 +14910,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-select-builder"
         }
       ],
-      "href": "tools/tool/?id=sql-select-builder"
+      "href": "tools/tool/?id=sql-select-builder",
+      "iconBadge": "SQL"
     },
     {
       "id": "sql-update-builder",
       "category": "data",
       "name": "SQL更新生成器",
       "description": "根据column=value 对和WHERE 条件构建安全的参数化UPDATE 语句。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "update set sql builder where parameterized placeholders postgres mysql query sql-update-builder SQL更新生成器",
       "variants": [
@@ -14173,14 +14929,15 @@ const ToolboxCatalog = {
           "sourceId": "sql-update-builder"
         }
       ],
-      "href": "tools/tool/?id=sql-update-builder"
+      "href": "tools/tool/?id=sql-update-builder",
+      "iconBadge": "SQL"
     },
     {
       "id": "ssn-format-test-generator",
       "category": "web",
       "name": "SSN格式测试号码生成器",
       "description": "生成格式有效但不可签发的美国SSN测试号码(例如900-xx-xxxx、666区域)用于QA。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "fake ssn test social security number never issued qa data itin placeholder test-data us ssn-format-test-generator SSN格式测试号码生成器",
       "variants": [
@@ -14191,14 +14948,15 @@ const ToolboxCatalog = {
           "sourceId": "ssn-format-test-generator"
         }
       ],
-      "href": "tools/tool/?id=ssn-format-test-generator"
+      "href": "tools/tool/?id=ssn-format-test-generator",
+      "iconBadge": ""
     },
     {
       "id": "standard-deviation-variance",
       "category": "math",
       "name": "标准偏差和方差",
       "description": "按步骤计算总体和样本标准差和方差。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "standard deviation variance population sample mean coefficient of variation sigma statistics standard-deviation data analysis standard-deviation-variance 标准偏差和方差",
       "variants": [
@@ -14209,14 +14967,15 @@ const ToolboxCatalog = {
           "sourceId": "standard-deviation-variance"
         }
       ],
-      "href": "tools/tool/?id=standard-deviation-variance"
+      "href": "tools/tool/?id=standard-deviation-variance",
+      "iconBadge": ""
     },
     {
       "id": "start-case-converter",
       "category": "text",
       "name": "启动大小写转换器",
       "description": "将每个单词的第一个字母大写，同时保持其余部分不变，并使用可选的分隔符标准化。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "start case capitalize capitalise first letter word uppercase text convert start-case-converter 启动大小写转换器",
       "variants": [
@@ -14227,14 +14986,15 @@ const ToolboxCatalog = {
           "sourceId": "start-case-converter"
         }
       ],
-      "href": "tools/tool/?id=start-case-converter"
+      "href": "tools/tool/?id=start-case-converter",
+      "iconBadge": ""
     },
     {
       "id": "statistics",
       "category": "math",
       "name": "统计计算器",
       "description": "计算数据集的平均值、中值、极差、方差和标准差。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "statistics mean average median standard deviation variance stddev 统计计算器",
       "variants": [
@@ -14245,14 +15005,15 @@ const ToolboxCatalog = {
           "sourceId": "statistics"
         }
       ],
-      "href": "tools/tool/?id=statistics"
+      "href": "tools/tool/?id=statistics",
+      "iconBadge": ""
     },
     {
       "id": "strftime-playground",
       "category": "time",
       "name": "strftime格式游乐场",
       "description": "将C/Python strftime格式字符串应用于选定的日期时间并实时查看渲染的输出。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "strftime date format python datetime directives percent y time playground strftime-playground strftime格式游乐场",
       "variants": [
@@ -14263,14 +15024,15 @@ const ToolboxCatalog = {
           "sourceId": "strftime-playground"
         }
       ],
-      "href": "tools/tool/?id=strftime-playground"
+      "href": "tools/tool/?id=strftime-playground",
+      "iconBadge": ""
     },
     {
       "id": "subresource-integrity-generator",
       "category": "encoding",
       "name": "子资源完整性生成器",
       "description": "为粘贴的资产文本生成SHA-256/384/512 SRI散列。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "sri hash security html subresource-integrity-generator 子资源完整性生成器",
       "variants": [
@@ -14281,14 +15043,15 @@ const ToolboxCatalog = {
           "sourceId": "subresource-integrity-generator"
         }
       ],
-      "href": "tools/tool/?id=subresource-integrity-generator"
+      "href": "tools/tool/?id=subresource-integrity-generator",
+      "iconBadge": ""
     },
     {
       "id": "superscript-subscript",
       "category": "text",
       "name": "上标和下标文本",
       "description": "将文本转换为Unicode上标或下标字符以用于内联化学/数学符号。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "superscript subscript unicode chemistry math exponent H2O x squared text superscript-subscript 上标和下标文本",
       "variants": [
@@ -14299,14 +15062,15 @@ const ToolboxCatalog = {
           "sourceId": "superscript-subscript"
         }
       ],
-      "href": "tools/tool/?id=superscript-subscript"
+      "href": "tools/tool/?id=superscript-subscript",
+      "iconBadge": ""
     },
     {
       "id": "svg-path-rounder",
       "category": "convert",
       "name": "SVG路径坐标舍入器",
       "description": "对SVG路径“d”字符串中的数字坐标进行舍入和整理以降低精度和文件大小。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "svg path d attribute precision coordinates file size bezier arc optimize minify round svg-path-rounder SVG路径坐标舍入器",
       "variants": [
@@ -14317,14 +15081,15 @@ const ToolboxCatalog = {
           "sourceId": "svg-path-rounder"
         }
       ],
-      "href": "tools/tool/?id=svg-path-rounder"
+      "href": "tools/tool/?id=svg-path-rounder",
+      "iconBadge": "SVG"
     },
     {
       "id": "svg-to-data-uri",
       "category": "image",
       "name": "SVG到数据URI",
       "description": "将原始SVG标记转换成用于CSS/HTML的优化数据-URI。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "svg to data uri inline css background url encode svg-to-data-uri SVG到数据URI",
       "variants": [
@@ -14335,14 +15100,15 @@ const ToolboxCatalog = {
           "sourceId": "svg-to-data-uri"
         }
       ],
-      "href": "tools/tool/?id=svg-to-data-uri"
+      "href": "tools/tool/?id=svg-to-data-uri",
+      "iconBadge": ""
     },
     {
       "id": "tailwind-colors",
       "category": "color",
       "name": "Tailwind 颜色查找器",
       "description": "查找任何 HEX/RGB 颜色最接近的 Tailwind CSS 颜色名称和阴影，并查找任何 Tailwind 颜色标记的确切 HEX。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tailwind nearest color shade closest hex tailwind-colors Tailwind 颜色查找器",
       "variants": [
@@ -14353,14 +15119,15 @@ const ToolboxCatalog = {
           "sourceId": "tailwind-colors"
         }
       ],
-      "href": "tools/tool/?id=tailwind-colors"
+      "href": "tools/tool/?id=tailwind-colors",
+      "iconBadge": ""
     },
     {
       "id": "temperature-converter",
       "category": "convert",
       "name": "温度转换器",
       "description": "利用实时结果和可调整的舍入精度来转换摄氏温度、华氏温度、开尔文温度和兰金温度。",
-      "icon": "convert",
+      "icon": "thermometer",
       "tags": [],
       "keywords": "temperature celsius fahrenheit kelvin convert units temperature-converter 温度转换器",
       "variants": [
@@ -14371,14 +15138,15 @@ const ToolboxCatalog = {
           "sourceId": "temperature-converter"
         }
       ],
-      "href": "tools/tool/?id=temperature-converter"
+      "href": "tools/tool/?id=temperature-converter",
+      "iconBadge": ""
     },
     {
       "id": "tetradic-color-scheme",
       "category": "color",
       "name": "四元配色方案生成器",
       "description": "从基色生成四色矩形/正方形配色方案。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "tetradic square rectangle four color palette wheel hsl scheme harmony tetradic-color-scheme 四元配色方案生成器",
       "variants": [
@@ -14389,14 +15157,15 @@ const ToolboxCatalog = {
           "sourceId": "tetradic-color-scheme"
         }
       ],
-      "href": "tools/tool/?id=tetradic-color-scheme"
+      "href": "tools/tool/?id=tetradic-color-scheme",
+      "iconBadge": ""
     },
     {
       "id": "text-align-pad",
       "category": "text",
       "name": "文本对齐和填充",
       "description": "使用选定的填充字符将每行填充或对齐到固定宽度、左、右或居中，以获得整齐的固定宽度列。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "align pad center right fixed width format text-align-pad 文本对齐和填充",
       "variants": [
@@ -14407,14 +15176,15 @@ const ToolboxCatalog = {
           "sourceId": "text-align-pad"
         }
       ],
-      "href": "tools/tool/?id=text-align-pad"
+      "href": "tools/tool/?id=text-align-pad",
+      "iconBadge": ""
     },
     {
       "id": "text-anonymizer",
       "category": "text",
       "name": "PII 占位符匿名器",
       "description": "用占位符令牌替换电子邮件、电话号码和其他PII模式。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "anonymize redact pii mask email phone ip address credit card privacy text text-anonymizer PII 占位符匿名器",
       "variants": [
@@ -14425,32 +15195,34 @@ const ToolboxCatalog = {
           "sourceId": "text-anonymizer"
         }
       ],
-      "href": "tools/tool/?id=text-anonymizer"
+      "href": "tools/tool/?id=text-anonymizer",
+      "iconBadge": ""
     },
     {
       "id": "text-box-drawing",
       "category": "text",
-      "name": "ASCII 框和横幅抽屉",
+      "name": "ASCII 边框与横幅",
       "description": "将文本包裹在 ASCII 或 Unicode 方框图边框中，以创建框架横幅和标注框。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
-      "keywords": "ascii box drawing banner frame border callout comment unicode text text-box-drawing ASCII 框和横幅抽屉",
+      "keywords": "ascii box drawing banner frame border callout comment unicode text text-box-drawing ASCII 边框与横幅",
       "variants": [
         {
-          "name": "ASCII 框和横幅抽屉",
+          "name": "ASCII 边框与横幅",
           "href": "../utilities/?tool=text-box-drawing&embed=1",
           "source": "openutility",
           "sourceId": "text-box-drawing"
         }
       ],
-      "href": "tools/tool/?id=text-box-drawing"
+      "href": "tools/tool/?id=text-box-drawing",
+      "iconBadge": ""
     },
     {
       "id": "text-case-statistics-report",
       "category": "text",
       "name": "文本案例统计报告",
       "description": "对大写字母、小写字母、数字、标点符号和空白字符进行计数并报告它们的百分比。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "character count uppercase lowercase digit punctuation whitespace text statistics letter frequency classes characters analyze report text-case-statistics-report 文本案例统计报告",
       "variants": [
@@ -14461,14 +15233,15 @@ const ToolboxCatalog = {
           "sourceId": "text-case-statistics-report"
         }
       ],
-      "href": "tools/tool/?id=text-case-statistics-report"
+      "href": "tools/tool/?id=text-case-statistics-report",
+      "iconBadge": ""
     },
     {
       "id": "text-find-longest-shortest-line",
       "category": "text",
       "name": "最长和最短线查找器",
       "description": "查找文本块中最长和最短的行及其长度和行号。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "longest line shortest length number average median measure lines analyze statistics text-find-longest-shortest-line 最长和最短线查找器",
       "variants": [
@@ -14479,14 +15252,15 @@ const ToolboxCatalog = {
           "sourceId": "text-find-longest-shortest-line"
         }
       ],
-      "href": "tools/tool/?id=text-find-longest-shortest-line"
+      "href": "tools/tool/?id=text-find-longest-shortest-line",
+      "iconBadge": ""
     },
     {
       "id": "text-frequency-filter",
       "category": "text",
       "name": "按规则过滤行",
       "description": "保留或删除与子字符串、正则表达式、长度或数字/空白条件（类似grep）匹配的行。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "filter lines grep keep delete regex match line length remove blank duplicate condition text-frequency-filter 按规则过滤行",
       "variants": [
@@ -14497,14 +15271,15 @@ const ToolboxCatalog = {
           "sourceId": "text-frequency-filter"
         }
       ],
-      "href": "tools/tool/?id=text-frequency-filter"
+      "href": "tools/tool/?id=text-frequency-filter",
+      "iconBadge": ""
     },
     {
       "id": "text-readability-summary",
       "category": "text",
       "name": "组合可读性报告",
       "description": "立即运行所有主要可读性公式并显示一致的等级水平。",
-      "icon": "convert",
+      "icon": "book-open-check",
       "tags": [],
       "keywords": "readability flesch kincaid gunning fog smog coleman liau ari grade level reading ease analysis report text-readability-summary 组合可读性报告",
       "variants": [
@@ -14515,14 +15290,15 @@ const ToolboxCatalog = {
           "sourceId": "text-readability-summary"
         }
       ],
-      "href": "tools/tool/?id=text-readability-summary"
+      "href": "tools/tool/?id=text-readability-summary",
+      "iconBadge": ""
     },
     {
       "id": "text-redundancy-finder",
       "category": "text",
       "name": "重复短语查找器",
       "description": "查找文本中多次重复的短语以捕获冗长和填充词。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "repeated phrases redundancy filler duplicate n-gram editing cliche repetition analysis wordiness text-redundancy-finder 重复短语查找器",
       "variants": [
@@ -14533,14 +15309,15 @@ const ToolboxCatalog = {
           "sourceId": "text-redundancy-finder"
         }
       ],
-      "href": "tools/tool/?id=text-redundancy-finder"
+      "href": "tools/tool/?id=text-redundancy-finder",
+      "iconBadge": ""
     },
     {
       "id": "text-roman-to-fancy-numbering",
       "category": "text",
       "name": "列表编号样式转换器",
       "description": "使用十进制、罗马数字或字母序列（a、b、c/A、B、C）对列表重新编号。",
-      "icon": "convert",
+      "icon": "whole-word",
       "tags": [],
       "keywords": "renumber list roman numerals lettered ordered markers decimal numbering a b c letters text-roman-to-fancy-numbering 列表编号样式转换器",
       "variants": [
@@ -14551,14 +15328,15 @@ const ToolboxCatalog = {
           "sourceId": "text-roman-to-fancy-numbering"
         }
       ],
-      "href": "tools/tool/?id=text-roman-to-fancy-numbering"
+      "href": "tools/tool/?id=text-roman-to-fancy-numbering",
+      "iconBadge": ""
     },
     {
       "id": "text-snake-to-title-humanizer",
       "category": "text",
       "name": "标识符人性化器",
       "description": "将snake_case、kebab-case或camelCase标识符转变为人类可读的标题大小写标签。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "humanize identifier snake case to title camelCase words kebab variable name label split title-case snake-case camel-case text-snake-to-title-humanizer 标识符人性化器",
       "variants": [
@@ -14569,14 +15347,15 @@ const ToolboxCatalog = {
           "sourceId": "text-snake-to-title-humanizer"
         }
       ],
-      "href": "tools/tool/?id=text-snake-to-title-humanizer"
+      "href": "tools/tool/?id=text-snake-to-title-humanizer",
+      "iconBadge": ""
     },
     {
       "id": "text-statistics",
       "category": "text",
       "name": "文本统计和频率",
       "description": "分析文本的词频、字符分布和可读性。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "word frequency text analysis character count readability most common words statistics text-statistics 文本统计和频率",
       "variants": [
@@ -14587,14 +15366,15 @@ const ToolboxCatalog = {
           "sourceId": "text-statistics"
         }
       ],
-      "href": "tools/tool/?id=text-statistics"
+      "href": "tools/tool/?id=text-statistics",
+      "iconBadge": ""
     },
     {
       "id": "text-template-placeholder-filler",
       "category": "text",
       "name": "模板占位符填充符",
       "description": "Fills {{name}}-style placeholders in a template using key=value pairs or a JSON object.",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "fill template placeholder replace mustache mail merge string interpolation key value substitution variable variables text-template-placeholder-filler 模板占位符填充符",
       "variants": [
@@ -14605,14 +15385,15 @@ const ToolboxCatalog = {
           "sourceId": "text-template-placeholder-filler"
         }
       ],
-      "href": "tools/tool/?id=text-template-placeholder-filler"
+      "href": "tools/tool/?id=text-template-placeholder-filler",
+      "iconBadge": ""
     },
     {
       "id": "text-text-bracket-matcher",
       "category": "text",
       "name": "括号和报价余额检查器",
       "description": "验证方括号、圆括号、大括号和引号在文本中是平衡的。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "balanced brackets matching parentheses brace balance quote syntax check unbalanced mismatched bracket validate quotes text-text-bracket-matcher 括号和报价余额检查器",
       "variants": [
@@ -14623,14 +15404,15 @@ const ToolboxCatalog = {
           "sourceId": "text-text-bracket-matcher"
         }
       ],
-      "href": "tools/tool/?id=text-text-bracket-matcher"
+      "href": "tools/tool/?id=text-text-bracket-matcher",
+      "iconBadge": ""
     },
     {
       "id": "text-text-column-sort",
       "category": "text",
       "name": "多键列排序",
       "description": "利用每键类型和方向按一列或多列对分隔行进行排序。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "sort csv multi column by stable tsv order rows number date columns multi-key table text-text-column-sort 多键列排序",
       "variants": [
@@ -14641,14 +15423,15 @@ const ToolboxCatalog = {
           "sourceId": "text-text-column-sort"
         }
       ],
-      "href": "tools/tool/?id=text-text-column-sort"
+      "href": "tools/tool/?id=text-text-column-sort",
+      "iconBadge": ""
     },
     {
       "id": "text-text-sort-by-length",
       "category": "text",
       "name": "按长度对行进行排序",
       "description": "按照字符长度升序或降序对行重新排序，并进行平局决胜。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "sort by length longest lines shortest reorder arrange order text text-text-sort-by-length 按长度对行进行排序",
       "variants": [
@@ -14659,14 +15442,15 @@ const ToolboxCatalog = {
           "sourceId": "text-text-sort-by-length"
         }
       ],
-      "href": "tools/tool/?id=text-text-sort-by-length"
+      "href": "tools/tool/?id=text-text-sort-by-length",
+      "iconBadge": ""
     },
     {
       "id": "text-text-to-handle-generator",
       "category": "text",
       "name": "用户名句柄生成器",
       "description": "将名称或短语转换为干净的小写用户名/句柄建议。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "username generator handle ideas nickname account name screen slug social text-text-to-handle-generator 用户名句柄生成器",
       "variants": [
@@ -14677,14 +15461,15 @@ const ToolboxCatalog = {
           "sourceId": "text-text-to-handle-generator"
         }
       ],
-      "href": "tools/tool/?id=text-text-to-handle-generator"
+      "href": "tools/tool/?id=text-text-to-handle-generator",
+      "iconBadge": ""
     },
     {
       "id": "text-text-to-slug-history",
       "category": "text",
       "name": "弹头碰撞消歧器",
       "description": "从列表中生成连续的唯一段，在碰撞时附加数字后缀。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "unique slug suffix permalink duplicate slugify list collision url cms text-text-to-slug-history 弹头碰撞消歧器",
       "variants": [
@@ -14695,14 +15480,15 @@ const ToolboxCatalog = {
           "sourceId": "text-text-to-slug-history"
         }
       ],
-      "href": "tools/tool/?id=text-text-to-slug-history"
+      "href": "tools/tool/?id=text-text-to-slug-history",
+      "iconBadge": ""
     },
     {
       "id": "text-to-columns",
       "category": "text",
       "name": "将文本换行成列",
       "description": "将单个行流回流成多个并排的报纸式列。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "multi column newspaper layout wrap side by grid text columns monospace reflow text-to-columns 将文本换行成列",
       "variants": [
@@ -14713,14 +15499,15 @@ const ToolboxCatalog = {
           "sourceId": "text-to-columns"
         }
       ],
-      "href": "tools/tool/?id=text-to-columns"
+      "href": "tools/tool/?id=text-to-columns",
+      "iconBadge": ""
     },
     {
       "id": "text-truncator",
       "category": "text",
       "name": "文本截断器",
       "description": "将文本或每行截断为字符或单词的最大长度，附加省略号或自定义后缀。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "truncate shorten ellipsis limit trim text-truncator 文本截断器",
       "variants": [
@@ -14731,14 +15518,15 @@ const ToolboxCatalog = {
           "sourceId": "text-truncator"
         }
       ],
-      "href": "tools/tool/?id=text-truncator"
+      "href": "tools/tool/?id=text-truncator",
+      "iconBadge": ""
     },
     {
       "id": "text-word-ladder-diff",
       "category": "text",
       "name": "并排词差异",
       "description": "比较两个文本并突出显示内联的单词级插入和删除。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "word diff text compare inline added removed lcs words changes text-word-ladder-diff 并排词差异",
       "variants": [
@@ -14749,14 +15537,15 @@ const ToolboxCatalog = {
           "sourceId": "text-word-ladder-diff"
         }
       ],
-      "href": "tools/tool/?id=text-word-ladder-diff"
+      "href": "tools/tool/?id=text-word-ladder-diff",
+      "iconBadge": ""
     },
     {
       "id": "text-wrap",
       "category": "text",
       "name": "文本包装器",
       "description": "将文本硬换行至固定的列宽，在字边界处断开，具有可选的悬挂缩进和断开长字处理。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "word wrap column width hard 80 columns format text-wrap 文本包装器",
       "variants": [
@@ -14767,14 +15556,15 @@ const ToolboxCatalog = {
           "sourceId": "text-wrap"
         }
       ],
-      "href": "tools/tool/?id=text-wrap"
+      "href": "tools/tool/?id=text-wrap",
+      "iconBadge": ""
     },
     {
       "id": "time-12-24-converter",
       "category": "time",
       "name": "12 / 24 小时时间转换器",
       "description": "在12小时AM/PM和24小时格式之间转换时钟时间，单个或批量。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "12 hour to 24 am pm military time clock format converter bulk convert time-12-24-converter / 小时时间转换器",
       "variants": [
@@ -14785,14 +15575,15 @@ const ToolboxCatalog = {
           "sourceId": "time-12-24-converter"
         }
       ],
-      "href": "tools/tool/?id=time-12-24-converter"
+      "href": "tools/tool/?id=time-12-24-converter",
+      "iconBadge": ""
     },
     {
       "id": "time-between-clocks",
       "category": "time",
       "name": "时钟时间差",
       "description": "计算一天中两个时间之间的持续时间，可选地结束午夜之后。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "time difference shift length hours worked overnight duration clock math elapsed time-between-clocks 时钟时间差",
       "variants": [
@@ -14803,14 +15594,15 @@ const ToolboxCatalog = {
           "sourceId": "time-between-clocks"
         }
       ],
-      "href": "tools/tool/?id=time-between-clocks"
+      "href": "tools/tool/?id=time-between-clocks",
+      "iconBadge": ""
     },
     {
       "id": "time-meeting-cost-calculator",
       "category": "time",
       "name": "会议费用计算器",
       "description": "根据与会者人数、每小时费率和持续时间来估计会议的美元成本。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "meeting cost price salary per hour of attendee time is money productivity calculator time-meeting-cost-calculator 会议费用计算器",
       "variants": [
@@ -14821,14 +15613,15 @@ const ToolboxCatalog = {
           "sourceId": "time-meeting-cost-calculator"
         }
       ],
-      "href": "tools/tool/?id=time-meeting-cost-calculator"
+      "href": "tools/tool/?id=time-meeting-cost-calculator",
+      "iconBadge": ""
     },
     {
       "id": "time-of-day-bucketer",
       "category": "time",
       "name": "一天中的时间分类器",
       "description": "将时间分为一天中的部分（早上、下午、傍晚、夜晚）和太阳/时钟部分。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "part of day morning afternoon evening night good time bucket segment clock period greeting classify time-of-day-bucketer 一天中的时间分类器",
       "variants": [
@@ -14839,14 +15632,15 @@ const ToolboxCatalog = {
           "sourceId": "time-of-day-bucketer"
         }
       ],
-      "href": "tools/tool/?id=time-of-day-bucketer"
+      "href": "tools/tool/?id=time-of-day-bucketer",
+      "iconBadge": ""
     },
     {
       "id": "time-precise-converter",
       "category": "convert",
       "name": "精确的时间单位转换器",
       "description": "将微小的天文时间跨度从纳秒转换为几个世纪。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "nanosecond microsecond jiffy shake julian year fortnight century time conversion units converter science duration time-precise-converter 精确的时间单位转换器",
       "variants": [
@@ -14857,14 +15651,15 @@ const ToolboxCatalog = {
           "sourceId": "time-precise-converter"
         }
       ],
-      "href": "tools/tool/?id=time-precise-converter"
+      "href": "tools/tool/?id=time-precise-converter",
+      "iconBadge": ""
     },
     {
       "id": "time-server-format-reference",
       "category": "time",
       "name": "日期时间格式示例参考",
       "description": "在 RFC 3339、RFC 2822、ISO 8601、HTTP-date、SQL 等中呈现的同一时刻的备忘单。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "RFC 3339 2822 ISO 8601 HTTP-date SQL datetime unix .NET ticks cookie expires formats rfc iso reference time-server-format-reference 日期时间格式示例参考",
       "variants": [
@@ -14875,14 +15670,15 @@ const ToolboxCatalog = {
           "sourceId": "time-server-format-reference"
         }
       ],
-      "href": "tools/tool/?id=time-server-format-reference"
+      "href": "tools/tool/?id=time-server-format-reference",
+      "iconBadge": ""
     },
     {
       "id": "time-time-duration-arithmetic",
       "category": "time",
       "name": "持续时间算法",
       "description": "添加和减去HH:MM:SS持续时间的列表并显示运行结果和总结果。",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "add times sum durations subtract time hms math adder total duration calculator time-time-duration-arithmetic 持续时间算法",
       "variants": [
@@ -14893,14 +15689,15 @@ const ToolboxCatalog = {
           "sourceId": "time-time-duration-arithmetic"
         }
       ],
-      "href": "tools/tool/?id=time-time-duration-arithmetic"
+      "href": "tools/tool/?id=time-time-duration-arithmetic",
+      "iconBadge": ""
     },
     {
       "id": "time-timecode-frames-converter",
       "category": "time",
       "name": "SMPTE时间码/帧转换器",
       "description": "以选定的帧速率在SMPTE时间码(HH:MM:SS:FF)和总帧计数之间进行转换。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "timecode to frames drop frame fps converter ndf df 29.97 smpte video drop-frame time-timecode-frames-converter SMPTE时间码/帧转换器",
       "variants": [
@@ -14911,14 +15708,15 @@ const ToolboxCatalog = {
           "sourceId": "time-timecode-frames-converter"
         }
       ],
-      "href": "tools/tool/?id=time-timecode-frames-converter"
+      "href": "tools/tool/?id=time-timecode-frames-converter",
+      "iconBadge": ""
     },
     {
       "id": "time-unit-converter",
       "category": "time",
       "name": "时间单位转换器",
       "description": "在纳秒、微秒、毫秒、秒、分钟、小时和天之间转换值。",
-      "icon": "convert",
+      "icon": "clock",
       "tags": [],
       "keywords": "time units milliseconds nanoseconds convert seconds time-unit-converter 时间单位转换器",
       "variants": [
@@ -14929,14 +15727,15 @@ const ToolboxCatalog = {
           "sourceId": "time-unit-converter"
         }
       ],
-      "href": "tools/tool/?id=time-unit-converter"
+      "href": "tools/tool/?id=time-unit-converter",
+      "iconBadge": ""
     },
     {
       "id": "time-zone-meeting-planner",
       "category": "time",
       "name": "固定偏移会议策划者",
       "description": "查看跨越多个固定UTC偏移的一个会议时间以找到重叠。",
-      "icon": "convert",
+      "icon": "globe",
       "tags": [],
       "keywords": "meeting planner time zone overlap utc offset world clock schedule across zones working hours timezone time-zone-meeting-planner 固定偏移会议策划者",
       "variants": [
@@ -14947,14 +15746,15 @@ const ToolboxCatalog = {
           "sourceId": "time-zone-meeting-planner"
         }
       ],
-      "href": "tools/tool/?id=time-zone-meeting-planner"
+      "href": "tools/tool/?id=time-zone-meeting-planner",
+      "iconBadge": ""
     },
     {
       "id": "timestamp-batch-converter",
       "category": "time",
       "name": "批量时间戳转换器",
       "description": "将粘贴的Unix时间戳列表批量转换为人类日期（或日期回时间戳）。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "unix timestamp epoch converter batch convert bulk log timestamps iso date milliseconds seconds timestamp-batch-converter 批量时间戳转换器",
       "variants": [
@@ -14965,14 +15765,15 @@ const ToolboxCatalog = {
           "sourceId": "timestamp-batch-converter"
         }
       ],
-      "href": "tools/tool/?id=timestamp-batch-converter"
+      "href": "tools/tool/?id=timestamp-batch-converter",
+      "iconBadge": ""
     },
     {
       "id": "timestamp-converter",
       "category": "time",
       "name": "Unix时间戳转换器",
       "description": "在Unix时间戳和人类可读日期(本地&UTC)之间转换。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "unix timestamp epoch date converter iso 8601 utc milliseconds iso8601 timestamp-converter Unix时间戳转换器",
       "variants": [
@@ -14983,14 +15784,15 @@ const ToolboxCatalog = {
           "sourceId": "timestamp-converter"
         }
       ],
-      "href": "tools/tool/?id=timestamp-converter"
+      "href": "tools/tool/?id=timestamp-converter",
+      "iconBadge": ""
     },
     {
       "id": "timezone-converter",
       "category": "time",
       "name": "时区转换器",
       "description": "使用浏览器的IANA数据库跨时区转换日期/时间。",
-      "icon": "convert",
+      "icon": "globe",
       "tags": [],
       "keywords": "timezone converter utc time zones world clock convert iana timezone-converter 时区转换器",
       "variants": [
@@ -15001,14 +15803,15 @@ const ToolboxCatalog = {
           "sourceId": "timezone-converter"
         }
       ],
-      "href": "tools/tool/?id=timezone-converter"
+      "href": "tools/tool/?id=timezone-converter",
+      "iconBadge": ""
     },
     {
       "id": "tip-split-calculator",
       "category": "math",
       "name": "小费和帐单分割器",
       "description": "在多人分摊账单时计算小费金额、总计和每人份额。",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": "tip calculator bill split gratuity restaurant share money everyday tip-split-calculator 小费和帐单分割器",
       "variants": [
@@ -15019,14 +15822,15 @@ const ToolboxCatalog = {
           "sourceId": "tip-split-calculator"
         }
       ],
-      "href": "tools/tool/?id=tip-split-calculator"
+      "href": "tools/tool/?id=tip-split-calculator",
+      "iconBadge": ""
     },
     {
       "id": "title-case",
       "category": "text",
       "name": "标题大小写转换器",
       "description": "应用遵循样式规则的适当的标题标题大小写，该规则保留诸如a、an、and、小写之类的小词，除了作为第一个或最后一个词。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "title case headline capitalize proper apa title-case 标题大小写转换器",
       "variants": [
@@ -15037,14 +15841,15 @@ const ToolboxCatalog = {
           "sourceId": "title-case"
         }
       ],
-      "href": "tools/tool/?id=title-case"
+      "href": "tools/tool/?id=title-case",
+      "iconBadge": ""
     },
     {
       "id": "tls-cipher-suite-explainer",
       "category": "encoding",
       "name": "TLS 密码套件解释器",
       "description": "解释TLS密码套件组件、密钥交换、认证、加密和散列。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "tls cipher security reference tls-cipher-suite-explainer TLS 密码套件解释器",
       "variants": [
@@ -15055,14 +15860,15 @@ const ToolboxCatalog = {
           "sourceId": "tls-cipher-suite-explainer"
         }
       ],
-      "href": "tools/tool/?id=tls-cipher-suite-explainer"
+      "href": "tools/tool/?id=tls-cipher-suite-explainer",
+      "iconBadge": ""
     },
     {
       "id": "tls-rpt-record-builder",
       "category": "web",
       "name": "TLS-RPT记录生成器",
       "description": "构建用于邮件传递诊断的SMTP TLS报告DNS记录。",
-      "icon": "convert",
+      "icon": "server",
       "tags": [],
       "keywords": "tls-rpt email dns txt tls-rpt-record-builder TLS-RPT记录生成器",
       "variants": [
@@ -15073,14 +15879,15 @@ const ToolboxCatalog = {
           "sourceId": "tls-rpt-record-builder"
         }
       ],
-      "href": "tools/tool/?id=tls-rpt-record-builder"
+      "href": "tools/tool/?id=tls-rpt-record-builder",
+      "iconBadge": ""
     },
     {
       "id": "toml-to-json",
       "category": "convert",
       "name": "TOML 到 JSON",
       "description": "将TOML配置文件转换为JSON。支持表、表数组、内联表、日期时间和类型化值，无需上传即可在本地解析。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "toml json convert config cargo pyproject toml-to-json TOML 到 JSON",
       "variants": [
@@ -15091,14 +15898,15 @@ const ToolboxCatalog = {
           "sourceId": "toml-to-json"
         }
       ],
-      "href": "tools/tool/?id=toml-to-json"
+      "href": "tools/tool/?id=toml-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "toml-to-yaml",
       "category": "convert",
       "name": "TOML 到 YAML",
       "description": "将TOML配置转换为等效的YAML。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "toml to yaml configuration tables inline table array of config convert serialize toml-to-yaml TOML 到 YAML",
       "variants": [
@@ -15109,14 +15917,15 @@ const ToolboxCatalog = {
           "sourceId": "toml-to-yaml"
         }
       ],
-      "href": "tools/tool/?id=toml-to-yaml"
+      "href": "tools/tool/?id=toml-to-yaml",
+      "iconBadge": "YAML"
     },
     {
       "id": "torque-converter",
       "category": "convert",
       "name": "变矩器",
       "description": "在牛顿米、磅英尺和千克力米之间转换扭矩。",
-      "icon": "convert",
+      "icon": "rotate-3d",
       "tags": [],
       "keywords": "newton meter pound foot lb-ft kgf-m dyne centimeter ounce inch moment of force torque units converter engineering physics torque-converter 变矩器",
       "variants": [
@@ -15127,14 +15936,15 @@ const ToolboxCatalog = {
           "sourceId": "torque-converter"
         }
       ],
-      "href": "tools/tool/?id=torque-converter"
+      "href": "tools/tool/?id=torque-converter",
+      "iconBadge": ""
     },
     {
       "id": "totp-generator",
       "category": "encoding",
       "name": "TOTP/2FA代码生成器",
       "description": "从Base32秘密生成基于时间的一次性密码(TOTP)。",
-      "icon": "convert",
+      "icon": "shield-ellipsis",
       "tags": [],
       "keywords": "totp 2fa one time password authenticator google mfa otp totp-generator TOTP/2FA代码生成器",
       "variants": [
@@ -15145,14 +15955,15 @@ const ToolboxCatalog = {
           "sourceId": "totp-generator"
         }
       ],
-      "href": "tools/tool/?id=totp-generator"
+      "href": "tools/tool/?id=totp-generator",
+      "iconBadge": ""
     },
     {
       "id": "transliterate-cyrillic",
       "category": "text",
       "name": "西里尔字母音译",
       "description": "使用可选方案(GOST、BGN/PCGN、科学、ISO 9)在西里尔语和拉丁语之间进行音译。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "cyrillic to latin romanization iso 9 gost bgn pcgn russian transliteration transliterate romanize transliterate-cyrillic 西里尔字母音译",
       "variants": [
@@ -15163,14 +15974,15 @@ const ToolboxCatalog = {
           "sourceId": "transliterate-cyrillic"
         }
       ],
-      "href": "tools/tool/?id=transliterate-cyrillic"
+      "href": "tools/tool/?id=transliterate-cyrillic",
+      "iconBadge": ""
     },
     {
       "id": "transliterate-greek",
       "category": "text",
       "name": "希腊音译",
       "description": "使用ISO 843、ELOT 743或经典罗马化方案将希腊文字转换为拉丁文字（以及反之）。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "greek to latin romanization iso 843 elot 743 classical transliteration transliterate romanize iso843 transliterate-greek 希腊音译",
       "variants": [
@@ -15181,14 +15993,15 @@ const ToolboxCatalog = {
           "sourceId": "transliterate-greek"
         }
       ],
-      "href": "tools/tool/?id=transliterate-greek"
+      "href": "tools/tool/?id=transliterate-greek",
+      "iconBadge": ""
     },
     {
       "id": "trapezoid-parallelogram-calculator",
       "category": "math",
       "name": "梯形和平行四边形计算器",
       "description": "计算梯形和平行四边形的面积和周长。",
-      "icon": "convert",
+      "icon": "calculator",
       "tags": [],
       "keywords": "trapezoid trapezium parallelogram area perimeter geometry quadrilateral trapezoid-parallelogram-calculator 梯形和平行四边形计算器",
       "variants": [
@@ -15199,14 +16012,15 @@ const ToolboxCatalog = {
           "sourceId": "trapezoid-parallelogram-calculator"
         }
       ],
-      "href": "tools/tool/?id=trapezoid-parallelogram-calculator"
+      "href": "tools/tool/?id=trapezoid-parallelogram-calculator",
+      "iconBadge": ""
     },
     {
       "id": "triadic-color-scheme",
       "category": "color",
       "name": "三元配色方案生成器",
       "description": "从一种基本色调构建平衡的三色三元调色板。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "triadic three color palette wheel hsl css variables ui colors scheme harmony triadic-color-scheme 三元配色方案生成器",
       "variants": [
@@ -15217,14 +16031,15 @@ const ToolboxCatalog = {
           "sourceId": "triadic-color-scheme"
         }
       ],
-      "href": "tools/tool/?id=triadic-color-scheme"
+      "href": "tools/tool/?id=triadic-color-scheme",
+      "iconBadge": ""
     },
     {
       "id": "triangle-solver",
       "category": "math",
       "name": "三角形解算器",
       "description": "使用正弦和余弦定律从3个已知边/角求解任何三角形。",
-      "icon": "convert",
+      "icon": "triangle",
       "tags": [],
       "keywords": "triangle solver SSS SAS ASA AAS SSA law of sines cosines trigonometry geometry law-of-sines law-of-cosines triangle-solver 三角形解算器",
       "variants": [
@@ -15235,14 +16050,15 @@ const ToolboxCatalog = {
           "sourceId": "triangle-solver"
         }
       ],
-      "href": "tools/tool/?id=triangle-solver"
+      "href": "tools/tool/?id=triangle-solver",
+      "iconBadge": ""
     },
     {
       "id": "trim-lines",
       "category": "text",
       "name": "修剪和剥离线",
       "description": "删除前导/尾随空白、仅删除尾随空白，或者从每行中去除自定义字符。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "trim lines strip whitespace trailing remove leading spaces prefix suffix collapse cleanup trim-lines 修剪和剥离线",
       "variants": [
@@ -15253,14 +16069,15 @@ const ToolboxCatalog = {
           "sourceId": "trim-lines"
         }
       ],
-      "href": "tools/tool/?id=trim-lines"
+      "href": "tools/tool/?id=trim-lines",
+      "iconBadge": ""
     },
     {
       "id": "tsv-to-json",
       "category": "convert",
       "name": "TSV 到 JSON",
       "description": "粘贴从电子表格复制的制表符分隔数据并将其转换为JSON，并具有标题行检测和数字或布尔强制选项。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "tsv json spreadsheet tab convert excel tsv-to-json TSV 到 JSON",
       "variants": [
@@ -15271,14 +16088,15 @@ const ToolboxCatalog = {
           "sourceId": "tsv-to-json"
         }
       ],
-      "href": "tools/tool/?id=tsv-to-json"
+      "href": "tools/tool/?id=tsv-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "twos-complement-converter",
       "category": "math",
       "name": "二进制补码转换器",
       "description": "跨8/16/32/64位宽度以二进制补码对有符号整数进行编码和解码。",
-      "icon": "convert",
+      "icon": "binary",
       "tags": [],
       "keywords": "twos complement two's signed integer binary hex bit width sign twos-complement bits encoding twos-complement-converter 二进制补码转换器",
       "variants": [
@@ -15289,14 +16107,15 @@ const ToolboxCatalog = {
           "sourceId": "twos-complement-converter"
         }
       ],
-      "href": "tools/tool/?id=twos-complement-converter"
+      "href": "tools/tool/?id=twos-complement-converter",
+      "iconBadge": ""
     },
     {
       "id": "typography-units-converter",
       "category": "convert",
       "name": "印刷单位转换器",
       "description": "在点、派卡、像素、em和毫米之间转换版式单位。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "point pica pixel em rem cicero didot postscript font size typography units converter print css typography-units-converter 印刷单位转换器",
       "variants": [
@@ -15307,14 +16126,15 @@ const ToolboxCatalog = {
           "sourceId": "typography-units-converter"
         }
       ],
-      "href": "tools/tool/?id=typography-units-converter"
+      "href": "tools/tool/?id=typography-units-converter",
+      "iconBadge": ""
     },
     {
       "id": "unicode-code-point-converter",
       "category": "convert",
       "name": "Unicode代码点转换器",
       "description": "将文本与Unicode代码点相互转换，通过代理对安全处理显示U+表示法、十进制和十六进制转义。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "unicode code point u+ escape convert codepoint unicode-code-point-converter Unicode代码点转换器",
       "variants": [
@@ -15325,14 +16145,15 @@ const ToolboxCatalog = {
           "sourceId": "unicode-code-point-converter"
         }
       ],
-      "href": "tools/tool/?id=unicode-code-point-converter"
+      "href": "tools/tool/?id=unicode-code-point-converter",
+      "iconBadge": ""
     },
     {
       "id": "unicode-inspector",
       "category": "text",
       "name": "Unicode检查器",
       "description": "将文本分解为具有十六进制、十进制、UTF-8字节和名称的代码点。",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "unicode inspector code points utf-8 bytes character codes escape point inspect unicode-inspector Unicode检查器",
       "variants": [
@@ -15343,14 +16164,15 @@ const ToolboxCatalog = {
           "sourceId": "unicode-inspector"
         }
       ],
-      "href": "tools/tool/?id=unicode-inspector"
+      "href": "tools/tool/?id=unicode-inspector",
+      "iconBadge": ""
     },
     {
       "id": "unit-converter",
       "category": "math",
       "name": "单位转换器",
       "description": "转换长度、质量、温度、面积、体积、速度和数据大小。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "unit converter length weight temperature celsius fahrenheit data size metric imperial units convert mass unit-converter 单位转换器",
       "variants": [
@@ -15361,14 +16183,15 @@ const ToolboxCatalog = {
           "sourceId": "unit-converter"
         }
       ],
-      "href": "tools/tool/?id=unit-converter"
+      "href": "tools/tool/?id=unit-converter",
+      "iconBadge": ""
     },
     {
       "id": "unit-price-calculator",
       "category": "math",
       "name": "单价比较",
       "description": "按单位价格比较产品以找到最佳价值。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "unit price per cost comparison best value gram ml grocery shopping compare unit-price-calculator 单价比较",
       "variants": [
@@ -15379,14 +16202,15 @@ const ToolboxCatalog = {
           "sourceId": "unit-price-calculator"
         }
       ],
-      "href": "tools/tool/?id=unit-price-calculator"
+      "href": "tools/tool/?id=unit-price-calculator",
+      "iconBadge": ""
     },
     {
       "id": "unix-nanoseconds-converter",
       "category": "time",
       "name": "Unix纳秒转换器",
       "description": "将纳秒精度的Unix时间戳转换为日期时间并转换回来，而没有浮点损失。",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": "nanosecond timestamp unix nanos epoch ns high precision time to date nanoseconds bigint unix-nanoseconds-converter Unix纳秒转换器",
       "variants": [
@@ -15397,14 +16221,15 @@ const ToolboxCatalog = {
           "sourceId": "unix-nanoseconds-converter"
         }
       ],
-      "href": "tools/tool/?id=unix-nanoseconds-converter"
+      "href": "tools/tool/?id=unix-nanoseconds-converter",
+      "iconBadge": ""
     },
     {
       "id": "unix-rollover-checker",
       "category": "time",
       "name": "时间纪元翻转检查器",
       "description": "显示关键时间存储溢出日期（2038 年，2 位 Y2K，32 位、64 位限制）。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "Y2038 Y2K 32-bit time_t 64-bit NTP rollover GPS week FILETIME overflow year 2038 epoch unix time reference unix-rollover-checker 时间纪元翻转检查器",
       "variants": [
@@ -15415,14 +16240,15 @@ const ToolboxCatalog = {
           "sourceId": "unix-rollover-checker"
         }
       ],
-      "href": "tools/tool/?id=unix-rollover-checker"
+      "href": "tools/tool/?id=unix-rollover-checker",
+      "iconBadge": ""
     },
     {
       "id": "unix-time-now",
       "category": "time",
       "name": "现在的 Unix 时间戳",
       "description": "以秒、毫秒和微秒为单位实时滴答显示当前 Unix 时间戳，并具有一键复制和暂停切换功能。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "unix epoch current timestamp now milliseconds unix-time-now 现在的 Unix 时间戳",
       "variants": [
@@ -15433,14 +16259,15 @@ const ToolboxCatalog = {
           "sourceId": "unix-time-now"
         }
       ],
-      "href": "tools/tool/?id=unix-time-now"
+      "href": "tools/tool/?id=unix-time-now",
+      "iconBadge": ""
     },
     {
       "id": "url-encode",
       "category": "encoding",
       "name": "URL编码/解码",
       "description": "对文本或整个组件URL字符串进行百分比编码和解码。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "url uri percent encoding escape encodeURIComponent encode decode url-encode URL编码/解码 URL 编码 / 解码",
       "variants": [
@@ -15457,14 +16284,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/url-encode"
         }
       ],
-      "href": "tools/tool/?id=url-encode"
+      "href": "tools/tool/?id=url-encode",
+      "iconBadge": ""
     },
     {
       "id": "url-parser",
       "category": "web",
       "name": "URL解析器",
       "description": "将URL分解为协议、主机、路径、查询参数和散列。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "url parser query string parse components parameters uri url-parser URL解析器 host path inspect web-url-inspector URL检查器",
       "variants": [
@@ -15481,14 +16309,15 @@ const ToolboxCatalog = {
           "sourceId": "web-url-inspector"
         }
       ],
-      "href": "tools/tool/?id=url-parser"
+      "href": "tools/tool/?id=url-parser",
+      "iconBadge": ""
     },
     {
       "id": "user-agent-parser",
       "category": "web",
       "name": "用户代理解析器",
       "description": "将用户代理字符串解析为浏览器、引擎、操作系统和设备。",
-      "icon": "convert",
+      "icon": "user-round",
       "tags": [],
       "keywords": "user agent ua parser browser detect os device parse user-agent-parser 用户代理解析器",
       "variants": [
@@ -15499,14 +16328,15 @@ const ToolboxCatalog = {
           "sourceId": "user-agent-parser"
         }
       ],
-      "href": "tools/tool/?id=user-agent-parser"
+      "href": "tools/tool/?id=user-agent-parser",
+      "iconBadge": ""
     },
     {
       "id": "uuid-generator",
       "category": "web",
       "name": "UUID生成器",
       "description": "批量生成RFC 4122 v4 (随机)和v7 (按时间排序)UUID。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "uuid guid unique id v4 v7 random uuid-generator UUID生成器",
       "variants": [
@@ -15517,14 +16347,15 @@ const ToolboxCatalog = {
           "sourceId": "uuid-generator"
         }
       ],
-      "href": "tools/tool/?id=uuid-generator"
+      "href": "tools/tool/?id=uuid-generator",
+      "iconBadge": "UUID"
     },
     {
       "id": "uuid-inspector",
       "category": "encoding",
       "name": "UUID检查器",
       "description": "解析任何UUID以揭示其版本、变体和嵌入的时间戳或节点数据。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "uuidv1 uuidv4 uuidv6 uuidv7 variant timestamp node uuid guid inspect parse version uuid-inspector UUID检查器",
       "variants": [
@@ -15535,14 +16366,15 @@ const ToolboxCatalog = {
           "sourceId": "uuid-inspector"
         }
       ],
-      "href": "tools/tool/?id=uuid-inspector"
+      "href": "tools/tool/?id=uuid-inspector",
+      "iconBadge": "UUID"
     },
     {
       "id": "uuid-namespace-builder",
       "category": "web",
       "name": "UUID命名空间生成器",
       "description": "离线构建和管理RFC 4122名称空间UUID并在自定义名称空间下导出v5/v3名称。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "namespace uuid v5 v3 sha-1 md5 derive rfc 4122 deterministic uuid-namespace-builder UUID命名空间生成器",
       "variants": [
@@ -15553,14 +16385,15 @@ const ToolboxCatalog = {
           "sourceId": "uuid-namespace-builder"
         }
       ],
-      "href": "tools/tool/?id=uuid-namespace-builder"
+      "href": "tools/tool/?id=uuid-namespace-builder",
+      "iconBadge": "UUID"
     },
     {
       "id": "uuid-nil-max-generator",
       "category": "web",
       "name": "零和最大 UUID 生成器",
       "description": "生成特殊的全零 UUID 和全一最大 UUID 标记值。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "nil uuid max all zero ones empty guid sentinel rfc9562 uuid-nil-max-generator 零和最大 UUID 生成器",
       "variants": [
@@ -15571,14 +16404,15 @@ const ToolboxCatalog = {
           "sourceId": "uuid-nil-max-generator"
         }
       ],
-      "href": "tools/tool/?id=uuid-nil-max-generator"
+      "href": "tools/tool/?id=uuid-nil-max-generator",
+      "iconBadge": "UUID"
     },
     {
       "id": "uuid-v7-generator",
       "category": "web",
       "name": "UUID v7 生成器",
       "description": "使用当前时间戳生成按时间排序的、可排序的UUID v7标识符。",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": "uuid v7 time ordered sortable unix timestamp monotonic rfc9562 uuid-v7-generator UUID 生成器",
       "variants": [
@@ -15589,14 +16423,15 @@ const ToolboxCatalog = {
           "sourceId": "uuid-v7-generator"
         }
       ],
-      "href": "tools/tool/?id=uuid-v7-generator"
+      "href": "tools/tool/?id=uuid-v7-generator",
+      "iconBadge": "UUID"
     },
     {
       "id": "vat-sales-tax",
       "category": "math",
       "name": "增值税和销售税计算器",
       "description": "添加或去除增值税/销售税并将总额分成净加税。",
-      "icon": "convert",
+      "icon": "banknote",
       "tags": [],
       "keywords": "vat sales tax gst net gross inclusive exclusive add remove finance price percentage vat-sales-tax 增值税和销售税计算器",
       "variants": [
@@ -15607,14 +16442,15 @@ const ToolboxCatalog = {
           "sourceId": "vat-sales-tax"
         }
       ],
-      "href": "tools/tool/?id=vat-sales-tax"
+      "href": "tools/tool/?id=vat-sales-tax",
+      "iconBadge": ""
     },
     {
       "id": "vcard-generator",
       "category": "web",
       "name": "vCard (.vcf) 生成器",
       "description": "从姓名、组织、电话、电子邮件、地址和URL字段生成vCard 3.0/4.0联系文本。",
-      "icon": "convert",
+      "icon": "contact",
       "tags": [],
       "keywords": "vcard generator vcf file contact card 3.0 4.0 address book rfc6350 address-book vcard-generator vCard (.vcf) 生成器",
       "variants": [
@@ -15625,14 +16461,15 @@ const ToolboxCatalog = {
           "sourceId": "vcard-generator"
         }
       ],
-      "href": "tools/tool/?id=vcard-generator"
+      "href": "tools/tool/?id=vcard-generator",
+      "iconBadge": ""
     },
     {
       "id": "vcard-qr-payload-generator",
       "category": "web",
       "name": "MeCard/vCard QR 有效负载生成器",
       "description": "构建紧凑的MECARD:和vCard联系人有效负载字符串，其大小适合嵌入QR码中。",
-      "icon": "convert",
+      "icon": "contact-round",
       "tags": [],
       "keywords": "mecard qr contact vcard code payload scannable vcard-qr-payload-generator MeCard/vCard QR 有效负载生成器",
       "variants": [
@@ -15643,14 +16480,15 @@ const ToolboxCatalog = {
           "sourceId": "vcard-qr-payload-generator"
         }
       ],
-      "href": "tools/tool/?id=vcard-qr-payload-generator"
+      "href": "tools/tool/?id=vcard-qr-payload-generator",
+      "iconBadge": ""
     },
     {
       "id": "vector-calculator-2d-3d",
       "category": "math",
       "name": "矢量计算器(2D/3D)",
       "description": "矢量之间的加、减、点、交叉、归一化和测量角度。",
-      "icon": "convert",
+      "icon": "grid-3x3",
       "tags": [],
       "keywords": "vector dot product cross magnitude normalize unit angle between vectors projection 2d 3d geometry linear-algebra physics math vector-calculator-2d-3d 矢量计算器(2D/3D)",
       "variants": [
@@ -15661,14 +16499,15 @@ const ToolboxCatalog = {
           "sourceId": "vector-calculator-2d-3d"
         }
       ],
-      "href": "tools/tool/?id=vector-calculator-2d-3d"
+      "href": "tools/tool/?id=vector-calculator-2d-3d",
+      "iconBadge": ""
     },
     {
       "id": "verhoeff-damm-check",
       "category": "encoding",
       "name": "Verhoeff & Damm 校验位",
       "description": "计算并验证用于错误检测数字串的Verhoeff和Damm校验位。",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": "dihedral quasigroup aadhaar error detection transposition verhoeff damm check-digit checksum validator verhoeff-damm-check Verhoeff & Damm 校验位",
       "variants": [
@@ -15679,14 +16518,15 @@ const ToolboxCatalog = {
           "sourceId": "verhoeff-damm-check"
         }
       ],
-      "href": "tools/tool/?id=verhoeff-damm-check"
+      "href": "tools/tool/?id=verhoeff-damm-check",
+      "iconBadge": ""
     },
     {
       "id": "vigenere-cipher",
       "category": "encoding",
       "name": "维吉尼亚密码",
       "description": "使用经典的Vigenere关键字密码来加密或解密文本。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "vigenere cipher encrypt decrypt keyword polyalphabetic classical vigenere-cipher 维吉尼亚密码",
       "variants": [
@@ -15697,14 +16537,15 @@ const ToolboxCatalog = {
           "sourceId": "vigenere-cipher"
         }
       ],
-      "href": "tools/tool/?id=vigenere-cipher"
+      "href": "tools/tool/?id=vigenere-cipher",
+      "iconBadge": ""
     },
     {
       "id": "viscosity-converter",
       "category": "convert",
       "name": "粘度转换器",
       "description": "在泊、帕斯卡-秒和斯托克之间转换动力和运动粘度。",
-      "icon": "convert",
+      "icon": "droplet",
       "tags": [],
       "keywords": "poise centipoise pascal second stokes centistokes dynamic viscosity kinematic units converter fluid physics viscosity-converter 粘度转换器",
       "variants": [
@@ -15715,14 +16556,15 @@ const ToolboxCatalog = {
           "sourceId": "viscosity-converter"
         }
       ],
-      "href": "tools/tool/?id=viscosity-converter"
+      "href": "tools/tool/?id=viscosity-converter",
+      "iconBadge": ""
     },
     {
       "id": "volume-converter",
       "category": "convert",
       "name": "体积转换器",
       "description": "在升、加仑、杯、品脱等之间转换液体和干燥体积。",
-      "icon": "convert",
+      "icon": "beaker",
       "tags": [],
       "keywords": "liter gallon cup pint quart fluid ounce milliliter imperial us customary volume units converter cooking measurement volume-converter 体积转换器",
       "variants": [
@@ -15733,14 +16575,15 @@ const ToolboxCatalog = {
           "sourceId": "volume-converter"
         }
       ],
-      "href": "tools/tool/?id=volume-converter"
+      "href": "tools/tool/?id=volume-converter",
+      "iconBadge": ""
     },
     {
       "id": "wcag-contrast-pair-finder",
       "category": "color",
       "name": "WCAG对比对查找器",
       "description": "调整前景色直到其满足固定背景上的目标WCAG对比度。",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": "contrast ratio aa aaa accessible readability lightness fix wcag accessibility a11y color wcag-contrast-pair-finder WCAG对比对查找器",
       "variants": [
@@ -15751,14 +16594,15 @@ const ToolboxCatalog = {
           "sourceId": "wcag-contrast-pair-finder"
         }
       ],
-      "href": "tools/tool/?id=wcag-contrast-pair-finder"
+      "href": "tools/tool/?id=wcag-contrast-pair-finder",
+      "iconBadge": ""
     },
     {
       "id": "web-accept-language-parser",
       "category": "web",
       "name": "接受语言/接受解析器",
       "description": "按质量值（q因子）对接受语言或接受报头进行解析和排序。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "Accept header Accept-Language quality value q-factor language preference content negotiation accept-language http parser web-accept-language-parser 接受语言/接受解析器",
       "variants": [
@@ -15769,14 +16613,15 @@ const ToolboxCatalog = {
           "sourceId": "web-accept-language-parser"
         }
       ],
-      "href": "tools/tool/?id=web-accept-language-parser"
+      "href": "tools/tool/?id=web-accept-language-parser",
+      "iconBadge": ""
     },
     {
       "id": "web-aspect-ratio-css",
       "category": "web",
       "name": "CSS纵横比生成器",
       "description": "将宽度：高度比转变为纵横比CSS加上填充顶部后备。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "16:9 padding-top hack intrinsic ratio gcd reduce fallback css aspect-ratio responsive layout video web-aspect-ratio-css CSS纵横比生成器",
       "variants": [
@@ -15787,14 +16632,15 @@ const ToolboxCatalog = {
           "sourceId": "web-aspect-ratio-css"
         }
       ],
-      "href": "tools/tool/?id=web-aspect-ratio-css"
+      "href": "tools/tool/?id=web-aspect-ratio-css",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-bearer-auth-header-builder",
       "category": "web",
       "name": "授权标头生成器",
       "description": "构造承载、基本、API 密钥和自定义方案的授权标头值。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "authorization header bearer token basic auth api key curl fetch headers http web-bearer-auth-header-builder 授权标头生成器",
       "variants": [
@@ -15805,14 +16651,15 @@ const ToolboxCatalog = {
           "sourceId": "web-bearer-auth-header-builder"
         }
       ],
-      "href": "tools/tool/?id=web-bearer-auth-header-builder"
+      "href": "tools/tool/?id=web-bearer-auth-header-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-bem-class-generator",
       "category": "web",
       "name": "BEM类名生成器",
       "description": "通过 HTML/CSS 预览从块、元素和修饰符输入生成 Block__Element--修饰符 CSS 类名称。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "bem block element modifier css class names naming convention methodology kebab-case generator frontend web-bem-class-generator BEM类名生成器",
       "variants": [
@@ -15823,14 +16670,15 @@ const ToolboxCatalog = {
           "sourceId": "web-bem-class-generator"
         }
       ],
-      "href": "tools/tool/?id=web-bem-class-generator"
+      "href": "tools/tool/?id=web-bem-class-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-border-radius-generator",
       "category": "web",
       "name": "CSS 边框半径生成器",
       "description": "可视化地构建边界半径值（包括椭圆和每个角）并复制CSS。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "border radius rounded corners elliptical blob generator css shape per corner border-radius design shapes web-border-radius-generator CSS 边框半径生成器",
       "variants": [
@@ -15841,14 +16689,15 @@ const ToolboxCatalog = {
           "sourceId": "web-border-radius-generator"
         }
       ],
-      "href": "tools/tool/?id=web-border-radius-generator"
+      "href": "tools/tool/?id=web-border-radius-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-cache-busting-hash-appender",
       "category": "web",
       "name": "资产缓存无效URL生成器",
       "description": "将确定性版本/散列查询参数附加到资产URL列表。",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": "cache busting asset version query param fingerprint hash static assets cdn cache-busting url web-cache-busting-hash-appender 资产缓存无效URL生成器",
       "variants": [
@@ -15859,14 +16708,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cache-busting-hash-appender"
         }
       ],
-      "href": "tools/tool/?id=web-cache-busting-hash-appender"
+      "href": "tools/tool/?id=web-cache-busting-hash-appender",
+      "iconBadge": ""
     },
     {
       "id": "web-cache-control-builder",
       "category": "web",
       "name": "高速缓存控制生成器",
       "description": "根据缓存指令复选框和持续时间组成并解释缓存控制报头。",
-      "icon": "convert",
+      "icon": "archive-restore",
       "tags": [],
       "keywords": "cache-control max-age s-maxage no-store immutable stale-while-revalidate http header cache headers cdn performance web-cache-control-builder 高速缓存控制生成器",
       "variants": [
@@ -15877,14 +16727,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cache-control-builder"
         }
       ],
-      "href": "tools/tool/?id=web-cache-control-builder"
+      "href": "tools/tool/?id=web-cache-control-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-clamp-fluid-type",
       "category": "web",
       "name": "CSSclamp()流体类型计算器",
       "description": "根据最小/最大尺寸和视口范围计算响应式clamp()字体尺寸。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "fluid type viewport vw rem font-size scale preferred value css clamp typography responsive web-clamp-fluid-type CSSclamp()流体类型计算器",
       "variants": [
@@ -15895,14 +16746,15 @@ const ToolboxCatalog = {
           "sourceId": "web-clamp-fluid-type"
         }
       ],
-      "href": "tools/tool/?id=web-clamp-fluid-type"
+      "href": "tools/tool/?id=web-clamp-fluid-type",
+      "iconBadge": ""
     },
     {
       "id": "web-clip-path-generator",
       "category": "web",
       "name": "CSS剪辑路径形状生成器",
       "description": "通过实时预览生成多边形、圆形、椭圆形和插入剪辑路径值。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "clip-path polygon circle ellipse inset css shape mask shapes design web-clip-path-generator CSS剪辑路径形状生成器",
       "variants": [
@@ -15913,14 +16765,15 @@ const ToolboxCatalog = {
           "sourceId": "web-clip-path-generator"
         }
       ],
-      "href": "tools/tool/?id=web-clip-path-generator"
+      "href": "tools/tool/?id=web-clip-path-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-content-disposition-builder",
       "category": "web",
       "name": "内容配置生成器",
       "description": "使用RFC 5987文件名编码构建并解析内容处置标头。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "content-disposition attachment inline filename rfc 5987 download header http rfc5987 web-content-disposition-builder 内容配置生成器",
       "variants": [
@@ -15931,14 +16784,15 @@ const ToolboxCatalog = {
           "sourceId": "web-content-disposition-builder"
         }
       ],
-      "href": "tools/tool/?id=web-content-disposition-builder"
+      "href": "tools/tool/?id=web-content-disposition-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-content-security-policy-analyzer",
       "category": "web",
       "name": "CSP标头分析器",
       "description": "解析内容安全策略标头并标记弱或不安全指令。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "content-security-policy csp unsafe-inline unsafe-eval security header xss directives http analyzer web-content-security-policy-analyzer CSP标头分析器",
       "variants": [
@@ -15949,14 +16803,15 @@ const ToolboxCatalog = {
           "sourceId": "web-content-security-policy-analyzer"
         }
       ],
-      "href": "tools/tool/?id=web-content-security-policy-analyzer"
+      "href": "tools/tool/?id=web-content-security-policy-analyzer",
+      "iconBadge": ""
     },
     {
       "id": "web-content-security-policy-linter",
       "category": "web",
       "name": "内容-安全-策略 Linter",
       "description": "解析CSP标头字符串并标记不安全或冗余指令。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "content-security-policy csp linter duplicate sources unknown directive unsafe-inline redundant normalize lint security header http web-content-security-policy-linter 内容-安全-策略 Linter",
       "variants": [
@@ -15967,14 +16822,15 @@ const ToolboxCatalog = {
           "sourceId": "web-content-security-policy-linter"
         }
       ],
-      "href": "tools/tool/?id=web-content-security-policy-linter"
+      "href": "tools/tool/?id=web-content-security-policy-linter",
+      "iconBadge": ""
     },
     {
       "id": "web-content-type-charset-reference",
       "category": "web",
       "name": "内容类型和字符集参考",
       "description": "常见内容类型媒体类型、字符集和参数的可搜索参考。",
-      "icon": "convert",
+      "icon": "type",
       "tags": [],
       "keywords": "media type mime utf-8 boundary multipart application/json extensions content-type charset reference http web-content-type-charset-reference 内容类型和字符集参考",
       "variants": [
@@ -15985,14 +16841,15 @@ const ToolboxCatalog = {
           "sourceId": "web-content-type-charset-reference"
         }
       ],
-      "href": "tools/tool/?id=web-content-type-charset-reference"
+      "href": "tools/tool/?id=web-content-type-charset-reference",
+      "iconBadge": ""
     },
     {
       "id": "web-cookie-string-builder",
       "category": "web",
       "name": "设置-Cookie字符串生成器",
       "description": "通过验证从名称、值和属性构建Set-Cookie标头。",
-      "icon": "convert",
+      "icon": "cookie",
       "tags": [],
       "keywords": "set-cookie samesite httponly secure max-age partitioned __host- cookie header http cookies headers security web-cookie-string-builder 设置-Cookie字符串生成器",
       "variants": [
@@ -16003,14 +16860,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cookie-string-builder"
         }
       ],
-      "href": "tools/tool/?id=web-cookie-string-builder"
+      "href": "tools/tool/?id=web-cookie-string-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-cors-headers-builder",
       "category": "web",
       "name": "CORS 标头生成器",
       "description": "生成用于期望的跨源策略的Access-Control-*响应标头。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "cors access-control-allow-origin preflight allow-credentials allow-methods cross-origin http headers security api web-cors-headers-builder CORS 标头生成器",
       "variants": [
@@ -16021,14 +16879,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cors-headers-builder"
         }
       ],
-      "href": "tools/tool/?id=web-cors-headers-builder"
+      "href": "tools/tool/?id=web-cors-headers-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-cron-explainer",
       "category": "web",
       "name": "Cron 表达式解释器（高级）",
       "description": "将 cron 表达式翻译成简单的英语并列出接下来的几个运行时间，支持所有五个字段的范围、步骤和列表。",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": "cron schedule crontab explain next-run expression web-cron-explainer Cron 表达式解释器（高级）",
       "variants": [
@@ -16039,14 +16898,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cron-explainer"
         }
       ],
-      "href": "tools/tool/?id=web-cron-explainer"
+      "href": "tools/tool/?id=web-cron-explainer",
+      "iconBadge": "CRON"
     },
     {
       "id": "web-csp-builder",
       "category": "web",
       "name": "内容安全策略生成器",
       "description": "使用关键字和随机数/散列帮助器从每个指令源列表构建CSP标头。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "content-security-policy csp script-src nonce strict-dynamic unsafe-inline header http security headers policy web-csp-builder 内容安全策略生成器",
       "variants": [
@@ -16057,14 +16917,15 @@ const ToolboxCatalog = {
           "sourceId": "web-csp-builder"
         }
       ],
-      "href": "tools/tool/?id=web-csp-builder"
+      "href": "tools/tool/?id=web-csp-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-css-button-generator",
       "category": "web",
       "name": "CSS按钮生成器",
       "description": "设计按钮(颜色、填充、半径、阴影、悬停)并复制CSS。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css button hover border-radius box-shadow styles transition ui design generator web-css-button-generator CSS按钮生成器",
       "variants": [
@@ -16075,14 +16936,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-button-generator"
         }
       ],
-      "href": "tools/tool/?id=web-css-button-generator"
+      "href": "tools/tool/?id=web-css-button-generator",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-gradient-text",
       "category": "web",
       "name": "CSS渐变文本生成器",
       "description": "产生用于渐变颜色文本的背景剪辑文本技巧CSS。",
-      "icon": "convert",
+      "icon": "blend",
       "tags": [],
       "keywords": "gradient text background-clip text-fill-color linear-gradient radial-gradient css design web-css-gradient-text CSS渐变文本生成器",
       "variants": [
@@ -16093,14 +16955,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-gradient-text"
         }
       ],
-      "href": "tools/tool/?id=web-css-gradient-text"
+      "href": "tools/tool/?id=web-css-gradient-text",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-relative-unit-calculator",
       "category": "web",
       "name": "CSS REM / EM / VW / PX 计算器",
       "description": "利用可配置的根字体大小和视口在两个方向上在px、rem、em、vw和vh之间进行转换。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "px to rem em vh viewport root font size relative units css vw convert web-css-relative-unit-calculator CSS REM / EM VW PX 计算器",
       "variants": [
@@ -16111,14 +16974,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-relative-unit-calculator"
         }
       ],
-      "href": "tools/tool/?id=web-css-relative-unit-calculator"
+      "href": "tools/tool/?id=web-css-relative-unit-calculator",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-specificity",
       "category": "web",
       "name": "CSS特异性计算器",
       "description": "将任何CSS选择器的特异性计算为(a，b，c)三元组并对多个选择器进行排名以预测哪个规则获胜。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css specificity selector cascade calculate frontend web-css-specificity CSS特异性计算器",
       "variants": [
@@ -16129,14 +16993,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-specificity"
         }
       ],
-      "href": "tools/tool/?id=web-css-specificity"
+      "href": "tools/tool/?id=web-css-specificity",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-specificity-sorter",
       "category": "web",
       "name": "CSS选择器特异性排序器",
       "description": "根据发现覆盖顺序的特异性对多个CSS选择器进行评分和排名。",
-      "icon": "convert",
+      "icon": "arrow-down-a-z",
       "tags": [],
       "keywords": "specificity score a-b-c override rank selectors cascade order css selector sort web-css-specificity-sorter CSS选择器特异性排序器",
       "variants": [
@@ -16147,14 +17012,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-specificity-sorter"
         }
       ],
-      "href": "tools/tool/?id=web-css-specificity-sorter"
+      "href": "tools/tool/?id=web-css-specificity-sorter",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-to-tailwind",
       "category": "web",
       "name": "CSS 到 Tailwind",
       "description": "将常见的CSS声明转换为等效的Tailwind实用程序类，映射间距、颜色、flex、字体和边框属性。",
-      "icon": "convert",
+      "icon": "palette",
       "tags": [],
       "keywords": "css tailwind convert utility classes frontend web-css-to-tailwind CSS 到 Tailwind",
       "variants": [
@@ -16165,14 +17031,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-to-tailwind"
         }
       ],
-      "href": "tools/tool/?id=web-css-to-tailwind"
+      "href": "tools/tool/?id=web-css-to-tailwind",
+      "iconBadge": ""
     },
     {
       "id": "web-css-triangle-generator",
       "category": "web",
       "name": "CSS三角形生成器",
       "description": "使用任意方向和尺寸的边框技巧创建纯CSS三角形。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css triangle border trick arrow caret tooltip pure shape border-trick shapes design web-css-triangle-generator CSS三角形生成器",
       "variants": [
@@ -16183,14 +17050,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-triangle-generator"
         }
       ],
-      "href": "tools/tool/?id=web-css-triangle-generator"
+      "href": "tools/tool/?id=web-css-triangle-generator",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-unit-converter",
       "category": "web",
       "name": "CSS单位转换器(px/rem/em/pt/%)",
       "description": "使用根和底数在px、rem、em、pt、pc、vw/vh和百分比之间进行转换。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "px to rem em pt pc vw vh percent font-size absolute relative css units convert web-css-unit-converter CSS单位转换器(px/rem/em/pt/%)",
       "variants": [
@@ -16201,14 +17069,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-unit-converter"
         }
       ],
-      "href": "tools/tool/?id=web-css-unit-converter"
+      "href": "tools/tool/?id=web-css-unit-converter",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-css-variables-extractor",
       "category": "web",
       "name": "CSS自定义属性提取器",
       "description": "将所有CSS自定义属性（--var声明）从样式表提取到去重复的、可排序的列表中。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "css variables custom properties --var :root design tokens extract json custom-properties web-css-variable-extractor CSS自定义属性提取器 var() usage audit undeclared unused var web-css-variables-extractor",
       "variants": [
@@ -16225,14 +17094,15 @@ const ToolboxCatalog = {
           "sourceId": "web-css-variables-extractor"
         }
       ],
-      "href": "tools/tool/?id=web-css-variables-extractor"
+      "href": "tools/tool/?id=web-css-variables-extractor",
+      "iconBadge": "CSS"
     },
     {
       "id": "web-cubic-bezier",
       "category": "web",
       "name": "CSS 三次贝塞尔曲线生成器",
       "description": "设计具有可拖动控制点和实时动画预览的CSS三次贝塞尔曲线缓动曲线，输出过渡定时函数值。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css cubic-bezier easing animation transition curve web-cubic-bezier CSS 三次贝塞尔曲线生成器",
       "variants": [
@@ -16243,14 +17113,15 @@ const ToolboxCatalog = {
           "sourceId": "web-cubic-bezier"
         }
       ],
-      "href": "tools/tool/?id=web-cubic-bezier"
+      "href": "tools/tool/?id=web-cubic-bezier",
+      "iconBadge": ""
     },
     {
       "id": "web-curl-command-builder",
       "category": "web",
       "name": "cURL 命令生成器",
       "description": "从方法、URL、标头、正文和身份验证字段构建完整的curl命令。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "curl command builder http request rest headers basic auth form data shell api web-curl-command-builder cURL 命令生成器",
       "variants": [
@@ -16261,14 +17132,15 @@ const ToolboxCatalog = {
           "sourceId": "web-curl-command-builder"
         }
       ],
-      "href": "tools/tool/?id=web-curl-command-builder"
+      "href": "tools/tool/?id=web-curl-command-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-curl-to-fetch",
       "category": "web",
       "name": "cURL 到代码",
       "description": "将curl命令转换为浏览器fetch()调用，将方法、URL、标头和主体解析为准备粘贴的JavaScript。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "curl fetch javascript http request convert web-curl-to-fetch cURL 到代码",
       "variants": [
@@ -16279,14 +17151,15 @@ const ToolboxCatalog = {
           "sourceId": "web-curl-to-fetch"
         }
       ],
-      "href": "tools/tool/?id=web-curl-to-fetch"
+      "href": "tools/tool/?id=web-curl-to-fetch",
+      "iconBadge": ""
     },
     {
       "id": "web-data-attribute-to-dataset",
       "category": "web",
       "name": "HTML数据-*到JS数据集转换器",
       "description": "将data-*属性转换为element.dataset访问表达式并返回。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "data attribute dataset camelcase kebab-case data-* html javascript data-attribute convert web-data-attribute-to-dataset HTML数据-*到JS数据集转换器",
       "variants": [
@@ -16297,14 +17170,15 @@ const ToolboxCatalog = {
           "sourceId": "web-data-attribute-to-dataset"
         }
       ],
-      "href": "tools/tool/?id=web-data-attribute-to-dataset"
+      "href": "tools/tool/?id=web-data-attribute-to-dataset",
+      "iconBadge": ""
     },
     {
       "id": "web-data-uri-builder-text",
       "category": "web",
       "name": "文本数据URI生成器",
       "description": "使用MIME类型、字符集和base64选项从粘贴的文本构建数据：URI。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "data uri url base64 percent encode inline svg mime type embed data-uri web-data-uri-builder-text 文本数据URI生成器",
       "variants": [
@@ -16315,14 +17189,15 @@ const ToolboxCatalog = {
           "sourceId": "web-data-uri-builder-text"
         }
       ],
-      "href": "tools/tool/?id=web-data-uri-builder-text"
+      "href": "tools/tool/?id=web-data-uri-builder-text",
+      "iconBadge": ""
     },
     {
       "id": "web-data-uri-decoder",
       "category": "web",
       "name": "数据 URI 到文本",
       "description": "将数据：URI解码回其底层文本，从而揭示MIME类型、编码以及来自base64或百分比编码的原始内容。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "data-uri decode base64 mime inline uri web-data-uri-decoder 数据 URI 到文本",
       "variants": [
@@ -16333,14 +17208,15 @@ const ToolboxCatalog = {
           "sourceId": "web-data-uri-decoder"
         }
       ],
-      "href": "tools/tool/?id=web-data-uri-decoder"
+      "href": "tools/tool/?id=web-data-uri-decoder",
+      "iconBadge": ""
     },
     {
       "id": "web-data-uri-size-estimator",
       "category": "web",
       "name": "数据URI大小估计器",
       "description": "在嵌入之前估计给定原始文件大小的 Base64 数据 URI 的字节大小和开销。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "data url inline image embed encoding overhead base64 size bytes kb data-uri estimate web-data-uri-size-estimator 数据URI大小估计器",
       "variants": [
@@ -16351,14 +17227,15 @@ const ToolboxCatalog = {
           "sourceId": "web-data-uri-size-estimator"
         }
       ],
-      "href": "tools/tool/?id=web-data-uri-size-estimator"
+      "href": "tools/tool/?id=web-data-uri-size-estimator",
+      "iconBadge": ""
     },
     {
       "id": "web-dotenv-to-json",
       "category": "web",
       "name": ".env 到 JSON",
       "description": "将.env/dotenv文件解析为JSON对象并将JSON转换回.env格式，处理引号、注释和导出前缀。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "env dotenv json config parse environment web-dotenv-to-json .env 到 JSON",
       "variants": [
@@ -16369,14 +17246,15 @@ const ToolboxCatalog = {
           "sourceId": "web-dotenv-to-json"
         }
       ],
-      "href": "tools/tool/?id=web-dotenv-to-json"
+      "href": "tools/tool/?id=web-dotenv-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "web-etag-conditional-builder",
       "category": "web",
       "name": "ETag 和条件请求生成器",
       "description": "生成ETag值和匹配的If-None-Match/If-Modified-Since请求标头。",
-      "icon": "convert",
+      "icon": "archive-restore",
       "tags": [],
       "keywords": "etag if-none-match if-modified-since last-modified 304 not modified conditional request weak caching http cache headers hash web-etag-conditional-builder ETag 和条件请求生成器",
       "variants": [
@@ -16387,14 +17265,15 @@ const ToolboxCatalog = {
           "sourceId": "web-etag-conditional-builder"
         }
       ],
-      "href": "tools/tool/?id=web-etag-conditional-builder"
+      "href": "tools/tool/?id=web-etag-conditional-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-favicon-link-generator",
       "category": "web",
       "name": "网站图标链接标签生成器",
       "description": "为所有平台生成全套图标和应用程序图标链接标签。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "favicon link tags apple touch icon web manifest theme-color msapplication maskable pwa icons html apple-touch meta web-favicon-link-generator 网站图标链接标签生成器",
       "variants": [
@@ -16405,14 +17284,15 @@ const ToolboxCatalog = {
           "sourceId": "web-favicon-link-generator"
         }
       ],
-      "href": "tools/tool/?id=web-favicon-link-generator"
+      "href": "tools/tool/?id=web-favicon-link-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-filter-generator",
       "category": "web",
       "name": "CSS过滤器生成器",
       "description": "将模糊、亮度、对比度和其他过滤器与实时图像预览相结合。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "css filter blur brightness contrast grayscale hue-rotate sepia drop-shadow webkit-filter image generator preview effects web-filter-generator CSS过滤器生成器",
       "variants": [
@@ -16423,14 +17303,15 @@ const ToolboxCatalog = {
           "sourceId": "web-filter-generator"
         }
       ],
-      "href": "tools/tool/?id=web-filter-generator"
+      "href": "tools/tool/?id=web-filter-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-flexbox-playground",
       "category": "web",
       "name": "CSS Flexbox生成器",
       "description": "从下拉列表中设置flex容器和项目属性并复制生成的CSS。",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": "flexbox flex justify-content align-items flex-direction flex-wrap gap css layout generator preview web-flexbox-playground CSS Flexbox生成器",
       "variants": [
@@ -16441,14 +17322,15 @@ const ToolboxCatalog = {
           "sourceId": "web-flexbox-playground"
         }
       ],
-      "href": "tools/tool/?id=web-flexbox-playground"
+      "href": "tools/tool/?id=web-flexbox-playground",
+      "iconBadge": ""
     },
     {
       "id": "web-grid-template-generator",
       "category": "web",
       "name": "CSS网格模板生成器",
       "description": "定义网格列、行、间隙和命名区域，然后复制网格模板CSS。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "css grid grid-template-columns grid-template-rows grid-template-areas fr unit gap layout minmax generator template areas web-grid-template-generator CSS网格模板生成器",
       "variants": [
@@ -16459,14 +17341,15 @@ const ToolboxCatalog = {
           "sourceId": "web-grid-template-generator"
         }
       ],
-      "href": "tools/tool/?id=web-grid-template-generator"
+      "href": "tools/tool/?id=web-grid-template-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-hsts-header-builder",
       "category": "web",
       "name": "HSTS报头生成器",
       "description": "利用预加载资格检查构建并解码严格传输安全报头。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "strict-transport-security hsts max-age includeSubDomains preload hstspreload https security header http headers web-hsts-header-builder HSTS报头生成器",
       "variants": [
@@ -16477,14 +17360,15 @@ const ToolboxCatalog = {
           "sourceId": "web-hsts-header-builder"
         }
       ],
-      "href": "tools/tool/?id=web-hsts-header-builder"
+      "href": "tools/tool/?id=web-hsts-header-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-html-attributes-stripper",
       "category": "web",
       "name": "HTML 属性剥离器/标签清理器",
       "description": "从HTML中移除选定的属性(样式、类、on*、data-*)或整个标签。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "remove style strip class clean html sanitize paste tags data attributes web-html-attributes-stripper HTML 属性剥离器/标签清理器",
       "variants": [
@@ -16495,14 +17379,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-attributes-stripper"
         }
       ],
-      "href": "tools/tool/?id=web-html-attributes-stripper"
+      "href": "tools/tool/?id=web-html-attributes-stripper",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-html-class-attr-extractor",
       "category": "web",
       "name": "HTML 类和 ID 提取器",
       "description": "提取 HTML 片段中使用的每个唯一的类名称和 ID，并将它们输出为排序列表或 CSS 存根。",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": "class names id selectors css stub selector list unique classes dom parser html extract web-html-class-attr-extractor HTML 类和 ID 提取器",
       "variants": [
@@ -16513,14 +17398,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-class-attr-extractor"
         }
       ],
-      "href": "tools/tool/?id=web-html-class-attr-extractor"
+      "href": "tools/tool/?id=web-html-class-attr-extractor",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-html-entity-picker",
       "category": "web",
       "name": "HTML 实体选择器",
       "description": "命名HTML实体的可搜索参考及其可供复制的字符、数字和十六进制代码。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html entity named character reference nbsp mdash copyright numeric hex code point unicode symbols web-html-entity-picker HTML 实体选择器",
       "variants": [
@@ -16531,14 +17417,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-entity-picker"
         }
       ],
-      "href": "tools/tool/?id=web-html-entity-picker"
+      "href": "tools/tool/?id=web-html-entity-picker",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-html-minify",
       "category": "web",
       "name": "HTML 缩小器/美化器",
       "description": "通过去除注释和空白来缩小 HTML，或者对其进行漂亮的打印。",
-      "icon": "convert",
+      "icon": "minimize-2",
       "tags": [],
       "keywords": "html minify compress pretty print indent strip comments collapse whitespace beautify format web-html-minify HTML 缩小器/美化器",
       "variants": [
@@ -16549,14 +17436,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-minify"
         }
       ],
-      "href": "tools/tool/?id=web-html-minify"
+      "href": "tools/tool/?id=web-html-minify",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-html-to-jsx",
       "category": "web",
       "name": "HTML 到 JSX",
       "description": "将原始HTML转换为React JSX，将类重命名为className，修复自闭合标签，camelCasing属性，并将内联样式转换为对象。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "html jsx react convert className component web-html-to-jsx HTML 到 JSX",
       "variants": [
@@ -16567,14 +17455,15 @@ const ToolboxCatalog = {
           "sourceId": "web-html-to-jsx"
         }
       ],
-      "href": "tools/tool/?id=web-html-to-jsx"
+      "href": "tools/tool/?id=web-html-to-jsx",
+      "iconBadge": "JSX"
     },
     {
       "id": "web-http-cache-header-explainer",
       "category": "web",
       "name": "高速缓存控制标头解释器",
       "description": "分解高速缓存控制标头并解释每个指令及其效果。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "cache-control max-age no-store immutable http caching s-maxage cache headers explain web-http-cache-header-explainer 高速缓存控制标头解释器",
       "variants": [
@@ -16585,14 +17474,15 @@ const ToolboxCatalog = {
           "sourceId": "web-http-cache-header-explainer"
         }
       ],
-      "href": "tools/tool/?id=web-http-cache-header-explainer"
+      "href": "tools/tool/?id=web-http-cache-header-explainer",
+      "iconBadge": ""
     },
     {
       "id": "web-http-headers-reference",
       "category": "web",
       "name": "HTTP标头参考",
       "description": "查找任何HTTP请求或响应标头以查看其目的、方向、示例值以及它是标准的还是已弃用的。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "http headers reference request response lookup web-http-headers-reference HTTP标头参考",
       "variants": [
@@ -16603,14 +17493,15 @@ const ToolboxCatalog = {
           "sourceId": "web-http-headers-reference"
         }
       ],
-      "href": "tools/tool/?id=web-http-headers-reference"
+      "href": "tools/tool/?id=web-http-headers-reference",
+      "iconBadge": ""
     },
     {
       "id": "web-http-message-parser",
       "category": "web",
       "name": "原始HTTP消息解析器",
       "description": "将原始HTTP请求或响应解析为方法、路径、状态、标头和主体。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "raw http request response parse headers status line message web-http-message-parser 原始HTTP消息解析器",
       "variants": [
@@ -16621,14 +17512,15 @@ const ToolboxCatalog = {
           "sourceId": "web-http-message-parser"
         }
       ],
-      "href": "tools/tool/?id=web-http-message-parser"
+      "href": "tools/tool/?id=web-http-message-parser",
+      "iconBadge": ""
     },
     {
       "id": "web-http-method-reference",
       "category": "web",
       "name": "HTTP方法参考",
       "description": "具有安全/幂等/可缓存/主体语义的HTTP方法备忘单。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "http method verb get post put delete idempotent safe cacheable webdav rfc 9110 methods reference rest web-http-method-reference HTTP方法参考",
       "variants": [
@@ -16639,14 +17531,15 @@ const ToolboxCatalog = {
           "sourceId": "web-http-method-reference"
         }
       ],
-      "href": "tools/tool/?id=web-http-method-reference"
+      "href": "tools/tool/?id=web-http-method-reference",
+      "iconBadge": ""
     },
     {
       "id": "web-ip-address-converter",
       "category": "web",
       "name": "IP地址转换器",
       "description": "在点分、整数、十六进制、二进制和扩展形式之间转换IPv4/IPv6地址。",
-      "icon": "convert",
+      "icon": "ethernet-port",
       "tags": [],
       "keywords": "ip to integer hex binary ipv6 expand rfc 5952 ipv4-mapped dotted decimal ipv4 convert network web-ip-address-converter IP地址转换器",
       "variants": [
@@ -16657,14 +17550,15 @@ const ToolboxCatalog = {
           "sourceId": "web-ip-address-converter"
         }
       ],
-      "href": "tools/tool/?id=web-ip-address-converter"
+      "href": "tools/tool/?id=web-ip-address-converter",
+      "iconBadge": ""
     },
     {
       "id": "web-ip-cidr-membership",
       "category": "web",
       "name": "CIDR 中的 IP 检查器",
       "description": "检查IP地址是否落入一个或多个CIDR范围内。",
-      "icon": "convert",
+      "icon": "waypoints",
       "tags": [],
       "keywords": "ip in range cidr contains subnet membership ipv4 ipv6 prefix mask overlap network match web-ip-cidr-membership CIDR 中的 IP 检查器",
       "variants": [
@@ -16675,14 +17569,15 @@ const ToolboxCatalog = {
           "sourceId": "web-ip-cidr-membership"
         }
       ],
-      "href": "tools/tool/?id=web-ip-cidr-membership"
+      "href": "tools/tool/?id=web-ip-cidr-membership",
+      "iconBadge": ""
     },
     {
       "id": "web-ipv6-expander",
       "category": "web",
       "name": "IPv6扩展和压缩",
       "description": ".name 或 items[*].name",
-      "icon": "convert",
+      "icon": "ethernet-port",
       "tags": [],
       "keywords": "ipv6 expand compress canonical rfc 5952 shorten normalize network rfc5952 web-ipv6-expander IPv6扩展和压缩",
       "variants": [
@@ -16693,14 +17588,15 @@ const ToolboxCatalog = {
           "sourceId": "web-ipv6-expander"
         }
       ],
-      "href": "tools/tool/?id=web-ipv6-expander"
+      "href": "tools/tool/?id=web-ipv6-expander",
+      "iconBadge": ""
     },
     {
       "id": "web-json-to-html-form",
       "category": "web",
       "name": "JSON 到 HTML 表单生成器",
       "description": "将JSON对象转换为匹配的HTML表单，其中带标签的输入从每个字段的值类型推断出来。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "json to form html generator input fields scaffold labeled inputs web-json-to-html-form JSON 到 HTML 表单生成器",
       "variants": [
@@ -16711,14 +17607,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-to-html-form"
         }
       ],
-      "href": "tools/tool/?id=web-json-to-html-form"
+      "href": "tools/tool/?id=web-json-to-html-form",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-json-to-java",
       "category": "web",
       "name": "JSON到Java类",
       "description": "将JSON有效负载转换成具有类型化字段和getter/setter的POJO Java类定义，推断嵌套类和集合泛型。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "json java pojo class codegen model web-json-to-java JSON到Java类",
       "variants": [
@@ -16729,14 +17626,15 @@ const ToolboxCatalog = {
           "sourceId": "web-json-to-java"
         }
       ],
-      "href": "tools/tool/?id=web-json-to-java"
+      "href": "tools/tool/?id=web-json-to-java",
+      "iconBadge": "JAVA"
     },
     {
       "id": "web-jsonld-schema-generator",
       "category": "web",
       "name": "JSON-LD结构化数据生成器",
       "description": "为文章、产品、常见问题解答、面包屑等生成 schema.org JSON-LD。",
-      "icon": "convert",
+      "icon": "braces",
       "tags": [],
       "keywords": "json-ld jsonld schema.org structured data seo rich snippets product faq breadcrumb article structured-data rich-results web-jsonld-schema-generator JSON-LD结构化数据生成器",
       "variants": [
@@ -16747,14 +17645,15 @@ const ToolboxCatalog = {
           "sourceId": "web-jsonld-schema-generator"
         }
       ],
-      "href": "tools/tool/?id=web-jsonld-schema-generator"
+      "href": "tools/tool/?id=web-jsonld-schema-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-jwt-expiry-inspector",
       "category": "web",
       "name": "JWT 过期检查器",
       "description": "解码JWT并报告人类可读的发布/到期时间和剩余有效性。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "jwt json web token exp iat nbf expiry validity bearer auth decode web-jwt-expiry-inspector JWT 过期检查器",
       "variants": [
@@ -16765,14 +17664,15 @@ const ToolboxCatalog = {
           "sourceId": "web-jwt-expiry-inspector"
         }
       ],
-      "href": "tools/tool/?id=web-jwt-expiry-inspector"
+      "href": "tools/tool/?id=web-jwt-expiry-inspector",
+      "iconBadge": "JWT"
     },
     {
       "id": "web-jwt-to-fetch",
       "category": "web",
       "name": "经过验证的 fetch() 构建器",
       "description": "生成具有方法、标头、不记名令牌和JSON主体的fetch()片段。",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "fetch http request bearer token authorization api javascript snippet json body web-jwt-to-fetch 经过验证的 fetch() 构建器",
       "variants": [
@@ -16783,14 +17683,15 @@ const ToolboxCatalog = {
           "sourceId": "web-jwt-to-fetch"
         }
       ],
-      "href": "tools/tool/?id=web-jwt-to-fetch"
+      "href": "tools/tool/?id=web-jwt-to-fetch",
+      "iconBadge": ""
     },
     {
       "id": "web-keyframes-generator",
       "category": "web",
       "name": "CSS 关键帧和动画生成器",
       "description": "创建带有停止点和动画简写的 @keyframes，并复制 CSS。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css keyframes animation transform timing-function easing shorthand preview transition frontend web-keyframes-generator CSS 关键帧和动画生成器",
       "variants": [
@@ -16801,14 +17702,15 @@ const ToolboxCatalog = {
           "sourceId": "web-keyframes-generator"
         }
       ],
-      "href": "tools/tool/?id=web-keyframes-generator"
+      "href": "tools/tool/?id=web-keyframes-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-link-header-builder",
       "category": "web",
       "name": "链接头生成器和解析器",
       "description": "构建并解析RFC 8288链接标头（rel=next/prev、预加载、规范）。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "link header rfc 8288 rel next prev preload preconnect canonical pagination web linking http rfc8288 web-link-header-builder 链接头生成器和解析器",
       "variants": [
@@ -16819,14 +17721,15 @@ const ToolboxCatalog = {
           "sourceId": "web-link-header-builder"
         }
       ],
-      "href": "tools/tool/?id=web-link-header-builder"
+      "href": "tools/tool/?id=web-link-header-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-lorem-html-block",
       "category": "web",
       "name": "Lorem Ipsum HTML 块生成器",
       "description": "将占位符内容生成为准备粘贴的语义HTML块（段落、标题、列表、块引用）。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "lorem ipsum placeholder text html dummy content mockup paragraphs headings lists seeded lorem-ipsum web-lorem-html-block Lorem Ipsum HTML 块生成器",
       "variants": [
@@ -16837,14 +17740,15 @@ const ToolboxCatalog = {
           "sourceId": "web-lorem-html-block"
         }
       ],
-      "href": "tools/tool/?id=web-lorem-html-block"
+      "href": "tools/tool/?id=web-lorem-html-block",
+      "iconBadge": "HTML"
     },
     {
       "id": "web-media-query-builder",
       "category": "web",
       "name": "CSS媒体查询生成器",
       "description": "利用最小/最大宽度断点、方向和视觉特征条件构建响应式@media查询。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "css media query @media responsive breakpoints min-width max-width orientation prefers-color-scheme media-query frontend web-media-query-builder CSS媒体查询生成器 breakpoint web-media-query-generator",
       "variants": [
@@ -16861,14 +17765,15 @@ const ToolboxCatalog = {
           "sourceId": "web-media-query-generator"
         }
       ],
-      "href": "tools/tool/?id=web-media-query-builder"
+      "href": "tools/tool/?id=web-media-query-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-multi-column-generator",
       "category": "web",
       "name": "CSS多列布局生成器",
       "description": "使用实时文本预览生成CSS列属性（计数、宽度、间隙、规则）。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "css columns multi-column column-count column-gap column-rule column-fill layout multicol web-multi-column-generator CSS多列布局生成器",
       "variants": [
@@ -16879,14 +17784,15 @@ const ToolboxCatalog = {
           "sourceId": "web-multi-column-generator"
         }
       ],
-      "href": "tools/tool/?id=web-multi-column-generator"
+      "href": "tools/tool/?id=web-multi-column-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-open-graph-preview-card",
       "category": "web",
       "name": "开放图谱/Twitter 卡预览",
       "description": "从粘贴的HTML解析OG和Twitter元标记并显示解析的共享卡字段。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "open graph og:title twitter card meta tags social preview share seo og:image web-open-graph-preview-card 开放图谱/Twitter 卡预览",
       "variants": [
@@ -16897,14 +17803,15 @@ const ToolboxCatalog = {
           "sourceId": "web-open-graph-preview-card"
         }
       ],
-      "href": "tools/tool/?id=web-open-graph-preview-card"
+      "href": "tools/tool/?id=web-open-graph-preview-card",
+      "iconBadge": ""
     },
     {
       "id": "web-permissions-policy-builder",
       "category": "web",
       "name": "权限-策略生成器",
       "description": "从每个功能允许列表构建权限-策略（功能-策略）标头。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "permissions-policy feature-policy header allowlist camera microphone geolocation security headers web-permissions-policy-builder 权限-策略生成器",
       "variants": [
@@ -16915,14 +17822,15 @@ const ToolboxCatalog = {
           "sourceId": "web-permissions-policy-builder"
         }
       ],
-      "href": "tools/tool/?id=web-permissions-policy-builder"
+      "href": "tools/tool/?id=web-permissions-policy-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-preload-link-generator",
       "category": "web",
       "name": "资源提示链接生成器",
       "description": "生成预加载、预取、预连接和dns-预取链接标签。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "preload prefetch preconnect dns-prefetch modulepreload resource hints link rel performance resource-hints html web-preload-link-generator 资源提示链接生成器",
       "variants": [
@@ -16933,14 +17841,15 @@ const ToolboxCatalog = {
           "sourceId": "web-preload-link-generator"
         }
       ],
-      "href": "tools/tool/?id=web-preload-link-generator"
+      "href": "tools/tool/?id=web-preload-link-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-query-params-diff",
       "category": "web",
       "name": "URL查询参数差异",
       "description": "比较两个URL的查询字符串并显示哪些参数被添加、移除、改变或未更改。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "query string diff compare urls url params added removed changed querystring searchparams web-query-params-diff URL查询参数差异",
       "variants": [
@@ -16951,14 +17860,15 @@ const ToolboxCatalog = {
           "sourceId": "web-query-params-diff"
         }
       ],
-      "href": "tools/tool/?id=web-query-params-diff"
+      "href": "tools/tool/?id=web-query-params-diff",
+      "iconBadge": ""
     },
     {
       "id": "web-referrer-policy-reference",
       "category": "web",
       "name": "推荐人-策略参考和测试器",
       "description": "解释Referrer-Policy值并模拟在两个URL之间发送什么Referer。",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": "referrer-policy referer header no-referrer strict-origin cross-origin downgrade privacy referrer policy http security web-referrer-policy-reference 推荐人-策略参考和测试器",
       "variants": [
@@ -16969,14 +17879,15 @@ const ToolboxCatalog = {
           "sourceId": "web-referrer-policy-reference"
         }
       ],
-      "href": "tools/tool/?id=web-referrer-policy-reference"
+      "href": "tools/tool/?id=web-referrer-policy-reference",
+      "iconBadge": ""
     },
     {
       "id": "web-regex-cheatsheet",
       "category": "web",
       "name": "正则表达式备忘单和生成器",
       "description": "浏览可搜索的正则表达式语法参考和片段库，以获取常见模式，例如电子邮件、URL、IP和日期，以及可复制的表达式。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regex cheatsheet reference pattern snippet syntax web-regex-cheatsheet 正则表达式备忘单和生成器",
       "variants": [
@@ -16987,14 +17898,15 @@ const ToolboxCatalog = {
           "sourceId": "web-regex-cheatsheet"
         }
       ],
-      "href": "tools/tool/?id=web-regex-cheatsheet"
+      "href": "tools/tool/?id=web-regex-cheatsheet",
+      "iconBadge": ".*"
     },
     {
       "id": "web-regex-match-lines",
       "category": "web",
       "name": "正则表达式与行匹配",
       "description": "针对粘贴文本的每一行运行正则表达式并列出哪些行匹配、哪些行不匹配以及捕获的组。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regular expression grep capture groups test pattern per line regex lines filter match web-regex-match-lines 正则表达式与行匹配",
       "variants": [
@@ -17005,14 +17917,15 @@ const ToolboxCatalog = {
           "sourceId": "web-regex-match-lines"
         }
       ],
-      "href": "tools/tool/?id=web-regex-match-lines"
+      "href": "tools/tool/?id=web-regex-match-lines",
+      "iconBadge": ".*"
     },
     {
       "id": "web-regex-named-group-converter",
       "category": "web",
       "name": "正则表达式命名组参考转换器",
       "description": "在正则表达式模式中的编号捕获组和命名捕获组及其反向引用/替换之间进行转换。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regular expression numbered groups k<name> replacement $1 rewrite regex capture named convert backreference web-regex-named-group-converter 正则表达式命名组参考转换器",
       "variants": [
@@ -17023,14 +17936,15 @@ const ToolboxCatalog = {
           "sourceId": "web-regex-named-group-converter"
         }
       ],
-      "href": "tools/tool/?id=web-regex-named-group-converter"
+      "href": "tools/tool/?id=web-regex-named-group-converter",
+      "iconBadge": ".*"
     },
     {
       "id": "web-regex-pattern-library",
       "category": "web",
       "name": "通用正则表达式模式库",
       "description": "用于电子邮件、URL、IP、日期和其他常见验证的准备复制的正则表达式模式的可搜索参考。",
-      "icon": "convert",
+      "icon": "regex",
       "tags": [],
       "keywords": "regular expression regex library email url ipv4 uuid validation pattern common patterns reference cheatsheet web-regex-pattern-library 通用正则表达式模式库",
       "variants": [
@@ -17041,14 +17955,15 @@ const ToolboxCatalog = {
           "sourceId": "web-regex-pattern-library"
         }
       ],
-      "href": "tools/tool/?id=web-regex-pattern-library"
+      "href": "tools/tool/?id=web-regex-pattern-library",
+      "iconBadge": ".*"
     },
     {
       "id": "web-relative-url-resolver",
       "category": "web",
       "name": "相对URL解析器",
       "description": "解析针对基本URL的相对引用以产生绝对目标。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "rfc 3986 reference resolution href dot segments scheme relative url resolve base absolute web-relative-url-resolver 相对URL解析器",
       "variants": [
@@ -17059,14 +17974,15 @@ const ToolboxCatalog = {
           "sourceId": "web-relative-url-resolver"
         }
       ],
-      "href": "tools/tool/?id=web-relative-url-resolver"
+      "href": "tools/tool/?id=web-relative-url-resolver",
+      "iconBadge": ""
     },
     {
       "id": "web-robots-txt-tester",
       "category": "web",
       "name": "robots.txt测试器",
       "description": "根据粘贴的robots.txt规则测试用户代理是否允许URL路径。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "robots.txt user-agent googlebot rfc 9309 crawl-delay sitemap robots seo crawler allow disallow web-robots-txt-tester robots.txt测试器",
       "variants": [
@@ -17077,14 +17993,15 @@ const ToolboxCatalog = {
           "sourceId": "web-robots-txt-tester"
         }
       ],
-      "href": "tools/tool/?id=web-robots-txt-tester"
+      "href": "tools/tool/?id=web-robots-txt-tester",
+      "iconBadge": ""
     },
     {
       "id": "web-scrollbar-styler",
       "category": "web",
       "name": "CSS自定义滚动条样式器",
       "description": "生成跨浏览器自定义滚动条CSS（WebKit伪元素+Firefox）。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "scrollbar css webkit-scrollbar scrollbar-color scrollbar-width custom thumb track design webkit firefox web-scrollbar-styler CSS自定义滚动条样式器",
       "variants": [
@@ -17095,14 +18012,15 @@ const ToolboxCatalog = {
           "sourceId": "web-scrollbar-styler"
         }
       ],
-      "href": "tools/tool/?id=web-scrollbar-styler"
+      "href": "tools/tool/?id=web-scrollbar-styler",
+      "iconBadge": ""
     },
     {
       "id": "web-semver-bump",
       "category": "web",
       "name": "Semver 版本保险杠",
       "description": "通过根据 semver 规则碰撞主要、次要、补丁或预发布来计算下一个语义版本。",
-      "icon": "convert",
+      "icon": "git-compare-arrows",
       "tags": [],
       "keywords": "increment version major minor patch prerelease premajor preminor prepatch alpha beta semver bump npm release web-semver-bump Semver 版本保险杠",
       "variants": [
@@ -17113,14 +18031,15 @@ const ToolboxCatalog = {
           "sourceId": "web-semver-bump"
         }
       ],
-      "href": "tools/tool/?id=web-semver-bump"
+      "href": "tools/tool/?id=web-semver-bump",
+      "iconBadge": ""
     },
     {
       "id": "web-semver-compare",
       "category": "web",
       "name": "语义版本比较器",
       "description": "比较两个语义版本以查看哪个版本更大，将版本解析为主要/次要/补丁/预发行，并针对范围对其进行测试。",
-      "icon": "convert",
+      "icon": "file-diff",
       "tags": [],
       "keywords": "semver version compare semantic range npm web-semver-compare 语义版本比较器",
       "variants": [
@@ -17131,14 +18050,15 @@ const ToolboxCatalog = {
           "sourceId": "web-semver-compare"
         }
       ],
-      "href": "tools/tool/?id=web-semver-compare"
+      "href": "tools/tool/?id=web-semver-compare",
+      "iconBadge": ""
     },
     {
       "id": "web-semver-range-tester",
       "category": "web",
       "name": "Semver 范围测试仪",
       "description": "测试语义版本是否满足npm样式的版本范围（脱字号、波形符、比较器、连字符范围）。",
-      "icon": "convert",
+      "icon": "git-compare-arrows",
       "tags": [],
       "keywords": "version satisfies range satisfaction comparator wildcard hyphen x-range ^ ~ semver npm caret tilde web-semver-range-tester Semver 范围测试仪",
       "variants": [
@@ -17149,14 +18069,15 @@ const ToolboxCatalog = {
           "sourceId": "web-semver-range-tester"
         }
       ],
-      "href": "tools/tool/?id=web-semver-range-tester"
+      "href": "tools/tool/?id=web-semver-range-tester",
+      "iconBadge": ""
     },
     {
       "id": "web-set-cookie-builder",
       "category": "web",
       "name": "Set-Cookie 标头生成器",
       "description": "根据名称、值和属性切换构建语法正确的 Set-Cookie 标头。",
-      "icon": "convert",
+      "icon": "cookie",
       "tags": [],
       "keywords": "set-cookie cookie samesite httponly secure __host- max-age rfc 6265 header http headers security web-set-cookie-builder Set-Cookie 标头生成器",
       "variants": [
@@ -17167,14 +18088,15 @@ const ToolboxCatalog = {
           "sourceId": "web-set-cookie-builder"
         }
       ],
-      "href": "tools/tool/?id=web-set-cookie-builder"
+      "href": "tools/tool/?id=web-set-cookie-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-slugify-variants",
       "category": "web",
       "name": "Slugify 变体比较器",
       "description": "一次从一个输入生成多个slug样式（kebab、snake、dot、path、GitHub-anchor）以进行比较。",
-      "icon": "convert",
+      "icon": "case-sensitive",
       "tags": [],
       "keywords": "url slug dot case path github heading filename safe diacritics slugify kebab snake anchor web-slugify-variants Slugify 变体比较器",
       "variants": [
@@ -17185,14 +18107,15 @@ const ToolboxCatalog = {
           "sourceId": "web-slugify-variants"
         }
       ],
-      "href": "tools/tool/?id=web-slugify-variants"
+      "href": "tools/tool/?id=web-slugify-variants",
+      "iconBadge": ""
     },
     {
       "id": "web-srcset-density-calculator",
       "category": "web",
       "name": "响应式图像宽度规划器",
       "description": "根据布局和断点计算srcset宽度描述符和尺寸。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "width descriptor breakpoint retina 2x 3x sizes attribute picture image widths srcset responsive images dpr web-srcset-density-calculator 响应式图像宽度规划器",
       "variants": [
@@ -17203,14 +18126,15 @@ const ToolboxCatalog = {
           "sourceId": "web-srcset-density-calculator"
         }
       ],
-      "href": "tools/tool/?id=web-srcset-density-calculator"
+      "href": "tools/tool/?id=web-srcset-density-calculator",
+      "iconBadge": ""
     },
     {
       "id": "web-srcset-generator",
       "category": "web",
       "name": "响应式图像srcset生成器",
       "description": "从宽度列表生成<img>srcset/sizes（或<picture>）标记。",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": "responsive images srcset sizes picture webp avif density retina img tag html web-srcset-generator 响应式图像srcset生成器 attribute breakpoints media query width descriptor lazy loading web-srcset-sizes-builder 响应式图像 生成器",
       "variants": [
@@ -17227,14 +18151,15 @@ const ToolboxCatalog = {
           "sourceId": "web-srcset-sizes-builder"
         }
       ],
-      "href": "tools/tool/?id=web-srcset-generator"
+      "href": "tools/tool/?id=web-srcset-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-text-shadow-generator",
       "category": "web",
       "name": "CSS文本阴影生成器",
       "description": "利用实时印刷预览构建单个或堆叠的文本阴影值。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "text shadow css neon glow long outline retro 3d layers typography text-shadow generator preview web-text-shadow-generator CSS文本阴影生成器",
       "variants": [
@@ -17245,14 +18170,15 @@ const ToolboxCatalog = {
           "sourceId": "web-text-shadow-generator"
         }
       ],
-      "href": "tools/tool/?id=web-text-shadow-generator"
+      "href": "tools/tool/?id=web-text-shadow-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-transform-generator",
       "category": "web",
       "name": "CSS变换生成器",
       "description": "将平移、旋转、缩放、倾斜和透视合成为一个变换值。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css transform translate rotate scale skew perspective transform-origin rotateX preview animation 3d generator web-transform-generator CSS变换生成器",
       "variants": [
@@ -17263,14 +18189,15 @@ const ToolboxCatalog = {
           "sourceId": "web-transform-generator"
         }
       ],
-      "href": "tools/tool/?id=web-transform-generator"
+      "href": "tools/tool/?id=web-transform-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-transition-generator",
       "category": "web",
       "name": "CSS 过渡生成器",
       "description": "根据属性、持续时间、定时函数和延迟构建转换速记。",
-      "icon": "convert",
+      "icon": "brush",
       "tags": [],
       "keywords": "css transition shorthand timing function cubic-bezier duration delay ease longhand animation easing generator web-transition-generator CSS 过渡生成器",
       "variants": [
@@ -17281,14 +18208,15 @@ const ToolboxCatalog = {
           "sourceId": "web-transition-generator"
         }
       ],
-      "href": "tools/tool/?id=web-transition-generator"
+      "href": "tools/tool/?id=web-transition-generator",
+      "iconBadge": ""
     },
     {
       "id": "web-url-builder",
       "category": "web",
       "name": "URL生成器",
       "description": "从单独的方案、主机、端口、路径、查询和片段字段组装有效的URL。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "url builder query string percent encoding scheme host fragment whatwg encodeuricomponent encode web-url-builder URL生成器",
       "variants": [
@@ -17299,14 +18227,15 @@ const ToolboxCatalog = {
           "sourceId": "web-url-builder"
         }
       ],
-      "href": "tools/tool/?id=web-url-builder"
+      "href": "tools/tool/?id=web-url-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-url-normalizer",
       "category": "web",
       "name": "URL规范器",
       "description": "通过小写主机、解析点段、排序参数和剥离默认值来规范化URL。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "canonicalize sort params dedupe trailing slash default port cleanup url normalize canonical query rfc 3986 web-url-normalizer URL规范器",
       "variants": [
@@ -17317,14 +18246,15 @@ const ToolboxCatalog = {
           "sourceId": "web-url-normalizer"
         }
       ],
-      "href": "tools/tool/?id=web-url-normalizer"
+      "href": "tools/tool/?id=web-url-normalizer",
+      "iconBadge": ""
     },
     {
       "id": "web-url-path-joiner",
       "category": "web",
       "name": "URL 路径连接器和规范器",
       "description": "将基本URL与路径段连接并安全地标准化斜杠、点段和尾部斜杠。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "path join slashes dot segments trailing slash rfc 3986 concatenate url normalize web-url-path-joiner URL 路径连接器和规范器",
       "variants": [
@@ -17335,14 +18265,15 @@ const ToolboxCatalog = {
           "sourceId": "web-url-path-joiner"
         }
       ],
-      "href": "tools/tool/?id=web-url-path-joiner"
+      "href": "tools/tool/?id=web-url-path-joiner",
+      "iconBadge": ""
     },
     {
       "id": "web-url-query-sorter",
       "category": "web",
       "name": "URL查询参数排序器",
       "description": "通过对查询参数进行排序和可选地去重复来规范化URL。",
-      "icon": "convert",
+      "icon": "link",
       "tags": [],
       "keywords": "querystring normalize dedupe search params canonicalize url order query sort canonical web-url-query-sorter URL查询参数排序器",
       "variants": [
@@ -17353,14 +18284,15 @@ const ToolboxCatalog = {
           "sourceId": "web-url-query-sorter"
         }
       ],
-      "href": "tools/tool/?id=web-url-query-sorter"
+      "href": "tools/tool/?id=web-url-query-sorter",
+      "iconBadge": ""
     },
     {
       "id": "web-user-agent-builder",
       "category": "web",
       "name": "用户代理字符串生成器",
       "description": "根据平台、引擎和版本选择器组成浏览器用户代理字符串。",
-      "icon": "convert",
+      "icon": "user-round",
       "tags": [],
       "keywords": "ua string user agent generator navigator.userAgent browser identification googlebot curl spoof user-agent http headers testing web-user-agent-builder 用户代理字符串生成器",
       "variants": [
@@ -17371,14 +18303,15 @@ const ToolboxCatalog = {
           "sourceId": "web-user-agent-builder"
         }
       ],
-      "href": "tools/tool/?id=web-user-agent-builder"
+      "href": "tools/tool/?id=web-user-agent-builder",
+      "iconBadge": ""
     },
     {
       "id": "web-www-authenticate-parser",
       "category": "web",
       "name": "WWW-验证解析器",
       "description": "将 WWW-Authenticate / Authorization 质询标头解析为方案和参数。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "www-authenticate proxy-authenticate digest basic oauth challenge realm http auth header bearer parser web-www-authenticate-parser WWW-验证解析器",
       "variants": [
@@ -17389,14 +18322,15 @@ const ToolboxCatalog = {
           "sourceId": "web-www-authenticate-parser"
         }
       ],
-      "href": "tools/tool/?id=web-www-authenticate-parser"
+      "href": "tools/tool/?id=web-www-authenticate-parser",
+      "iconBadge": ""
     },
     {
       "id": "web-xml-formatter",
       "category": "web",
       "name": "XML 格式化程序",
       "description": "漂亮打印和缩进缩小的XML，或者通过剥离标签之间的空白以及自闭合标签处理来缩小详细的XML。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml format beautify minify pretty indent web-xml-formatter XML 格式化程序",
       "variants": [
@@ -17407,14 +18341,15 @@ const ToolboxCatalog = {
           "sourceId": "web-xml-formatter"
         }
       ],
-      "href": "tools/tool/?id=web-xml-formatter"
+      "href": "tools/tool/?id=web-xml-formatter",
+      "iconBadge": "XML"
     },
     {
       "id": "web-xml-to-json",
       "category": "web",
       "name": "XML 到 JSON (DOM)",
       "description": "将XML文档转换为结构化JSON对象，以可预测的约定映射元素、属性和文本内容。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml json convert parse dom attributes web-xml-to-json XML 到 JSON (DOM)",
       "variants": [
@@ -17425,14 +18360,15 @@ const ToolboxCatalog = {
           "sourceId": "web-xml-to-json"
         }
       ],
-      "href": "tools/tool/?id=web-xml-to-json"
+      "href": "tools/tool/?id=web-xml-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "web-z-index-scale-generator",
       "category": "web",
       "name": "Z-索引标尺生成器",
       "description": "生成记录的z索引比例，其中命名层作为CSS变量或Sass/JS映射以避免堆叠混乱。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "stacking context z-index map css custom properties sass design tokens layers modal tooltip design-system layering web-z-index-scale-generator Z-索引标尺生成器",
       "variants": [
@@ -17443,14 +18379,15 @@ const ToolboxCatalog = {
           "sourceId": "web-z-index-scale-generator"
         }
       ],
-      "href": "tools/tool/?id=web-z-index-scale-generator"
+      "href": "tools/tool/?id=web-z-index-scale-generator",
+      "iconBadge": ""
     },
     {
       "id": "webhook-retry-schedule-calculator",
       "category": "web",
       "name": "Webhook 重试计划计算器",
       "description": "使用延迟、乘数、抖动和最大延迟对webhook重试尝试进行建模。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "webhook retry backoff schedule webhook-retry-schedule-calculator Webhook 重试计划计算器",
       "variants": [
@@ -17461,14 +18398,15 @@ const ToolboxCatalog = {
           "sourceId": "webhook-retry-schedule-calculator"
         }
       ],
-      "href": "tools/tool/?id=webhook-retry-schedule-calculator"
+      "href": "tools/tool/?id=webhook-retry-schedule-calculator",
+      "iconBadge": ""
     },
     {
       "id": "webhook-signature-verifier",
       "category": "encoding",
       "name": "Webhook 签名验证器",
       "description": "验证 GitHub、Slack、Stripe 式集成使用的 HMAC Webhook 签名。",
-      "icon": "convert",
+      "icon": "signature",
       "tags": [],
       "keywords": "webhook hmac signature security webhook-signature-verifier Webhook 签名验证器",
       "variants": [
@@ -17479,14 +18417,15 @@ const ToolboxCatalog = {
           "sourceId": "webhook-signature-verifier"
         }
       ],
-      "href": "tools/tool/?id=webhook-signature-verifier"
+      "href": "tools/tool/?id=webhook-signature-verifier",
+      "iconBadge": ""
     },
     {
       "id": "week-number",
       "category": "time",
       "name": "ISO周数",
       "description": "查找任何日期（和一年中的某一天）的 ISO 8601 周数。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "week number iso day of year calendar what 8601 date week-number ISO周数",
       "variants": [
@@ -17497,14 +18436,15 @@ const ToolboxCatalog = {
           "sourceId": "week-number"
         }
       ],
-      "href": "tools/tool/?id=week-number"
+      "href": "tools/tool/?id=week-number",
+      "iconBadge": ""
     },
     {
       "id": "week-of-month-finder",
       "category": "time",
       "name": "月份查找器",
       "description": "使用几种常见的计数约定来确定日期属于该月的哪一周。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "week of month which nth calendar row first full monthly number date convention finder week-of-month-finder 月份查找器",
       "variants": [
@@ -17515,14 +18455,15 @@ const ToolboxCatalog = {
           "sourceId": "week-of-month-finder"
         }
       ],
-      "href": "tools/tool/?id=week-of-month-finder"
+      "href": "tools/tool/?id=week-of-month-finder",
+      "iconBadge": ""
     },
     {
       "id": "week-to-date",
       "category": "time",
       "name": "迄今为止的周数",
       "description": "将ISO周数和年份转换为该周的开始日期和结束日期，反之亦然。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "iso week number date convert calendar week-to-date 迄今为止的周数",
       "variants": [
@@ -17533,14 +18474,15 @@ const ToolboxCatalog = {
           "sourceId": "week-to-date"
         }
       ],
-      "href": "tools/tool/?id=week-to-date"
+      "href": "tools/tool/?id=week-to-date",
+      "iconBadge": ""
     },
     {
       "id": "weekday-of-date",
       "category": "time",
       "name": "任意日期的工作日",
       "description": "通过世界末日规则心算演练找出任何日期属于一周中的哪一天。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "day of the week what was zeller congruence doomsday rule conway weekday calculator calendar weekday-of-date 任意日期的工作日",
       "variants": [
@@ -17551,14 +18493,15 @@ const ToolboxCatalog = {
           "sourceId": "weekday-of-date"
         }
       ],
-      "href": "tools/tool/?id=weekday-of-date"
+      "href": "tools/tool/?id=weekday-of-date",
+      "iconBadge": ""
     },
     {
       "id": "weeks-until-date",
       "category": "time",
       "name": "截止日期前的周数和月数",
       "description": "计算直到未来日期为止剩余的整周、整月和周末。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "weeks until months business days weekends remaining date countdown weeks-until-date 截止日期前的周数和月数",
       "variants": [
@@ -17569,14 +18512,15 @@ const ToolboxCatalog = {
           "sourceId": "weeks-until-date"
         }
       ],
-      "href": "tools/tool/?id=weeks-until-date"
+      "href": "tools/tool/?id=weeks-until-date",
+      "iconBadge": ""
     },
     {
       "id": "weighted-average-calculator",
       "category": "math",
       "name": "加权平均和成绩计算器",
       "description": "根据值-权重对计算加权平均值，例如成绩。",
-      "icon": "convert",
+      "icon": "calendar-range",
       "tags": [],
       "keywords": "weighted average mean gpa grade calculator final credits grades statistics weights weighted-average-calculator 加权平均和成绩计算器",
       "variants": [
@@ -17587,14 +18531,15 @@ const ToolboxCatalog = {
           "sourceId": "weighted-average-calculator"
         }
       ],
-      "href": "tools/tool/?id=weighted-average-calculator"
+      "href": "tools/tool/?id=weighted-average-calculator",
+      "iconBadge": ""
     },
     {
       "id": "whitespace-cleaner",
       "category": "text",
       "name": "空白清理器",
       "description": "修剪行、折叠空格、去除空白行以及规范化空白。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "whitespace trim collapse spaces remove blank lines clean text tabs whitespace-cleaner 空白清理器",
       "variants": [
@@ -17605,14 +18550,15 @@ const ToolboxCatalog = {
           "sourceId": "whitespace-cleaner"
         }
       ],
-      "href": "tools/tool/?id=whitespace-cleaner"
+      "href": "tools/tool/?id=whitespace-cleaner",
+      "iconBadge": ""
     },
     {
       "id": "whitespace-visualizer",
       "category": "text",
       "name": "空白和特殊字符可视化工具",
       "description": "通过用可见字形替换隐藏的空格、制表符和行结尾来显示它们。",
-      "icon": "convert",
+      "icon": "text-cursor-input",
       "tags": [],
       "keywords": "show whitespace reveal spaces visualize tabs line endings crlf lf trailing line-endings debug whitespace-visualizer 空白和特殊字符可视化工具",
       "variants": [
@@ -17623,14 +18569,15 @@ const ToolboxCatalog = {
           "sourceId": "whitespace-visualizer"
         }
       ],
-      "href": "tools/tool/?id=whitespace-visualizer"
+      "href": "tools/tool/?id=whitespace-visualizer",
+      "iconBadge": ""
     },
     {
       "id": "wifi-qr-payload-generator",
       "category": "web",
       "name": "WiFi QR有效负载字符串生成器",
       "description": "构建WIFI：来自SSID、密码、加密和隐藏标志的WiFi QR码的有效负载字符串。",
-      "icon": "convert",
+      "icon": "wifi",
       "tags": [],
       "keywords": "wifi qr WIFI:T: network code password ssid payload wpa wep nopass join wifi-qr-payload-generator WiFi QR有效负载字符串生成器",
       "variants": [
@@ -17641,14 +18588,15 @@ const ToolboxCatalog = {
           "sourceId": "wifi-qr-payload-generator"
         }
       ],
-      "href": "tools/tool/?id=wifi-qr-payload-generator"
+      "href": "tools/tool/?id=wifi-qr-payload-generator",
+      "iconBadge": ""
     },
     {
       "id": "word-count",
       "category": "text",
       "name": "字数和字符计数",
       "description": "单词、字符、句子、行和阅读时间的实时计数。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "word count char characters lines reading time statistics character readability word-count 字数和字符计数 字数统计",
       "variants": [
@@ -17665,14 +18613,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/word-count"
         }
       ],
-      "href": "tools/tool/?id=word-count"
+      "href": "tools/tool/?id=word-count",
+      "iconBadge": ""
     },
     {
       "id": "word-frequency",
       "category": "text",
       "name": "词频计数器",
       "description": "计算每个单词出现的频率并按频率对它们进行排名，并提供忽略大小写和跳过常见停用词的选项。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "frequency keyword density tally occurrences ranking word-frequency 词频计数器",
       "variants": [
@@ -17683,14 +18632,15 @@ const ToolboxCatalog = {
           "sourceId": "word-frequency"
         }
       ],
-      "href": "tools/tool/?id=word-frequency"
+      "href": "tools/tool/?id=word-frequency",
+      "iconBadge": ""
     },
     {
       "id": "word-length-distribution",
       "category": "text",
       "name": "单词和句子长度分布",
       "description": "显示单词长度和句子长度如何在文本中分布。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "word length sentence histogram distribution mean median mode standard deviation dispersion statistics analysis word-length-distribution 单词和句子长度分布",
       "variants": [
@@ -17701,14 +18651,15 @@ const ToolboxCatalog = {
           "sourceId": "word-length-distribution"
         }
       ],
-      "href": "tools/tool/?id=word-length-distribution"
+      "href": "tools/tool/?id=word-length-distribution",
+      "iconBadge": ""
     },
     {
       "id": "word-wrap-justify",
       "category": "text",
       "name": "段落重排和对齐",
       "description": "通过左对齐、右对齐、居中对齐或完全对齐对齐和连字控制将段落重新换行至目标宽度。",
-      "icon": "convert",
+      "icon": "wrap-text",
       "tags": [],
       "keywords": "word wrap reflow text full justify alignment column width fill paragraph align word-wrap-justify 段落重排和对齐",
       "variants": [
@@ -17719,14 +18670,15 @@ const ToolboxCatalog = {
           "sourceId": "word-wrap-justify"
         }
       ],
-      "href": "tools/tool/?id=word-wrap-justify"
+      "href": "tools/tool/?id=word-wrap-justify",
+      "iconBadge": ""
     },
     {
       "id": "working-hours-calculator",
       "category": "time",
       "name": "工作时间计算器",
       "description": "计算两个日期时间之间的净工作时间，不包括晚上、周末和午餐。",
-      "icon": "convert",
+      "icon": "calendar-days",
       "tags": [],
       "keywords": "work hours billable business lunch break weekday timesheet working payroll duration working-hours-calculator 工作时间计算器",
       "variants": [
@@ -17737,14 +18689,15 @@ const ToolboxCatalog = {
           "sourceId": "working-hours-calculator"
         }
       ],
-      "href": "tools/tool/?id=working-hours-calculator"
+      "href": "tools/tool/?id=working-hours-calculator",
+      "iconBadge": ""
     },
     {
       "id": "wsdl-operation-explorer",
       "category": "web",
       "name": "WSDL操作资源管理器",
       "description": "解析WSDL XML并列出服务、端口、绑定、操作和消息。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "wsdl soap xml api wsdl-operation-explorer WSDL操作资源管理器",
       "variants": [
@@ -17755,14 +18708,15 @@ const ToolboxCatalog = {
           "sourceId": "wsdl-operation-explorer"
         }
       ],
-      "href": "tools/tool/?id=wsdl-operation-explorer"
+      "href": "tools/tool/?id=wsdl-operation-explorer",
+      "iconBadge": ""
     },
     {
       "id": "wsdl-to-sample-soap",
       "category": "web",
       "name": "WSDL 到示例 SOAP",
       "description": "为选定的操作名称生成起始SOAP信封。",
-      "icon": "convert",
+      "icon": "send",
       "tags": [],
       "keywords": "wsdl soap xml sample wsdl-to-sample-soap WSDL 到示例 SOAP",
       "variants": [
@@ -17773,14 +18727,15 @@ const ToolboxCatalog = {
           "sourceId": "wsdl-to-sample-soap"
         }
       ],
-      "href": "tools/tool/?id=wsdl-to-sample-soap"
+      "href": "tools/tool/?id=wsdl-to-sample-soap",
+      "iconBadge": ""
     },
     {
       "id": "xml-attributes-to-elements",
       "category": "convert",
       "name": "XML 属性 ↔ 子元素",
       "description": "通过将属性提升为子元素或者将简单的子元素降级为属性来重写XML文档。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml attributes to elements promote demote dom restructure pretty print transform refactor xml-attributes-to-elements XML 属性 ↔ 子元素",
       "variants": [
@@ -17791,14 +18746,15 @@ const ToolboxCatalog = {
           "sourceId": "xml-attributes-to-elements"
         }
       ],
-      "href": "tools/tool/?id=xml-attributes-to-elements"
+      "href": "tools/tool/?id=xml-attributes-to-elements",
+      "iconBadge": ""
     },
     {
       "id": "xml-attributes-to-json",
       "category": "convert",
       "name": "XML 到 JSON (属性模式)",
       "description": "通过约定将XML转换为保留属性的JSON。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml to json @attribute #text dom convention coerce attributes convert parse xml-attributes-to-json XML 到 JSON (属性模式)",
       "variants": [
@@ -17809,14 +18765,15 @@ const ToolboxCatalog = {
           "sourceId": "xml-attributes-to-json"
         }
       ],
-      "href": "tools/tool/?id=xml-attributes-to-json"
+      "href": "tools/tool/?id=xml-attributes-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "xml-to-csv",
       "category": "convert",
       "name": "XML 到 CSV",
       "description": "将重复的XML元素展平为CSV行。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml to csv records rows columns rfc4180 spreadsheet convert flatten xml-to-csv XML 到 CSV",
       "variants": [
@@ -17827,14 +18784,15 @@ const ToolboxCatalog = {
           "sourceId": "xml-to-csv"
         }
       ],
-      "href": "tools/tool/?id=xml-to-csv"
+      "href": "tools/tool/?id=xml-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "xml-to-json",
       "category": "convert",
       "name": "XML到JSON",
       "description": "将XML解析为干净的JSON树，具有属性前缀、文本节点命名和重复元素的数组强制的选项。",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "xml json convert parse attributes dom xml-to-json XML到JSON",
       "variants": [
@@ -17845,14 +18803,15 @@ const ToolboxCatalog = {
           "sourceId": "xml-to-json"
         }
       ],
-      "href": "tools/tool/?id=xml-to-json"
+      "href": "tools/tool/?id=xml-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "xor-cipher",
       "category": "encoding",
       "name": "异或密码",
       "description": "使用重复密钥异或来加密或解密文本，输出为十六进制或Base64并返回。",
-      "icon": "convert",
+      "icon": "lock-keyhole",
       "tags": [],
       "keywords": "xor cipher encrypt decrypt repeating key obfuscate xor-cipher 异或密码",
       "variants": [
@@ -17863,14 +18822,15 @@ const ToolboxCatalog = {
           "sourceId": "xor-cipher"
         }
       ],
-      "href": "tools/tool/?id=xor-cipher"
+      "href": "tools/tool/?id=xor-cipher",
+      "iconBadge": ""
     },
     {
       "id": "yaml-to-csv",
       "category": "convert",
       "name": "YAML 到 CSV",
       "description": "将对象的YAML列表扁平化为CSV。",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": "yaml to csv spreadsheet tabular records rfc4180 convert flatten data yaml-to-csv YAML 到 CSV",
       "variants": [
@@ -17881,14 +18841,15 @@ const ToolboxCatalog = {
           "sourceId": "yaml-to-csv"
         }
       ],
-      "href": "tools/tool/?id=yaml-to-csv"
+      "href": "tools/tool/?id=yaml-to-csv",
+      "iconBadge": "CSV"
     },
     {
       "id": "yaml-to-json",
       "category": "convert",
       "name": "YAML到JSON",
       "description": "将常见的YAML配置转换为JSON。",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": "yaml to json parse convert config yaml-to-json YAML到JSON",
       "variants": [
@@ -17899,14 +18860,15 @@ const ToolboxCatalog = {
           "sourceId": "yaml-to-json"
         }
       ],
-      "href": "tools/tool/?id=yaml-to-json"
+      "href": "tools/tool/?id=yaml-to-json",
+      "iconBadge": "JSON"
     },
     {
       "id": "yaml-to-toml",
       "category": "convert",
       "name": "YAML 到 TOML",
       "description": "将YAML配置直接转换为TOML，一步将嵌套映射和列表映射到表和表数组中。",
-      "icon": "convert",
+      "icon": "file-cog",
       "tags": [],
       "keywords": "yaml toml convert config transform yml yaml-to-toml YAML 到 TOML",
       "variants": [
@@ -17917,14 +18879,15 @@ const ToolboxCatalog = {
           "sourceId": "yaml-to-toml"
         }
       ],
-      "href": "tools/tool/?id=yaml-to-toml"
+      "href": "tools/tool/?id=yaml-to-toml",
+      "iconBadge": "TOML"
     },
     {
       "id": "z-score-calculator",
       "category": "math",
       "name": "Z 分数计算器",
       "description": "将原始值转换为z分数并返回给定的平均值和标准差。",
-      "icon": "convert",
+      "icon": "chart-column",
       "tags": [],
       "keywords": "z-score standard score normal distribution percentile cumulative probability deviation mean cdf statistics z-score-calculator Z 分数计算器",
       "variants": [
@@ -17935,14 +18898,15 @@ const ToolboxCatalog = {
           "sourceId": "z-score-calculator"
         }
       ],
-      "href": "tools/tool/?id=z-score-calculator"
+      "href": "tools/tool/?id=z-score-calculator",
+      "iconBadge": ""
     },
     {
       "id": "zero-width-char-stripper",
       "category": "text",
       "name": "零宽度和不可见字符剥离器",
       "description": "检测并从粘贴的文本中删除不可见的零宽度和格式化字符。",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": "zero width space invisible characters strip zwsp remove bom soft hyphen directional marks zero-width unicode clean sanitize zero-width-char-stripper 零宽度和不可见字符剥离器",
       "variants": [
@@ -17953,14 +18917,15 @@ const ToolboxCatalog = {
           "sourceId": "zero-width-char-stripper"
         }
       ],
-      "href": "tools/tool/?id=zero-width-char-stripper"
+      "href": "tools/tool/?id=zero-width-char-stripper",
+      "iconBadge": ""
     },
     {
       "id": "video-trim",
       "category": "media",
       "name": "视频裁剪",
       "description": "通过流复制进行即时修剪——无需重新编码，保留原始质量和比特率",
-      "icon": "record",
+      "icon": "scissors",
       "tags": [],
       "keywords": " video-trim 视频裁剪",
       "variants": [
@@ -17971,14 +18936,15 @@ const ToolboxCatalog = {
           "sourceId": "trim"
         }
       ],
-      "href": "tools/tool/?id=video-trim"
+      "href": "tools/tool/?id=video-trim",
+      "iconBadge": "视频"
     },
     {
       "id": "video-resize",
       "category": "media",
       "name": "视频尺寸",
       "description": "通过宽高比锁定将视频缩放至标准分辨率",
-      "icon": "record",
+      "icon": "scaling",
       "tags": [],
       "keywords": " video-resize 视频尺寸",
       "variants": [
@@ -17989,14 +18955,15 @@ const ToolboxCatalog = {
           "sourceId": "resize"
         }
       ],
-      "href": "tools/tool/?id=video-resize"
+      "href": "tools/tool/?id=video-resize",
+      "iconBadge": "视频"
     },
     {
       "id": "video-crop",
       "category": "media",
       "name": "视频画面裁切",
       "description": "作物与社交媒体的长宽比(9:16、1:1、21:9)",
-      "icon": "record",
+      "icon": "crop",
       "tags": [],
       "keywords": " video-crop 视频画面裁切",
       "variants": [
@@ -18007,14 +18974,15 @@ const ToolboxCatalog = {
           "sourceId": "crop"
         }
       ],
-      "href": "tools/tool/?id=video-crop"
+      "href": "tools/tool/?id=video-crop",
+      "iconBadge": "视频"
     },
     {
       "id": "video-compress",
       "category": "media",
       "name": "视频压缩",
       "description": "Discord、Slack 或电子邮件限制的目标特定文件大小",
-      "icon": "record",
+      "icon": "minimize-2",
       "tags": [],
       "keywords": " video-compress 视频压缩",
       "variants": [
@@ -18025,14 +18993,15 @@ const ToolboxCatalog = {
           "sourceId": "compress"
         }
       ],
-      "href": "tools/tool/?id=video-compress"
+      "href": "tools/tool/?id=video-compress",
+      "iconBadge": "视频"
     },
     {
       "id": "video-gif",
       "category": "media",
       "name": "视频转 GIF",
       "description": "通过调色板优化将短剪辑转换为高质量循环GIF",
-      "icon": "record",
+      "icon": "film",
       "tags": [],
       "keywords": " video-gif 视频转 GIF video-to-gif",
       "variants": [
@@ -18049,14 +19018,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/video-to-gif"
         }
       ],
-      "href": "tools/tool/?id=video-gif"
+      "href": "tools/tool/?id=video-gif",
+      "iconBadge": "视频"
     },
     {
       "id": "video-audio",
       "category": "media",
       "name": "视频音频处理",
       "description": "静音、提取MP3或调节音量（0%–300%）",
-      "icon": "record",
+      "icon": "file-audio",
       "tags": [],
       "keywords": " video-audio 视频音频处理",
       "variants": [
@@ -18067,14 +19037,15 @@ const ToolboxCatalog = {
           "sourceId": "audio"
         }
       ],
-      "href": "tools/tool/?id=video-audio"
+      "href": "tools/tool/?id=video-audio",
+      "iconBadge": "视频"
     },
     {
       "id": "video-speed",
       "category": "media",
       "name": "视频速度",
       "description": "创建间隔拍摄或慢动作（0.25×至4.0×）",
-      "icon": "record",
+      "icon": "fast-forward",
       "tags": [],
       "keywords": " video-speed 视频速度",
       "variants": [
@@ -18085,14 +19056,15 @@ const ToolboxCatalog = {
           "sourceId": "speed"
         }
       ],
-      "href": "tools/tool/?id=video-speed"
+      "href": "tools/tool/?id=video-speed",
+      "iconBadge": "视频"
     },
     {
       "id": "video-metadata",
       "category": "media",
       "name": "视频元数据",
       "description": "立即删除所有元数据、位置标签和创建标记",
-      "icon": "record",
+      "icon": "file-search",
       "tags": [],
       "keywords": " video-metadata 视频元数据",
       "variants": [
@@ -18103,14 +19075,15 @@ const ToolboxCatalog = {
           "sourceId": "metadata"
         }
       ],
-      "href": "tools/tool/?id=video-metadata"
+      "href": "tools/tool/?id=video-metadata",
+      "iconBadge": "视频"
     },
     {
       "id": "extract-pages",
       "category": "pdf",
       "name": "提取页面",
       "description": "将所选页面拉出作为新的 PDF，或每页一个 PDF",
-      "icon": "convert",
+      "icon": "file-output",
       "tags": [],
       "keywords": " extract-pages 提取页面",
       "variants": [
@@ -18121,14 +19094,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-pages"
         }
       ],
-      "href": "tools/tool/?id=extract-pages"
+      "href": "tools/tool/?id=extract-pages",
+      "iconBadge": "PDF"
     },
     {
       "id": "remove-pages",
       "category": "pdf",
       "name": "删除页面",
       "description": "删除您选择的页面并保留其他所有内容",
-      "icon": "convert",
+      "icon": "file-minus-2",
       "tags": [],
       "keywords": " remove-pages 删除页面",
       "variants": [
@@ -18139,14 +19113,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-pages"
         }
       ],
-      "href": "tools/tool/?id=remove-pages"
+      "href": "tools/tool/?id=remove-pages",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-organize",
       "category": "pdf",
       "name": "PDF 页面整理",
       "description": "拖动以重新排序，然后旋转、复制、删除或插入空白页",
-      "icon": "convert",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": " organize 组织PDF 整理页面",
       "variants": [
@@ -18163,14 +19138,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/organize"
         }
       ],
-      "href": "tools/tool/?id=pdf-organize"
+      "href": "tools/tool/?id=pdf-organize",
+      "iconBadge": "PDF"
     },
     {
       "id": "rotate-custom",
       "category": "pdf",
       "name": "按自定义度数旋转",
       "description": "以任意角度旋转页面内容，而不仅仅是 90° 步长",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " rotate-custom 按自定义度数旋转",
       "variants": [
@@ -18181,14 +19157,15 @@ const ToolboxCatalog = {
           "sourceId": "rotate-custom"
         }
       ],
-      "href": "tools/tool/?id=rotate-custom"
+      "href": "tools/tool/?id=rotate-custom",
+      "iconBadge": "PDF"
     },
     {
       "id": "reverse-pages",
       "category": "pdf",
       "name": "反向页面",
       "description": "翻转整个文档的页面顺序",
-      "icon": "convert",
+      "icon": "arrow-down-up",
       "tags": [],
       "keywords": " reverse-pages 反向页面",
       "variants": [
@@ -18199,14 +19176,15 @@ const ToolboxCatalog = {
           "sourceId": "reverse-pages"
         }
       ],
-      "href": "tools/tool/?id=reverse-pages"
+      "href": "tools/tool/?id=reverse-pages",
+      "iconBadge": "PDF"
     },
     {
       "id": "add-blank-page",
       "category": "pdf",
       "name": "添加空白页",
       "description": "在任意页面的开头、结尾或后面插入空白页",
-      "icon": "convert",
+      "icon": "file-plus-2",
       "tags": [],
       "keywords": " add-blank-page 添加空白页",
       "variants": [
@@ -18217,14 +19195,15 @@ const ToolboxCatalog = {
           "sourceId": "add-blank-page"
         }
       ],
-      "href": "tools/tool/?id=add-blank-page"
+      "href": "tools/tool/?id=add-blank-page",
+      "iconBadge": "PDF"
     },
     {
       "id": "alternate-merge",
       "category": "pdf",
       "name": "交替和混合页面",
       "description": "通过从每个文件中轮流获取页面来合并 PDF",
-      "icon": "convert",
+      "icon": "combine",
       "tags": [],
       "keywords": " alternate-merge 交替和混合页面",
       "variants": [
@@ -18235,14 +19214,15 @@ const ToolboxCatalog = {
           "sourceId": "alternate-merge"
         }
       ],
-      "href": "tools/tool/?id=alternate-merge"
+      "href": "tools/tool/?id=alternate-merge",
+      "iconBadge": "PDF"
     },
     {
       "id": "duplex-collate",
       "category": "pdf",
       "name": "双面整理",
       "description": "将正面/背面扫描块重新排序为打印顺序",
-      "icon": "convert",
+      "icon": "layers-2",
       "tags": [],
       "keywords": " duplex-collate 双面整理",
       "variants": [
@@ -18253,14 +19233,15 @@ const ToolboxCatalog = {
           "sourceId": "duplex-collate"
         }
       ],
-      "href": "tools/tool/?id=duplex-collate"
+      "href": "tools/tool/?id=duplex-collate",
+      "iconBadge": "PDF"
     },
     {
       "id": "overlay-pdf",
       "category": "pdf",
       "name": "PDF覆盖",
       "description": "将一个 PDF 压印或置于另一个 PDF 上",
-      "icon": "convert",
+      "icon": "layers",
       "tags": [],
       "keywords": " overlay-pdf PDF覆盖",
       "variants": [
@@ -18271,32 +19252,34 @@ const ToolboxCatalog = {
           "sourceId": "overlay-pdf"
         }
       ],
-      "href": "tools/tool/?id=overlay-pdf"
+      "href": "tools/tool/?id=overlay-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "n-up",
       "category": "pdf",
-      "name": "N-Up PDF",
+      "name": "PDF 多页合一",
       "description": "将2、4、6或9页放在一张纸上",
-      "icon": "convert",
+      "icon": "grid-2x2",
       "tags": [],
       "keywords": " n-up N-Up PDF",
       "variants": [
         {
-          "name": "N-Up PDF",
+          "name": "PDF 多页合一",
           "href": "../documents/?embed=1#/tool/n-up",
           "source": "browsersnip",
           "sourceId": "n-up"
         }
       ],
-      "href": "tools/tool/?id=n-up"
+      "href": "tools/tool/?id=n-up",
+      "iconBadge": "PDF"
     },
     {
       "id": "booklet",
       "category": "pdf",
       "name": "PDF 小册子",
       "description": "为双面骑马订打印重新排序和拼版页面",
-      "icon": "convert",
+      "icon": "book-open",
       "tags": [],
       "keywords": " booklet PDF 小册子",
       "variants": [
@@ -18307,14 +19290,15 @@ const ToolboxCatalog = {
           "sourceId": "booklet"
         }
       ],
-      "href": "tools/tool/?id=booklet"
+      "href": "tools/tool/?id=booklet",
+      "iconBadge": "PDF"
     },
     {
       "id": "combine-single-page",
       "category": "pdf",
       "name": "合并为单页",
       "description": "将每一页缝合成一个连续的卷轴",
-      "icon": "convert",
+      "icon": "fold-vertical",
       "tags": [],
       "keywords": " combine-single-page 合并为单页",
       "variants": [
@@ -18325,14 +19309,15 @@ const ToolboxCatalog = {
           "sourceId": "combine-single-page"
         }
       ],
-      "href": "tools/tool/?id=combine-single-page"
+      "href": "tools/tool/?id=combine-single-page",
+      "iconBadge": "PDF"
     },
     {
       "id": "posterize",
       "category": "pdf",
       "name": "对 PDF 进行色调分离",
       "description": "将每个页面分割成重叠图块的网格以用于大幅面打印",
-      "icon": "convert",
+      "icon": "scan",
       "tags": [],
       "keywords": " posterize 对 PDF 进行色调分离",
       "variants": [
@@ -18343,14 +19328,15 @@ const ToolboxCatalog = {
           "sourceId": "posterize"
         }
       ],
-      "href": "tools/tool/?id=posterize"
+      "href": "tools/tool/?id=posterize",
+      "iconBadge": "PDF"
     },
     {
       "id": "divide-pages",
       "category": "pdf",
       "name": "划分页面",
       "description": "将每页切成两半、三等份或切成网格",
-      "icon": "convert",
+      "icon": "split",
       "tags": [],
       "keywords": " divide-pages 划分页面",
       "variants": [
@@ -18361,14 +19347,15 @@ const ToolboxCatalog = {
           "sourceId": "divide-pages"
         }
       ],
-      "href": "tools/tool/?id=divide-pages"
+      "href": "tools/tool/?id=divide-pages",
+      "iconBadge": "PDF"
     },
     {
       "id": "fix-page-size",
       "category": "pdf",
       "name": "固定页面尺寸",
       "description": "将您选择的页面标准化为一种尺寸和方向",
-      "icon": "convert",
+      "icon": "scaling",
       "tags": [],
       "keywords": " fix-page-size 固定页面尺寸",
       "variants": [
@@ -18379,14 +19366,15 @@ const ToolboxCatalog = {
           "sourceId": "fix-page-size"
         }
       ],
-      "href": "tools/tool/?id=fix-page-size"
+      "href": "tools/tool/?id=fix-page-size",
+      "iconBadge": "PDF"
     },
     {
       "id": "remove-blank-pages",
       "category": "pdf",
       "name": "删除空白页",
       "description": "检测并删除不包含墨水、文本或图像的页面",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": " remove-blank-pages 删除空白页",
       "variants": [
@@ -18397,14 +19385,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-blank-pages"
         }
       ],
-      "href": "tools/tool/?id=remove-blank-pages"
+      "href": "tools/tool/?id=remove-blank-pages",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdfs-to-zip",
       "category": "pdf",
       "name": "PDF 至 ZIP",
       "description": "将多个PDF打包到一个档案中",
-      "icon": "convert",
+      "icon": "file-archive",
       "tags": [],
       "keywords": " pdfs-to-zip PDF 至 ZIP",
       "variants": [
@@ -18415,14 +19404,15 @@ const ToolboxCatalog = {
           "sourceId": "pdfs-to-zip"
         }
       ],
-      "href": "tools/tool/?id=pdfs-to-zip"
+      "href": "tools/tool/?id=pdfs-to-zip",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-cbz",
       "category": "pdf",
       "name": "PDF 到 CBZ",
       "description": "将漫画或扫描件转为 CBZ 存档以供漫画读者使用",
-      "icon": "convert",
+      "icon": "book-image",
       "tags": [],
       "keywords": " pdf-to-cbz PDF 到 CBZ",
       "variants": [
@@ -18433,14 +19423,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-cbz"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-cbz"
+      "href": "tools/tool/?id=pdf-to-cbz",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-compress",
       "category": "pdf",
       "name": "压缩PDF",
       "description": "缩小图像并重建文件结构——文本保持可选",
-      "icon": "convert",
+      "icon": "file-down",
       "tags": [],
       "keywords": " pdf-compress 压缩PDF compress 压缩 PDF",
       "variants": [
@@ -18457,14 +19448,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/compress"
         }
       ],
-      "href": "tools/tool/?id=pdf-compress"
+      "href": "tools/tool/?id=pdf-compress",
+      "iconBadge": "PDF"
     },
     {
       "id": "optimize-pdf",
       "category": "pdf",
       "name": "优化PDF",
       "description": "无损整理：压缩流、使用对象流、删除死对象",
-      "icon": "convert",
+      "icon": "sliders-horizontal",
       "tags": [],
       "keywords": " optimize-pdf 优化PDF",
       "variants": [
@@ -18475,14 +19467,15 @@ const ToolboxCatalog = {
           "sourceId": "optimize-pdf"
         }
       ],
-      "href": "tools/tool/?id=optimize-pdf"
+      "href": "tools/tool/?id=optimize-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "rasterize-pdf",
       "category": "pdf",
       "name": "光栅化 PDF",
       "description": "将每个页面拼合为图像 — 图层和可选文本被删除",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " rasterize-pdf 光栅化 PDF",
       "variants": [
@@ -18493,14 +19486,15 @@ const ToolboxCatalog = {
           "sourceId": "rasterize-pdf"
         }
       ],
-      "href": "tools/tool/?id=rasterize-pdf"
+      "href": "tools/tool/?id=rasterize-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "repair",
       "category": "pdf",
       "name": "修复PDF",
       "description": "恢复可以从损坏或截断的文件中读取的内容",
-      "icon": "convert",
+      "icon": "wrench",
       "tags": [],
       "keywords": " repair 修复PDF",
       "variants": [
@@ -18511,14 +19505,15 @@ const ToolboxCatalog = {
           "sourceId": "repair"
         }
       ],
-      "href": "tools/tool/?id=repair"
+      "href": "tools/tool/?id=repair",
+      "iconBadge": "PDF"
     },
     {
       "id": "sanitize-pdf",
       "category": "pdf",
       "name": "清理 PDF",
       "description": "剥离脚本、嵌入文件、注释、元数据和隐藏层",
-      "icon": "convert",
+      "icon": "shield-check",
       "tags": [],
       "keywords": " sanitize-pdf 清理 PDF",
       "variants": [
@@ -18529,14 +19524,15 @@ const ToolboxCatalog = {
           "sourceId": "sanitize-pdf"
         }
       ],
-      "href": "tools/tool/?id=sanitize-pdf"
+      "href": "tools/tool/?id=sanitize-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "linearize-pdf",
       "category": "pdf",
       "name": "线性化PDF",
       "description": "重新排序对象，以便浏览器可以在文件下载完成之前显示第 1 页",
-      "icon": "convert",
+      "icon": "list-start",
       "tags": [],
       "keywords": " linearize-pdf 线性化PDF",
       "variants": [
@@ -18547,14 +19543,15 @@ const ToolboxCatalog = {
           "sourceId": "linearize-pdf"
         }
       ],
-      "href": "tools/tool/?id=linearize-pdf"
+      "href": "tools/tool/?id=linearize-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-pdfa",
       "category": "pdf",
       "name": "PDF 到 PDF/A",
       "description": "转换用于归档：XMP标识和输出意图；字体需要 Ghostscript",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " pdf-to-pdfa PDF 到 PDF/A",
       "variants": [
@@ -18565,14 +19562,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-pdfa"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-pdfa"
+      "href": "tools/tool/?id=pdf-to-pdfa",
+      "iconBadge": "PDF"
     },
     {
       "id": "font-to-outline",
       "category": "pdf",
       "name": "轮廓字体",
       "description": "将所有文本转换为矢量路径，以便渲染无法改变",
-      "icon": "convert",
+      "icon": "pen-line",
       "tags": [],
       "keywords": " font-to-outline 轮廓字体",
       "variants": [
@@ -18583,14 +19581,15 @@ const ToolboxCatalog = {
           "sourceId": "font-to-outline"
         }
       ],
-      "href": "tools/tool/?id=font-to-outline"
+      "href": "tools/tool/?id=font-to-outline",
+      "iconBadge": "PDF"
     },
     {
       "id": "deskew-pdf",
       "category": "pdf",
       "name": "纠偏 PDF",
       "description": "拉直以一定角度送入的扫描页面",
-      "icon": "convert",
+      "icon": "ruler-dimension-line",
       "tags": [],
       "keywords": " deskew-pdf 纠偏 PDF",
       "variants": [
@@ -18601,14 +19600,15 @@ const ToolboxCatalog = {
           "sourceId": "deskew-pdf"
         }
       ],
-      "href": "tools/tool/?id=deskew-pdf"
+      "href": "tools/tool/?id=deskew-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-edit",
       "category": "pdf",
       "name": "PDF 编辑",
       "description": "注释、突出显示、编辑和评论，或重写页面上已有的文字",
-      "icon": "convert",
+      "icon": "file-pen-line",
       "tags": [],
       "keywords": " edit-pdf PDF编辑器 edit 编辑 PDF",
       "variants": [
@@ -18625,14 +19625,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/edit"
         }
       ],
-      "href": "tools/tool/?id=pdf-edit"
+      "href": "tools/tool/?id=pdf-edit",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-page-numbers",
       "category": "pdf",
       "name": "PDF 页码",
       "description": "具有位置、格式、范围和样式控制的页码",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": " page-numbers 页码 添加页码",
       "variants": [
@@ -18649,14 +19650,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/page-numbers"
         }
       ],
-      "href": "tools/tool/?id=pdf-page-numbers"
+      "href": "tools/tool/?id=pdf-page-numbers",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-watermark",
       "category": "pdf",
       "name": "PDF 水印",
       "description": "通过不透明度、角度和平铺在页面上标记文本或图像",
-      "icon": "convert",
+      "icon": "stamp",
       "tags": [],
       "keywords": " watermark 添加水印",
       "variants": [
@@ -18673,14 +19675,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/watermark"
         }
       ],
-      "href": "tools/tool/?id=pdf-watermark"
+      "href": "tools/tool/?id=pdf-watermark",
+      "iconBadge": "PDF"
     },
     {
       "id": "header-footer",
       "category": "pdf",
       "name": "页眉和页脚",
       "description": "使用样式面板将文本添加到每个页面的顶部和底部",
-      "icon": "convert",
+      "icon": "panel-top-bottom-dashed",
       "tags": [],
       "keywords": " header-footer 页眉和页脚",
       "variants": [
@@ -18691,14 +19694,15 @@ const ToolboxCatalog = {
           "sourceId": "header-footer"
         }
       ],
-      "href": "tools/tool/?id=header-footer"
+      "href": "tools/tool/?id=header-footer",
+      "iconBadge": "PDF"
     },
     {
       "id": "bates-numbering",
       "category": "pdf",
       "name": "贝茨编号",
       "description": "在一个或多个文件中添加连续的合法贝茨编号",
-      "icon": "convert",
+      "icon": "list-ordered",
       "tags": [],
       "keywords": " bates-numbering 贝茨编号",
       "variants": [
@@ -18709,14 +19713,15 @@ const ToolboxCatalog = {
           "sourceId": "bates-numbering"
         }
       ],
-      "href": "tools/tool/?id=bates-numbering"
+      "href": "tools/tool/?id=bates-numbering",
+      "iconBadge": "PDF"
     },
     {
       "id": "add-page-labels",
       "category": "pdf",
       "name": "添加页面标签",
       "description": "将页码编号为 i、ii … 1、2、3，带前缀和自定义开头",
-      "icon": "convert",
+      "icon": "tags",
       "tags": [],
       "keywords": " add-page-labels 添加页面标签",
       "variants": [
@@ -18727,14 +19732,15 @@ const ToolboxCatalog = {
           "sourceId": "add-page-labels"
         }
       ],
-      "href": "tools/tool/?id=add-page-labels"
+      "href": "tools/tool/?id=add-page-labels",
+      "iconBadge": "PDF"
     },
     {
       "id": "bookmarks",
       "category": "pdf",
       "name": "编辑书签",
       "description": "查看、替换、导入和导出文档大纲",
-      "icon": "convert",
+      "icon": "bookmark",
       "tags": [],
       "keywords": " bookmarks 编辑书签",
       "variants": [
@@ -18745,14 +19751,15 @@ const ToolboxCatalog = {
           "sourceId": "bookmarks"
         }
       ],
-      "href": "tools/tool/?id=bookmarks"
+      "href": "tools/tool/?id=bookmarks",
+      "iconBadge": "PDF"
     },
     {
       "id": "table-of-contents",
       "category": "pdf",
       "name": "目录",
       "description": "从文档大纲生成可点击的内容页面",
-      "icon": "convert",
+      "icon": "list-tree",
       "tags": [],
       "keywords": " table-of-contents 目录",
       "variants": [
@@ -18763,32 +19770,34 @@ const ToolboxCatalog = {
           "sourceId": "table-of-contents"
         }
       ],
-      "href": "tools/tool/?id=table-of-contents"
+      "href": "tools/tool/?id=table-of-contents",
+      "iconBadge": "PDF"
     },
     {
       "id": "add-stamps",
       "category": "pdf",
-      "name": "添加邮票",
+      "name": "添加印章",
       "description": "将图像或标准印记放置在所选页面上",
-      "icon": "convert",
+      "icon": "stamp",
       "tags": [],
       "keywords": " add-stamps 添加邮票",
       "variants": [
         {
-          "name": "添加邮票",
+          "name": "添加印章",
           "href": "../documents/?embed=1#/tool/add-stamps",
           "source": "browsersnip",
           "sourceId": "add-stamps"
         }
       ],
-      "href": "tools/tool/?id=add-stamps"
+      "href": "tools/tool/?id=add-stamps",
+      "iconBadge": "PDF"
     },
     {
       "id": "background-color",
       "category": "pdf",
       "name": "背景颜色",
       "description": "在每个页面的内容后面绘制纯色",
-      "icon": "convert",
+      "icon": "paint-bucket",
       "tags": [],
       "keywords": " background-color 背景颜色",
       "variants": [
@@ -18799,14 +19808,15 @@ const ToolboxCatalog = {
           "sourceId": "background-color"
         }
       ],
-      "href": "tools/tool/?id=background-color"
+      "href": "tools/tool/?id=background-color",
+      "iconBadge": "PDF"
     },
     {
       "id": "text-color",
       "category": "pdf",
       "name": "改变文本颜色",
       "description": "对文档中已有的文本重新着色",
-      "icon": "convert",
+      "icon": "baseline",
       "tags": [],
       "keywords": " text-color 改变文本颜色",
       "variants": [
@@ -18817,14 +19827,15 @@ const ToolboxCatalog = {
           "sourceId": "text-color"
         }
       ],
-      "href": "tools/tool/?id=text-color"
+      "href": "tools/tool/?id=text-color",
+      "iconBadge": "PDF"
     },
     {
       "id": "invert-colors",
       "category": "pdf",
       "name": "反转颜色",
       "description": "制作文档的暗模式版本",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": " invert-colors 反转颜色",
       "variants": [
@@ -18835,14 +19846,15 @@ const ToolboxCatalog = {
           "sourceId": "invert-colors"
         }
       ],
-      "href": "tools/tool/?id=invert-colors"
+      "href": "tools/tool/?id=invert-colors",
+      "iconBadge": "PDF"
     },
     {
       "id": "adjust-colors",
       "category": "pdf",
       "name": "调整颜色",
       "description": "调整亮度、对比度、饱和度和色调",
-      "icon": "convert",
+      "icon": "sliders-horizontal",
       "tags": [],
       "keywords": " adjust-colors 调整颜色",
       "variants": [
@@ -18853,14 +19865,15 @@ const ToolboxCatalog = {
           "sourceId": "adjust-colors"
         }
       ],
-      "href": "tools/tool/?id=adjust-colors"
+      "href": "tools/tool/?id=adjust-colors",
+      "iconBadge": "PDF"
     },
     {
       "id": "scanner-effect",
       "category": "pdf",
       "name": "扫描仪效果",
       "description": "使 PDF 看起来像干净的灰度扫描件",
-      "icon": "convert",
+      "icon": "scan-line",
       "tags": [],
       "keywords": " scanner-effect 扫描仪效果",
       "variants": [
@@ -18871,32 +19884,34 @@ const ToolboxCatalog = {
           "sourceId": "scanner-effect"
         }
       ],
-      "href": "tools/tool/?id=scanner-effect"
+      "href": "tools/tool/?id=scanner-effect",
+      "iconBadge": "PDF"
     },
     {
       "id": "ocr-pdf",
       "category": "pdf",
-      "name": "OCR PDF",
+      "name": "PDF 文字识别",
       "description": "识别扫描页面中的文本并添加可搜索、可选择的图层",
-      "icon": "convert",
+      "icon": "scan-text",
       "tags": [],
       "keywords": " ocr-pdf OCR PDF",
       "variants": [
         {
-          "name": "OCR PDF",
+          "name": "PDF 文字识别",
           "href": "../documents/?embed=1#/tool/ocr-pdf",
           "source": "browsersnip",
           "sourceId": "ocr-pdf"
         }
       ],
-      "href": "tools/tool/?id=ocr-pdf"
+      "href": "tools/tool/?id=ocr-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "form-filler",
       "category": "pdf",
       "name": "PDF 表单填写器",
       "description": "直接在浏览器中填写AcroForm和XFA表单",
-      "icon": "convert",
+      "icon": "list-checks",
       "tags": [],
       "keywords": " form-filler PDF 表单填写器",
       "variants": [
@@ -18907,14 +19922,15 @@ const ToolboxCatalog = {
           "sourceId": "form-filler"
         }
       ],
-      "href": "tools/tool/?id=form-filler"
+      "href": "tools/tool/?id=form-filler",
+      "iconBadge": "PDF"
     },
     {
       "id": "form-creator",
       "category": "pdf",
       "name": "创建PDF表格",
       "description": "通过拖动添加可填写文本、复选框、选择和签名字段",
-      "icon": "convert",
+      "icon": "list-plus",
       "tags": [],
       "keywords": " form-creator 创建PDF表格",
       "variants": [
@@ -18925,14 +19941,15 @@ const ToolboxCatalog = {
           "sourceId": "form-creator"
         }
       ],
-      "href": "tools/tool/?id=form-creator"
+      "href": "tools/tool/?id=form-creator",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-layers",
       "category": "pdf",
       "name": "PDF OCG层",
       "description": "列出、切换、添加或删除可选内容组",
-      "icon": "convert",
+      "icon": "layers",
       "tags": [],
       "keywords": " pdf-layers PDF OCG层",
       "variants": [
@@ -18943,14 +19960,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-layers"
         }
       ],
-      "href": "tools/tool/?id=pdf-layers"
+      "href": "tools/tool/?id=pdf-layers",
+      "iconBadge": "PDF"
     },
     {
       "id": "remove-annotations",
       "category": "pdf",
       "name": "删除注释",
       "description": "从整个文档中删除注释、突出显示、墨迹和链接",
-      "icon": "convert",
+      "icon": "message-square-off",
       "tags": [],
       "keywords": " remove-annotations 删除注释",
       "variants": [
@@ -18961,14 +19979,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-annotations"
         }
       ],
-      "href": "tools/tool/?id=remove-annotations"
+      "href": "tools/tool/?id=remove-annotations",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-protect",
       "category": "pdf",
       "name": "PDF 加密与权限",
       "description": "开放密码、所有者密码和/P权限，通过AES-128密文",
-      "icon": "convert",
+      "icon": "file-lock-2",
       "tags": [],
       "keywords": " protect 保护PDF password PDF 密码保护",
       "variants": [
@@ -18985,14 +20004,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/password"
         }
       ],
-      "href": "tools/tool/?id=pdf-protect"
+      "href": "tools/tool/?id=pdf-protect",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-unlock",
       "category": "pdf",
       "name": "PDF 解密",
       "description": "删除密码以便可以自由打开文件",
-      "icon": "convert",
+      "icon": "lock-keyhole-open",
       "tags": [],
       "keywords": " unlock 解锁PDF 解锁 PDF",
       "variants": [
@@ -19009,14 +20029,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/unlock"
         }
       ],
-      "href": "tools/tool/?id=pdf-unlock"
+      "href": "tools/tool/?id=pdf-unlock",
+      "iconBadge": "PDF"
     },
     {
       "id": "change-permissions",
       "category": "pdf",
       "name": "更改权限",
       "description": "设置或清除打印、复制和编辑限制",
-      "icon": "convert",
+      "icon": "shield",
       "tags": [],
       "keywords": " change-permissions 更改权限",
       "variants": [
@@ -19027,14 +20048,15 @@ const ToolboxCatalog = {
           "sourceId": "change-permissions"
         }
       ],
-      "href": "tools/tool/?id=change-permissions"
+      "href": "tools/tool/?id=change-permissions",
+      "iconBadge": "PDF"
     },
     {
       "id": "remove-restrictions",
       "category": "pdf",
       "name": "移除限制",
       "description": "清除锁定签名或受保护 PDF 的权限",
-      "icon": "convert",
+      "icon": "eraser",
       "tags": [],
       "keywords": " remove-restrictions 移除限制",
       "variants": [
@@ -19045,14 +20067,15 @@ const ToolboxCatalog = {
           "sourceId": "remove-restrictions"
         }
       ],
-      "href": "tools/tool/?id=remove-restrictions"
+      "href": "tools/tool/?id=remove-restrictions",
+      "iconBadge": "PDF"
     },
     {
       "id": "flatten-pdf",
       "category": "pdf",
       "name": "拼合PDF",
       "description": "使表单字段和注释成为页面的永久部分",
-      "icon": "convert",
+      "icon": "layers-2",
       "tags": [],
       "keywords": " flatten-pdf 拼合PDF",
       "variants": [
@@ -19063,14 +20086,15 @@ const ToolboxCatalog = {
           "sourceId": "flatten-pdf"
         }
       ],
-      "href": "tools/tool/?id=flatten-pdf"
+      "href": "tools/tool/?id=flatten-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-redact",
       "category": "pdf",
       "name": "PDF 涂黑与脱敏",
       "description": "永久删除文本和区域——而不是它们上面的黑框",
-      "icon": "convert",
+      "icon": "square-dashed-bottom-code",
       "tags": [],
       "keywords": " redact-pdf 编辑 PDF",
       "variants": [
@@ -19081,14 +20105,15 @@ const ToolboxCatalog = {
           "sourceId": "redact-pdf"
         }
       ],
-      "href": "tools/tool/?id=pdf-redact"
+      "href": "tools/tool/?id=pdf-redact",
+      "iconBadge": "PDF"
     },
     {
       "id": "compare-pdfs",
       "category": "pdf",
       "name": "比较 PDF",
       "description": "逐页比较两个 PDF 并导出第一个 PDF，标记它们的不同之处",
-      "icon": "convert",
+      "icon": "columns-2",
       "tags": [],
       "keywords": " compare-pdfs 比较 PDF",
       "variants": [
@@ -19099,14 +20124,15 @@ const ToolboxCatalog = {
           "sourceId": "compare-pdfs"
         }
       ],
-      "href": "tools/tool/?id=compare-pdfs"
+      "href": "tools/tool/?id=compare-pdfs",
+      "iconBadge": "PDF"
     },
     {
       "id": "add-attachments",
       "category": "pdf",
       "name": "添加附件",
       "description": "在 PDF 中嵌入任何文件，例如电子邮件附件",
-      "icon": "convert",
+      "icon": "paperclip",
       "tags": [],
       "keywords": " add-attachments 添加附件",
       "variants": [
@@ -19117,14 +20143,15 @@ const ToolboxCatalog = {
           "sourceId": "add-attachments"
         }
       ],
-      "href": "tools/tool/?id=add-attachments"
+      "href": "tools/tool/?id=add-attachments",
+      "iconBadge": "PDF"
     },
     {
       "id": "extract-attachments",
       "category": "pdf",
       "name": "提取附件",
       "description": "从PDF中提取每个嵌入文件",
-      "icon": "convert",
+      "icon": "paperclip",
       "tags": [],
       "keywords": " extract-attachments 提取附件",
       "variants": [
@@ -19135,14 +20162,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-attachments"
         }
       ],
-      "href": "tools/tool/?id=extract-attachments"
+      "href": "tools/tool/?id=extract-attachments",
+      "iconBadge": "PDF"
     },
     {
       "id": "edit-attachments",
       "category": "pdf",
       "name": "编辑附件",
       "description": "列出和删除PDF中嵌入的文件",
-      "icon": "convert",
+      "icon": "paperclip",
       "tags": [],
       "keywords": " edit-attachments 编辑附件",
       "variants": [
@@ -19153,14 +20181,15 @@ const ToolboxCatalog = {
           "sourceId": "edit-attachments"
         }
       ],
-      "href": "tools/tool/?id=edit-attachments"
+      "href": "tools/tool/?id=edit-attachments",
+      "iconBadge": "PDF"
     },
     {
       "id": "digital-sign-pdf",
       "category": "pdf",
       "name": "数字签名",
       "description": "使用 X.509 证书进行签名，以便检测到篡改",
-      "icon": "convert",
+      "icon": "badge-check",
       "tags": [],
       "keywords": " digital-sign-pdf 数字签名",
       "variants": [
@@ -19171,14 +20200,15 @@ const ToolboxCatalog = {
           "sourceId": "digital-sign-pdf"
         }
       ],
-      "href": "tools/tool/?id=digital-sign-pdf"
+      "href": "tools/tool/?id=digital-sign-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "validate-signature-pdf",
       "category": "pdf",
       "name": "验证签名",
       "description": "检查数字签名是否完整以及签名者是谁",
-      "icon": "convert",
+      "icon": "file-check-2",
       "tags": [],
       "keywords": " validate-signature-pdf 验证签名",
       "variants": [
@@ -19189,14 +20219,15 @@ const ToolboxCatalog = {
           "sourceId": "validate-signature-pdf"
         }
       ],
-      "href": "tools/tool/?id=validate-signature-pdf"
+      "href": "tools/tool/?id=validate-signature-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "timestamp-pdf",
       "category": "pdf",
       "name": "时间戳 PDF",
       "description": "将RFC 3161可信时间戳添加到签名",
-      "icon": "convert",
+      "icon": "calendar-clock",
       "tags": [],
       "keywords": " timestamp-pdf 时间戳 PDF",
       "variants": [
@@ -19207,14 +20238,15 @@ const ToolboxCatalog = {
           "sourceId": "timestamp-pdf"
         }
       ],
-      "href": "tools/tool/?id=timestamp-pdf"
+      "href": "tools/tool/?id=timestamp-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "svg-to-pdf",
       "category": "pdf",
       "name": "SVG到PDF",
       "description": "将SVG绘图转换为PDF页面",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": " svg-to-pdf SVG到PDF",
       "variants": [
@@ -19225,14 +20257,15 @@ const ToolboxCatalog = {
           "sourceId": "svg-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=svg-to-pdf"
+      "href": "tools/tool/?id=svg-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "cbz-to-pdf",
       "category": "pdf",
       "name": "CBZ 转 PDF",
       "description": "将漫画书档案转换为 PDF，每张图像一页",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " cbz-to-pdf CBZ 转 PDF",
       "variants": [
@@ -19243,14 +20276,15 @@ const ToolboxCatalog = {
           "sourceId": "cbz-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=cbz-to-pdf"
+      "href": "tools/tool/?id=cbz-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "txt-to-pdf",
       "category": "pdf",
       "name": "文本到PDF",
       "description": "将纯文本文件转换为正确排版的PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " txt-to-pdf 文本到PDF",
       "variants": [
@@ -19261,14 +20295,15 @@ const ToolboxCatalog = {
           "sourceId": "txt-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=txt-to-pdf"
+      "href": "tools/tool/?id=txt-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "markdown-to-pdf",
       "category": "pdf",
       "name": "Markdown 转 PDF",
       "description": "使用标题、列表、表格、代码块和数学渲染 Markdown",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": " markdown-to-pdf Markdown 转 PDF",
       "variants": [
@@ -19279,14 +20314,15 @@ const ToolboxCatalog = {
           "sourceId": "markdown-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=markdown-to-pdf"
+      "href": "tools/tool/?id=markdown-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "html-to-pdf",
       "category": "pdf",
       "name": "HTML 到 PDF",
       "description": "将 HTML 布局为真正可选择的文本 — 标题、列表、表格和图像",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": " html-to-pdf HTML 到 PDF",
       "variants": [
@@ -19297,14 +20333,15 @@ const ToolboxCatalog = {
           "sourceId": "html-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=html-to-pdf"
+      "href": "tools/tool/?id=html-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "csv-to-pdf",
       "category": "pdf",
       "name": "CSV 到 PDF",
       "description": "将电子表格或 CSV 呈现为具有重复标题的分页表格",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": " csv-to-pdf CSV 到 PDF",
       "variants": [
@@ -19315,14 +20352,15 @@ const ToolboxCatalog = {
           "sourceId": "csv-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=csv-to-pdf"
+      "href": "tools/tool/?id=csv-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "json-to-pdf",
       "category": "pdf",
       "name": "JSON 到 PDF",
       "description": "将结构化 JSON 作为可读嵌套报告打印",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": " json-to-pdf JSON 到 PDF",
       "variants": [
@@ -19333,14 +20371,15 @@ const ToolboxCatalog = {
           "sourceId": "json-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=json-to-pdf"
+      "href": "tools/tool/?id=json-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "xml-to-pdf",
       "category": "pdf",
       "name": "XML 到 PDF",
       "description": "将 XML 文档呈现为缩进的、可读的树",
-      "icon": "convert",
+      "icon": "code-xml",
       "tags": [],
       "keywords": " xml-to-pdf XML 到 PDF",
       "variants": [
@@ -19351,14 +20390,15 @@ const ToolboxCatalog = {
           "sourceId": "xml-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=xml-to-pdf"
+      "href": "tools/tool/?id=xml-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "rtf-to-pdf",
       "category": "pdf",
       "name": "RTF 转 PDF",
       "description": "转换富文本格式文档，包括颜色和列表",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " rtf-to-pdf RTF 转 PDF",
       "variants": [
@@ -19369,14 +20409,15 @@ const ToolboxCatalog = {
           "sourceId": "rtf-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=rtf-to-pdf"
+      "href": "tools/tool/?id=rtf-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "word-to-pdf",
       "category": "pdf",
       "name": "Word转PDF",
       "description": "将 DOCX、DOC 和 ODT 转换为具有可选择文本的 PDF",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": " word-to-pdf Word转PDF from-docx",
       "variants": [
@@ -19393,14 +20434,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/from-docx"
         }
       ],
-      "href": "tools/tool/?id=word-to-pdf"
+      "href": "tools/tool/?id=word-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "excel-to-pdf",
       "category": "pdf",
       "name": "Excel 到 PDF",
       "description": "将 XLSX、XLS 和 ODS 电子表格转换为表格页面",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " excel-to-pdf Excel 到 PDF from-xlsx Excel转PDF",
       "variants": [
@@ -19417,14 +20459,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/from-xlsx"
         }
       ],
-      "href": "tools/tool/?id=excel-to-pdf"
+      "href": "tools/tool/?id=excel-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "powerpoint-to-pdf",
       "category": "pdf",
       "name": "PowerPoint 到 PDF",
       "description": "将PPTX、PPT和ODP幻灯片转换成页面",
-      "icon": "convert",
+      "icon": "superscript",
       "tags": [],
       "keywords": " powerpoint-to-pdf PowerPoint 到 PDF",
       "variants": [
@@ -19435,14 +20478,15 @@ const ToolboxCatalog = {
           "sourceId": "powerpoint-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=powerpoint-to-pdf"
+      "href": "tools/tool/?id=powerpoint-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "epub-to-pdf",
       "category": "pdf",
       "name": "EPUB 转 PDF",
       "description": "将电子书重排为分页 PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " epub-to-pdf EPUB 转 PDF",
       "variants": [
@@ -19453,14 +20497,15 @@ const ToolboxCatalog = {
           "sourceId": "epub-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=epub-to-pdf"
+      "href": "tools/tool/?id=epub-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "email-to-pdf",
       "category": "pdf",
       "name": "通过电子邮件发送至 PDF",
       "description": "将 EML 和 MSG 文件转换为可打印的 PDF",
-      "icon": "convert",
+      "icon": "mail",
       "tags": [],
       "keywords": " email-to-pdf 通过电子邮件发送至 PDF",
       "variants": [
@@ -19471,14 +20516,15 @@ const ToolboxCatalog = {
           "sourceId": "email-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=email-to-pdf"
+      "href": "tools/tool/?id=email-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "digitize-document",
       "category": "pdf",
       "name": "数字化文档",
       "description": "将页面照片 OCR 转换为干净、可搜索的 PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " digitize-document 数字化文档",
       "variants": [
@@ -19489,14 +20535,15 @@ const ToolboxCatalog = {
           "sourceId": "digitize-document"
         }
       ],
-      "href": "tools/tool/?id=digitize-document"
+      "href": "tools/tool/?id=digitize-document",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-text",
       "category": "pdf",
       "name": "PDF 到文本",
       "description": "将每个页面的文本提取为纯 .txt 文件",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " pdf-to-text PDF 到文本 转文本",
       "variants": [
@@ -19513,14 +20560,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/pdf-to-text"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-text"
+      "href": "tools/tool/?id=pdf-to-text",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-markdown",
       "category": "pdf",
       "name": "PDF 到 Markdown",
       "description": "通过实时预览将标题、列表和表格转换为 Markdown",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": " pdf-to-markdown PDF 到 Markdown",
       "variants": [
@@ -19531,14 +20579,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-markdown"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-markdown"
+      "href": "tools/tool/?id=pdf-to-markdown",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-json",
       "category": "pdf",
       "name": "PDF 到 JSON",
       "description": "具有边界框、字体和表格网格的结构化块",
-      "icon": "convert",
+      "icon": "file-json",
       "tags": [],
       "keywords": " pdf-to-json PDF 到 JSON",
       "variants": [
@@ -19549,14 +20598,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-json"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-json"
+      "href": "tools/tool/?id=pdf-to-json",
+      "iconBadge": "PDF"
     },
     {
       "id": "prepare-pdf-for-ai",
       "category": "pdf",
       "name": "为AI准备PDF",
       "description": "将文档分块为 RAG 的 LlamaIndex 兼容 JSON",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " prepare-pdf-for-ai 为AI准备PDF",
       "variants": [
@@ -19567,14 +20617,15 @@ const ToolboxCatalog = {
           "sourceId": "prepare-pdf-for-ai"
         }
       ],
-      "href": "tools/tool/?id=prepare-pdf-for-ai"
+      "href": "tools/tool/?id=prepare-pdf-for-ai",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-csv",
       "category": "pdf",
       "name": "PDF转CSV",
       "description": "检测表并将其导出为 CSV",
-      "icon": "convert",
+      "icon": "table-2",
       "tags": [],
       "keywords": " pdf-to-csv PDF转CSV",
       "variants": [
@@ -19585,14 +20636,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-csv"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-csv"
+      "href": "tools/tool/?id=pdf-to-csv",
+      "iconBadge": "PDF"
     },
     {
       "id": "extract-tables",
       "category": "pdf",
       "name": "提取表",
       "description": "查找表格并将其导出为 CSV、JSON 或 Markdown",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": " extract-tables 提取表",
       "variants": [
@@ -19603,14 +20655,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-tables"
         }
       ],
-      "href": "tools/tool/?id=extract-tables"
+      "href": "tools/tool/?id=extract-tables",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-excel",
       "category": "pdf",
       "name": "PDF 到 Excel",
       "description": "每个检测到的表都成为真实.xlsx中的工作表",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " pdf-to-excel PDF 到 Excel",
       "variants": [
@@ -19621,14 +20674,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-excel"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-excel"
+      "href": "tools/tool/?id=pdf-to-excel",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-word",
       "category": "pdf",
       "name": "PDF 到 Word",
       "description": "将文档重建为可编辑的 .docx，包含标题、列表和表格",
-      "icon": "convert",
+      "icon": "text",
       "tags": [],
       "keywords": " pdf-to-word PDF 到 Word to-docx PDF转Word",
       "variants": [
@@ -19645,14 +20699,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/to-docx"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-word"
+      "href": "tools/tool/?id=pdf-to-word",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-svg",
       "category": "pdf",
       "name": "PDF 到 SVG",
       "description": "矢量导出 — 路径和文本在任何尺寸下都保持清晰",
-      "icon": "convert",
+      "icon": "image",
       "tags": [],
       "keywords": " pdf-to-svg PDF 到 SVG",
       "variants": [
@@ -19663,14 +20718,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-to-svg"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-svg"
+      "href": "tools/tool/?id=pdf-to-svg",
+      "iconBadge": "PDF"
     },
     {
       "id": "extract-images",
       "category": "pdf",
       "name": "提取图像",
       "description": "将嵌入的图像以其原始分辨率从PDF中拉出",
-      "icon": "convert",
+      "icon": "list-filter",
       "tags": [],
       "keywords": " extract-images 提取图像",
       "variants": [
@@ -19681,14 +20737,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-images"
         }
       ],
-      "href": "tools/tool/?id=extract-images"
+      "href": "tools/tool/?id=extract-images",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-images",
       "category": "pdf",
       "name": "PDF 转图片",
       "description": "将页面呈现为JPG、PNG、WEBP、BMP或TIFF",
-      "icon": "convert",
+      "icon": "images",
       "tags": [],
       "keywords": " pdf-to-image PDF到图像 pdf-to-png PDF 转 PNG pdf-to-jpg JPG pdf-to-webp WEBP pdf-to-bmp BMP pdf-to-tiff TIFF pdf-to-images → 图片",
       "variants": [
@@ -19735,14 +20792,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/pdf-to-images"
         }
       ],
-      "href": "tools/tool/?id=pdf-images"
+      "href": "tools/tool/?id=pdf-images",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-greyscale",
       "category": "pdf",
       "name": "PDF 到灰度",
       "description": "将您选择的页面上的颜色转换为黑白",
-      "icon": "convert",
+      "icon": "contrast",
       "tags": [],
       "keywords": " pdf-to-greyscale PDF 到灰度 grayscale 转灰度",
       "variants": [
@@ -19759,14 +20817,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/grayscale"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-greyscale"
+      "href": "tools/tool/?id=pdf-to-greyscale",
+      "iconBadge": "PDF"
     },
     {
       "id": "page-dimensions",
       "category": "pdf",
       "name": "页面尺寸",
       "description": "报告每个页面的大小、方向和命名格式",
-      "icon": "convert",
+      "icon": "ruler",
       "tags": [],
       "keywords": " page-dimensions 页面尺寸",
       "variants": [
@@ -19777,14 +20836,15 @@ const ToolboxCatalog = {
           "sourceId": "page-dimensions"
         }
       ],
-      "href": "tools/tool/?id=page-dimensions"
+      "href": "tools/tool/?id=page-dimensions",
+      "iconBadge": "PDF"
     },
     {
       "id": "odt-to-pdf",
       "category": "pdf",
       "name": "ODT 转 PDF",
       "description": "将 OpenDocument Text 文档转换为具有可选文本的 PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " odt-to-pdf ODT 转 PDF",
       "variants": [
@@ -19795,14 +20855,15 @@ const ToolboxCatalog = {
           "sourceId": "odt-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=odt-to-pdf"
+      "href": "tools/tool/?id=odt-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "ods-to-pdf",
       "category": "pdf",
       "name": "ODS 转 PDF",
       "description": "将 OpenDocument 电子表格转换为表格页面",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " ods-to-pdf ODS 转 PDF",
       "variants": [
@@ -19813,14 +20874,15 @@ const ToolboxCatalog = {
           "sourceId": "ods-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=ods-to-pdf"
+      "href": "tools/tool/?id=ods-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "odp-to-pdf",
       "category": "pdf",
       "name": "ODP 转 PDF",
       "description": "将 OpenDocument 演示文稿转换为每张幻灯片一页",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " odp-to-pdf ODP 转 PDF",
       "variants": [
@@ -19831,14 +20893,15 @@ const ToolboxCatalog = {
           "sourceId": "odp-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=odp-to-pdf"
+      "href": "tools/tool/?id=odp-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "xps-to-pdf",
       "category": "pdf",
       "name": "XPS到PDF",
       "description": "将XPS或OXPS文档转换为PDF页面",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " xps-to-pdf XPS到PDF",
       "variants": [
@@ -19849,14 +20912,15 @@ const ToolboxCatalog = {
           "sourceId": "xps-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=xps-to-pdf"
+      "href": "tools/tool/?id=xps-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "fb2-to-pdf",
       "category": "pdf",
       "name": "FB2到PDF",
       "description": "将 FictionBook 电子书转换为分页 PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " fb2-to-pdf FB2到PDF",
       "variants": [
@@ -19867,14 +20931,15 @@ const ToolboxCatalog = {
           "sourceId": "fb2-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=fb2-to-pdf"
+      "href": "tools/tool/?id=fb2-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-sign",
       "category": "pdf",
       "name": "PDF 签名",
       "description": "绘制、键入或上传签名并将其放置在任何页面上",
-      "icon": "convert",
+      "icon": "signature",
       "tags": [],
       "keywords": " sign 签署 PDF",
       "variants": [
@@ -19891,14 +20956,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/sign"
         }
       ],
-      "href": "tools/tool/?id=pdf-sign"
+      "href": "tools/tool/?id=pdf-sign",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-crop",
       "category": "pdf",
       "name": "裁剪 PDF",
       "description": "拖动裁剪矩形或以点、毫米、厘米或英寸为单位键入精确边距",
-      "icon": "convert",
+      "icon": "crop",
       "tags": [],
       "keywords": " pdf-crop 裁剪 PDF crop",
       "variants": [
@@ -19915,14 +20981,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/crop"
         }
       ],
-      "href": "tools/tool/?id=pdf-crop"
+      "href": "tools/tool/?id=pdf-crop",
+      "iconBadge": "PDF"
     },
     {
       "id": "scan-to-pdf",
       "category": "pdf",
       "name": "扫描为PDF",
       "description": "使用相机捕获页面并从中构建一份干净的 PDF",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " scan-to-pdf 扫描为PDF",
       "variants": [
@@ -19933,14 +21000,15 @@ const ToolboxCatalog = {
           "sourceId": "scan-to-pdf"
         }
       ],
-      "href": "tools/tool/?id=scan-to-pdf"
+      "href": "tools/tool/?id=scan-to-pdf",
+      "iconBadge": "PDF"
     },
     {
       "id": "metadata",
       "category": "pdf",
       "name": "编辑元数据",
       "description": "",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " metadata 编辑元数据",
       "variants": [
@@ -19951,14 +21019,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/metadata"
         }
       ],
-      "href": "tools/tool/?id=metadata"
+      "href": "tools/tool/?id=metadata",
+      "iconBadge": "PDF"
     },
     {
       "id": "pdf-to-ppt",
       "category": "pdf",
       "name": "PDF 转 PowerPoint",
       "description": "",
-      "icon": "convert",
+      "icon": "file-text",
       "tags": [],
       "keywords": " pdf-to-ppt PDF 转 PowerPoint",
       "variants": [
@@ -19969,14 +21038,15 @@ const ToolboxCatalog = {
           "sourceId": "pdf-tools/pdf-to-ppt"
         }
       ],
-      "href": "tools/tool/?id=pdf-to-ppt"
+      "href": "tools/tool/?id=pdf-to-ppt",
+      "iconBadge": "PDF"
     },
     {
       "id": "qr-generator",
       "category": "image",
       "name": "QR 码生成器",
       "description": "",
-      "icon": "convert",
+      "icon": "qr-code",
       "tags": [],
       "keywords": " qr QR 码生成器",
       "variants": [
@@ -19987,14 +21057,15 @@ const ToolboxCatalog = {
           "sourceId": "image-tools/qr"
         }
       ],
-      "href": "tools/tool/?id=qr-generator"
+      "href": "tools/tool/?id=qr-generator",
+      "iconBadge": ""
     },
     {
       "id": "hash",
       "category": "text",
       "name": "哈希与校验",
       "description": "",
-      "icon": "convert",
+      "icon": "fingerprint",
       "tags": [],
       "keywords": " hash Hash 生成器",
       "variants": [
@@ -20005,14 +21076,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/hash"
         }
       ],
-      "href": "tools/tool/?id=hash"
+      "href": "tools/tool/?id=hash",
+      "iconBadge": ""
     },
     {
       "id": "markdown",
       "category": "text",
       "name": "Markdown 预览",
       "description": "",
-      "icon": "convert",
+      "icon": "notebook-pen",
       "tags": [],
       "keywords": " markdown Markdown 预览",
       "variants": [
@@ -20023,14 +21095,15 @@ const ToolboxCatalog = {
           "sourceId": "dev-tools/markdown"
         }
       ],
-      "href": "tools/tool/?id=markdown"
+      "href": "tools/tool/?id=markdown",
+      "iconBadge": ""
     },
     {
       "id": "file-convert",
       "category": "convert",
       "name": "文件格式转换",
       "description": "图片 · 音频 · 视频 · 文档",
-      "icon": "convert",
+      "icon": "file-symlink",
       "tags": [],
       "keywords": " file-convert 文件格式转换",
       "variants": [
@@ -20041,14 +21114,15 @@ const ToolboxCatalog = {
           "sourceId": "convert"
         }
       ],
-      "href": "tools/tool/?id=file-convert"
+      "href": "tools/tool/?id=file-convert",
+      "iconBadge": ""
     },
     {
       "id": "archives",
       "category": "convert",
       "name": "压缩包工具",
       "description": "ZIP · RAR · 7Z · TAR · 解压与打包",
-      "icon": "convert",
+      "icon": "archive",
       "tags": [],
       "keywords": "extract-archive archives 压缩包工具 create-zip convert-to-zip compress-file decompress-file inspect-archive",
       "variants": [
@@ -20085,14 +21159,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=archives"
+      "href": "tools/tool/?id=archives",
+      "iconBadge": ""
     },
     {
       "id": "database",
       "category": "data",
       "name": "数据与 SQL 工作台",
       "description": "CSV · JSON · Parquet · SQLite",
-      "icon": "convert",
+      "icon": "database",
       "tags": [],
       "keywords": "sql-playground database 数据与 SQL 工作台 sqlite-browser big-csv-viewer csv-analytics json-parquet-viewer local-bi-dashboard log-analyzer",
       "variants": [
@@ -20133,14 +21208,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=database"
+      "href": "tools/tool/?id=database",
+      "iconBadge": ""
     },
     {
       "id": "audio-workspace",
       "category": "media",
       "name": "音频格式转换",
       "description": "",
-      "icon": "record",
+      "icon": "audio-lines",
       "tags": [],
       "keywords": "convert-audio-format audio-convert 音频格式转换 mp3-cutter audio-trim 音频剪切 merge-audio audio-merge 音频合并 audio-fade 音频淡入淡出 audio-speed-changer audio-speed 音频速度 audio-volume 音量调节 normalize-audio audio-normalize 音频响度归一 podcast-cleaner audio-denoise 人声降噪 remove-audio-silence audio-silence 音频移除静音 reverse-audio audio-reverse 音频倒放 voice-changer audio-pitch 音频变声 podcast-intro-generator audio-intro 播客片头混音",
       "variants": [
@@ -20217,14 +21293,15 @@ const ToolboxCatalog = {
           "sourceId": "podcast-intro-generator"
         }
       ],
-      "href": "tools/tool/?id=audio-workspace"
+      "href": "tools/tool/?id=audio-workspace",
+      "iconBadge": "音频"
     },
     {
       "id": "video-workspace",
       "category": "media",
       "name": "视频工作台",
       "description": "",
-      "icon": "record",
+      "icon": "clapperboard",
       "tags": [],
       "keywords": "convert-video-format studio-video 视频工作台 merge-videos rotate-video video-thumbnail mute-video extract-audio-from-video",
       "variants": [
@@ -20265,14 +21342,15 @@ const ToolboxCatalog = {
           "sourceId": "extract-audio-from-video"
         }
       ],
-      "href": "tools/tool/?id=video-workspace"
+      "href": "tools/tool/?id=video-workspace",
+      "iconBadge": "视频"
     },
     {
       "id": "image-ocr",
       "category": "image",
       "name": "图片文字与票据识别",
       "description": "",
-      "icon": "convert",
+      "icon": "scan-text",
       "tags": [],
       "keywords": "image-to-text image-ocr 图片文字与票据识别 batch-ocr business-card-reader receipt-scanner invoice-extractor passport-mrz-reader",
       "variants": [
@@ -20321,14 +21399,15 @@ const ToolboxCatalog = {
           "sourceId": "passport-mrz-reader"
         }
       ],
-      "href": "tools/tool/?id=image-ocr"
+      "href": "tools/tool/?id=image-ocr",
+      "iconBadge": ""
     },
     {
       "id": "speech-transcribe",
       "category": "media",
       "name": "音视频转文字",
       "description": "本地模型 · 字幕 · Markdown",
-      "icon": "record",
+      "icon": "captions",
       "tags": [],
       "keywords": "audio-transcriber speech-transcribe 音视频转文字 podcast-transcriber interview-transcriber audio-language-detector translate-speech voice-memo-to-markdown video-to-subtitles karaoke-lyrics-aligner",
       "variants": [
@@ -20387,14 +21466,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=speech-transcribe"
+      "href": "tools/tool/?id=speech-transcribe",
+      "iconBadge": "文字"
     },
     {
       "id": "reader",
       "category": "studio",
       "name": "文档与电子书阅读",
       "description": "",
-      "icon": "convert",
+      "icon": "book-open-text",
       "tags": [],
       "keywords": "epub-reader reader 文档与电子书阅读 article-reader pdf-read-aloud epub-audiobook",
       "variants": [
@@ -20423,14 +21503,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=reader"
+      "href": "tools/tool/?id=reader",
+      "iconBadge": ""
     },
     {
       "id": "text-to-speech",
       "category": "studio",
       "name": "文字朗读",
       "description": "",
-      "icon": "convert",
+      "icon": "volume-2",
       "tags": [],
       "keywords": "text-to-speech 文字朗读 screen-reader-snippet",
       "variants": [
@@ -20451,14 +21532,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=text-to-speech"
+      "href": "tools/tool/?id=text-to-speech",
+      "iconBadge": ""
     },
     {
       "id": "ssml",
       "category": "studio",
       "name": "SSML 试听",
       "description": "",
-      "icon": "convert",
+      "icon": "speech",
       "tags": [],
       "keywords": "ssml-playground ssml SSML 试听",
       "variants": [
@@ -20469,14 +21551,15 @@ const ToolboxCatalog = {
           "sourceId": "ssml-playground"
         }
       ],
-      "href": "tools/tool/?id=ssml"
+      "href": "tools/tool/?id=ssml",
+      "iconBadge": ""
     },
     {
       "id": "dictation",
       "category": "studio",
       "name": "实时听写",
       "description": "",
-      "icon": "convert",
+      "icon": "mic",
       "tags": [],
       "keywords": "live-dictation dictation 实时听写",
       "variants": [
@@ -20487,14 +21570,15 @@ const ToolboxCatalog = {
           "sourceId": "live-dictation"
         }
       ],
-      "href": "tools/tool/?id=dictation"
+      "href": "tools/tool/?id=dictation",
+      "iconBadge": ""
     },
     {
       "id": "pronunciation",
       "category": "studio",
       "name": "发音练习",
       "description": "",
-      "icon": "convert",
+      "icon": "audio-waveform",
       "tags": [],
       "keywords": "pronunciation-coach pronunciation 发音练习",
       "variants": [
@@ -20505,14 +21589,15 @@ const ToolboxCatalog = {
           "sourceId": "pronunciation-coach"
         }
       ],
-      "href": "tools/tool/?id=pronunciation"
+      "href": "tools/tool/?id=pronunciation",
+      "iconBadge": ""
     },
     {
       "id": "flashcards",
       "category": "studio",
       "name": "词汇卡片",
       "description": "",
-      "icon": "convert",
+      "icon": "gallery-vertical-end",
       "tags": [],
       "keywords": "language-flashcards flashcards 词汇卡片",
       "variants": [
@@ -20523,14 +21608,15 @@ const ToolboxCatalog = {
           "sourceId": "language-flashcards"
         }
       ],
-      "href": "tools/tool/?id=flashcards"
+      "href": "tools/tool/?id=flashcards",
+      "iconBadge": ""
     },
     {
       "id": "phonetic",
       "category": "studio",
       "name": "音标与拼音",
       "description": "",
-      "icon": "convert",
+      "icon": "languages",
       "tags": [],
       "keywords": "ipa-phonetic-transcriber phonetic 音标与拼音",
       "variants": [
@@ -20541,14 +21627,15 @@ const ToolboxCatalog = {
           "sourceId": "ipa-phonetic-transcriber"
         }
       ],
-      "href": "tools/tool/?id=phonetic"
+      "href": "tools/tool/?id=phonetic",
+      "iconBadge": ""
     },
     {
       "id": "3d-model",
       "category": "studio",
       "name": "三维模型",
       "description": "STL · OBJ · GLTF · STEP · 导出与简化",
-      "icon": "convert",
+      "icon": "box",
       "tags": [],
       "keywords": "stl-viewer 3d-model 三维模型 obj-viewer gltf-viewer step-viewer 3d-model-converter 3d-thumbnail-generator mesh-simplifier",
       "variants": [
@@ -20589,14 +21676,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=3d-model"
+      "href": "tools/tool/?id=3d-model",
+      "iconBadge": ""
     },
     {
       "id": "image-enhance",
       "category": "image",
       "name": "图片修复与增强",
       "description": "",
-      "icon": "convert",
+      "icon": "focus",
       "tags": [],
       "keywords": "upscale-image image-enhance 图片修复与增强 ai-upscale-image remove-image-background inpaint-image remove-image-watermark exif-editor",
       "variants": [
@@ -20641,14 +21729,15 @@ const ToolboxCatalog = {
           "sourceId": "exif-editor"
         }
       ],
-      "href": "tools/tool/?id=image-enhance"
+      "href": "tools/tool/?id=image-enhance",
+      "iconBadge": ""
     },
     {
       "id": "whiteboard",
       "category": "studio",
       "name": "白板",
       "description": "画笔 · 撤销 · 自动暂存",
-      "icon": "convert",
+      "icon": "presentation",
       "tags": [],
       "keywords": "whiteboard 白板",
       "variants": [
@@ -20659,14 +21748,15 @@ const ToolboxCatalog = {
           "sourceId": "whiteboard"
         }
       ],
-      "href": "tools/tool/?id=whiteboard"
+      "href": "tools/tool/?id=whiteboard",
+      "iconBadge": ""
     },
     {
       "id": "pomodoro-timer",
       "category": "time",
       "name": "专注计时",
       "description": "",
-      "icon": "convert",
+      "icon": "timer",
       "tags": [],
       "keywords": "pomodoro-timer 专注计时",
       "variants": [
@@ -20677,14 +21767,15 @@ const ToolboxCatalog = {
           "sourceId": "pomodoro-timer"
         }
       ],
-      "href": "tools/tool/?id=pomodoro-timer"
+      "href": "tools/tool/?id=pomodoro-timer",
+      "iconBadge": ""
     },
     {
       "id": "music",
       "category": "media",
       "name": "调音器与节拍器",
       "description": "",
-      "icon": "record",
+      "icon": "music-2",
       "tags": [],
       "keywords": "instrument-tuner music 调音器与节拍器 metronome",
       "variants": [
@@ -20705,14 +21796,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=music"
+      "href": "tools/tool/?id=music",
+      "iconBadge": "节拍"
     },
     {
       "id": "capture",
       "category": "peripheral",
       "name": "摄像头与录音",
       "description": "录制 · 暂存 · 下载",
-      "icon": "convert",
+      "icon": "camera",
       "tags": [],
       "keywords": "webcam-recorder capture 摄像头与录音 voice-recorder",
       "variants": [
@@ -20729,14 +21821,15 @@ const ToolboxCatalog = {
           "sourceId": "voice-recorder"
         }
       ],
-      "href": "tools/tool/?id=capture"
+      "href": "tools/tool/?id=capture",
+      "iconBadge": ""
     },
     {
       "id": "domain-info",
       "category": "network",
       "name": "域名与注册信息",
       "description": "RDAP · DNSSEC",
-      "icon": "convert",
+      "icon": "globe",
       "tags": [],
       "keywords": "whois-lookup domain-info 域名与注册信息 domain-name-search dnssec-check",
       "variants": [
@@ -20761,14 +21854,15 @@ const ToolboxCatalog = {
           ]
         }
       ],
-      "href": "tools/tool/?id=domain-info"
+      "href": "tools/tool/?id=domain-info",
+      "iconBadge": ""
     },
     {
       "id": "voice-dialogue",
       "category": "studio",
       "name": "多角色朗读与语音指令",
       "description": "",
-      "icon": "convert",
+      "icon": "messages-square",
       "tags": [],
       "keywords": "multi-voice-dialogue voice-dialogue 多角色朗读与语音指令 voice-command-playground",
       "variants": [
@@ -20785,7 +21879,8 @@ const ToolboxCatalog = {
           "sourceId": "voice-command-playground"
         }
       ],
-      "href": "tools/tool/?id=voice-dialogue"
+      "href": "tools/tool/?id=voice-dialogue",
+      "iconBadge": ""
     }
   ]
 };

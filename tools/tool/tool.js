@@ -1,6 +1,6 @@
 (()=>{'use strict';const $=id=>document.getElementById(id),params=new URLSearchParams(location.search),tool=ToolboxCatalog.tools.find(t=>t.id===params.get('id'));let current=-1;
 if(!tool){$('error').hidden=false;$('error').textContent='未找到工具，请返回工具箱选择。';$('workspace').hidden=true;return;}
-$('title').textContent=tool.name;document.title=tool.name+' · 工具箱';const variants=tool.variants||[];
+$('title').textContent=tool.name;document.title=tool.name+' · 工具箱';$('toolIcon').replaceWith(ToolboxIcons.tile(tool,'tool-icon'));$('reload').replaceChildren(ToolboxIcons.svg('rotate-cw'));const variants=tool.variants||[];
 for(const [i,v]of variants.entries()){const o=document.createElement('option');o.value=i;o.textContent=v.name;$('mode').append(o);}
 $('modeLabel').hidden=variants.length<2;
 function open(index){index=Math.max(0,Math.min(variants.length-1,index));if(index===current)return;const v=variants[index];if(!v)return;const url=new URL(v.href,location.href);if(url.origin!==location.origin)throw Error('工具地址无效');current=index;$('mode').value=index;$('workspace').src=url.href;const q=new URL(location.href);q.searchParams.set('mode',index);history.replaceState(null,'',q);}

@@ -7,21 +7,7 @@
   const mobileNav = document.getElementById('mobileCategoryNav');
   const select = document.getElementById('categorySelect');
   const recentKey = 'toolbox-recent-v1';
-  const icons = {
-    chat:'<path d="M21 11a8 8 0 0 1-8 8H6l-4 3V11a9 9 0 0 1 19 0Z"/><path d="M7 10h9M7 14h6"/>',
-    scan:'<path d="M4 4h5M4 4v5m16-5h-5m5 0v5M4 20h5m-5 0v-5m16 5h-5m5 0v-5M7 12h1m3-4v8m3-8v8m3-8v8"/>',
-    devices:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h3m-3 3h3m4-2 2-2 2 2m-4 2 2 2 2-2"/>',
-    record:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 2v3m10-3v3"/>',
-    network:'<rect x="8" y="2" width="8" height="6" rx="1"/><path d="M12 8v5M4 13h16M4 13v3m8-3v3m8-3v3"/><rect x="1" y="16" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><rect x="17" y="16" width="6" height="5" rx="1"/>',
-    terminal:'<path d="m4 5 6 5-6 5m9 1h7"/>',
-    windows:'<path d="M3 5 11 4v7H3zm10-1 8-1v8h-8zM3 13h8v7l-8-1zm10 0h8v8l-8-1z"/>',
-    monitor:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4M6 7h5m-5 3h8"/>',
-    all:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
-    cpu:'<rect x="6" y="6" width="12" height="12" rx="2"/><rect x="10" y="10" width="4" height="4" rx=".5"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
-    nfc:'<rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7c4 0 7 3 7 7M9 10c2.2 0 4 1.8 4 4M9 13v1m1 4h4"/>',
-    convert:'<path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/>'
-  };
-  const categoryList = [{ id:'all', name:'全部工具', icon:'all' }, ...categories];
+  const categoryList = [{ id:'all', name:'全部工具', icon:'layout-grid' }, ...categories];
   let category = 'all';
   let page = 0;
   let capacity = 1;
@@ -36,11 +22,7 @@
     return node;
   }
   function icon(name) {
-    const node = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    node.setAttribute('viewBox', '0 0 24 24');
-    node.setAttribute('aria-hidden', 'true');
-    node.innerHTML = icons[name] || icons.all;
-    return node;
+    return ToolboxIcons.svg(name);
   }
 
   for (const item of categoryList) {
@@ -54,7 +36,7 @@
     const mobileButton=element('button','');
     mobileButton.type='button';mobileButton.dataset.category=item.id;
     mobileButton.setAttribute('aria-pressed',String(item.id===category));
-    mobileButton.append(element('span','',item.name),element('small','',String(tools.filter(tool=>item.id==='all'||tool.category===item.id).length)));
+    mobileButton.append(icon(item.icon),element('span','',item.name));
     mobileButton.addEventListener('click',()=>chooseCategory(item.id));
     mobileNav.append(mobileButton);
     const option = element('option', '', item.name);
@@ -73,11 +55,12 @@
       card.dataset.icon = tool.icon;
       card.dataset.search = [tool.name, tool.description, group.name, ...(tool.tags || []), tool.keywords || ''].join(' ').toLocaleLowerCase();
       const top = element('div', 'card-top');
-      const badge = element('span', 'tool-icon');
-      badge.append(icon(tool.icon));
-      top.append(badge, element('span', 'card-category', group.name));
+      const badge = ToolboxIcons.tile(tool);
+      const arrow=element('span','card-open');arrow.append(icon('arrow-up-right'));
+      top.append(badge, element('span', 'card-category', group.name),arrow);
       const copy = element('div', 'card-copy');
-      copy.append(element('h3', '', tool.name), element('p', '', tool.description));
+      copy.append(element('h3', '', tool.name));
+      if(tool.description&&tool.description.length<=48)copy.append(element('p', '', tool.description));
       card.append(top, copy);
       card.addEventListener('click', () => {
         recent = [tool.id, ...recent.filter(id => id !== tool.id)].slice(0, 3);

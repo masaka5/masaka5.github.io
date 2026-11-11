@@ -1,0 +1,4 @@
+import{r as i,j as m}from"./toolbox-UanOk967.js";import{T as n}from"./text-tool-Ce2pfWJ7.js";import"./button-UgOWl7Pw.js";import"./panel-Dz7kmini.js";import"./textarea-DTeVqXwx.js";import"./copy-button-CGwm1B35.js";import"./download-CsFYzBl3.js";import"./check-vTnZeKns.js";import"./createLucideIcon-CjCta3l7.js";import"./copy-DxHSqCOf.js";import"./download-button-CbvgAgfz.js";import"./loader-circle-DV99eh3f.js";import"./download-B_QuDumz.js";import"./error-banner-DenKuSgQ.js";import"./upload-GKSPvyMH.js";import"./eraser-BuPGOxvy.js";function O(){const t=i.useCallback(o=>{if(!o.trim())return"";try{return JSON.stringify(JSON.parse(o))}catch(r){throw new Error(r instanceof Error?r.message:"无效的 JSON")}},[]);return m.jsx(n,{transform:t,inputLabel:"JSON",outputLabel:"缩小化",sample:`{
+  "hello": "world",
+  "nums": [1, 2, 3]
+}`,downloadName:"min.json",downloadMime:"application/json"})}export{O as default};

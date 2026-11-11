@@ -9,6 +9,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/home.css" />
   <script defer src="assets/catalog.js"></script>
+  <script defer src="assets/tool-icon-paths.js"></script>
+  <script defer src="assets/tool-icons.js"></script>
   <script defer src="assets/home.js"></script>
 </head>
 <body>
@@ -22,7 +24,7 @@
     </aside>
     <main class="main">
       <header class="page-header">
-        <div class="heading"><h1 id="toolsHeading">全部工具</h1><span id="resultCount" class="sr-only" aria-live="polite"></span><button id="resetFilters" type="button" hidden>清除筛选</button></div>
+        <div class="heading"><div class="heading-title"><h1 id="toolsHeading">全部工具</h1><span id="resultCount" aria-live="polite"></span></div><button id="resetFilters" type="button" hidden>清除筛选</button></div>
         <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="toolSearch" type="search" placeholder="搜索工具" autocomplete="off" aria-label="搜索工具" /></label>
       </header>
       <nav class="mobile-category-nav" id="mobileCategoryNav" aria-label="工具分类"></nav>

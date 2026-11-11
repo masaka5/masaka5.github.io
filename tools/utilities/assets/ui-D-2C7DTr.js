@@ -1,0 +1,6 @@
+import{r as m,j as o}from"./toolbox-UanOk967.js";import{S as a}from"./switch-DPt0k4tg.js";import{F as p}from"./panel-Dz7kmini.js";import{T as l}from"./text-tool-Ce2pfWJ7.js";import{y as c}from"./yaml-DdbE6pca.js";import"./index-HQBJxcTJ.js";import"./button-UgOWl7Pw.js";import"./textarea-DTeVqXwx.js";import"./copy-button-CGwm1B35.js";import"./download-CsFYzBl3.js";import"./check-vTnZeKns.js";import"./createLucideIcon-CjCta3l7.js";import"./copy-DxHSqCOf.js";import"./download-button-CbvgAgfz.js";import"./loader-circle-DV99eh3f.js";import"./download-B_QuDumz.js";import"./error-banner-DenKuSgQ.js";import"./upload-GKSPvyMH.js";import"./eraser-BuPGOxvy.js";const d=`name: app
+ports:
+  - 80
+  - 443
+env:
+  DEBUG: true`;function C(){const[t,s]=m.useState(!1),n=m.useCallback(r=>{if(!r.trim())return"";let e;try{e=c(r)}catch(i){throw new Error(i instanceof Error?i.message:"无效的 YAML")}return JSON.stringify(e,null,t?void 0:2)},[t]);return o.jsx(l,{transform:n,deps:[t],inputLabel:"YAML",outputLabel:"JSON",sample:d,downloadName:"out.json",downloadMime:"application/json",options:o.jsx(p,{label:"输出",children:o.jsxs("div",{className:"flex h-8 items-center gap-2",children:[o.jsx(a,{checked:t,onCheckedChange:s,id:"min"}),o.jsx("label",{htmlFor:"min",className:"text-xs text-muted-foreground",children:"缩小"})]})})})}export{C as default};

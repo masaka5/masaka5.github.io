@@ -1,0 +1,12 @@
+import{r as h,j as e}from"./toolbox-UanOk967.js";import{S as M}from"./switch-DPt0k4tg.js";import{I as y}from"./input-C-alCsST.js";import{F as x}from"./panel-Dz7kmini.js";import{T as F}from"./text-tool-Ce2pfWJ7.js";import"./index-HQBJxcTJ.js";import"./button-UgOWl7Pw.js";import"./textarea-DTeVqXwx.js";import"./copy-button-CGwm1B35.js";import"./download-CsFYzBl3.js";import"./check-vTnZeKns.js";import"./createLucideIcon-CjCta3l7.js";import"./copy-DxHSqCOf.js";import"./download-button-CbvgAgfz.js";import"./loader-circle-DV99eh3f.js";import"./download-B_QuDumz.js";import"./error-banner-DenKuSgQ.js";import"./upload-GKSPvyMH.js";import"./eraser-BuPGOxvy.js";const E=["This line is short.","This particular line is intentionally written to be quite long so that it will exceed the eighty character column limit set by many style guides.","	indented with a tab then some text following the tab character here","fits"].join(`
+`);function k(i,a){let n=0;for(const p of i)if(p==="	"){const o=a-n%a;n+=o>0?o:a}else n+=1;return n}function tt(){const[i,a]=h.useState("80"),[n,p]=h.useState("4"),[o,N]=h.useState(!1),T=h.useCallback(s=>{if(!s)return"";const u=Number(i),l=Number.isFinite(u)&&u>0?Math.floor(u):80,d=Number(n),b=Number.isFinite(d)&&d>=1?Math.floor(d):4,r=s.split(`
+`),j=r.map(t=>k(t,b));let $=0,g=0,v=0,w=0;const f=[];j.forEach((t,c)=>{w+=t,t>g&&(g=t,v=c+1),t>l&&($+=1,f.push(`Line ${c+1}: ${t} chars (+${t-l} over)`))});const A=r.length>0?(w/r.length).toFixed(1):"0",m=[[`Max width: ${l} · tab width: ${b}`,`Total lines: ${r.length}`,`Over limit: ${$}`,`Longest: ${g} chars (line ${v||0})`,`Average length: ${A}`].join(`
+`)];if(f.length>0?m.push(`
+--- Over-length lines ---
+${f.join(`
+`)}`):m.push(`
+All lines are within the limit.`),o){const t=r.map((c,L)=>{const S=j[L]??0,C=S>l?" <<< OVER":"";return`${String(L+1).padStart(4," ")} [${String(S).padStart(3," ")}] ${c}${C}`}).join(`
+`);m.push(`
+--- Annotated ---
+${t}`)}return m.join(`
+`)},[i,n,o]);return e.jsx(F,{transform:T,deps:[i,n,o],sample:E,inputLabel:"文本",outputLabel:"报告",downloadName:"line-length-report.txt",options:e.jsxs(e.Fragment,{children:[e.jsx(x,{label:"最大宽度",children:e.jsx(y,{className:"w-24",value:i,inputMode:"numeric",onChange:s=>a(s.target.value)})}),e.jsx(x,{label:"标签宽度",children:e.jsx(y,{className:"w-24",value:n,inputMode:"numeric",onChange:s=>p(s.target.value)})}),e.jsx(x,{label:"注释",children:e.jsxs("label",{className:"flex h-8 items-center gap-1.5 text-xs",children:[e.jsx(M,{checked:o,onCheckedChange:N})," ","显示每行长度"]})})]})})}export{tt as default};

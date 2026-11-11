@@ -1,6 +1,0 @@
-import{r as m,j as o}from"./toolbox-V8Mb6zl3.js";import{S as a}from"./switch-Cd7u-X1w.js";import{F as p}from"./panel-BVEEuXxF.js";import{T as l}from"./text-tool-BNJ1nLL1.js";import{y as c}from"./yaml-DdbE6pca.js";import"./index-B5fXPDQ_.js";import"./button-yaYS2cEr.js";import"./textarea-DS_6qMYC.js";import"./copy-button-fBYmOqAm.js";import"./download-CsFYzBl3.js";import"./check-BojDDYCk.js";import"./createLucideIcon-CafGK0QX.js";import"./copy-CqpKjZ2k.js";import"./download-button-zTRTit45.js";import"./loader-circle-CLWSKXpK.js";import"./download-B6F43DuY.js";import"./error-banner-Bc4B1z3u.js";import"./upload-Bfq75gxE.js";import"./eraser-B_sdRlX8.js";const d=`name: app
-ports:
-  - 80
-  - 443
-env:
-  DEBUG: true`;function C(){const[t,n]=m.useState(!1),s=m.useCallback(r=>{if(!r.trim())return"";let e;try{e=c(r)}catch(i){throw new Error(i instanceof Error?i.message:"Invalid YAML")}return JSON.stringify(e,null,t?void 0:2)},[t]);return o.jsx(l,{transform:s,deps:[t],inputLabel:"YAML",outputLabel:"JSON",sample:d,downloadName:"out.json",downloadMime:"application/json",options:o.jsx(p,{label:"输出",children:o.jsxs("div",{className:"flex h-8 items-center gap-2",children:[o.jsx(a,{checked:t,onCheckedChange:n,id:"min"}),o.jsx("label",{htmlFor:"min",className:"text-xs text-muted-foreground",children:"缩小"})]})})})}export{C as default};

@@ -1,0 +1,29 @@
+import{r as $,j as l}from"./toolbox-UanOk967.js";import{F as b}from"./panel-Dz7kmini.js";import{T as C}from"./text-tool-Ce2pfWJ7.js";import{I as L}from"./input-C-alCsST.js";import{S as N}from"./switch-DPt0k4tg.js";import{L as O}from"./label-CUtkP1Is.js";import{T as W,a as M,b as k}from"./tabs-DZAAdCmQ.js";import{S as E,a as F,b as A,c as V,d as w}from"./select-Bqhypqt4.js";import"./button-UgOWl7Pw.js";import"./textarea-DTeVqXwx.js";import"./copy-button-CGwm1B35.js";import"./download-CsFYzBl3.js";import"./check-vTnZeKns.js";import"./createLucideIcon-CjCta3l7.js";import"./copy-DxHSqCOf.js";import"./download-button-CbvgAgfz.js";import"./loader-circle-DV99eh3f.js";import"./download-B_QuDumz.js";import"./error-banner-DenKuSgQ.js";import"./upload-GKSPvyMH.js";import"./eraser-BuPGOxvy.js";import"./index-HQBJxcTJ.js";import"./index-BSkAzB9Z.js";import"./index-DiK7AOdK.js";import"./index-C-pHolA0.js";import"./index-Bp6S2Opf.js";import"./index-D17hSi50.js";import"./chevron-down-Yc_stEQ5.js";const _=`# Welcome
+
+This is **bold**, this is *italic*, and \`inline code\`.
+
+- First item
+- Second item
+- Third item
+
+> A blockquote line.
+
+[Visit](https://example.com)
+
+\`\`\`js
+const x = 1;
+\`\`\`
+
+---
+
+End.`;function g(t,a){let n=t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");return a&&(n=n.replace(/\{/g,'{"{"}').replace(/\}/g,'{"}"}')),n}function f(t,a){const n=[];let e=0;const s=t.length;let u="";const m=()=>{u&&(n.push(g(u,a)),u="")};for(;e<s;){const r=t[e]??"";if(r==="`"){const i=t.indexOf("`",e+1);if(i!==-1){m();const o=t.slice(e+1,i);n.push(`<code>${g(o,a)}</code>`),e=i+1;continue}}if(r==="!"&&t[e+1]==="["){const i=t.indexOf("]",e+2);if(i!==-1&&t[i+1]==="("){const o=t.indexOf(")",i+2);if(o!==-1){m();const p=t.slice(e+2,i),d=t.slice(i+2,o).trim();n.push(`<img src="${g(d,!1)}" alt="${g(p,!1)}" />`),e=o+1;continue}}}if(r==="["){const i=t.indexOf("]",e+1);if(i!==-1&&t[i+1]==="("){const o=t.indexOf(")",i+2);if(o!==-1){m();const p=t.slice(e+1,i),d=t.slice(i+2,o).trim();n.push(`<a href="${g(d,!1)}">${f(p,a)}</a>`),e=o+1;continue}}}if(r==="*"&&t[e+1]==="*"||r==="_"&&t[e+1]==="_"){const i=r+r,o=t.indexOf(i,e+2);if(o!==-1){m();const p=t.slice(e+2,o);n.push(`<strong>${f(p,a)}</strong>`),e=o+2;continue}}if(r==="*"||r==="_"){const i=t.indexOf(r,e+1);if(i!==-1&&i!==e+1){m();const o=t.slice(e+1,i);n.push(`<em>${f(o,a)}</em>`),e=i+1;continue}}u+=r,e++}return m(),n.join("")}function q(t,a){const n=t.split(/\r?\n/),e=[];let s=0;const u=n.length;for(;s<u;){const r=(n[s]??"").trim();if(r===""){s++;continue}if(r.startsWith("```")){const c=r.slice(3).trim(),h=[];for(s++;s<u&&!(n[s]??"").trim().startsWith("```");)h.push(n[s]??""),s++;s++;const x=c?` className="language-${c}"`:"";e.push({html:`<pre><code${x}>{${JSON.stringify(h.join(`
+`))}}</code></pre>`});continue}if(/^(\*\s*){3,}$/.test(r)||/^(-\s*){3,}$/.test(r)||/^(_\s*){3,}$/.test(r)){e.push({html:"<hr />"}),s++;continue}const i=r.match(/^(#{1,6})\s+(.*)$/);if(i){const c=(i[1]??"#").length,h=f((i[2]??"").trim(),a);e.push({html:`<h${c}>${h}</h${c}>`}),s++;continue}if(r.startsWith(">")){const c=[];for(;s<u&&(n[s]??"").trim().startsWith(">");)c.push((n[s]??"").trim().replace(/^>\s?/,"")),s++;const h=f(c.join(" "),a);e.push({html:`<blockquote><p>${h}</p></blockquote>`});continue}const o=/^[-*+]\s+/.test(r),p=/^\d+[.)]\s+/.test(r);if(o||p){const c=[];for(;s<u;){const j=(n[s]??"").trim(),S=j.match(/^[-*+]\s+(.*)$/),v=j.match(/^\d+[.)]\s+(.*)$/);if(o&&S)c.push(f((S[1]??"").trim(),a)),s++;else if(p&&v)c.push(f((v[1]??"").trim(),a)),s++;else break}const h=p?"ol":"ul",x=c.map(j=>`  <li>${j}</li>`).join(`
+`);e.push({html:`<${h}>
+${x}
+</${h}>`});continue}const d=[];for(;s<u;){const c=(n[s]??"").trim();if(c===""||c.startsWith("#")||c.startsWith(">")||c.startsWith("```")||/^[-*+]\s+/.test(c)||/^\d+[.)]\s+/.test(c)||/^(\*\s*){3,}$/.test(c)||/^(-\s*){3,}$/.test(c)||/^(_\s*){3,}$/.test(c))break;d.push(c),s++}const T=f(d.join(" "),a);e.push({html:`<p>${T}</p>`})}return e}function y(t,a){return t.split(`
+`).map(n=>n&&a+n).join(`
+`)}function z(t){return/^[A-Z][A-Za-z0-9]*$/.test(t)}function I(t,a,n,e,s){if(!z(a))throw new Error("组件名称必须以大写字母开头（例如 MyComponent）。");const u=q(t,s),m=" ".repeat(e),r=n==="div"?"<div>":"<>",i=n==="div"?"</div>":"</>",o=u.map(p=>y(p.html,m.repeat(3))).join(`
+`);return[`export default function ${a}() {`,`${m}return (`,`${m.repeat(2)}${r}`,o,`${m.repeat(2)}${i}`,`${m});`,"}"].join(`
+`)}function ft(){const[t,a]=$.useState("MarkdownContent"),[n,e]=$.useState("fragment"),[s,u]=$.useState("2"),[m,r]=$.useState(!0),i=$.useCallback(o=>{if(!o.trim())return"";const p=Number(s),d=Number.isFinite(p)&&p>0?p:2;return I(o,t.trim(),n,d,m)},[t,n,s,m]);return l.jsx(C,{transform:i,deps:[t,n,s,m],inputLabel:"降价",outputLabel:"JSX组件",inputPlaceholder:`# 标题
+
+一些**降价**。`,sample:_,downloadName:"component.tsx",downloadMime:"text/plain",options:l.jsxs(l.Fragment,{children:[l.jsx(b,{label:"组件名称",children:l.jsx(L,{value:t,onChange:o=>a(o.target.value),className:"w-44",placeholder:"我的组件"})}),l.jsx(b,{label:"包装纸",children:l.jsx(W,{value:n,onValueChange:o=>e(o),children:l.jsxs(M,{children:[l.jsx(k,{value:"fragment",children:"<>"}),l.jsx(k,{value:"div",children:"<div>"})]})})}),l.jsx(b,{label:"缩进",children:l.jsxs(E,{value:s,onValueChange:u,children:[l.jsx(F,{className:"w-28",children:l.jsx(A,{})}),l.jsxs(V,{children:[l.jsx(w,{value:"2",children:"2 个空格"}),l.jsx(w,{value:"4",children:"4 个空格"})]})]})}),l.jsx(b,{label:"逃生支架",children:l.jsxs("div",{className:"flex h-8 items-center gap-2",children:[l.jsx(N,{id:"braces",checked:m,onCheckedChange:r}),l.jsx(O,{htmlFor:"braces",className:"text-xs text-muted-foreground",children:"{ } in text"})]})})]})})}export{ft as default};
