@@ -1,0 +1,6174 @@
+{
+  "generated": "2026-11-11T09:52:33.935Z",
+  "sources": [
+    {
+      "source": "openutility",
+      "sourceId": "aba-routing-validator",
+      "tool": "aba-routing-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "acceleration-converter",
+      "tool": "acceleration-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "accessible-text-color",
+      "tool": "accessible-text-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "acronym-expander-finder",
+      "tool": "acronym-expander-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "acronym-maker",
+      "tool": "acronym-maker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "add-business-days",
+      "tool": "add-business-days"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "add-line-numbers-advanced",
+      "tool": "add-line-numbers-advanced"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "adler32-checksum",
+      "tool": "adler32-checksum"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "aes-cbc-text",
+      "tool": "aes-cbc-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "aes-encrypt-decrypt",
+      "tool": "aes-encrypt-decrypt"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "aes-gcm-file",
+      "tool": "aes-gcm-file"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "age-calculator",
+      "tool": "age-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "alpha-blend-over-background",
+      "tool": "alpha-blend-over-background"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "alternating-case-converter",
+      "tool": "alternating-case-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "anagram-checker",
+      "tool": "anagram-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "anagram-solver",
+      "tool": "anagram-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "analogous-color-scheme",
+      "tool": "analogous-color-scheme"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "angle-converter",
+      "tool": "angle-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "angle-subunits-converter",
+      "tool": "angle-subunits-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "api-key-generator",
+      "tool": "api-key-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "api-key-pair-generator",
+      "tool": "api-key-pair-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "arbitrary-base-converter",
+      "tool": "arbitrary-base-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "area-converter",
+      "tool": "area-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "arithmetic-geometric-sequence",
+      "tool": "arithmetic-geometric-sequence"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ascii-table",
+      "tool": "ascii-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ascii-table-from-csv",
+      "tool": "ascii-table-from-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ascii-table-to-json",
+      "tool": "ascii-table-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ascii85",
+      "tool": "ascii85"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "aspect-ratio-calculator",
+      "tool": "aspect-ratio-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "astronomical-distance-converter",
+      "tool": "astronomical-distance-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "asyncapi-validator-preview",
+      "tool": "asyncapi-validator-preview"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "at-mention-extractor",
+      "tool": "at-mention-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "automated-readability-index",
+      "tool": "automated-readability-index"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "avro-schema-evolution-checker",
+      "tool": "avro-schema-evolution-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "avro-schema-validator",
+      "tool": "avro-schema-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base-n-arithmetic",
+      "tool": "base-n-arithmetic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base32-text",
+      "tool": "base32-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base58",
+      "tool": "base58"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base64-text",
+      "tool": "base64-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base64-to-file",
+      "tool": "base64-to-file"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "base64url-jwk-encoder",
+      "tool": "base64url-jwk-encoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "basic-auth-generator",
+      "tool": "basic-auth-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bcrypt",
+      "tool": "bcrypt"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bearer-token-generator",
+      "tool": "bearer-token-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bic-swift-test-generator",
+      "tool": "bic-swift-test-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bimi-record-checker",
+      "tool": "bimi-record-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "binary-text",
+      "tool": "binary-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "binary-to-gray-code",
+      "tool": "binary-to-gray-code"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bip39-mnemonic-generator",
+      "tool": "bip39-mnemonic-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bit-rotate-shift",
+      "tool": "bit-rotate-shift"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bitwise-calculator",
+      "tool": "bitwise-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bmi-calculator",
+      "tool": "bmi-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "box-shadow-generator",
+      "tool": "box-shadow-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "braille-text",
+      "tool": "braille-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "break-even-calculator",
+      "tool": "break-even-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bsb-validator",
+      "tool": "bsb-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "business-days-calculator",
+      "tool": "business-days-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "bytes-to-human-converter",
+      "tool": "bytes-to-human-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "caesar-cipher",
+      "tool": "caesar-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cagr-calculator",
+      "tool": "cagr-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "camel-snake-kebab-converter",
+      "tool": "camel-snake-kebab-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "case-converter",
+      "tool": "case-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "certificate-chain-builder",
+      "tool": "certificate-chain-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "certificate-decoder-x509",
+      "tool": "certificate-decoder-x509"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "character-ngram-counter",
+      "tool": "character-ngram-counter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "chmod-calculator",
+      "tool": "chmod-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "circle-calculator",
+      "tool": "circle-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "clothing-size-converter",
+      "tool": "clothing-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cloudevents-validator",
+      "tool": "cloudevents-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "coleman-liau-index",
+      "tool": "coleman-liau-index"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "collatz-calculator",
+      "tool": "collatz-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-ansi-256-to-rgb",
+      "tool": "color-ansi-256-to-rgb"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-blend-modes-calculator",
+      "tool": "color-blend-modes-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-blindness",
+      "tool": "color-blindness"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-contrast-suggester",
+      "tool": "color-contrast-suggester"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-converter",
+      "tool": "color-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-css-gradient-extract-stops",
+      "tool": "color-css-gradient-extract-stops"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-distance-deltae",
+      "tool": "color-distance-deltae"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-format-allinone",
+      "tool": "color-format-allinone"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-gradient-css-to-svg",
+      "tool": "color-gradient-css-to-svg"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-harmony",
+      "tool": "color-harmony"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-image-free-dominant-from-hexlist",
+      "tool": "color-image-free-dominant-from-hexlist"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-invert-calculator",
+      "tool": "color-invert-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-luminance-calculator",
+      "tool": "color-luminance-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-mix-css-builder",
+      "tool": "color-mix-css-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-mixer",
+      "tool": "color-mixer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-name-finder",
+      "tool": "color-name-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-palette-to-svg-swatches",
+      "tool": "color-palette-to-svg-swatches"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-picker",
+      "tool": "color-picker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-rgb-to-rgb565",
+      "tool": "color-rgb-to-rgb565"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-scale-generator",
+      "tool": "color-scale-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-shade-namer",
+      "tool": "color-shade-namer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-shades",
+      "tool": "color-shades"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-sort-by-hue",
+      "tool": "color-sort-by-hue"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-temperature-shift",
+      "tool": "color-temperature-shift"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-tints-generator",
+      "tool": "color-tints-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-tones-generator",
+      "tool": "color-tones-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "color-wcag-apca-lightness-contrast",
+      "tool": "color-wcag-apca-lightness-contrast"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "column-aligner",
+      "tool": "column-aligner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "column-extractor",
+      "tool": "column-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "complementary-color-finder",
+      "tool": "complementary-color-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "complex-number-calculator",
+      "tool": "complex-number-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "compound-interest-calculator",
+      "tool": "compound-interest-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "consecutive-duplicate-collapse",
+      "tool": "consecutive-duplicate-collapse"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "continued-fraction-converter",
+      "tool": "continued-fraction-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "contrast-checker",
+      "tool": "contrast-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "contrast-ratio-grid",
+      "tool": "contrast-ratio-grid"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-color-list-to-tailwind-config",
+      "tool": "convert-color-list-to-tailwind-config"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-cron-to-human-and-quartz",
+      "tool": "convert-cron-to-human-and-quartz"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-cron-to-human-multi",
+      "tool": "convert-cron-to-human-multi"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-csv-to-json-objects",
+      "tool": "convert-csv-to-json-objects"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-csv-to-sql-insert-batch",
+      "tool": "convert-csv-to-sql-insert-batch"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-graphql-query-to-curl",
+      "tool": "convert-graphql-query-to-curl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-har-to-curl",
+      "tool": "convert-har-to-curl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-jsonl-to-sql-insert",
+      "tool": "convert-jsonl-to-sql-insert"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-openapi-to-curl",
+      "tool": "convert-openapi-to-curl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "convert-svg-to-jsx",
+      "tool": "convert-svg-to-jsx"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cookie-parser",
+      "tool": "cookie-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cooking-converter",
+      "tool": "cooking-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cooking-pan-size-converter",
+      "tool": "cooking-pan-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cooking-temperature-converter",
+      "tool": "cooking-temperature-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "count-occurrences",
+      "tool": "count-occurrences"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "countdown-timer-builder",
+      "tool": "countdown-timer-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crc32-checksum",
+      "tool": "crc32-checksum"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cron-builder",
+      "tool": "cron-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cron-field-expander",
+      "tool": "cron-field-expander"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cron-next-runs-preview",
+      "tool": "cron-next-runs-preview"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cron-parser",
+      "tool": "cron-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crontab-recipe-generator",
+      "tool": "crontab-recipe-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-argon2-params-advisor",
+      "tool": "crypto-argon2-params-advisor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-bcrypt-cost-benchmark",
+      "tool": "crypto-bcrypt-cost-benchmark"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-key-fingerprint",
+      "tool": "crypto-key-fingerprint"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-mod10-mod11-check-digit",
+      "tool": "crypto-mod10-mod11-check-digit"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-passwd-shadow-parser",
+      "tool": "crypto-passwd-shadow-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-rsa-key-size-strength",
+      "tool": "crypto-rsa-key-size-strength"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-sha3-keccak-hash",
+      "tool": "crypto-sha3-keccak-hash"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "crypto-text-checksum-multi",
+      "tool": "crypto-text-checksum-multi"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csr-generator-validator",
+      "tool": "csr-generator-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "css-color-function-builder",
+      "tool": "css-color-function-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "css-minify",
+      "tool": "css-minify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "css-shorthand-expander",
+      "tool": "css-shorthand-expander"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-add-row-numbers",
+      "tool": "csv-add-row-numbers"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-column-math",
+      "tool": "csv-column-math"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-column-selector",
+      "tool": "csv-column-selector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-column-stats",
+      "tool": "csv-column-stats"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-dedupe",
+      "tool": "csv-dedupe"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-delimiter-converter",
+      "tool": "csv-delimiter-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-fill-blanks",
+      "tool": "csv-fill-blanks"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-filter-rows",
+      "tool": "csv-filter-rows"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-merge-columns",
+      "tool": "csv-merge-columns"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-pivot-table",
+      "tool": "csv-pivot-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-rename-headers",
+      "tool": "csv-rename-headers"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-sample-rows",
+      "tool": "csv-sample-rows"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-sort",
+      "tool": "csv-sort"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-split-column",
+      "tool": "csv-split-column"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-fixed-width",
+      "tool": "csv-to-fixed-width"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-html",
+      "tool": "csv-to-html"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-json",
+      "tool": "csv-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-markdown",
+      "tool": "csv-to-markdown"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-ndjson",
+      "tool": "csv-to-ndjson"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-sql",
+      "tool": "csv-to-sql"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-tsv",
+      "tool": "csv-to-tsv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-xml",
+      "tool": "csv-to-xml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-to-yaml",
+      "tool": "csv-to-yaml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-transpose",
+      "tool": "csv-transpose"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "csv-viewer",
+      "tool": "csv-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "cuid2-generator",
+      "tool": "cuid2-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "curl-to-httpie",
+      "tool": "curl-to-httpie"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "currency-amount-to-words",
+      "tool": "currency-amount-to-words"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "currency-split-calculator",
+      "tool": "currency-split-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "currency-unit-naming",
+      "tool": "currency-unit-naming"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-csv-detect-types",
+      "tool": "data-csv-detect-types"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-csv-group-by-aggregate",
+      "tool": "data-csv-group-by-aggregate"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-json-array-chunk",
+      "tool": "data-json-array-chunk"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-json-array-flatten-nested",
+      "tool": "data-json-array-flatten-nested"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-json-to-csv-explode-array",
+      "tool": "data-json-to-csv-explode-array"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-json-to-csv-flat-nested",
+      "tool": "data-json-to-csv-flat-nested"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-jsonl-deduplicate",
+      "tool": "data-jsonl-deduplicate"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-jsonl-validate-lint",
+      "tool": "data-jsonl-validate-lint"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-rate-converter",
+      "tool": "data-rate-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-size-converter",
+      "tool": "data-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-storage-units-converter",
+      "tool": "data-storage-units-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-transfer-time-calculator",
+      "tool": "data-transfer-time-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-tsv-column-reorder",
+      "tool": "data-tsv-column-reorder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-tsv-to-markdown-table",
+      "tool": "data-tsv-to-markdown-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-yaml-anchor-expander",
+      "tool": "data-yaml-anchor-expander"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "data-yaml-frontmatter-extractor",
+      "tool": "data-yaml-frontmatter-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-add-subtract",
+      "tool": "date-add-subtract"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-difference",
+      "tool": "date-difference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-format-converter",
+      "tool": "date-format-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-format-playground",
+      "tool": "date-format-playground"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-format-token-reference",
+      "tool": "date-format-token-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "date-range-splitter",
+      "tool": "date-range-splitter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "day-of-year",
+      "tool": "day-of-year"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "day-percentage-elapsed",
+      "tool": "day-percentage-elapsed"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "days-between-units",
+      "tool": "days-between-units"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "days-until",
+      "tool": "days-until"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "decimal-fraction-percent",
+      "tool": "decimal-fraction-percent"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "deduplicate-words",
+      "tool": "deduplicate-words"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "delimiter-converter",
+      "tool": "delimiter-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "density-converter",
+      "tool": "density-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "desaturate-color",
+      "tool": "desaturate-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "diacritics-toggle",
+      "tool": "diacritics-toggle"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dice-probability",
+      "tool": "dice-probability"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "diceware-passphrase",
+      "tool": "diceware-passphrase"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "digit-sum-root",
+      "tool": "digit-sum-root"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "discount-calculator",
+      "tool": "discount-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "distance-2d-3d",
+      "tool": "distance-2d-3d"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "divisibility-rules-checker",
+      "tool": "divisibility-rules-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "divisor-lister",
+      "tool": "divisor-lister"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dkim-record-decoder",
+      "tool": "dkim-record-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dmarc-record-builder",
+      "tool": "dmarc-record-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dmarc-report-xml-parser",
+      "tool": "dmarc-report-xml-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dns-propagation-comparison",
+      "tool": "dns"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dns-record-dig-ui",
+      "tool": "dns"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dns-zone-file-validator",
+      "tool": "dns-zone-file-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dnssec-chain-visualizer",
+      "tool": "dnssec-chain-visualizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dominant-color-math",
+      "tool": "dominant-color-math"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "dpi-ppi-size-converter",
+      "tool": "dpi-ppi-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "duotone-css-generator",
+      "tool": "duotone-css-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "duration-converter",
+      "tool": "duration-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "duration-humanizer",
+      "tool": "duration-humanizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "duration-parser",
+      "tool": "duration-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ean-upc-barcode-data-generator",
+      "tool": "ean-upc-barcode-data-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ean-upc-check-digit",
+      "tool": "ean-upc-check-digit"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ecdsa-keypair-generator",
+      "tool": "ecdsa-keypair-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ecdsa-sign-verify",
+      "tool": "ecdsa-sign-verify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ellipse-calculator",
+      "tool": "ellipse-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "email-alias-generator",
+      "tool": "email-alias-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "email-obfuscator",
+      "tool": "email-obfuscator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "emoji-extractor",
+      "tool": "emoji-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "emoji-stripper",
+      "tool": "emoji-stripper"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-ascii-code-point",
+      "tool": "encoding-ascii-code-point"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base16-encode",
+      "tool": "encoding-base16-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base32hex-encode",
+      "tool": "encoding-base32hex-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base36-encode",
+      "tool": "encoding-base36-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base45",
+      "tool": "encoding-base45"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base62-encode",
+      "tool": "encoding-base62-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base64-base32-cross",
+      "tool": "encoding-base64-base32-cross"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base64-image-inspector",
+      "tool": "encoding-base64-image-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base64-to-hex",
+      "tool": "encoding-base64-to-hex"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base64url",
+      "tool": "encoding-base64url"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base85-rfc1924",
+      "tool": "encoding-base85-rfc1924"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-base91-encode",
+      "tool": "encoding-base91-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-braille-converter",
+      "tool": "encoding-braille-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-caesar-cipher",
+      "tool": "encoding-rot-n-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-codepoint-utf-converter",
+      "tool": "encoding-codepoint-utf-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-csv-field-escape",
+      "tool": "encoding-csv-field-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-data-uri-builder",
+      "tool": "encoding-data-uri-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-decimal-binary-octal-hex",
+      "tool": "encoding-decimal-binary-octal-hex"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-ebcdic-converter",
+      "tool": "encoding-ebcdic-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-gzip-base64",
+      "tool": "encoding-gzip-base64"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-html-named-numeric",
+      "tool": "encoding-html-named-numeric"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-js-string-escape",
+      "tool": "encoding-js-string-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-json-pointer-escape",
+      "tool": "encoding-json-pointer-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-jwt-inspector",
+      "tool": "encoding-jwt-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-numeric-char-references",
+      "tool": "encoding-numeric-char-references"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-octal-text",
+      "tool": "encoding-octal-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-percent-encoding-table",
+      "tool": "encoding-percent-encoding-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-punycode",
+      "tool": "encoding-punycode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-quoted-printable",
+      "tool": "encoding-quoted-printable"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-regex-literal-escape",
+      "tool": "encoding-regex-literal-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-rot-n-cipher",
+      "tool": "encoding-rot-n-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-shell-arg-escape",
+      "tool": "encoding-shell-arg-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-sql-string-escape",
+      "tool": "encoding-sql-string-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-unicode-confusables-detector",
+      "tool": "encoding-unicode-confusables-detector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-unicode-escape",
+      "tool": "encoding-unicode-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-unicode-normalization",
+      "tool": "encoding-unicode-normalization"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-uri-template-expander",
+      "tool": "encoding-uri-template-expander"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-url-component-variants",
+      "tool": "encoding-url-component-variants"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-utf16-code-units",
+      "tool": "encoding-utf16-code-units"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-utf8-byte-inspector",
+      "tool": "encoding-utf8-byte-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-uuencode",
+      "tool": "encoding-uuencode-xxencode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-uuencode-xxencode",
+      "tool": "encoding-uuencode-xxencode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-xor-cipher",
+      "tool": "encoding-xor-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-xxencode",
+      "tool": "encoding-uuencode-xxencode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "encoding-z85-encode",
+      "tool": "encoding-z85-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "energy-converter",
+      "tool": "energy-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "engineering-notation-converter",
+      "tool": "engineering-notation-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "env-example-generator",
+      "tool": "env-example-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "env-to-shell-exports",
+      "tool": "env-to-shell-exports"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "epoch-precision-converter",
+      "tool": "epoch-precision-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "exponent-power-calculator",
+      "tool": "exponent-power-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "expression-calculator",
+      "tool": "expression-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "extended-gcd-multi",
+      "tool": "extended-gcd-multi"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "extract-data",
+      "tool": "extract-data"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "factorial-binomial-calculator",
+      "tool": "factorial-binomial-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "factorial-calculator",
+      "tool": "factorial-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fake-address-generator",
+      "tool": "fake-address-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fake-company-generator",
+      "tool": "fake-company-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fake-ipv4-ipv6-generator",
+      "tool": "fake-ipv4-ipv6-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fake-user-profile-generator",
+      "tool": "fake-user-profile-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fibonacci-calculator",
+      "tool": "fibonacci-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "figlet-banner",
+      "tool": "figlet-banner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "file-hash",
+      "tool": "file-hash"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "find-replace",
+      "tool": "find-replace"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fixed-offset-timezone-math",
+      "tool": "fixed-offset-timezone-math"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fixed-point-converter",
+      "tool": "fixed-point-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fixed-width-to-csv",
+      "tool": "fixed-width-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "flesch-reading-ease",
+      "tool": "flesch-reading-ease"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fletcher-checksum",
+      "tool": "fletcher-checksum"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "flow-rate-converter",
+      "tool": "flow-rate-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "force-converter",
+      "tool": "force-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fraction-arithmetic",
+      "tool": "fraction-arithmetic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fraction-decimal-converter",
+      "tool": "fraction-decimal-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fraction-simplifier",
+      "tool": "fraction-simplifier"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "frequency-converter",
+      "tool": "frequency-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fuel-economy-converter",
+      "tool": "fuel-economy-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fuel-volume-converter",
+      "tool": "fuel-volume-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "fuzzy-dedupe-lines",
+      "tool": "fuzzy-dedupe-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "gcd-lcm",
+      "tool": "gcd-lcm"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-barcode",
+      "tool": "generate-barcode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-credit-card",
+      "tool": "generate-credit-card"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-cron-expression",
+      "tool": "generate-cron-expression"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-css-gradient",
+      "tool": "generate-css-gradient"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-hex-color",
+      "tool": "random-hex-color-palette"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-iban",
+      "tool": "generate-iban"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-mac-address",
+      "tool": "generate-mac-address"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-markdown-table",
+      "tool": "generate-markdown-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-mock-json",
+      "tool": "generate-mock-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-nanoid",
+      "tool": "generate-nanoid"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-passphrase",
+      "tool": "generate-passphrase"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-pin",
+      "tool": "generate-pin"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-placeholder-image",
+      "tool": "placeholder-image"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-random-date",
+      "tool": "generate-random-date"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-random-number",
+      "tool": "generate-random-number"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-random-string",
+      "tool": "generate-random-string"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-slug",
+      "tool": "generate-slug"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-svg-pattern",
+      "tool": "generate-svg-pattern"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-ulid",
+      "tool": "generate-ulid"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generate-uuid-v5",
+      "tool": "generate-uuid-v5"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generators-fake-credit-card-luhn-set",
+      "tool": "generate-credit-card"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generators-json-server-routes",
+      "tool": "generators-json-server-routes"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generators-ssh-config-builder",
+      "tool": "generators-ssh-config-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "generators-svg-qr-style-placeholder",
+      "tool": "generators-svg-qr-style-placeholder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "gitignore-generator",
+      "tool": "gitignore-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "gradient-generator",
+      "tool": "gradient-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "gradient-stops-generator",
+      "tool": "gradient-stops-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "graphql-introspection-viewer",
+      "tool": "graphql-introspection-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "graphql-operation-complexity-estimator",
+      "tool": "graphql-operation-complexity-estimator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "graphql-variables-validator",
+      "tool": "graphql-variables-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "grayscale-converter",
+      "tool": "grayscale-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "grpc-proto-viewer",
+      "tool": "grpc-proto-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "grpcurl-command-builder",
+      "tool": "grpcurl-command-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "gunning-fog-index",
+      "tool": "gunning-fog-index"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hash-compare-verify",
+      "tool": "hash-compare-verify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hash-text",
+      "tool": "hash-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hashtag-generator",
+      "tool": "hashtag-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hex-shorthand-converter",
+      "tool": "hex-shorthand-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hex-text",
+      "tool": "hex-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hex-to-rgb-code",
+      "tool": "hex-to-rgb-code"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hex-to-rgba",
+      "tool": "hex-to-rgba"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hkdf-key-derivation",
+      "tool": "hkdf-key-derivation"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hmac-generator",
+      "tool": "hmac-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hmac-verify",
+      "tool": "hmac-verify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hsl-to-hex",
+      "tool": "hsl-to-hex"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hsts-preload-checker",
+      "tool": "hsts-preload-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-entities",
+      "tool": "html-entities"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-table-to-csv",
+      "tool": "html-table-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-table-to-json",
+      "tool": "html-table-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-table-to-markdown",
+      "tool": "html-table-to-markdown"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-to-markdown",
+      "tool": "html-to-markdown"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-to-pug",
+      "tool": "html-to-pug"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "html-to-text",
+      "tool": "html-to-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "htpasswd-generator",
+      "tool": "htpasswd-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "http-multipart-form-data-builder",
+      "tool": "http-multipart-form-data-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "http-request-replay-sanitizer",
+      "tool": "http-request-replay-sanitizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "http-status-codes",
+      "tool": "http-status-codes"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "httpie-to-curl",
+      "tool": "httpie-to-curl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "hue-rotate-calculator",
+      "tool": "hue-rotate-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "iban-validator",
+      "tool": "iban-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ieee754-float-inspector",
+      "tool": "ieee754-float-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "illuminance-converter",
+      "tool": "illuminance-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-add-border",
+      "tool": "image-add-border"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-aspect-fit-cover-calculator",
+      "tool": "image-aspect-fit-cover-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-canvas-grid-overlay",
+      "tool": "image-canvas-grid-overlay"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-checkerboard-svg",
+      "tool": "image-checkerboard-svg"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-color-extractor",
+      "tool": "image-color-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-color-overlay",
+      "tool": "image-color-overlay"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-compress-quality",
+      "tool": "image-compress-quality"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-contact-sheet-builder",
+      "tool": "image-contact-sheet-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-converter",
+      "tool": "image-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-crop-aspect",
+      "tool": "image-crop-aspect"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-dominant-color",
+      "tool": "image-dominant-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-duotone",
+      "tool": "image-duotone"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-exif-viewer",
+      "tool": "image-exif-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-favicon-generator",
+      "tool": "image-favicon-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-filter-adjust",
+      "tool": "image-filter-adjust"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-gaussian-blur",
+      "tool": "image-gaussian-blur"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-gradient-svg-generator",
+      "tool": "image-gradient-svg-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-histogram",
+      "tool": "image-histogram"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-invert-colors",
+      "tool": "image-invert-colors"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-meme-text",
+      "tool": "image-meme-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-mirror-collage",
+      "tool": "image-mirror-collage"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-noise-texture-svg",
+      "tool": "image-noise-texture-svg"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-palette-extractor",
+      "tool": "image-palette-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-pixel-ruler",
+      "tool": "image-pixel-ruler"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-pixelate",
+      "tool": "image-pixelate"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-resize-pixels",
+      "tool": "image-resize-pixels"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-resize-to-filesize",
+      "tool": "image-resize-to-filesize"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-rgb-channel-split",
+      "tool": "image-rgb-channel-split"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-rotate-flip",
+      "tool": "image-rotate-flip"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-round-corners",
+      "tool": "image-round-corners"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-sepia-vintage",
+      "tool": "image-sepia-vintage"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-sprite-merger",
+      "tool": "image-sprite-merger"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-sprite-splitter",
+      "tool": "image-sprite-splitter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-svg-optimizer-cleaner",
+      "tool": "image-svg-optimizer-cleaner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-svg-to-png",
+      "tool": "image-svg-to-png"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-threshold-bw",
+      "tool": "image-threshold-bw"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-thumbnail-batch",
+      "tool": "image-thumbnail-batch"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-to-ascii-art",
+      "tool": "image-to-ascii-art"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-to-base64",
+      "tool": "image-to-base64"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-to-data-uri-variants",
+      "tool": "image-to-data-uri-variants"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-vignette",
+      "tool": "image-vignette"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "image-watermark-text",
+      "tool": "image-watermark-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "indent-text",
+      "tool": "indent-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ingredient-weight-volume-converter",
+      "tool": "ingredient-weight-volume-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ini-to-json",
+      "tool": "ini-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "integer-factorization",
+      "tool": "integer-factorization"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "interleave-lines",
+      "tool": "interleave-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ip-cidr-list-generator",
+      "tool": "ip-cidr-list-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ip-subnet-calculator",
+      "tool": "subnet"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "isbn-validator",
+      "tool": "isbn-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "iso-8601-parser",
+      "tool": "iso-8601-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "iso-duration-parser",
+      "tool": "iso-duration-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "iso-week-date-converter",
+      "tool": "iso-week-date-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jmespath-lite-query",
+      "tool": "jmespath-lite-query"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "join-lines",
+      "tool": "join-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "js-object-to-json",
+      "tool": "js-object-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-array-dedupe",
+      "tool": "json-array-dedupe"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-array-to-key-value",
+      "tool": "json-array-to-key-value"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-array-to-list",
+      "tool": "json-array-to-list"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-array-to-object",
+      "tool": "json-array-to-object"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-column-extractor",
+      "tool": "json-column-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-deep-clean",
+      "tool": "json-deep-clean"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-diff",
+      "tool": "json-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-dot-path-get-set",
+      "tool": "json-dot-path-get-set"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-escape",
+      "tool": "json-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-extract-keys",
+      "tool": "json-extract-keys"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-flatten",
+      "tool": "json-flatten"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-formatter",
+      "tool": "json-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-key-case-converter",
+      "tool": "json-key-case-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-merge",
+      "tool": "json-merge"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-merge-patch",
+      "tool": "json-merge-patch"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-minify",
+      "tool": "json-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-patch-apply",
+      "tool": "json-patch-apply"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-patch-diff",
+      "tool": "json-patch-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-path-extractor",
+      "tool": "json-path-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-pointer-resolver",
+      "tool": "json-pointer-resolver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-repair",
+      "tool": "json-repair"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-schema-compatibility-diff",
+      "tool": "json-schema-compatibility-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-schema-faker",
+      "tool": "json-schema-faker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-schema-sample-generator",
+      "tool": "json-schema-sample-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-sort-keys",
+      "tool": "json-sort-keys"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-stats-summary",
+      "tool": "json-stats-summary"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-stringify",
+      "tool": "json-stringify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-csharp",
+      "tool": "json-to-csharp"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-csv",
+      "tool": "json-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-csv-headers",
+      "tool": "json-to-csv-headers"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-dart",
+      "tool": "json-to-dart"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-env",
+      "tool": "json-to-env"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-go",
+      "tool": "json-to-go"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-graphql-sdl",
+      "tool": "json-to-graphql-sdl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-hcl",
+      "tool": "json-to-hcl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-ini",
+      "tool": "json-to-ini"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-jsdoc-typedef",
+      "tool": "json-to-jsdoc-typedef"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-json-schema",
+      "tool": "json-to-json-schema"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-kotlin",
+      "tool": "json-to-kotlin"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-kv-pairs",
+      "tool": "json-to-kv-pairs"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-markdown-table",
+      "tool": "json-to-markdown-table"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-mongoose-schema",
+      "tool": "json-to-mongoose-schema"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-ndjson",
+      "tool": "json-to-ndjson"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-php-array",
+      "tool": "json-to-php-array"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-plist",
+      "tool": "json-to-plist"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-properties",
+      "tool": "json-to-properties"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-protobuf",
+      "tool": "json-to-protobuf"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-pydantic",
+      "tool": "json-to-pydantic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-python-dataclass",
+      "tool": "json-to-python-dataclass"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-query-string",
+      "tool": "json-to-query-string"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-ruby-hash",
+      "tool": "json-to-ruby-hash"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-rust-serde",
+      "tool": "json-to-rust-serde"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-swift-codable",
+      "tool": "json-to-swift-codable"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-toml",
+      "tool": "json-to-toml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-typescript",
+      "tool": "json-to-typescript"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-xml",
+      "tool": "json-to-xml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-xml-attributes",
+      "tool": "json-to-xml-attributes"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-yaml",
+      "tool": "json-to-yaml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-to-zod",
+      "tool": "json-to-zod"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-tree-viewer",
+      "tool": "json-tree-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "json-validator",
+      "tool": "json-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jsonc-to-json",
+      "tool": "jsonc-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jsx-to-html",
+      "tool": "jsx-to-html"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "julian-day-number",
+      "tool": "julian-day-number"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwk-pem-viewer",
+      "tool": "jwk-pem-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwk-rotation-diff",
+      "tool": "jwk-rotation-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwk-thumbprint",
+      "tool": "jwk-thumbprint"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwks-inspector",
+      "tool": "jwks-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-builder-rsa-es",
+      "tool": "jwt-builder-rsa-es"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-claims-validator",
+      "tool": "jwt-claims-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-decoder",
+      "tool": "jwt-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-generator",
+      "tool": "jwt-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-verify-hmac",
+      "tool": "jwt-verify-hmac"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "jwt-verify-rsa-es",
+      "tool": "jwt-verify-rsa-es"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "kafka-message-header-viewer",
+      "tool": "kafka-message-header-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "kelvin-to-rgb",
+      "tool": "kelvin-to-rgb"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "key-value-to-json",
+      "tool": "key-value-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "keyword-density-analyzer",
+      "tool": "keyword-density-analyzer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ksuid-generator",
+      "tool": "ksuid-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "kv-pairs-to-json",
+      "tool": "kv-pairs-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "leap-year-checker",
+      "tool": "leap-year-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "leetspeak",
+      "tool": "leetspeak"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "length-converter",
+      "tool": "length-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "lexical-diversity-calculator",
+      "tool": "lexical-diversity-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "license-key-generator",
+      "tool": "license-key-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "lighten-darken-color",
+      "tool": "lighten-darken-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "line-length-checker",
+      "tool": "line-length-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "line-operations",
+      "tool": "line-operations"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "list-formatter",
+      "tool": "list-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "list-to-json-array",
+      "tool": "list-to-json-array"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "loan-emi-calculator",
+      "tool": "loan-emi-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "logarithm-calculator",
+      "tool": "logarithm-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "lorem-bytes-generator",
+      "tool": "lorem-bytes-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "lorem-ipsum",
+      "tool": "lorem-ipsum"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "luhn-validator",
+      "tool": "luhn-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "luminance-converter",
+      "tool": "luminance-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "magnet-uri-builder",
+      "tool": "magnet-uri-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "magnetic-field-converter",
+      "tool": "magnetic-field-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-list-renumber",
+      "tool": "markdown-list-renumber"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-list-to-json",
+      "tool": "markdown-list-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-table-formatter",
+      "tool": "markdown-table-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-table-to-csv",
+      "tool": "markdown-table-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-table-to-html",
+      "tool": "markdown-table-to-html"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-table-to-json",
+      "tool": "markdown-table-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-to-html",
+      "tool": "markdown-to-html"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markdown-to-jsx",
+      "tool": "markdown-to-jsx"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "markup-margin-calculator",
+      "tool": "markup-margin-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mass-weight-converter",
+      "tool": "mass-weight-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "material-colors",
+      "tool": "material-colors"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-aspect-ratio-resizer",
+      "tool": "math-aspect-ratio-resizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-base-converter-fractional",
+      "tool": "math-base-converter-fractional"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-dms-decimal-degrees",
+      "tool": "math-dms-decimal-degrees"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-gpa-calculator",
+      "tool": "math-gpa-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-great-circle-distance",
+      "tool": "math-great-circle-distance"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-linear-system-solver",
+      "tool": "math-linear-system-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-loan-amortization-schedule",
+      "tool": "math-loan-amortization-schedule"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-matrix-determinant-inverse",
+      "tool": "math-matrix-determinant-inverse"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-numeral-system-clock",
+      "tool": "math-numeral-system-clock"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-tax-bracket-calculator",
+      "tool": "math-tax-bracket-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "math-tip-free-percent-of-total",
+      "tool": "math-tip-free-percent-of-total"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "matrix-calculator",
+      "tool": "matrix-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "md5-hash",
+      "tool": "md5-hash"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mean-median-mode",
+      "tool": "mean-median-mode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "memorable-password-generator",
+      "tool": "memorable-password-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "merge-pdf",
+      "tool": "pdf-merge"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "midpoint-calculator",
+      "tool": "midpoint-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mime-types",
+      "tool": "mime-types"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mnemonic-pin-generator",
+      "tool": "mnemonic-pin-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mock-data",
+      "tool": "mock-data"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "modular-exponentiation",
+      "tool": "modular-exponentiation"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "modular-inverse",
+      "tool": "modular-inverse"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "modulo-calculator",
+      "tool": "modulo-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "monochrome-scale-generator",
+      "tool": "monochrome-scale-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "moon-phase-calculator",
+      "tool": "moon-phase-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "morse-code",
+      "tool": "morse-code"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mortgage-extra-payment",
+      "tool": "mortgage-extra-payment"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mqtt-topic-matcher",
+      "tool": "mqtt-topic-matcher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "mta-sts-policy-checker",
+      "tool": "mta-sts-policy-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "named-colors",
+      "tool": "named-colors"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nanoid-custom-alphabet",
+      "tool": "nanoid-custom-alphabet"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nanoid-generator",
+      "tool": "generate-nanoid"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nato-phonetic",
+      "tool": "nato-phonetic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "natural-sort-lines",
+      "tool": "natural-sort-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ndjson-field-filter",
+      "tool": "ndjson-field-filter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ndjson-to-csv",
+      "tool": "ndjson-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ndjson-to-json-array",
+      "tool": "ndjson-to-json-array"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nearest-named-color",
+      "tool": "nearest-named-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nearest-pantone-name",
+      "tool": "nearest-pantone-name"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nearest-tailwind-color",
+      "tool": "nearest-tailwind-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "next-prime-finder",
+      "tool": "next-prime-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "next-weekday-occurrence",
+      "tool": "next-weekday-occurrence"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ngram-counter",
+      "tool": "ngram-counter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "nth-weekday-of-month",
+      "tool": "nth-weekday-of-month"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-base-converter",
+      "tool": "number-base-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-base-words",
+      "tool": "number-base-words"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-lines",
+      "tool": "number-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-to-base64",
+      "tool": "number-to-base64"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-to-roman-words-variants",
+      "tool": "number-to-roman-words-variants"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "number-to-words",
+      "tool": "number-to-words"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oauth-authorization-url-builder",
+      "tool": "oauth-authorization-url-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oauth-pkce-generator",
+      "tool": "oauth-pkce-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oauth-token-response-inspector",
+      "tool": "oauth-token-response-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ocsp-response-decoder",
+      "tool": "ocsp-response-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oidc-discovery-inspector",
+      "tool": "oidc-discovery-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oidc-id-token-validator",
+      "tool": "oidc-id-token-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "oklch-converter",
+      "tool": "oklch-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "openapi-breaking-change-diff",
+      "tool": "openapi-breaking-change-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "openapi-schema-example-generator",
+      "tool": "openapi-schema-example-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "openapi-security-scheme-inspector",
+      "tool": "openapi-security-scheme-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "openapi-validator-linter",
+      "tool": "openapi-validator-linter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ordinal-date-converter",
+      "tool": "ordinal-date-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ordinal-number-converter",
+      "tool": "ordinal-number-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "otp-secret-generator",
+      "tool": "otp-secret-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "otp-uri-builder",
+      "tool": "otp-uri-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "outline-to-list",
+      "tool": "outline-to-list"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pace-calculator",
+      "tool": "pace-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pad-lines",
+      "tool": "pad-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "palette-from-numbers",
+      "tool": "palette-from-numbers"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "palindrome-checker",
+      "tool": "palindrome-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "paper-size-converter",
+      "tool": "paper-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "paragraph-splitter",
+      "tool": "paragraph-splitter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "passphrase-entropy-meter",
+      "tool": "passphrase-entropy-meter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "passphrase-generator",
+      "tool": "generate-passphrase"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "password-generator",
+      "tool": "password-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "password-strength-checker",
+      "tool": "password-strength-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pattern-password-generator",
+      "tool": "pattern-password-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pbkdf2-key-derivation",
+      "tool": "pbkdf2-key-derivation"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pdf-metadata",
+      "tool": "pdf-metadata"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "percent-change",
+      "tool": "percent-change"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "percent-error",
+      "tool": "percent-error"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "percent-increase-decrease",
+      "tool": "percent-increase-decrease"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "percentage-calculator",
+      "tool": "percentage-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "perfect-number-classifier",
+      "tool": "perfect-number-classifier"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "permutation-combination",
+      "tool": "permutation-combination"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "phone-number-format-generator",
+      "tool": "phone-number-format-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "php-array-to-json",
+      "tool": "php-array-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "placeholder-image",
+      "tool": "placeholder-image"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "plist-to-json",
+      "tool": "plist-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "polar-cartesian-converter",
+      "tool": "polar-cartesian-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "polynomial-evaluator",
+      "tool": "polynomial-evaluator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "postman-collection-viewer",
+      "tool": "postman-collection-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "power-converter",
+      "tool": "power-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "prefix-suffix-lines",
+      "tool": "prefix-suffix-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pressure-converter",
+      "tool": "pressure-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "prime-checker",
+      "tool": "prime-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "prime-sieve-generator",
+      "tool": "prime-sieve-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "prism-cylinder-volume",
+      "tool": "prism-cylinder-volume"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "profanity-placeholder",
+      "tool": "profanity-placeholder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pronounceable-password-generator",
+      "tool": "pronounceable-password-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "properties-to-json",
+      "tool": "properties-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "properties-to-yaml",
+      "tool": "properties-to-yaml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "proportion-solver",
+      "tool": "proportion-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "protobuf-binary-decoder",
+      "tool": "protobuf-binary-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "protobuf-json-converter",
+      "tool": "protobuf-json-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pug-to-html",
+      "tool": "pug-to-html"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "px-rem-converter",
+      "tool": "px-rem-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "pythagorean-theorem",
+      "tool": "pythagorean-theorem"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "quadratic-equation-solver",
+      "tool": "quadratic-equation-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "quarter-of-date",
+      "tool": "quarter-of-date"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "query-params",
+      "tool": "query-params"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "query-string-to-json",
+      "tool": "query-string-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "querystring-to-curl",
+      "tool": "querystring-to-curl"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "quotient-remainder-calculator",
+      "tool": "quotient-remainder-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "radiation-dose-converter",
+      "tool": "radiation-dose-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "radioactivity-converter",
+      "tool": "radioactivity-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-bytes-generator",
+      "tool": "random-bytes-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-color",
+      "tool": "random-color"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-coordinates-generator",
+      "tool": "random-coordinates-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-date-range-generator",
+      "tool": "random-date-range-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-distribution-generator",
+      "tool": "random-distribution-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-hex-color-palette",
+      "tool": "random-hex-color-palette"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-line-picker",
+      "tool": "random-line-picker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-name-generator",
+      "tool": "random-name-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-number-generator",
+      "tool": "random-number-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-palette-by-mood",
+      "tool": "random-palette-by-mood"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-string",
+      "tool": "generate-random-string"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-token-formats",
+      "tool": "random-token-formats"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "random-username-generator",
+      "tool": "random-username-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ratio-proportion-solver",
+      "tool": "ratio-proportion-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "reading-time-estimator",
+      "tool": "reading-time-estimator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rectangle-square-calculator",
+      "tool": "rectangle-square-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "recurring-event-dates",
+      "tool": "recurring-event-dates"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "regex-tester",
+      "tool": "regex-tester"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "regular-polygon-calculator",
+      "tool": "regular-polygon-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "relative-time-formatter",
+      "tool": "relative-time-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "remove-accents",
+      "tool": "remove-accents"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "remove-duplicates",
+      "tool": "remove-duplicates"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "remove-line-breaks",
+      "tool": "remove-line-breaks"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "repeating-decimal-to-fraction",
+      "tool": "repeating-decimal-to-fraction"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "reverse-lines",
+      "tool": "reverse-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "reverse-text",
+      "tool": "reverse-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-cmyk-converter",
+      "tool": "rgb-to-cmyk-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-hex",
+      "tool": "rgb-to-hex"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-hsl-converter",
+      "tool": "rgb-to-hsl-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-hsv-converter",
+      "tool": "rgb-to-hsv-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-hwb-converter",
+      "tool": "rgb-to-hwb-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-lab-converter",
+      "tool": "rgb-to-lab-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-lch-converter",
+      "tool": "rgb-to-lch-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rgb-to-xyz-converter",
+      "tool": "rgb-to-xyz-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ring-size-converter",
+      "tool": "ring-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "roi-calculator",
+      "tool": "roi-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "roman-numeral-variants",
+      "tool": "roman-numeral-variants"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "roman-numerals",
+      "tool": "roman-numerals"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rot13",
+      "tool": "rot13"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rot47",
+      "tool": "rot47"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rot47-encoder",
+      "tool": "rot47-encoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rotate-pdf",
+      "tool": "pdf-rotate"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rounding-calculator",
+      "tool": "rounding-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rsa-keypair-generator",
+      "tool": "rsa-keypair-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "rsa-sign-verify",
+      "tool": "rsa-sign-verify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ruby-hash-to-json",
+      "tool": "ruby-hash-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-assertion-inspector",
+      "tool": "saml-assertion-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-attribute-mapper",
+      "tool": "saml-attribute-mapper"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-condition-time-validator",
+      "tool": "saml-condition-time-validator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-metadata-builder-idp",
+      "tool": "saml-metadata-builder-idp"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-metadata-builder-sp",
+      "tool": "saml-metadata-builder-sp"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-metadata-parser",
+      "tool": "saml-metadata-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-post-form-generator",
+      "tool": "saml-post-form-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-redirect-binding-builder",
+      "tool": "saml-redirect-binding-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-request-decoder",
+      "tool": "saml-request-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-response-decoder",
+      "tool": "saml-response-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "saml-signature-reference-inspector",
+      "tool": "saml-signature-reference-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "savings-goal-calculator",
+      "tool": "savings-goal-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "scientific-notation-arithmetic",
+      "tool": "scientific-notation-arithmetic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "scientific-notation-converter",
+      "tool": "scientific-notation-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "scim-filter-tester",
+      "tool": "scim-filter-tester"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "scim-user-payload-builder",
+      "tool": "scim-user-payload-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "scrypt-style-kdf-params",
+      "tool": "scrypt-style-kdf-params"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "security-headers-auditor",
+      "tool": "security-headers-auditor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sentence-case-converter",
+      "tool": "sentence-case-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sentence-splitter",
+      "tool": "sentence-splitter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sepia-tone-css",
+      "tool": "sepia-tone-css"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "server-sent-events-event-parser",
+      "tool": "server-sent-events-event-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sha-multi-hash-text",
+      "tool": "sha-multi-hash-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "shamir-secret-sharing",
+      "tool": "shamir-secret-sharing"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "shoe-size-converter",
+      "tool": "shoe-size-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "shuffle-lines",
+      "tool": "shuffle-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "significant-figures-rounder",
+      "tool": "significant-figures-rounder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "simple-interest-calculator",
+      "tool": "simple-interest-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "slope-line-equation",
+      "tool": "slope-line-equation"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "slugify",
+      "tool": "slugify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "smart-quotes",
+      "tool": "smart-quotes"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "smog-readability-grade",
+      "tool": "smog-readability-grade"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "snowflake-id-generator",
+      "tool": "snowflake-id-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "soap-action-header-builder",
+      "tool": "soap-action-header-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "soap-envelope-builder",
+      "tool": "soap-envelope-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "soap-fault-parser",
+      "tool": "soap-fault-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "soap-request-debugger",
+      "tool": "soap-request-debugger"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sort-lines",
+      "tool": "sort-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "speed-converter",
+      "tool": "speed-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "spf-flattening-analyzer",
+      "tool": "spf-flattening-analyzer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "spf-record-builder",
+      "tool": "spf-record-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sphere-cone-pyramid-volume",
+      "tool": "sphere-cone-pyramid-volume"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "split-complementary-scheme",
+      "tool": "split-complementary-scheme"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "split-pdf",
+      "tool": "pdf-split"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "split-text-chunks",
+      "tool": "split-text-chunks"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-create-table-from-csv",
+      "tool": "sql-create-table-from-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-create-table-from-json",
+      "tool": "sql-create-table-from-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-formatter",
+      "tool": "sql-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-insert-from-json",
+      "tool": "sql-insert-from-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-select-builder",
+      "tool": "sql-select-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "sql-update-builder",
+      "tool": "sql-update-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ssn-format-test-generator",
+      "tool": "ssn-format-test-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "standard-deviation-variance",
+      "tool": "standard-deviation-variance"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "start-case-converter",
+      "tool": "start-case-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "statistics",
+      "tool": "statistics"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "strftime-playground",
+      "tool": "strftime-playground"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "subresource-integrity-generator",
+      "tool": "subresource-integrity-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "superscript-subscript",
+      "tool": "superscript-subscript"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "svg-path-rounder",
+      "tool": "svg-path-rounder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "svg-to-data-uri",
+      "tool": "svg-to-data-uri"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tailwind-colors",
+      "tool": "tailwind-colors"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "temperature-converter",
+      "tool": "temperature-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tetradic-color-scheme",
+      "tool": "tetradic-color-scheme"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-align-pad",
+      "tool": "text-align-pad"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-anonymizer",
+      "tool": "text-anonymizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-box-drawing",
+      "tool": "text-box-drawing"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-case-statistics-report",
+      "tool": "text-case-statistics-report"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-diff",
+      "tool": "text-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-find-longest-shortest-line",
+      "tool": "text-find-longest-shortest-line"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-frequency-filter",
+      "tool": "text-frequency-filter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-readability-summary",
+      "tool": "text-readability-summary"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-redundancy-finder",
+      "tool": "text-redundancy-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-roman-to-fancy-numbering",
+      "tool": "text-roman-to-fancy-numbering"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-snake-to-title-humanizer",
+      "tool": "text-snake-to-title-humanizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-statistics",
+      "tool": "text-statistics"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-template-placeholder-filler",
+      "tool": "text-template-placeholder-filler"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-text-bracket-matcher",
+      "tool": "text-text-bracket-matcher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-text-column-sort",
+      "tool": "text-text-column-sort"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-text-sort-by-length",
+      "tool": "text-text-sort-by-length"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-text-to-handle-generator",
+      "tool": "text-text-to-handle-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-text-to-slug-history",
+      "tool": "text-text-to-slug-history"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-to-columns",
+      "tool": "text-to-columns"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-truncator",
+      "tool": "text-truncator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-word-ladder-diff",
+      "tool": "text-word-ladder-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "text-wrap",
+      "tool": "text-wrap"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-12-24-converter",
+      "tool": "time-12-24-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-between-clocks",
+      "tool": "time-between-clocks"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-meeting-cost-calculator",
+      "tool": "time-meeting-cost-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-of-day-bucketer",
+      "tool": "time-of-day-bucketer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-precise-converter",
+      "tool": "time-precise-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-server-format-reference",
+      "tool": "time-server-format-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-time-duration-arithmetic",
+      "tool": "time-time-duration-arithmetic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-timecode-frames-converter",
+      "tool": "time-timecode-frames-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-unit-converter",
+      "tool": "time-unit-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "time-zone-meeting-planner",
+      "tool": "time-zone-meeting-planner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "timestamp-batch-converter",
+      "tool": "timestamp-batch-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "timestamp-converter",
+      "tool": "timestamp-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "timezone-converter",
+      "tool": "timezone-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tip-split-calculator",
+      "tool": "tip-split-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "title-case",
+      "tool": "title-case"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tls-cipher-suite-explainer",
+      "tool": "tls-cipher-suite-explainer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tls-rpt-record-builder",
+      "tool": "tls-rpt-record-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "toml-to-json",
+      "tool": "toml-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "toml-to-yaml",
+      "tool": "toml-to-yaml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "torque-converter",
+      "tool": "torque-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "totp-generator",
+      "tool": "totp-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "transliterate-cyrillic",
+      "tool": "transliterate-cyrillic"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "transliterate-greek",
+      "tool": "transliterate-greek"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "trapezoid-parallelogram-calculator",
+      "tool": "trapezoid-parallelogram-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "triadic-color-scheme",
+      "tool": "triadic-color-scheme"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "triangle-solver",
+      "tool": "triangle-solver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "trim-lines",
+      "tool": "trim-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "tsv-to-json",
+      "tool": "tsv-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "twos-complement-converter",
+      "tool": "twos-complement-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "typography-units-converter",
+      "tool": "typography-units-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "ulid-generator",
+      "tool": "generate-ulid"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unicode-code-point-converter",
+      "tool": "unicode-code-point-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unicode-inspector",
+      "tool": "unicode-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unit-converter",
+      "tool": "unit-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unit-price-calculator",
+      "tool": "unit-price-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unix-nanoseconds-converter",
+      "tool": "unix-nanoseconds-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unix-rollover-checker",
+      "tool": "unix-rollover-checker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "unix-time-now",
+      "tool": "unix-time-now"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "url-encode",
+      "tool": "url-encode"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "url-parser",
+      "tool": "url-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "user-agent-parser",
+      "tool": "user-agent-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "uuid-generator",
+      "tool": "uuid-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "uuid-inspector",
+      "tool": "uuid-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "uuid-namespace-builder",
+      "tool": "uuid-namespace-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "uuid-nil-max-generator",
+      "tool": "uuid-nil-max-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "uuid-v7-generator",
+      "tool": "uuid-v7-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "vat-sales-tax",
+      "tool": "vat-sales-tax"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "vcard-generator",
+      "tool": "vcard-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "vcard-qr-payload-generator",
+      "tool": "vcard-qr-payload-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "vector-calculator-2d-3d",
+      "tool": "vector-calculator-2d-3d"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "verhoeff-damm-check",
+      "tool": "verhoeff-damm-check"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "vigenere-cipher",
+      "tool": "vigenere-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "viscosity-converter",
+      "tool": "viscosity-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "volume-converter",
+      "tool": "volume-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "wcag-contrast-pair-finder",
+      "tool": "wcag-contrast-pair-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-accept-language-parser",
+      "tool": "web-accept-language-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-aspect-ratio-css",
+      "tool": "web-aspect-ratio-css"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-bearer-auth-header-builder",
+      "tool": "web-bearer-auth-header-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-bem-class-generator",
+      "tool": "web-bem-class-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-border-radius-generator",
+      "tool": "web-border-radius-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-box-shadow-generator",
+      "tool": "box-shadow-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cache-busting-hash-appender",
+      "tool": "web-cache-busting-hash-appender"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cache-control-builder",
+      "tool": "web-cache-control-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cidr-calculator",
+      "tool": "subnet"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-clamp-fluid-type",
+      "tool": "web-clamp-fluid-type"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-clip-path-generator",
+      "tool": "web-clip-path-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-content-disposition-builder",
+      "tool": "web-content-disposition-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-content-security-policy-analyzer",
+      "tool": "web-content-security-policy-analyzer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-content-security-policy-linter",
+      "tool": "web-content-security-policy-linter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-content-type-charset-reference",
+      "tool": "web-content-type-charset-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cookie-string-builder",
+      "tool": "web-cookie-string-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cors-headers-builder",
+      "tool": "web-cors-headers-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cron-explainer",
+      "tool": "web-cron-explainer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-csp-builder",
+      "tool": "web-csp-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-button-generator",
+      "tool": "web-css-button-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-color-format-converter",
+      "tool": "color-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-gradient-text",
+      "tool": "web-css-gradient-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-relative-unit-calculator",
+      "tool": "web-css-relative-unit-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-specificity",
+      "tool": "web-css-specificity"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-specificity-sorter",
+      "tool": "web-css-specificity-sorter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-to-tailwind",
+      "tool": "web-css-to-tailwind"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-triangle-generator",
+      "tool": "web-css-triangle-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-unit-converter",
+      "tool": "web-css-unit-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-variable-extractor",
+      "tool": "web-css-variables-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-css-variables-extractor",
+      "tool": "web-css-variables-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-cubic-bezier",
+      "tool": "web-cubic-bezier"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-curl-command-builder",
+      "tool": "web-curl-command-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-curl-to-fetch",
+      "tool": "web-curl-to-fetch"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-data-attribute-to-dataset",
+      "tool": "web-data-attribute-to-dataset"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-data-uri-builder-text",
+      "tool": "web-data-uri-builder-text"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-data-uri-decoder",
+      "tool": "web-data-uri-decoder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-data-uri-size-estimator",
+      "tool": "web-data-uri-size-estimator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-dotenv-to-json",
+      "tool": "web-dotenv-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-etag-conditional-builder",
+      "tool": "web-etag-conditional-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-favicon-link-generator",
+      "tool": "web-favicon-link-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-filter-generator",
+      "tool": "web-filter-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-flexbox-playground",
+      "tool": "web-flexbox-playground"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-grid-template-generator",
+      "tool": "web-grid-template-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-hsts-header-builder",
+      "tool": "web-hsts-header-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-attributes-stripper",
+      "tool": "web-html-attributes-stripper"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-class-attr-extractor",
+      "tool": "web-html-class-attr-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-entity-picker",
+      "tool": "web-html-entity-picker"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-escape-unescape",
+      "tool": "html-entities"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-minify",
+      "tool": "web-html-minify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-html-to-jsx",
+      "tool": "web-html-to-jsx"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-http-cache-header-explainer",
+      "tool": "web-http-cache-header-explainer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-http-headers-reference",
+      "tool": "web-http-headers-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-http-message-parser",
+      "tool": "web-http-message-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-http-method-reference",
+      "tool": "web-http-method-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-ip-address-converter",
+      "tool": "web-ip-address-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-ip-cidr-membership",
+      "tool": "web-ip-cidr-membership"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-ipv6-expander",
+      "tool": "web-ipv6-expander"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-flatten",
+      "tool": "json-flatten"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-path-extractor",
+      "tool": "json-path-extractor"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-to-html-form",
+      "tool": "web-json-to-html-form"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-to-java",
+      "tool": "web-json-to-java"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-to-jsonschema",
+      "tool": "json-to-json-schema"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-to-query-string",
+      "tool": "json-to-query-string"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-to-toml",
+      "tool": "json-to-toml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-json-tree-viewer",
+      "tool": "json-tree-viewer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-jsonld-schema-generator",
+      "tool": "web-jsonld-schema-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-jwt-expiry-inspector",
+      "tool": "web-jwt-expiry-inspector"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-jwt-to-fetch",
+      "tool": "web-jwt-to-fetch"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-keyframes-generator",
+      "tool": "web-keyframes-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-link-header-builder",
+      "tool": "web-link-header-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-lorem-html-block",
+      "tool": "web-lorem-html-block"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-mac-address-formatter",
+      "tool": "mac"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-media-query-builder",
+      "tool": "web-media-query-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-media-query-generator",
+      "tool": "web-media-query-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-mimetype-from-extension",
+      "tool": "mime-types"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-multi-column-generator",
+      "tool": "web-multi-column-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-open-graph-preview-card",
+      "tool": "web-open-graph-preview-card"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-permissions-policy-builder",
+      "tool": "web-permissions-policy-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-preload-link-generator",
+      "tool": "web-preload-link-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-query-params-diff",
+      "tool": "web-query-params-diff"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-query-string-editor",
+      "tool": "query-params"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-query-string-parser",
+      "tool": "query-params"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-referrer-policy-reference",
+      "tool": "web-referrer-policy-reference"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-regex-cheatsheet",
+      "tool": "web-regex-cheatsheet"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-regex-escape",
+      "tool": "encoding-regex-literal-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-regex-match-lines",
+      "tool": "web-regex-match-lines"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-regex-named-group-converter",
+      "tool": "web-regex-named-group-converter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-regex-pattern-library",
+      "tool": "web-regex-pattern-library"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-relative-url-resolver",
+      "tool": "web-relative-url-resolver"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-robots-txt-tester",
+      "tool": "web-robots-txt-tester"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-scrollbar-styler",
+      "tool": "web-scrollbar-styler"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-semver-bump",
+      "tool": "web-semver-bump"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-semver-compare",
+      "tool": "web-semver-compare"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-semver-range-tester",
+      "tool": "web-semver-range-tester"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-set-cookie-builder",
+      "tool": "web-set-cookie-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-shell-arg-escaper",
+      "tool": "encoding-shell-arg-escape"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-slugify-variants",
+      "tool": "web-slugify-variants"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-srcset-density-calculator",
+      "tool": "web-srcset-density-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-srcset-generator",
+      "tool": "web-srcset-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-srcset-sizes-builder",
+      "tool": "web-srcset-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-status-code-explainer",
+      "tool": "http-status-codes"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-text-shadow-generator",
+      "tool": "web-text-shadow-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-transform-generator",
+      "tool": "web-transform-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-transition-generator",
+      "tool": "web-transition-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-url-builder",
+      "tool": "web-url-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-url-inspector",
+      "tool": "url-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-url-normalizer",
+      "tool": "web-url-normalizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-url-path-joiner",
+      "tool": "web-url-path-joiner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-url-query-sorter",
+      "tool": "web-url-query-sorter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-user-agent-builder",
+      "tool": "web-user-agent-builder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-www-authenticate-parser",
+      "tool": "web-www-authenticate-parser"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-xml-formatter",
+      "tool": "web-xml-formatter"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-xml-to-json",
+      "tool": "web-xml-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "web-z-index-scale-generator",
+      "tool": "web-z-index-scale-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "webhook-retry-schedule-calculator",
+      "tool": "webhook-retry-schedule-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "webhook-signature-verifier",
+      "tool": "webhook-signature-verifier"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "week-number",
+      "tool": "week-number"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "week-of-month-finder",
+      "tool": "week-of-month-finder"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "week-to-date",
+      "tool": "week-to-date"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "weekday-of-date",
+      "tool": "weekday-of-date"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "weeks-until-date",
+      "tool": "weeks-until-date"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "weighted-average-calculator",
+      "tool": "weighted-average-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "whitespace-cleaner",
+      "tool": "whitespace-cleaner"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "whitespace-visualizer",
+      "tool": "whitespace-visualizer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "wifi-qr-payload-generator",
+      "tool": "wifi-qr-payload-generator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "word-count",
+      "tool": "word-count"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "word-frequency",
+      "tool": "word-frequency"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "word-length-distribution",
+      "tool": "word-length-distribution"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "word-wrap-justify",
+      "tool": "word-wrap-justify"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "working-hours-calculator",
+      "tool": "working-hours-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "wsdl-operation-explorer",
+      "tool": "wsdl-operation-explorer"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "wsdl-to-sample-soap",
+      "tool": "wsdl-to-sample-soap"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "xml-attributes-to-elements",
+      "tool": "xml-attributes-to-elements"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "xml-attributes-to-json",
+      "tool": "xml-attributes-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "xml-to-csv",
+      "tool": "xml-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "xml-to-json",
+      "tool": "xml-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "xor-cipher",
+      "tool": "xor-cipher"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "yaml-to-csv",
+      "tool": "yaml-to-csv"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "yaml-to-json",
+      "tool": "yaml-to-json"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "yaml-to-toml",
+      "tool": "yaml-to-toml"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "z-score-calculator",
+      "tool": "z-score-calculator"
+    },
+    {
+      "source": "openutility",
+      "sourceId": "zero-width-char-stripper",
+      "tool": "zero-width-char-stripper"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "trim",
+      "tool": "video-trim"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "resize",
+      "tool": "video-resize"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "crop",
+      "tool": "video-crop"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "compress",
+      "tool": "video-compress"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "gif",
+      "tool": "video-gif"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "audio",
+      "tool": "video-audio"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "speed",
+      "tool": "video-speed"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "metadata",
+      "tool": "video-metadata"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "merge",
+      "tool": "pdf-merge"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "split",
+      "tool": "pdf-split"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "extract-pages",
+      "tool": "extract-pages"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "remove-pages",
+      "tool": "remove-pages"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "organize",
+      "tool": "pdf-organize"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "rotate",
+      "tool": "pdf-rotate"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "rotate-custom",
+      "tool": "rotate-custom"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "reverse-pages",
+      "tool": "reverse-pages"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "add-blank-page",
+      "tool": "add-blank-page"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "alternate-merge",
+      "tool": "alternate-merge"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "duplex-collate",
+      "tool": "duplex-collate"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "overlay-pdf",
+      "tool": "overlay-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "n-up",
+      "tool": "n-up"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "booklet",
+      "tool": "booklet"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "combine-single-page",
+      "tool": "combine-single-page"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "posterize",
+      "tool": "posterize"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "divide-pages",
+      "tool": "divide-pages"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "fix-page-size",
+      "tool": "fix-page-size"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "remove-blank-pages",
+      "tool": "remove-blank-pages"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdfs-to-zip",
+      "tool": "pdfs-to-zip"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-cbz",
+      "tool": "pdf-to-cbz"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-compress",
+      "tool": "pdf-compress"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "optimize-pdf",
+      "tool": "optimize-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "rasterize-pdf",
+      "tool": "rasterize-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "repair",
+      "tool": "repair"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "sanitize-pdf",
+      "tool": "sanitize-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "linearize-pdf",
+      "tool": "linearize-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-pdfa",
+      "tool": "pdf-to-pdfa"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "font-to-outline",
+      "tool": "font-to-outline"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "deskew-pdf",
+      "tool": "deskew-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "edit-pdf",
+      "tool": "pdf-edit"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "page-numbers",
+      "tool": "pdf-page-numbers"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "watermark",
+      "tool": "pdf-watermark"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "header-footer",
+      "tool": "header-footer"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "bates-numbering",
+      "tool": "bates-numbering"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "add-page-labels",
+      "tool": "add-page-labels"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "bookmarks",
+      "tool": "bookmarks"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "table-of-contents",
+      "tool": "table-of-contents"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "add-stamps",
+      "tool": "add-stamps"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "background-color",
+      "tool": "background-color"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "text-color",
+      "tool": "text-color"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "invert-colors",
+      "tool": "invert-colors"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "adjust-colors",
+      "tool": "adjust-colors"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "scanner-effect",
+      "tool": "scanner-effect"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "ocr-pdf",
+      "tool": "ocr-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "form-filler",
+      "tool": "form-filler"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "form-creator",
+      "tool": "form-creator"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-layers",
+      "tool": "pdf-layers"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "remove-annotations",
+      "tool": "remove-annotations"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "protect",
+      "tool": "pdf-protect"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "unlock",
+      "tool": "pdf-unlock"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "change-permissions",
+      "tool": "change-permissions"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "remove-restrictions",
+      "tool": "remove-restrictions"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "flatten-pdf",
+      "tool": "flatten-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "redact-pdf",
+      "tool": "pdf-redact"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "compare-pdfs",
+      "tool": "compare-pdfs"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "view-metadata",
+      "tool": "pdf-metadata"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "edit-metadata",
+      "tool": "pdf-metadata"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "remove-metadata",
+      "tool": "pdf-metadata"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "add-attachments",
+      "tool": "add-attachments"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "extract-attachments",
+      "tool": "extract-attachments"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "edit-attachments",
+      "tool": "edit-attachments"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "digital-sign-pdf",
+      "tool": "digital-sign-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "validate-signature-pdf",
+      "tool": "validate-signature-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "timestamp-pdf",
+      "tool": "timestamp-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "image-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "jpg-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "png-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "webp-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "heic-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "bmp-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "tiff-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "psd-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "svg-to-pdf",
+      "tool": "svg-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "cbz-to-pdf",
+      "tool": "cbz-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "txt-to-pdf",
+      "tool": "txt-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "markdown-to-pdf",
+      "tool": "markdown-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "html-to-pdf",
+      "tool": "html-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "csv-to-pdf",
+      "tool": "csv-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "json-to-pdf",
+      "tool": "json-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "xml-to-pdf",
+      "tool": "xml-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "rtf-to-pdf",
+      "tool": "rtf-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "word-to-pdf",
+      "tool": "word-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "excel-to-pdf",
+      "tool": "excel-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "powerpoint-to-pdf",
+      "tool": "powerpoint-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "epub-to-pdf",
+      "tool": "epub-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "email-to-pdf",
+      "tool": "email-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "digitize-document",
+      "tool": "digitize-document"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-text",
+      "tool": "pdf-to-text"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-markdown",
+      "tool": "pdf-to-markdown"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-json",
+      "tool": "pdf-to-json"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "prepare-pdf-for-ai",
+      "tool": "prepare-pdf-for-ai"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-csv",
+      "tool": "pdf-to-csv"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "extract-tables",
+      "tool": "extract-tables"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-excel",
+      "tool": "pdf-to-excel"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-word",
+      "tool": "pdf-to-word"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-svg",
+      "tool": "pdf-to-svg"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "extract-images",
+      "tool": "extract-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-image",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-png",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-jpg",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-webp",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-bmp",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-tiff",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-to-greyscale",
+      "tool": "pdf-to-greyscale"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "page-dimensions",
+      "tool": "page-dimensions"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "odt-to-pdf",
+      "tool": "odt-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "ods-to-pdf",
+      "tool": "ods-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "odp-to-pdf",
+      "tool": "odp-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "xps-to-pdf",
+      "tool": "xps-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "fb2-to-pdf",
+      "tool": "fb2-to-pdf"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "sign",
+      "tool": "pdf-sign"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pdf-crop",
+      "tool": "pdf-crop"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "scan-to-pdf",
+      "tool": "scan-to-pdf"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/compress",
+      "tool": "pdf-compress"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/crop",
+      "tool": "pdf-crop"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/edit",
+      "tool": "pdf-edit"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/from-docx",
+      "tool": "word-to-pdf"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/from-xlsx",
+      "tool": "excel-to-pdf"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/grayscale",
+      "tool": "pdf-to-greyscale"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/images-to-pdf",
+      "tool": "images-to-pdf"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/merge",
+      "tool": "pdf-merge"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/metadata",
+      "tool": "metadata"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/organize",
+      "tool": "pdf-organize"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/page-numbers",
+      "tool": "pdf-page-numbers"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/password",
+      "tool": "pdf-protect"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/pdf-to-images",
+      "tool": "pdf-images"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/pdf-to-ppt",
+      "tool": "pdf-to-ppt"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/pdf-to-text",
+      "tool": "pdf-to-text"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/rotate",
+      "tool": "pdf-rotate"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/sign",
+      "tool": "pdf-sign"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/split",
+      "tool": "pdf-split"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/to-docx",
+      "tool": "pdf-to-word"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/unlock",
+      "tool": "pdf-unlock"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "pdf-tools/watermark",
+      "tool": "pdf-watermark"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/batch",
+      "tool": "image-resize-pixels"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/blur",
+      "tool": "image-gaussian-blur"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/color-picker",
+      "tool": "image-dominant-color"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/crop",
+      "tool": "image-crop-aspect"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/filters",
+      "tool": "image-filter-adjust"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/meme",
+      "tool": "image-meme-text"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/qr",
+      "tool": "qr-generator"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/rotate",
+      "tool": "image-rotate-flip"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/video-to-gif",
+      "tool": "video-gif"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "image-tools/watermark",
+      "tool": "image-watermark-text"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/base64",
+      "tool": "base64-text"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/css-minify",
+      "tool": "css-minify"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/diff",
+      "tool": "text-diff"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/hash",
+      "tool": "hash"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/json",
+      "tool": "json-formatter"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/markdown",
+      "tool": "markdown"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/url-encode",
+      "tool": "url-encode"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "dev-tools/word-count",
+      "tool": "word-count"
+    },
+    {
+      "source": "localconvert",
+      "sourceId": "convert",
+      "tool": "file-convert"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "extract-archive",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "create-zip",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "convert-to-zip",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "compress-file",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "decompress-file",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "inspect-archive",
+      "tool": "archives"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "sql-playground",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "sqlite-browser",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "big-csv-viewer",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "csv-analytics",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "json-parquet-viewer",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "local-bi-dashboard",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "log-analyzer",
+      "tool": "database"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "convert-audio-format",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "mp3-cutter",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "merge-audio",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "audio-fade",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "audio-speed-changer",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "audio-volume",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "normalize-audio",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "podcast-cleaner",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "remove-audio-silence",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "reverse-audio",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "voice-changer",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "podcast-intro-generator",
+      "tool": "audio-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "convert-video-format",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "merge-videos",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "rotate-video",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "video-thumbnail",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "mute-video",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "extract-audio-from-video",
+      "tool": "video-workspace"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "image-to-text",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "batch-ocr",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "business-card-reader",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "receipt-scanner",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "invoice-extractor",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "passport-mrz-reader",
+      "tool": "image-ocr"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "audio-transcriber",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "podcast-transcriber",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "interview-transcriber",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "audio-language-detector",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "translate-speech",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "voice-memo-to-markdown",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "video-to-subtitles",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "karaoke-lyrics-aligner",
+      "tool": "speech-transcribe"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "epub-reader",
+      "tool": "reader"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "article-reader",
+      "tool": "reader"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "pdf-read-aloud",
+      "tool": "reader"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "epub-audiobook",
+      "tool": "reader"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "text-to-speech",
+      "tool": "text-to-speech"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "screen-reader-snippet",
+      "tool": "text-to-speech"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "ssml-playground",
+      "tool": "ssml"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "live-dictation",
+      "tool": "dictation"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "pronunciation-coach",
+      "tool": "pronunciation"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "language-flashcards",
+      "tool": "flashcards"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "ipa-phonetic-transcriber",
+      "tool": "phonetic"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "stl-viewer",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "obj-viewer",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "gltf-viewer",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "step-viewer",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "3d-model-converter",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "3d-thumbnail-generator",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "mesh-simplifier",
+      "tool": "3d-model"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "upscale-image",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "ai-upscale-image",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "remove-image-background",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "inpaint-image",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "remove-image-watermark",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "exif-editor",
+      "tool": "image-enhance"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "whiteboard",
+      "tool": "whiteboard"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "pomodoro-timer",
+      "tool": "pomodoro-timer"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "instrument-tuner",
+      "tool": "music"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "metronome",
+      "tool": "music"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "webcam-recorder",
+      "tool": "capture"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "voice-recorder",
+      "tool": "capture"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "whois-lookup",
+      "tool": "domain-info"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "domain-name-search",
+      "tool": "domain-info"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "dnssec-check",
+      "tool": "domain-info"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "multi-voice-dialogue",
+      "tool": "voice-dialogue"
+    },
+    {
+      "source": "zro7-reference",
+      "sourceId": "voice-command-playground",
+      "tool": "voice-dialogue"
+    }
+  ],
+  "unavailable": [
+    {
+      "source": "browsersnip",
+      "sourceId": "mobi-to-pdf",
+      "name": "MOBI转PDF",
+      "reason": "MOBI转PDF is not available offline: the 手机 container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 将书籍重新保存为 EPUB — Calibre 直接导出 — BrowserSnip 完全在选项卡中进行转换。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pages-to-pdf",
+      "name": "页面转 PDF",
+      "reason": "页面转 PDF is not available offline: the 苹果页面 container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 在页面中选择文件 → 导出到 → PDF。 .pages 捆绑包是一个 ZIP：如果它已经包含 PDF，则可以使用该文件。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "pub-to-pdf",
+      "name": "PUB 转 PDF",
+      "reason": "PUB 转 PDF is not available offline: the 微软出版商 container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 在 LibreOffice 或 Publisher 中打开并另存为 DOCX 或 PDF；两者都在选项卡中转换。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "vsd-to-pdf",
+      "name": "VSD 转 PDF",
+      "reason": "VSD 转 PDF is not available offline: the 微软Visio container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 从Visio导出到PDF，或者将绘图保存为SVG并使用SVG到PDF来绘制图稿。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "wpd-to-pdf",
+      "name": "WPD 转 PDF",
+      "reason": "WPD 转 PDF is not available offline: the WordPerfect container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 首先从 Corel WordPerfect 或 LibreOffice 重新导出为 DOCX 或 PDF。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "wps-to-pdf",
+      "name": "WPS转PDF",
+      "reason": "WPS转PDF is not available offline: the 金山作家 container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 在WPS Office中重新另存为DOCX，在选项卡中进行转换。"
+    },
+    {
+      "source": "browsersnip",
+      "sourceId": "odg-to-pdf",
+      "name": "ODG 转 PDF",
+      "reason": "ODG 转 PDF is not available offline: the 开放文档绘图 container needs LibreOffice, which BrowserSnip does not bundle (~100 MB of WASM). 从 LibreOffice Draw 中将绘图导出为 SVG 或 PNG 并使用这些转换器来保留图稿。"
+    }
+  ]
+}
