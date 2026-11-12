@@ -8,18 +8,18 @@
     },
     {
       "path": "assets/home-react/home.js",
-      "bytes": 786556,
-      "sha256": "c267e8ca86d543c75cd559e4921d0698adfd0378a7f689adc33f2a00bdd72346"
+      "bytes": 786601,
+      "sha256": "c08cd750c19e3364384a32b09065f156c310aac2da90032c248cc8e08e3dbb4b"
     },
     {
       "path": "assets/home-react/manifest.json",
       "bytes": 495,
-      "sha256": "0154a435511e84c725b082aafd421845b4c7cdcbab6b9f55bc0332786e890c76"
+      "sha256": "5e65e62b3a2d1478074d3a82f8b5f878972819473c3c4d16230f1c2c914507e7"
     },
     {
       "path": "licenses/home-react-source.zip",
-      "bytes": 193326,
-      "sha256": "ccdc7c0c1dcaa2b5e31b130491167ba3a2792793d073e73c8cdd123436bc3290"
+      "bytes": 193337,
+      "sha256": "aae826203cadc30958dd3d368a5f61329a8ae8677edbd42585a7547ec4ce5a14"
     }
   ]
 }
