@@ -4,7 +4,7 @@
   "modified": true,
   "antd": "5.29.3",
   "build": "npm ci; npx vite build --config toolbox.vite.config.ts",
-  "archive_sha256": "fa29aabd52d754845f562c35e5e49c710097d5c228c0c35a69f4376d99d9ef03",
+  "archive_sha256": "69a2f3e513f29e39aa7fbd29ef821f156da6b43f4937e852567935b447611a35",
   "exclusions": [
     "node_modules",
     ".git",
@@ -916,19 +916,34 @@
       "bytes": 28423
     },
     {
+      "path": "reports/ant-a11y-browser.json",
+      "sha256": "de2e505fe946b3894dca5cfc36be0b23b46720a5a8c781f0e38d6be03f3a8865",
+      "bytes": 215
+    },
+    {
       "path": "reports/ant-browser/functional.json",
-      "sha256": "46a478d2dc54cf13d609216e4a57d03ac66aea492d06333c4593793d6782b1cc",
+      "sha256": "8046ea66552fae7f1a2f275e66853715bc58b0b3bad912bfffc52b1e09468b58",
       "bytes": 671
     },
     {
       "path": "reports/ant-control-inventory.json",
-      "sha256": "a87be379f0694e7fabc8c9774f4f56908b0f1a2adebe6a7ffd79c296818ab744",
-      "bytes": 83106
+      "sha256": "d85d74164712e241334f8d5c54fcbe38e9d2627297c44aaf08f87069c576841a",
+      "bytes": 83389
     },
     {
       "path": "reports/ant-load-only.json",
       "sha256": "fa2a63e4959abf47c9f753b099e4c6ba48448872f35dc4ce956a64eaadb0b591",
       "bytes": 13443
+    },
+    {
+      "path": "reports/ant-original-failure-classification.json",
+      "sha256": "c954d56c098327232cd027502f146b82cec27ef641593b9adbff29b16228f9d5",
+      "bytes": 29162
+    },
+    {
+      "path": "scripts/ant-a11y-browser-proof.mjs",
+      "sha256": "1df23f5d78b025a88c272e7a5a34806c56807c1da33e6ce6d5e5527b4a83ebe6",
+      "bytes": 3766
     },
     {
       "path": "scripts/ant-browser-proof.mjs",
@@ -1132,8 +1147,8 @@
     },
     {
       "path": "src/components/tools/pdf/editor/AnnotationEditor.tsx",
-      "sha256": "b572e784e7a9d93e94680aca965a8fafa74b0bcb4330395dcb7688bc4088be41",
-      "bytes": 138407
+      "sha256": "1d382190afa6c0ad03997d705a6b08d944efed6fa3e4e22de660fd14cb71a8f3",
+      "bytes": 138428
     },
     {
       "path": "src/components/tools/pdf/editor/AnnotationOverlay.tsx",
@@ -1227,8 +1242,8 @@
     },
     {
       "path": "src/components/tools/pdf/organize/PageOrganizer.tsx",
-      "sha256": "0dc17ac931132ee724603c365ca4f9dcb42c6aebbaa492fa779e3bf7eff3182a",
-      "bytes": 60445
+      "sha256": "8ef992399d9d9e2bdbca18d90521008fd4a94c38a83237cd95d52e7e9ab266b8",
+      "bytes": 60648
     },
     {
       "path": "src/components/tools/pdf/organize/plan.ts",
@@ -1282,8 +1297,8 @@
     },
     {
       "path": "src/components/tools/pdf/security/SignTool.tsx",
-      "sha256": "4709da7acc83a8256694c64b871c5697422c72de194f8979ab2edc65ca31bd48",
-      "bytes": 26688
+      "sha256": "e9d58e43e7ba09c1c445c3a443204e139f3d8b8e4d8748fbd551fa6e4f593902",
+      "bytes": 26535
     },
     {
       "path": "src/components/tools/pdf/shared/EmptyState.tsx",
@@ -1297,8 +1312,8 @@
     },
     {
       "path": "src/components/tools/pdf/shared/FieldControls.tsx",
-      "sha256": "b565cd66d5ada5de68eeb384e62720a65e10650a173e4ae4b5f85681730881e0",
-      "bytes": 33817
+      "sha256": "2f743b268b00c3b65788be9db542a2396dd9b6f05d9f73344d0b7d26cdd2419c",
+      "bytes": 34329
     },
     {
       "path": "src/components/tools/pdf/shared/FileCards.tsx",
@@ -1342,8 +1357,8 @@
     },
     {
       "path": "src/components/tools/pdf/shared/ProgressBar.tsx",
-      "sha256": "97086a6e85c53795303dd37ca2bfa51f12bfccd05a18cdc21d6082d0d12f5dd3",
-      "bytes": 2977
+      "sha256": "8bb99d376549f924fd59a87ddc1bac4082beb273610ec875b6f2ab87aed2329d",
+      "bytes": 3045
     },
     {
       "path": "src/components/tools/pdf/shared/ResultCard.tsx",
@@ -1407,8 +1422,8 @@
     },
     {
       "path": "src/components/tools/pdf/text-editor/panels.tsx",
-      "sha256": "e34a34c28c6751d9d9fa703dffb73705619611814ea9a0df8384fb95c1f2f532",
-      "bytes": 40475
+      "sha256": "093086cf0f2f177432bb7c388402c7cd9dbd424096693a058e76cc27ff3a4c29",
+      "bytes": 40496
     },
     {
       "path": "src/components/tools/pdf/text-editor/TextEditor.tsx",
@@ -1862,8 +1877,8 @@
     },
     {
       "path": "src/toolbox.css",
-      "sha256": "af8ea4aede622777578a07c820b492fb23d3987bacced1ae3a84d6704aa8396f",
-      "bytes": 3458
+      "sha256": "802c2ad436b6f858e06625ee7bbe0a8fe2867b27aa960cf66934d3362405004d",
+      "bytes": 3836
     },
     {
       "path": "src/types/index.ts",
@@ -1887,8 +1902,8 @@
     },
     {
       "path": "tests/app/ant-adaptation.test.tsx",
-      "sha256": "941c331aafd33281f67f839e6ef54c310deca61cbf7e08c99b6e90c9662a2b06",
-      "bytes": 2876
+      "sha256": "ab67357799dd21847eb38f5ace1df4712e44684554dc19302d6f945dcbe74247",
+      "bytes": 5485
     },
     {
       "path": "tests/app/shared-ui.test.tsx",
@@ -1904,6 +1919,11 @@
       "path": "tests/app/tool-navigation.test.tsx",
       "sha256": "b4516b25f3c4093c140f40419a0d69c7594a08b33090a8a5696fce94550fbb16",
       "bytes": 7900
+    },
+    {
+      "path": "tests/fixtures/ant-controls.html",
+      "sha256": "873c01a536d6b557b5136a3a462f08fe3a63492f9402d16b4bd64daa81bc65b2",
+      "bytes": 967
     },
     {
       "path": "tests/fixtures/cff-face.otf",
