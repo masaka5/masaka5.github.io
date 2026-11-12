@@ -32,7 +32,10 @@
     "url": "https://github.com/Sp3llC0d3/localconvert",
     "commit": "d3fd6ea358e14f6d31e144a290e13eb592fb487c",
     "license": "AGPL-3.0",
-    "modified": true
+    "modified": true,
+    "source_archive": "localconvert-source.zip",
+    "source_manifest": "localconvert-source-manifest.json",
+    "modification_notice": "localconvert-theme-notice.txt"
   },
   {
     "project": "v86-64-upstream",
