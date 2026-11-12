@@ -1,12 +1,247 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="本地浏览、提取和制作 ISO、WIM、IMG、VHD 镜像。"><title>镜像工具 · 工具箱</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/ops.css"><link rel="stylesheet" href="iso.css"></head><body>
-<div class="iso-shell"><header class="ops-header"><a class="back-link" href="../../">← 工具箱</a><h1>镜像工具</h1><nav class="image-tabs" aria-label="镜像模式"><button id="createTab" aria-pressed="true">制作</button><button id="browseTab" aria-pressed="false">浏览</button></nav></header>
-<main id="createPanel"><section class="settings"><div class="disc-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="5"/><path d="M24 9a15 15 0 0 1 15 15M9 24a15 15 0 0 0 15 15"/></svg></div><div><h2>新建镜像</h2><p class="format">本机处理</p></div>
-<label class="field"><span>镜像格式</span><select id="imageFormat"><option value="iso">ISO · 资料光盘</option><option value="wim">WIM · 文件镜像</option><option value="img">IMG · FAT 磁盘</option><option value="vhd">VHD · 固定 FAT 磁盘</option></select></label>
-<label class="field"><span>文件名</span><input id="filename" value="资料光盘.iso" maxlength="120" autocomplete="off"></label><label class="field" id="volumeField"><span>卷标</span><input id="volumeId" value="DATA" maxlength="16" pattern="[A-Z0-9_]{1,16}" spellcheck="false" autocomplete="off"></label><label class="field" id="capacityField" hidden><span>容量（MiB）</span><input id="capacityMiB" type="number" min="16" max="256" step="16" value="64"></label>
-<label class="field"><span>保存方式</span><select id="outputMode"><option value="direct">直接保存到本地</option><option value="download">生成后下载</option></select></label><dl class="summary"><div><dt>文件</dt><dd id="fileCount">0</dd></div><div><dt>原始大小</dt><dd id="sourceSize">0 B</dd></div><div><dt>镜像大小</dt><dd id="imageSize">—</dd></div></dl>
-<div class="job"><progress id="progress" value="0" max="1" hidden></progress><p id="status" class="status" role="status" aria-live="polite"></p><div class="job-actions"><button id="generate" class="primary" disabled>制作镜像</button><button id="cancel" class="secondary" hidden>取消</button><button id="download" class="secondary" hidden>下载镜像</button></div></div><p id="formatScope" class="scope">资料光盘，不含系统引导。</p></section>
-<section id="dropZone" class="files-panel" aria-label="文件清单"><div class="panel-head"><h2>文件清单</h2><div class="actions"><button id="addFiles" class="secondary">添加文件</button><button id="addFolder" class="secondary">添加文件夹</button><button id="clear" class="text-button" disabled>清空</button></div></div><input id="files" type="file" multiple hidden><input id="folder" type="file" webkitdirectory multiple hidden><div id="empty" class="empty"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 15V11a3 3 0 0 1 3-3h11l5 6h14a3 3 0 0 1 3 3v20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V15Z"/><path d="M24 23v10m-5-5h10"/></svg><button id="emptyAdd" class="text-button">添加文件或拖入文件夹</button></div><div id="tableWrap" class="table-wrap" hidden><table><thead><tr><th>路径</th><th>大小</th><th><span class="sr-only">操作</span></th></tr></thead><tbody id="fileList"></tbody></table></div><nav id="pager" class="pager" aria-label="文件分页" hidden><button id="previous" aria-label="上一页">←</button><span id="pageNumber"></span><button id="next" aria-label="下一页">→</button></nav></section></main>
-<section id="browsePanel" class="browse-panel" hidden><div class="browse-toolbar"><button id="openImage" class="primary">打开镜像</button><input id="imageInput" type="file" accept=".iso,.wim,.esd,.img,.vhd,.vhdx,.vdi,.vmdk,.qcow,.qcow2,.dmg,.udf" hidden><span id="imageName">未打开</span><span id="imageCapability" class="pill"></span><button id="browseCancel" class="secondary" hidden>取消</button></div>
-<div class="browse-tools"><label class="sr-only" for="imageSearch">搜索路径</label><input id="imageSearch" type="search" placeholder="搜索路径"><button id="extractSelected" class="secondary" disabled>导出所选</button><button id="enterImage" class="secondary" disabled>进入镜像</button><button id="addImageFiles" class="secondary" disabled>添加文件</button><button id="rebuildISO" class="secondary" disabled>重建资料 ISO</button><button id="saveImage" class="primary" disabled>保存副本</button><input id="imageAddInput" type="file" multiple hidden></div>
-<p id="browseStatus" class="status" role="status" aria-live="polite"></p><p id="imageNote" class="scope">ISO / WIM / IMG / VHD 等；复杂磁盘格式只读。</p><div class="table-wrap image-table"><table><thead><tr><th class="check-cell"><input id="selectImagePage" type="checkbox" aria-label="选择本页"></th><th>路径</th><th>大小</th></tr></thead><tbody id="imageRows"></tbody></table></div><nav class="pager"><button id="imagePrevious" aria-label="上一页">←</button><span id="imagePage">0 / 0</span><button id="imageNext" aria-label="下一页">→</button></nav></section></div>
-<script type="module" src="iso.js"></script><script type="module" src="image-ui.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="本地浏览、提取和制作 ISO、WIM、IMG、VHD 镜像。"
+    />
+    <title>镜像工具 · 工具箱</title>
+    <link rel="icon" href="../../assets/favicon.svg" />
+    <link rel="stylesheet" href="../../assets/ops.css" />
+    <link rel="stylesheet" href="iso.css" />
+  </head>
+  <body>
+    <div class="iso-shell">
+      <header class="ops-header">
+        <a class="back-link" href="../../">← 工具箱</a>
+        <h1>镜像工具</h1>
+        <nav class="image-tabs" aria-label="镜像模式">
+          <button id="createTab" aria-pressed="true">制作</button
+          ><button id="browseTab" aria-pressed="false">浏览</button>
+        </nav>
+      </header>
+      <main id="createPanel">
+        <section class="settings">
+          <div class="disc-mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="24" cy="24" r="20" />
+              <circle cx="24" cy="24" r="5" />
+              <path d="M24 9a15 15 0 0 1 15 15M9 24a15 15 0 0 0 15 15" />
+            </svg>
+          </div>
+          <div>
+            <h2>新建镜像</h2>
+            <p class="format">本机处理</p>
+          </div>
+          <label class="field"
+            ><span>镜像格式</span
+            ><select id="imageFormat">
+              <option value="iso">ISO · 资料光盘</option>
+              <option value="wim">WIM · 文件镜像</option>
+              <option value="img">IMG · FAT 磁盘</option>
+              <option value="vhd">VHD · 固定 FAT 磁盘</option>
+            </select></label
+          >
+          <label class="field"
+            ><span>文件名</span
+            ><input
+              id="filename"
+              value="资料光盘.iso"
+              maxlength="120"
+              autocomplete="off" /></label
+          ><label class="field" id="volumeField"
+            ><span>卷标</span
+            ><input
+              id="volumeId"
+              value="DATA"
+              maxlength="16"
+              pattern="[A-Z0-9_]{1,16}"
+              spellcheck="false"
+              autocomplete="off" /></label
+          ><label class="field" id="capacityField" hidden
+            ><span>容量（MiB）</span
+            ><input
+              id="capacityMiB"
+              type="number"
+              min="16"
+              max="256"
+              step="16"
+              value="64"
+          /></label>
+          <label class="field"
+            ><span>保存方式</span
+            ><select id="outputMode">
+              <option value="direct">直接保存到本地</option>
+              <option value="download">生成后下载</option>
+            </select></label
+          >
+          <dl class="summary">
+            <div>
+              <dt>文件</dt>
+              <dd id="fileCount">0</dd>
+            </div>
+            <div>
+              <dt>原始大小</dt>
+              <dd id="sourceSize">0 B</dd>
+            </div>
+            <div>
+              <dt>镜像大小</dt>
+              <dd id="imageSize">—</dd>
+            </div>
+          </dl>
+          <div class="job">
+            <progress id="progress" value="0" max="1" hidden></progress>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+            <div class="job-actions">
+              <button id="generate" class="primary" disabled>制作镜像</button
+              ><button id="cancel" class="secondary" hidden>取消</button
+              ><button id="download" class="secondary" hidden>下载镜像</button>
+            </div>
+          </div>
+          <p id="formatScope" class="scope">资料光盘，不含系统引导。</p>
+        </section>
+        <section id="dropZone" class="files-panel" aria-label="文件清单">
+          <div class="panel-head">
+            <h2>文件清单</h2>
+            <div class="actions">
+              <button id="addFiles" class="secondary">添加文件</button
+              ><button id="addFolder" class="secondary">添加文件夹</button
+              ><button id="clear" class="text-button" disabled>清空</button>
+            </div>
+          </div>
+          <input id="files" type="file" multiple hidden /><input
+            id="folder"
+            type="file"
+            webkitdirectory
+            multiple
+            hidden
+          />
+          <div id="empty" class="empty">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 15V11a3 3 0 0 1 3-3h11l5 6h14a3 3 0 0 1 3 3v20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V15Z"
+              />
+              <path d="M24 23v10m-5-5h10" /></svg
+            ><button id="emptyAdd" class="text-button">
+              添加文件或拖入文件夹
+            </button>
+          </div>
+          <div id="tableWrap" class="table-wrap" hidden>
+            <table>
+              <thead>
+                <tr>
+                  <th>路径</th>
+                  <th>大小</th>
+                  <th><span class="sr-only">操作</span></th>
+                </tr>
+              </thead>
+              <tbody id="fileList"></tbody>
+            </table>
+          </div>
+          <nav id="pager" class="pager" aria-label="文件分页" hidden>
+            <button id="previous" aria-label="上一页">←</button
+            ><span id="pageNumber"></span
+            ><button id="next" aria-label="下一页">→</button>
+          </nav>
+        </section>
+      </main>
+      <section id="browsePanel" class="browse-panel" hidden>
+        <div class="browse-toolbar">
+          <button id="openImage" class="primary">打开镜像</button
+          ><input
+            id="imageInput"
+            type="file"
+            accept=".iso,.wim,.esd,.img,.vhd,.vhdx,.vdi,.vmdk,.qcow,.qcow2,.dmg,.udf"
+            hidden
+          /><span id="imageName">未打开</span
+          ><span id="imageCapability" class="pill"></span
+          ><button id="browseCancel" class="secondary" hidden>取消</button>
+        </div>
+        <div class="image-location">
+          <button
+            id="imageUp"
+            class="secondary"
+            disabled
+            aria-label="返回上级目录或容器"
+          >
+            ↑ 上一级
+          </button>
+          <nav id="imageBreadcrumbs" aria-label="当前位置"></nav>
+        </div>
+        <div class="browse-tools">
+          <label class="sr-only" for="imageSearch">搜索当前目录</label
+          ><input
+            id="imageSearch"
+            type="search"
+            placeholder="搜索当前目录"
+          /><button id="extractSelected" class="secondary" disabled>
+            导出所选</button
+          ><button id="enterImage" class="secondary" disabled>打开所选</button
+          ><button id="deleteImageEntries" class="secondary" disabled>
+            删除所选</button
+          ><button id="addImageFiles" class="secondary" disabled>
+            添加文件</button
+          ><button id="rebuildISO" class="secondary" disabled>
+            重建资料 ISO</button
+          ><button id="saveImage" class="primary" disabled>保存副本</button
+          ><input id="imageAddInput" type="file" multiple hidden />
+        </div>
+        <p
+          id="browseStatus"
+          class="status"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <p id="imageNote" class="scope">
+          ISO / WIM / IMG / VHD 等；复杂磁盘格式只读。
+        </p>
+        <div class="table-wrap image-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="check-cell">
+                  <input
+                    id="selectImagePage"
+                    type="checkbox"
+                    aria-label="选择本页"
+                  />
+                </th>
+                <th>路径</th>
+                <th>大小</th>
+              </tr>
+            </thead>
+            <tbody id="imageRows"></tbody>
+          </table>
+        </div>
+        <nav class="pager">
+          <button id="imagePrevious" aria-label="上一页">←</button
+          ><span id="imagePage">0 / 0</span
+          ><button id="imageNext" aria-label="下一页">→</button>
+        </nav>
+      </section>
+    </div>
+    <dialog id="imageDeleteDialog" aria-labelledby="imageDeleteTitle">
+      <h2 id="imageDeleteTitle">删除所选内容</h2>
+      <p id="imageDeleteDescription"></p>
+      <div class="image-dialog-actions">
+        <button id="cancelImageDelete" class="secondary">取消</button
+        ><button id="confirmImageDelete" class="primary">删除</button>
+      </div>
+    </dialog>
+    <script type="module" src="iso.js"></script>
+    <script type="module" src="image-ui.js"></script>
+  </body>
+</html>

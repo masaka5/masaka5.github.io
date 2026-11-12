@@ -7,8 +7,8 @@
     },
     {
       "file": "image-engine-worker.js",
-      "bytes": 9135,
-      "sha256": "9e3878db0f7531058cbeace593ddd08927d3fe3154c12c604dbc88080e2bad5e"
+      "bytes": 13867,
+      "sha256": "0e162a9cb42c7cffbd0dc13bec536af01ab0857f6dc6c9ab426a6d704d92ec11"
     },
     {
       "file": "image-engine.js",
@@ -17,13 +17,18 @@
     },
     {
       "file": "image-ui.js",
-      "bytes": 7462,
-      "sha256": "c49beb720c0ac526450f2b85c84ba5f68d25377f7e2f52c28d1cdac681737c27"
+      "bytes": 13406,
+      "sha256": "ffeee513063d757615100a9916e936f0d6b0164a8081ef507a9d1325d9351dc3"
+    },
+    {
+      "file": "image-workspace.js",
+      "bytes": 7124,
+      "sha256": "24a3bf75f966ebc692d8d79b27f7c3feb81490bd5cd78ae111d5086ce4c8de32"
     },
     {
       "file": "index.html",
-      "bytes": 5609,
-      "sha256": "58c1155d503789edbc3f44ce3d44ddcbc18418a45c7b86275e7abb2ed8c68fb1"
+      "bytes": 9129,
+      "sha256": "cc0c703a6500dfc574f3aac09f3e5a97cf627eb08f000813e52b94742877e28e"
     },
     {
       "file": "iso-codec.js",
@@ -37,8 +42,8 @@
     },
     {
       "file": "iso-core.js",
-      "bytes": 7663,
-      "sha256": "34639dc5b9d6797becdacebf8b8e53c4bdbf709badfa6cfae96f03fb9e92a9dd"
+      "bytes": 7695,
+      "sha256": "3a1ce261064874f3ae50f75e077eab80a2ef856684946d0759c686245d044b14"
     },
     {
       "file": "iso-worker.js",
@@ -47,8 +52,8 @@
     },
     {
       "file": "iso.css",
-      "bytes": 5645,
-      "sha256": "7216e08593c4d8bb7964f12bde4315952d5d9f40b13ad68a3e1d59e3b263332b"
+      "bytes": 9483,
+      "sha256": "1dd592d46c0c73495d4828a4cd10ba2ade33c8015d2b4dc5dd318eef8e7dab69"
     },
     {
       "file": "iso.js",

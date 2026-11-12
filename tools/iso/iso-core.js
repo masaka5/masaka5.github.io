@@ -30,9 +30,9 @@ function tree(root,joliet){
  const pathBytes=names.reduce((n,name)=>n+8+name.length+(name.length%2),0);
  return {joliet,dirs,indices,names,pathBytes,extents:new Map()};
 }
-export function planImage(entries,{volumeId='DATA'}={}){
+export function planImage(entries,{volumeId='DATA',allowEmpty=false}={}){
  if(!/^[A-Z0-9_]{1,16}$/.test(volumeId))throw Error('卷标为 1–16 位大写字母、数字或下划线');
- if(!Array.isArray(entries)||!entries.length)throw Error('请先添加文件或文件夹');
+ if(!Array.isArray(entries)||(!entries.length&&!allowEmpty))throw Error('请先添加文件或文件夹');
  if(entries.length>MAX_ENTRIES)throw Error('最多添加 10000 个文件和目录');
  const root={name:'',kind:'directory',children:new Map(),parent:null},explicit=new Set();let count=0;
  for(const entry of entries){
