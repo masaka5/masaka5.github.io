@@ -376,5 +376,34 @@
     "licenseFile": "vendor/fatfs-wasm/LICENSE.txt",
     "sourceArchive": "licenses/fatfs-wasm-source.zip",
     "changes": "WorkerGlobalScope loader detection patch; native WASM unchanged; corresponding source supplied."
+  },
+  {
+    "project": "drawio",
+    "source": "https://github.com/jgraph/drawio",
+    "revision": "c72c9a98b7a6ce392556ed04c05e0ff19f43f5c3",
+    "license": "Apache-2.0",
+    "sourceArchive": "licenses/drawio-source.zip",
+    "changes": "Local Chinese draw.io runtime; corresponding toolbox shell/build sources in licenses/office-editors-source.zip."
+  },
+  {
+    "project": "tiptap",
+    "source": "https://github.com/ueberdosis/tiptap",
+    "version": "3.33.1",
+    "license": "MIT",
+    "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "univer",
+    "source": "https://github.com/dream-num/univer",
+    "version": "1.4.0",
+    "license": "Apache-2.0",
+    "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "web-ppt",
+    "source": "https://github.com/duchao-duchao/web-ppt",
+    "revision": "6d07815384197d7e7409b5af9743db6ea39bc29a",
+    "license": "MIT",
+    "sourceArchive": "licenses/office-editors-source.zip"
   }
 ]

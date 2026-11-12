@@ -1,0 +1,3 @@
+function g(l){l=l.replace(/^\ufeff/,"");const a=l.includes("	")&&!l.includes(",")?"	":",",o=[],f=[];let n="",i=!1,s=!1;const t=()=>{if(f.push(n),n="",s=!1,f.length>2e3)throw Error("CSV最多10000行、2000列")},h=()=>{if(t(),o.push([...f]),f.length=0,o.length>1e4)throw Error("CSV最多10000行、2000列")};for(let e=0;e<l.length;e++){const r=l[e];if(i){r==='"'?l[e+1]==='"'?(n+='"',e++):(i=!1,s=!0):n+=r;continue}if(r===a)t();else if(r===`
+`||r==="\r")r==="\r"&&l[e+1]===`
+`&&e++,h();else if(r==='"'&&!n&&!s)i=!0;else{if(r==='"'||s)throw Error("CSV引号无效");n+=r}}if(i)throw Error("CSV引号未闭合");(n||s||f.length||!o.length)&&h();const c=Math.max(...o.map(e=>e.length));if(o.length*c>2e5)throw Error("CSV最多20万单元格");return o.map(e=>Array.from({length:c},(r,u)=>e[u]||""))}export{g as parseCSV};

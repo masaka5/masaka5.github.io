@@ -11,6 +11,10 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'drawio',category:'collaboration',name:'思维导图与流程图',description:'draw.io · 绘图 · 本地草稿',href:'tools/drawio/',icon:'workflow',tags:['绘图','流程图','思维导图'],keywords:'draw.io diagrams.net 脑图 UML XML SVG PNG'},
+    {id:'tiptap',category:'text',name:'富文本文档',description:'Tiptap · 排版 · 表格 · 图片',href:'tools/office-editors/document.html',icon:'file-pen-line',tags:['文档','排版','Tiptap'],keywords:'富文本 编辑器 文档 JSON HTML 本地 草稿'},
+    {id:'web-ppt',category:'collaboration',name:'幻灯片',description:'Web-PPT · 演示 · PPTX 导出',href:'tools/web-ppt/',icon:'panels-top-left',tags:['演示','PPT','幻灯片'],keywords:'Web-PPT 演示文稿 图片 文字 排版'},
+    {id:'univer',category:'data',name:'表格与文档',description:'Univer · 公式 · 数据编辑',href:'tools/office-editors/office.html',icon:'sheet',tags:['表格','文档','Univer'],keywords:'Univer 电子表格 公式 CSV 文档 办公'},
     {id:'file-transfer',category:'meetings',name:'文件直传',description:'设备直连 · 断点续传 · 完整校验',href:'tools/file-transfer/',icon:'send',tags:['P2P','WebRTC','续传'],keywords:'浏览器 文件 直传 传输 分享 设备 发送 接收 密码 断点续传 WebRTC P2P 本地'},
     {id:'bsod',category:'windows',name:'蓝屏分析',description:'停止代码 · 转储解析 · 驱动关联',href:'tools/bsod/',icon:'monitor-x',tags:['蓝屏','DMP','WASM'],keywords:'BlueScreenView Windows 蓝屏 minidump 内核 转储 dmp dump bugcheck 停止代码 崩溃 驱动 分析'},
     {id:'iso',category:'files',name:'镜像工具',description:'镜像浏览 · 文件提取 · 镜像制作',href:'tools/iso/',icon:'disc-3',tags:['ISO','WIM','IMG','VHD'],keywords:'iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM'},
