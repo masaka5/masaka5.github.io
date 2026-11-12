@@ -2,24 +2,24 @@
   "name": "pocket-toolbox-react-home",
   "files": [
     {
-      "bytes": 787868,
+      "path": "assets/home-react/home.js",
       "sha256": "ef21895ce01928a8acef46f594cba68fcbe41d790b60f7de614c7174fab01d2e",
-      "path": "assets/home-react/home.js"
+      "bytes": 787868
     },
     {
-      "bytes": 17058,
+      "path": "assets/home-react/home.css",
       "sha256": "2c07a9088371052fa6eb8b600974a7eb5f46e73bbcdd3f3faefdc8f20b94163a",
-      "path": "assets/home-react/home.css"
+      "bytes": 17058
     },
     {
-      "bytes": 495,
+      "path": "assets/home-react/manifest.json",
       "sha256": "23195f716b7b510a6fc8806d1467e613b7df50acf544d883505f026853d8f1cc",
-      "path": "assets/home-react/manifest.json"
+      "bytes": 495
     },
     {
-      "bytes": 201758,
-      "sha256": "3fa6a54c5538de9b6e85e6ae76d31e1a1af346cab1617207e5063061366a9dab",
-      "path": "licenses/home-react-source.zip"
+      "path": "licenses/home-react-source.zip",
+      "sha256": "4819d370ef09e3f20d2d6ed6dfdc4c6dbf8798a44c1cd15f5642b5e5e553fde6",
+      "bytes": 203610
     }
   ]
 }

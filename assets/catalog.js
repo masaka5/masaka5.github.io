@@ -928,7 +928,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "recorder",
-      "category": "hardware",
+      "category": "media",
       "name": "屏幕录制",
       "description": "录制预览 · 浏览器暂存 · 下载",
       "href": "tools/recorder/",
@@ -1523,7 +1523,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ascii-table",
-      "category": "text",
+      "category": "encoding",
       "name": "ASCII 表",
       "description": "十进制、十六进制、八进制和二进制的ASCII码的可搜索参考。",
       "icon": "table-2",
@@ -1833,7 +1833,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "base64url-jwk-encoder",
-      "category": "encoding",
+      "category": "security",
       "name": "Base64url JWK 字段编码器",
       "description": "在Base64url和大整数/字节值之间进行转换以用于手动编辑JWK字段。",
       "icon": "key-square",
@@ -1909,7 +1909,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "bic-swift-test-generator",
-      "category": "math",
+      "category": "data",
       "name": "BIC/SWIFT代码测试生成器",
       "description": "生成结构有效的测试 BIC/SWIFT 代码（8 或 11 个字符），其中包含银行、国家/地区、位置、分行部分。",
       "icon": "credit-card",
@@ -2061,7 +2061,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "box-shadow-generator",
-      "category": "color",
+      "category": "frontend",
       "name": "盒子阴影发生器",
       "description": "通过调整偏移、模糊、扩散、颜色和插入来直观地设计CSS盒阴影，然后复制现成的盒阴影规则。",
       "icon": "palette",
@@ -2181,7 +2181,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "caesar-cipher",
-      "category": "text",
+      "category": "encoding",
       "name": "凯撒密码",
       "description": "使用任意移位量的凯撒密码、经典的可逆字母旋转以及所有25个移位的可选强力来对文本进行编码或解码。",
       "icon": "lock-keyhole",
@@ -2219,7 +2219,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "camel-snake-kebab-converter",
-      "category": "text",
+      "category": "web",
       "name": "代码标识符大小写转换器",
       "description": "在camelCase、PascalCase、snake_case、SCREAMING_SNAKE_CASE、kebab-case、dot.case和Train-Case之间转换编程标识符。",
       "icon": "case-sensitive",
@@ -2529,7 +2529,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "color-css-gradient-extract-stops",
-      "category": "color",
+      "category": "frontend",
       "name": "CSS梯度解析器",
       "description": "将CSS线性/径向渐变字符串解析为结构化角度、类型和色标。",
       "icon": "list-filter",
@@ -2586,7 +2586,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "color-gradient-css-to-svg",
-      "category": "color",
+      "category": "frontend",
       "name": "CSS渐变到SVG",
       "description": "将CSS线性或径向渐变转换为等效的SVG渐变定义。",
       "icon": "image",
@@ -2681,7 +2681,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "color-mix-css-builder",
-      "category": "color",
+      "category": "frontend",
       "name": "CSS颜色混合()生成器",
       "description": "构建并预览CSS color-mix()函数并计算其解析的颜色。",
       "icon": "blend",
@@ -3118,7 +3118,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-color-list-to-tailwind-config",
-      "category": "color",
+      "category": "frontend",
       "name": "Tailwind 配置的颜色列表",
       "description": "将 name=hex 颜色对的列表转换为 Tailwind theme.extend.colors 配置对象。",
       "icon": "palette",
@@ -3593,7 +3593,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-mod10-mod11-check-digit",
-      "category": "security",
+      "category": "encoding",
       "name": "Mod-10 / Mod-11 校验位计算器",
       "description": "计算并验证任意数字字符串的Mod-10(Luhn)和Mod-11校验位。",
       "icon": "list-checks",
@@ -3650,7 +3650,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-sha3-keccak-hash",
-      "category": "security",
+      "category": "encoding",
       "name": "SHA-3 / Keccak 哈希",
       "description": "使用纯 JS 实现计算文本的 SHA3-224/256/384/512 和 Keccak-256 哈希值。",
       "icon": "fingerprint",
@@ -3669,7 +3669,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-text-checksum-multi",
-      "category": "security",
+      "category": "encoding",
       "name": "多算法文本校验和",
       "description": "在一个视图中计算文本的CRC-8、CRC-16、CRC-32、Adler-32以及简单的XOR/和校验和。",
       "icon": "fingerprint",
@@ -5214,7 +5214,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "duotone-css-generator",
-      "category": "color",
+      "category": "frontend",
       "name": "双色调 CSS 生成器",
       "description": "构建双色双色调映射和CSS/SVG过滤器以将其应用到图像。",
       "icon": "palette",
@@ -5233,7 +5233,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "duration-converter",
-      "category": "math",
+      "category": "time",
       "name": "持续时间转换器",
       "description": "在毫秒、秒、分钟、小时、天和周之间转换持续时间。",
       "icon": "timer",
@@ -5290,7 +5290,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ean-upc-barcode-data-generator",
-      "category": "image",
+      "category": "encoding",
       "name": "EAN/UPC校验位和号码生成器",
       "description": "生成具有正确校验位的有效EAN-13、EAN-8、UPC-A和ISBN-13号码，或者修复部分代码。",
       "icon": "scan-barcode",
@@ -5385,7 +5385,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "email-alias-generator",
-      "category": "web",
+      "category": "text",
       "name": "电子邮件别名生成器",
       "description": "从一封基本电子邮件生成加地址和点技巧Gmail别名以及包罗万象的变体。",
       "icon": "mail",
@@ -5404,7 +5404,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "email-obfuscator",
-      "category": "web",
+      "category": "frontend",
       "name": "电子邮件混淆器",
       "description": "混淆电子邮件地址（实体/JS）以阻止抓取者。",
       "icon": "mail",
@@ -6498,7 +6498,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "fake-address-generator",
-      "category": "web",
+      "category": "data",
       "name": "假地址生成器",
       "description": "从静态列表中按国家格式生成假邮政地址（街道、城市、地区、邮政编码、国家）。",
       "icon": "dices",
@@ -6517,7 +6517,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "fake-company-generator",
-      "category": "web",
+      "category": "data",
       "name": "假公司生成器",
       "description": "从静态词库生成虚假公司记录：名称、行业、流行语、域、EIN格式的税号。",
       "icon": "dices",
@@ -6555,7 +6555,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "fake-user-profile-generator",
-      "category": "web",
+      "category": "data",
       "name": "假用户配置文件生成器",
       "description": "从内置静态姓名列表生成真实的虚假用户记录（姓名、电子邮件、用户名、电话、头像种子）。",
       "icon": "dices",
@@ -6935,7 +6935,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-barcode",
-      "category": "image",
+      "category": "encoding",
       "name": "条形码生成器",
       "description": "从输入文本/数字生成Code 39和EAN-13条形码，呈现为具有可调整条宽度和高度的可下载SVG/PNG。",
       "icon": "barcode",
@@ -6954,7 +6954,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-credit-card",
-      "category": "math",
+      "category": "data",
       "name": "信用卡号生成器",
       "description": "按品牌（Visa、Mastercard、Amex、Discover）生成 Luhn 有效的假测试卡号，并具有可选的到期日和 CVV，仅用于支付形式测试。",
       "icon": "credit-card",
@@ -7042,7 +7042,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-iban",
-      "category": "math",
+      "category": "data",
       "name": "IBAN发生器",
       "description": "生成每个国家的具有正确长度和ISO 7064 mod-97校验位的有效格式测试IBAN，这对于银行和表格验证测试有用。",
       "icon": "list-checks",
@@ -7187,7 +7187,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "placeholder-image",
-      "category": "image",
+      "category": "frontend",
       "name": "占位符图像生成器",
       "description": "以选定的尺寸、背景/文本颜色和标签文本生成可下载的占位符图像，将其绘制在画布上作为模型的数据URL。",
       "icon": "image-plus",
@@ -7294,7 +7294,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-svg-pattern",
-      "category": "image",
+      "category": "frontend",
       "name": "SVG图案生成器",
       "description": "生成具有可调整颜色、尺寸和间距的可平铺SVG背景图案（点、网格、条纹、棋盘），输出为即用型SVG标记。",
       "icon": "image",
@@ -7395,7 +7395,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generators-svg-qr-style-placeholder",
-      "category": "web",
+      "category": "image",
       "name": "随机标识符(SVG)",
       "description": "从种子字符串生成确定性对称像素标识SVG。",
       "icon": "qr-code",
@@ -7433,7 +7433,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "gradient-generator",
-      "category": "color",
+      "category": "frontend",
       "name": "CSS渐变生成器",
       "description": "通过实时预览构建线性、径向和圆锥CSS渐变。",
       "icon": "blend",
@@ -7699,7 +7699,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hex-to-rgb-code",
-      "category": "color",
+      "category": "frontend",
       "name": "十六进制到 RGB 代码片段",
       "description": "将十六进制颜色转换成多种语言的可直接粘贴的代码。",
       "icon": "palette",
@@ -8167,7 +8167,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-aspect-fit-cover-calculator",
-      "category": "image",
+      "category": "frontend",
       "name": "图像适合/覆盖框计算器",
       "description": "计算放置在具有包含或覆盖配合的盒子中的图像的渲染尺寸和偏移。",
       "icon": "scan",
@@ -8205,7 +8205,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-checkerboard-svg",
-      "category": "image",
+      "category": "frontend",
       "name": "棋盘和图案生成器",
       "description": "生成具有自定义颜色的棋盘、条纹、点或网格SVG/PNG图案。",
       "icon": "grid-2x2",
@@ -8344,7 +8344,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-dominant-color",
-      "category": "image",
+      "category": "color",
       "name": "主色和平均颜色",
       "description": "将图像的单一主色和平均颜色提取为十六进制/RGB。",
       "icon": "pipette",
@@ -8407,7 +8407,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-favicon-generator",
-      "category": "image",
+      "category": "frontend",
       "name": "网站图标集生成器",
       "description": "从一张图像加上HTML链接标签生成标准尺寸(16-512px)的favicon PNG。",
       "icon": "app-window",
@@ -8476,7 +8476,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-gradient-svg-generator",
-      "category": "image",
+      "category": "frontend",
       "name": "渐变SVG/PNG生成器",
       "description": "创建线性/径向多级渐变并导出为SVG、PNG或CSS。",
       "icon": "blend",
@@ -8577,7 +8577,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-noise-texture-svg",
-      "category": "image",
+      "category": "frontend",
       "name": "噪声和颗粒 SVG 生成器",
       "description": "生成可平铺的分形噪声/颗粒纹理作为内联SVG或PNG。",
       "icon": "grid-3x3",
@@ -8596,7 +8596,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-palette-extractor",
-      "category": "image",
+      "category": "color",
       "name": "图像调色板提取器",
       "description": "通过中值切割量化从图像中提取平衡的N调色板。",
       "icon": "palette",
@@ -8779,7 +8779,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-sprite-merger",
-      "category": "image",
+      "category": "frontend",
       "name": "图像精灵表合并",
       "description": "使用CSS/JSON坐标图将多个图像组合成一个精灵表。",
       "icon": "combine",
@@ -8817,7 +8817,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-svg-optimizer-cleaner",
-      "category": "image",
+      "category": "frontend",
       "name": "SVG清理器/优化器",
       "description": "从 SVG 标记中去除注释、元数据和编辑器残渣，并缩小空白。",
       "icon": "brush-cleaning",
@@ -8912,7 +8912,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-to-base64",
-      "category": "image",
+      "category": "encoding",
       "name": "图像到Base64",
       "description": "将图像编码为Base64数据-URI以供在CSS/HTML/JSON中内联使用。",
       "icon": "binary",
@@ -8931,7 +8931,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "image-to-data-uri-variants",
-      "category": "image",
+      "category": "encoding",
       "name": "图像到数据 URI (CSS/HTML/JSX)",
       "description": "将图像编码为base64数据URI并将其包装为CSS、HTML img、Markdown或JSX。",
       "icon": "link",
@@ -9466,7 +9466,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-escape",
-      "category": "data",
+      "category": "encoding",
       "name": "JSON 字符串转义/Unescape",
       "description": "将文本转义为 JSON 字符串文字，或者将其转义回原始文本。",
       "icon": "brackets",
@@ -9724,7 +9724,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-schema-compatibility-diff",
-      "category": "web",
+      "category": "data",
       "name": "JSON 模式兼容性差异",
       "description": "比较 JSON 模式的必填字段、属性更改和枚举缩小。",
       "icon": "file-diff",
@@ -9743,7 +9743,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-schema-faker",
-      "category": "web",
+      "category": "data",
       "name": "来自 JSON 模式的虚假数据",
       "description": "生成符合粘贴的JSON模式（类型、枚举、格式、约束）的示例JSON实例。",
       "icon": "braces",
@@ -9952,7 +9952,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-graphql-sdl",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 GraphQL 类型",
       "description": "从JSON样本生成GraphQL SDL类型定义。",
       "icon": "workflow",
@@ -10926,7 +10926,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "license-key-generator",
-      "category": "web",
+      "category": "security",
       "name": "许可证密钥生成器",
       "description": "生成具有可配置校验和组的分组许可证/序列密钥。",
       "icon": "code-xml",
@@ -11078,7 +11078,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "lorem-bytes-generator",
-      "category": "web",
+      "category": "text",
       "name": "Lorem Ipsum（按字节大小）",
       "description": "生成修剪为精确目标字节或字符大小的填充Lorem Ipsum文本。",
       "icon": "text-cursor-input",
@@ -11154,7 +11154,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "magnet-uri-builder",
-      "category": "web",
+      "category": "network",
       "name": "磁铁和数据 URI 生成器",
       "description": "组装磁铁：来自离线信息散列和元数据字段的链接。",
       "icon": "link",
@@ -11894,7 +11894,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "morse-code",
-      "category": "text",
+      "category": "encoding",
       "name": "莫尔斯电码翻译器",
       "description": "将文本翻译成国际莫尔斯电码并返回。",
       "icon": "languages",
@@ -13014,7 +13014,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "phone-number-format-generator",
-      "category": "web",
+      "category": "data",
       "name": "电话号码格式生成器",
       "description": "从保留的测试范围生成按照国家/风格（E.164、国家、虚线）格式化的假电话号码。",
       "icon": "contact",
@@ -13337,7 +13337,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "protobuf-binary-decoder",
-      "category": "encoding",
+      "category": "web",
       "name": "Protobuf二进制解码器",
       "description": "将protobuf线路字节解码为字段号、线路类型和原始标量值。",
       "icon": "workflow",
@@ -13596,7 +13596,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-bytes-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "随机字节发生器",
       "description": "生成加密安全随机字节作为十六进制、Base64、Base64URL或选定长度的C型字节数组。",
       "icon": "dices",
@@ -13767,7 +13767,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-token-formats",
-      "category": "encoding",
+      "category": "security",
       "name": "随机令牌生成器（格式）",
       "description": "使用前缀和分组以多种开发者格式（十六进制、base64url、Base32、API密钥样式）生成加密随机令牌。",
       "icon": "dices",
@@ -13786,7 +13786,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-username-generator",
-      "category": "web",
+      "category": "text",
       "name": "用户名生成器",
       "description": "通过组合形容词、名词和可选数字来生成句柄式用户名。",
       "icon": "dices",
@@ -14286,7 +14286,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "rot13",
-      "category": "text",
+      "category": "encoding",
       "name": "ROT13 / 凯撒密码",
       "description": "将ROT13或凯撒移位密码应用于文本（可逆）。",
       "icon": "brackets",
@@ -14305,7 +14305,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "rot47",
-      "category": "text",
+      "category": "encoding",
       "name": "ROT47 密码",
       "description": "使用ROT47对文本进行编码或解码，将所有可见的ASCII字符旋转47个位置以实现可逆混淆。",
       "icon": "brackets",
@@ -15431,7 +15431,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ssn-format-test-generator",
-      "category": "math",
+      "category": "data",
       "name": "SSN格式测试号码生成器",
       "description": "生成格式有效但不可签发的美国SSN测试号码(例如900-xx-xxxx、666区域)用于QA。",
       "icon": "calculator",
@@ -15564,7 +15564,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "svg-path-rounder",
-      "category": "image",
+      "category": "frontend",
       "name": "SVG路径坐标舍入器",
       "description": "对SVG路径“d”字符串中的数字坐标进行舍入和整理以降低精度和文件大小。",
       "icon": "image",
@@ -15583,7 +15583,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "svg-to-data-uri",
-      "category": "image",
+      "category": "encoding",
       "name": "SVG到数据URI",
       "description": "将原始SVG标记转换成用于CSS/HTML的优化数据-URI。",
       "icon": "link",
@@ -15830,7 +15830,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "text-snake-to-title-humanizer",
-      "category": "text",
+      "category": "web",
       "name": "标识符人性化器",
       "description": "将snake_case、kebab-case或camelCase标识符转变为人类可读的标题大小写标签。",
       "icon": "case-sensitive",
@@ -15887,7 +15887,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "text-text-bracket-matcher",
-      "category": "text",
+      "category": "web",
       "name": "括号和报价余额检查器",
       "description": "验证方括号、圆括号、大括号和引号在文本中是平衡的。",
       "icon": "text-cursor-input",
@@ -16134,7 +16134,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "time-precise-converter",
-      "category": "math",
+      "category": "time",
       "name": "精确的时间单位转换器",
       "description": "将微小的天文时间跨度从纳秒转换为几个世纪。",
       "icon": "clock",
@@ -16191,7 +16191,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "time-timecode-frames-converter",
-      "category": "time",
+      "category": "media",
       "name": "SMPTE时间码/帧转换器",
       "description": "以选定的帧速率在SMPTE时间码(HH:MM:SS:FF)和总帧计数之间进行转换。",
       "icon": "clock",
@@ -16849,7 +16849,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "uuid-inspector",
-      "category": "encoding",
+      "category": "web",
       "name": "UUID检查器",
       "description": "解析任何UUID以揭示其版本、变体和嵌入的时间戳或节点数据。",
       "icon": "scan-line",
@@ -16963,7 +16963,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "vcard-qr-payload-generator",
-      "category": "image",
+      "category": "encoding",
       "name": "MeCard/vCard QR 有效负载生成器",
       "description": "构建紧凑的MECARD:和vCard联系人有效负载字符串，其大小适合嵌入QR码中。",
       "icon": "contact-round",
@@ -17653,7 +17653,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-data-attribute-to-dataset",
-      "category": "web",
+      "category": "frontend",
       "name": "HTML数据-*到JS数据集转换器",
       "description": "将data-*属性转换为element.dataset访问表达式并返回。",
       "icon": "code-xml",
@@ -17862,7 +17862,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-attributes-stripper",
-      "category": "text",
+      "category": "frontend",
       "name": "HTML 属性剥离器/标签清理器",
       "description": "从HTML中移除选定的属性(样式、类、on*、data-*)或整个标签。",
       "icon": "eraser",
@@ -17881,7 +17881,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-class-attr-extractor",
-      "category": "web",
+      "category": "frontend",
       "name": "HTML 类和 ID 提取器",
       "description": "提取 HTML 片段中使用的每个唯一的类名称和 ID，并将它们输出为排序列表或 CSS 存根。",
       "icon": "list-filter",
@@ -18590,7 +18590,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-slugify-variants",
-      "category": "web",
+      "category": "text",
       "name": "Slugify 变体比较器",
       "description": "一次从一个输入生成多个slug样式（kebab、snake、dot、path、GitHub-anchor）以进行比较。",
       "icon": "case-sensitive",
@@ -21540,7 +21540,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "qr-generator",
-      "category": "image",
+      "category": "encoding",
       "name": "QR 码生成器",
       "description": "",
       "icon": "qr-code",
@@ -22316,7 +22316,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "capture",
-      "category": "hardware",
+      "category": "media",
       "name": "摄像头与录音",
       "description": "录制 · 暂存 · 下载",
       "icon": "camera",

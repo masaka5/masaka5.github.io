@@ -1,138 +1,143 @@
 {
+  "archiveBytes": 203610,
+  "sourceArchive": "home-react-source.zip",
   "files": [
     {
-      "bytes": 980,
+      "path": "toolbox-site/index.html",
       "sha256": "9f790149614a003e60294a78f84dc81eee91542dc602026c09db96f4188f0f83",
-      "path": "toolbox-site/index.html"
+      "bytes": 980
     },
     {
-      "bytes": 812863,
-      "sha256": "043b713fe1e5ddab40a771c8a960ea64821c07b62d77b8f19d3d4abaae671b01",
-      "path": "toolbox-site/assets/catalog.js"
+      "path": "toolbox-site/assets/catalog.js",
+      "sha256": "38d4ac4513325812a4fd8253fe26daeb69847e0686739e2d8c23f542d99fe3ef",
+      "bytes": 812983
     },
     {
-      "bytes": 3654,
+      "path": "toolbox-site/assets/design-system.css",
       "sha256": "56c7ef4e69360400657f4b0d6e558ce4a4a50e4863c4b5489e983d6be4890948",
-      "path": "toolbox-site/assets/design-system.css"
+      "bytes": 3654
     },
     {
-      "bytes": 343,
+      "path": "toolbox-site/assets/favicon.svg",
       "sha256": "4cb1157e6d073ca25616e206352355ed6c9c4dac0f5c275e9564ce9b1bed2230",
-      "path": "toolbox-site/assets/favicon.svg"
+      "bytes": 343
     },
     {
-      "bytes": 49936,
+      "path": "toolbox-site/assets/tool-icon-paths.js",
       "sha256": "79b0cf3bfa6e35ea282d8d7888a87ac3bf3090cdaba16b64309a5fe12cd8be47",
-      "path": "toolbox-site/assets/tool-icon-paths.js"
+      "bytes": 49936
     },
     {
-      "bytes": 883,
+      "path": "toolbox-site/assets/tool-icons.js",
       "sha256": "26625baa1847b4edd7f3979942ac88727bcbc4d5be528a749ba13e1f2e94f45f",
-      "path": "toolbox-site/assets/tool-icons.js"
+      "bytes": 883
     },
     {
-      "bytes": 153,
+      "path": "toolbox-site/assets/usage-config.json",
       "sha256": "29b9b2a7be521ca89034ed9c82e4477b0f2b7d1bd8eddf3287d8e77af75974a6",
-      "path": "toolbox-site/assets/usage-config.json"
+      "bytes": 153
     },
     {
-      "bytes": 3606,
+      "path": "toolbox-site/assets/usage.js",
       "sha256": "c71d54b2b7cca573f7520e8b23325c3fe520c2ff4002f4d7d626f11bbdbe25a9",
-      "path": "toolbox-site/assets/usage.js"
+      "bytes": 3606
     },
     {
-      "bytes": 3242,
+      "path": "_scratch/home-react-integration/build.mjs",
       "sha256": "e4d723bd534fae23134c0d76da8dadc6e809de89c801f75f8d13cb84782bfe9e",
-      "path": "_scratch/home-react-integration/build.mjs"
+      "bytes": 3242
     },
     {
-      "bytes": 1084,
+      "path": "_scratch/home-react-integration/LICENSE",
       "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962",
-      "path": "_scratch/home-react-integration/LICENSE"
+      "bytes": 1084
     },
     {
-      "bytes": 52003,
+      "path": "_scratch/home-react-integration/package-lock.json",
       "sha256": "92bff5f1543f0c3f1bfbb43bc00023a1daff4b2af1c1eed6b63769c00b52cdc2",
-      "path": "_scratch/home-react-integration/package-lock.json"
+      "bytes": 52003
     },
     {
-      "bytes": 2491,
+      "path": "_scratch/home-react-integration/package-source.ps1",
       "sha256": "9e16a0b585817f06e6cb6380f8ce4cc6225d4694f7e9c062c31931e9cdd25d9b",
-      "path": "_scratch/home-react-integration/package-source.ps1"
+      "bytes": 2491
     },
     {
-      "bytes": 260,
+      "path": "_scratch/home-react-integration/package.json",
       "sha256": "151a5b99c0ee9e37f03e1931b12425e08456574e9842f29bc2d2489525002697",
-      "path": "_scratch/home-react-integration/package.json"
+      "bytes": 260
     },
     {
-      "bytes": 1382,
-      "sha256": "205241638b2029ea6715ea1a6c98d8280f52f1ea6ef30c921fa3c37c6bf1ec48",
-      "path": "_scratch/home-react-integration/README.md"
+      "path": "_scratch/home-react-integration/README.md",
+      "sha256": "9dadb501ad12891e6625911fc024ec76e2eb8d5f4f0e10b717c4d5d058bd245f",
+      "bytes": 1383
     },
     {
-      "bytes": 1099,
+      "path": "_scratch/home-react-integration/notices/@ant-design_icons-svg.txt",
       "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70",
-      "path": "_scratch/home-react-integration/notices/@ant-design_icons-svg.txt"
+      "bytes": 1099
     },
     {
-      "bytes": 1090,
+      "path": "_scratch/home-react-integration/notices/toggle-selection.txt",
       "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d",
-      "path": "_scratch/home-react-integration/notices/toggle-selection.txt"
+      "bytes": 1090
     },
     {
-      "bytes": 18254,
+      "path": "_scratch/home-react-integration/src/main.jsx",
       "sha256": "6b4a0c1fa4c5307d0fcb7628098bfe919f49281926371a1ad3eb21a80c06a95a",
-      "path": "_scratch/home-react-integration/src/main.jsx"
+      "bytes": 18254
     },
     {
-      "bytes": 17276,
+      "path": "_scratch/home-react-integration/src/style.css",
       "sha256": "2a5a1626a3abf2bf9db8dd5e355ce6c8801b9f755ded4fa10cea87dba6d161d9",
-      "path": "_scratch/home-react-integration/src/style.css"
+      "bytes": 17276
     },
     {
-      "bytes": 378,
+      "path": "_scratch/home-react-integration/src/theme.js",
       "sha256": "14e3a4f7c637ae34e1f85a5ceb8b1578c796e28782d0b959e97f4696ea5c68a2",
-      "path": "_scratch/home-react-integration/src/theme.js"
+      "bytes": 378
     },
     {
-      "bytes": 639,
+      "path": "_scratch/home-react-integration/src/UsageCount.jsx",
       "sha256": "23c8cbe0cd86523d573009d35d2ef174893e963218f1687a7d32911c0b98a845",
-      "path": "_scratch/home-react-integration/src/UsageCount.jsx"
+      "bytes": 639
     },
     {
-      "bytes": 923,
+      "path": "_scratch/home-react-integration/src/view-state.js",
       "sha256": "37cb168ea57de83a3fa69383350999cb4143172ec66a5d673c9e43671e0dc5df",
-      "path": "_scratch/home-react-integration/src/view-state.js"
+      "bytes": 923
     },
     {
-      "bytes": 3305,
+      "path": "_scratch/home-react-integration/tests/ant-home-counts.py",
       "sha256": "79ceb3c56a0ee4ee02b8a323b923032803f205724f0b7633527522cb78832e91",
-      "path": "_scratch/home-react-integration/tests/ant-home-counts.py"
+      "bytes": 3305
     },
     {
-      "bytes": 2217,
+      "path": "_scratch/home-react-integration/tests/home-categories.py",
       "sha256": "be3514bcc6802036f211d1b9f6fd8f2128a9d83f119f5f2a03077ced5756fb2d",
-      "path": "_scratch/home-react-integration/tests/home-categories.py"
+      "bytes": 2217
     },
     {
-      "bytes": 2020,
+      "path": "_scratch/home-react-integration/tests/home-navigation-state.py",
       "sha256": "c3f9ba8f848ed0ba17cc0e6d9553ed7888f6bc82df4470817c008958b01709ad",
-      "path": "_scratch/home-react-integration/tests/home-navigation-state.py"
+      "bytes": 2020
     },
     {
-      "bytes": 3947,
+      "path": "_scratch/home-react-integration/tests/home-react-features.py",
       "sha256": "04539e6d98a2502eb95aa4c648fc21f51bd545d0a246cf11a2de9281aa7e432d",
-      "path": "_scratch/home-react-integration/tests/home-react-features.py"
+      "bytes": 3947
     },
     {
-      "bytes": 1042,
+      "path": "_scratch/home-react-integration/tests/home-taxonomy.py",
+      "sha256": "d3fa4c0f680ca75a946a0d6be09db1442f205f7033c7714758c08249d120d767",
+      "bytes": 4274
+    },
+    {
+      "path": "_scratch/home-react-integration/tests/tool-host-navigation.py",
       "sha256": "554164b0a199022471b43904bb66bae80b29cd03b6055d55017e8232d8aa35dc",
-      "path": "_scratch/home-react-integration/tests/tool-host-navigation.py"
+      "bytes": 1042
     }
   ],
-  "archiveBytes": 201758,
-  "sourceArchive": "home-react-source.zip",
-  "archiveSha256": "3fa6a54c5538de9b6e85e6ae76d31e1a1af346cab1617207e5063061366a9dab",
-  "schema": 1
+  "schema": 1,
+  "archiveSha256": "4819d370ef09e3f20d2d6ed6dfdc4c6dbf8798a44c1cd15f5642b5e5e553fde6"
 }

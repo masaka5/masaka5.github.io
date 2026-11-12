@@ -1,6 +1,6 @@
 """Browser network adapter for the unmodified yt-dlp Python package.
 
-Runs inside a dedicated Pyodide Worker. Approved Bilibili hosts can use the
+Runs inside a dedicated Pyodide Worker. Approved media hosts can use the
 configured streaming relay; cookies are never forwarded to that relay.
 """
 import io, json
@@ -61,7 +61,8 @@ class BrowserRH(RequestHandler):
                 result = run_sync(browser_network.open(request.url, request.method,
                     json.dumps(dict(request.headers)), body, self._calculate_timeout(request)))
             except Exception as error:
-                raise TransportError('浏览器无法读取该站点：请求超时、网络失败或站点未开放跨域访问') from error
+                detail = str(error).splitlines()[0][:300]
+                raise TransportError('媒体连接失败：' + detail) from error
             response = Response(BrowserStream(result), result.url or request.url,
                                 json.loads(result.headers), result.status)
             if result.status >= 400:
