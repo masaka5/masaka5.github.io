@@ -19,3 +19,12 @@ html body :is(.creative,.markdown-app,.app)>header h1{font-size:18px;font-weight
 html body :is(.pane-head,.panel-head,.panel-heading) h2{font-size:14px;font-weight:600}
 html body .canvas-panel .excalidraw{--color-primary:#315fc9;--color-primary-darker:#284fa9;--color-primary-darkest:#203f87;--color-primary-light:#eef3ff;--border-radius-lg:10px;--border-radius-md:7px}
 @media(max-width:700px){html body :is(.creative,.markdown-app,.app)>header h1{font-size:16px}}
+@media(min-width:1100px) and (min-height:650px){
+ html body :is(.creative,.markdown-app,.app)>header h1{font-size:22px}
+ html body :is(.pane-head,.panel-head,.panel-heading) h2{font-size:16px}
+ html body :is(.toolbar,.actions,.formatbar,.header-actions,.connection-actions,.file-actions,.panel-head,.pane-head,header,.pathbar,.operation,.mobile-tabs,.zoom)>button,
+ html body .tab,html body .file-label{font-size:14px}
+ html body :is(.toolbar,.actions,.connection-actions) >button{min-height:38px}
+ html body :is(.engine,.pane-head span,.panel-head>span,.note,.operation,footer){font-size:12px}
+ html body :is(.cm-editor,#output,.io textarea){font-size:16px}
+}

@@ -198,8 +198,8 @@
     },
     {
       "path": "tools/photo-editor/index.html",
-      "bytes": 4389,
-      "sha256": "673fcebac4f1ff558a63a55b01b650f708c8fca94a31ce42011b035d74c1422d"
+      "bytes": 4326,
+      "sha256": "d88c993e9fb902cc5f7c72c58ee2f9381cd89b6530b0ece6cec395cfb0cd8269"
     },
     {
       "path": "tools/photo-editor/photo-editor.css",
@@ -218,8 +218,8 @@
     },
     {
       "path": "licenses/photo-editor-source.zip",
-      "bytes": 927743,
-      "sha256": "379cac58ae3f5ff8f4d00bdf5a50f9f118db15cafcb4f6cb797703093558cf75"
+      "bytes": 927712,
+      "sha256": "0830f11c99dbdb3fe84975d39031fb1087af1a1a8d6a273cc1013d71c1e82d12"
     },
     {
       "path": "licenses/photo-editor-third-party.txt",

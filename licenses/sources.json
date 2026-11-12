@@ -478,30 +478,6 @@
     "changes": "Chinese local editor, toolbox theme, no accounts, no remote search or fonts; IndexedDB drafts. PSD is not supported."
   },
   {
-    "project": "toolbox-creative",
-    "source": "first-party integration",
-    "sourceArchive": "licenses/creative-source.zip",
-    "changes": "Self-hosted Excalidraw, regexpp railroad diagrams and pinyin-pro; Cloudflare usage collector source."
-  },
-  {
-    "project": "excalidraw",
-    "source": "https://github.com/excalidraw/excalidraw",
-    "version": "0.18.1",
-    "license": "MIT"
-  },
-  {
-    "project": "regexpp",
-    "source": "https://github.com/eslint-community/regexpp",
-    "version": "4.12.3",
-    "license": "MIT"
-  },
-  {
-    "project": "pinyin-pro",
-    "source": "https://github.com/zh-lx/pinyin-pro",
-    "version": "3.29.5",
-    "license": "MIT"
-  },
-  {
     "project": "toolbox-jupyter",
     "source": "https://github.com/jupyterlite/jupyterlite",
     "license": "BSD-3-Clause; dependency notices in source package",
@@ -531,5 +507,29 @@
     "license": "MIT; complete bundled dependency notices included",
     "sourceArchive": "licenses/home-react-source.zip",
     "manifest": "licenses/home-react-manifest.json"
+  },
+  {
+    "project": "toolbox-creative",
+    "source": "first-party integration",
+    "sourceArchive": "licenses/creative-source.zip",
+    "changes": "Self-hosted Excalidraw, regexpp railroad diagrams and pinyin-pro; Cloudflare usage collector source."
+  },
+  {
+    "project": "excalidraw",
+    "source": "https://github.com/excalidraw/excalidraw",
+    "version": "0.18.1",
+    "license": "MIT"
+  },
+  {
+    "project": "regexpp",
+    "source": "https://github.com/eslint-community/regexpp",
+    "version": "4.12.3",
+    "license": "MIT"
+  },
+  {
+    "project": "pinyin-pro",
+    "source": "https://github.com/zh-lx/pinyin-pro",
+    "version": "3.29.5",
+    "license": "MIT"
   }
 ]

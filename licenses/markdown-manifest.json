@@ -389,8 +389,8 @@
     },
     {
       "path": "tools/markdown/index.html",
-      "bytes": 3484,
-      "sha256": "3407c30ac30e81841745319f8ef8d9a5b6b639b3b912c8606f77db835a49e95d"
+      "bytes": 3413,
+      "sha256": "871ae40f0e8eebe18cb75531e15528257988177de697ee99a851e0a745304754"
     },
     {
       "path": "licenses/markdown-third-party.txt",
@@ -404,8 +404,8 @@
     },
     {
       "path": "licenses/markdown-source.zip",
-      "bytes": 4035874,
-      "sha256": "c6209ad4f7f57cb53fb591290f85740881fe3cae6446512fd4a7414263bcb7fc"
+      "bytes": 4035842,
+      "sha256": "d44ac9980d79ade334427269825a7fdb6652d442c4638a3ac4e7bd974652d5e6"
     },
     {
       "path": "licenses/markdown.html",

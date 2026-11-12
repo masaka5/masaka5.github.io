@@ -10,7 +10,7 @@
 <div class="actions"><button id="add" class="secondary">添加文件</button><button id="addFolder" class="secondary">添加目录</button><button id="clearDraft" class="text-button">清空待添加</button></div>
 <ul id="draft" class="draft"><li class="draft-empty">添加文件后创建压缩包。<br>打开已有压缩包后，也可以添加或删除再重打包。</li></ul>
 <div class="create-actions"><button id="create" class="primary">生成压缩包</button><button id="repack" class="secondary" disabled>重打包</button><a id="download" class="primary" hidden download>下载结果</a></div>
-<p class="help">每次最多 256 MiB / 10000 项 · <a href="../../licenses/archive.html">格式与限制</a></p>
+<p class="help">每次最多 256 MiB / 10000 项</p>
 </aside>
 <section class="browser"><div class="panel-head"><h2 id="archiveName">压缩包内容</h2><span id="summary">尚未打开</span></div><div class="browser-actions"><button id="up" class="secondary" disabled>↑ 上一级</button><span id="breadcrumb" class="breadcrumb">根目录</span><button id="delete" class="text-button" disabled>标记删除</button><button id="undo" class="text-button" disabled>恢复删除</button></div>
 <div class="search-row"><input id="search" type="search" placeholder="筛选当前目录文件" aria-label="筛选当前目录文件"><select id="sort" aria-label="排序"><option value="path">名称</option><option value="size">大小</option><option value="packed">压缩大小</option><option value="attributes">属性</option><option value="modified">修改时间</option></select><button id="direction" class="secondary" aria-label="倒序排列">↑</button></div>
@@ -18,5 +18,5 @@
 <div class="extract-actions"><span id="selection">已选择 0 项</span><button id="extract" class="secondary" disabled>下载单文件</button><button id="extractZip" class="primary" disabled>提取为 ZIP</button><button id="saveFolder" class="secondary" disabled>保存到目录</button></div>
 </section></div>
 <div class="statusbar"><progress id="progress" hidden aria-label="正在处理"></progress><p id="status" class="status" role="status" aria-live="polite">就绪。打开压缩包，或添加文件创建新的压缩包。</p></div>
-</main><footer class="ops-footer"><span>文件留在本机</span><a href="../../licenses/archive.html">源码与许可</a></footer></div>
+</main><footer class="ops-footer"><span>文件留在本机</span></footer></div>
 <input id="archiveFile" type="file" hidden><input id="addFiles" type="file" multiple hidden><input id="addDirectory" type="file" multiple webkitdirectory hidden><script type="module" src="archive-ui.mjs"></script></body></html>

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "source": "archive-source.zip",
-  "bytes": 30367,
-  "sha256": "a78944805fdbbea2a7ca997a393e95db5f683cf9170e6adeefd993cddc17e76b",
+  "bytes": 30319,
+  "sha256": "daca49d892da724da235d865a8372306aaa0363cd6887a18ada0380c937b3727",
   "upstreamSource": "7z-wasm-source.zip",
   "runtime": "../vendor/7z-wasm/manifest.json",
   "files": [
@@ -68,8 +68,8 @@
     },
     {
       "file": "archive-integration/src/index.html",
-      "bytes": 5551,
-      "sha256": "a2d1c4365bf4c81103b9ceb5b4ea481f8ccb9cf5d43a8a4e914d643964f96b23"
+      "bytes": 5433,
+      "sha256": "3f08d67fc8f5f060e001529d7453da2e87be12e9d73a7764c51d7c524b78c2c1"
     },
     {
       "file": "ops-tests/archive-bounds.py",

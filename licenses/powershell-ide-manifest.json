@@ -173,8 +173,8 @@
     },
     {
       "path": "tools/powershell-ide/index.html",
-      "bytes": 4052,
-      "sha256": "e81b8feef556c6a31437ad7894533bf6be482c914b322a3c5f566dab60f85f4e"
+      "bytes": 3976,
+      "sha256": "24f364f6ae7e869678a9f60892165c6e4ebdbf615e5561e5d30064a2d7c81b81"
     },
     {
       "path": "licenses/powershell-ide-third-party.txt",
@@ -188,8 +188,8 @@
     },
     {
       "path": "licenses/powershell-ide-source.zip",
-      "bytes": 1427319,
-      "sha256": "b0cef17cd5e0b7b4499d40f30605d18dc96d4a8fef15a20dd5be6545e30aebbe"
+      "bytes": 1427282,
+      "sha256": "9cf55670f1cb7cccca12e5172e5830ad5f1c54ba1631b1449bcb4dc04c750b68"
     },
     {
       "path": "licenses/powershell-ide.html",

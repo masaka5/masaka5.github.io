@@ -211,8 +211,8 @@
     },
     {
       "path": "tools/python-ide/index.html",
-      "bytes": 3661,
-      "sha256": "7cc5e7d824f30e2e7917669ced246cc6925f5cb2a8dfdfe1f3e597b0b8cf7e1f"
+      "bytes": 3604,
+      "sha256": "6de70644ff2d85d07a27d3d6b26b79d77606612a2267df4efccd61f119b935a1"
     },
     {
       "path": "licenses/python-ide.html",
@@ -231,8 +231,8 @@
     },
     {
       "path": "licenses/python-ide-source.zip",
-      "bytes": 989092,
-      "sha256": "04a8da10e283561413de42bae954fc8899b24da663848772fbe33befec8b9da3"
+      "bytes": 988448,
+      "sha256": "60ecb4492c7323caa53e24b87044658feaf82e21b6f677917cc8a0e0317a0c43"
     }
   ]
 }

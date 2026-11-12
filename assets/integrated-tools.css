@@ -38,3 +38,9 @@ html:root{color-scheme:light;--tool-blue:#315fc9;--tool-line:#e3e7ed;--tool-text
 .toolbox-workspace [data-slot='dialog-content'],.toolbox-workspace [data-slot='popover-content'],.toolbox-workspace [data-slot='select-content']{border-color:var(--tool-line);border-radius:10px;background:#fff;color:var(--tool-text)}
 .toolbox-workspace .pdf-page>p.text-xs.text-muted.mt-2{display:none}
 @media(max-width:760px){.toolbox-workspace{padding-top:12px;padding-bottom:max(12px,env(safe-area-inset-bottom))}.toolbox-workspace .tool-surface-heading h1{font-size:16px}.toolbox-workspace [data-slot='button'],.toolbox-workspace .doodle-btn{min-height:36px}.toolbox-workspace [data-result] h1{font-size:19px!important}.toolbox-workspace .panels{gap:10px}}
+@media(min-width:1100px) and (min-height:650px){
+ .toolbox-workspace :is([data-slot='button'],.doodle-btn,.fn-btn,[data-slot='input'],[data-slot='select-trigger'],.fn-input,.fn-select){font-size:14px;min-height:38px}
+ .toolbox-workspace :is([data-slot='textarea'],textarea,.code-area){font-size:14px}
+ .toolbox-workspace :is([data-slot='label'],label,.panel-label){font-size:14px}
+ .toolbox-workspace .tool-surface-heading h1{font-size:22px}
+}

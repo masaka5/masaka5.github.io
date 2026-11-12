@@ -95,3 +95,17 @@ html body .status[data-tone="error"] {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
 }
+
+/* Increase desktop reading size without scaling canvases or virtual screens. */
+@media (min-width:1100px) and (min-height:650px) {
+  html body { font-size:15px; }
+  html body :is(.ops-header,.tool-header,.toolbox-header,.tool-heading) h1 {font-size:20px}
+  html body :is(.ops-panel,.panel,.studio-controls,.studio-stage) h2 {font-size:16px}
+  html body :is(.ops-shell,.tool-shell) :is(.back-link,.home-link) {font-size:14px}
+  html body .ops-shell :is(input,select,textarea) {font-size:15px}
+  html body .ops-shell :is(.primary,.secondary) {font-size:14px;min-height:38px}
+  html body .ops-shell :is(.field>span,.field>label,.panel-head span,.result-item dt,.help,.status,.record-code,.pager,.ops-footer) {font-size:13px}
+  html body .ops-shell :is(.record p,.record h3,.net-table td,.network-tabs button,.filter-tabs button) {font-size:14px}
+  html body .ops-shell .result-item dd {font-size:16px}
+  html body .tool-shell :is(select,button) {font-size:14px;min-height:38px}
+}

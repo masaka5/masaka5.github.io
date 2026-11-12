@@ -15,7 +15,7 @@
 </div></div>
 <div class="operation" role="status" aria-live="polite"><span id="operation-message">数据仅在浏览器与 USB 设备之间传输。</span><button id="cancel-operation" hidden>中止并断开</button></div>
 </main>
-<footer><span>口袋工具箱 · 本地 USB 连接</span><a href="../../licenses/web-adb.html">开源许可与源码</a></footer>
+<footer><span>口袋工具箱 · 本地 USB 连接</span></footer>
 <dialog id="help-dialog"><h2>连接 Android 设备</h2><ol><li>在手机「关于手机」中连续点击版本号，开启开发者选项。</li><li>开启 USB 调试，用数据线连接电脑并解锁手机。</li><li>点击「连接设备」后选择手机，在手机上允许 RSA 调试授权。</li></ol><p>需要桌面 Chrome / Edge 与 HTTPS。Firefox、Safari 暂不支持 WebUSB。Windows 如无法连接，请检查 Android USB 驱动；接口被占用时，请退出桌面 adb 或其他调试工具后重试。</p><p>调试密钥保存在此浏览器的 IndexedDB 中，用于下次认证；网站不会上传密钥。可清除此网站数据删除密钥，并在手机开发者选项中撤销 USB 调试授权。</p><p>终端会以设备的 shell 权限执行你输入的命令。中止操作会关闭 USB 连接，已传输的数据或已完成的安装不会撤销。</p><form method="dialog"><button class="primary">知道了</button></form></dialog>
 <script type="module" src="./app.js"></script>
 </body></html>

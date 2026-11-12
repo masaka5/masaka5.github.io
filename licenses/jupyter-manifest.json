@@ -2382,8 +2382,8 @@
     },
     {
       "path": "tools/jupyter/toolbox.js",
-      "bytes": 1819,
-      "sha256": "e3589ba9a21866fae8c263d8f662c36330cd14dacd6b033628f569991129d6d9"
+      "bytes": 1746,
+      "sha256": "e244632085a76eaabe5378248e224b915030fd97baa24f501243ab7bbdc0754f"
     },
     {
       "path": "vendor/pyodide/all.json",
@@ -2501,11 +2501,11 @@
       "sha256": "28ff3daf700aeabd06f3f4db9ff6827b5da337e1f889fc7ae52dabbcd5eccf5e"
     }
   ],
-  "runtime_bytes": 36845460,
+  "runtime_bytes": 36845387,
   "source_archive": {
     "path": "licenses/jupyter-source.zip",
-    "bytes": 11881216,
-    "sha256": "30846d68fcd9d1715df91207cccc37590695d94b08d6c125b165e55eace46308"
+    "bytes": 11881174,
+    "sha256": "4a9e24762cadc8528afb49986821bfc786aca3e321d5d5368c33aa13027e0ffd"
   },
   "upstream_sources": [
     {

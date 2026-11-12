@@ -1,98 +1,98 @@
 {
-  "schema": 1,
+  "sourceArchive": "home-react-source.zip",
   "files": [
     {
-      "bytes": 980,
       "path": "toolbox-site/index.html",
-      "sha256": "9f790149614a003e60294a78f84dc81eee91542dc602026c09db96f4188f0f83"
+      "sha256": "9f790149614a003e60294a78f84dc81eee91542dc602026c09db96f4188f0f83",
+      "bytes": 980
     },
     {
-      "bytes": 809589,
       "path": "toolbox-site/assets/catalog.js",
-      "sha256": "b7a069716740d131f7737e1694c3bb3e656d2b7f4f76fe5d11806e7e1048bfac"
+      "sha256": "b7a069716740d131f7737e1694c3bb3e656d2b7f4f76fe5d11806e7e1048bfac",
+      "bytes": 809589
     },
     {
-      "bytes": 2257,
       "path": "toolbox-site/assets/design-system.css",
-      "sha256": "ff2a3a24c141337ec2f8c8d21bef16969a9efa9d594a275dbe62dfb650af10d5"
+      "sha256": "b5432d9ce0dc493d01ade0ecb3694ca49a8374482426eeb829e8eb640067211c",
+      "bytes": 3236
     },
     {
-      "bytes": 343,
       "path": "toolbox-site/assets/favicon.svg",
-      "sha256": "4cb1157e6d073ca25616e206352355ed6c9c4dac0f5c275e9564ce9b1bed2230"
+      "sha256": "4cb1157e6d073ca25616e206352355ed6c9c4dac0f5c275e9564ce9b1bed2230",
+      "bytes": 343
     },
     {
-      "bytes": 49649,
       "path": "toolbox-site/assets/tool-icon-paths.js",
-      "sha256": "72253d6823b59ad6dd92b81fcda3769e86c90d513c13f3215bbb7d920f74f210"
+      "sha256": "72253d6823b59ad6dd92b81fcda3769e86c90d513c13f3215bbb7d920f74f210",
+      "bytes": 49649
     },
     {
-      "bytes": 883,
       "path": "toolbox-site/assets/tool-icons.js",
-      "sha256": "26625baa1847b4edd7f3979942ac88727bcbc4d5be528a749ba13e1f2e94f45f"
+      "sha256": "26625baa1847b4edd7f3979942ac88727bcbc4d5be528a749ba13e1f2e94f45f",
+      "bytes": 883
     },
     {
-      "bytes": 153,
       "path": "toolbox-site/assets/usage-config.json",
-      "sha256": "29b9b2a7be521ca89034ed9c82e4477b0f2b7d1bd8eddf3287d8e77af75974a6"
+      "sha256": "29b9b2a7be521ca89034ed9c82e4477b0f2b7d1bd8eddf3287d8e77af75974a6",
+      "bytes": 153
     },
     {
-      "bytes": 3606,
       "path": "toolbox-site/assets/usage.js",
-      "sha256": "c71d54b2b7cca573f7520e8b23325c3fe520c2ff4002f4d7d626f11bbdbe25a9"
+      "sha256": "c71d54b2b7cca573f7520e8b23325c3fe520c2ff4002f4d7d626f11bbdbe25a9",
+      "bytes": 3606
     },
     {
-      "bytes": 3242,
       "path": "_scratch/home-react-integration/build.mjs",
-      "sha256": "e4d723bd534fae23134c0d76da8dadc6e809de89c801f75f8d13cb84782bfe9e"
+      "sha256": "e4d723bd534fae23134c0d76da8dadc6e809de89c801f75f8d13cb84782bfe9e",
+      "bytes": 3242
     },
     {
-      "bytes": 1084,
       "path": "_scratch/home-react-integration/LICENSE",
-      "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962"
+      "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962",
+      "bytes": 1084
     },
     {
-      "bytes": 51965,
       "path": "_scratch/home-react-integration/package-lock.json",
-      "sha256": "963850cb4cde5b6ef1dc5239e805b0fa4c24efa344f4f6ef27b5c5c3c1c7753f"
+      "sha256": "963850cb4cde5b6ef1dc5239e805b0fa4c24efa344f4f6ef27b5c5c3c1c7753f",
+      "bytes": 51965
     },
     {
-      "bytes": 1909,
       "path": "_scratch/home-react-integration/package-source.ps1",
-      "sha256": "b0066a7e73f30bd91aa978162f7890b471ec759653ee1ff23ffca2b5913ef526"
+      "sha256": "b0066a7e73f30bd91aa978162f7890b471ec759653ee1ff23ffca2b5913ef526",
+      "bytes": 1909
     },
     {
-      "bytes": 233,
       "path": "_scratch/home-react-integration/package.json",
-      "sha256": "c68543132b598112db784afbe9ca96d576397130f36fb907703aacfb6030d4c3"
+      "sha256": "c68543132b598112db784afbe9ca96d576397130f36fb907703aacfb6030d4c3",
+      "bytes": 233
     },
     {
-      "bytes": 1382,
       "path": "_scratch/home-react-integration/README.md",
-      "sha256": "205241638b2029ea6715ea1a6c98d8280f52f1ea6ef30c921fa3c37c6bf1ec48"
+      "sha256": "205241638b2029ea6715ea1a6c98d8280f52f1ea6ef30c921fa3c37c6bf1ec48",
+      "bytes": 1382
     },
     {
-      "bytes": 1099,
       "path": "_scratch/home-react-integration/notices/@ant-design_icons-svg.txt",
-      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70"
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70",
+      "bytes": 1099
     },
     {
-      "bytes": 1090,
       "path": "_scratch/home-react-integration/notices/toggle-selection.txt",
-      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d"
+      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d",
+      "bytes": 1090
     },
     {
-      "bytes": 17896,
       "path": "_scratch/home-react-integration/src/main.jsx",
-      "sha256": "1bf6fc15f7d0ac4b882d46b841bdb3f84ea4d40dc23a3fda9a8769c03341f31e"
+      "sha256": "1bf6fc15f7d0ac4b882d46b841bdb3f84ea4d40dc23a3fda9a8769c03341f31e",
+      "bytes": 17896
     },
     {
-      "bytes": 12557,
       "path": "_scratch/home-react-integration/src/style.css",
-      "sha256": "ff51662235efac5446a44b41d28047444f99dbe5cff2063098037c488f3a8680"
+      "sha256": "a9665975cbdc83534986b31fa901ec324afcfd5c434df2b7a2c8e440a346537e",
+      "bytes": 14471
     }
   ],
-  "sourceArchive": "home-react-source.zip",
-  "archiveSha256": "db6bb58cde27164780e8b7e6fd5f931fe481020364d915d0c9834ea94845c8ce",
-  "archiveBytes": 191766
+  "archiveSha256": "cb74080aeb5d41a38e22984e6a9807648eec61c8b22987f7ee71552ffa984e51",
+  "archiveBytes": 192443,
+  "schema": 1
 }
