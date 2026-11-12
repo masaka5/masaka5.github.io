@@ -1,0 +1,66 @@
+{
+  "references": [
+    {
+      "project": "toolbox-broadcast",
+      "source": "first-party browser studio",
+      "sourceArchive": "licenses/broadcast-source.zip",
+      "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
+    },
+    {
+      "project": "broadcast-whip-reference",
+      "source": "https://github.com/bluenviron/mediamtx",
+      "revision": "7e656029154b86ceb778401870fc9bb91e60ba70",
+      "license": "MIT",
+      "changes": "Protocol reference only; independent WHIP implementation, no copied code."
+    },
+    {
+      "project": "broadcast-rtmp-relay-reference",
+      "source": "https://github.com/apivideo/api.video-browser-to-rtmp",
+      "revision": "e7d4227b025258d41132168157d89c2100facd70",
+      "license": "MIT",
+      "changes": "Protocol reference only; independent Socket.IO/Engine.IO client for an existing user-provided relay. No relay server shipped."
+    }
+  ],
+  "files": [
+    {
+      "file": "app.js",
+      "bytes": 27127,
+      "sha256": "419cf9f35620501d16e671d869f2f5f1484985861a0131a63828c85732aa7301"
+    },
+    {
+      "file": "broadcast-core.js",
+      "bytes": 3617,
+      "sha256": "c71aac4f6924556792fb959c60265e2184177b25932b7729a348074ad4ee03b8"
+    },
+    {
+      "file": "compositor.js",
+      "bytes": 9272,
+      "sha256": "12544015846e59b5dcc10d119a1a2d26a1583885b1a3ad046236af40c492716e"
+    },
+    {
+      "file": "engine.js",
+      "bytes": 21886,
+      "sha256": "4da4221ae795a947d19ed41304cd377c8c2fdaefea0c5e28d2e4da36d59d29d3"
+    },
+    {
+      "file": "index.html",
+      "bytes": 13541,
+      "sha256": "d6b6bbb52b8eb533cb4a41f5e54b9f00204a42d183ec5c5e9a4f22e240a444c9"
+    },
+    {
+      "file": "publisher.js",
+      "bytes": 18593,
+      "sha256": "8c406c09c107dccffdee2f0fbd037f61c363ae2040b35a6cf35d988450b7c331"
+    },
+    {
+      "file": "store.js",
+      "bytes": 4274,
+      "sha256": "55ced438541ea9f61b46aa81777764ecb1b8a2acfb431dfeb361a6084875a7d0"
+    },
+    {
+      "file": "style.css",
+      "bytes": 14679,
+      "sha256": "e930353cb855aad0ccc1b691410796903e8d4099597c1117e067e972fa0a72de"
+    }
+  ]
+}

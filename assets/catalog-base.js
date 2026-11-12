@@ -11,6 +11,7 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'broadcast',category:'media',name:'直播工作台',description:'场景合成 · 混音 · 推流 · 录制',href:'tools/broadcast/',icon:'radio',tags:['直播','场景','录制'],keywords:'OBS 摄像头 屏幕 窗口 直播 RTMP WHIP 字幕 绿幕 水印 混音'},
     {id:'drawio',category:'collaboration',name:'思维导图与流程图',description:'draw.io · 绘图 · 本地草稿',href:'tools/drawio/',icon:'workflow',tags:['绘图','流程图','思维导图'],keywords:'draw.io diagrams.net 脑图 UML XML SVG PNG'},
     {id:'tiptap',category:'text',name:'富文本文档',description:'Tiptap · 排版 · 表格 · 图片',href:'tools/office-editors/document.html',icon:'file-pen-line',tags:['文档','排版','Tiptap'],keywords:'富文本 编辑器 文档 JSON HTML 本地 草稿'},
     {id:'web-ppt',category:'collaboration',name:'幻灯片',description:'Web-PPT · 演示 · PPTX 导出',href:'tools/web-ppt/',icon:'panels-top-left',tags:['演示','PPT','幻灯片'],keywords:'Web-PPT 演示文稿 图片 文字 排版'},

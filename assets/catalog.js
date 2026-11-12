@@ -104,6 +104,29 @@ const ToolboxCatalog = {
   ],
   "tools": [
     {
+      "id": "broadcast",
+      "category": "media",
+      "name": "直播工作台",
+      "description": "场景合成 · 混音 · 推流 · 录制",
+      "href": "tools/broadcast/",
+      "icon": "radio",
+      "tags": [
+        "直播",
+        "场景",
+        "录制"
+      ],
+      "keywords": "OBS 摄像头 屏幕 窗口 直播 RTMP WHIP 字幕 绿幕 水印 混音",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/broadcast/",
+          "source": "toolbox",
+          "sourceId": "broadcast"
+        }
+      ],
+      "iconBadge": "音频"
+    },
+    {
       "id": "drawio",
       "category": "collaboration",
       "name": "思维导图与流程图",

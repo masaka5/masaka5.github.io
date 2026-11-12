@@ -426,5 +426,25 @@
     "version": "9.15.3",
     "license": "MIT",
     "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "toolbox-broadcast",
+    "source": "first-party browser studio",
+    "sourceArchive": "licenses/broadcast-source.zip",
+    "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
+  },
+  {
+    "project": "broadcast-whip-reference",
+    "source": "https://github.com/bluenviron/mediamtx",
+    "revision": "7e656029154b86ceb778401870fc9bb91e60ba70",
+    "license": "MIT",
+    "changes": "Protocol reference only; independent WHIP implementation, no copied code."
+  },
+  {
+    "project": "broadcast-rtmp-relay-reference",
+    "source": "https://github.com/apivideo/api.video-browser-to-rtmp",
+    "revision": "e7d4227b025258d41132168157d89c2100facd70",
+    "license": "MIT",
+    "changes": "Protocol reference only; independent Socket.IO/Engine.IO client for an existing user-provided relay. No relay server shipped."
   }
 ]
