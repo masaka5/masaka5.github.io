@@ -11,6 +11,9 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'code',category:'web',name:'代码工作台',description:'VS Code · 中文 · 本地文件',href:'tools/code/',icon:'code-xml',tags:['代码','VS Code','编辑器'],keywords:'vscode.dev 网页 IDE 编辑器 PowerShell Python JavaScript TypeScript Rust 文件 目录 补全'},
+    {id:'serial',category:'peripheral',name:'串口调试与烧录',description:'文本 · HEX · ESP 固件',href:'tools/serial/',icon:'unplug',tags:['串口','固件','ESP'],keywords:'Web Serial UART USB COM 波特率 收发 烧录 固件 ESP32 ESP8266 esptool BIN'},
+    {id:'file-watermark',category:'encoding',name:'文件隐写与校验',description:'隐藏标记 · 口令认证 · 还原',href:'tools/file-watermark/',icon:'file-key-2',tags:['隐写','校验','水印'],keywords:'文件水印 隐藏 标记 metadata PNG JPEG PDF Office ZIP HMAC SHA256 认证 完整性 校验'},
     {id:'meeting',category:'collaboration',name:'在线会议',description:'多人音视频 · 屏幕共享 · 聊天',href:'tools/meeting/',icon:'video',tags:['会议','共享','聊天'],keywords:'Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC'},
     {
       id:'stress', category:'hardware', name:'硬件压测',

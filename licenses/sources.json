@@ -282,5 +282,21 @@
         "sha256": "d242a568a3b1ef487ede00e10108edbc4b9fd93de12db0ef694c9b81e691c649"
       }
     ]
+  },
+  {
+    "project": "code",
+    "source": "https://github.com/CodinGame/monaco-vscode-api",
+    "version": "39.0.4",
+    "license": "MIT",
+    "dependencies": "licenses/code/dependencies.json",
+    "sourceArchive": "licenses/code-serial-watermark-source.zip"
+  },
+  {
+    "project": "esptool",
+    "source": "https://github.com/espressif/esptool-js",
+    "version": "0.7.1",
+    "license": "Apache-2.0",
+    "dependencies": "licenses/esptool/dependencies.json",
+    "sourceArchive": "licenses/code-serial-watermark-source.zip"
   }
 ]

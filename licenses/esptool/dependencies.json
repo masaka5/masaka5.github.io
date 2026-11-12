@@ -1,0 +1,69 @@
+[
+  {
+    "name": "@esbuild/win32-x64",
+    "version": "0.25.12",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/evanw/esbuild.git"
+    },
+    "license_files": []
+  },
+  {
+    "name": "atob-lite",
+    "version": "2.0.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/hughsk/atob-lite.git"
+    },
+    "license_files": [
+      "texts/atob-lite_2.0.0_LICENSE.md.txt"
+    ]
+  },
+  {
+    "name": "crypto-js",
+    "version": "4.2.0",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "http://github.com/brix/crypto-js.git"
+    },
+    "license_files": [
+      "texts/crypto-js_4.2.0_LICENSE.txt"
+    ]
+  },
+  {
+    "name": "esbuild",
+    "version": "0.25.12",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/evanw/esbuild.git"
+    },
+    "license_files": [
+      "texts/esbuild_0.25.12_LICENSE.md.txt"
+    ]
+  },
+  {
+    "name": "esptool-js",
+    "version": "0.7.1",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/espressif/esptool-js.git"
+    },
+    "license_files": [
+      "texts/esptool-js_0.7.1_LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pako",
+    "version": "2.2.0",
+    "license": "(MIT AND Zlib)",
+    "repository": "nodeca/pako",
+    "license_files": [
+      "texts/pako_2.2.0_LICENSE.txt"
+    ]
+  }
+]
