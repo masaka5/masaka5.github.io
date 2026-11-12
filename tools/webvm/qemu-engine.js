@@ -63,10 +63,13 @@ export class QemuEngine{
  add_listener(name,callback){if(!this.listeners.has(name))this.listeners.set(name,new Set());this.listeners.get(name).add(callback);}
  emit(name,value){for(const callback of this.listeners.get(name)||[])callback(value);}
  async prepare(){
-  this.onProgress('正在加载多核引擎…');this.wasm=await read(new URL('qemu.wasm',assets),this.signal);this.rom=await read(new URL('rom.bin',assets),this.signal);
-  this.kernel=await read(this.profile.media.bzimage.url,this.signal);
-  const urls=this.profile.media.initrd_parts||[this.profile.media.initrd],parts=[];let length=0;
-  for(let i=0;i<urls.length;i++){this.onProgress('加载 Ubuntu '+(i+1)+'/'+urls.length+' · '+C.readableBytes(length));const part=await read(urls[i].url,this.signal);parts.push(part);length+=part.length;}
+  this.onProgress('正在加载多核引擎…');
+  const urls=this.profile.media.initrd_parts||[this.profile.media.initrd];let length=0,completed=0;
+  const [wasm,rom,kernel,parts]=await Promise.all([
+   read(new URL('qemu.wasm',assets),this.signal),read(new URL('rom.bin',assets),this.signal),read(this.profile.media.bzimage.url,this.signal),
+   Promise.all(urls.map(async source=>{const part=await read(source.url,this.signal);length+=part.length;this.onProgress('加载 Ubuntu '+(++completed)+'/'+urls.length+' · '+C.readableBytes(length));return part;}))
+  ]);
+  Object.assign(this,{wasm,rom,kernel});
   let compressed=new Uint8Array(length);let offset=0;for(const part of parts){compressed.set(part,offset);offset+=part.length;}parts.length=0;
   this.onProgress('正在展开启动镜像…');
   this.image=compressed[0]===31&&compressed[1]===139?new Uint8Array(await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer()):compressed;

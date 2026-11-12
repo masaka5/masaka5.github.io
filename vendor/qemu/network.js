@@ -1,5 +1,6 @@
 // Derived from ktock/qemu-wasm examples/networking/htdocs/stack.js.
 // Explicit Emscripten socket adapter: no MSW, Service Worker, or host daemon.
+import {browserRequest} from './fetch-request.js';
 
 var accepted = false;
 let curSocket = null;
@@ -452,7 +453,8 @@ function connect(name, shared, toNet, certbuf) {
                         if ((connObj.request.method != "HEAD") && (connObj.request.method != "GET")) {
                             connObj.request.body = connObj.reqBodybuf;
                         }
-                        fetch(connObj.address, connObj.request).then((resp) => {
+                        const browser = browserRequest(connObj.address, connObj.request);
+                        fetch(browser.url, browser.options).then((resp) => {
                             connObj.done = false;
                             connObj.respBodybuf = new Uint8Array(0);
                             if (resp.ok) {

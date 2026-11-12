@@ -28,7 +28,7 @@
   if(raw.media?.initrd_parts){if(!Array.isArray(raw.media.initrd_parts)||raw.media.initrd_parts.length>10)throw Error('镜像分片无效');p.media.initrd_parts=raw.media.initrd_parts.map(x=>mediaSource(x,base));}
   return p;
  }
- function fingerprint(p){const normalized=JSON.stringify({machine:p.machine,media:p.media,localMedia:p.localMedia,cmdline:p.cmdline,guest:p.id===builtin.id?config.guestVersion:p.id===ubuntu.id?'4b4f872edb3fecf3':undefined,engine:p.engine==='qemu'?'qemu':undefined});let hash=2166136261;for(let i=0;i<normalized.length;i++)hash=Math.imul(hash^normalized.charCodeAt(i),16777619);return (hash>>>0).toString(16);}
+ function fingerprint(p){const normalized=JSON.stringify({machine:p.machine,media:p.media,localMedia:p.localMedia,cmdline:p.cmdline,guest:p.id===builtin.id?config.guestVersion:p.id===ubuntu.id?'a449e6ff1043a660':undefined,engine:p.engine==='qemu'?'qemu':undefined});let hash=2166136261;for(let i=0;i<normalized.length;i++)hash=Math.imul(hash^normalized.charCodeAt(i),16777619);return (hash>>>0).toString(16);}
  function sendInput(text,read){for(const byte of new TextEncoder().encode(text))read(byte);}
  function shellQuote(text){return "'"+String(text).replaceAll("'","'\\''")+"'";}
  function fileName(raw){const name=String(raw);if(!name||name==='.'||name==='..'||/[\/\\\x00-\x1f\x7f]/.test(name)||new TextEncoder().encode(name).length>240)throw Error('文件名不能包含路径、控制字符或超过 240 字节');return name;}

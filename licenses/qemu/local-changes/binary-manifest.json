@@ -15,9 +15,14 @@
       "sha256": "c259ff4d681f8808a3414a7d4158825a2a569073326baa0b3c067ac7bf0a25c7"
     },
     {
+      "file": "fetch-request.js",
+      "bytes": 1087,
+      "sha256": "7120391d3ab87ad2aaa750c4374a15cf03ec4c770bf11054f0174b860adcdd47"
+    },
+    {
       "file": "network.js",
-      "bytes": 24030,
-      "sha256": "0c329f6c92eb0656c44055625c048c0b08750d462d6d1cd97d675e926feb487b"
+      "bytes": 24167,
+      "sha256": "6f6c0cfe7fd1103b0ca24962b064c07016e13b38b20eb7740629bb9d2a769fd6"
     },
     {
       "file": "qemu-system-x86_64.worker.js",
@@ -53,6 +58,7 @@
   "hostPatches": [
     "9p RLERROR WASI-to-Linux conversion in checked Wasm function",
     "shared procfs file-descriptor chmod compatibility",
-    "configured VGA memory and ACPI"
+    "configured VGA memory and ACPI",
+    "browser-safe apt mirror request headers and HTTPS upgrades"
   ]
 }

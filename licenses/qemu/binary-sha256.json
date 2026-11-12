@@ -5,14 +5,19 @@
     "sha256": "c259ff4d681f8808a3414a7d4158825a2a569073326baa0b3c067ac7bf0a25c7"
   },
   {
+    "file": "fetch-request.js",
+    "bytes": 1087,
+    "sha256": "7120391d3ab87ad2aaa750c4374a15cf03ec4c770bf11054f0174b860adcdd47"
+  },
+  {
     "file": "manifest.json",
-    "bytes": 1815,
-    "sha256": "fa78e524fcd4128419bb2b2aecc8740f72fa9f45ee85b3d82dc8e6897cdb8a77"
+    "bytes": 2038,
+    "sha256": "58eba53ac58b3f104820f170f5919ee4a91900bc72b54cf2cfbae0701be26a39"
   },
   {
     "file": "network.js",
-    "bytes": 24030,
-    "sha256": "0c329f6c92eb0656c44055625c048c0b08750d462d6d1cd97d675e926feb487b"
+    "bytes": 24167,
+    "sha256": "6f6c0cfe7fd1103b0ca24962b064c07016e13b38b20eb7740629bb9d2a769fd6"
   },
   {
     "file": "qemu-system-x86_64.worker.js",
