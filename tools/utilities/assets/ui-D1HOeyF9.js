@@ -1,0 +1,21 @@
+import{r as N,j as t}from"./toolbox-BAFlSbAu.js";import{u as S}from"./use-view-state-Buv1JcBh.js";import{T}from"./text-tool-DJbu6FIk.js";import{F as j}from"./panel-Bqi8iGiy.js";import{T as y,a as L,b as g}from"./tabs-4oc-BJj3.js";import{I as M}from"./input-z_zqgJn8.js";import{S as V,a as k,b as I,c as A,d as $}from"./select-DJsijoLS.js";import"./product-controls-B1-Khcjt.js";import"./textarea-a9bFzmkv.js";import"./index-CLt5N8Xt.js";import"./ContextIsolator-DC_hgRVI.js";import"./SearchOutlined-avAJ2sSo.js";import"./button-BucYEMq7.js";import"./index-BtnVBoHo.js";import"./useId-CQJPC48K.js";import"./copy-button-DibWWTQ8.js";import"./download-CsFYzBl3.js";import"./copy-Cnia4tn_.js";import"./createLucideIcon-D8fibnX9.js";import"./download-button-B6GEzIgs.js";import"./loader-circle-7RTOfogF.js";import"./download-DPmKNylC.js";import"./error-banner-K0cVVdwR.js";import"./upload-DbNze1mN.js";import"./eraser-9fZjLLdy.js";import"./CloseOutlined-DTTOE6cy.js";import"./index-CrsyJUrn.js";import"./KeyCode-HJ8jGXz0.js";import"./Overflow-CXeRYAeu.js";import"./useLocale-Bw2E_mQL.js";import"./useZIndex-w_p6zKCP.js";const C=`:root {
+  --color-primary: #3b82f6;
+  --color-bg: #ffffff;
+  --space-sm: 8px;
+  --space-md: 16px; /* base spacing */
+}
+
+/* dark theme overrides */
+.theme-dark {
+  --color-bg: #0f172a;
+  --color-primary: #60a5fa;
+}
+
+.button {
+  --space-sm: 6px;
+  padding: var(--space-sm) var(--space-md);
+}`;function F(a){return a.replace(/\/\*[\s\S]*?\*\//g,"")}function O(a){const x=F(a),l=[];let b=0;const i=/([^{}]*)\{([^{}]*)\}/g;let f;const r=/(--[\w-]+)\s*:\s*([^;]+?)\s*(?:;|$)/g;for(;(f=i.exec(x))!==null;){const m=(f[1]??"").trim().replace(/\s+/g," ")||"(unknown)",c=f[2]??"";let n;for(r.lastIndex=0;(n=r.exec(c))!==null;){const o=n[1],u=n[2];o===void 0||u===void 0||l.push({name:o,value:u.trim(),scope:m,order:b++})}}const h=x.replace(i,"");r.lastIndex=0;let p;for(;(p=r.exec(h))!==null;){const m=p[1],c=p[2];m===void 0||c===void 0||l.push({name:m,value:c.trim(),scope:"(top-level)",order:b++})}return l}function fe(){const[a,x]=N.useState("table"),[l,b]=S("tools/web/web-css-variable-extractor/ui.tsx:sort","name"),[i,f]=S("tools/web/web-css-variable-extractor/ui.tsx:filter","");return t.jsx(T,{deps:[a,l,i],transform:r=>{if(!r.trim())return"";const h=O(r);if(h.length===0)throw new Error("未找到 CSS 自定义属性（--名称：值）。");const p=i.trim().toLowerCase(),m=p?h.filter(e=>e.name.toLowerCase().includes(p)):h,c=new Map,n=new Map;for(const e of m)n.set(e.name,(n.get(e.name)??0)+1),c.set(e.name,e);let o=[...c.values()];if(o.length===0)return`No variables match filter "${i.trim()}".`;if(l==="name"?o=o.sort((e,s)=>e.name.localeCompare(s.name)):o=o.sort((e,s)=>e.order-s.order),a==="json"){const e={};for(const s of o)e[s.name]=s.value;return JSON.stringify(e,null,2)}if(a==="root")return`:root {
+${o.map(s=>`  ${s.name}: ${s.value};`).join(`
+`)}
+}`;const u=Math.max(...o.map(e=>e.name.length),4),v=Math.max(...o.map(e=>e.value.length),5),d=[];d.push(`${"NAME".padEnd(u)}  ${"VALUE".padEnd(v)}  SCOPE`),d.push("-".repeat(u+v+12));for(const e of o){const s=n.get(e.name)??1,E=s>1?` (×${s})`:"";d.push(`${e.name.padEnd(u)}  ${e.value.padEnd(v)}  ${e.scope}${E}`)}const w=[...n.entries()].filter(([,e])=>e>1).length;return d.push(""),d.push(`${o.length} unique variable(s)${w?`, ${w} with duplicate definitions`:""}.`),d.join(`
+`)},inputLabel:"CSS",outputLabel:"提取的变量",inputPlaceholder:C,sample:C,downloadName:a==="json"?"variables.json":a==="root"?"variables.css":"variables.txt",downloadMime:a==="json"?"application/json":"text/plain",options:t.jsxs(t.Fragment,{children:[t.jsx(j,{label:"输出",children:t.jsx(y,{value:a,onValueChange:r=>x(r),children:t.jsxs(L,{children:[t.jsx(g,{value:"table",children:"表"}),t.jsx(g,{value:"root",children:"：根"}),t.jsx(g,{value:"json",children:"JSON"})]})})}),t.jsx(j,{label:"排序依据",children:t.jsxs(V,{value:l,onValueChange:r=>b(r),children:[t.jsx(k,{className:"w-36",children:t.jsx(I,{})}),t.jsxs(A,{children:[t.jsx($,{value:"name",children:"姓名（A→Z）"}),t.jsx($,{value:"source",children:"来源顺序"})]})]})}),t.jsx(j,{label:"按名称过滤",children:t.jsx(M,{value:i,onChange:r=>f(r.target.value),placeholder:"例如颜色",className:"w-40",spellCheck:!1})})]})})}export{fe as default};

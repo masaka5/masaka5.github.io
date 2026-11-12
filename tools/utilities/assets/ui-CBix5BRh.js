@@ -1,0 +1,15 @@
+import{j as e}from"./toolbox-BAFlSbAu.js";import{u as h}from"./use-view-state-Buv1JcBh.js";import{T as C}from"./text-tool-DJbu6FIk.js";import{F as d}from"./panel-Bqi8iGiy.js";import{I as A}from"./input-z_zqgJn8.js";import{S as g,a as v,b as $,c as b,d as m}from"./select-DJsijoLS.js";import"./product-controls-B1-Khcjt.js";import"./textarea-a9bFzmkv.js";import"./index-CLt5N8Xt.js";import"./ContextIsolator-DC_hgRVI.js";import"./SearchOutlined-avAJ2sSo.js";import"./button-BucYEMq7.js";import"./index-BtnVBoHo.js";import"./useId-CQJPC48K.js";import"./copy-button-DibWWTQ8.js";import"./download-CsFYzBl3.js";import"./copy-Cnia4tn_.js";import"./createLucideIcon-D8fibnX9.js";import"./download-button-B6GEzIgs.js";import"./loader-circle-7RTOfogF.js";import"./download-DPmKNylC.js";import"./error-banner-K0cVVdwR.js";import"./upload-DbNze1mN.js";import"./eraser-9fZjLLdy.js";import"./index-CrsyJUrn.js";import"./KeyCode-HJ8jGXz0.js";import"./Overflow-CXeRYAeu.js";import"./useLocale-Bw2E_mQL.js";import"./CloseOutlined-DTTOE6cy.js";import"./useZIndex-w_p6zKCP.js";function p(r){return r!==null&&typeof r=="object"&&!Array.isArray(r)}function E(r){return/[=;#]/.test(r)||r!==r.trim()}function I(r){return r==null?"":String(r)}const J=`{
+  "appName": "Demo",
+  "debug": true,
+  "server": {
+    "host": "localhost",
+    "port": 8080,
+    "tags": ["web", "api"]
+  },
+  "server.tls": {
+    "enabled": false
+  }
+}`;function le(){const[r,N]=h("tools/convert/json-to-ini/ui.tsx:separator","="),[u,w]=h("tools/convert/json-to-ini/ui.tsx:arrayMode","repeat"),[l,y]=h("tools/convert/json-to-ini/ui.tsx:commentChar",";");return e.jsx(C,{deps:[r,u,l],transform:n=>{if(!n.trim())return"";let c;try{c=JSON.parse(n)}catch(o){throw new Error(o instanceof Error?o.message:"无效的 JSON")}if(!p(c))throw new Error("顶级值必须是JSON对象。");const f=o=>{const t=I(o);return E(t)?`"${t.replace(/"/g,'\\"')}"`:t},j=o=>{const t=[];for(const[a,s]of Object.entries(o))if(!p(s))if(Array.isArray(s))if(u==="comma")t.push(`${a}${r}${s.map(f).join(",")}`);else for(const O of s)t.push(`${a}${r}${f(O)}`);else t.push(`${a}${r}${f(s)}`);return t},i=[];l.trim()&&i.push(`${l} Generated from JSON`,"");const x=j(c);x.length&&i.push(...x,"");const S=(o,t)=>{i.push(`[${o}]`),i.push(...j(t)),i.push("");for(const[a,s]of Object.entries(t))p(s)&&S(`${o}.${a}`,s)};for(const[o,t]of Object.entries(c))p(t)&&S(o,t);return i.join(`
+`).replace(/\n{3,}/g,`
+
+`).trimEnd()},inputLabel:"JSON",outputLabel:"INI",sample:J,downloadName:"config.ini",options:e.jsxs(e.Fragment,{children:[e.jsx(d,{label:"分隔符",children:e.jsxs(g,{value:r,onValueChange:n=>N(n),children:[e.jsx(v,{className:"w-32",children:e.jsx($,{})}),e.jsxs(b,{children:[e.jsx(m,{value:"=",children:"键=值"}),e.jsx(m,{value:" = ",children:"键=值"})]})]})}),e.jsx(d,{label:"阵列",children:e.jsxs(g,{value:u,onValueChange:n=>w(n),children:[e.jsx(v,{className:"w-40",children:e.jsx($,{})}),e.jsxs(b,{children:[e.jsx(m,{value:"repeat",children:"重复按键"}),e.jsx(m,{value:"comma",children:"逗号连接"})]})]})}),e.jsx(d,{label:"评论字符",children:e.jsx(A,{value:l,onChange:n=>y(n.target.value),placeholder:";或#",className:"w-20"})})]})})}export{le as default};

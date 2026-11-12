@@ -1,12 +1,12 @@
 {
-  "project": "OpenUtility Ant Design integration",
+  "project": "OpenUtility Ant Design integration with bounded view-state restoration",
   "upstream": "https://github.com/saikiranreddyuppula/open-utility-tools",
   "upstreamCommit": "e65e47c36c77335a293dca8be2d9ad1031a2618d",
   "deploymentBase": "b975ee9c906cfd931681b3193d19d8d5e25a936b",
   "build": "npm ci && npx vite build --config toolbox.vite.config.mjs",
   "archive": "openutility-source.zip",
-  "archiveBytes": 5879918,
-  "sha256": "eb32a7a0bc46a035bebff41b42b2f22123d55641c71c1133d01dfc9bc5a1a81a",
+  "archiveBytes": 5932345,
+  "sha256": "f021f28fd7fc648d6da0087eabec8e0b57121f17d698d276af8ecc956688f8b8",
   "files": [
     {
       "path": ".gitignore",
@@ -85,8 +85,8 @@
     },
     {
       "path": "toolbox.vite.config.mjs",
-      "bytes": 463,
-      "sha256": "1164487ba82a9e11bca34c46f5e451d2fffb5deae221b6f40b4adc34e16bedc0"
+      "bytes": 552,
+      "sha256": "a197f8c36d6d13ffd6e9dbfccd57ff354e62f352b2f7544a41d05fdfc4789514"
     },
     {
       "path": "tsconfig.json",
@@ -239,9 +239,24 @@
       "sha256": "20f6861119c8650d0ca65463fb03d8bcada4fbb457d5b1952b51dc4ab6a11030"
     },
     {
+      "path": "lib/use-view-state.ts",
+      "bytes": 946,
+      "sha256": "cc042a4efa0cdea42508384345295abd8ad11c38bd762cc748b139aca17e2b3b"
+    },
+    {
       "path": "lib/utils.ts",
       "bytes": 240,
       "sha256": "4e765c5b8fcff4b6ee27a1b2a92a879e3ffb84ca712fb243e5592c1431371eb6"
+    },
+    {
+      "path": "lib/view-state-storage.mjs",
+      "bytes": 1762,
+      "sha256": "4a410a5535268e637a9ee1d7b3c744a14c86d2e1e6a06d74a659835a0330d342"
+    },
+    {
+      "path": "lib/view-state-tools.ts",
+      "bytes": 18977,
+      "sha256": "e6068c5249aaab5655351d6bee1c1d95f4372289d17b289dc4f63d76193d929b"
     },
     {
       "path": "lib/zip.ts",
@@ -292,6 +307,11 @@
       "path": "reports/unnecessary-tools-report-2026-06-03.md",
       "bytes": 83564,
       "sha256": "2548c1a26a2b89cb83b0f745599ec9acab352fc507cf97375a78d442a9ee7b30"
+    },
+    {
+      "path": "reports/view-state-inventory.json",
+      "bytes": 704431,
+      "sha256": "61d38504f4e134e62b68d5a5824b013a02e7770b5018c9e4b3c38de33f719cf9"
     },
     {
       "path": "rust/Cargo.lock",
@@ -359,6 +379,16 @@
       "sha256": "866d5302d4596cd2ae6ae54ff4282fa65a47a9d9cd5ed8ac8463acf14aa1f8f3"
     },
     {
+      "path": "scripts/typecheck-view-state.mjs",
+      "bytes": 893,
+      "sha256": "004c78d9fb0d36cf3edfe6380d95b12666768e8a37ce239b2f1dea82a622315c"
+    },
+    {
+      "path": "scripts/view-state-transform.mjs",
+      "bytes": 4525,
+      "sha256": "1c897e961e357efee021da80435ceb17e4e1ebc5affb72f1e340f7e0f7a3fa52"
+    },
+    {
       "path": "tests/controls.html",
       "bytes": 107,
       "sha256": "afcd5db6af547cafed49a55c7a3c30c663984d4ce898be9d3fa1235c246f9158"
@@ -369,9 +399,24 @@
       "sha256": "dc091cb825e72c3b0b3933530b0ac9f0db9513e6ff8fc04361d78fd56b5aab51"
     },
     {
+      "path": "tests/state.html",
+      "bytes": 70,
+      "sha256": "62877073042aa49dbdce8e9961ff7cca21066b9fc28ed74372cd99dd828b78b3"
+    },
+    {
+      "path": "tests/state.tsx",
+      "bytes": 449,
+      "sha256": "0bb3b181acb676c0f5b1913d183ce01bc6639a4a5918068cf92a8670c46e4ec8"
+    },
+    {
+      "path": "tests/view-state.test.mjs",
+      "bytes": 1425,
+      "sha256": "03df34923756e6f4aa6c931168563151ed5c43c7ceb81a692d9d940432da99bc"
+    },
+    {
       "path": "tools/_shared/developer-workbench.tsx",
-      "bytes": 6993,
-      "sha256": "56b8eefbfad6a02fa594006e1a10cf49c9cadb3b427694d99c45b77cc959cb40"
+      "bytes": 7000,
+      "sha256": "cafff42c0b46842169b6541883c6e60f63c4ba1d06d1eaf26f3ac7dcb974d324"
     },
     {
       "path": "tools/web/asyncapi-validator-preview/tool.config.ts",

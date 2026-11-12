@@ -1,7 +1,0 @@
-import{r as o,j as e}from"./toolbox-CmtkVXqR.js";import{S as a}from"./switch-mkCNf92t.js";import{F as c}from"./panel-DmElCoWv.js";import{T as d}from"./text-tool-DEvyHdcP.js";import{s as x,d as f}from"./lines-lljRLmY1.js";import"./ContextIsolator-g3C8c1gr.js";import"./KeyCode-HJ8jGXz0.js";import"./product-controls-DM7ptYUH.js";import"./input-CQci13IV.js";import"./index-IMt1bn3i.js";import"./SearchOutlined-DekVZon5.js";import"./textarea-Cln-1zVs.js";import"./button-DMB0_Npy.js";import"./index-PE_KQwEV.js";import"./useId-Chs6QaAi.js";import"./copy-button-DLB5uroU.js";import"./download-CsFYzBl3.js";import"./copy-KM4IFqMu.js";import"./createLucideIcon-Zlr8o_Qc.js";import"./download-button-DYrLfnR0.js";import"./loader-circle-BvKtin14.js";import"./download-CNg6ERs9.js";import"./error-banner-DTT8smgf.js";import"./upload-w5Rxedod.js";import"./eraser-BA6fzkmk.js";function J(){const[t,m]=o.useState(!1),[r,p]=o.useState(!1),n=o.useCallback(i=>{if(!i)return"";let s=x(i);return r&&(s=s.map(l=>l.trim())),f(s,t).join(`
-`)},[t,r]);return e.jsx(d,{transform:n,deps:[t,r],sample:`apple
-banana
-Apple
-apple
-banana
-cherry`,downloadName:"deduped.txt",options:e.jsx(c,{label:"选项",children:e.jsxs("div",{className:"flex h-8 items-center gap-3",children:[e.jsxs("label",{className:"flex items-center gap-1.5 text-xs",children:[e.jsx(a,{checked:t,onCheckedChange:m})," ","忽略大小写"]}),e.jsxs("label",{className:"flex items-center gap-1.5 text-xs",children:[e.jsx(a,{checked:r,onCheckedChange:p})," ","比较前修剪"]})]})})})}export{J as default};
