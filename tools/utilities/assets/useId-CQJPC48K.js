@@ -1,1 +1,0 @@
-import{r as u,O as i,b as I,ac as f}from"./toolbox-BAFlSbAu.js";function v(){var r=I({},f);return r.useId}var n=0,s=v();const p=s?(function(e){var t=s();return e||t}):(function(e){var t=u.useState("ssr-id"),a=i(t,2),c=a[0],o=a[1];return u.useEffect(function(){var d=n;n+=1,o("rc_unique_".concat(d))},[]),e||c});export{p as u};

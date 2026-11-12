@@ -1,0 +1,14 @@
+import{u as x,r as R,j as e}from"./toolbox-X2JQkZJS.js";import{F as f}from"./panel-Bb9jn6HH.js";import{T as E}from"./text-tool-CVfCwMif.js";import{S as u}from"./switch-eAQxBvBb.js";import"./product-controls-DKzw6tMZ.js";import"./input-Cj95RvLc.js";import"./index-pWcJ1Cs1.js";import"./ContextIsolator-YulytHJS.js";import"./SearchOutlined-CdtN4l1l.js";import"./textarea-oe737Ggj.js";import"./button-CeEuRYIw.js";import"./index-C21-gvg0.js";import"./useId-Cj6lUCMN.js";import"./copy-button-DO3bAtEE.js";import"./download-CsFYzBl3.js";import"./copy-CY3PqBfC.js";import"./createLucideIcon-DJgYpyeu.js";import"./download-button-B9QZroUH.js";import"./loader-circle-CLChOL1W.js";import"./download-DLltbPP4.js";import"./error-banner-CGlnGBX1.js";import"./upload-_exd0wa4.js";import"./eraser-CTbvRWqk.js";import"./KeyCode-HJ8jGXz0.js";const d=" ";function oe(){const[c,N]=x("tools/text/whitespace-visualizer/ui.tsx:showSpace",!0),[l,S]=x("tools/text/whitespace-visualizer/ui.tsx:showTab",!0),[i,$]=x("tools/text/whitespace-visualizer/ui.tsx:showNewline",!0),[a,k]=x("tools/text/whitespace-visualizer/ui.tsx:showNbsp",!0),L=R.useCallback(s=>{if(!s)return"";const h=(s.match(/\r\n/g)??[]).length,m=(s.match(/(?<!\r)\n/g)??[]).length,p=(s.match(/\r(?!\n)/g)??[]).length,r=[];h>0&&r.push(`CRLF x${h}`),m>0&&r.push(`LF x${m}`),p>0&&r.push(`CR x${p}`);const w=(h>0?1:0)+(m>0?1:0)+(p>0?1:0),v=w===0?"none":w>1?`mixed (${r.join(", ")})`:r[0]??"none",T=s.split(/\r\n|\r|\n/),y=new RegExp(`[ \\t${d}]$`);let g=0;for(const t of T)y.test(t)&&(g+=1);let b=0,j=0,C=0;for(const t of s)t===" "?b+=1:t==="	"?j+=1:t===d&&(C+=1);const z=h+m+p;let n="";for(let t=0;t<s.length;t+=1){const o=s[t]??"";if(o==="\r"){(s[t+1]??"")===`
+`?(n+=i?`␍␊
+`:`\r
+`,t+=1):n+=i?`␍
+`:"\r";continue}if(o===`
+`){n+=i?`¶
+`:`
+`;continue}if(o==="	"){n+=l?"→	":"	";continue}if(o===" "){n+=c?"·":" ";continue}if(o===d){n+=a?"⍽":d;continue}n+=o}const F=["--- Summary ---",`Line endings: ${v}`,`Spaces: ${b}`,`Tabs: ${j}`,`Newlines: ${z}`,`Non-breaking spaces: ${C}`,`Lines with trailing whitespace: ${g}`].join(`
+`);return`${n}
+
+${F}`},[c,l,i,a]);return e.jsx(E,{transform:L,deps:[c,l,i,a],inputLabel:"文本",outputLabel:"可视化",sample:`function  hi() {
+	return  42;   
+}
+trailing spaces above`,downloadName:"whitespace.txt",options:e.jsxs(e.Fragment,{children:[e.jsx(f,{label:"空格（中点）",children:e.jsx("div",{className:"flex h-8 items-center",children:e.jsx(u,{checked:c,onCheckedChange:N})})}),e.jsx(f,{label:"选项卡（箭头）",children:e.jsx("div",{className:"flex h-8 items-center",children:e.jsx(u,{checked:l,onCheckedChange:S})})}),e.jsx(f,{label:"换行符（pilcrow）",children:e.jsx("div",{className:"flex h-8 items-center",children:e.jsx(u,{checked:i,onCheckedChange:$})})}),e.jsx(f,{label:"不间断空格",children:e.jsx("div",{className:"flex h-8 items-center",children:e.jsx(u,{checked:a,onCheckedChange:k})})})]})})}export{oe as default};

@@ -5,8 +5,8 @@
   "deploymentBase": "b975ee9c906cfd931681b3193d19d8d5e25a936b",
   "build": "npm ci && npx vite build --config toolbox.vite.config.mjs",
   "archive": "openutility-source.zip",
-  "archiveBytes": 5932345,
-  "sha256": "f021f28fd7fc648d6da0087eabec8e0b57121f17d698d276af8ecc956688f8b8",
+  "archiveBytes": 5943324,
+  "sha256": "f686241eb6fc3e0bb6967dadb4c04f003db83abda20bfb10c0e68cfcf1368d42",
   "files": [
     {
       "path": ".gitignore",
@@ -70,8 +70,8 @@
     },
     {
       "path": "toolbox-main.tsx",
-      "bytes": 2112,
-      "sha256": "370be6738d69f4d3ff9e1cd156c43acb55a33252afa031d615f39652413904ae"
+      "bytes": 2208,
+      "sha256": "8875ac42d0a6224ceca51b4b2e62ec97e0b307eeadeaac8279dbc478418ce806"
     },
     {
       "path": "toolbox.css",
@@ -240,8 +240,8 @@
     },
     {
       "path": "lib/use-view-state.ts",
-      "bytes": 946,
-      "sha256": "cc042a4efa0cdea42508384345295abd8ad11c38bd762cc748b139aca17e2b3b"
+      "bytes": 1269,
+      "sha256": "e91fdc4433949b65949eb283428bc4b8ca56a2f36970f7135c78c833bd556465"
     },
     {
       "path": "lib/utils.ts",
@@ -250,13 +250,13 @@
     },
     {
       "path": "lib/view-state-storage.mjs",
-      "bytes": 1762,
-      "sha256": "4a410a5535268e637a9ee1d7b3c744a14c86d2e1e6a06d74a659835a0330d342"
+      "bytes": 1987,
+      "sha256": "875386797cce87fd02484ca16f8131a537f703c4ed562bd2036d7c27f8e316eb"
     },
     {
       "path": "lib/view-state-tools.ts",
-      "bytes": 18977,
-      "sha256": "e6068c5249aaab5655351d6bee1c1d95f4372289d17b289dc4f63d76193d929b"
+      "bytes": 18087,
+      "sha256": "2e5f591109df86f474c977307ee729adeb15e1f748a7d25605cecc0ec9331c73"
     },
     {
       "path": "lib/zip.ts",
@@ -310,8 +310,8 @@
     },
     {
       "path": "reports/view-state-inventory.json",
-      "bytes": 704431,
-      "sha256": "61d38504f4e134e62b68d5a5824b013a02e7770b5018c9e4b3c38de33f719cf9"
+      "bytes": 749972,
+      "sha256": "e4dccc61fed2f274d86a482afd9a6254fbae12e5769ac751890132ff13ad3126"
     },
     {
       "path": "rust/Cargo.lock",
@@ -385,8 +385,8 @@
     },
     {
       "path": "scripts/view-state-transform.mjs",
-      "bytes": 4525,
-      "sha256": "1c897e961e357efee021da80435ceb17e4e1ebc5affb72f1e340f7e0f7a3fa52"
+      "bytes": 6421,
+      "sha256": "415e7f064002b16a3a772ad1be2e503edbdc595c7dd1ebf6ad1345a32d0a7790"
     },
     {
       "path": "tests/controls.html",
@@ -410,8 +410,8 @@
     },
     {
       "path": "tests/view-state.test.mjs",
-      "bytes": 1425,
-      "sha256": "03df34923756e6f4aa6c931168563151ed5c43c7ceb81a692d9d940432da99bc"
+      "bytes": 1830,
+      "sha256": "233e5daa39be673156f85ff72c2c40863f91b5ff45b5257a7b8e7f6f1bd0acea"
     },
     {
       "path": "tools/_shared/developer-workbench.tsx",

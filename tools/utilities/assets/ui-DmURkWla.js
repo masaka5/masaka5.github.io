@@ -1,0 +1,21 @@
+import{u as m,r as C,j as o}from"./toolbox-X2JQkZJS.js";import{F as d}from"./panel-Bb9jn6HH.js";import{S as y}from"./switch-eAQxBvBb.js";import{S as k,a as b,b as E,c as N,d as u}from"./select-DBuFm9ly.js";import{T}from"./text-tool-CVfCwMif.js";import"./ContextIsolator-YulytHJS.js";import"./KeyCode-HJ8jGXz0.js";import"./index-xU3b9Pvt.js";import"./useId-Cj6lUCMN.js";import"./SearchOutlined-CdtN4l1l.js";import"./Overflow-gxE4pru3.js";import"./useLocale-JYelGi5A.js";import"./CloseOutlined-CadKeUxe.js";import"./useZIndex-C91e3V47.js";import"./product-controls-DKzw6tMZ.js";import"./input-Cj95RvLc.js";import"./index-pWcJ1Cs1.js";import"./textarea-oe737Ggj.js";import"./button-CeEuRYIw.js";import"./index-C21-gvg0.js";import"./copy-button-DO3bAtEE.js";import"./download-CsFYzBl3.js";import"./copy-CY3PqBfC.js";import"./createLucideIcon-DJgYpyeu.js";import"./download-button-B9QZroUH.js";import"./loader-circle-CLChOL1W.js";import"./download-DLltbPP4.js";import"./error-banner-CGlnGBX1.js";import"./upload-_exd0wa4.js";import"./eraser-CTbvRWqk.js";const S=`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Name</key>
+  <string>Sample App</string>
+  <key>Version</key>
+  <integer>3</integer>
+  <key>Ratio</key>
+  <real>1.5</real>
+  <key>Enabled</key>
+  <true/>
+  <key>Tags</key>
+  <array>
+    <string>fast</string>
+    <string>free</string>
+  </array>
+  <key>Created</key>
+  <date>2024-01-15T08:30:00Z</date>
+</dict>
+</plist>`;function h(e){const i=[];for(let n=0;n<e.childNodes.length;n++){const t=e.childNodes[n];t&&t.nodeType===1&&i.push(t)}return i}function v(e){const i=globalThis.atob,n=e.replace(/\s+/g,""),t=i(n),r=new Uint8Array(t.length);for(let s=0;s<t.length;s++)r[s]=t.charCodeAt(s)&255;return new TextDecoder().decode(r)}function x(e,i){const n=e.tagName.toLowerCase();switch(n){case"dict":{const t=h(e),r={};let s=0;for(;s<t.length;){const l=t[s];if(!l||l.tagName.toLowerCase()!=="key")throw new Error("<dict>期望交替的<key>和值元素。");const a=t[s+1];if(!a)throw new Error(`<key>${l.textContent??""}</key> has no matching value.`);r[l.textContent??""]=x(a,i),s+=2}return r}case"array":return h(e).map(t=>x(t,i));case"string":return e.textContent??"";case"integer":{const t=(e.textContent??"").trim(),r=Number.parseInt(t,10);if(!Number.isFinite(r))throw new Error(`Invalid <integer>: "${t}".`);return r}case"real":{const t=(e.textContent??"").trim(),r=Number.parseFloat(t);if(!Number.isFinite(r))throw new Error(`Invalid <real>: "${t}".`);return r}case"true":return!0;case"false":return!1;case"date":return(e.textContent??"").trim();case"data":{const t=(e.textContent??"").trim();if(i)try{return v(t)}catch{return t}return t}default:throw new Error(`Unsupported plist element <${n}>.`)}}function it(){const[e,i]=m("tools/convert/plist-to-json/ui.tsx:pretty",!0),[n,t]=m("tools/convert/plist-to-json/ui.tsx:decodeData",!1),[r,s]=m("tools/convert/plist-to-json/ui.tsx:indent","2",["2","4","tab"]),l=C.useCallback(a=>{if(!a.trim())return"";const w=new DOMParser().parseFromString(a,"application/xml"),f=w.querySelector("parsererror");if(f)throw new Error("Invalid XML: "+(f.textContent??"parse error").trim());const c=w.documentElement;if(!c)throw new Error("空文档。");let p;if(c.tagName.toLowerCase()==="plist"?p=h(c)[0]:p=c,!p)throw new Error("在<plist>内找不到值元素。");const g=x(p,n);if(!e)return JSON.stringify(g);const j=r==="tab"?"	":Number(r);return JSON.stringify(g,null,j)},[e,n,r]);return o.jsx(T,{transform:l,deps:[e,n,r],inputLabel:"XML plist",outputLabel:"JSON",inputPlaceholder:"<plist><dict>...</dict></plist>",sample:S,downloadName:"plist.json",downloadMime:"application/json",options:o.jsxs(o.Fragment,{children:[o.jsxs(d,{label:"输出",children:[o.jsx(y,{checked:e,onCheckedChange:i}),o.jsx("span",{className:"text-2xs text-muted-foreground",children:e?"漂亮":"缩小化"})]}),e&&o.jsx(d,{label:"缩进",children:o.jsxs(k,{value:r,onValueChange:a=>s(a),children:[o.jsx(b,{className:"w-[120px]",children:o.jsx(E,{})}),o.jsxs(N,{children:[o.jsx(u,{value:"2",children:"2 个空格"}),o.jsx(u,{value:"4",children:"4 个空格"}),o.jsx(u,{value:"tab",children:"标签"})]})]})}),o.jsx(d,{label:"解码<数据>",hint:"Base64 -> UTF-8 文本",children:o.jsx(y,{checked:n,onCheckedChange:t})})]})})}export{it as default};
