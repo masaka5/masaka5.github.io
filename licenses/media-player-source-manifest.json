@@ -1,7 +1,7 @@
 {
   "sourceArchive": "media-player-source.zip",
-  "archiveBytes": 45487,
-  "archiveSha256": "9bbe0fc6f9a3b428fc58bddf228ce1b6dd962bd670d61626bc182f9c6f25bf60",
+  "archiveBytes": 51603,
+  "archiveSha256": "35ca6d0a072dfeac2fbe13aaa2ce6985bb586f88404da66b75bd24f0f7ac5b10",
   "files": [
     {
       "path": "_scratch/media-player-integration/LICENSE",
@@ -10,8 +10,8 @@
     },
     {
       "path": "_scratch/media-player-integration/README.md",
-      "bytes": 3436,
-      "sha256": "a35d3bfd9f38a43601d99d27941cea1702e0560beb6882252d94ea231db470a5"
+      "bytes": 4237,
+      "sha256": "3b00ceaa60760831931423cd4ccb1042b0e1713a405f743cf90d1c091d6f4184"
     },
     {
       "path": "_scratch/media-player-integration/build.mjs",
@@ -30,8 +30,8 @@
     },
     {
       "path": "_scratch/media-player-integration/package-source.py",
-      "bytes": 4277,
-      "sha256": "ab7d8c35ec004faf7425f62dda86794ff1f99a9c296541d0c181bd3aa502b938"
+      "bytes": 4313,
+      "sha256": "b79484f04f68971523394bad40c15f2134ad4bddf5532654e16f1d15d9bbede8"
     },
     {
       "path": "_scratch/media-player-integration/package.json",
@@ -40,13 +40,13 @@
     },
     {
       "path": "_scratch/media-player-integration/src/cache.mjs",
-      "bytes": 975,
-      "sha256": "b6700536bd1cc80c5d46f9a2d4c90367749e06bd489617eb32fd3ac5e79cd360"
+      "bytes": 3089,
+      "sha256": "af1a6be96b450fa3a49f3470120d2a2d33d68dec761510613d980acacdd09cab"
     },
     {
       "path": "_scratch/media-player-integration/src/core.mjs",
-      "bytes": 2240,
-      "sha256": "9663406dae49857a3ae94a090b00140e0c58e1e02cadaeb38cace72ecff70779"
+      "bytes": 4450,
+      "sha256": "9c3d3cfb832d3388e578fdd85b3210d6ec76f8849f35c679f649d8bdbc297e7e"
     },
     {
       "path": "_scratch/media-player-integration/src/engine.mjs",
@@ -55,8 +55,8 @@
     },
     {
       "path": "_scratch/media-player-integration/src/main.jsx",
-      "bytes": 18250,
-      "sha256": "3ff5d87c1aedfb8ffe8a3d290329591b4424753187cd5991cb861d42ff9aac8a"
+      "bytes": 18456,
+      "sha256": "f8f2922e704c2bdcd126f7464fe4f200140b8c5b2b43714104b5a64e4c89df5b"
     },
     {
       "path": "_scratch/media-player-integration/src/style.css",
@@ -64,9 +64,14 @@
       "sha256": "e898428d84bca541dd9ba16e72f6cd2e7ac715b9ec2f9d070d9c2facf57b5196"
     },
     {
+      "path": "_scratch/media-player-integration/test/artifacts/cache-review-results.json",
+      "bytes": 416,
+      "sha256": "d0f440976ce79ff38593ed65461ebdec5d1bf09656d8833c3bdf790ef696fdfe"
+    },
+    {
       "path": "_scratch/media-player-integration/test/artifacts/results.json",
       "bytes": 6977,
-      "sha256": "e65974ed1c2839daa025035d2bafd6ec7461c0b2939d554c19823a3cd16bfb33"
+      "sha256": "4c350767ed072adf44516446cbe466eaada8a2023a23e7fab46690bbcc32e89c"
     },
     {
       "path": "_scratch/media-player-integration/test/browser.py",
@@ -79,9 +84,14 @@
       "sha256": "6df912973b33e08fba6ca180b1404c113f2e0258b2bd815d31d483784016af25"
     },
     {
+      "path": "_scratch/media-player-integration/test/cache-browser.py",
+      "bytes": 8634,
+      "sha256": "fcd60dc141074caf6691f32469e5af8932b81f4a0266de8667ca87e74ec98af0"
+    },
+    {
       "path": "_scratch/media-player-integration/test/core.test.mjs",
-      "bytes": 2160,
-      "sha256": "1cd65082e317e211064e9d05dafb810af7f247bf252e5f3ccbe9ebf289049996"
+      "bytes": 3703,
+      "sha256": "b11b0013c4e82718478bd27fb734234505c0e8fde3d223d4b071a93c30c24b29"
     },
     {
       "path": "_scratch/media-player-integration/test/harness.mjs",
@@ -116,7 +126,7 @@
     {
       "path": "toolbox-site/tools/media-player/manifest.json",
       "bytes": 1220,
-      "sha256": "26201ebfca638faf89d1d623d26be7a553871cc91179479d267e21ba5ed9708e"
+      "sha256": "3a6bd54fe68e9e475af2a20a4c2a651755a9f79d8f953ce409fcfd5505c9f245"
     }
   ],
   "sharedRuntime": [
