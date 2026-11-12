@@ -5,7 +5,7 @@
   "license": "AGPL-3.0",
   "modified": true,
   "archive": "localconvert-source.zip",
-  "sha256": "68fc1e88efc327b7f3a53cf660fe236c07b515decf35004471eebd5aa2a2335b",
+  "sha256": "677661dd396a2d796d55c4e9373c246270e426cc4490e85955517cd79bcf3137",
   "files": [
     {
       "path": ".dockerignore",
@@ -299,8 +299,8 @@
     },
     {
       "path": "scripts/package-toolbox.py",
-      "bytes": 3938,
-      "sha256": "1dc2d3c33ce15e0f6d342cc7582ed85e30e425e0312a191c4c73a3db1edcf498"
+      "bytes": 4138,
+      "sha256": "7058b151c236a990cc32aa38cd36d536b75e733a1cf67e0bfb8d14b41ca06a5c"
     },
     {
       "path": "scripts/patch-paraglide.cjs",
@@ -949,8 +949,13 @@
     },
     {
       "path": "src/lib/store/index.svelte.ts",
-      "bytes": 16821,
-      "sha256": "50f4c82fd6199079927756cac76a9875047688c1e7d1e8e55acbbdf6f151e51b"
+      "bytes": 17124,
+      "sha256": "530fb589b64f4e00ab57217eedee0dd5254b46e0b2f2317d5688032670cdaa4d"
+    },
+    {
+      "path": "src/lib/store/recovery.ts",
+      "bytes": 8041,
+      "sha256": "642940c6026cb3f3304f3c739728f8bbb9b9e75d6999f8e601b935ca4915a8c0"
     },
     {
       "path": "src/lib/types/conversion-worker.ts",
@@ -959,8 +964,8 @@
     },
     {
       "path": "src/lib/types/file.svelte.ts",
-      "bytes": 9906,
-      "sha256": "8f208230793e2ca9f1a65bdb7407a56e6e364670b7317474abad5331f9b43092"
+      "bytes": 10399,
+      "sha256": "69c7abb906f48a0b5440fdfd441525b32f9beb92d4f9b846cd46d0e251f2c644"
     },
     {
       "path": "src/lib/types/index.ts",
@@ -1094,8 +1099,8 @@
     },
     {
       "path": "src/routes/convert/+page.svelte",
-      "bytes": 22033,
-      "sha256": "3cf233b56e9a8eeb283d4ceeda31cbfe60382754aba05514b06f5838b5d573b2"
+      "bytes": 22099,
+      "sha256": "b340f5fab0bdb69057a4d23a1b39a93118a9cb003cbcb88268b1a8be5e3f533b"
     },
     {
       "path": "src/routes/dev-tools/+page.svelte",
@@ -1124,8 +1129,8 @@
     },
     {
       "path": "src/routes/dev-tools/json/+page.svelte",
-      "bytes": 5565,
-      "sha256": "9781fe6804e35956840cf531055a8ea2ef2bb82638b395a68ba089a6d1b9c460"
+      "bytes": 6159,
+      "sha256": "a3b2f54d71c3cc41a2a4f45f43b6b2711e08582108e24104abbee27572ae0d16"
     },
     {
       "path": "src/routes/dev-tools/markdown/+page.svelte",
@@ -2258,6 +2263,11 @@
       "sha256": "ddb765c9b9bd39f9f341efadc6f70a4d772982b31bf7e23d55275daa740a073f"
     },
     {
+      "path": "toolbox-message-namespace.ts",
+      "bytes": 129,
+      "sha256": "603095d31c683e155f95b9fcb9087e1e1c34b3d01ec7b8a5cfa83f811857ceeb"
+    },
+    {
       "path": "toolbox-navigation.ts",
       "bytes": 935,
       "sha256": "f80c555dce0d3ae7f3187078124329e43c6bb22984a58ed5cf5ef74cc87e0698"
@@ -2289,13 +2299,13 @@
     },
     {
       "path": "Toolbox.svelte",
-      "bytes": 1945,
-      "sha256": "e02bc1712e9dec643f82944b47fcc161f7a0531123998776f42dd78c5a5d8bcc"
+      "bytes": 3457,
+      "sha256": "cd88795311897d6e232ea3db63010912ed73ec7cbfec4da50d4440cc756016b4"
     },
     {
       "path": "toolbox.vite.config.ts",
-      "bytes": 2970,
-      "sha256": "a3d0833db828d7ce9f1ccfb0841aaecb52720a42cc236a8abb81e23c03e5a7da"
+      "bytes": 3055,
+      "sha256": "7445e31ccefc7bc6f90c850f691b881cef129a07a1bcea5d9d4d57498e01ce6e"
     },
     {
       "path": "tsconfig.json",
