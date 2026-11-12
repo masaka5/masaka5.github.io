@@ -1,0 +1,70 @@
+{
+  "bytes": 99676,
+  "sha256": "06afd9e065cdb802b8abcfb703902d02fc1d42ea48b4bc690a01964e89bfc7cb",
+  "files": {
+    "package.json": {
+      "bytes": 325,
+      "sha256": "5f7ef79f729430bdd11ba250bc9eae5eda44c8cdc726c1d2542e2339f29c8749"
+    },
+    "package-lock.json": {
+      "bytes": 52366,
+      "sha256": "f9f90fad8fcec545e0808a8da29c33a927f9114316dc091d47eca7a5890312f4"
+    },
+    "build.mjs": {
+      "bytes": 3188,
+      "sha256": "706280bfa086ac3fd6d72b92a310972552131da9a869c80e6cc9a7d0108b8374"
+    },
+    "package-source.py": {
+      "bytes": 931,
+      "sha256": "eb7a4ead63634d19866d9ba798512e719c7fd198c6e69330a15caff8f118f9f0"
+    },
+    "index.html": {
+      "bytes": 325,
+      "sha256": "75d2bd4fda79c50bc76d3d5c83f381ff1855cc07bc7e38ea3b0c613dea7864d2"
+    },
+    "LICENSE": {
+      "bytes": 1077,
+      "sha256": "f061e13bc75d57c69c302840ca040d863b972dff1e7513bcd01ad28bf6e1be6b"
+    },
+    "README.md": {
+      "bytes": 2777,
+      "sha256": "d7507ba7ee18efd750486336d29564db59e8cdd93aac63bc63fe570c23d3393a"
+    },
+    "src/client.js": {
+      "bytes": 1085,
+      "sha256": "e74c6080e4b536eccb109ff91ebcd218e0335b258216cd64229766d620f4bf5f"
+    },
+    "src/engine.js": {
+      "bytes": 3805,
+      "sha256": "3af8cfe9d457b653903b7e3ce5cf9c2dd0c82431b6b66c7a02ba1e0f83fe1e0a"
+    },
+    "src/main.jsx": {
+      "bytes": 15916,
+      "sha256": "ad8055eca07db15e751cab28e200b9d6a71688989b557ab110678b9f7701c7e4"
+    },
+    "src/storage.js": {
+      "bytes": 944,
+      "sha256": "b88ff8d1d6a3b5e2cdfdb0bd6ad96e3aeaf60bbcc382ac9095013f4869a04a70"
+    },
+    "src/style.css": {
+      "bytes": 4341,
+      "sha256": "e30bba2b67ad56409f451baac16b08bf97f85818baa382b453a658151c2f3858"
+    },
+    "src/worker.js": {
+      "bytes": 502,
+      "sha256": "c64c6c6934d34f9f7e77208feebf0ea7cec0793d077f71a25fcb5bb9e5f12a27"
+    },
+    "notices/@ant-design_icons-svg.txt": {
+      "bytes": 1099,
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70"
+    },
+    "notices/toggle-selection.txt": {
+      "bytes": 1090,
+      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d"
+    },
+    "tests/browser.py": {
+      "bytes": 13481,
+      "sha256": "e7706112bd1699f6ca70d0841cc0fc1e00671af98ce6e3e20bda726f10aac8f9"
+    }
+  }
+}
