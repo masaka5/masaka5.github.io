@@ -8,8 +8,8 @@
     },
     {
       "file": "assets/app.js",
-      "bytes": 1208188,
-      "sha256": "b2d77115fdd72cc3e69ecc5a498aca652b621a474fa646391e6bc7f8827521d9"
+      "bytes": 1209149,
+      "sha256": "72b6d9c2f9445d260924519895603d90a68e846a31b7c60bd1f790c1e88fdc9c"
     },
     {
       "file": "assets/ffmpeg-worker.js",
