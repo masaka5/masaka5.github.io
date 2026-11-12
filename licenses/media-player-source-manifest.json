@@ -1,0 +1,136 @@
+{
+  "sourceArchive": "media-player-source.zip",
+  "archiveBytes": 45487,
+  "archiveSha256": "9bbe0fc6f9a3b428fc58bddf228ce1b6dd962bd670d61626bc182f9c6f25bf60",
+  "files": [
+    {
+      "path": "_scratch/media-player-integration/LICENSE",
+      "bytes": 1087,
+      "sha256": "e5a670f2c38006748659146d5279dcf30f106d1f82ba3b1d4eb23be3827818fb"
+    },
+    {
+      "path": "_scratch/media-player-integration/README.md",
+      "bytes": 3436,
+      "sha256": "a35d3bfd9f38a43601d99d27941cea1702e0560beb6882252d94ea231db470a5"
+    },
+    {
+      "path": "_scratch/media-player-integration/build.mjs",
+      "bytes": 737,
+      "sha256": "4eb4e46197f57f44a9a173fa356dcc8f44ad2ea22771af48c4c937707981e477"
+    },
+    {
+      "path": "_scratch/media-player-integration/index.html",
+      "bytes": 350,
+      "sha256": "db75da4206f3faabbe904f0a55b1c28307ffc23e5f68fcbfb4816593839d41c0"
+    },
+    {
+      "path": "_scratch/media-player-integration/package-lock.json",
+      "bytes": 52791,
+      "sha256": "0f3c69e1fd54cd594ace9dada269a374e0f826942955912db132f58fea502702"
+    },
+    {
+      "path": "_scratch/media-player-integration/package-source.py",
+      "bytes": 4277,
+      "sha256": "ab7d8c35ec004faf7425f62dda86794ff1f99a9c296541d0c181bd3aa502b938"
+    },
+    {
+      "path": "_scratch/media-player-integration/package.json",
+      "bytes": 319,
+      "sha256": "b8f6f1bf0f94e02df02f0f131e842b4040e5f6ef39b86da236cf89bee623c6e3"
+    },
+    {
+      "path": "_scratch/media-player-integration/src/cache.mjs",
+      "bytes": 975,
+      "sha256": "b6700536bd1cc80c5d46f9a2d4c90367749e06bd489617eb32fd3ac5e79cd360"
+    },
+    {
+      "path": "_scratch/media-player-integration/src/core.mjs",
+      "bytes": 2240,
+      "sha256": "9663406dae49857a3ae94a090b00140e0c58e1e02cadaeb38cace72ecff70779"
+    },
+    {
+      "path": "_scratch/media-player-integration/src/engine.mjs",
+      "bytes": 2551,
+      "sha256": "8712e617aeb6e4aed64975ae886c1006541c02c44657565a9ea8c940c6b38fb9"
+    },
+    {
+      "path": "_scratch/media-player-integration/src/main.jsx",
+      "bytes": 18250,
+      "sha256": "3ff5d87c1aedfb8ffe8a3d290329591b4424753187cd5991cb861d42ff9aac8a"
+    },
+    {
+      "path": "_scratch/media-player-integration/src/style.css",
+      "bytes": 6015,
+      "sha256": "e898428d84bca541dd9ba16e72f6cd2e7ac715b9ec2f9d070d9c2facf57b5196"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/artifacts/results.json",
+      "bytes": 6977,
+      "sha256": "e65974ed1c2839daa025035d2bafd6ec7461c0b2939d554c19823a3cd16bfb33"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/browser.py",
+      "bytes": 10030,
+      "sha256": "12857f2ce56add037413b06963fd68344bd69bdf0df3081bf0514bfb3d3042af"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/build-harness.mjs",
+      "bytes": 139,
+      "sha256": "6df912973b33e08fba6ca180b1404c113f2e0258b2bd815d31d483784016af25"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/core.test.mjs",
+      "bytes": 2160,
+      "sha256": "1cd65082e317e211064e9d05dafb810af7f247bf252e5f3ccbe9ebf289049996"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/harness.mjs",
+      "bytes": 1984,
+      "sha256": "e4808b0a34776ce1f55297885a66054d789ae1a3fc0ac37181a732e30fa1e848"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/probe-debug.py",
+      "bytes": 434,
+      "sha256": "291b930a7ca6054650c88600e2eb5985d8cbc0043fd204a68dc6c7998ecba22c"
+    },
+    {
+      "path": "toolbox-site/licenses/media-player/THIRD-PARTY-NOTICES.txt",
+      "bytes": 80733,
+      "sha256": "469af73a72e9afd9e29d7b67a187db0747369fa971b5e1e6dc49b5f3e6e2c77c"
+    },
+    {
+      "path": "toolbox-site/licenses/media-player/dependencies.json",
+      "bytes": 17697,
+      "sha256": "127cbc759d15c3868d10ae05e99925c7260f823ddf309d8167dc88d4d9c229a6"
+    },
+    {
+      "path": "toolbox-site/licenses/media-player/integration-MIT.txt",
+      "bytes": 1087,
+      "sha256": "e5a670f2c38006748659146d5279dcf30f106d1f82ba3b1d4eb23be3827818fb"
+    },
+    {
+      "path": "toolbox-site/licenses/media-player/source-entry.json",
+      "bytes": 783,
+      "sha256": "0b9c419ebcf92c4e9670ba2621b564480238c14a59b006abcede25532f4a97c6"
+    },
+    {
+      "path": "toolbox-site/tools/media-player/manifest.json",
+      "bytes": 1220,
+      "sha256": "26201ebfca638faf89d1d623d26be7a553871cc91179479d267e21ba5ed9708e"
+    }
+  ],
+  "sharedRuntime": [
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.js",
+      "bytes": 111804,
+      "sha256": "67a48f11645f85439f3fde4f2119042c16b374b910206b7a7a24f342e28dcae3",
+      "package": "@ffmpeg/core@0.12.9"
+    },
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.wasm",
+      "bytes": 32232419,
+      "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7",
+      "package": "@ffmpeg/core@0.12.9"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "product": "媒体播放器",
+  "engine": "native HTMLMediaElement + shared FFmpeg WASM (not libVLC)",
+  "files": [
+    {
+      "file": "assets/app.css",
+      "bytes": 5991,
+      "sha256": "491133179c18f9c14a9abd306fce1e4c67d9bc7d658528590e41da2162939cb3"
+    },
+    {
+      "file": "assets/app.js",
+      "bytes": 723458,
+      "sha256": "7e549e6d6939b246655efa274b57da06a835faedf760ef678d0803306d99cc6a"
+    },
+    {
+      "file": "assets/ffmpeg-worker.js",
+      "bytes": 2511,
+      "sha256": "16370a642e2bd09cc877ad9c5b6684c5518f52a0cc6fddcc33ce595ceb6f148f"
+    },
+    {
+      "file": "index.html",
+      "bytes": 350,
+      "sha256": "db75da4206f3faabbe904f0a55b1c28307ffc23e5f68fcbfb4816593839d41c0"
+    }
+  ],
+  "shared": [
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.js",
+      "bytes": 111804,
+      "sha256": "67a48f11645f85439f3fde4f2119042c16b374b910206b7a7a24f342e28dcae3",
+      "package": "@ffmpeg/core@0.12.9"
+    },
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.wasm",
+      "bytes": 32232419,
+      "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7",
+      "package": "@ffmpeg/core@0.12.9"
+    }
+  ]
+}
