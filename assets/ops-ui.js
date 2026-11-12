@@ -19,7 +19,7 @@ const Ops=(()=>{
     function render(){size=Math.max(1,Math.floor(list.clientHeight/rowHeight));const count=Math.max(1,Math.ceil(entries.length/size));page=Math.max(0,Math.min(page,count-1));list.replaceChildren();if(!entries.length)list.append(node('p','empty','暂无结果'));else entries.slice(page*size,(page+1)*size).forEach(item=>list.append(draw(item)));label.textContent=`${page+1} / ${count}`;previous.disabled=page===0;next.disabled=page===count-1;controls.dataset.single=String(count===1);}
     function rememberPage(){if(!list.id||signature===null)return;const state=readState();saveState({...state,pagers:{...state.pagers,[list.id]:{signature,page}}});}
     previous.addEventListener('click',()=>{page--;render();rememberPage();});next.addEventListener('click',()=>{page++;render();rememberPage();});new ResizeObserver(render).observe(list);
-    return {set(items){entries=items;const state=readState(),fields={...state};delete fields.pagers;const nextSignature=JSON.stringify(fields);page=signature===null&&saved?.signature===nextSignature&&Number.isSafeInteger(saved.page)&&saved.page>=0?saved.page:0;signature=nextSignature;render();rememberPage();},refresh:render};
+    return {set(items){entries=items;const state=readState(),fields={...state};delete fields.pagers;delete fields.view;const nextSignature=JSON.stringify(fields);page=signature===null&&saved?.signature===nextSignature&&Number.isSafeInteger(saved.page)&&saved.page>=0?saved.page:0;signature=nextSignature;render();rememberPage();},refresh:render};
   }
   document.querySelectorAll('[data-view-target]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.viewTarget)));
   const savedView=readState().view;if(savedView)show(savedView);
