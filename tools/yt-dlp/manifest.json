@@ -1,0 +1,45 @@
+{
+  "yt_dlp": "2026.10.26",
+  "files": [
+    {
+      "file": "assets/app.css",
+      "bytes": 2608,
+      "sha256": "27d64d9b8a6cb07170fb2ab1c2820843bf02fbe26ba0d37705ab427965e14c49"
+    },
+    {
+      "file": "assets/app.js",
+      "bytes": 1208188,
+      "sha256": "b2d77115fdd72cc3e69ecc5a498aca652b621a474fa646391e6bc7f8827521d9"
+    },
+    {
+      "file": "assets/ffmpeg-worker.js",
+      "bytes": 2511,
+      "sha256": "16370a642e2bd09cc877ad9c5b6684c5518f52a0cc6fddcc33ce595ceb6f148f"
+    },
+    {
+      "file": "browser-network.mjs",
+      "bytes": 1021,
+      "sha256": "5a389851940694b5fadedb86f7a6a27607b12e7a16663da6b733b3614653ef3c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 412,
+      "sha256": "3520de101e13fb8cb241bd5ebbe670734e6928a3e4bad61afd4108c2dad6002e"
+    },
+    {
+      "file": "network.py",
+      "bytes": 4298,
+      "sha256": "f31413c619462bbae32deba3b6519ad824a445e3fa76664d6a5f98480c854ecf"
+    },
+    {
+      "file": "runtime/yt_dlp-2026.10.26.whl",
+      "bytes": 3186201,
+      "sha256": "a05c5b5d8562f7e8a62f5334348b406af4930d56d3a65f8021d14af0e22339ae"
+    },
+    {
+      "file": "worker.js",
+      "bytes": 3980,
+      "sha256": "9615fcbaa39c15e918075fc05f18c4f5b4e4ea8a025916d644445ea85b481385"
+    }
+  ]
+}

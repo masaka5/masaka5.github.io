@@ -1,0 +1,162 @@
+{
+  "sourceArchive": "yt-dlp-source.zip",
+  "archiveBytes": 57867,
+  "archiveSha256": "498f383e6fb7d6368e2f7555480e0e038ba468a4a8a6e05c1ecfae735481ba04",
+  "files": [
+    {
+      "path": "_scratch/yt-dlp-integration/build.mjs",
+      "bytes": 1626,
+      "sha256": "ef5be143ed37e1158048030c6c98957112e0b7f36920e17665f648d516aabbb6"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/index.html",
+      "bytes": 412,
+      "sha256": "3520de101e13fb8cb241bd5ebbe670734e6928a3e4bad61afd4108c2dad6002e"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/package-lock.json",
+      "bytes": 52779,
+      "sha256": "f4075a493c1ae611ec07c79000617a1fed780a56d9a6ea1a63d51b8b2d9af2d2"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/package.json",
+      "bytes": 313,
+      "sha256": "b214550e122fcd8a9ba50460b18458c1c641a015b3d89f89788afd6547f931c1"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/README.md",
+      "bytes": 2290,
+      "sha256": "4a6dd168d327d05d261887784f6c6ed89dca94d0cc36bfe7c263e6ffb0dd40d5"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/App.jsx",
+      "bytes": 25451,
+      "sha256": "93e2f1ead5d2279a4cb3b50ea63acff4fa8239c7b19676e75dee78bb33417850"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/browser-network.mjs",
+      "bytes": 1021,
+      "sha256": "5a389851940694b5fadedb86f7a6a27607b12e7a16663da6b733b3614653ef3c"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/core.mjs",
+      "bytes": 4353,
+      "sha256": "0bb83069b0103c7508cab937618f74f45f32c178d28425723f3dcbb4e34c536f"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/download.mjs",
+      "bytes": 6055,
+      "sha256": "7e1cf924f68c2b79103710882b5d4efb57503ef459b45acca59719053e3949a2"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/ffmpeg.mjs",
+      "bytes": 2048,
+      "sha256": "15897f2349427c6edef2d4d14f73c31e7d92c9a60dfeddb383b2e73b7fd62214"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/main.jsx",
+      "bytes": 177,
+      "sha256": "7a710d1f4aa00530d2861cea823f184181dcba731d0ebff50beed075eeca99fa"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/network.py",
+      "bytes": 4298,
+      "sha256": "f31413c619462bbae32deba3b6519ad824a445e3fa76664d6a5f98480c854ecf"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/segments.mjs",
+      "bytes": 3523,
+      "sha256": "b527fd7b687583dd77561b83cf8ff7af58baf286c865bd680018c9d4cc7b69e2"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/Settings.jsx",
+      "bytes": 4046,
+      "sha256": "1a690b80a3d654f8a5314002f6c3794c7fce7d2b57edfb86dceffac25b9072f9"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/storage.mjs",
+      "bytes": 2799,
+      "sha256": "9f8f4c5b46b37a5c570d81ac15cd1141abfb19bbea01d2f3dfebe97000d5d730"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/style.css",
+      "bytes": 2608,
+      "sha256": "27d64d9b8a6cb07170fb2ab1c2820843bf02fbe26ba0d37705ab427965e14c49"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/view-state.mjs",
+      "bytes": 1568,
+      "sha256": "7012bbd421c5a879fbd2509e31c7873b2983aa763a96e14f0837e14b36491088"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/worker.js",
+      "bytes": 3980,
+      "sha256": "9615fcbaa39c15e918075fc05f18c4f5b4e4ea8a025916d644445ea85b481385"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/test/core.test.mjs",
+      "bytes": 2306,
+      "sha256": "54501d7c80291730cdd3911d2399d65d7ea9b6c37c9cd25d7a613f267c08cbf1"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/test/segments.test.mjs",
+      "bytes": 2044,
+      "sha256": "cfd04fc3bc50ce59e6376bf94890761fd6253aabb29ef0bbe99b2a19ff98579d"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/test/view-state.test.mjs",
+      "bytes": 1040,
+      "sha256": "81d6bed149daed4b03391a311719eb9c28958259a48d95841fc456893b7032f1"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-browser.py",
+      "bytes": 4256,
+      "sha256": "de3afe638bcff7a433d4b239d3ea9776679060032891b1532bf709930e09b6ec"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-ffmpeg.py",
+      "bytes": 1407,
+      "sha256": "720c51b87467b5aa197ce8b4c7a8e2b4d16f3efb65196b7af402ab912ef3bae5"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-layout.py",
+      "bytes": 1589,
+      "sha256": "a7c33629795f189893f4b88cafba9bef7f5fd555df3b7eb831d2898b3596ff93"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-public.py",
+      "bytes": 1470,
+      "sha256": "d499658568520d3fe2aa801582132e9c171c3517c4a2692cb7c5edc53d74205e"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-transfers.py",
+      "bytes": 6494,
+      "sha256": "271ea5439af0d7201c08589726addaf381256fb611a6f7f7b5a3d756bde1bc9b"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-wasm-feasibility.py",
+      "bytes": 4228,
+      "sha256": "2fbe125db6c81fa98954fe3ca25ff2c9b5046bb654742425771cd86c9be4d783"
+    },
+    {
+      "path": "_scratch/ops-tests/yt-dlp-worker-retry.py",
+      "bytes": 1696,
+      "sha256": "382be32df987252afde75650d1cc9b2de82d3723e8898031b62a93483deb9caa"
+    },
+    {
+      "path": "_scratch/package-yt-dlp.py",
+      "bytes": 3371,
+      "sha256": "8827db4d9c7e6b6e9d85d3ed142b65d2ae7e1a7ff6b796188bc2647f3f431981"
+    },
+    {
+      "path": "toolbox-site/licenses/yt-dlp/THIRD-PARTY-NOTICES.txt",
+      "bytes": 79096,
+      "sha256": "3e393c1cefaaa9fade110b1d575f30559326dc2377a5520cf715f082c076b0c7"
+    },
+    {
+      "path": "toolbox-site/licenses/yt-dlp/yt-dlp-LICENSE.txt",
+      "bytes": 1211,
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    }
+  ]
+}
