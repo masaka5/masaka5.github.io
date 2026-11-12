@@ -1,7 +1,7 @@
 {
   "sourceArchive": "yt-dlp-source.zip",
-  "archiveBytes": 60219,
-  "archiveSha256": "f5540c3d1cac70bda02522de9db82e8be26ef7afdcac193a55796a4f74c0cc5b",
+  "archiveBytes": 60498,
+  "archiveSha256": "77b073b5018306cbd479b30f28d9eb6df774d8e94264d60983d403d49292aa42",
   "files": [
     {
       "path": "_scratch/yt-dlp-integration/build.mjs",
@@ -80,8 +80,8 @@
     },
     {
       "path": "_scratch/yt-dlp-integration/src/storage.mjs",
-      "bytes": 3326,
-      "sha256": "17aa7e46bf57232f999b4a2d699a01053ffd9fd8ec16b68fe27c705c064330c3"
+      "bytes": 3432,
+      "sha256": "d4a021b321bfa85ed06ccba1c41147bba71a02ef5438af10924ad4920f711673"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/style.css",
@@ -125,8 +125,8 @@
     },
     {
       "path": "_scratch/ops-tests/yt-dlp-cache-headers.py",
-      "bytes": 1743,
-      "sha256": "f29a4a3ae04ec3da1602cfb19b97274a1b7ffd144bd3e93eb46858b7b79b9c5a"
+      "bytes": 2382,
+      "sha256": "7eaa799bc715e12f420e1ca41cbf1eaa9d7545d3f8adde04e6f31c76dd6f61b4"
     },
     {
       "path": "_scratch/ops-tests/yt-dlp-ffmpeg.py",
