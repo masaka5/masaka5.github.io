@@ -16,7 +16,7 @@ html:root {
   --radius-control: 7px;
   --font-ui: "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
   --font-code: Consolas, "Cascadia Code", "Microsoft YaHei", monospace;
-  --control-height: 34px;
+  --control-height: 36px;
   --focus-ring: #315fc92e;
 }
 
@@ -108,4 +108,8 @@ html body .status[data-tone="error"] {
   html body .ops-shell :is(.record p,.record h3,.net-table td,.network-tabs button,.filter-tabs button) {font-size:14px}
   html body .ops-shell .result-item dd {font-size:16px}
   html body .tool-shell :is(select,button) {font-size:14px;min-height:38px}
+  html body .studio-shell :is(input,select,textarea) {font-size:14px}
+  html body .studio-shell :is(.primary,.secondary,.section-tabs button) {font-size:14px;min-height:38px}
+  html body .studio-shell :is(.field>span,.field>label,.check,.inline-note,.provider-list label,.dns-card h3) {font-size:13px}
+  html body .studio-shell :is(.status,.help,.kv span,.dns-meta,.scan-history p,.record-entry span) {font-size:12px}
 }

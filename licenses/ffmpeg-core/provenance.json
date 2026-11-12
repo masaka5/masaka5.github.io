@@ -1,0 +1,22 @@
+{
+  "package": "@ffmpeg/core",
+  "version": "0.12.9",
+  "upstream": "https://github.com/ffmpegwasm/ffmpeg.wasm",
+  "tag": "v0.12.9",
+  "commit": "e6988f4a1a4acc5e9ff9b2edc7e34479d012ffec",
+  "build": "make prd (single-thread, emscripten3.1.40); upstream recipe FFmpeg n5.1.4 and dependencies",
+  "build_source": "build-source.zip",
+  "runtime": [
+    {
+      "file": "ffmpeg-core.js",
+      "bytes": 111804,
+      "sha256": "67a48f11645f85439f3fde4f2119042c16b374b910206b7a7a24f342e28dcae3"
+    },
+    {
+      "file": "ffmpeg-core.wasm",
+      "bytes": 32232419,
+      "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7"
+    }
+  ],
+  "archive_sha256": "8993810878e3c4f8eacb406542a55d4df63907380b637460d692cfa04aeda9b1"
+}

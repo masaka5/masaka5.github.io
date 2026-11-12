@@ -90,4 +90,14 @@
  $('saveQuick').onclick=handled(()=>saveSnapshot(),'snapshotStatus');$('saveSnapshot').onclick=handled(()=>saveSnapshot(),'snapshotStatus');$('exportState').onclick=handled(()=>saveSnapshot(true),'snapshotStatus');$('restoreSnapshot').onclick=handled(async()=>restore(await VMStore.get('snapshot:'+active.id)),'snapshotStatus');$('importState').onclick=()=>$('stateFile').click();$('stateFile').onchange=handled(async()=>{const file=$('stateFile').files[0];if(file)await restore(file);$('stateFile').value='';},'snapshotStatus');$('deleteSnapshot').onclick=handled(async()=>{if(!await confirmation('删除本机快照？','仅删除此虚拟机保存的快照，不影响正在运行的系统和其他工具。'))return;await VMStore.remove('snapshot:'+active.id);await VMStore.remove('snapshot-info:'+active.id);await snapshotLabel();setStatus('快照已删除',false,'snapshotStatus');},'snapshotStatus');$('memoryDump').onclick=handled(()=>exclusive(vm=>{if(isQemu(active)){if(typeof vm.memory_dump!=='function')throw Error('当前 QEMU 引擎不支持内存转储');return Promise.resolve(vm.memory_dump()).then(memory=>download(memory,'虚拟机内存.bin'));}const memory=vm.v86.cpu.mem8;download(memory.slice(),'虚拟机内存.bin');}),'snapshotStatus');$('persistStorage').onclick=handled(async()=>{const kept=await navigator.storage?.persist?.();setStatus(kept?'浏览器已允许持久存储':'浏览器未授予持久存储，可导出快照备份');await storageInfo();});
  window.addEventListener('beforeunload',event=>{if(engine||loading){event.preventDefault();event.returnValue='';}});
  VMAI.init({sendCommand,context:()=>serialText.replace(/\x1b\[[0-?]*[ -/]*[@-~]/g,'').slice(-12000)});initProfiles();
+ // View preferences never imply permission to boot or resume a machine.
+ const viewKey='pocket-vm-view-v1';let savedView={};try{savedView=JSON.parse(sessionStorage.getItem(viewKey)||'{}')||{};}catch{}
+ if(!engine&&!loading&&profiles.some(p=>p.id===savedView.selected))selected=savedView.selected;
+ if(typeof savedView.search==='string'&&savedView.search.length<=200)$('machineSearch').value=savedView.search;
+ for(const id of ['fontSize','screenScale'])if(typeof savedView[id]==='string'&&[...$(id).options].some(o=>o.value===savedView[id]))$(id).value=savedView[id];
+ renderManager();
+ function rememberView(){try{sessionStorage.setItem(viewKey,JSON.stringify({selected,search:$('machineSearch').value.slice(0,200),fontSize:$('fontSize').value,screenScale:$('screenScale').value}));}catch{}}
+ $('machineList').addEventListener('click',rememberView);$('machineSearch').addEventListener('input',rememberView);
+ for(const id of ['fontSize','screenScale'])$(id).addEventListener('change',rememberView);
+ window.addEventListener('pagehide',rememberView);
 })();

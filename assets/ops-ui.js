@@ -13,12 +13,13 @@ const Ops=(()=>{
   function show(view){if(!['input','result'].includes(view))return;document.body.dataset.view=view;document.querySelectorAll('[data-view-target]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.viewTarget===view)));saveState({...readState(),view});}
   function fields(container,entries){container.replaceChildren();for(const [label,value] of entries){const item=node('div','result-item');item.append(node('dt','',label),node('dd','',value));container.append(item);}}
   function pager(list,controls,draw,rowHeight=150){
-    let entries=[],page=0,size=1;
+    const saved=readState().pagers?.[list.id];let entries=[],page=0,size=1,signature=null;
     const previous=node('button','','←'),label=node('span'),next=node('button','','→');
     previous.type=next.type='button';previous.setAttribute('aria-label','上一页');next.setAttribute('aria-label','下一页');controls.append(previous,label,next);
     function render(){size=Math.max(1,Math.floor(list.clientHeight/rowHeight));const count=Math.max(1,Math.ceil(entries.length/size));page=Math.max(0,Math.min(page,count-1));list.replaceChildren();if(!entries.length)list.append(node('p','empty','暂无结果'));else entries.slice(page*size,(page+1)*size).forEach(item=>list.append(draw(item)));label.textContent=`${page+1} / ${count}`;previous.disabled=page===0;next.disabled=page===count-1;controls.dataset.single=String(count===1);}
-    previous.addEventListener('click',()=>{page--;render();});next.addEventListener('click',()=>{page++;render();});new ResizeObserver(render).observe(list);
-    return {set(items){entries=items;page=0;render();},refresh:render};
+    function rememberPage(){if(!list.id||signature===null)return;const state=readState();saveState({...state,pagers:{...state.pagers,[list.id]:{signature,page}}});}
+    previous.addEventListener('click',()=>{page--;render();rememberPage();});next.addEventListener('click',()=>{page++;render();rememberPage();});new ResizeObserver(render).observe(list);
+    return {set(items){entries=items;const state=readState(),fields={...state};delete fields.pagers;const nextSignature=JSON.stringify(fields);page=signature===null&&saved?.signature===nextSignature&&Number.isSafeInteger(saved.page)&&saved.page>=0?saved.page:0;signature=nextSignature;render();rememberPage();},refresh:render};
   }
   document.querySelectorAll('[data-view-target]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.viewTarget)));
   const savedView=readState().view;if(savedView)show(savedView);

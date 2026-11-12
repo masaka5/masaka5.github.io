@@ -540,5 +540,61 @@
     "source": "https://github.com/zh-lx/pinyin-pro",
     "version": "3.29.5",
     "license": "MIT"
+  },
+  {
+    "project": "yt-dlp-browser",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "version": "2026.10.26",
+    "license": "Unlicense and source component notices; original LICENSE retained",
+    "modified": false,
+    "integration_modified": true,
+    "source_archive": "yt-dlp-source.zip",
+    "source_manifest": "yt-dlp-source-manifest.json",
+    "original_python_source": "tools/yt-dlp/runtime/yt_dlp-2026.10.26.whl",
+    "reuses": [
+      "vendor/pyodide",
+      "tools/studio/runtime/ffmpeg"
+    ]
+  },
+  {
+    "project": "media-player-browser",
+    "version": "1.0.0",
+    "license": "MIT integration; dependency licenses retained; shared @ffmpeg/core 0.12.9 GPL-2.0-or-later",
+    "modified": true,
+    "source_archive": "media-player-source.zip",
+    "source_manifest": "media-player-source-manifest.json",
+    "runtime_manifest": "tools/media-player/manifest.json",
+    "notices": "media-player/THIRD-PARTY-NOTICES.txt",
+    "reuses": [
+      "tools/studio/runtime/ffmpeg"
+    ],
+    "engine": "Native HTMLMediaElement and FFmpeg WASM; no libVLC binary",
+    "upstreams": [
+      "https://github.com/ffmpegwasm/ffmpeg.wasm/tree/v0.12.15",
+      "https://www.npmjs.com/package/@ffmpeg/core/v/0.12.9",
+      "https://github.com/facebook/react",
+      "https://github.com/ant-design/ant-design"
+    ]
+  },
+  {
+    "project": "image-viewer-browser",
+    "version": "1.0.0",
+    "license": "MIT integration; dependency notices preserved",
+    "source_archive": "image-viewer/source.zip",
+    "source_manifest": "image-viewer/source-manifest.json",
+    "runtime_manifest": "tools/image-viewer/manifest.json",
+    "reuses": [
+      "tools/conversion/assets/magick-DgWW1YxY.wasm"
+    ],
+    "engine": "ImageMagick0.0.37 WASM; original integration, not native ImageGlass"
+  },
+  {
+    "project": "ffmpeg-core-shared",
+    "version": "0.12.9",
+    "license": "GPL-2.0-or-later core; MIT wrapper; component notices retained",
+    "source_archive": "ffmpeg-core/build-source.zip",
+    "provenance": "ffmpeg-core/provenance.json",
+    "source": "https://github.com/ffmpegwasm/ffmpeg.wasm/tree/v0.12.9",
+    "modified": false
   }
 ]

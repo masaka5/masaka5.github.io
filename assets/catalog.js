@@ -104,6 +104,28 @@ const ToolboxCatalog = {
   ],
   "tools": [
     {
+      "id": "yt-dlp",
+      "category": "media",
+      "name": "媒体下载",
+      "description": "批量解析 · 分段下载 · 断点续传",
+      "href": "tools/yt-dlp/",
+      "icon": "download",
+      "tags": [
+        "yt-dlp",
+        "WASM"
+      ],
+      "keywords": "yt-dlp 下载 视频 音频 字幕 缩略图 HLS DASH FFmpeg 续传",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/yt-dlp/",
+          "source": "toolbox",
+          "sourceId": "yt-dlp"
+        }
+      ],
+      "iconBadge": "音频"
+    },
+    {
       "id": "jupyter",
       "category": "workspace",
       "name": "Jupyter 笔记本",
@@ -609,6 +631,51 @@ const ToolboxCatalog = {
         }
       ],
       "iconBadge": ""
+    },
+    {
+      "id": "image-viewer",
+      "category": "image",
+      "name": "图片查看器",
+      "description": "缩略图 · 浏览 · 调整 · 转换",
+      "href": "tools/image-viewer/",
+      "icon": "images",
+      "tags": [
+        "图片",
+        "WASM"
+      ],
+      "keywords": "ImageGlass 图片 查看器 相册 缩放 旋转 裁剪 幻灯片 元数据 GIF",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/image-viewer/",
+          "source": "toolbox",
+          "sourceId": "image-viewer"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "media-player",
+      "category": "media",
+      "name": "媒体播放器",
+      "description": "播放列表 · 字幕 · 格式转换",
+      "href": "tools/media-player/",
+      "icon": "circle-play",
+      "tags": [
+        "视频",
+        "音频",
+        "WASM"
+      ],
+      "keywords": "VLC 播放器 音频 视频 字幕 倍速 画中画 截图 FFmpeg",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/media-player/",
+          "source": "toolbox",
+          "sourceId": "media-player"
+        }
+      ],
+      "iconBadge": "音频"
     },
     {
       "id": "windows-errors",
@@ -13826,9 +13893,15 @@ const ToolboxCatalog = {
           "href": "../creative/regex.html",
           "source": "toolbox",
           "sourceId": "regex-tester"
+        },
+        {
+          "name": "正则表达式测试器",
+          "href": "../utilities/?tool=regex-tester&embed=1",
+          "source": "openutility",
+          "sourceId": "regex-tester"
         }
       ],
-      "href": "tools/creative/regex.html",
+      "href": "tools/tool/?id=regex-tester",
       "iconBadge": ".*"
     },
     {
@@ -21517,9 +21590,15 @@ const ToolboxCatalog = {
           "href": "../markdown/",
           "source": "toolbox",
           "sourceId": "markdown"
+        },
+        {
+          "name": "Markdown 预览",
+          "href": "../conversion/?tool=dev-tools/markdown&embed=1",
+          "source": "localconvert",
+          "sourceId": "dev-tools/markdown"
         }
       ],
-      "href": "tools/markdown/",
+      "href": "tools/tool/?id=markdown",
       "iconBadge": ""
     },
     {
@@ -21555,9 +21634,41 @@ const ToolboxCatalog = {
           "href": "../archives/",
           "source": "toolbox",
           "sourceId": "archives"
+        },
+        {
+          "name": "压缩包工具",
+          "href": "../studio/?embed=1&tool=archives",
+          "source": "zro7-reference",
+          "sourceId": "extract-archive",
+          "origins": [
+            {
+              "source": "zro7-reference",
+              "sourceId": "extract-archive"
+            },
+            {
+              "source": "zro7-reference",
+              "sourceId": "create-zip"
+            },
+            {
+              "source": "zro7-reference",
+              "sourceId": "convert-to-zip"
+            },
+            {
+              "source": "zro7-reference",
+              "sourceId": "compress-file"
+            },
+            {
+              "source": "zro7-reference",
+              "sourceId": "decompress-file"
+            },
+            {
+              "source": "zro7-reference",
+              "sourceId": "inspect-archive"
+            }
+          ]
         }
       ],
-      "href": "tools/archives/",
+      "href": "tools/tool/?id=archives",
       "iconBadge": ""
     },
     {
@@ -22144,9 +22255,15 @@ const ToolboxCatalog = {
           "href": "../creative/canvas.html",
           "source": "toolbox",
           "sourceId": "whiteboard"
+        },
+        {
+          "name": "白板",
+          "href": "../studio/?embed=1&tool=whiteboard",
+          "source": "zro7-reference",
+          "sourceId": "whiteboard"
         }
       ],
-      "href": "tools/creative/canvas.html",
+      "href": "tools/tool/?id=whiteboard",
       "iconBadge": ""
     },
     {

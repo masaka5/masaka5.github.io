@@ -11,6 +11,7 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'yt-dlp',category:'media',name:'媒体下载',description:'批量解析 · 分段下载 · 断点续传',href:'tools/yt-dlp/',icon:'download',tags:['yt-dlp','WASM'],keywords:'yt-dlp 下载 视频 音频 字幕 缩略图 HLS DASH FFmpeg 续传'},
     {id:'jupyter',category:'workspace',name:'Jupyter 笔记本',description:'Python · 单元格 · 本地笔记本',href:'tools/jupyter/',icon:'notebook-tabs',tags:['Jupyter','Python'],keywords:'JupyterLite Notebook IPYNB Python 编程 笔记本 运行 WASM'},
     {id:'python-ide',category:'workspace',name:'Python IDE',description:'编辑 · 编译检查 · 运行',href:'tools/python-ide/',icon:'file-code-2',tags:['Python','IDE','WASM'],keywords:'Python CPython Pyodide 编译 运行 开发 IDE 代码 控制台'},
     {id:'powershell-ide',category:'workspace',name:'PowerShell 7 IDE',description:'脚本编辑 · 运行 · 交互终端',href:'tools/powershell-ide/',icon:'square-terminal',tags:['PowerShell','IDE','Linux'],keywords:'PowerShell pwsh PS1 7 编辑 编译 运行 脚本 终端 IDE Linux'},
@@ -53,6 +54,8 @@ const ToolboxCatalog = {
       href:'tools/uid/', icon:'convert', tags:['进制转换','字节反转'],
       keywords:'hex decimal 16 10 大整数 前导零'
     },
+    {id:'image-viewer',category:'image',name:'图片查看器',description:'缩略图 · 浏览 · 调整 · 转换',href:'tools/image-viewer/',icon:'images',tags:['图片','WASM'],keywords:'ImageGlass 图片 查看器 相册 缩放 旋转 裁剪 幻灯片 元数据 GIF'},
+    {id:'media-player',category:'media',name:'媒体播放器',description:'播放列表 · 字幕 · 格式转换',href:'tools/media-player/',icon:'play',tags:['视频','音频','WASM'],keywords:'VLC 播放器 音频 视频 字幕 倍速 画中画 截图 FFmpeg'},
     {id:'windows-errors',category:'windows',name:'Windows 错误码',description:'错误查询 · 中文排查建议',href:'tools/windows-errors/',icon:'windows',tags:['错误码','蓝屏','HRESULT'],keywords:'Win32 Winsock NTSTATUS Windows 系统错误'},
     {id:'system-commands',category:'windows',name:'系统命令速查',description:'CMD · PowerShell · Linux',href:'tools/system-commands/',icon:'terminal',tags:['CMD','PowerShell','Linux','命令'],keywords:'命令行 终端 shell 原生命令 内置命令 文件 网络 进程 磁盘 系统管理'},
     {id:'webvm',category:'windows',name:'WebVM 虚拟机',description:'Linux 终端 · 中文 · 联网 · AI',href:'tools/webvm/',icon:'terminal',tags:['Linux','WebVM','AI'],keywords:'虚拟机 Debian CheerpX WASM 终端 Tailscale 中文 命令 沙盒'},
