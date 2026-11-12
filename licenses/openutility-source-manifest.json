@@ -5,8 +5,8 @@
   "deploymentBase": "b975ee9c906cfd931681b3193d19d8d5e25a936b",
   "build": "npm ci && npx vite build --config toolbox.vite.config.mjs",
   "archive": "openutility-source.zip",
-  "archiveBytes": 5878064,
-  "sha256": "356781ccbd33ecfe6d2128711c33962d59df925058271263dc261d829e00ea0e",
+  "archiveBytes": 5879918,
+  "sha256": "eb32a7a0bc46a035bebff41b42b2f22123d55641c71c1133d01dfc9bc5a1a81a",
   "files": [
     {
       "path": ".gitignore",
@@ -365,8 +365,8 @@
     },
     {
       "path": "tests/controls.tsx",
-      "bytes": 2532,
-      "sha256": "219c777a0cdff6001c1c15aa8a4ea0c1b00fbecb10f812b534d6451134702d27"
+      "bytes": 2988,
+      "sha256": "dc091cb825e72c3b0b3933530b0ac9f0db9513e6ff8fc04361d78fd56b5aab51"
     },
     {
       "path": "tools/_shared/developer-workbench.tsx",
@@ -16440,8 +16440,8 @@
     },
     {
       "path": "components/ui/tabs.tsx",
-      "bytes": 1609,
-      "sha256": "99dabd1fefb244c3fc76c85d5d67fe44cc2682cda2adb09dd6ddc61328cabd80"
+      "bytes": 3324,
+      "sha256": "62a7db58c2bd869d603ed2425c9c4648bc1327fad0b094ef31e4bf65d8a266ec"
     },
     {
       "path": "components/ui/textarea.tsx",

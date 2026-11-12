@@ -1,0 +1,26 @@
+import{r as o,j as e}from"./toolbox-CmtkVXqR.js";import{P as f,O as R,F as u,a as S,S as _}from"./panel-DmElCoWv.js";import{C as B}from"./copy-button-DLB5uroU.js";import{D}from"./download-button-DYrLfnR0.js";import{E as L}from"./error-banner-DTT8smgf.js";import{I as w}from"./input-CQci13IV.js";import{T as M}from"./textarea-Cln-1zVs.js";import{S as C}from"./switch-mkCNf92t.js";import{S as Z,a as A,b as O,c as P,d as g}from"./select-BtrkL6xQ.js";import"./button-DMB0_Npy.js";import"./download-CsFYzBl3.js";import"./copy-KM4IFqMu.js";import"./createLucideIcon-Zlr8o_Qc.js";import"./loader-circle-BvKtin14.js";import"./download-CNg6ERs9.js";import"./index-IMt1bn3i.js";import"./ContextIsolator-g3C8c1gr.js";import"./SearchOutlined-DekVZon5.js";import"./KeyCode-HJ8jGXz0.js";import"./index-BOQNaMUu.js";import"./useId-Chs6QaAi.js";import"./Overflow-ad_kj95Y.js";import"./useLocale-mwY0lCuK.js";import"./CloseOutlined-BbHBxdIs.js";import"./useZIndex-wYhMqhMY.js";const U=["base","dropdown","sticky","fixed","modal-backdrop","modal","popover","tooltip","toast"].join(`
+`),V={css:"z-index.css",sass:"z-index.scss",js:"z-index.js",ts:"z-index.ts"};function k(a){const t=a.replace(/[^a-zA-Z0-9]+/g,"_").replace(/^_+|_+$/g,"");return t?/^[0-9]/.test(t)?`_${t}`:t:"_"}function G(a){return a.split(/\r?\n/).map(t=>t.trim()).filter(t=>t.length>0)}function H(a,t,i){const c=i?(()=>{switch(t){case"css":case"sass":return`/**
+ * Z-index scale. Reference these tokens instead of magic numbers
+ * so stacking order stays predictable across the codebase.
+ */
+`;case"js":case"ts":return`/**
+ * Z-index scale. Reference these tokens instead of magic numbers
+ * so stacking order stays predictable across the codebase.
+ */
+`;default:return""}})():"";switch(t){case"css":{const n=a.map(r=>`  --z-${r.name}: ${r.value};`).join(`
+`);return`${c}:root {
+${n}
+}`}case"sass":{const n=a.map(r=>`  '${r.name}': ${r.value},`).join(`
+`);return`${c}$z-index: (
+${n}
+);
+
+// Usage: z-index: map-get($z-index, 'modal');`}case"js":{const n=a.map(r=>`  ${k(r.name)}: ${r.value},`).join(`
+`);return`${c}export const zIndex = {
+${n}
+};`}case"ts":{const n=a.map(r=>`  ${k(r.name)}: ${r.value},`).join(`
+`);return`${c}export const zIndex = {
+${n}
+} as const;
+
+export type ZIndexLayer = keyof typeof zIndex;`}default:return""}}function ve(){const[a,t]=o.useState(U),[i,c]=o.useState("10"),[n,r]=o.useState("10"),[p,z]=o.useState(!1),[v,E]=o.useState(!0),[x,I]=o.useState("css"),h=o.useMemo(()=>{const s=G(a);if(s.length===0)return{error:"Enter at least one named layer (one per line)."};if(s.length>200)return{error:"Too many layers — keep it under 200."};const $=Number(i),b=Number(n);if(!Number.isFinite($))return{error:"Starting value must be a number."};if(!Number.isFinite(b)||b===0)return{error:"Step increment must be a non-zero number."};const y=new Set;for(const m of s){if(y.has(m))return{error:`Duplicate layer name: "${m}".`};y.add(m)}const N=(p?[...s].reverse():s).map((m,F)=>({name:m,value:Math.round($+F*b)})),T=H(N,x,v);return{layers:N,output:T}},[a,i,n,p,v,x]),j="error"in h,l=j?"":h.output,d=j?[]:h.layers;return e.jsxs("div",{className:"space-y-4",children:[e.jsx(f,{children:e.jsxs(R,{children:[e.jsx(u,{label:"格式",children:e.jsxs(Z,{value:x,onValueChange:s=>I(s),children:[e.jsx(A,{className:"w-44",children:e.jsx(O,{})}),e.jsxs(P,{children:[e.jsx(g,{value:"css",children:"CSS自定义属性"}),e.jsx(g,{value:"sass",children:"Sass $z-index 映射"}),e.jsx(g,{value:"js",children:"JS const 对象"}),e.jsx(g,{value:"ts",children:"TS const（作为常量）"})]})]})}),e.jsx(u,{label:"起始值",children:e.jsx(w,{value:i,onChange:s=>c(s.target.value),inputMode:"numeric",className:"w-24 font-mono"})}),e.jsx(u,{label:"步骤",children:e.jsx(w,{value:n,onChange:s=>r(s.target.value),inputMode:"numeric",className:"w-24 font-mono"})}),e.jsx(u,{label:"颠倒顺序",children:e.jsx(C,{checked:p,onCheckedChange:z})}),e.jsx(u,{label:"文档评论",children:e.jsx(C,{checked:v,onCheckedChange:E})})]})}),e.jsxs("div",{className:"grid gap-4 lg:grid-cols-2",children:[e.jsxs(f,{children:[e.jsx(S,{title:"命名层（从下到上）"}),e.jsxs("div",{className:"p-3",children:[e.jsx(M,{value:a,onChange:s=>t(s.target.value),spellCheck:!1,rows:12,className:"font-mono text-sm",placeholder:"每行一个层名称"}),e.jsx("p",{className:"mt-2 text-2xs text-muted-foreground",children:"第一行是最低层。启用“反向顺序”将最高值分配给第一行。"})]})]}),e.jsxs(f,{children:[e.jsxs(S,{title:"输出",children:[e.jsx(B,{value:()=>l,label:"复制",disabled:!l}),e.jsx(D,{data:()=>l,filename:V[x],disabled:!l})]}),j?e.jsx("div",{className:"p-3",children:e.jsx(L,{error:h.error})}):e.jsxs(e.Fragment,{children:[e.jsx("pre",{className:"max-h-[420px] overflow-auto bg-muted/30 p-3 font-mono text-xs leading-relaxed",children:l}),e.jsx(_,{items:[`${d.length} layers`,`${d[0]?.value??0} – ${d[d.length-1]?.value??0}`,p?"reversed":"ascending"]})]})]})]}),!j&&e.jsxs(f,{children:[e.jsx(S,{title:"指定值"}),e.jsx("div",{className:"max-h-[280px] divide-y overflow-auto",children:d.map(s=>e.jsxs("div",{className:"flex items-center gap-3 px-3 py-1.5",children:[e.jsx("code",{className:"min-w-0 flex-1 truncate font-mono text-xs",children:s.name}),e.jsx("code",{className:"w-20 shrink-0 text-right font-mono text-sm tabular",children:s.value})]},s.name))})]})]})}export{ve as default};

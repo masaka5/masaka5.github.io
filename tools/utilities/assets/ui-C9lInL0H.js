@@ -1,5 +1,0 @@
-import{r as p,j as a}from"./toolbox-C1bqIItI.js";import{T as i}from"./text-tool-DKzwReiD.js";import{j as e}from"./yaml-DdbE6pca.js";import"./product-controls-DefmGwRs.js";import"./input-BQFgluN1.js";import"./index-N7Nfcwyv.js";import"./ContextIsolator-9GaOU_7w.js";import"./panel-BS_kjOg7.js";import"./SearchOutlined-BqroMpgS.js";import"./textarea-CvYfK1Ma.js";import"./button-BJ-wrhqh.js";import"./index-83IWjpAP.js";import"./useId-CzaMCTks.js";import"./copy-button-iC3vDNu6.js";import"./download-CsFYzBl3.js";import"./copy-Bvbnp1JM.js";import"./createLucideIcon-DrNwtYCa.js";import"./download-button--Rq100iY.js";import"./loader-circle-BOFQCFvQ.js";import"./download-UPZbp2PO.js";import"./error-banner-Drt_r24P.js";import"./upload-DzCXWlB2.js";import"./eraser-DNxZMTKL.js";const n=`{
-  "name": "app",
-  "ports": [80, 443],
-  "env": { "DEBUG": true }
-}`;function k(){const m=p.useCallback(o=>{if(!o.trim())return"";let t;try{t=JSON.parse(o)}catch(r){throw new Error(r instanceof Error?r.message:"无效的 JSON")}return e(t)},[]);return a.jsx(i,{transform:m,inputLabel:"JSON",outputLabel:"YAML",sample:n,downloadName:"out.yaml",downloadMime:"text/yaml"})}export{k as default};
