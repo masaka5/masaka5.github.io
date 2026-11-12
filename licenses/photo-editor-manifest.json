@@ -198,8 +198,8 @@
     },
     {
       "path": "tools/photo-editor/index.html",
-      "bytes": 4326,
-      "sha256": "d88c993e9fb902cc5f7c72c58ee2f9381cd89b6530b0ece6cec395cfb0cd8269"
+      "bytes": 6472,
+      "sha256": "140fe00272b6624e7aa431e69f8d2898d9f3700aafe322a3bea8dd367f749795"
     },
     {
       "path": "tools/photo-editor/photo-editor.css",

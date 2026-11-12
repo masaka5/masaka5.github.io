@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "assets": [
+    {
+      "platform": "windows-x64",
+      "filename": "RemoteGateway-Windows-x64.exe",
+      "url": "https://github.com/masaka5/masaka5.github.io/releases/download/remote-gateway-v0.2.0/RemoteGateway-Windows-x64.exe",
+      "sha256": "032b21ff5ff9b7e65c59882bc3d26cb3c1a09975406f30cfdf60b9a2301e0f87",
+      "size": 159376400
+    }
+  ]
+}

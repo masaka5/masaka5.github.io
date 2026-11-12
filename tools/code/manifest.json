@@ -1737,8 +1737,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 836,
-      "sha256": "1ebc081388f32a0de1e607f0e08438ac19a6a80909b2cd5d89451a1000e28cdb"
+      "bytes": 3124,
+      "sha256": "37ae3c413e5278c425d2e8350e848230f5277937b04c51b986ec363f6b324a64"
     },
     {
       "file": "isolation-worker.js",

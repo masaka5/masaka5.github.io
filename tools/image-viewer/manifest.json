@@ -22,8 +22,8 @@
   },
   "artifacts": {
     "index.html": {
-      "bytes": 325,
-      "sha256": "75d2bd4fda79c50bc76d3d5c83f381ff1855cc07bc7e38ea3b0c613dea7864d2"
+      "bytes": 2654,
+      "sha256": "9adf3025c1c13cd450ac7df024c6868855c0f779d818940299ee5a6cee5f88e9"
     },
     "assets/main.js": {
       "bytes": 718875,

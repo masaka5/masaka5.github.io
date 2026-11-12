@@ -1,0 +1,47 @@
+{
+  "name": "远程连接",
+  "version": "0.2.0",
+  "files": [
+    {
+      "file": "assets/index-C8Fed3sC.js",
+      "bytes": 965290,
+      "sha256": "f5ca26faf1e7be63095d966743c3e5499f27d02feab7b167fe00cf2704ed54e8"
+    },
+    {
+      "file": "assets/index-CHbvaDqG.css",
+      "bytes": 7422,
+      "sha256": "8a74a0062d861df2489ad7372178852fb4767d9a18428cf9d3999bfc42a461b7"
+    },
+    {
+      "file": "downloads/gateway-defaults.json",
+      "bytes": 223,
+      "sha256": "c5310c35bd334ae2757f7b2546e4433c451ac15196f4727b791e1e7b85ef51ee"
+    },
+    {
+      "file": "downloads/latest.json",
+      "bytes": 379,
+      "sha256": "de3009fd211a9252eadc92e966ff1d8c413814415956b9568d7cd29315ba8cc2"
+    },
+    {
+      "file": "downloads/latest.json.sig",
+      "bytes": 89,
+      "sha256": "a34c0dfe00a886c1c700b1855ae968808bbf155a5c8ad231c955baa0e591674e"
+    },
+    {
+      "file": "downloads/SHA256SUMS.txt",
+      "bytes": 96,
+      "sha256": "11c17f4fedf03ad12277187f24b0310e5daf369d18b8f0bc841abde6d25e8652"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3134,
+      "sha256": "72fff1b73d5ca16b1c4ea7a42c192efd292a9484e58b1b9432565f520337219f"
+    },
+    {
+      "file": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 452278,
+      "sha256": "689b92b420d67af4e01f678555c4224c4b2481ec41f346d202d3392ec82d9904"
+    }
+  ],
+  "source": "https://github.com/masaka5/masaka5.github.io/releases/download/remote-gateway-v0.2.0/remote-gateway-source.zip"
+}

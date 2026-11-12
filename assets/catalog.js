@@ -103,6 +103,7 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
+    {"id":"remote","category":"network","name":"远程连接","description":"RDP · VNC · SSH","href":"tools/remote/","icon":"monitor","tags":["远程","设备","网关"],"keywords":"远程桌面 SSH VNC RDP 设备管理 Windows 网关","variants":[{"name":"标准","href":"tools/remote/","source":"toolbox","sourceId":"remote"}]},
     {
       "id": "yt-dlp",
       "category": "media",

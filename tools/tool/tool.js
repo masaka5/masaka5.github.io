@@ -1,6 +1,6 @@
 (()=>{'use strict';const $=id=>document.getElementById(id),params=new URLSearchParams(location.search),tool=ToolboxCatalog.tools.find(t=>t.id===params.get('id'));let current=-1;
 if(!tool){$('error').hidden=false;$('error').textContent='未找到工具，请返回工具箱选择。';$('workspace').hidden=true;return;}
-$('title').textContent=tool.name;document.title=tool.name+' · 工具箱';$('toolIcon').replaceWith(ToolboxIcons.tile(tool,'tool-icon'));$('reload').replaceChildren(ToolboxIcons.svg('rotate-cw'));const variants=tool.variants||[];
+$('title').textContent=tool.name;document.title=tool.name+' · 口袋工具箱';const canonical=document.createElement('link');canonical.rel='canonical';canonical.href='https://tools.manshii.asia/catalog/'+encodeURIComponent(tool.id)+'/';document.head.append(canonical);const meta=document.createElement('meta');meta.name='description';meta.content=tool.name+'：'+tool.description+'。口袋工具箱在线工具。';document.head.append(meta);$('toolIcon').replaceWith(ToolboxIcons.tile(tool,'tool-icon'));$('reload').replaceChildren(ToolboxIcons.svg('rotate-cw'));const variants=tool.variants||[];
 for(const [i,v]of variants.entries()){const o=document.createElement('option');o.value=i;o.textContent=v.name;$('mode').append(o);}
 $('modeLabel').hidden=variants.length<2;
 const stateKey='pocketToolHost';

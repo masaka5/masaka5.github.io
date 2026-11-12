@@ -2257,8 +2257,8 @@
     },
     {
       "path": "tools/jupyter/index.html",
-      "bytes": 2641,
-      "sha256": "c42248832864ffdf0f3d0b3cabf2fafca43410b4cf8e5f2df9243ad8ff09fbdf"
+      "bytes": 5022,
+      "sha256": "42764f5fe02385c44e9b4e3561b46186440fb0971b709666c3b6d4a6c22fc0c6"
     },
     {
       "path": "tools/jupyter/jupyter-lite.ipynb",

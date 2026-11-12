@@ -9,8 +9,8 @@
     },
     {
       "file": "assets/app.js",
-      "bytes": 727261,
-      "sha256": "21b20d1f0de68b90f56daa74eec338fcf57c3da3f86f21427efc65a723c53eae"
+      "bytes": 727681,
+      "sha256": "d66f0195d5b528f5870725ec72b1bc2127b096ada3d97b67786bc56021d15865"
     },
     {
       "file": "assets/ffmpeg-worker.js",
@@ -19,8 +19,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 350,
-      "sha256": "db75da4206f3faabbe904f0a55b1c28307ffc23e5f68fcbfb4816593839d41c0"
+      "bytes": 2687,
+      "sha256": "e822433ef9003c981b2caafd719ad8f1e16cf0a0549d17da553e17514bbd7dcd"
     }
   ],
   "shared": [

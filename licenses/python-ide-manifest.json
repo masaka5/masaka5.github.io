@@ -211,8 +211,8 @@
     },
     {
       "path": "tools/python-ide/index.html",
-      "bytes": 3604,
-      "sha256": "6de70644ff2d85d07a27d3d6b26b79d77606612a2267df4efccd61f119b935a1"
+      "bytes": 5697,
+      "sha256": "b61fd4eb156d22fd47fc4aac405cc9dac8b02a9f90b89c9403241278b7fd43c4"
     },
     {
       "path": "licenses/python-ide.html",

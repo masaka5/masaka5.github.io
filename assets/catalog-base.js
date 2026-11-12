@@ -59,6 +59,7 @@ const ToolboxCatalog = {
     {id:'windows-errors',category:'windows',name:'Windows 错误码',description:'错误查询 · 中文排查建议',href:'tools/windows-errors/',icon:'windows',tags:['错误码','蓝屏','HRESULT'],keywords:'Win32 Winsock NTSTATUS Windows 系统错误'},
     {id:'system-commands',category:'windows',name:'系统命令速查',description:'CMD · PowerShell · Linux',href:'tools/system-commands/',icon:'terminal',tags:['CMD','PowerShell','Linux','命令'],keywords:'命令行 终端 shell 原生命令 内置命令 文件 网络 进程 磁盘 系统管理'},
     {id:'webvm',category:'windows',name:'WebVM 虚拟机',description:'Linux 终端 · 中文 · 联网 · AI',href:'tools/webvm/',icon:'terminal',tags:['Linux','WebVM','AI'],keywords:'虚拟机 Debian CheerpX WASM 终端 Tailscale 中文 命令 沙盒'},
+    {id:'remote',category:'network',name:'远程连接',description:'RDP · VNC · SSH',href:'tools/remote/',icon:'monitor',tags:['远程','设备','网关'],keywords:'远程桌面 SSH VNC RDP 设备管理 Windows 网关'},
     {id:'subnet',category:'network',name:'IP／子网计算器',description:'IPv4 · IPv6 · 子网掩码',href:'tools/subnet/',icon:'network',tags:['IP','CIDR','子网'],keywords:'网段 网络地址 广播 可用地址 掩码'},
     {id:'ip-batch',category:'network',name:'IP 批量整理',description:'去重排序 · 网段合并',href:'tools/ip-batch/',icon:'network',tags:['IP','CIDR','合并'],keywords:'IPv4 IPv6 批量 地址范围 整理'},
     {id:'mac',category:'network',name:'MAC 地址转换',description:'格式转换 · 地址类型',href:'tools/mac/',icon:'convert',tags:['MAC','OUI','EUI-64'],keywords:'物理地址 网卡 单播 组播 广播'},

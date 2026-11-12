@@ -1,0 +1,10 @@
+{
+  "origins": [
+    "https://tools.manshii.asia"
+  ],
+  "managedEngine": true,
+  "listen": "127.0.0.1:19443",
+  "profiles": [],
+  "guacd": "127.0.0.1:4822",
+  "webURL": "https://tools.manshii.asia/tools/remote/"
+}

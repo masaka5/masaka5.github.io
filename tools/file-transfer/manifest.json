@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 4273,
-      "sha256": "f472b8d04424c986e76ccc790ccdf47046acb9bd08fc3d81b26e868970b3dfcd"
+      "bytes": 6448,
+      "sha256": "8258d464dd22512340ff2309cd53f29aeda5b2c532ea2ad54f2366dda3c89b3c"
     },
     {
       "file": "store-worker.js",

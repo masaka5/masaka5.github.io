@@ -23,8 +23,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 412,
-      "sha256": "3520de101e13fb8cb241bd5ebbe670734e6928a3e4bad61afd4108c2dad6002e"
+      "bytes": 2706,
+      "sha256": "86fabeeb29ae7c2810f6b575880ebb1c43233e6df1fd339eb75ee2d30a7f6f9f"
     },
     {
       "file": "network.py",

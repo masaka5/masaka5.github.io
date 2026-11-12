@@ -173,8 +173,8 @@
     },
     {
       "path": "tools/powershell-ide/index.html",
-      "bytes": 3976,
-      "sha256": "24f364f6ae7e869678a9f60892165c6e4ebdbf615e5561e5d30064a2d7c81b81"
+      "bytes": 6168,
+      "sha256": "16547f231fb236b590fff6bd564bf3df5bc2f95946ca46be9ae2fa8783fd10b6"
     },
     {
       "path": "licenses/powershell-ide-third-party.txt",

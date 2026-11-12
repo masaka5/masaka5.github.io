@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 3158,
-      "sha256": "d80442e0ad551de8b7544f57baa4e97eeeb99f2e1f6fbb7f12aaca0df7cd2888"
+      "bytes": 5460,
+      "sha256": "ca01bccea94f0430f004497fcf460c982ef53bb2d36fb145644c5a8bd08c70bf"
     },
     {
       "file": "monitor-multiscreen.js",

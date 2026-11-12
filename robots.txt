@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /licenses/
+Disallow: /tools/remote/downloads/
+Disallow: /tools/remote-test/
+Sitemap: https://tools.manshii.asia/sitemap.xml
