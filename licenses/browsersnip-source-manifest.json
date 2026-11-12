@@ -4,7 +4,7 @@
   "modified": true,
   "antd": "5.29.3",
   "build": "npm ci; npx vite build --config toolbox.vite.config.ts",
-  "archive_sha256": "822d77f7376aebc27c0028931560cfd2cdbee9cbc7283c8e70302de3ff577b36",
+  "archive_sha256": "45c76e2fe44e03abc926ba16495ebab1997af2a671f5fcfb37876fa34da030db",
   "exclusions": [
     "node_modules",
     ".git",
@@ -927,7 +927,7 @@
     },
     {
       "path": "reports/ant-control-inventory.json",
-      "sha256": "d85d74164712e241334f8d5c54fcbe38e9d2627297c44aaf08f87069c576841a",
+      "sha256": "21cbb58f55cc65129cf55bc801511c1ab75a467b574ceb0650d196c64c40f7dc",
       "bytes": 83389
     },
     {
@@ -946,14 +946,19 @@
       "bytes": 21
     },
     {
+      "path": "reports/state-browser.json",
+      "sha256": "c7cc1ca1b5b6961fe7ffa3739ce8988b416612cc65f19550aabdaff5799887f6",
+      "bytes": 495
+    },
+    {
       "path": "scripts/ant-a11y-browser-proof.mjs",
       "sha256": "1df23f5d78b025a88c272e7a5a34806c56807c1da33e6ce6d5e5527b4a83ebe6",
       "bytes": 3766
     },
     {
       "path": "scripts/ant-browser-proof.mjs",
-      "sha256": "c5b6d0d37b709cddbdbddbe953cf462a8e721596a7ce16c652f33923f9b20ce2",
-      "bytes": 4269
+      "sha256": "9a4a1f877a1ee9f8a378463efe417de88138b15040ddd2b694a767dfcfa2a159",
+      "bytes": 4388
     },
     {
       "path": "scripts/ant-load-only.mjs",
@@ -972,8 +977,8 @@
     },
     {
       "path": "scripts/copy-ant-build.py",
-      "sha256": "e90e2a483d384372ade5ba3976b54a07d1d81e38cd3d1f207e19e648aa9ee034",
-      "bytes": 1328
+      "sha256": "12647069966c021edb1631cd87bed6e24b8d4032bfe11241f7195a5e7d6f2ccf",
+      "bytes": 1393
     },
     {
       "path": "scripts/copy-pdfjs-assets.mjs",
@@ -1024,6 +1029,11 @@
       "path": "scripts/package-ant-source.py",
       "sha256": "e27cbdbd530249bdf870f2137cd3be419c0521a637840afe45f781860a7fea34",
       "bytes": 3115
+    },
+    {
+      "path": "scripts/state-browser-proof.mjs",
+      "sha256": "d91477c713cbfbe08403ff1b558a06f138dda702979cbb0da3eb6d42ded15005",
+      "bytes": 3701
     },
     {
       "path": "src/App.tsx",
@@ -1082,8 +1092,8 @@
     },
     {
       "path": "src/components/layout/ToolWorkspace.tsx",
-      "sha256": "ddbdfb2840050d24a90cced659f8626e6fc101898931559edad800c0aef7a2ff",
-      "bytes": 22302
+      "sha256": "3f6652c300ca29fc5717cd48fa59026a1907a063e8d6088142f105e63bf07442",
+      "bytes": 22410
     },
     {
       "path": "src/components/player/TrimScrubber.tsx",
@@ -1367,8 +1377,8 @@
     },
     {
       "path": "src/components/tools/pdf/shared/ProgressBar.tsx",
-      "sha256": "8bb99d376549f924fd59a87ddc1bac4082beb273610ec875b6f2ab87aed2329d",
-      "bytes": 3045
+      "sha256": "52b013037beec5215c09bd26c22b5430672e37566f1584c1d6c650db9425a297",
+      "bytes": 3119
     },
     {
       "path": "src/components/tools/pdf/shared/ResultCard.tsx",
@@ -1492,8 +1502,8 @@
     },
     {
       "path": "src/hooks/useFFmpeg.ts",
-      "sha256": "9ac420bdce9fcd55a05d565754d9e39500a945d8d454840538462fa45daafc30",
-      "bytes": 5099
+      "sha256": "779c65d50d1a13977a90ebcdf8432476ed21660ce3b9ad396e333a05a88c4933",
+      "bytes": 5942
     },
     {
       "path": "src/hooks/useIsCompact.ts",
@@ -1507,8 +1517,8 @@
     },
     {
       "path": "src/hooks/usePdfTool.ts",
-      "sha256": "019c1fe277c081ccce35f04ffd988db39af7026bad151e0b7da484953a3f713a",
-      "bytes": 25442
+      "sha256": "42c2fed105a817802cb44501f2936f680bdf721e5b6996085415a35fc45a60da",
+      "bytes": 25883
     },
     {
       "path": "src/hooks/useTheme.ts",
@@ -1862,18 +1872,23 @@
     },
     {
       "path": "src/main.tsx",
-      "sha256": "613347c93136b50a25250d9783e26de4788e62c5f34f550cf2749ace3623c8fa",
-      "bytes": 695
+      "sha256": "a3520090d5f277b80295a2557db93eff36c2e02d80759fd9ac2f9ff664b7362d",
+      "bytes": 1048
     },
     {
       "path": "src/stores/file-store.ts",
-      "sha256": "27f5cde1c64ed548614964ba5a2d4f1f2799699031b0b09e99a3668997a5c673",
-      "bytes": 4978
+      "sha256": "2a75beba7392a04aac65ba9b16e18fce1f68476d228682bdea5cc69d9a45b043",
+      "bytes": 4929
     },
     {
       "path": "src/stores/process-store.ts",
-      "sha256": "41e3bb56686919602d869bf4ea989219377deb60366811cef75adb891edab077",
-      "bytes": 14780
+      "sha256": "86e3de280a4ee9da94c80c30c161dbbbaf871aab3e3ab94755a9f014ca661a26",
+      "bytes": 14837
+    },
+    {
+      "path": "src/stores/session-recovery.ts",
+      "sha256": "b216b90588ae35d7139612a3cd85442245955659bdac01ffe76551802141023a",
+      "bytes": 10566
     },
     {
       "path": "src/stores/ui-store.ts",
@@ -1914,6 +1929,11 @@
       "path": "tests/app/ant-adaptation.test.tsx",
       "sha256": "ab67357799dd21847eb38f5ace1df4712e44684554dc19302d6f945dcbe74247",
       "bytes": 5485
+    },
+    {
+      "path": "tests/app/session-recovery.test.ts",
+      "sha256": "1a6e2dad11b614a5863449c02809df833629a08bba5607a94563b5773ce6cc17",
+      "bytes": 11109
     },
     {
       "path": "tests/app/shared-ui.test.tsx",
