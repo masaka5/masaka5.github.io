@@ -27,6 +27,7 @@
   const overlay=document.getElementById('testOverlay');
   let current=0, testing=false, paused=false, animation=0, hideTimer=0, elapsed=0, lastTime=0;
   let previousFocus=null, nativeFullscreen=false, tile=null, tileId='';
+  let link=null, motionEpoch=Date.now();
   const dynamic=()=>['breathing','motion'].includes(patterns[current].kind);
 
   for (const group of groups) {
@@ -36,9 +37,11 @@
     tabs.append(button);
   }
 
-  function select(index) {
-    current=(index+patterns.length)%patterns.length;
-    elapsed=0;lastTime=0;paused=false;
+  function select(index,remote=false) {
+    index=((index%patterns.length)+patterns.length)%patterns.length;
+    if(!remote&&link?.intent({kind:'select',index}))return;
+    current=index;
+    elapsed=0;lastTime=0;paused=false;motionEpoch=Date.now();
     const pattern=patterns[current];
     stage.dataset.pattern=pattern.id;
     canvas.setAttribute('aria-label',pattern.name+'测试画面');
@@ -59,7 +62,7 @@
     document.getElementById('motionRate').hidden=pattern.kind!=='motion';
     document.getElementById('motionSpeed').disabled=pattern.kind!=='motion';
     document.getElementById('overlayPause').hidden=!dynamic();
-    syncPause();resize();showControls();
+    syncPause();resize();showControls();if(!remote)link?.publish();
   }
 
   function resize() {
@@ -140,10 +143,10 @@
     }
   }
 
-  function frame(time){animation=0;if(!lastTime)lastTime=time;elapsed+=Math.min(80,time-lastTime);lastTime=time;draw();schedule();}
+  function frame(time){animation=0;elapsed=Math.max(0,Date.now()-motionEpoch);lastTime=time;draw();schedule();}
   function schedule(){cancelAnimationFrame(animation);animation=0;if(dynamic()&&!paused&&!document.hidden)animation=requestAnimationFrame(frame);}
   function syncPause(){for(const id of ['pauseMotion','overlayPause'])document.getElementById(id).textContent=paused?'继续':'暂停';}
-  function togglePause(){paused=!paused;lastTime=0;syncPause();schedule();showControls();}
+  function togglePause(){if(link?.intent({kind:'pause'}))return;if(!paused)elapsed=Math.max(0,Date.now()-motionEpoch);paused=!paused;motionEpoch=Date.now()-elapsed;lastTime=0;syncPause();schedule();showControls();link?.publish();}
   function showControls(){
     clearTimeout(hideTimer);stage.classList.remove('controls-hidden');
     if(testing)hideTimer=setTimeout(()=>{if(!overlay.matches(':hover')&&!overlay.contains(document.activeElement))stage.classList.add('controls-hidden');},1800);
@@ -159,12 +162,14 @@
     if(!testing&&document.fullscreenElement===stage)await document.exitFullscreen();
     syncFullscreen();resize();if(!testing)requestAnimationFrame(restoreFocus);
   }
-  function start(){
+  function start(request=true){
     previousFocus=document.activeElement;testing=true;nativeFullscreen=false;
     stage.classList.add('is-testing');overlay.hidden=false;stage.focus({preventScroll:true});
-    showControls();resize();enterFullscreen();
+    showControls();resize();if(request!==false)enterFullscreen();else syncFullscreen();
   }
-  function stop(){
+  function stop(localOnly=false){
+    if(localOnly!==true&&link?.isChild&&link.connected){link.end();return;}
+    if(localOnly!==true&&link?.connected)link.end();
     if(!testing)return;testing=false;nativeFullscreen=false;clearTimeout(hideTimer);
     stage.classList.remove('is-testing','controls-hidden');overlay.hidden=true;
     if(document.fullscreenElement===stage)document.exitFullscreen().catch(()=>{}).then(()=>requestAnimationFrame(restoreFocus));
@@ -177,7 +182,7 @@
   document.getElementById('previousPattern').addEventListener('click',()=>select(current-1));
   document.getElementById('nextPattern').addEventListener('click',()=>select(current+1));
   for(const id of ['pauseMotion','overlayPause'])document.getElementById(id).addEventListener('click',togglePause);
-  document.getElementById('motionSpeed').addEventListener('input',event=>{document.getElementById('speedValue').textContent=event.target.value+' px/s';draw();});
+  document.getElementById('motionSpeed').addEventListener('input',event=>{const value=Number(event.target.value);if(link?.intent({kind:'speed',value}))return;document.getElementById('speedValue').textContent=value+' px/s';draw();link?.publish();});
   canvas.addEventListener('click',()=>{if(testing)select(current+1);});
   stage.addEventListener('pointermove',showControls);
   stage.addEventListener('focusin',showControls);
@@ -203,4 +208,14 @@
   new ResizeObserver(()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(resize);}).observe(stage);
   window.addEventListener('resize',resize);
   select(0);
+  link=window.createMonitorLink({
+    patternCount:patterns.length,
+    getState:()=>({index:current,speed:Number(document.getElementById('motionSpeed').value),paused,elapsed:paused?elapsed:Math.max(0,Date.now()-motionEpoch),sentAt:Date.now()}),
+    applyState:state=>{
+      select(state.index,true);paused=state.paused;elapsed=state.elapsed+(paused?0:Math.max(0,Math.min(5000,Date.now()-state.sentAt)));motionEpoch=Date.now()-elapsed;
+      document.getElementById('motionSpeed').value=String(state.speed);document.getElementById('speedValue').textContent=state.speed+' px/s';syncPause();draw();schedule();
+    },
+    onIntent:action=>{if(action.kind==='select')select(action.index);if(action.kind==='pause')togglePause();if(action.kind==='speed'){document.getElementById('motionSpeed').value=String(action.value);document.getElementById('motionSpeed').dispatchEvent(new Event('input'));}},
+    onEnd:()=>stop(true),startChild:()=>start(false)
+  });
 })();

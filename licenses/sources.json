@@ -364,5 +364,11 @@
     "license": "MIT",
     "sourceArchive": "licenses/bsod-source.zip",
     "changes": "Format reference only; independent parser implementation, no upstream binary bundled."
+  },
+  {
+    "project": "monitor-multi-toolbox",
+    "version": "2.0.0",
+    "sourceArchive": "licenses/monitor-source.zip",
+    "changes": "First-party Canvas patterns with Window Management placement and BroadcastChannel session synchronization. No additional third-party runtime."
   }
 ]

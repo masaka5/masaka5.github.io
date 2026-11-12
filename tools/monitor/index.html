@@ -7,11 +7,12 @@
   <title>显示器检测 · 工具箱</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="monitor.css" />
+  <script defer src="monitor-multiscreen.js"></script>
   <script defer src="monitor.js"></script>
 </head>
 <body>
   <div class="screen-shell">
-    <header class="screen-header"><a class="back-link" href="../../">← 工具箱</a><h1>显示器检测</h1><button class="primary" id="startTest" type="button">全屏检测</button></header>
+    <header class="screen-header"><a class="back-link" href="../../">← 工具箱</a><h1>显示器检测</h1><div class="screen-actions"><button id="multiTest" type="button">多屏检测</button><button class="primary" id="startTest" type="button">全屏检测</button></div></header>
     <main class="screen-main">
       <div class="test-stage" id="testStage" data-pattern="solid-red" tabindex="-1">
         <canvas id="patternCanvas" aria-label="纯红色测试画面"></canvas>
@@ -29,5 +30,12 @@
     </main>
     <footer class="screen-footer"><span id="patternHint" role="status">观察固定的亮点、暗点或异色点。</span><span id="screenInfo"></span></footer>
   </div>
+  <dialog id="multiPanel" aria-labelledby="multiTitle">
+    <header><h2 id="multiTitle">多屏检测</h2><button id="closeMultiPanel" type="button" aria-label="关闭多屏面板">×</button></header>
+    <div class="multi-toolbar"><button id="identifyScreens" type="button">识别显示器</button><button id="allScreens" class="primary" type="button" disabled>全部检测</button></div>
+    <div id="screenList" class="screen-list"></div>
+    <p id="multiStatus" role="status">打开检测窗口后可拖到其他显示器。</p>
+    <footer><button id="manualScreen" type="button">新增检测窗口</button><button id="endScreens" type="button" disabled>结束多屏</button></footer>
+  </dialog>
 </body>
 </html>

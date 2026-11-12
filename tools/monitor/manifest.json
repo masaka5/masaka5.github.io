@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 3158,
+      "sha256": "d80442e0ad551de8b7544f57baa4e97eeeb99f2e1f6fbb7f12aaca0df7cd2888"
+    },
+    {
+      "file": "monitor-multiscreen.js",
+      "bytes": 10527,
+      "sha256": "848f27aa7c5299f4ca91ace1b3d8a2e561760b3b83a52802cfadcd7a9746ee6f"
+    },
+    {
+      "file": "monitor.css",
+      "bytes": 7313,
+      "sha256": "3926bcb871894056ade23a81f5ad76d0f130a0c53ad5c5549fef0c906159de08"
+    },
+    {
+      "file": "monitor.js",
+      "bytes": 15338,
+      "sha256": "c3ccb22a4f1d685c1bef2fb863e5a645b6cec9219380cee2a7e895a0a1df52c9"
+    }
+  ]
+}
