@@ -1,0 +1,59 @@
+{
+  "files": [
+    {
+      "file": "image-engine-core.js",
+      "bytes": 3675,
+      "sha256": "7552010c3066a8307fde666e196fd7c85a0a5bdb2eac6648304790d5b1ace869"
+    },
+    {
+      "file": "image-engine-worker.js",
+      "bytes": 9135,
+      "sha256": "9e3878db0f7531058cbeace593ddd08927d3fe3154c12c604dbc88080e2bad5e"
+    },
+    {
+      "file": "image-engine.js",
+      "bytes": 1622,
+      "sha256": "b0775f2038d973fa807383d5021552d803f01d68a12fd34a765054ffcc2a5f8e"
+    },
+    {
+      "file": "image-ui.js",
+      "bytes": 7462,
+      "sha256": "c49beb720c0ac526450f2b85c84ba5f68d25377f7e2f52c28d1cdac681737c27"
+    },
+    {
+      "file": "index.html",
+      "bytes": 5609,
+      "sha256": "58c1155d503789edbc3f44ce3d44ddcbc18418a45c7b86275e7abb2ed8c68fb1"
+    },
+    {
+      "file": "iso-codec.js",
+      "bytes": 2895,
+      "sha256": "9d0d38643ee2e89a4ad9b454fbcc4a9f471290170f41b7c1dcf07a06d8559af7"
+    },
+    {
+      "file": "iso-codec.wasm",
+      "bytes": 5453,
+      "sha256": "2ffea47a017a6c12cf7f74e03c22f922276926ee1e1ea1180655f19264e4d8e8"
+    },
+    {
+      "file": "iso-core.js",
+      "bytes": 7663,
+      "sha256": "34639dc5b9d6797becdacebf8b8e53c4bdbf709badfa6cfae96f03fb9e92a9dd"
+    },
+    {
+      "file": "iso-worker.js",
+      "bytes": 1433,
+      "sha256": "af5abe467e6575ce0db5d426c0e263e1190fb300f0eba1cd097878fab9913bf5"
+    },
+    {
+      "file": "iso.css",
+      "bytes": 5645,
+      "sha256": "7216e08593c4d8bb7964f12bde4315952d5d9f40b13ad68a3e1d59e3b263332b"
+    },
+    {
+      "file": "iso.js",
+      "bytes": 10896,
+      "sha256": "a82c34789b194f7592fedd42ed3027254a258f950ddb96e83825759042975835"
+    }
+  ]
+}

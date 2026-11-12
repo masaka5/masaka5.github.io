@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "file": "FATFS-LICENSE.txt",
+      "sha256": "2576183a3e1c2d2f4b3628a7ef93c2f937879698abdd6d554dd718e79062e079"
+    },
+    {
+      "file": "fatfs.mjs",
+      "sha256": "f21caa61cb47b182d2a333d97c1aa45bca9bf1a9e609029e74d19027636b2fb1"
+    },
+    {
+      "file": "ff.wasm",
+      "sha256": "f7d80cca7d4b583b111aa6df8beae79f29d981e4438c7141c68a529998ea9cb0"
+    },
+    {
+      "file": "ff_exfat.wasm",
+      "sha256": "cce777f6196e2c1954fd2a3cc9c5ff7b1ad18dc0ee0206ad127989194b18b355"
+    },
+    {
+      "file": "LICENSE.txt",
+      "sha256": "4936abbf5091d565f3e42671cfbe4aea2cd96e7da300e1ba86a2bdd2ceb8557b"
+    },
+    {
+      "file": "SOURCE.txt",
+      "sha256": "038c0174946e67c05d0ec8b90bd28e204728fcd963ceaa84771565b00510ba1e"
+    }
+  ]
+}

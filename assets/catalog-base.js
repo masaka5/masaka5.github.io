@@ -11,6 +11,8 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'iso',category:'files',name:'镜像工具',description:'镜像浏览 · 文件提取 · 镜像制作',href:'tools/iso/',icon:'disc-3',tags:['ISO','WIM','IMG','VHD'],keywords:'iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM'},
+    {id:'folder-analysis',category:'files',name:'文件夹分析',description:'空间分析 · 重复文件 · 类型统计',href:'tools/folder-analysis/',icon:'folder-search',tags:['文件夹','重复','空间'],keywords:'WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV'},
     {id:'code',category:'web',name:'代码工作台',description:'VS Code · 中文 · 本地文件',href:'tools/code/',icon:'code-xml',tags:['代码','VS Code','编辑器'],keywords:'vscode.dev 网页 IDE 编辑器 PowerShell Python JavaScript TypeScript Rust 文件 目录 补全'},
     {id:'serial',category:'peripheral',name:'串口调试与烧录',description:'文本 · HEX · ESP 固件',href:'tools/serial/',icon:'unplug',tags:['串口','固件','ESP'],keywords:'Web Serial UART USB COM 波特率 收发 烧录 固件 ESP32 ESP8266 esptool BIN'},
     {id:'file-watermark',category:'encoding',name:'文件隐写与校验',description:'隐藏标记 · 口令认证 · 还原',href:'tools/file-watermark/',icon:'file-key-2',tags:['隐写','校验','水印'],keywords:'文件水印 隐藏 标记 metadata PNG JPEG PDF Office ZIP HMAC SHA256 认证 完整性 校验'},

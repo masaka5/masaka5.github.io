@@ -2,9 +2,34 @@
 const ToolboxCatalog = {
   "categories": [
     {
-      "id": "hardware",
-      "name": "硬件检测",
-      "icon": "cpu"
+      "id": "files",
+      "name": "文件与镜像",
+      "icon": "folder-open"
+    },
+    {
+      "id": "pdf",
+      "name": "PDF 文档",
+      "icon": "file-text"
+    },
+    {
+      "id": "image",
+      "name": "图片处理",
+      "icon": "image"
+    },
+    {
+      "id": "media",
+      "name": "音频视频",
+      "icon": "clapperboard"
+    },
+    {
+      "id": "text",
+      "name": "文本处理",
+      "icon": "text-cursor-input"
+    },
+    {
+      "id": "data",
+      "name": "数据与表格",
+      "icon": "database"
     },
     {
       "id": "network",
@@ -17,44 +42,29 @@ const ToolboxCatalog = {
       "icon": "terminal"
     },
     {
+      "id": "hardware",
+      "name": "硬件检测",
+      "icon": "cpu"
+    },
+    {
       "id": "peripheral",
       "name": "设备与采集",
       "icon": "keyboard"
     },
     {
-      "id": "nfc",
-      "name": "NFC 工具",
-      "icon": "nfc"
+      "id": "web",
+      "name": "代码与开发",
+      "icon": "code-xml"
     },
     {
-      "id": "text",
-      "name": "文本与代码",
-      "icon": "text-cursor-input"
+      "id": "frontend",
+      "name": "网页与样式",
+      "icon": "panels-top-left"
     },
     {
-      "id": "collaboration",
-      "name": "在线协作",
-      "icon": "users-round"
-    },
-    {
-      "id": "pdf",
-      "name": "PDF 文档",
-      "icon": "file-text"
-    },
-    {
-      "id": "image",
-      "name": "图片设计",
-      "icon": "image"
-    },
-    {
-      "id": "media",
-      "name": "音频视频",
-      "icon": "clapperboard"
-    },
-    {
-      "id": "data",
-      "name": "数据处理",
-      "icon": "database"
+      "id": "security",
+      "name": "安全与认证",
+      "icon": "shield-check"
     },
     {
       "id": "encoding",
@@ -62,34 +72,24 @@ const ToolboxCatalog = {
       "icon": "binary"
     },
     {
-      "id": "web",
-      "name": "开发工具",
-      "icon": "code-xml"
-    },
-    {
       "id": "time",
-      "name": "时间日期",
+      "name": "日期时间",
       "icon": "calendar-days"
     },
     {
       "id": "math",
-      "name": "计算换算",
+      "name": "计算与单位",
       "icon": "calculator"
     },
     {
       "id": "color",
-      "name": "颜色工具",
+      "name": "颜色搭配",
       "icon": "palette"
     },
     {
-      "id": "convert",
-      "name": "格式转换",
-      "icon": "files"
-    },
-    {
-      "id": "studio",
-      "name": "创作与辅助",
-      "icon": "pen-tool"
+      "id": "collaboration",
+      "name": "协作与绘图",
+      "icon": "users-round"
     },
     {
       "id": "ai",
@@ -98,6 +98,53 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
+    {
+      "id": "iso",
+      "category": "files",
+      "name": "镜像工具",
+      "description": "镜像浏览 · 文件提取 · 镜像制作",
+      "href": "tools/iso/",
+      "icon": "disc-3",
+      "tags": [
+        "ISO",
+        "WIM",
+        "IMG",
+        "VHD"
+      ],
+      "keywords": "iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/iso/",
+          "source": "toolbox",
+          "sourceId": "iso"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "folder-analysis",
+      "category": "files",
+      "name": "文件夹分析",
+      "description": "空间分析 · 重复文件 · 类型统计",
+      "href": "tools/folder-analysis/",
+      "icon": "folder-search",
+      "tags": [
+        "文件夹",
+        "重复",
+        "空间"
+      ],
+      "keywords": "WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/folder-analysis/",
+          "source": "toolbox",
+          "sourceId": "folder-analysis"
+        }
+      ],
+      "iconBadge": ""
+    },
     {
       "id": "code",
       "category": "web",
@@ -146,7 +193,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "file-watermark",
-      "category": "encoding",
+      "category": "files",
       "name": "文件隐写与校验",
       "description": "隐藏标记 · 口令认证 · 还原",
       "href": "tools/file-watermark/",
@@ -241,7 +288,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "nfc",
-      "category": "nfc",
+      "category": "peripheral",
       "name": "NFC 读写",
       "description": "扫描标签与写入文本",
       "href": "tools/nfc/",
@@ -263,7 +310,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "uid",
-      "category": "nfc",
+      "category": "peripheral",
       "name": "UID 格式转换",
       "description": "进制与字节顺序转换",
       "href": "tools/uid/",
@@ -692,7 +739,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "acceleration-converter",
-      "category": "convert",
+      "category": "math",
       "name": "加速度转换器",
       "description": "在m/s2、g力、ft/s2和gal之间转换加速度。",
       "icon": "trending-up",
@@ -825,7 +872,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "aes-cbc-text",
-      "category": "encoding",
+      "category": "security",
       "name": "AES-CBC文本加密/解密",
       "description": "使用密码导出的密钥和显式IV通过AES-CBC加密或解密文本。",
       "icon": "lock-keyhole",
@@ -844,7 +891,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "aes-encrypt-decrypt",
-      "category": "encoding",
+      "category": "security",
       "name": "AES加密/解密",
       "description": "使用密码短语通过AES-GCM加密和解密文本，产生具有嵌入盐和IV的独立Base64输出。",
       "icon": "lock-keyhole",
@@ -863,7 +910,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "aes-gcm-file",
-      "category": "encoding",
+      "category": "security",
       "name": "AES-GCM 文件加密/解密",
       "description": "使用密码短语通过 AES-GCM 加密或解密浏览器中选定的文件。",
       "icon": "lock-keyhole",
@@ -1015,7 +1062,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "angle-subunits-converter",
-      "category": "convert",
+      "category": "math",
       "name": "度-分-秒转换器",
       "description": "在十进制度和度-分-秒(DMS)表示法之间转换角度。",
       "icon": "protractor",
@@ -1034,10 +1081,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "api-key-generator",
-      "category": "web",
+      "category": "security",
       "name": "API密钥生成器",
       "description": "以常见SaaS格式生成带前缀的秘密式API密钥。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "api key secret token generator stripe github base62 api-key random api-key-generator API密钥生成器",
       "variants": [
@@ -1053,7 +1100,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "api-key-pair-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "API 密钥 + 秘密生成器",
       "description": "生成具有前缀和导出的校验和的匹配的公钥ID和秘密对。",
       "icon": "key-square",
@@ -1091,7 +1138,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "area-converter",
-      "category": "convert",
+      "category": "math",
       "name": "面积转换器",
       "description": "在平方米、英亩、公顷、平方英尺等之间转换面积。",
       "icon": "square-dashed",
@@ -1167,7 +1214,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ascii-table-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "ASCII/盒表到 JSON",
       "description": "将固定宽度或盒式绘制的 ASCII 表（如 psql、MySQL 或无 markdown 控制台输出）解析为 JSON 行。",
       "icon": "file-json",
@@ -1224,7 +1271,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "astronomical-distance-converter",
-      "category": "convert",
+      "category": "math",
       "name": "天文距离转换器",
       "description": "转换AU、光年、秒差距和公里之间的宇宙距离。",
       "icon": "map-pinned",
@@ -1420,7 +1467,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "base64-to-file",
-      "category": "convert",
+      "category": "encoding",
       "name": "Base64/文件的数据 URI",
       "description": "解码base64或数据URI并将其保存为命名文件。",
       "icon": "binary",
@@ -1458,10 +1505,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "basic-auth-generator",
-      "category": "web",
+      "category": "security",
       "name": "基本验证生成器",
       "description": "根据用户名和密码构建HTTP基本授权标头。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "basic auth authorization header http credentials base64 basic-auth-generator 基本验证生成器",
       "variants": [
@@ -1477,7 +1524,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "bcrypt",
-      "category": "encoding",
+      "category": "security",
       "name": "Bcrypt 哈希和验证",
       "description": "使用bcrypt对密码进行哈希处理并在本地根据哈希值验证密码。",
       "icon": "lock-keyhole",
@@ -1496,10 +1543,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "bearer-token-generator",
-      "category": "web",
+      "category": "security",
       "name": "随机令牌生成器",
       "description": "生成编码为十六进制、Base64、Base64URL或Base62的加密随机令牌。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "bearer token api access secret base62 base64url hex random api-key crypto bearer-token-generator 随机令牌生成器",
       "variants": [
@@ -1515,7 +1562,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "bic-swift-test-generator",
-      "category": "web",
+      "category": "math",
       "name": "BIC/SWIFT代码测试生成器",
       "description": "生成结构有效的测试 BIC/SWIFT 代码（8 或 11 个字符），其中包含银行、国家/地区、位置、分行部分。",
       "icon": "credit-card",
@@ -1534,7 +1581,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "bimi-record-checker",
-      "category": "web",
+      "category": "network",
       "name": "BIMI记录检查器",
       "description": "检查 BIMI TXT 记录的版本、徽标 URL、权限 URL 和部署清单。",
       "icon": "server",
@@ -1591,10 +1638,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "bip39-mnemonic-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "BIP39助记符生成器",
       "description": "生成 12、15、18、21 或 24 个单词的 BIP39 种子短语，并具有用于加密钱包备份的有效校验和。",
-      "icon": "binary",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "bip39 mnemonic seed phrase wallet crypto recovery bip39-mnemonic-generator BIP39助记符生成器",
       "variants": [
@@ -1768,7 +1815,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "bytes-to-human-converter",
-      "category": "convert",
+      "category": "math",
       "name": "字节到人类可读转换器",
       "description": "将原始字节计数格式化为人类可读的大小，十进制和二进制。",
       "icon": "ruler",
@@ -1863,7 +1910,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "certificate-chain-builder",
-      "category": "encoding",
+      "category": "security",
       "name": "证书链生成器",
       "description": "检查粘贴的PEM证书链和标志排序、重复的主题和缺失的中间体。",
       "icon": "badge-check",
@@ -1882,7 +1929,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "certificate-decoder-x509",
-      "category": "encoding",
+      "category": "security",
       "name": "X.509证书解码器",
       "description": "解码PEM证书结构并在可见时提取主体、颁发者、有效性、SAN提示和指纹。",
       "icon": "badge-check",
@@ -1920,10 +1967,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "chmod-calculator",
-      "category": "web",
+      "category": "windows",
       "name": "Chmod 计算器",
       "description": "切换Unix权限位并获取八进制+符号chmod值。",
-      "icon": "code-xml",
+      "icon": "terminal",
       "tags": [],
       "keywords": "chmod file permissions octal rwx unix 755 chmod-calculator Chmod 计算器",
       "variants": [
@@ -1958,7 +2005,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "clothing-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "服装尺码转换器",
       "description": "转换男士和女士服装的服装尺码（XS-XXL、美国、英国、欧盟）。",
       "icon": "shirt",
@@ -2724,7 +2771,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-color-list-to-tailwind-config",
-      "category": "convert",
+      "category": "color",
       "name": "Tailwind 配置的颜色列表",
       "description": "将 name=hex 颜色对的列表转换为 Tailwind theme.extend.colors 配置对象。",
       "icon": "palette",
@@ -2743,7 +2790,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-cron-to-human-and-quartz",
-      "category": "convert",
+      "category": "time",
       "name": "Cron 方言翻译器",
       "description": "在标准5字段cron和6/7字段Quartz/Spring cron表达式之间转换。",
       "icon": "calendar-clock",
@@ -2762,7 +2809,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-cron-to-human-multi",
-      "category": "convert",
+      "category": "time",
       "name": "Crontab 文件解释器",
       "description": "用简单的英语解释crontab文件的每一行，包括特殊字符串。",
       "icon": "calendar-clock",
@@ -2781,7 +2828,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-csv-to-json-objects",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到 JSON 对象",
       "description": "将带有标题行的CSV转换为带有键入值的对象的JSON数组。",
       "icon": "file-json",
@@ -2800,7 +2847,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-csv-to-sql-insert-batch",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到批量 SQL INSERT",
       "description": "从具有可配置批量大小的CSV生成多行批量SQL INSERT语句。",
       "icon": "table-2",
@@ -2819,7 +2866,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-graphql-query-to-curl",
-      "category": "convert",
+      "category": "web",
       "name": "GraphQL 查询 cURL",
       "description": "将GraphQL查询和变量包装到POST cURL命令中。",
       "icon": "send",
@@ -2838,7 +2885,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-har-to-curl",
-      "category": "convert",
+      "category": "web",
       "name": "cURL 的 HAR 条目",
       "description": "从HAR文件或单个HAR条目提取请求并发出等效的cURL命令。",
       "icon": "send",
@@ -2857,7 +2904,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-jsonl-to-sql-insert",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 行到 SQL INSERT",
       "description": "使用每个对象的键作为列从NDJSON记录生成SQL INSERT语句。",
       "icon": "file-json",
@@ -2876,7 +2923,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-openapi-to-curl",
-      "category": "convert",
+      "category": "web",
       "name": "cURL 的 OpenAPI 路径",
       "description": "将OpenAPI路径操作转变为具有占位符值的示例cURL命令。",
       "icon": "send",
@@ -2895,7 +2942,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "convert-svg-to-jsx",
-      "category": "convert",
+      "category": "frontend",
       "name": "SVG 到 JSX/React 组件",
       "description": "将原始SVG标记转换为具有camelCased属性的React JSX组件。",
       "icon": "image",
@@ -2952,7 +2999,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "cooking-pan-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "烤盘尺寸转换器",
       "description": "转换烤盘尺寸并在盘形状之间缩放配方体积。",
       "icon": "cooking-pot",
@@ -2971,7 +3018,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "cooking-temperature-converter",
-      "category": "convert",
+      "category": "math",
       "name": "烤箱温度转换器",
       "description": "在摄氏度、华氏度和英国燃气标记之间转换烤箱温度。",
       "icon": "ruler",
@@ -3123,7 +3170,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crontab-recipe-generator",
-      "category": "web",
+      "category": "time",
       "name": "crontab 配方生成器",
       "description": "生成包含多个作业、调度预设、环境行和人工注释的完整 crontab 文件。",
       "icon": "calendar-clock",
@@ -3142,7 +3189,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-argon2-params-advisor",
-      "category": "encoding",
+      "category": "security",
       "name": "Argon2参数顾问",
       "description": "为目标环境推荐Argon2id存储器、迭代和并行性参数。",
       "icon": "lock-keyhole",
@@ -3161,7 +3208,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-bcrypt-cost-benchmark",
-      "category": "encoding",
+      "category": "security",
       "name": "Bcrypt成本估计器",
       "description": "估计每个成本因素的bcrypt散列时间并推荐目标工作因素。",
       "icon": "lock-keyhole",
@@ -3180,7 +3227,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-key-fingerprint",
-      "category": "encoding",
+      "category": "security",
       "name": "密钥指纹生成器",
       "description": "计算公钥的SSH样式和证书样式指纹（MD5冒号十六进制和SHA-256 base64）。",
       "icon": "fingerprint",
@@ -3199,7 +3246,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-mod10-mod11-check-digit",
-      "category": "encoding",
+      "category": "security",
       "name": "Mod-10 / Mod-11 校验位计算器",
       "description": "计算并验证任意数字字符串的Mod-10(Luhn)和Mod-11校验位。",
       "icon": "list-checks",
@@ -3218,7 +3265,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-passwd-shadow-parser",
-      "category": "encoding",
+      "category": "security",
       "name": "/etc/passwd 和影子解析器",
       "description": "逐个字段地解析和解释Unix密码和影子文件行。",
       "icon": "key-round",
@@ -3237,7 +3284,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-rsa-key-size-strength",
-      "category": "encoding",
+      "category": "security",
       "name": "RSA/ECC密钥强度比较器",
       "description": "通过等效的安全位来比较RSA、ECC和对称密钥大小。",
       "icon": "key-square",
@@ -3256,7 +3303,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-sha3-keccak-hash",
-      "category": "encoding",
+      "category": "security",
       "name": "SHA-3 / Keccak 哈希",
       "description": "使用纯 JS 实现计算文本的 SHA3-224/256/384/512 和 Keccak-256 哈希值。",
       "icon": "fingerprint",
@@ -3275,7 +3322,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "crypto-text-checksum-multi",
-      "category": "encoding",
+      "category": "security",
       "name": "多算法文本校验和",
       "description": "在一个视图中计算文本的CRC-8、CRC-16、CRC-32、Adler-32以及简单的XOR/和校验和。",
       "icon": "fingerprint",
@@ -3294,7 +3341,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "csr-generator-validator",
-      "category": "encoding",
+      "category": "security",
       "name": "CSR生成器和验证器",
       "description": "生成OpenSSL CSR命令并检查粘贴的CSR PEM块。",
       "icon": "badge-check",
@@ -3313,7 +3360,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "css-color-function-builder",
-      "category": "color",
+      "category": "frontend",
       "name": "CSS 颜色函数生成器",
       "description": "交互式构建现代 CSS color()、rgb()、hsl()、lab()、lch()、oklch() 字符串。",
       "icon": "palette",
@@ -3332,7 +3379,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "css-minify",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS缩小/美化",
       "description": "将CSS缩小为一行或用一致的缩进来美化它。",
       "icon": "minimize-2",
@@ -3357,7 +3404,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "css-shorthand-expander",
-      "category": "convert",
+      "category": "frontend",
       "name": "CSS速记扩展器",
       "description": "将CSS简写属性（边距、填充、边框、字体、背景等）展开到它们的普通声明中，或者将普通书写折叠回去。",
       "icon": "brush",
@@ -3699,7 +3746,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "csv-to-markdown",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到 Markdown 表",
       "description": "将 CSV 转换为 GitHub 风格的 Markdown 表。",
       "icon": "notebook-pen",
@@ -3756,7 +3803,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "csv-to-tsv",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到 TSV",
       "description": "使用适当的引号处理在逗号分隔值和制表符分隔值之间进行转换，在任一方向上，准备粘贴到电子表格中。",
       "icon": "table-2",
@@ -3775,7 +3822,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "csv-to-xml",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到 XML",
       "description": "将 CSV 行转换为 XML 文档。",
       "icon": "code-xml",
@@ -3794,7 +3841,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "csv-to-yaml",
-      "category": "convert",
+      "category": "data",
       "name": "CSV 到 YAML",
       "description": "将 CSV 行转换为 YAML 对象列表。",
       "icon": "table-2",
@@ -3870,7 +3917,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "curl-to-httpie",
-      "category": "convert",
+      "category": "web",
       "name": "cURL 到 HTTPie",
       "description": "将curl命令转换为等效的HTTPie命令。",
       "icon": "send",
@@ -3927,7 +3974,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "currency-unit-naming",
-      "category": "convert",
+      "category": "math",
       "name": "货币子单位和命名参考",
       "description": "查找世界货币、其子单位、符号和ISO 4217代码。",
       "icon": "banknote",
@@ -4117,7 +4164,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "data-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "数据大小转换器",
       "description": "在位、字节、KB/MB/GB/TB 和 KiB/MiB/GiB 之间转换数字存储，清楚地区分十进制 SI 和二进制 IEC 单位。",
       "icon": "hard-drive",
@@ -4136,7 +4183,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "data-storage-units-converter",
-      "category": "convert",
+      "category": "math",
       "name": "数据存储单位转换器",
       "description": "在位、字节和十进制/二进制倍数之间转换数字存储，例如MB与MiB。",
       "icon": "hard-drive",
@@ -4155,7 +4202,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "data-transfer-time-calculator",
-      "category": "convert",
+      "category": "math",
       "name": "下载/传输时间计算器",
       "description": "估计在给定连接速度下传输文件需要多长时间。",
       "icon": "clock",
@@ -4497,7 +4544,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "density-converter",
-      "category": "convert",
+      "category": "math",
       "name": "密度转换器",
       "description": "在kg/m 3 、g/cm 3 、lb/ft 3 和lb/加仑之间转换密度。",
       "icon": "layers",
@@ -4573,7 +4620,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "diceware-passphrase",
-      "category": "encoding",
+      "category": "security",
       "name": "Diceware 密码生成器",
       "description": "使用加密随机性从捆绑的 Diceware 风格的 7776 字列表生成难忘的密码短语。",
       "icon": "key-round",
@@ -4687,7 +4734,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dkim-record-decoder",
-      "category": "web",
+      "category": "network",
       "name": "DKIM记录解码器",
       "description": "解码 DKIM TXT 记录并提取版本、密钥类型、标志、哈希列表、服务和公钥提示。",
       "icon": "server",
@@ -4706,7 +4753,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dmarc-record-builder",
-      "category": "web",
+      "category": "network",
       "name": "DMARC 记录生成器",
       "description": "使用报告 URI、对齐、百分比和子域策略构建 DMARC TXT 策略。",
       "icon": "server",
@@ -4725,7 +4772,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dmarc-report-xml-parser",
-      "category": "web",
+      "category": "network",
       "name": "DMARC报告XML解析器",
       "description": "将聚合 DMARC XML 报告解析为源 IP、计数、处置和验证结果。",
       "icon": "server",
@@ -4744,7 +4791,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dns-zone-file-validator",
-      "category": "web",
+      "category": "network",
       "name": "DNS 区域文件验证器",
       "description": "检查区域文件记录中常见的 SOA、NS、MX、CNAME、TTL 和语法问题。",
       "icon": "list-checks",
@@ -4763,7 +4810,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dnssec-chain-visualizer",
-      "category": "web",
+      "category": "network",
       "name": "DNSSEC 链可视化工具",
       "description": "检查粘贴的DS、DNSKEY、RRSIG和NSEC记录并概述信任链。",
       "icon": "server",
@@ -4801,7 +4848,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "dpi-ppi-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "DPI/PPI像素尺寸转换器",
       "description": "在物理打印尺寸、像素尺寸和DPI之间进行转换——或者根据屏幕的分辨率和对角线计算屏幕的PPI。",
       "icon": "scan-line",
@@ -4896,7 +4943,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ean-upc-barcode-data-generator",
-      "category": "web",
+      "category": "image",
       "name": "EAN/UPC校验位和号码生成器",
       "description": "生成具有正确校验位的有效EAN-13、EAN-8、UPC-A和ISBN-13号码，或者修复部分代码。",
       "icon": "scan-barcode",
@@ -4934,7 +4981,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ecdsa-keypair-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "ECDSA密钥对生成器",
       "description": "生成椭圆曲线(P-256/P-384/P-521)密钥对作为用于ECDSA签名的PEM。",
       "icon": "key-square",
@@ -4953,7 +5000,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ecdsa-sign-verify",
-      "category": "encoding",
+      "category": "security",
       "name": "ECDSA 签名和验证",
       "description": "在P-256/P-384/P-521曲线上用ECDSA对消息进行签名和验证。",
       "icon": "signature",
@@ -5510,7 +5557,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "encoding-jwt-inspector",
-      "category": "encoding",
+      "category": "security",
       "name": "JWT解码器和检查器",
       "description": "将JSON Web令牌解码为其可读标头和有效负载声明，并具有exp/iat/nbf的人类友好时间戳。",
       "icon": "shield-check",
@@ -5895,7 +5942,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "energy-converter",
-      "category": "convert",
+      "category": "math",
       "name": "能量转换器",
       "description": "在焦耳、卡路里、kWh、BTU和电子伏特之间转换能量。",
       "icon": "zap",
@@ -5952,7 +5999,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "env-to-shell-exports",
-      "category": "convert",
+      "category": "web",
       "name": ".env 到 Shell 导出",
       "description": "将.env文件转换为bash/zsh、fish或PowerShell的复制粘贴shell导出语句。",
       "icon": "file-cog",
@@ -6142,7 +6189,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "fake-ipv4-ipv6-generator",
-      "category": "web",
+      "category": "network",
       "name": "随机IP地址生成器",
       "description": "生成随机IPv4和IPv6地址，可选地限制在私有或公共范围。",
       "icon": "ethernet-port",
@@ -6351,7 +6398,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "flow-rate-converter",
-      "category": "convert",
+      "category": "math",
       "name": "流量转换器",
       "description": "在L/s、m3/h、GPM和CFM之间转换体积流量。",
       "icon": "waves",
@@ -6370,7 +6417,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "force-converter",
-      "category": "convert",
+      "category": "math",
       "name": "力转换器",
       "description": "在牛顿、千克力、磅力和达因之间转换力。",
       "icon": "move-up-right",
@@ -6446,7 +6493,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "frequency-converter",
-      "category": "convert",
+      "category": "math",
       "name": "变频器",
       "description": "在Hz、kHz、MHz、GHz、RPM和角rad/s之间转换频率。",
       "icon": "radio",
@@ -6484,7 +6531,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "fuel-volume-converter",
-      "category": "convert",
+      "category": "math",
       "name": "燃料和石油体积转换器",
       "description": "在升、美制/英制加仑和油桶之间转换燃料体积。",
       "icon": "box",
@@ -6541,7 +6588,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-barcode",
-      "category": "web",
+      "category": "image",
       "name": "条形码生成器",
       "description": "从输入文本/数字生成Code 39和EAN-13条形码，呈现为具有可调整条宽度和高度的可下载SVG/PNG。",
       "icon": "barcode",
@@ -6560,7 +6607,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-credit-card",
-      "category": "web",
+      "category": "math",
       "name": "信用卡号生成器",
       "description": "按品牌（Visa、Mastercard、Amex、Discover）生成 Luhn 有效的假测试卡号，并具有可选的到期日和 CVV，仅用于支付形式测试。",
       "icon": "credit-card",
@@ -6585,7 +6632,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-cron-expression",
-      "category": "web",
+      "category": "time",
       "name": "Cron 计划生成器",
       "description": "从人性化的时间表控件（分钟、小时、日、月、工作日）构建 cron 表达式，并查看其运行时间的简单英语描述。",
       "icon": "calendar-clock",
@@ -6604,7 +6651,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-css-gradient",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS渐变生成器",
       "description": "构建具有多个色标、角度和类型的线性或径向CSS渐变，产生具有实时预览的复制就绪背景CSS。",
       "icon": "blend",
@@ -6623,7 +6670,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-hex-color-palette",
-      "category": "web",
+      "category": "color",
       "name": "十六进制颜色生成器",
       "description": "生成随机颜色作为HEX、RGB和HSL，并具有控制设计调色板和占位符的色调范围、亮度和饱和度的选项。",
       "icon": "palette",
@@ -6648,7 +6695,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-iban",
-      "category": "web",
+      "category": "math",
       "name": "IBAN发生器",
       "description": "生成每个国家的具有正确长度和ISO 7064 mod-97校验位的有效格式测试IBAN，这对于银行和表格验证测试有用。",
       "icon": "list-checks",
@@ -6667,10 +6714,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-mac-address",
-      "category": "web",
+      "category": "network",
       "name": "MAC地址生成器",
       "description": "生成具有可选分隔符（冒号、连字符、点）、大小写和本地管理/单播位控制的随机MAC地址以用于网络测试。",
-      "icon": "code-xml",
+      "icon": "network",
       "tags": [],
       "keywords": "mac address network ethernet hardware random generate-mac-address MAC地址生成器",
       "variants": [
@@ -6686,7 +6733,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-markdown-table",
-      "category": "web",
+      "category": "data",
       "name": "Markdown 表生成器",
       "description": "从粘贴的 CSV/TSV 或行/列计数生成干净的 GitHub 风格的 Markdown 表，并具有列对齐和自动填充列。",
       "icon": "notebook-pen",
@@ -6705,7 +6752,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-mock-json",
-      "category": "web",
+      "category": "data",
       "name": "JSON 模拟数据生成器",
       "description": "从字段模式（名称、电子邮件、uuid、数字、日期、布尔值）生成真实的假 JSON 记录数组，并具有用于 API 模拟的可配置行数。",
       "icon": "file-json",
@@ -6749,7 +6796,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-passphrase",
-      "category": "web",
+      "category": "security",
       "name": "安全密码生成器",
       "description": "从具有可配置字数、分隔符、大写和附加数字的内置单词列表生成令人难忘的 Diceware 式密码短语。",
       "icon": "key-round",
@@ -6774,7 +6821,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-pin",
-      "category": "web",
+      "category": "security",
       "name": "PIN码生成器",
       "description": "批量生成选定长度(例如4/6/8位数字)的随机数字PIN码，并可以选择避免琐碎的序列和重复。",
       "icon": "dices",
@@ -6793,7 +6840,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "placeholder-image",
-      "category": "web",
+      "category": "image",
       "name": "占位符图像生成器",
       "description": "以选定的尺寸、背景/文本颜色和标签文本生成可下载的占位符图像，将其绘制在画布上作为模型的数据URL。",
       "icon": "image-plus",
@@ -6818,7 +6865,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-random-date",
-      "category": "web",
+      "category": "time",
       "name": "随机日期生成器",
       "description": "使用选定的输出格式（ISO、区域设置、Unix时间戳）和播种数据的数量，生成开始和结束边界之间的随机日期和时间。",
       "icon": "calendar-range",
@@ -6837,7 +6884,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-random-number",
-      "category": "web",
+      "category": "math",
       "name": "随机数发生器",
       "description": "生成最小/最大范围内的密码随机整数或小数，具有数量、唯一性和小数位数的选项。",
       "icon": "dices",
@@ -6856,7 +6903,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-random-string",
-      "category": "web",
+      "category": "security",
       "name": "随机字符串生成器",
       "description": "生成具有可切换字符集（小写、大写、数字、符号）、自定义长度以及API密钥、秘密和测试数据的数量的随机字符串/令牌。",
       "icon": "dices",
@@ -6881,7 +6928,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-slug",
-      "category": "web",
+      "category": "text",
       "name": "弹头发生器",
       "description": "将每行文本转换为干净的URL slugs，具有分隔符、小写、重音去除和最大长度选项，一次处理多个标题。",
       "icon": "case-sensitive",
@@ -6900,7 +6947,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generate-svg-pattern",
-      "category": "web",
+      "category": "image",
       "name": "SVG图案生成器",
       "description": "生成具有可调整颜色、尺寸和间距的可平铺SVG背景图案（点、网格、条纹、棋盘），输出为即用型SVG标记。",
       "icon": "image",
@@ -6982,7 +7029,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "generators-ssh-config-builder",
-      "category": "web",
+      "category": "windows",
       "name": "SSH配置块生成器",
       "description": "从表单字段构建格式良好的~/.ssh/config主机块。",
       "icon": "git-branch",
@@ -7305,7 +7352,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hex-to-rgb-code",
-      "category": "convert",
+      "category": "color",
       "name": "十六进制到 RGB 代码片段",
       "description": "将十六进制颜色转换成多种语言的可直接粘贴的代码。",
       "icon": "palette",
@@ -7343,7 +7390,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hkdf-key-derivation",
-      "category": "encoding",
+      "category": "security",
       "name": "HKDF密钥导出",
       "description": "使用HKDF(RFC 5869)将输入密钥材料扩展为一个或多个输出密钥。",
       "icon": "key-square",
@@ -7362,7 +7409,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hmac-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "HMAC发生器",
       "description": "使用秘密密钥计算消息的HMAC(SHA-1/256/384/512)。",
       "icon": "fingerprint",
@@ -7381,7 +7428,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hmac-verify",
-      "category": "encoding",
+      "category": "security",
       "name": "HMAC验证",
       "description": "根据消息和密钥重新计算HMAC，然后将其与预期MAC进行比较以验证真实性。",
       "icon": "fingerprint",
@@ -7419,7 +7466,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hsts-preload-checker",
-      "category": "web",
+      "category": "network",
       "name": "HSTS预载检查器",
       "description": "对照常见预加载要求检查严格传输安全标头。",
       "icon": "shield",
@@ -7501,7 +7548,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "html-table-to-markdown",
-      "category": "convert",
+      "category": "data",
       "name": "HTML 表格到 Markdown",
       "description": "从 HTML 中提取 <table> 元素并将它们呈现为 GitHub 风格的 Markdown 管道表。",
       "icon": "notebook-pen",
@@ -7520,7 +7567,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "html-to-markdown",
-      "category": "convert",
+      "category": "text",
       "name": "HTML 到 Markdown",
       "description": "将HTML转换为干净的Markdown，将标题、链接、图像、列表、块引用、代码和强调映射回纯Markdown语法。",
       "icon": "notebook-pen",
@@ -7539,7 +7586,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "html-to-pug",
-      "category": "convert",
+      "category": "frontend",
       "name": "HTML 到 Pug",
       "description": "将HTML标记转换成Pug(Jade)模板语法。",
       "icon": "code-xml",
@@ -7558,7 +7605,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "html-to-text",
-      "category": "web",
+      "category": "text",
       "name": "HTML到文本",
       "description": "剥离HTML标签并解码实体以获得干净的纯文本。",
       "icon": "code-xml",
@@ -7577,7 +7624,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "htpasswd-generator",
-      "category": "web",
+      "category": "security",
       "name": ".htpasswd 生成器",
       "description": "使用bcrypt、SHA-1或MD5(APR1)散列完全在浏览器内生成Apache/Nginx htpasswd条目。",
       "icon": "key-round",
@@ -7659,7 +7706,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "httpie-to-curl",
-      "category": "convert",
+      "category": "web",
       "name": "HTTPie到cURL",
       "description": "将HTTPie命令转换成等效的curl命令。",
       "icon": "send",
@@ -7735,7 +7782,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "illuminance-converter",
-      "category": "convert",
+      "category": "math",
       "name": "照度转换器",
       "description": "在勒克斯、英尺烛光和照片之间转换照度。",
       "icon": "sun",
@@ -8692,7 +8739,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ingredient-weight-volume-converter",
-      "category": "convert",
+      "category": "math",
       "name": "成分重量至体积转换器",
       "description": "使用每种成分的密度在克、盎司、杯、汤匙、茶匙和毫升之间转换烹饪成分。",
       "icon": "box",
@@ -8711,7 +8758,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ini-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "INI 到 JSON",
       "description": "将INI/配置文件解析为结构化JSON。",
       "icon": "file-json",
@@ -8768,7 +8815,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ip-cidr-list-generator",
-      "category": "web",
+      "category": "network",
       "name": "IP/CIDR 测试范围生成器",
       "description": "生成随机IPv4/IPv6地址的列表或将CIDR块扩展为测试数据的主机地址。",
       "icon": "waypoints",
@@ -8901,7 +8948,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "js-object-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "JS对象到JSON",
       "description": "将宽松的JavaScript对象文字（不带引号的键、单引号、尾随逗号、注释）转换为严格的、有效的JSON。",
       "icon": "file-json",
@@ -8958,7 +9005,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-array-to-list",
-      "category": "convert",
+      "category": "data",
       "name": "要列出的 JSON 数组",
       "description": "将JSON数组转换为分隔或行分隔的列表。",
       "icon": "file-json",
@@ -9444,7 +9491,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-csharp",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 C# 类",
       "description": "从JSON生成具有System.Text.Json属性的C#类。",
       "icon": "file-json",
@@ -9501,7 +9548,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-dart",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Dart 类",
       "description": "使用 fromJson/toJson 从 JSON 示例生成 Dart 类。",
       "icon": "file-json",
@@ -9539,7 +9586,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-go",
-      "category": "convert",
+      "category": "web",
       "name": "JSON 到 Go 结构",
       "description": "从 JSON 样本推断 Go 结构（带有 json 标签）。",
       "icon": "file-json",
@@ -9596,7 +9643,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-ini",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到 INI",
       "description": "将JSON对象转换成INI/配置文件语法。",
       "icon": "file-json",
@@ -9615,7 +9662,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-jsdoc-typedef",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 JSDoc Typedef",
       "description": "从 JSON 示例生成 JSDoc @typedef 注释。",
       "icon": "type",
@@ -9659,7 +9706,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-kotlin",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Kotlin 数据类",
       "description": "使用 kotlinx.serialization 从 JSON 生成 Kotlin 数据类。",
       "icon": "file-json",
@@ -9678,7 +9725,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-kv-pairs",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到键值对",
       "description": "将JSON对象转换为平面键：值文本行。",
       "icon": "file-json",
@@ -9716,7 +9763,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-mongoose-schema",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Mongoose 模式",
       "description": "从 JSON 示例生成 Mongoose 架构定义。",
       "icon": "braces",
@@ -9754,7 +9801,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-php-array",
-      "category": "convert",
+      "category": "web",
       "name": "JSON 到 PHP 数组",
       "description": "将JSON转换为PHP数组文字。",
       "icon": "file-json",
@@ -9773,7 +9820,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-plist",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到 Apple plist",
       "description": "将 JSON 转换为 Apple XML 属性列表。",
       "icon": "file-json",
@@ -9792,7 +9839,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-properties",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到 Java .properties",
       "description": "将嵌套的 JSON 转换为 Java/Spring .properties 行。",
       "icon": "file-json",
@@ -9811,7 +9858,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-protobuf",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Protobuf",
       "description": "从JSON样本生成proto3.proto消息定义。",
       "icon": "workflow",
@@ -9830,7 +9877,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-pydantic",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Pydantic 模型",
       "description": "从JSON样本生成Pydantic v2 BaseModel类。",
       "icon": "file-json",
@@ -9849,7 +9896,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-python-dataclass",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Python 数据类",
       "description": "从 JSON 样本生成 Python @dataclass 定义。",
       "icon": "file-json",
@@ -9893,7 +9940,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-ruby-hash",
-      "category": "convert",
+      "category": "web",
       "name": "JSON 到 Ruby 哈希",
       "description": "将 JSON 转换为 Ruby 哈希文本。",
       "icon": "fingerprint",
@@ -9912,7 +9959,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-rust-serde",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Rust 结构",
       "description": "使用源自 JSON 样本的 serde 生成 Rust 结构。",
       "icon": "file-json",
@@ -9931,7 +9978,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-swift-codable",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Swift Codable",
       "description": "从 JSON 示例生成符合 Codable 的 Swift 结构。",
       "icon": "file-json",
@@ -9975,7 +10022,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-typescript",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 TypeScript",
       "description": "从JSON样本推断TypeScript接口。",
       "icon": "type",
@@ -9994,7 +10041,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-xml",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到 XML",
       "description": "通过适当的转义将JSON转换为XML标记。",
       "icon": "code-xml",
@@ -10013,7 +10060,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-xml-attributes",
-      "category": "convert",
+      "category": "data",
       "name": "JSON到XML(属性模式)",
       "description": "选择属性与子元素将JSON转换为XML。",
       "icon": "code-xml",
@@ -10032,7 +10079,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-yaml",
-      "category": "convert",
+      "category": "data",
       "name": "JSON 到 YAML",
       "description": "将JSON转换为可读的YAML。",
       "icon": "file-json",
@@ -10051,7 +10098,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "json-to-zod",
-      "category": "data",
+      "category": "web",
       "name": "JSON 到 Zod 模式",
       "description": "从JSON样本生成Zod验证模式。",
       "icon": "file-json",
@@ -10114,7 +10161,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jsx-to-html",
-      "category": "convert",
+      "category": "frontend",
       "name": "JSX 到 HTML",
       "description": "将 JSX/React 元素标记转换回纯 HTML。",
       "icon": "code-xml",
@@ -10152,7 +10199,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwk-pem-viewer",
-      "category": "encoding",
+      "category": "security",
       "name": "JWK / PEM 密钥查看器",
       "description": "检查JWK和PEM密钥表示之间并进行转换并显示它们的参数。",
       "icon": "key-square",
@@ -10171,7 +10218,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwk-rotation-diff",
-      "category": "encoding",
+      "category": "security",
       "name": "JWK旋转差速器",
       "description": "比较旧的和新的JWKS文档并识别添加的、移除的和改变的键。",
       "icon": "file-diff",
@@ -10190,7 +10237,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwk-thumbprint",
-      "category": "encoding",
+      "category": "security",
       "name": "JWK 指纹（RFC 7638）",
       "description": "根据 RFC 7638 计算 JSON Web 密钥的规范 SHA-256 指纹。",
       "icon": "key-square",
@@ -10209,7 +10256,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwks-inspector",
-      "category": "encoding",
+      "category": "security",
       "name": "JWKS检查员",
       "description": "检查JSON Web密钥集、密钥ID、算法、使用、密钥类型和轮换准备情况。",
       "icon": "key-square",
@@ -10228,7 +10275,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-builder-rsa-es",
-      "category": "encoding",
+      "category": "security",
       "name": "JWT 构建器(RS/ES)",
       "description": "使用RSA或ECDSA密钥(RS256/384/512、ES256/384/512、PS256)构建并签署JSON Web令牌。",
       "icon": "shield-check",
@@ -10247,7 +10294,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-claims-validator",
-      "category": "encoding",
+      "category": "security",
       "name": "JWT 声明验证器",
       "description": "解码JWT并检查其注册声明(exp、nbf、iat、aud、iss)而不验证签名。",
       "icon": "shield-check",
@@ -10266,7 +10313,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-decoder",
-      "category": "web",
+      "category": "security",
       "name": "JWT解码器",
       "description": "解码并检查 JSON Web Token 标头和有效负载（无验证）。",
       "icon": "shield-check",
@@ -10285,7 +10332,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "智威汤逊发电机",
       "description": "根据有效负载和秘密创建签名的HS256/384/512 JSON Web令牌。",
       "icon": "shield-check",
@@ -10304,7 +10351,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-verify-hmac",
-      "category": "encoding",
+      "category": "security",
       "name": "JWT 签名验证器 (HS256)",
       "description": "对照秘密验证HMAC签名的JWT(HS256/384/512)并报告签名和到期是否有效。",
       "icon": "shield-check",
@@ -10323,7 +10370,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "jwt-verify-rsa-es",
-      "category": "encoding",
+      "category": "security",
       "name": "JWT验证器(RS/ES)",
       "description": "对照RSA或ECDSA公钥验证JWT签名并检查标准声明。",
       "icon": "shield-check",
@@ -10380,7 +10427,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "key-value-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "key=value 行到 JSON",
       "description": "将普通的 key=value 或 key:value 配置行转换为 JSON 对象，并使用类型强制和嵌套在点键上。",
       "icon": "file-json",
@@ -10437,7 +10484,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "kv-pairs-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "键值对到JSON",
       "description": "将 key:value 或 key=value 行转换为 JSON 对象。",
       "icon": "file-json",
@@ -10494,7 +10541,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "length-converter",
-      "category": "convert",
+      "category": "math",
       "name": "长度和距离转换器",
       "description": "通过实时多单位输出在公制和英制长度之间进行转换，例如毫米、厘米、米、公里、英寸、英尺、码、英里和海里。",
       "icon": "ruler",
@@ -10627,7 +10674,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "list-to-json-array",
-      "category": "convert",
+      "category": "data",
       "name": "列表到 JSON 数组",
       "description": "将行/逗号列表转换为 JSON 数组。",
       "icon": "file-json",
@@ -10741,7 +10788,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "luminance-converter",
-      "category": "convert",
+      "category": "math",
       "name": "亮度转换器",
       "description": "在坎德拉/平方米(尼特)、英尺朗伯和斯蒂尔布之间转换亮度。",
       "icon": "sun-medium",
@@ -10779,7 +10826,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "magnetic-field-converter",
-      "category": "convert",
+      "category": "math",
       "name": "磁场转换器",
       "description": "在特斯拉、高斯和毫高斯之间转换磁通密度。",
       "icon": "magnet",
@@ -10817,7 +10864,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "markdown-list-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "Markdown 列表 ↔ JSON 树",
       "description": "将缩进的 Markdown 项目符号/编号列表转换为嵌套的 JSON 数组（反之亦然）。",
       "icon": "notebook-pen",
@@ -10855,7 +10902,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "markdown-table-to-csv",
-      "category": "convert",
+      "category": "data",
       "name": "Markdown 表转为 CSV",
       "description": "提取GitHub样式的Markdown表并将其行转换为CSV，处理管道转义、对齐分隔符和修剪单元格。",
       "icon": "notebook-pen",
@@ -10874,7 +10921,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "markdown-table-to-html",
-      "category": "convert",
+      "category": "data",
       "name": "Markdown 表转为 HTML",
       "description": "将 GitHub 风格的 Markdown 管道表转换为具有对齐方式的干净语义 HTML 表。",
       "icon": "notebook-pen",
@@ -10912,7 +10959,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "markdown-to-html",
-      "category": "web",
+      "category": "text",
       "name": "Markdown 到 HTML",
       "description": "通过实时预览和可复制输出将 Markdown 渲染为 HTML。",
       "icon": "notebook-pen",
@@ -10931,7 +10978,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "markdown-to-jsx",
-      "category": "convert",
+      "category": "frontend",
       "name": "Markdown 到 JSX",
       "description": "将 Markdown 转换为 JSX/React 组件片段。",
       "icon": "notebook-pen",
@@ -10969,7 +11016,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "mass-weight-converter",
-      "category": "convert",
+      "category": "math",
       "name": "质量和重量转换器",
       "description": "在公制和英制质量单位之间转换，例如千克、磅、盎司和英石。",
       "icon": "weight",
@@ -11273,7 +11320,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "memorable-password-generator",
-      "category": "web",
+      "category": "security",
       "name": "好记的密码生成器",
       "description": "从具有分隔符和数字/符号注入的单词组构建易于键入的难忘密码。",
       "icon": "key-round",
@@ -11367,7 +11414,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "mnemonic-pin-generator",
-      "category": "web",
+      "category": "security",
       "name": "助记符 PIN 生成器",
       "description": "生成数字 PIN 以及单词助记符以帮助您记住每个数字。",
       "icon": "shield-ellipsis",
@@ -11386,7 +11433,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "mock-data",
-      "category": "web",
+      "category": "data",
       "name": "模拟数据生成器",
       "description": "以 JSON 形式生成一组真实的虚假记录（姓名、电子邮件、日期）。",
       "icon": "dices",
@@ -11538,7 +11585,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "mqtt-topic-matcher",
-      "category": "web",
+      "category": "network",
       "name": "MQTT主题匹配器",
       "description": "针对示例主题使用+和#通配符测试MQTT主题过滤器。",
       "icon": "workflow",
@@ -11557,7 +11604,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "mta-sts-policy-checker",
-      "category": "web",
+      "category": "network",
       "name": "MTA-STS策略检查器",
       "description": "验证MTA-STS TXT和策略文件内容以用于安全入站邮件递送。",
       "icon": "server",
@@ -11861,7 +11908,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "number-base-words",
-      "category": "convert",
+      "category": "math",
       "name": "口语基本单词的数量",
       "description": "将任何基数（2-36)中的数字拼写为位值词，例如二进制 1011 作为一零一一或分组半字节。",
       "icon": "text",
@@ -11918,7 +11965,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "number-to-roman-words-variants",
-      "category": "convert",
+      "category": "math",
       "name": "数字拼写变体",
       "description": "将数字拼写为英语单词、序数词、货币单词和计数计数。",
       "icon": "text",
@@ -11937,7 +11984,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "number-to-words",
-      "category": "convert",
+      "category": "math",
       "name": "数字到单词",
       "description": "将数字拼写为英文单词，包括负数、小数和大数值，并具有可选的货币美分模式。",
       "icon": "text",
@@ -11956,7 +12003,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "oauth-authorization-url-builder",
-      "category": "web",
+      "category": "security",
       "name": "OAuth授权URL生成器",
       "description": "构建具有范围、PKCE、状态和随机数的OAuth 2.0或OIDC授权URL。",
       "icon": "shield-check",
@@ -11975,7 +12022,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "oauth-pkce-generator",
-      "category": "web",
+      "category": "security",
       "name": "OAuth PKCE 生成器",
       "description": "生成用于OAuth授权代码流的PKCE验证器和S256代码质询。",
       "icon": "key-square",
@@ -11994,7 +12041,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "oauth-token-response-inspector",
-      "category": "web",
+      "category": "security",
       "name": "OAuth令牌响应检查器",
       "description": "检查OAuth令牌响应、令牌类型、范围和到期日。",
       "icon": "shield-check",
@@ -12013,7 +12060,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ocsp-response-decoder",
-      "category": "encoding",
+      "category": "security",
       "name": "OCSP响应解码器",
       "description": "解码Base64或PEM OCSP响应字节并总结可见的ASN.1/状态提示。",
       "icon": "badge-check",
@@ -12032,7 +12079,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "oidc-discovery-inspector",
-      "category": "web",
+      "category": "security",
       "name": "OIDC发现检查员",
       "description": "解析OpenID Connect发现元数据并总结端点、算法和授权。",
       "icon": "shield-check",
@@ -12051,7 +12098,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "oidc-id-token-validator",
-      "category": "web",
+      "category": "security",
       "name": "OIDC ID令牌验证器",
       "description": "解码ID令牌并检查发行者、受众、随机数、到期日和时钟声明。",
       "icon": "shield-check",
@@ -12203,7 +12250,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "otp-secret-generator",
-      "category": "web",
+      "category": "security",
       "name": "OTP秘密生成器",
       "description": "生成Base32 TOTP/HOTP共享秘密和匹配的otpauth://URI。",
       "icon": "shield-ellipsis",
@@ -12222,7 +12269,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "otp-uri-builder",
-      "category": "encoding",
+      "category": "security",
       "name": "OTPAuth URI 和 QR 生成器",
       "description": "从Base32秘密构建用于TOTP/HOTP验证器应用程序的otpauth://配置URI并呈现可扫描的QR码。",
       "icon": "shield-ellipsis",
@@ -12336,7 +12383,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "paper-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "纸张尺寸参考和转换器",
       "description": "查找 ISO A/B/C、US Letter 和其他纸张尺寸（以毫米、英寸和像素为单位）。",
       "icon": "file",
@@ -12374,7 +12421,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "passphrase-entropy-meter",
-      "category": "encoding",
+      "category": "security",
       "name": "密码短语熵计",
       "description": "基于密码短语的字符集和长度来估计密码短语中的熵位。",
       "icon": "key-round",
@@ -12393,7 +12440,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "password-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "密码生成器",
       "description": "在本地生成强随机密码或骰子软件密码。",
       "icon": "key-round",
@@ -12412,7 +12459,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "password-strength-checker",
-      "category": "encoding",
+      "category": "security",
       "name": "密码强度检测",
       "description": "使用组合规则和常见模式检测以及可操作的反馈来对密码进行评分。",
       "icon": "key-round",
@@ -12431,7 +12478,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "pattern-password-generator",
-      "category": "web",
+      "category": "security",
       "name": "基于模式的密码生成器",
       "description": "从占位符模式生成字符串，其中每个标记映射到一个字符类。",
       "icon": "key-round",
@@ -12450,7 +12497,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "pbkdf2-key-derivation",
-      "category": "encoding",
+      "category": "security",
       "name": "PBKDF2密钥推导",
       "description": "使用具有可配置迭代和散列的PBKDF2从密码短语和盐导出密钥。",
       "icon": "key-square",
@@ -12639,7 +12686,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "php-array-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "PHP 数组到 JSON",
       "description": "将PHP数组文字转换为JSON。",
       "icon": "file-json",
@@ -12658,7 +12705,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "plist-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "Apple plist 到 JSON",
       "description": "将Apple XML属性列表转换为JSON。",
       "icon": "file-json",
@@ -12734,7 +12781,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "power-converter",
-      "category": "convert",
+      "category": "math",
       "name": "电源转换器",
       "description": "在瓦特、千瓦、马力和BTU/小时之间转换功率。",
       "icon": "plug-zap",
@@ -12772,7 +12819,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "pressure-converter",
-      "category": "convert",
+      "category": "math",
       "name": "压力转换器",
       "description": "在帕斯卡、巴、psi、atm、mmHg和托之间转换压力。",
       "icon": "gauge",
@@ -12867,7 +12914,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "pronounceable-password-generator",
-      "category": "web",
+      "category": "security",
       "name": "可发音的密码生成器",
       "description": "通过交替辅音和元音模式来生成可发音的密码。",
       "icon": "key-round",
@@ -12886,7 +12933,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "properties-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "Java .properties 到 JSON",
       "description": "将Java/Spring .properties文件转换为嵌套JSON。",
       "icon": "file-json",
@@ -12905,7 +12952,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "properties-to-yaml",
-      "category": "convert",
+      "category": "data",
       "name": "Java属性到YAML",
       "description": "通过将点分键展开为树，将Java.properties文件转换为嵌套YAML。",
       "icon": "file-cog",
@@ -12981,7 +13028,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "pug-to-html",
-      "category": "convert",
+      "category": "frontend",
       "name": "哈巴狗转 HTML",
       "description": "将基本 Pug (Jade) 模板转换为 HTML。",
       "icon": "code-xml",
@@ -13000,7 +13047,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "px-rem-converter",
-      "category": "web",
+      "category": "frontend",
       "name": "PX↔REM转换器",
       "description": "给定可配置的根字体大小，在px、rem和em之间进行转换。",
       "icon": "type",
@@ -13107,7 +13154,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "query-string-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "查询字符串转 JSON",
       "description": "将URL查询字符串解析为结构化JSON，解码值，将重复的键分组到数组中，并重建括号内的嵌套。",
       "icon": "link",
@@ -13126,7 +13173,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "querystring-to-curl",
-      "category": "convert",
+      "category": "web",
       "name": "到 cURL 的查询字符串",
       "description": "根据基本URL和查询字符串构建curl命令。",
       "icon": "send",
@@ -13164,7 +13211,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "radiation-dose-converter",
-      "category": "convert",
+      "category": "math",
       "name": "辐射剂量转换器",
       "description": "在西弗特、雷姆、戈瑞和拉德之间转换辐射剂量。",
       "icon": "radiation",
@@ -13183,7 +13230,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "radioactivity-converter",
-      "category": "convert",
+      "category": "math",
       "name": "放射性转换器",
       "description": "在贝克勒尔和居里之间转换放射性。",
       "icon": "radiation",
@@ -13240,7 +13287,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-coordinates-generator",
-      "category": "web",
+      "category": "math",
       "name": "随机坐标生成器",
       "description": "生成随机纬度/经度点，可选地约束到边界框。",
       "icon": "dices",
@@ -13259,7 +13306,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "random-date-range-generator",
-      "category": "web",
+      "category": "time",
       "name": "随机日期时间生成器",
       "description": "以您选择的格式生成一定范围内的随机日期和时间戳。",
       "icon": "calendar-days",
@@ -13487,7 +13534,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "regex-tester",
-      "category": "text",
+      "category": "web",
       "name": "正则表达式测试器",
       "description": "使用匹配突出显示和组来测试JavaScript正则表达式。",
       "icon": "regex",
@@ -13810,7 +13857,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ring-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "戒指尺寸转换器",
       "description": "转换美国、英国、欧盟的戒指尺寸以及内径/周长。",
       "icon": "circle",
@@ -13993,7 +14040,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "rsa-keypair-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "RSA密钥对生成器",
       "description": "生成具有可选密钥大小(2048/3072/4096)和散列的PEM格式的RSA公钥/私钥对。",
       "icon": "key-square",
@@ -14012,7 +14059,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "rsa-sign-verify",
-      "category": "encoding",
+      "category": "security",
       "name": "RSA签名和验证",
       "description": "用RSA私钥对消息进行签名并用公钥(RSASSA-PKCS1/PSS)验证签名。",
       "icon": "signature",
@@ -14031,7 +14078,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "ruby-hash-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "Ruby 哈希到 JSON",
       "description": "将Ruby哈希/数组文字转换为JSON。",
       "icon": "fingerprint",
@@ -14050,7 +14097,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-assertion-inspector",
-      "category": "web",
+      "category": "security",
       "name": "SAML 断言检查器",
       "description": "从SAML断言中提取主题、发行者、受众、会话和属性。",
       "icon": "shield-check",
@@ -14069,7 +14116,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-attribute-mapper",
-      "category": "web",
+      "category": "security",
       "name": "SAML属性映射器",
       "description": "使用简单的映射表将SAML属性映射到应用程序声明。",
       "icon": "shield-check",
@@ -14088,7 +14135,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-condition-time-validator",
-      "category": "web",
+      "category": "security",
       "name": "SAML条件时间验证器",
       "description": "使用可配置的时钟偏差来验证NotBefore和NotOnOrAfter时间戳。",
       "icon": "shield-check",
@@ -14107,7 +14154,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-metadata-builder-idp",
-      "category": "web",
+      "category": "security",
       "name": "SAML IdP 元数据生成器",
       "description": "使用SSO端点和签名证书构建身份提供者元数据。",
       "icon": "shield-check",
@@ -14126,7 +14173,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-metadata-builder-sp",
-      "category": "web",
+      "category": "security",
       "name": "SAML SP元数据生成器",
       "description": "构建用于SAML集成的服务提供商元数据。",
       "icon": "shield-check",
@@ -14145,7 +14192,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-metadata-parser",
-      "category": "web",
+      "category": "security",
       "name": "SAML元数据解析器",
       "description": "解析SAML实体元数据并列出端点、证书、绑定和实体ID。",
       "icon": "shield-check",
@@ -14164,7 +14211,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-post-form-generator",
-      "category": "web",
+      "category": "security",
       "name": "SAML POST 表单生成器",
       "description": "生成用于SAML HTTP-POST绑定的本地HTML表单。",
       "icon": "shield-check",
@@ -14183,7 +14230,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-redirect-binding-builder",
-      "category": "web",
+      "category": "security",
       "name": "SAML重定向绑定生成器",
       "description": "构建SAML HTTP重定向绑定使用的URL参数。",
       "icon": "shield-check",
@@ -14202,7 +14249,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-request-decoder",
-      "category": "web",
+      "category": "security",
       "name": "SAML请求解码器",
       "description": "从URL、查询字符串或表单输入解码SAMLRequest并检查XML。",
       "icon": "shield-check",
@@ -14221,7 +14268,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-response-decoder",
-      "category": "web",
+      "category": "security",
       "name": "SAML响应解码器",
       "description": "解码SAMLResponse有效负载并提取断言、发布者、受众和主题细节。",
       "icon": "shield-check",
@@ -14240,7 +14287,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "saml-signature-reference-inspector",
-      "category": "web",
+      "category": "security",
       "name": "SAML签名参考检查器",
       "description": "检查XML签名方法、引用、转换、摘要和嵌入证书。",
       "icon": "signature",
@@ -14354,7 +14401,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "scrypt-style-kdf-params",
-      "category": "encoding",
+      "category": "security",
       "name": "KDF参数规划器",
       "description": "计算PBKDF2/scrypt/Argon2参数集的内存、时间和输出大小而不运行它们。",
       "icon": "lock-keyhole",
@@ -14373,7 +14420,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "security-headers-auditor",
-      "category": "web",
+      "category": "security",
       "name": "安全标头审核器",
       "description": "审核粘贴的 CSP、HSTS、框架、MIME、引荐来源网址和权限策略的 HTTP 响应标头。",
       "icon": "link",
@@ -14487,10 +14534,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "shamir-secret-sharing",
-      "category": "encoding",
+      "category": "security",
       "name": "沙米尔秘密分享",
       "description": "使用有限域多项式插值将秘密分割成需要K重建的N份。",
-      "icon": "binary",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "sss gf256 lagrange reconstruct shares key splitting shamir secret sharing threshold split shamir-secret-sharing 沙米尔秘密分享",
       "variants": [
@@ -14506,7 +14553,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "shoe-size-converter",
-      "category": "convert",
+      "category": "math",
       "name": "鞋码转换器",
       "description": "转换美国、英国、欧盟的鞋码和厘米脚长系统。",
       "icon": "footprints",
@@ -14772,7 +14819,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "speed-converter",
-      "category": "convert",
+      "category": "math",
       "name": "速度转换器",
       "description": "在km/h、mph、m/s、节和马赫之间转换速度。",
       "icon": "gauge",
@@ -14791,7 +14838,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "spf-flattening-analyzer",
-      "category": "web",
+      "category": "network",
       "name": "SPF平展分析仪",
       "description": "在扁平化之前对SPF机制进行计数并估计DNS查找压力。",
       "icon": "server",
@@ -14810,7 +14857,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "spf-record-builder",
-      "category": "web",
+      "category": "network",
       "name": "SPF记录生成器",
       "description": "从机制构建SPF TXT记录，包括IPv4、IPv6和全策略。",
       "icon": "server",
@@ -15031,10 +15078,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "ssn-format-test-generator",
-      "category": "web",
+      "category": "math",
       "name": "SSN格式测试号码生成器",
       "description": "生成格式有效但不可签发的美国SSN测试号码(例如900-xx-xxxx、666区域)用于QA。",
-      "icon": "code-xml",
+      "icon": "calculator",
       "tags": [],
       "keywords": "fake ssn test social security number never issued qa data itin placeholder test-data us ssn-format-test-generator SSN格式测试号码生成器",
       "variants": [
@@ -15164,7 +15211,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "svg-path-rounder",
-      "category": "convert",
+      "category": "image",
       "name": "SVG路径坐标舍入器",
       "description": "对SVG路径“d”字符串中的数字坐标进行舍入和整理以降低精度和文件大小。",
       "icon": "image",
@@ -15221,7 +15268,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "temperature-converter",
-      "category": "convert",
+      "category": "math",
       "name": "温度转换器",
       "description": "利用实时结果和可调整的舍入精度来转换摄氏温度、华氏温度、开尔文温度和兰金温度。",
       "icon": "thermometer",
@@ -15278,10 +15325,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "text-anonymizer",
-      "category": "text",
+      "category": "security",
       "name": "PII 占位符匿名器",
       "description": "用占位符令牌替换电子邮件、电话号码和其他PII模式。",
-      "icon": "text-cursor-input",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "anonymize redact pii mask email phone ip address credit card privacy text text-anonymizer PII 占位符匿名器",
       "variants": [
@@ -15734,7 +15781,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "time-precise-converter",
-      "category": "convert",
+      "category": "math",
       "name": "精确的时间单位转换器",
       "description": "将微小的天文时间跨度从纳秒转换为几个世纪。",
       "icon": "clock",
@@ -15943,7 +15990,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "tls-cipher-suite-explainer",
-      "category": "encoding",
+      "category": "security",
       "name": "TLS 密码套件解释器",
       "description": "解释TLS密码套件组件、密钥交换、认证、加密和散列。",
       "icon": "lock-keyhole",
@@ -15962,7 +16009,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "tls-rpt-record-builder",
-      "category": "web",
+      "category": "network",
       "name": "TLS-RPT记录生成器",
       "description": "构建用于邮件传递诊断的SMTP TLS报告DNS记录。",
       "icon": "server",
@@ -15981,7 +16028,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "toml-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "TOML 到 JSON",
       "description": "将TOML配置文件转换为JSON。支持表、表数组、内联表、日期时间和类型化值，无需上传即可在本地解析。",
       "icon": "file-json",
@@ -16000,7 +16047,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "toml-to-yaml",
-      "category": "convert",
+      "category": "data",
       "name": "TOML 到 YAML",
       "description": "将TOML配置转换为等效的YAML。",
       "icon": "file-cog",
@@ -16019,7 +16066,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "torque-converter",
-      "category": "convert",
+      "category": "math",
       "name": "变矩器",
       "description": "在牛顿米、磅英尺和千克力米之间转换扭矩。",
       "icon": "rotate-3d",
@@ -16038,7 +16085,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "totp-generator",
-      "category": "encoding",
+      "category": "security",
       "name": "TOTP/2FA代码生成器",
       "description": "从Base32秘密生成基于时间的一次性密码(TOTP)。",
       "icon": "shield-ellipsis",
@@ -16171,7 +16218,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "tsv-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "TSV 到 JSON",
       "description": "粘贴从电子表格复制的制表符分隔数据并将其转换为JSON，并具有标题行检测和数字或布尔强制选项。",
       "icon": "file-json",
@@ -16209,7 +16256,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "typography-units-converter",
-      "category": "convert",
+      "category": "frontend",
       "name": "印刷单位转换器",
       "description": "在点、派卡、像素、em和毫米之间转换版式单位。",
       "icon": "type",
@@ -16228,7 +16275,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "unicode-code-point-converter",
-      "category": "convert",
+      "category": "encoding",
       "name": "Unicode代码点转换器",
       "description": "将文本与Unicode代码点相互转换，通过代理对安全处理显示U+表示法、十进制和十六进制转义。",
       "icon": "languages",
@@ -16544,7 +16591,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "vcard-generator",
-      "category": "web",
+      "category": "text",
       "name": "vCard (.vcf) 生成器",
       "description": "从姓名、组织、电话、电子邮件、地址和URL字段生成vCard 3.0/4.0联系文本。",
       "icon": "contact",
@@ -16563,7 +16610,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "vcard-qr-payload-generator",
-      "category": "web",
+      "category": "image",
       "name": "MeCard/vCard QR 有效负载生成器",
       "description": "构建紧凑的MECARD:和vCard联系人有效负载字符串，其大小适合嵌入QR码中。",
       "icon": "contact-round",
@@ -16639,7 +16686,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "viscosity-converter",
-      "category": "convert",
+      "category": "math",
       "name": "粘度转换器",
       "description": "在泊、帕斯卡-秒和斯托克之间转换动力和运动粘度。",
       "icon": "droplet",
@@ -16658,7 +16705,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "volume-converter",
-      "category": "convert",
+      "category": "math",
       "name": "体积转换器",
       "description": "在升、加仑、杯、品脱等之间转换液体和干燥体积。",
       "icon": "beaker",
@@ -16715,7 +16762,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-aspect-ratio-css",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS纵横比生成器",
       "description": "将宽度：高度比转变为纵横比CSS加上填充顶部后备。",
       "icon": "brush",
@@ -16734,10 +16781,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-bearer-auth-header-builder",
-      "category": "web",
+      "category": "security",
       "name": "授权标头生成器",
       "description": "构造承载、基本、API 密钥和自定义方案的授权标头值。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "authorization header bearer token basic auth api key curl fetch headers http web-bearer-auth-header-builder 授权标头生成器",
       "variants": [
@@ -16753,7 +16800,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-bem-class-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "BEM类名生成器",
       "description": "通过 HTML/CSS 预览从块、元素和修饰符输入生成 Block__Element--修饰符 CSS 类名称。",
       "icon": "brush",
@@ -16772,7 +16819,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-border-radius-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS 边框半径生成器",
       "description": "可视化地构建边界半径值（包括椭圆和每个角）并复制CSS。",
       "icon": "arrow-down-a-z",
@@ -16829,7 +16876,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-clamp-fluid-type",
-      "category": "web",
+      "category": "frontend",
       "name": "CSSclamp()流体类型计算器",
       "description": "根据最小/最大尺寸和视口范围计算响应式clamp()字体尺寸。",
       "icon": "type",
@@ -16848,7 +16895,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-clip-path-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS剪辑路径形状生成器",
       "description": "通过实时预览生成多边形、圆形、椭圆形和插入剪辑路径值。",
       "icon": "brush",
@@ -16886,7 +16933,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-content-security-policy-analyzer",
-      "category": "web",
+      "category": "security",
       "name": "CSP标头分析器",
       "description": "解析内容安全策略标头并标记弱或不安全指令。",
       "icon": "link",
@@ -16905,7 +16952,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-content-security-policy-linter",
-      "category": "web",
+      "category": "security",
       "name": "内容-安全-策略 Linter",
       "description": "解析CSP标头字符串并标记不安全或冗余指令。",
       "icon": "link",
@@ -16981,7 +17028,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-cron-explainer",
-      "category": "web",
+      "category": "time",
       "name": "Cron 表达式解释器（高级）",
       "description": "将 cron 表达式翻译成简单的英语并列出接下来的几个运行时间，支持所有五个字段的范围、步骤和列表。",
       "icon": "calendar-clock",
@@ -17000,7 +17047,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-csp-builder",
-      "category": "web",
+      "category": "security",
       "name": "内容安全策略生成器",
       "description": "使用关键字和随机数/散列帮助器从每个指令源列表构建CSP标头。",
       "icon": "shield",
@@ -17019,7 +17066,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-button-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS按钮生成器",
       "description": "设计按钮(颜色、填充、半径、阴影、悬停)并复制CSS。",
       "icon": "brush",
@@ -17038,7 +17085,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-gradient-text",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS渐变文本生成器",
       "description": "产生用于渐变颜色文本的背景剪辑文本技巧CSS。",
       "icon": "blend",
@@ -17057,7 +17104,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-relative-unit-calculator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS REM / EM / VW / PX 计算器",
       "description": "利用可配置的根字体大小和视口在两个方向上在px、rem、em、vw和vh之间进行转换。",
       "icon": "brush",
@@ -17076,7 +17123,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-specificity",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS特异性计算器",
       "description": "将任何CSS选择器的特异性计算为(a，b，c)三元组并对多个选择器进行排名以预测哪个规则获胜。",
       "icon": "brush",
@@ -17095,7 +17142,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-specificity-sorter",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS选择器特异性排序器",
       "description": "根据发现覆盖顺序的特异性对多个CSS选择器进行评分和排名。",
       "icon": "arrow-down-a-z",
@@ -17114,7 +17161,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-to-tailwind",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS 到 Tailwind",
       "description": "将常见的CSS声明转换为等效的Tailwind实用程序类，映射间距、颜色、flex、字体和边框属性。",
       "icon": "palette",
@@ -17133,7 +17180,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-triangle-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS三角形生成器",
       "description": "使用任意方向和尺寸的边框技巧创建纯CSS三角形。",
       "icon": "brush",
@@ -17152,7 +17199,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-unit-converter",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS单位转换器(px/rem/em/pt/%)",
       "description": "使用根和底数在px、rem、em、pt、pc、vw/vh和百分比之间进行转换。",
       "icon": "brush",
@@ -17171,7 +17218,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-css-variables-extractor",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS自定义属性提取器",
       "description": "将所有CSS自定义属性（--var声明）从样式表提取到去重复的、可排序的列表中。",
       "icon": "list-filter",
@@ -17196,7 +17243,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-cubic-bezier",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS 三次贝塞尔曲线生成器",
       "description": "设计具有可拖动控制点和实时动画预览的CSS三次贝塞尔曲线缓动曲线，输出过渡定时函数值。",
       "icon": "brush",
@@ -17272,7 +17319,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-data-uri-builder-text",
-      "category": "web",
+      "category": "encoding",
       "name": "文本数据URI生成器",
       "description": "使用MIME类型、字符集和base64选项从粘贴的文本构建数据：URI。",
       "icon": "link",
@@ -17291,7 +17338,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-data-uri-decoder",
-      "category": "web",
+      "category": "encoding",
       "name": "数据 URI 到文本",
       "description": "将数据：URI解码回其底层文本，从而揭示MIME类型、编码以及来自base64或百分比编码的原始内容。",
       "icon": "link",
@@ -17310,7 +17357,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-data-uri-size-estimator",
-      "category": "web",
+      "category": "encoding",
       "name": "数据URI大小估计器",
       "description": "在嵌入之前估计给定原始文件大小的 Base64 数据 URI 的字节大小和开销。",
       "icon": "link",
@@ -17329,7 +17376,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-dotenv-to-json",
-      "category": "web",
+      "category": "data",
       "name": ".env 到 JSON",
       "description": "将.env/dotenv文件解析为JSON对象并将JSON转换回.env格式，处理引号、注释和导出前缀。",
       "icon": "file-json",
@@ -17367,7 +17414,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-favicon-link-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "网站图标链接标签生成器",
       "description": "为所有平台生成全套图标和应用程序图标链接标签。",
       "icon": "link",
@@ -17386,7 +17433,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-filter-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS过滤器生成器",
       "description": "将模糊、亮度、对比度和其他过滤器与实时图像预览相结合。",
       "icon": "list-filter",
@@ -17405,7 +17452,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-flexbox-playground",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS Flexbox生成器",
       "description": "从下拉列表中设置flex容器和项目属性并复制生成的CSS。",
       "icon": "superscript",
@@ -17424,7 +17471,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-grid-template-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS网格模板生成器",
       "description": "定义网格列、行、间隙和命名区域，然后复制网格模板CSS。",
       "icon": "text-cursor-input",
@@ -17443,7 +17490,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-hsts-header-builder",
-      "category": "web",
+      "category": "network",
       "name": "HSTS报头生成器",
       "description": "利用预加载资格检查构建并解码严格传输安全报头。",
       "icon": "shield",
@@ -17462,7 +17509,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-attributes-stripper",
-      "category": "web",
+      "category": "text",
       "name": "HTML 属性剥离器/标签清理器",
       "description": "从HTML中移除选定的属性(样式、类、on*、data-*)或整个标签。",
       "icon": "eraser",
@@ -17500,7 +17547,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-entity-picker",
-      "category": "web",
+      "category": "encoding",
       "name": "HTML 实体选择器",
       "description": "命名HTML实体的可搜索参考及其可供复制的字符、数字和十六进制代码。",
       "icon": "code-xml",
@@ -17519,7 +17566,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-minify",
-      "category": "web",
+      "category": "frontend",
       "name": "HTML 缩小器/美化器",
       "description": "通过去除注释和空白来缩小 HTML，或者对其进行漂亮的打印。",
       "icon": "minimize-2",
@@ -17538,7 +17585,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-html-to-jsx",
-      "category": "web",
+      "category": "frontend",
       "name": "HTML 到 JSX",
       "description": "将原始HTML转换为React JSX，将类重命名为className，修复自闭合标签，camelCasing属性，并将内联样式转换为对象。",
       "icon": "code-xml",
@@ -17633,7 +17680,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-ip-address-converter",
-      "category": "web",
+      "category": "network",
       "name": "IP地址转换器",
       "description": "在点分、整数、十六进制、二进制和扩展形式之间转换IPv4/IPv6地址。",
       "icon": "ethernet-port",
@@ -17652,7 +17699,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-ip-cidr-membership",
-      "category": "web",
+      "category": "network",
       "name": "CIDR 中的 IP 检查器",
       "description": "检查IP地址是否落入一个或多个CIDR范围内。",
       "icon": "waypoints",
@@ -17671,7 +17718,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-ipv6-expander",
-      "category": "web",
+      "category": "network",
       "name": "IPv6扩展和压缩",
       "description": ".name 或 items[*].name",
       "icon": "ethernet-port",
@@ -17690,7 +17737,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-json-to-html-form",
-      "category": "web",
+      "category": "frontend",
       "name": "JSON 到 HTML 表单生成器",
       "description": "将JSON对象转换为匹配的HTML表单，其中带标签的输入从每个字段的值类型推断出来。",
       "icon": "code-xml",
@@ -17728,7 +17775,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-jsonld-schema-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "JSON-LD结构化数据生成器",
       "description": "为文章、产品、常见问题解答、面包屑等生成 schema.org JSON-LD。",
       "icon": "braces",
@@ -17747,7 +17794,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-jwt-expiry-inspector",
-      "category": "web",
+      "category": "security",
       "name": "JWT 过期检查器",
       "description": "解码JWT并报告人类可读的发布/到期时间和剩余有效性。",
       "icon": "shield-check",
@@ -17766,7 +17813,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-jwt-to-fetch",
-      "category": "web",
+      "category": "security",
       "name": "经过验证的 fetch() 构建器",
       "description": "生成具有方法、标头、不记名令牌和JSON主体的fetch()片段。",
       "icon": "shield-check",
@@ -17785,7 +17832,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-keyframes-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS 关键帧和动画生成器",
       "description": "创建带有停止点和动画简写的 @keyframes，并复制 CSS。",
       "icon": "brush",
@@ -17804,7 +17851,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-link-header-builder",
-      "category": "web",
+      "category": "frontend",
       "name": "链接头生成器和解析器",
       "description": "构建并解析RFC 8288链接标头（rel=next/prev、预加载、规范）。",
       "icon": "link",
@@ -17823,7 +17870,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-lorem-html-block",
-      "category": "web",
+      "category": "frontend",
       "name": "Lorem Ipsum HTML 块生成器",
       "description": "将占位符内容生成为准备粘贴的语义HTML块（段落、标题、列表、块引用）。",
       "icon": "text-cursor-input",
@@ -17842,10 +17889,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-media-query-builder",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS媒体查询生成器",
       "description": "利用最小/最大宽度断点、方向和视觉特征条件构建响应式@media查询。",
-      "icon": "code-xml",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "css media query @media responsive breakpoints min-width max-width orientation prefers-color-scheme media-query frontend web-media-query-builder CSS媒体查询生成器 breakpoint web-media-query-generator",
       "variants": [
@@ -17867,7 +17914,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-multi-column-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS多列布局生成器",
       "description": "使用实时文本预览生成CSS列属性（计数、宽度、间隙、规则）。",
       "icon": "table-2",
@@ -17886,10 +17933,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-open-graph-preview-card",
-      "category": "web",
+      "category": "frontend",
       "name": "开放图谱/Twitter 卡预览",
       "description": "从粘贴的HTML解析OG和Twitter元标记并显示解析的共享卡字段。",
-      "icon": "code-xml",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "open graph og:title twitter card meta tags social preview share seo og:image web-open-graph-preview-card 开放图谱/Twitter 卡预览",
       "variants": [
@@ -17905,7 +17952,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-permissions-policy-builder",
-      "category": "web",
+      "category": "security",
       "name": "权限-策略生成器",
       "description": "从每个功能允许列表构建权限-策略（功能-策略）标头。",
       "icon": "shield",
@@ -17924,7 +17971,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-preload-link-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "资源提示链接生成器",
       "description": "生成预加载、预取、预连接和dns-预取链接标签。",
       "icon": "link",
@@ -17962,7 +18009,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-referrer-policy-reference",
-      "category": "web",
+      "category": "security",
       "name": "推荐人-策略参考和测试器",
       "description": "解释Referrer-Policy值并模拟在两个URL之间发送什么Referer。",
       "icon": "shield",
@@ -18076,7 +18123,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-robots-txt-tester",
-      "category": "web",
+      "category": "frontend",
       "name": "robots.txt测试器",
       "description": "根据粘贴的robots.txt规则测试用户代理是否允许URL路径。",
       "icon": "code-xml",
@@ -18095,7 +18142,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-scrollbar-styler",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS自定义滚动条样式器",
       "description": "生成跨浏览器自定义滚动条CSS（WebKit伪元素+Firefox）。",
       "icon": "brush",
@@ -18209,7 +18256,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-srcset-density-calculator",
-      "category": "web",
+      "category": "frontend",
       "name": "响应式图像宽度规划器",
       "description": "根据布局和断点计算srcset宽度描述符和尺寸。",
       "icon": "chart-column",
@@ -18228,7 +18275,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-srcset-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "响应式图像srcset生成器",
       "description": "从宽度列表生成<img>srcset/sizes（或<picture>）标记。",
       "icon": "image",
@@ -18253,10 +18300,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-text-shadow-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS文本阴影生成器",
       "description": "利用实时印刷预览构建单个或堆叠的文本阴影值。",
-      "icon": "code-xml",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "text shadow css neon glow long outline retro 3d layers typography text-shadow generator preview web-text-shadow-generator CSS文本阴影生成器",
       "variants": [
@@ -18272,7 +18319,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-transform-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS变换生成器",
       "description": "将平移、旋转、缩放、倾斜和透视合成为一个变换值。",
       "icon": "brush",
@@ -18291,7 +18338,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-transition-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "CSS 过渡生成器",
       "description": "根据属性、持续时间、定时函数和延迟构建转换速记。",
       "icon": "brush",
@@ -18405,10 +18452,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-www-authenticate-parser",
-      "category": "web",
+      "category": "security",
       "name": "WWW-验证解析器",
       "description": "将 WWW-Authenticate / Authorization 质询标头解析为方案和参数。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "www-authenticate proxy-authenticate digest basic oauth challenge realm http auth header bearer parser web-www-authenticate-parser WWW-验证解析器",
       "variants": [
@@ -18424,7 +18471,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-xml-formatter",
-      "category": "web",
+      "category": "data",
       "name": "XML 格式化程序",
       "description": "漂亮打印和缩进缩小的XML，或者通过剥离标签之间的空白以及自闭合标签处理来缩小详细的XML。",
       "icon": "code-xml",
@@ -18443,7 +18490,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-xml-to-json",
-      "category": "web",
+      "category": "data",
       "name": "XML 到 JSON (DOM)",
       "description": "将XML文档转换为结构化JSON对象，以可预测的约定映射元素、属性和文本内容。",
       "icon": "code-xml",
@@ -18462,10 +18509,10 @@ const ToolboxCatalog = {
     },
     {
       "id": "web-z-index-scale-generator",
-      "category": "web",
+      "category": "frontend",
       "name": "Z-索引标尺生成器",
       "description": "生成记录的z索引比例，其中命名层作为CSS变量或Sass/JS映射以避免堆叠混乱。",
-      "icon": "code-xml",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "stacking context z-index map css custom properties sass design tokens layers modal tooltip design-system layering web-z-index-scale-generator Z-索引标尺生成器",
       "variants": [
@@ -18500,7 +18547,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "webhook-signature-verifier",
-      "category": "encoding",
+      "category": "security",
       "name": "Webhook 签名验证器",
       "description": "验证 GitHub、Slack、Stripe 式集成使用的 HMAC Webhook 签名。",
       "icon": "signature",
@@ -18671,7 +18718,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "wifi-qr-payload-generator",
-      "category": "web",
+      "category": "network",
       "name": "WiFi QR有效负载字符串生成器",
       "description": "构建WIFI：来自SSID、密码、加密和隐藏标志的WiFi QR码的有效负载字符串。",
       "icon": "wifi",
@@ -18829,7 +18876,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "xml-attributes-to-elements",
-      "category": "convert",
+      "category": "data",
       "name": "XML 属性 ↔ 子元素",
       "description": "通过将属性提升为子元素或者将简单的子元素降级为属性来重写XML文档。",
       "icon": "code-xml",
@@ -18848,7 +18895,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "xml-attributes-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "XML 到 JSON (属性模式)",
       "description": "通过约定将XML转换为保留属性的JSON。",
       "icon": "code-xml",
@@ -18867,7 +18914,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "xml-to-csv",
-      "category": "convert",
+      "category": "data",
       "name": "XML 到 CSV",
       "description": "将重复的XML元素展平为CSV行。",
       "icon": "code-xml",
@@ -18886,7 +18933,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "xml-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "XML到JSON",
       "description": "将XML解析为干净的JSON树，具有属性前缀、文本节点命名和重复元素的数组强制的选项。",
       "icon": "code-xml",
@@ -18924,7 +18971,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "yaml-to-csv",
-      "category": "convert",
+      "category": "data",
       "name": "YAML 到 CSV",
       "description": "将对象的YAML列表扁平化为CSV。",
       "icon": "table-2",
@@ -18943,7 +18990,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "yaml-to-json",
-      "category": "convert",
+      "category": "data",
       "name": "YAML到JSON",
       "description": "将常见的YAML配置转换为JSON。",
       "icon": "file-json",
@@ -18962,7 +19009,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "yaml-to-toml",
-      "category": "convert",
+      "category": "data",
       "name": "YAML 到 TOML",
       "description": "将YAML配置直接转换为TOML，一步将嵌套映射和列表映射到表和表数组中。",
       "icon": "file-cog",
@@ -21159,7 +21206,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "hash",
-      "category": "text",
+      "category": "encoding",
       "name": "哈希与校验",
       "description": "",
       "icon": "fingerprint",
@@ -21197,7 +21244,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "file-convert",
-      "category": "convert",
+      "category": "files",
       "name": "文件格式转换",
       "description": "图片 · 音频 · 视频 · 文档",
       "icon": "file-symlink",
@@ -21216,7 +21263,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "archives",
-      "category": "convert",
+      "category": "files",
       "name": "压缩包工具",
       "description": "ZIP · RAR · 7Z · TAR · 解压与打包",
       "icon": "archive",
@@ -21568,7 +21615,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "reader",
-      "category": "studio",
+      "category": "files",
       "name": "文档与电子书阅读",
       "description": "",
       "icon": "book-open-text",
@@ -21605,7 +21652,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "text-to-speech",
-      "category": "studio",
+      "category": "media",
       "name": "文字朗读",
       "description": "",
       "icon": "volume-2",
@@ -21630,11 +21677,11 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=text-to-speech",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "ssml",
-      "category": "studio",
+      "category": "media",
       "name": "SSML 试听",
       "description": "",
       "icon": "speech",
@@ -21649,11 +21696,11 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=ssml",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "dictation",
-      "category": "studio",
+      "category": "media",
       "name": "实时听写",
       "description": "",
       "icon": "mic",
@@ -21668,11 +21715,11 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=dictation",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "pronunciation",
-      "category": "studio",
+      "category": "media",
       "name": "发音练习",
       "description": "",
       "icon": "audio-waveform",
@@ -21687,11 +21734,11 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=pronunciation",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "flashcards",
-      "category": "studio",
+      "category": "text",
       "name": "词汇卡片",
       "description": "",
       "icon": "gallery-vertical-end",
@@ -21710,7 +21757,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "phonetic",
-      "category": "studio",
+      "category": "text",
       "name": "音标与拼音",
       "description": "",
       "icon": "languages",
@@ -21729,7 +21776,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "3d-model",
-      "category": "studio",
+      "category": "collaboration",
       "name": "三维模型",
       "description": "STL · OBJ · GLTF · STEP · 导出与简化",
       "icon": "box",
@@ -21831,7 +21878,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "whiteboard",
-      "category": "studio",
+      "category": "collaboration",
       "name": "白板",
       "description": "画笔 · 撤销 · 自动暂存",
       "icon": "presentation",
@@ -21956,7 +22003,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "voice-dialogue",
-      "category": "studio",
+      "category": "media",
       "name": "多角色朗读与语音指令",
       "description": "",
       "icon": "messages-square",
@@ -21977,7 +22024,7 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=voice-dialogue",
-      "iconBadge": ""
+      "iconBadge": "音频"
     }
   ]
 };

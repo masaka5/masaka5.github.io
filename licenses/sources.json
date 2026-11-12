@@ -298,5 +298,41 @@
     "license": "Apache-2.0",
     "dependencies": "licenses/esptool/dependencies.json",
     "sourceArchive": "licenses/code-serial-watermark-source.zip"
+  },
+  {
+    "project": "iso9660",
+    "source": "https://github.com/endarthur/auditable/tree/main/ext/iso9660",
+    "version": "0.1.0",
+    "license": "MIT",
+    "licenseFile": "vendor/iso9660/LICENSE.txt",
+    "sourceArchive": "licenses/iso-toolbox-source.zip",
+    "changes": "Unmodified format encoders; toolbox supplies streaming layout, unique fallback names and UI."
+  },
+  {
+    "project": "hash-wasm",
+    "version": "4.13.0",
+    "source": "https://github.com/Daninet/hash-wasm",
+    "license": "MIT",
+    "licenseFile": "vendor/hash-wasm/LICENSE.txt",
+    "sourceArchive": "licenses/hash-wasm-source.zip",
+    "changes": "Unmodified bundled ESM and embedded WASM."
+  },
+  {
+    "project": "7z-wasm",
+    "version": "1.2.0",
+    "source": "https://github.com/use-strict/7z-wasm",
+    "license": "LGPL-2.1-or-later with unRAR restriction",
+    "licenseFile": "vendor/7z-wasm/LICENSE.txt",
+    "sourceArchive": "licenses/7z-wasm-source.zip",
+    "changes": "Unmodified runtime renamed .mjs; pinned build scripts and 7-Zip 24.09 source supplied."
+  },
+  {
+    "project": "fatfs-wasm",
+    "version": "4.0.0",
+    "source": "https://github.com/parkertomatoes/fatfs-wasm",
+    "license": "MIT / FatFs by ChaN",
+    "licenseFile": "vendor/fatfs-wasm/LICENSE.txt",
+    "sourceArchive": "licenses/fatfs-wasm-source.zip",
+    "changes": "WorkerGlobalScope loader detection patch; native WASM unchanged; corresponding source supplied."
   }
 ]

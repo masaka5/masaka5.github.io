@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "files": [
+    {
+      "file": "both.js",
+      "sha256": "e5123c6719fe785acf5170bffe9842d022c86583c2a41631e5faaec8caf69229"
+    },
+    {
+      "file": "constants.js",
+      "sha256": "a372a1ab9531bee73aba8ba01db5212e9040c6f075ae8700eb2e047822e1d6f3"
+    },
+    {
+      "file": "dates.js",
+      "sha256": "f1a59a20b33276c386ca037cac3dd4d3bdc1e5a952591a9ae220b3eabaf0836e"
+    },
+    {
+      "file": "dir-record.js",
+      "sha256": "292cbf8e017b856aab306c6b35ad6d9e0054333c2e571c31c5c189ac685031d2"
+    },
+    {
+      "file": "LICENSE.txt",
+      "sha256": "688da7edb7ef22cff0370824f00025389a2b7ea44403db7200d1716050bc9654"
+    },
+    {
+      "file": "path-table.js",
+      "sha256": "ad87523b7022406a2a9fb95bac7d4cd142f624f8b64fb317cee06d3c5100b9bf"
+    },
+    {
+      "file": "pvd.js",
+      "sha256": "b9aa3dbf1c35c5df12a70926caf63e01a565b85da4dd9f8e9aff51f2047435aa"
+    },
+    {
+      "file": "SOURCE.txt",
+      "sha256": "a8a4a7657a1d4453c0745a389384e70e124e75bcd9b84e4145cb364ac42e60d4"
+    },
+    {
+      "file": "ucs2.js",
+      "sha256": "67d4cc90272f78c93970a083d9e71f51d594af3c9c9bf17837913ffaef67c2c9"
+    }
+  ]
+}

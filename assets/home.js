@@ -6,14 +6,20 @@
   const nav = document.getElementById('categoryNav');
   const mobileNav = document.getElementById('mobileCategoryNav');
   const select = document.getElementById('categorySelect');
-  const recentKey = 'toolbox-recent-v1';
-  const categoryList = [{ id:'all', name:'全部工具', icon:'layout-grid' }, ...categories];
+  const favoritesKey = 'toolbox-favorites-v1';
+  const toolIds = new Set(tools.map(tool => tool.id));
+  const categoryList = [{ id:'all', name:'全部工具', icon:'layout-grid' }, { id:'favorites', name:'常用', icon:'star' }, ...categories];
   let category = 'all';
   let page = 0;
   let capacity = 1;
-  let recent = [];
-  try { recent = JSON.parse(localStorage.getItem(recentKey) || '[]'); } catch (_) {}
-  if (!Array.isArray(recent)) recent = [];
+  function readFavorites() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(favoritesKey) || '[]');
+      return new Set(Array.isArray(saved) ? saved.filter(id => typeof id === 'string' && toolIds.has(id)) : []);
+    } catch (_) { return new Set(); }
+  }
+  let favorites = readFavorites();
+  let statusTimer;
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -30,7 +36,8 @@
     button.type = 'button';
     button.dataset.category = item.id;
     button.setAttribute('aria-pressed', String(item.id === category));
-    button.append(icon(item.icon), element('span', '', item.name), element('small', '', String(tools.filter(tool => item.id === 'all' || tool.category === item.id).length)));
+    const count = item.id === 'favorites' ? favorites.size : tools.filter(tool => item.id === 'all' || tool.category === item.id).length;
+    button.append(icon(item.icon), element('span', '', item.name), element('small', '', String(count)));
     button.addEventListener('click', () => chooseCategory(item.id));
     nav.append(button);
     const mobileButton=element('button','');
@@ -48,52 +55,63 @@
   // 分类顺序由配置决定，工具在各自分类内保持配置顺序。
   for (const group of categories) {
     for (const tool of tools.filter(item => item.category === group.id)) {
-      const card = element('a', 'tool-card');
-      card.href = tool.href;
+      const card = element('article', 'tool-card');
+      const link = element('a', 'tool-link');
+      link.href = tool.href;
       card.dataset.tool = tool.id;
       card.dataset.group = tool.category;
       card.dataset.icon = tool.icon;
       card.dataset.search = [tool.name, tool.description, group.name, ...(tool.tags || []), tool.keywords || ''].join(' ').toLocaleLowerCase();
       const top = element('div', 'card-top');
       const badge = ToolboxIcons.tile(tool);
-      const arrow=element('span','card-open');arrow.append(icon('arrow-up-right'));
-      top.append(badge, element('span', 'card-category', group.name),arrow);
+      top.append(badge, element('span', 'card-category', group.name));
       const copy = element('div', 'card-copy');
       copy.append(element('h3', '', tool.name));
-      if(tool.description&&tool.description.length<=48)copy.append(element('p', '', tool.description));
-      card.append(top, copy);
-      card.addEventListener('click', () => {
-        recent = [tool.id, ...recent.filter(id => id !== tool.id)].slice(0, 3);
-        try { localStorage.setItem(recentKey, JSON.stringify(recent)); } catch (_) {}
+      link.append(top, copy);
+      const favorite = element('button', 'favorite-toggle');
+      favorite.type = 'button';
+      favorite.dataset.favorite = tool.id;
+      favorite.append(icon('star'));
+      favorite.addEventListener('click', () => {
+        const hadFocus = document.activeElement === favorite;
+        if (favorites.has(tool.id)) favorites.delete(tool.id); else favorites.add(tool.id);
+        try { localStorage.setItem(favoritesKey, JSON.stringify([...favorites])); }
+        catch (_) {
+          const notice = document.getElementById('homeStatus');
+          notice.textContent = '收藏仅在本次访问有效';notice.hidden = false;
+          clearTimeout(statusTimer);statusTimer = setTimeout(() => { notice.hidden = true; }, 5000);
+        }
+        render();
+        if (hadFocus && card.hidden) {
+          const next = cards.find(c => !c.hidden)?.querySelector('.favorite-toggle');
+          (next || search).focus();
+        }
       });
+      card.append(link, favorite);
       cards.push(card);
       grid.append(card);
     }
   }
 
-  function renderRecent() {
-    const container = document.getElementById('recentTools');
-    container.replaceChildren();
-    for (const id of [...new Set(recent)].slice(0, 3)) {
-      const tool = tools.find(item => item.id === id);
-      if (!tool) continue;
-      const link = element('a', '', tool.name);
-      link.href = tool.href;
-      container.append(link);
-    }
-    document.querySelector('.home-footer').hidden = !container.childElementCount;
-  }
-
   function render() {
     const query = search.value.trim().toLocaleLowerCase();
-    const filtered = cards.filter(card => (category === 'all' || card.dataset.group === category) && card.dataset.search.includes(query));
+    const filtered = cards.filter(card => (category === 'all' || category === 'favorites' && favorites.has(card.dataset.tool) || card.dataset.group === category) && card.dataset.search.includes(query));
     const pages = Math.max(1, Math.ceil(filtered.length / capacity));
     page = Math.max(0, Math.min(page, pages - 1));
     const visible = new Set(filtered.slice(page * capacity, (page + 1) * capacity));
-    for (const card of cards) card.hidden = !visible.has(card);
+    for (const card of cards) {
+      card.hidden = !visible.has(card);
+      const button = card.querySelector('.favorite-toggle'), saved = favorites.has(card.dataset.tool);
+      const name = card.querySelector('h3').textContent;
+      button.setAttribute('aria-pressed', String(saved));
+      button.setAttribute('aria-label', (saved ? '取消收藏 ' : '收藏 ') + name);
+      button.title = saved ? '取消收藏' : '收藏';
+    }
+    nav.querySelector('[data-category="favorites"] small').textContent = String(favorites.size);
     grid.hidden = filtered.length === 0;
     document.getElementById('emptyState').hidden = filtered.length !== 0;
-    document.getElementById('resultCount').textContent = filtered.length + ' 项工具';
+    document.getElementById('resultCount').textContent = String(filtered.length);
+    document.querySelector('#emptyState h3').textContent = category === 'favorites' && !query ? '暂无收藏' : '未找到工具';
     document.getElementById('toolsHeading').textContent = categoryList.find(item => item.id === category).name;
     document.getElementById('resetFilters').hidden = category === 'all' && !query;
     document.getElementById('pagination').dataset.single = String(pages === 1);
@@ -145,6 +163,8 @@
   const resize = () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(measure); };
   new ResizeObserver(resize).observe(viewport);
   window.addEventListener('resize', resize);
-  renderRecent();
+  window.addEventListener('storage', event => {
+    if (event.key === favoritesKey || event.key === null) { favorites = readFavorites(); render(); }
+  });
   measure();
 })();

@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "file": "folder-core.js",
+      "bytes": 1593,
+      "sha256": "9276bb0f55905ad70f948caf77b90cf5ef7fec97f0d5262c14b99ade01507e0d"
+    },
+    {
+      "file": "folder-worker.js",
+      "bytes": 6486,
+      "sha256": "670f8e111f5cb01324d1fc9c538faea985a31d43bd5e642d67a881dc4d6530f9"
+    },
+    {
+      "file": "folder.css",
+      "bytes": 2140,
+      "sha256": "12db01b0650eadc0ccc3f3fda373afebd2a88474debe46e1f58d7e50fbaf6d54"
+    },
+    {
+      "file": "folder.js",
+      "bytes": 8651,
+      "sha256": "b9e9a850179cfeb0b57684e01898efda3d4be7faa12870e673758e0f202a6b43"
+    },
+    {
+      "file": "index.html",
+      "bytes": 2402,
+      "sha256": "660b58980cb2893d6663f2df212a3dc904238c541d7ec9c997f0e0fe476fb70c"
+    }
+  ]
+}

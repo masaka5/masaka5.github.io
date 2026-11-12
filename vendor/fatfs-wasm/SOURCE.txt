@@ -1,0 +1,4 @@
+fatfs-wasm 4.0.0, MIT / FatFs by ChaN
+https://github.com/parkertomatoes/fatfs-wasm
+Patch: include WorkerGlobalScope in browser WASM loader; remove unavailable source map comment. Native WASM unchanged.
+Corresponding upstream source commit: 9a6f4d0393fa0377723ec767c0a364e584f58fe2

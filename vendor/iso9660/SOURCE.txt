@@ -1,0 +1,4 @@
+@gcu/iso9660 0.1.0 (MIT)
+https://github.com/endarthur/auditable/tree/main/ext/iso9660
+Pinned npm SHA1: 0a96277003fc32ca57cdf089ab9f06bcc19a57a4
+Unmodified format encoders; toolbox supplies directory layout, unique ASCII aliases and streaming writer.

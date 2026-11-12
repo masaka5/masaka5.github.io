@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "file": "hash-wasm.js",
+      "sha256": "694548e2f0a9399fdbe4990165439a8931e6d3559aeb5a712b259b06e67461c4"
+    },
+    {
+      "file": "LICENSE.txt",
+      "sha256": "c14dea172f72f2714284a0ac2ab1b00b5352a01409d58255a46227ffc541debd"
+    },
+    {
+      "file": "SOURCE.txt",
+      "sha256": "6eb492118e7039e7e26599968f4a82ebc97319fc604f39213f2f78be28caace8"
+    }
+  ]
+}

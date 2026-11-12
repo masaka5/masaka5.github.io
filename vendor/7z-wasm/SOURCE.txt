@@ -1,0 +1,3 @@
+7z-wasm 1.2.0 / 7-Zip 24.09
+https://github.com/use-strict/7z-wasm
+LGPL-2.1-or-later with unRAR restriction. Unmodified runtime, renamed .mjs.

@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "file": "7zz.mjs",
+      "sha256": "f2010cb8d734cac7290a2b27278b30f2bbcd0d354f900173b4cad6b7d46a767a"
+    },
+    {
+      "file": "7zz.wasm",
+      "sha256": "e16c6997e2eaa89575c0dd1f305074be629c3f4d87246244d37fd19debc8a285"
+    },
+    {
+      "file": "LICENSE.txt",
+      "sha256": "3d52f98857cb4b34e4ed4c637135884a65d0fa94aef7f992df4b149b6055e23a"
+    },
+    {
+      "file": "SOURCE.txt",
+      "sha256": "54c20b64fb47991365f30d5976836918397e63f3a70b3ab2f83474e87dd2e2ea"
+    },
+    {
+      "file": "unRarLicense.txt",
+      "sha256": "bf6343bbe251ec177a0e8a371516c58350daac298eba6883cf978f456fae3d89"
+    }
+  ]
+}
