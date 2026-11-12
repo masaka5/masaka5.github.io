@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "files": [
+    {
+      "file": "bsod.css",
+      "bytes": 8363,
+      "sha256": "95846c10bc64a3f8c512e43dff4f5bc149c46378e399bd3221338e9eb37f1863"
+    },
+    {
+      "file": "bsod.js",
+      "bytes": 19155,
+      "sha256": "5a34ee3f2746f7c46107b2a7cbba64dbd6553f2faee81121381202f0463bc018"
+    },
+    {
+      "file": "bugchecks.js",
+      "bytes": 5698,
+      "sha256": "5876025633f3494ffe3a4b8cc134a7cce3d7a5aa8ec73eecb40012541662a193"
+    },
+    {
+      "file": "dump-codec.wasm",
+      "bytes": 1846,
+      "sha256": "0f890cc4e73392f51b3fbc3af9cf939adba546abbfb4770fa3b4e2b722234f76"
+    },
+    {
+      "file": "dump-core.js",
+      "bytes": 8601,
+      "sha256": "8abca4ff13d28756221da3c3d3a5e901deb4b315388bccec712a00612011d611"
+    },
+    {
+      "file": "dump-worker.js",
+      "bytes": 476,
+      "sha256": "99246ee09c23f891cce31b2340befb2c404a81abe1356d84849b250e827c9c58"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3922,
+      "sha256": "2799f325318d912a9ca3dc75b4312fc1c694b47a816aefaa68e78990fc65c3a9"
+    }
+  ]
+}

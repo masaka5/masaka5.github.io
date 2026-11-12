@@ -38,18 +38,18 @@ const ToolboxCatalog = {
     },
     {
       "id": "windows",
-      "name": "系统运维",
-      "icon": "terminal"
+      "name": "电脑维护",
+      "icon": "wrench"
     },
     {
       "id": "hardware",
-      "name": "硬件检测",
+      "name": "硬件与外设",
       "icon": "cpu"
     },
     {
-      "id": "peripheral",
-      "name": "设备与采集",
-      "icon": "keyboard"
+      "id": "workspace",
+      "name": "开发与虚拟机",
+      "icon": "computer"
     },
     {
       "id": "web",
@@ -92,12 +92,40 @@ const ToolboxCatalog = {
       "icon": "users-round"
     },
     {
+      "id": "meetings",
+      "name": "在线协作",
+      "icon": "video"
+    },
+    {
       "id": "ai",
       "name": "AI 助手",
       "icon": "messages-square"
     }
   ],
   "tools": [
+    {
+      "id": "bsod",
+      "category": "windows",
+      "name": "蓝屏分析",
+      "description": "停止代码 · 转储解析 · 驱动关联",
+      "href": "tools/bsod/",
+      "icon": "monitor-x",
+      "tags": [
+        "蓝屏",
+        "DMP",
+        "WASM"
+      ],
+      "keywords": "BlueScreenView Windows 蓝屏 minidump 内核 转储 dmp dump bugcheck 停止代码 崩溃 驱动 分析",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/bsod/",
+          "source": "toolbox",
+          "sourceId": "bsod"
+        }
+      ],
+      "iconBadge": ""
+    },
     {
       "id": "iso",
       "category": "files",
@@ -124,7 +152,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "folder-analysis",
-      "category": "files",
+      "category": "windows",
       "name": "文件夹分析",
       "description": "空间分析 · 重复文件 · 类型统计",
       "href": "tools/folder-analysis/",
@@ -147,7 +175,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "code",
-      "category": "web",
+      "category": "workspace",
       "name": "代码工作台",
       "description": "VS Code · 中文 · 本地文件",
       "href": "tools/code/",
@@ -170,7 +198,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "serial",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "串口调试与烧录",
       "description": "文本 · HEX · ESP 固件",
       "href": "tools/serial/",
@@ -216,7 +244,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "meeting",
-      "category": "collaboration",
+      "category": "meetings",
       "name": "在线会议",
       "description": "多人音视频 · 屏幕共享 · 聊天",
       "href": "tools/meeting/",
@@ -288,7 +316,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "nfc",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "NFC 读写",
       "description": "扫描标签与写入文本",
       "href": "tools/nfc/",
@@ -310,7 +338,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "uid",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "UID 格式转换",
       "description": "进制与字节顺序转换",
       "href": "tools/uid/",
@@ -379,7 +407,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "webvm",
-      "category": "windows",
+      "category": "workspace",
       "name": "浏览器虚拟机",
       "description": "Linux x64 · PowerShell 7 · 中文终端",
       "href": "tools/webvm/",
@@ -535,7 +563,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "scan",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "条码与二维码",
       "description": "摄像头 · 图片 · 扫码枪",
       "href": "tools/scan/",
@@ -558,7 +586,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "devices",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "外设检测",
       "description": "键盘 · 鼠标 · 麦克风 · 摄像头",
       "href": "tools/devices/",
@@ -581,7 +609,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "recorder",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "屏幕录制",
       "description": "录制预览 · 浏览器暂存 · 下载",
       "href": "tools/recorder/",
@@ -1970,7 +1998,7 @@ const ToolboxCatalog = {
       "category": "windows",
       "name": "Chmod 计算器",
       "description": "切换Unix权限位并获取八进制+符号chmod值。",
-      "icon": "terminal",
+      "icon": "wrench",
       "tags": [],
       "keywords": "chmod file permissions octal rwx unix 755 chmod-calculator Chmod 计算器",
       "variants": [
@@ -21945,7 +21973,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "capture",
-      "category": "peripheral",
+      "category": "hardware",
       "name": "摄像头与录音",
       "description": "录制 · 暂存 · 下载",
       "icon": "camera",

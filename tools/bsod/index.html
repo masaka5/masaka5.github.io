@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="在浏览器本地分析 Windows 蓝屏与崩溃转储，查看停止代码、参数和关联模块。"
+    />
+    <title>蓝屏分析 · 工具箱</title>
+    <link rel="icon" href="../../assets/favicon.svg" />
+    <link rel="stylesheet" href="../../assets/ops.css" />
+    <link rel="stylesheet" href="bsod.css" />
+  </head>
+  <body>
+    <div class="dump-shell">
+      <header class="ops-header">
+        <a class="back-link" href="../../">← 工具箱</a>
+        <h1>蓝屏分析</h1>
+        <span class="local-mark">本机处理</span>
+      </header>
+      <main id="dropZone">
+        <div class="toolbar">
+          <button id="addFiles" class="primary">打开转储</button
+          ><input
+            id="dumpFiles"
+            type="file"
+            accept=".dmp,.dump,.mdmp"
+            multiple
+            hidden
+          /><button id="cancel" class="secondary" hidden>取消</button
+          ><button id="clear" class="text-button" disabled>清空</button
+          ><label class="sr-only" for="search">搜索文件、代码或模块</label
+          ><input
+            id="search"
+            type="search"
+            placeholder="搜索文件、代码或模块"
+          />
+          <div class="exports">
+            <button id="exportJSON" class="secondary" disabled>JSON</button
+            ><button id="exportText" class="secondary" disabled>
+              文本报告
+            </button>
+          </div>
+        </div>
+        <div class="state-line">
+          <p id="status" class="status" role="status" aria-live="polite">
+            拖入 .dmp 文件，最多 32 份。
+          </p>
+          <span id="counts"></span>
+        </div>
+        <section class="dump-list" aria-label="转储记录">
+          <div id="empty" class="empty">
+            <svg
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <rect x="5" y="7" width="38" height="28" rx="3" />
+              <path d="m19 16 10 10m0-10L19 26M17 42h14m-7-7v7" /></svg
+            ><button id="emptyAdd" class="text-button">选择蓝屏转储</button>
+          </div>
+          <div id="dumpTable" class="table-wrap" hidden>
+            <table>
+              <thead>
+                <tr>
+                  <th class="check-cell"><span class="sr-only">对比</span></th>
+                  <th>转储文件</th>
+                  <th>发生时间</th>
+                  <th>停止代码 / 异常</th>
+                  <th>类型</th>
+                  <th class="remove-cell"><span class="sr-only">移除</span></th>
+                </tr>
+              </thead>
+              <tbody id="dumpRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="detail-panel" aria-label="转储详情">
+          <div class="detail-head">
+            <nav class="detail-tabs" aria-label="详情视图">
+              <button data-tab="overview" aria-pressed="true">概览</button
+              ><button data-tab="modules" aria-pressed="false">
+                驱动与模块</button
+              ><button data-tab="addresses" aria-pressed="false">
+                地址记录</button
+              ><button data-tab="compare" aria-pressed="false">
+                对比 <span id="compareCount">0</span>
+              </button>
+            </nav>
+            <span id="activeName"></span>
+          </div>
+          <div id="detailBody" class="detail-body">
+            <div class="empty">选择一份转储查看详情</div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="bsod.js"></script>
+  </body>
+</html>

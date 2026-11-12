@@ -334,5 +334,35 @@
     "licenseFile": "vendor/fatfs-wasm/LICENSE.txt",
     "sourceArchive": "licenses/fatfs-wasm-source.zip",
     "changes": "WorkerGlobalScope loader detection patch; native WASM unchanged; corresponding source supplied."
+  },
+  {
+    "project": "bsod-toolbox",
+    "version": "1.0.0",
+    "sourceArchive": "licenses/bsod-source.zip",
+    "changes": "Independent bounded C/WASM decoder and Chinese local-only UI; header metadata, verified x64 triage and user-mode MDMP. Reference definitions and their licenses supplied in source archive."
+  },
+  {
+    "project": "kdmp-parser-format-reference",
+    "source": "https://github.com/0vercl0k/kdmp-parser/tree/fdbb9efa28ee86b050d0641140df085d48990072",
+    "revision": "fdbb9efa28ee86b050d0641140df085d48990072",
+    "license": "MIT",
+    "sourceArchive": "licenses/bsod-source.zip",
+    "changes": "Format reference only; independent parser implementation, no upstream binary bundled."
+  },
+  {
+    "project": "rizin-format-reference",
+    "source": "https://github.com/rizinorg/rizin/tree/bf509ef2df2493f11dc35becd38a0b92e295cfcc",
+    "revision": "bf509ef2df2493f11dc35becd38a0b92e295cfcc",
+    "license": "LGPL-3.0-only",
+    "sourceArchive": "licenses/bsod-source.zip",
+    "changes": "Format reference only; independent parser implementation, no upstream binary bundled."
+  },
+  {
+    "project": "windows-rs-format-reference",
+    "source": "https://github.com/microsoft/windows-rs/blob/0.58.0/crates/libs/windows/src/Windows/Win32/System/Diagnostics/Debug/mod.rs",
+    "version": "0.58.0",
+    "license": "MIT",
+    "sourceArchive": "licenses/bsod-source.zip",
+    "changes": "Format reference only; independent parser implementation, no upstream binary bundled."
   }
 ]

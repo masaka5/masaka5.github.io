@@ -1,22 +1,23 @@
 /* 新增工具时，只需在 tools 中添加一项；新增类别时，在 categories 中添加一项。 */
 const ToolboxCatalog = {
   categories: [
-    { id:'hardware', name:'硬件检测', icon:'cpu' },
+    { id:'hardware', name:'硬件与外设', icon:'cpu' },
     { id:'network', name:'网络运维', icon:'network' },
-    { id:'windows', name:'系统运维', icon:'terminal' },
-    { id:'peripheral', name:'设备与采集', icon:'devices' },
-    { id:'nfc', name:'NFC 工具', icon:'nfc' },
+    { id:'windows', name:'电脑维护', icon:'wrench' },
+    { id:'workspace', name:'开发与虚拟机', icon:'computer' },
     { id:'text', name:'文本与代码', icon:'convert' },
-    { id:'collaboration', name:'在线协作', icon:'users-round' },
+    { id:'collaboration', name:'协作与绘图', icon:'users-round' },
+    { id:'meetings', name:'在线协作', icon:'video' },
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'bsod',category:'windows',name:'蓝屏分析',description:'停止代码 · 转储解析 · 驱动关联',href:'tools/bsod/',icon:'monitor-x',tags:['蓝屏','DMP','WASM'],keywords:'BlueScreenView Windows 蓝屏 minidump 内核 转储 dmp dump bugcheck 停止代码 崩溃 驱动 分析'},
     {id:'iso',category:'files',name:'镜像工具',description:'镜像浏览 · 文件提取 · 镜像制作',href:'tools/iso/',icon:'disc-3',tags:['ISO','WIM','IMG','VHD'],keywords:'iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM'},
-    {id:'folder-analysis',category:'files',name:'文件夹分析',description:'空间分析 · 重复文件 · 类型统计',href:'tools/folder-analysis/',icon:'folder-search',tags:['文件夹','重复','空间'],keywords:'WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV'},
-    {id:'code',category:'web',name:'代码工作台',description:'VS Code · 中文 · 本地文件',href:'tools/code/',icon:'code-xml',tags:['代码','VS Code','编辑器'],keywords:'vscode.dev 网页 IDE 编辑器 PowerShell Python JavaScript TypeScript Rust 文件 目录 补全'},
-    {id:'serial',category:'peripheral',name:'串口调试与烧录',description:'文本 · HEX · ESP 固件',href:'tools/serial/',icon:'unplug',tags:['串口','固件','ESP'],keywords:'Web Serial UART USB COM 波特率 收发 烧录 固件 ESP32 ESP8266 esptool BIN'},
+    {id:'folder-analysis',category:'windows',name:'文件夹分析',description:'空间分析 · 重复文件 · 类型统计',href:'tools/folder-analysis/',icon:'folder-search',tags:['文件夹','重复','空间'],keywords:'WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV'},
+    {id:'code',category:'workspace',name:'代码工作台',description:'VS Code · 中文 · 本地文件',href:'tools/code/',icon:'code-xml',tags:['代码','VS Code','编辑器'],keywords:'vscode.dev 网页 IDE 编辑器 PowerShell Python JavaScript TypeScript Rust 文件 目录 补全'},
+    {id:'serial',category:'hardware',name:'串口调试与烧录',description:'文本 · HEX · ESP 固件',href:'tools/serial/',icon:'unplug',tags:['串口','固件','ESP'],keywords:'Web Serial UART USB COM 波特率 收发 烧录 固件 ESP32 ESP8266 esptool BIN'},
     {id:'file-watermark',category:'encoding',name:'文件隐写与校验',description:'隐藏标记 · 口令认证 · 还原',href:'tools/file-watermark/',icon:'file-key-2',tags:['隐写','校验','水印'],keywords:'文件水印 隐藏 标记 metadata PNG JPEG PDF Office ZIP HMAC SHA256 认证 完整性 校验'},
-    {id:'meeting',category:'collaboration',name:'在线会议',description:'多人音视频 · 屏幕共享 · 聊天',href:'tools/meeting/',icon:'video',tags:['会议','共享','聊天'],keywords:'Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC'},
+    {id:'meeting',category:'meetings',name:'在线会议',description:'多人音视频 · 屏幕共享 · 聊天',href:'tools/meeting/',icon:'video',tags:['会议','共享','聊天'],keywords:'Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC'},
     {
       id:'stress', category:'hardware', name:'硬件压测',
       description:'CPU · 内存 · GPU · 磁盘',
