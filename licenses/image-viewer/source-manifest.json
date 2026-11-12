@@ -1,6 +1,6 @@
 {
-  "bytes": 99676,
-  "sha256": "06afd9e065cdb802b8abcfb703902d02fc1d42ea48b4bc690a01964e89bfc7cb",
+  "bytes": 105849,
+  "sha256": "d06df572bda01f73cb98da5e6aed943d2036355ec28dc4044ef197cb0922728f",
   "files": {
     "package.json": {
       "bytes": 325,
@@ -15,8 +15,8 @@
       "sha256": "706280bfa086ac3fd6d72b92a310972552131da9a869c80e6cc9a7d0108b8374"
     },
     "package-source.py": {
-      "bytes": 931,
-      "sha256": "eb7a4ead63634d19866d9ba798512e719c7fd198c6e69330a15caff8f118f9f0"
+      "bytes": 952,
+      "sha256": "39a652b558f2240ca78156ea9fe077f0fa35f4ec32f4e52d572d726fe58a0ce2"
     },
     "index.html": {
       "bytes": 325,
@@ -27,8 +27,8 @@
       "sha256": "f061e13bc75d57c69c302840ca040d863b972dff1e7513bcd01ad28bf6e1be6b"
     },
     "README.md": {
-      "bytes": 2777,
-      "sha256": "d7507ba7ee18efd750486336d29564db59e8cdd93aac63bc63fe570c23d3393a"
+      "bytes": 3722,
+      "sha256": "cd9eb21fd55c8f13bf32f6a11a528d335b51fbcf1abbe98845665f7038f5604a"
     },
     "src/client.js": {
       "bytes": 1085,
@@ -39,12 +39,16 @@
       "sha256": "3af8cfe9d457b653903b7e3ce5cf9c2dd0c82431b6b66c7a02ba1e0f83fe1e0a"
     },
     "src/main.jsx": {
-      "bytes": 15916,
-      "sha256": "ad8055eca07db15e751cab28e200b9d6a71688989b557ab110678b9f7701c7e4"
+      "bytes": 15424,
+      "sha256": "35459d9318c351608d0da486980696ce11671b61092bab8941e9e3ddf64feedd"
+    },
+    "src/snapshot.js": {
+      "bytes": 2702,
+      "sha256": "55d536473413ff10aafa7e41a3cdbd83728e3fb82cb0a09a6688812fe05cc424"
     },
     "src/storage.js": {
-      "bytes": 944,
-      "sha256": "b88ff8d1d6a3b5e2cdfdb0bd6ad96e3aeaf60bbcc382ac9095013f4869a04a70"
+      "bytes": 3845,
+      "sha256": "c42e68512a94a2fb00f64eab8f06d5f82272017b4a0ecdd6f53f4df06a4b660a"
     },
     "src/style.css": {
       "bytes": 4341,
@@ -63,8 +67,12 @@
       "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d"
     },
     "tests/browser.py": {
-      "bytes": 13481,
-      "sha256": "e7706112bd1699f6ca70d0841cc0fc1e00671af98ce6e3e20bda726f10aac8f9"
+      "bytes": 13478,
+      "sha256": "28efcae23309d89f401b7bff842fe54f0b9085b631f025622fcc5f6a18856f51"
+    },
+    "tests/recovery.py": {
+      "bytes": 10183,
+      "sha256": "7f4263344198f6eaad110968136172578912c370b4034ddd23ada857a13f0a89"
     }
   }
 }
