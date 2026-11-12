@@ -11,12 +11,16 @@
   ];
   const targets=presets.map(([name,group,url])=>({name,group,url,samples:[],status:'待检测',median:null}));
   let speedController=null,latencyController=null,speedRun=0,latencyRun=0,targetPage=0;
+  const saved=Ops.readState(),ids=['speedSource','speedSamples','targetGroup','probeSamples'];Ops.restoreFields(saved,ids);
+  function remember(){Ops.saveState({...Ops.readState(),...Ops.fieldValues(ids),downloadUrl:Ops.safeURL($('downloadUrl').value),uploadUrl:Ops.safeURL($('uploadUrl').value)});}
+  for(const id of [...ids,'downloadUrl','uploadUrl']){$(id).addEventListener('change',remember);$(id).addEventListener('input',remember);}
   const filtered=()=>targets.filter(target=>$('targetGroup').value==='all'||target.group===$('targetGroup').value);
   function source(){const id=$('speedSource').value;if(id==='librespeed'){$('downloadUrl').value='LibreSpeed 自动选择测速节点';$('downloadUrl').readOnly=true;$('uploadUrl').value='LibreSpeed 自动测速';$('uploadUrl').readOnly=true;$('uploadField').hidden=false;return;}$('downloadUrl').value=id==='npm'?'https://registry.npmmirror.com/typescript/-/typescript-5.7.3.tgz':id==='cloudflare'?'https://speed.cloudflare.com/__down?bytes=25000000':'';$('downloadUrl').readOnly=id!=='custom';$('uploadUrl').value=id==='cloudflare'?'https://speed.cloudflare.com/__up':'';$('uploadUrl').readOnly=id!=='custom';$('uploadField').hidden=id==='npm';}
   function speedBusy(busy){for(const id of ['speedSource','downloadUrl','uploadUrl','speedSamples','startSpeed'])$(id).disabled=busy;$('stopSpeed').disabled=!busy;}
   function latencyBusy(busy){for(const id of ['targetGroup','probeSamples','customTarget','addTarget','startLatency'])$(id).disabled=busy;$('stopLatency').disabled=!busy;}
   function speedLine(text,error=false){const el=Ops.node('p','status',text);if(error)el.dataset.tone='error';$('speedLog').append(el);}
   $('speedSource').addEventListener('change',source);source();
+  if($('speedSource').value==='custom')Ops.restoreFields({downloadUrl:Ops.safeURL(saved.downloadUrl),uploadUrl:Ops.safeURL(saved.uploadUrl)},['downloadUrl','uploadUrl']);
   $('startSpeed').addEventListener('click',async()=>{
     if($('speedSource').value==='librespeed'){window.LibrespeedTest?.start();return;}
     let download,upload;try{download=NetworkCore.urlOf($('downloadUrl').value).href;upload=$('uploadUrl').value.trim()?NetworkCore.urlOf($('uploadUrl').value).href:null;}catch(error){Ops.status($('speedStatus'),error.message,true);return;}
@@ -73,7 +77,9 @@
   });
   $('stopLatency').addEventListener('click',()=>latencyController?.abort());
   $('exportLatency').addEventListener('click',()=>Ops.save(Ops.csv([['目标','地址','HTTPS 中位耗时(ms)','已响应请求','已发起请求','状态'],...filtered().map(t=>[t.name,t.url,t.median===null?'':t.median.toFixed(2),t.samples.filter(s=>s.ok).length,t.samples.length,t.status])]),'https-latency.csv','text/csv;charset=utf-8'));
-  document.querySelectorAll('[data-network-view]').forEach(button=>button.addEventListener('click',()=>{const view=button.dataset.networkView;document.querySelectorAll('[data-network-view]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('speedView').hidden=view!=='speed';$('latencyView').hidden=view!=='latency';Ops.show('input');renderTargets();}));
+  function showNetwork(view,reset=false){document.querySelectorAll('[data-network-view]').forEach(item=>item.setAttribute('aria-pressed',String(item.dataset.networkView===view)));$('speedView').hidden=view!=='speed';$('latencyView').hidden=view!=='latency';if(reset)Ops.show('input');Ops.saveState({...Ops.readState(),networkView:view});renderTargets();}
+  document.querySelectorAll('[data-network-view]').forEach(button=>button.addEventListener('click',()=>showNetwork(button.dataset.networkView,true)));
+  if(['speed','latency'].includes(saved.networkView))showNetwork(saved.networkView);
   renderTargets();window.addEventListener('pagehide',()=>{speedController?.abort();latencyController?.abort();});
   window.NetworkSpeedUI={busy:speedBusy,line:speedLine,status:(message,error=false)=>Ops.status($('speedStatus'),message,error),result:(message,error=false)=>Ops.status($('speedResultStatus'),message,error),metric:(id,value)=>$(id).textContent=value,progress:value=>$('speedProgress').value=value};
 })();

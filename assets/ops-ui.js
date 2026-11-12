@@ -1,10 +1,16 @@
 const Ops=(()=>{
+  const viewKey='pocket-ops-view-v1:'+location.pathname;
+  function readState(){try{const saved=JSON.parse(sessionStorage.getItem(viewKey)||'{}');return saved?.schema===1&&saved.value&&typeof saved.value==='object'?saved.value:{};}catch{return {};}}
+  function saveState(value){try{const text=JSON.stringify({schema:1,value});if(text.length>1048576){sessionStorage.removeItem(viewKey);return;}sessionStorage.setItem(viewKey,text);}catch{}}
+  function restoreFields(saved,ids){for(const id of ids){const el=document.getElementById(id),value=saved[id];if(!el)continue;if(el.type==='checkbox'){if(typeof value==='boolean')el.checked=value;}else if(typeof value==='string'&&value.length<=524288){if(el.tagName!=='SELECT'||[...el.options].some(option=>option.value===value))el.value=value;}}}
+  function fieldValues(ids){return Object.fromEntries(ids.map(id=>{const el=document.getElementById(id);return [id,el?.type==='checkbox'?el.checked:el?.value??''];}));}
+  function safeURL(value){if(!value)return '';try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)&&!url.username&&!url.password&&![...url.searchParams.keys()].some(k=>/token|secret|password|credential|signature|api.?key|auth/i.test(k))&&!/token|secret|password|credential|signature|api.?key|auth/i.test(url.hash)?value:'';}catch{return '';}}
   function node(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;}
   function status(el,message,error=false){el.textContent=message;el.dataset.tone=error?'error':'';}
   async function copy(text,el){try{await navigator.clipboard.writeText(text);status(el,'已复制');}catch(_){status(el,'复制失败，请手动选择内容复制',true);}}
   function save(text,name,type='text/plain;charset=utf-8'){const url=URL.createObjectURL(new Blob([text],{type})),a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function csv(rows){return '\ufeff'+rows.map(row=>row.map(value=>'"'+String(value).replace(/^[=+@-]/,"'$&").replaceAll('"','""')+'"').join(',')).join('\r\n');}
-  function show(view){document.body.dataset.view=view;document.querySelectorAll('[data-view-target]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.viewTarget===view)));}
+  function show(view){if(!['input','result'].includes(view))return;document.body.dataset.view=view;document.querySelectorAll('[data-view-target]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.viewTarget===view)));saveState({...readState(),view});}
   function fields(container,entries){container.replaceChildren();for(const [label,value] of entries){const item=node('div','result-item');item.append(node('dt','',label),node('dd','',value));container.append(item);}}
   function pager(list,controls,draw,rowHeight=150){
     let entries=[],page=0,size=1;
@@ -15,5 +21,6 @@ const Ops=(()=>{
     return {set(items){entries=items;page=0;render();},refresh:render};
   }
   document.querySelectorAll('[data-view-target]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.viewTarget)));
-  return {node,status,copy,save,csv,show,fields,pager,result(){if(matchMedia('(max-width:760px)').matches)show('result');}};
+  const savedView=readState().view;if(savedView)show(savedView);
+  return {node,status,copy,save,csv,show,fields,pager,readState,saveState,restoreFields,fieldValues,safeURL,result(){if(matchMedia('(max-width:760px)').matches)show('result');}};
 })();

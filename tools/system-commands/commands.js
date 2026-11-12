@@ -1,6 +1,7 @@
 (() => {
  const $=id=>document.getElementById(id),tabs=[...document.querySelectorAll('[data-platform]')];
- let platform='cmd';
+ const saved=Ops.readState();let platform=SystemCommands.platforms.some(p=>p.id===saved.platform)?saved.platform:'cmd';
+ Ops.restoreFields(saved,['commandSearch']);
  const status=(message,error=false)=>Ops.status($('commandStatus'),message,error);
  function updatePlatform(){
   const details=SystemCommands.platforms.find(item=>item.id===platform);
@@ -23,6 +24,7 @@
   return article;
  }
  function render(){
+  Ops.saveState({...Ops.readState(),...Ops.fieldValues(['commandSearch','categoryFilter']),platform});
   const matches=SystemCommands.search($('commandSearch').value,platform,$('categoryFilter').value);
   $('commandResults').replaceChildren();$('commandCount').textContent=matches.length+' 条';
   if(!matches.length){$('commandResults').append(Ops.node('p','empty','没有匹配的命令'));status('试试缩短关键词或切换分类。');return;}
@@ -32,5 +34,5 @@
  tabs.forEach(tab=>tab.addEventListener('click',()=>{platform=tab.dataset.platform;updatePlatform();}));
  $('categoryFilter').addEventListener('change',render);$('commandSearch').addEventListener('input',render);
  $('clearCommandSearch').addEventListener('click',()=>{$('commandSearch').value='';$('categoryFilter').value='all';render();$('commandSearch').focus();});
- updatePlatform();
+ updatePlatform();if(saved.platform===platform){Ops.restoreFields(saved,['categoryFilter']);render();}
 })();

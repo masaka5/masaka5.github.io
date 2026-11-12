@@ -15,10 +15,15 @@
  ];
  let controller=null,results=[],run=0;const status=(message,error=false)=>Ops.status($('dnsStatus'),message,error);
  for(const [index,p] of providers.entries()){const label=Ops.node('label','check'),input=document.createElement('input');input.type='checkbox';input.value=index;input.checked=p[3];label.append(input,document.createTextNode(p[0]));$('dnsProviders').append(label);}
+ const saved=Ops.readState(),ids=['dnsName','dnsType','customDNS'];Ops.restoreFields({...saved,customDNS:Ops.safeURL(saved.customDNS)},ids);
+ const boxes=[...$('dnsProviders').querySelectorAll('input')];if(Array.isArray(saved.providers))boxes.forEach((box,i)=>{if(typeof saved.providers[i]==='boolean')box.checked=saved.providers[i];});
+ function remember(){Ops.saveState({...Ops.readState(),...Ops.fieldValues(ids),customDNS:Ops.safeURL($('customDNS').value),providers:boxes.map(box=>box.checked)});}
+ for(const id of ids)$(id).addEventListener('input',remember);boxes.forEach(box=>box.addEventListener('change',remember));
  const references=[...providers.map(p=>[p[0],p[2]]),['114 DNS','114.114.114.114 / 114.114.115.115'],['百度 DNS','180.76.76.76'],['CNNIC SDNS','1.2.4.8 / 210.2.4.8'],['Verisign','64.6.64.6 / 64.6.65.6'],['CleanBrowsing','185.228.168.9 / 185.228.169.9']];
  for(const [name,ip] of references){const p=Ops.node('p','dns-answer');p.append(Ops.node('strong','',name+'：'),document.createTextNode(ip));$('dnsReferenceList').append(p);}
  $('dnsReference').onclick=()=>$('dnsReferenceDialog').showModal();$('closeDNSReference').onclick=()=>$('dnsReferenceDialog').close();
  $('selectDNS').onclick=()=>{const boxes=[...$('dnsProviders').querySelectorAll('input')],all=boxes.every(b=>b.checked);boxes.forEach(b=>b.checked=!all);$('selectDNS').textContent=all?'全选':'取消全选';};
+ $('selectDNS').addEventListener('click',remember);
  function busy(value){for(const id of ['dnsName','dnsType','customDNS','queryDNS','selectDNS'])$(id).disabled=value;$('dnsProviders').querySelectorAll('input').forEach(i=>i.disabled=value);$('stopDNS').disabled=!value;}
  function render(){
   $('dnsResults').replaceChildren();for(const result of results){const card=Ops.node('article','dns-card');card.append(Ops.node('h3','',result.name));
@@ -32,6 +37,7 @@
  }
  function records(items,name){return (items||[]).map(r=>({name:r.name||name,type:DNSCore.typeName(r.type),ttl:r.TTL??r.ttl??0,data:String(r.data??r.value??'')}));}
  $('queryDNS').onclick=async()=>{
+  remember();
   let name,targets,id,packet;try{const type=$('dnsType').value,raw=$('dnsName').value.trim();name=type==='PTR'&&/^[\da-fA-F:.]+$/.test(raw)?DNSCore.ptr(raw):DNSCore.domain(raw);id=crypto.getRandomValues(new Uint16Array(1))[0];packet=DNSCore.query(name,type,id);targets=[...$('dnsProviders').querySelectorAll('input:checked')].map(i=>providers[+i.value]);const custom=$('customDNS').value.trim();if(custom){const url=new URL(custom);if(url.protocol!=='https:'||url.username||url.password||url.hash)throw Error('自定义 DoH 需为 HTTPS 地址');targets.push(['自定义',url.href]);}if(!targets.length)throw Error('请至少选择一个 DNS 服务');}catch(error){status(error.message,true);return;}
   controller=new AbortController();const signal=controller.signal,token=++run;busy(true);results=targets.map(p=>({name:p[0],url:p[1]}));$('exportDNS').disabled=true;render();let position=0,complete=0;status('正在查询 '+name+'…');
   const encoded=btoa(String.fromCharCode(...packet)).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');

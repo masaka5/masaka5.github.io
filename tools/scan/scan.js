@@ -2,6 +2,11 @@
  const $=id=>document.getElementById(id),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true}),decoder=window.ZXingWASM;
  let stream=null,running=false,epoch=0,count=0,seen=new Set(),lastSeen=new Map(),sound=null;
  let decoderReady=null;
+ const saved=Ops.readState(),ids=['scanMode','scanSeparator','scanSound','deduplicate'];Ops.restoreFields(saved,ids);
+ if(typeof saved.output==='string'&&saved.output.length<=800000)$('scanOutput').value=saved.output;
+ count=Number.isSafeInteger(saved.count)&&saved.count>=0?saved.count:0;$('scanCount').textContent=count+' 条';
+ function remember(){Ops.saveState({...Ops.readState(),...Ops.fieldValues(ids),output:$('scanOutput').value,count});}
+ for(const id of ids){$(id).addEventListener('change',remember);}
  const status=(text,error=false)=>Ops.status($('scanStatus'),text,error);
  const decoderFailure=error=>/abort|wasm|webassembly|fetch/i.test(error?.message||'')?'识别组件加载失败，请重新部署完整工具包。':'识别失败，请调整码面后重试。';
  if(!decoder)status('扫码组件未加载，请重新部署完整工具包。',true);
@@ -23,7 +28,7 @@
  function append(text,format='扫码枪'){
   const separators={space:' ',newline:'\n',tab:'\t',none:''};if($('scanOutput').value.length+text.length>1000000){status('结果已满，请先下载或清空。',true);return;}
   $('scanOutput').value+=text+separators[$('scanSeparator').value];$('scanOutput').scrollTop=$('scanOutput').scrollHeight;
-  count++;$('scanCount').textContent=count+' 条';const item=Ops.node('p','',`${new Date().toLocaleTimeString('zh-CN')} · ${format} · ${text}`);$('scanHistory').prepend(item);while($('scanHistory').children.length>20)$('scanHistory').lastChild.remove();beep();status('已识别 '+format);
+  count++;$('scanCount').textContent=count+' 条';const item=Ops.node('p','',`${new Date().toLocaleTimeString('zh-CN')} · ${format} · ${text}`);$('scanHistory').prepend(item);while($('scanHistory').children.length>20)$('scanHistory').lastChild.remove();remember();beep();status('已识别 '+format);
  }
  function accept(results,camera=false){const now=Date.now();const present=new Set();for(const item of results){if(item.error||!item.text)continue;const key=item.format+'\0'+item.text;present.add(key);if(camera&&$('deduplicate').checked&&seen.has(key))continue;if(camera&&!$('deduplicate').checked&&now-(lastSeen.get(key)||0)<1500)continue;append(item.text,item.format);lastSeen.set(key,now);}if(camera){for(const key of seen)if(now-(lastSeen.get(key)||0)>2500&&!present.has(key))seen.delete(key);for(const key of present){seen.add(key);lastSeen.set(key,now);}}}
  async function loop(token){if(!running||token!==epoch)return;const video=$('scanVideo');try{if(video.readyState>=2&&video.videoWidth>0&&video.videoHeight>0){const ratio=Math.min(1,1280/video.videoWidth);canvas.width=Math.round(video.videoWidth*ratio);canvas.height=Math.round(video.videoHeight*ratio);ctx.drawImage(video,0,0,canvas.width,canvas.height);const results=await decoder.readBarcodes(ctx.getImageData(0,0,canvas.width,canvas.height),{formats:[],tryHarder:true,maxNumberOfSymbols:32});if(token===epoch)accept(results,true);}}catch(error){if(token===epoch){stop();status(decoderFailure(error),true);return;}}if(running&&token===epoch)setTimeout(()=>loop(token),180);}
@@ -44,4 +49,6 @@
  $('scanMode').onchange=()=>{stop();const mode=$('scanMode').value;$('wedgeField').hidden=mode!=='keyboard';$('cameraField').hidden=mode!=='camera';$('startScan').textContent=mode==='camera'?'开始扫描':mode==='image'?'选择图片':'准备接收';$('scanFrame').hidden=mode==='keyboard';if(mode==='keyboard')$('wedgeInput').focus();};
  $('wedgeInput').onkeydown=event=>{if(['Enter','Tab'].includes(event.key)&&!event.isComposing){event.preventDefault();const text=$('wedgeInput').value;if(text){append(text);$('wedgeInput').value='';}}};
  $('copyScans').onclick=()=>Ops.copy($('scanOutput').value,$('scanStatus'));$('saveScans').onclick=()=>Ops.save($('scanOutput').value,'扫码结果.txt');$('clearScans').onclick=()=>{$('scanOutput').value='';$('scanHistory').replaceChildren();count=0;seen.clear();lastSeen.clear();$('scanCount').textContent='0 条';status('已清空');};window.addEventListener('pagehide',()=>{stop();sound?.close();});
+ $('clearScans').addEventListener('click',remember);$('scanOutput').addEventListener('input',remember);
+ if(saved.scanMode)$('scanMode').onchange();
 })();

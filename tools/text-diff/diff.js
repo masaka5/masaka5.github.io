@@ -1,5 +1,8 @@
 (() => {
  const $=id=>document.getElementById(id),status=(message,error=false)=>Ops.status($('diffStatus'),message,error);let lastPatch='',hasCompared=false;
+ const ids=['oldText','newText','diffMode','ignoreWhitespace'],saved=Ops.readState();Ops.restoreFields(saved,ids);
+ const remember=()=>Ops.saveState({...Ops.readState(),...Ops.fieldValues(ids),compared:hasCompared});
+ for(const id of ids)$(id).addEventListener('input',remember);
  const partsOf=(text)=>{const parts=text.split('\n');if(parts.at(-1)==='')parts.pop();return parts.length?parts:[''];};
  function cell(tag,className,text){return Ops.node(tag,className,text);}
  function wordText(target,oldLine,newLine,side){for(const part of Diff.diffWordsWithSpace(oldLine,newLine)){if((side==='old'&&part.added)||(side==='new'&&part.removed))continue;const span=cell('span',part.added?'word-added':part.removed?'word-removed':'',part.value);target.append(span);}}
@@ -28,11 +31,13 @@
   $('diffOutput').replaceChildren();$('diffOutput').append(changed?($('diffMode').value==='side'?renderSide(changes):renderUnified(changes)):cell('p','empty',old||newer?'两段文本一致':'请输入需要比较的文本'));
   $('diffSummary').textContent=changed?'有差异':'一致';$('diffCounts').textContent=`新增 ${added} 行 · 删除 ${removed} 行`;
   lastPatch=Diff.createTwoFilesPatch('原文','修改后',old,newer,'','',{context:3});hasCompared=true;$('downloadPatch').disabled=!changed;
-  status(changed?'比较完成':'没有差异');
+  status(changed?'比较完成':'没有差异');remember();
  }
  $('compareText').onclick=compare;$('diffMode').onchange=()=>{if(hasCompared)compare();};$('ignoreWhitespace').onchange=()=>{if(hasCompared)compare();};
  $('swapText').onclick=()=>{const old=$('oldText').value;$('oldText').value=$('newText').value;$('newText').value=old;compare();};
  $('sampleText').onclick=()=>{$('oldText').value='interface GigabitEthernet1/0/1\n switchport mode access\n switchport access vlan 10\n spanning-tree portfast';$('newText').value='interface GigabitEthernet1/0/1\n switchport mode access\n switchport access vlan 20\n spanning-tree portfast\n description User port';compare();};
  $('clearText').onclick=()=>{$('oldText').value='';$('newText').value='';$('diffOutput').replaceChildren(cell('p','empty','比较结果会显示在这里'));$('diffSummary').textContent='待比较';$('diffCounts').textContent='—';$('downloadPatch').disabled=true;lastPatch='';hasCompared=false;status('已清空');};
  $('downloadPatch').onclick=()=>{if(lastPatch)Ops.save(lastPatch,'文本差异.patch','text/plain;charset=utf-8');};
+ $('clearText').addEventListener('click',remember);
+ if(saved.compared===true)compare();
 })();
