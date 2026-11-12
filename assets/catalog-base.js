@@ -7,9 +7,11 @@ const ToolboxCatalog = {
     { id:'peripheral', name:'设备与采集', icon:'devices' },
     { id:'nfc', name:'NFC 工具', icon:'nfc' },
     { id:'text', name:'文本与代码', icon:'convert' },
+    { id:'collaboration', name:'在线协作', icon:'users-round' },
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'meeting',category:'collaboration',name:'在线会议',description:'多人音视频 · 屏幕共享 · 聊天',href:'tools/meeting/',icon:'video',tags:['会议','共享','聊天'],keywords:'Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC'},
     {
       id:'stress', category:'hardware', name:'硬件压测',
       description:'CPU · 内存 · GPU · 磁盘',

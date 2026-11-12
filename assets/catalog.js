@@ -32,6 +32,11 @@ const ToolboxCatalog = {
       "icon": "text-cursor-input"
     },
     {
+      "id": "collaboration",
+      "name": "在线协作",
+      "icon": "users-round"
+    },
+    {
       "id": "pdf",
       "name": "PDF 文档",
       "icon": "file-text"
@@ -93,6 +98,29 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
+    {
+      "id": "meeting",
+      "category": "collaboration",
+      "name": "在线会议",
+      "description": "多人音视频 · 屏幕共享 · 聊天",
+      "href": "tools/meeting/",
+      "icon": "video",
+      "tags": [
+        "会议",
+        "共享",
+        "聊天"
+      ],
+      "keywords": "Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/meeting/",
+          "source": "toolbox",
+          "sourceId": "meeting"
+        }
+      ],
+      "iconBadge": ""
+    },
     {
       "id": "stress",
       "category": "hardware",

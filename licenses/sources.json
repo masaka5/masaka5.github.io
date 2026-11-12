@@ -1,5 +1,13 @@
 [
   {
+    "project": "meeting",
+    "url": "https://github.com/dmotz/trystero",
+    "version": "0.27.0",
+    "license": "MIT; bundled dependency notices in vendor/meeting/NOTICES.txt",
+    "source_archive": "meeting-source.zip",
+    "modified": false
+  },
+  {
     "project": "browsersnip-upstream",
     "url": "https://github.com/ningtoba/BrowserSnip",
     "commit": "b313b890a3aeec0febcb574e2341ee19e5e3e9d3",
