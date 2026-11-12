@@ -1,0 +1,1 @@
+import{j as n}from"./toolbox-C1bqIItI.js";import{a as i}from"./index-83IWjpAP.js";function x({onCheckedChange:t,checked:e,defaultChecked:o,...r}){return n.jsx(i,{"data-slot":"checkbox",...r,...e!==void 0?{checked:e===!0}:{},defaultChecked:o===!0,indeterminate:e==="indeterminate",onChange:a=>t?.(a.target.checked)})}export{x as C};

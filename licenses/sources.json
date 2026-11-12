@@ -19,7 +19,10 @@
     "url": "https://github.com/saikiranreddyuppula/open-utility-tools",
     "commit": "e65e47c36c77335a293dca8be2d9ad1031a2618d",
     "license": "MIT",
-    "modified": true
+    "modified": true,
+    "source_archive": "openutility-source.zip",
+    "source_manifest": "openutility-source-manifest.json",
+    "third_party_notices": "openutility-third-party.txt"
   },
   {
     "project": "localconvert-upstream",

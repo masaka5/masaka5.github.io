@@ -1,0 +1,1 @@
+import{r as o,j as s}from"./toolbox-C1bqIItI.js";import{I as x}from"./index-N7Nfcwyv.js";const p=o.forwardRef((r,t)=>s.jsx(x.TextArea,{"data-slot":"textarea",...r,ref:a=>{const e=a?.resizableTextArea?.textArea||null;typeof t=="function"?t(e):t&&(t.current=e)}}));export{p as T};

@@ -1,0 +1,1 @@
+import{r as a,j as r}from"./toolbox-C1bqIItI.js";import{I as u}from"./index-N7Nfcwyv.js";const p=a.forwardRef(({type:n,...o},t)=>["file","color","range","hidden"].includes(n||"")?r.jsx("input",{"data-slot":"input",type:n,...o,ref:t}):r.jsx(u,{"data-slot":"input",type:n,...o,ref:s=>{const i=s?.input||null;typeof t=="function"?t(i):t&&(t.current=i)}}));export{p as I};
