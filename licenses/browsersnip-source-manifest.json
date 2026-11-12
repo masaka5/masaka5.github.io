@@ -4,7 +4,7 @@
   "modified": true,
   "antd": "5.29.3",
   "build": "npm ci; npx vite build --config toolbox.vite.config.ts",
-  "archive_sha256": "45c76e2fe44e03abc926ba16495ebab1997af2a671f5fcfb37876fa34da030db",
+  "archive_sha256": "46eec4822e6b72f7a65c092865d63ccebf0f25102eb548a722f19b327b788a91",
   "exclusions": [
     "node_modules",
     ".git",
@@ -977,8 +977,8 @@
     },
     {
       "path": "scripts/copy-ant-build.py",
-      "sha256": "12647069966c021edb1631cd87bed6e24b8d4032bfe11241f7195a5e7d6f2ccf",
-      "bytes": 1393
+      "sha256": "21a490b02404c39662c62f93583abe4f1be91532e2b19444cb51c604fa9a8f50",
+      "bytes": 1394
     },
     {
       "path": "scripts/copy-pdfjs-assets.mjs",
@@ -1027,8 +1027,8 @@
     },
     {
       "path": "scripts/package-ant-source.py",
-      "sha256": "e27cbdbd530249bdf870f2137cd3be419c0521a637840afe45f781860a7fea34",
-      "bytes": 3115
+      "sha256": "898ab88708abe75c4e1b9fb5a511369bd3381844742c505e510d75d22a053b8a",
+      "bytes": 3155
     },
     {
       "path": "scripts/state-browser-proof.mjs",
@@ -1502,8 +1502,8 @@
     },
     {
       "path": "src/hooks/useFFmpeg.ts",
-      "sha256": "779c65d50d1a13977a90ebcdf8432476ed21660ce3b9ad396e333a05a88c4933",
-      "bytes": 5942
+      "sha256": "ce6939f1a81a9ea29e960cc43aed955a80d534d2fdee74724cb1ee300edeb3bf",
+      "bytes": 5975
     },
     {
       "path": "src/hooks/useIsCompact.ts",
@@ -1887,8 +1887,8 @@
     },
     {
       "path": "src/stores/session-recovery.ts",
-      "sha256": "b216b90588ae35d7139612a3cd85442245955659bdac01ffe76551802141023a",
-      "bytes": 10566
+      "sha256": "7182dd235f47a7fe84c0fcaa9fba5cef47be859e44ddedc6377a9f58d0002310",
+      "bytes": 10857
     },
     {
       "path": "src/stores/ui-store.ts",
@@ -1932,8 +1932,8 @@
     },
     {
       "path": "tests/app/session-recovery.test.ts",
-      "sha256": "1a6e2dad11b614a5863449c02809df833629a08bba5607a94563b5773ce6cc17",
-      "bytes": 11109
+      "sha256": "6bf2ede1d2a2a1c2d4321dc2074e02b85bb3452de9b6925915b930127d49d07d",
+      "bytes": 13985
     },
     {
       "path": "tests/app/shared-ui.test.tsx",
