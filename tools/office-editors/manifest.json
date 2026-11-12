@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "file": "assets/_commonjsHelpers-Cpj98o6Y.js",
+      "bytes": 236,
+      "sha256": "9625379badd4849610dfe6c15453cdf0c0071264c90eef177307fac094d2aa6c"
+    },
+    {
       "file": "assets/af-CYmDZ4fF-C81U6qP1.js",
       "bytes": 179894,
       "sha256": "e59264fef1df5fd96a6f7b1d3b495cd756a5ac67be0ff87ccb92be04a0728688"
@@ -71,9 +76,9 @@
       "sha256": "9030deec6b484775fb5dd2b7de8cb401f113cf283947d0310bc1295421631a12"
     },
     {
-      "file": "assets/document-jNvTpa-1.js",
-      "bytes": 477622,
-      "sha256": "b0d60e3c323a93becc550cb427bde9f979ec2e18bee19ea82fd2be34b8249302"
+      "file": "assets/document-Q_2Tfco-.js",
+      "bytes": 455928,
+      "sha256": "bfda5a5d9405284e90ab18eb26b85d9fc86440d07c43fc1162e038e27d3ea269"
     },
     {
       "file": "assets/editor-BSydf0br.js",
@@ -186,6 +191,11 @@
       "sha256": "a2246aeec44c48ea75c5da6f0821f2f0ba6e459d5bc80b807e96318d7dc5f2f8"
     },
     {
+      "file": "assets/index-NbaaUkJi.js",
+      "bytes": 3319836,
+      "sha256": "3b64347732b064e50deff8e02b255fa771bb961258790cb47bc14b421b01f122"
+    },
+    {
       "file": "assets/is-CJ1vxS9j-BXloJ18M.js",
       "bytes": 48410,
       "sha256": "6b0598673b51185695c7709fd95723a887c2fd2badd62bdd8d2665fff45120c0"
@@ -286,19 +296,24 @@
       "sha256": "adc067aad10e2a1b23052fd56ca888ff077f5555f2700c10368f2fa77e66312d"
     },
     {
-      "file": "assets/office-BdB9kU6z.css",
-      "bytes": 121569,
-      "sha256": "c3d9d8f57c223b9a901c69c4f8c549e530f7fc94174b737b8176653e981a7110"
+      "file": "assets/office-DxVlx6zZ.css",
+      "bytes": 127315,
+      "sha256": "ad548b4793a27a042c0e27655173cc2e6b9cdd53689665215eaacd73fde77341"
     },
     {
-      "file": "assets/office-DChFzWvX.js",
-      "bytes": 6867160,
-      "sha256": "096a952afccf801f9977abee9347eea04f40b8f66a4c53ae28fdd8f92bf208c6"
+      "file": "assets/office-NSkADzHc.js",
+      "bytes": 3856116,
+      "sha256": "1c1116948d16e4352c735c8d443d5000c2029567772114ba6d0af01a30e45d6d"
     },
     {
       "file": "assets/office-validation-C6HoTE3B.js",
       "bytes": 820,
       "sha256": "7e70597f94db21c7afa97c5fd1557df3c2d8510fdfaf1a17b432561d71dfef41"
+    },
+    {
+      "file": "assets/office-zip-C29G99oj.js",
+      "bytes": 99211,
+      "sha256": "5e7cd34f7473214536a558a893b6b0e2bc50498e06fd94bd1634b9b8486005bf"
     },
     {
       "file": "assets/or-DUhKxVse-B_XNinj_.js",
@@ -326,9 +341,19 @@
       "sha256": "85de8aab647b802ad33c0206b8714ffe497b6bb25a89ba654a534eabc1c61f86"
     },
     {
+      "file": "assets/preload-helper-Ct5FWWRu.js",
+      "bytes": 1234,
+      "sha256": "edf934a2325dce089a29387f0269fbe66cefdb20c247ad0822677bd769bc7ae6"
+    },
+    {
       "file": "assets/pt-BKB_-X0N-D8aZaPM_.js",
       "bytes": 2291,
       "sha256": "0a5f1887f07663e52994eabfbb76db77223a2469e246627a9d2f4355b2266b91"
+    },
+    {
+      "file": "assets/purify.es-DowdsyMd.js",
+      "bytes": 30463,
+      "sha256": "b0b1c3057789cffebf212fa5b8215cc415bd17e0ee6ba417baa68468362cbeb3"
     },
     {
       "file": "assets/rm-C1letx81-DeBfDBrx.js",
@@ -359,6 +384,11 @@
       "file": "assets/sh-latn-DdZKFFaE-DcyoDtEt.js",
       "bytes": 29784,
       "sha256": "dcb941d4871121fcc67fd88f45bc793c064be4c122e760ccc6534ff7552d5f75"
+    },
+    {
+      "file": "assets/sha256-BJVzgJCO.js",
+      "bytes": 4664,
+      "sha256": "214bab07a79d049fcfcdf78eb9a0d01e7a83f0e62391417da21b03f9738ab5e6"
     },
     {
       "file": "assets/sk-A3STIA2C-BXQc18Za.js",
@@ -411,19 +441,34 @@
       "sha256": "aa3a083c7455d2dcde50044fe2e6c1b819a3586a87e5778dcbdc1abb32ce5958"
     },
     {
+      "file": "assets/univer-word-BNoe-XY4.js",
+      "bytes": 4738,
+      "sha256": "51a75fa3530fb15fd0af0f4c9e617779bd281bdbf4bf88ac6fe49437e315f818"
+    },
+    {
+      "file": "assets/word-bridge-DqYsdSnp.js",
+      "bytes": 512065,
+      "sha256": "a67c0f31986dcecf3110ce5a246988a0647914582413a3dd9c577657dadbcaa3"
+    },
+    {
+      "file": "assets/xlsx-bridge-xsYhn5m0.js",
+      "bytes": 945962,
+      "sha256": "4951ead70f90e2fc8ea51ced4cc98cc65ef78cf7c7d7bf4453fec423231a3226"
+    },
+    {
       "file": "assets/zh-latn-pinyin-CIit9tZA-BpSBSv6m.js",
       "bytes": 1279,
       "sha256": "bb5c6cd10b04fcb9fa81307bc074fcd64371950207098473c4a594c8a6bf3cee"
     },
     {
       "file": "document.html",
-      "bytes": 2305,
-      "sha256": "e43f19a7ca3b9c1eb89781de443830195656284ad72c3dbfc23889f964859353"
+      "bytes": 2558,
+      "sha256": "c376ce7b34541e07b578ab509140e0dad7bd0af7b5cea157edc2d9dca9d534e1"
     },
     {
       "file": "office.html",
-      "bytes": 1450,
-      "sha256": "ff25473da1da8c065cba172f3e919b03962cc4e4e619b89431b21c9c7fa62276"
+      "bytes": 1757,
+      "sha256": "a0acc009b9518eb8e8929b11308a3276caaf3f33be80cbf3cffc3d2a6a91fd44"
     }
   ]
 }

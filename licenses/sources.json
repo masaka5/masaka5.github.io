@@ -405,5 +405,26 @@
     "revision": "6d07815384197d7e7409b5af9743db6ea39bc29a",
     "license": "MIT",
     "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "exceljs",
+    "source": "https://github.com/exceljs/exceljs",
+    "version": "4.4.0",
+    "license": "MIT",
+    "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "mammoth",
+    "source": "https://github.com/mwilliamson/mammoth.js",
+    "version": "1.13.0",
+    "license": "BSD-2-Clause",
+    "sourceArchive": "licenses/office-editors-source.zip"
+  },
+  {
+    "project": "docx",
+    "source": "https://github.com/dolanmiu/docx",
+    "version": "9.15.3",
+    "license": "MIT",
+    "sourceArchive": "licenses/office-editors-source.zip"
   }
 ]
