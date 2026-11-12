@@ -1,0 +1,2394 @@
+{
+  "project": "BrowserSnip",
+  "upstream_commit": "b313b890a3aeec0febcb574e2341ee19e5e3e9d3",
+  "modified": true,
+  "antd": "5.29.3",
+  "build": "npm ci; npx vite build --config toolbox.vite.config.ts",
+  "archive_sha256": "fa29aabd52d754845f562c35e5e49c710097d5c228c0c35a69f4376d99d9ef03",
+  "exclusions": [
+    "node_modules",
+    ".git",
+    "dist",
+    ".ant-build",
+    ".env/secrets",
+    "docs research screenshots/nonbuild binary images",
+    "generated browser screenshots"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "2459340e49520c61e7fedb5a080e29832b0e8e9729c3643640fa7b9ccdee6d82",
+      "bytes": 103
+    },
+    {
+      "path": "docs/PDF-ENGINE-CONTRACT.md",
+      "sha256": "1dbf65a05030b7a5c50693ef81fd9f098446005dcbda7784527361600210f3c7",
+      "bytes": 25205
+    },
+    {
+      "path": "docs/REFINEMENT-BRIEF.md",
+      "sha256": "cc88ca56c06cf5bc5dfc3d9c6def4022ff2bc15dce6e005c4d4c7ab3b9db1329",
+      "bytes": 12601
+    },
+    {
+      "path": "docs/research/__pycache__/text-edit-fixture.cpython-314.pyc",
+      "sha256": "03d5840507a1df5ccccc69fb121d43dea57bd7587e09ad7f7c1bfa452f981089",
+      "bytes": 19415
+    },
+    {
+      "path": "docs/research/audit3-bytescan.py",
+      "sha256": "c08b0adbfd2fc362bb8f65cd0b291470124edbb6e07f53d8554b86cc366c6d58",
+      "bytes": 5444
+    },
+    {
+      "path": "docs/research/audit3-cdp.mjs",
+      "sha256": "675c4071034d47b8742f1b8f6638847a13a153df108a1038ac17b975ceba6b3f",
+      "bytes": 7602
+    },
+    {
+      "path": "docs/research/audit3-sweep.mjs",
+      "sha256": "b010445c3895c9b7e64e22d36c7aa72dac6052725ca64846f367e155135dcb6e",
+      "bytes": 15430
+    },
+    {
+      "path": "docs/research/cbz-bytes.mjs",
+      "sha256": "22d32337baab18e5a81056a435d9e7798eee94effe79fd33a1da651b96610407",
+      "bytes": 4842
+    },
+    {
+      "path": "docs/research/cbz-page-size-boxes.py",
+      "sha256": "8afb52e315cea379b5cdffb949497fb812d3d919cadb31998c7a91ecaeb464f7",
+      "bytes": 1947
+    },
+    {
+      "path": "docs/research/cbz-page-size-proof.mjs",
+      "sha256": "708834edebc086d060fcf6464736ceeac5cbf3bfe7f1fa1dfe395132a735b260",
+      "bytes": 7236
+    },
+    {
+      "path": "docs/research/colour-fixture.mjs",
+      "sha256": "8a82eb777476356b8f8b511fa5057171d23febeeed8d1e15714bc8ce8881ba06",
+      "bytes": 6269
+    },
+    {
+      "path": "docs/research/colour-ink.py",
+      "sha256": "63881335be70caf43c0d970cf1832d5819aaad22a267105193799bc446f709c3",
+      "bytes": 24921
+    },
+    {
+      "path": "docs/research/colour-measure.sh",
+      "sha256": "c5d0bd3145a71cf93e3d924c9813e3b5aef845bc8d710a6a1590b98d6b82f86d",
+      "bytes": 12590
+    },
+    {
+      "path": "docs/research/colour-rail.mjs",
+      "sha256": "fa0cca79985daaed9c8e46123703c73602b0b219bfd1ffc789fbf1dcd9e088c7",
+      "bytes": 35223
+    },
+    {
+      "path": "docs/research/compare-fixture.mjs",
+      "sha256": "8ff5c32f1c6eae93d32e475b553e3c65dbe9496da5e13558c73225eda2e4ca4b",
+      "bytes": 4027
+    },
+    {
+      "path": "docs/research/compare-measure.py",
+      "sha256": "a308303751c5d10f4d8341bb59bd6994ba634039b6531497cbc9dfa63351775b",
+      "bytes": 10379
+    },
+    {
+      "path": "docs/research/compare-measure.sh",
+      "sha256": "82046fabc3eca72b89e38644c0a103804395a9e05d1c2343e48be308494dcfee",
+      "bytes": 6800
+    },
+    {
+      "path": "docs/research/compare-rail.mjs",
+      "sha256": "3f5fb9ea61e5ba6c8b45c4d989830ddd24a4b30c79ec46e89b35dabfb1983555",
+      "bytes": 12948
+    },
+    {
+      "path": "docs/research/crop-units-fixture.mjs",
+      "sha256": "609fe97431dbe8d70e3d1f19cca55503e4be17d93179576e5761869dad184e6d",
+      "bytes": 2397
+    },
+    {
+      "path": "docs/research/crop-units-read.py",
+      "sha256": "61220050dc6d817aeded6c604910d5f029d7df59963051200ee87336e02ce6e7",
+      "bytes": 8072
+    },
+    {
+      "path": "docs/research/crop-units-run.mjs",
+      "sha256": "cd663cb4a33079b3e6fbada530ad596a936b8898b7ad4b3f39015a686ce244a6",
+      "bytes": 7761
+    },
+    {
+      "path": "docs/research/deskew-fixture.mjs",
+      "sha256": "d26906f2e5e46cf99d0c75e054a6a3c13867a27abc742995a907bfc43a2c03bc",
+      "bytes": 4813
+    },
+    {
+      "path": "docs/research/deskew-residual.py",
+      "sha256": "e9462f937aa24460189674170024ef0a05079212935d3f557621b1c32ba86171",
+      "bytes": 6395
+    },
+    {
+      "path": "docs/research/edit-pdf-audit.md",
+      "sha256": "950f597208e57196115d5f9c503a3362d76685bbaf0bca9f5832f7df43769077",
+      "bytes": 40045
+    },
+    {
+      "path": "docs/research/edit-pdf-text-findings.md",
+      "sha256": "fce97780b3f74ab007f8345a8df4e81fb73a90aa33c530438d5f3f3565876a8a",
+      "bytes": 7785
+    },
+    {
+      "path": "docs/research/editor-mode-bytes.py",
+      "sha256": "2919f6344fa8121152a6b32dd89870140386f8c139d1728dd7319998e3d58b8a",
+      "bytes": 3345
+    },
+    {
+      "path": "docs/research/editor-mode-proof.mjs",
+      "sha256": "f1d114b996579d254151f37c6397d0b71d04a4c848f24d0869c099ec46d2a652",
+      "bytes": 20424
+    },
+    {
+      "path": "docs/research/encrypted-inputs-canvas.ts",
+      "sha256": "2f7370b4834e461fad702e73722e7036a7d70491a24673069e2db5673e7c8909",
+      "bytes": 8804
+    },
+    {
+      "path": "docs/research/encrypted-inputs-findings.md",
+      "sha256": "a43699bf9bcf8b7a72c43285ab25f51b115917f1375b88d19be2e83cce1b0532",
+      "bytes": 28793
+    },
+    {
+      "path": "docs/research/encrypted-inputs-fixtures.py",
+      "sha256": "951e9e906af08e786db6041f8061397b923321461cf55f97f21630d18b36634d",
+      "bytes": 20500
+    },
+    {
+      "path": "docs/research/encrypted-inputs-readers.py",
+      "sha256": "71e30bc0ef9a8df6e33cbfe6b38bc42bf6fc20b38f9da1e8bbe77e4c3b76d8c3",
+      "bytes": 22565
+    },
+    {
+      "path": "docs/research/encrypted-inputs-rig.test.ts",
+      "sha256": "ce84953674567c1a1f0e54b649cd699fd7432c8330fa40c4c1de2bf0677d0420",
+      "bytes": 27327
+    },
+    {
+      "path": "docs/research/encrypted-inputs-run.sh",
+      "sha256": "30b70e9fc0270345ade3eda9adc4411547c19a854cc42c9ba595370d76d54c45",
+      "bytes": 2786
+    },
+    {
+      "path": "docs/research/encrypted-inputs-table-pre-aes128.md",
+      "sha256": "379e8e8a3bd044a631b5077d740e6306fe90a253d720baa27e49155247c29519",
+      "bytes": 18608
+    },
+    {
+      "path": "docs/research/encrypted-inputs-table-pre-guard.md",
+      "sha256": "57939857ad74d185a3a7796e40ab0c8d07323776f63607cd60b726b915b3f502",
+      "bytes": 19244
+    },
+    {
+      "path": "docs/research/encrypted-inputs-table.md",
+      "sha256": "73c88aff63c7e5d57cc1d20228b97f218bc5bc213896d0f6d02fe06c977cb693",
+      "bytes": 18388
+    },
+    {
+      "path": "docs/research/encrypted-inputs-table.py",
+      "sha256": "a460bacf03bdd6342909648f0874532aa9c6c1067d564d4357b82bb5f9e3c354",
+      "bytes": 7353
+    },
+    {
+      "path": "docs/research/encrypted-inputs.vitest.config.ts",
+      "sha256": "8a87e700af4a3033bc5c44669526062e53e03c95ecde36a81c2284ad3d759c7d",
+      "bytes": 1360
+    },
+    {
+      "path": "docs/research/flatten-readers.py",
+      "sha256": "aa3e4156117327f2743fddc8f792b065db4948a30042450e659b6eceb5d3410d",
+      "bytes": 6671
+    },
+    {
+      "path": "docs/research/folded-id-check.mjs",
+      "sha256": "b7d6c47a54239180599fb74c08c3b9f8069e8244ec7a15b021c7fa170ae96aab",
+      "bytes": 4461
+    },
+    {
+      "path": "docs/research/font-subset-after.txt",
+      "sha256": "cc94f8cdc5f46dc73cb3fafac397ac8f177a2877b8acddfcbff87c446a8bf479",
+      "bytes": 9706
+    },
+    {
+      "path": "docs/research/font-subset-before.txt",
+      "sha256": "6309c4175c500b08fec5d115f2993eabe02ceb3954b3dd06d96ea0e2901e6be5",
+      "bytes": 23426
+    },
+    {
+      "path": "docs/research/font-subset-build.mjs",
+      "sha256": "a019ec7b7d7fe1c2c1614c6e2a357dbfa758ae619b3d59bdce7d18c2927b5b78",
+      "bytes": 9785
+    },
+    {
+      "path": "docs/research/font-subset-chars.mjs",
+      "sha256": "c4845cef48711d0c196d4834b1bc1113d8613cd1fa10b7db8b5914ac8637f4f9",
+      "bytes": 4376
+    },
+    {
+      "path": "docs/research/font-subset-entry.ts",
+      "sha256": "8ba9a7b178a0012a10e14903f55f424adb896f7660370ac70379e82b3bf81c9f",
+      "bytes": 7879
+    },
+    {
+      "path": "docs/research/font-subset-findings.md",
+      "sha256": "db04734b5c65e25c7bc4f945bd57058edefe9247c00ecadddc36b149cde8b4fd",
+      "bytes": 16888
+    },
+    {
+      "path": "docs/research/font-subset-measure.py",
+      "sha256": "eac39dae65b775f5e39692053e2cd237bacd5cc80511203d0565e28db121fe5d",
+      "bytes": 32900
+    },
+    {
+      "path": "docs/research/font-subset-pdfjs.mjs",
+      "sha256": "88f9e346069460d8241360147c40f4a542c1e697673ff0434d22038fb56bb610",
+      "bytes": 5845
+    },
+    {
+      "path": "docs/research/font-subset-revert.py",
+      "sha256": "2c2fd9652588ddc9fa0902edbd1183b0c767d08d84c83aa79b9e28d1acabba4d",
+      "bytes": 3151
+    },
+    {
+      "path": "docs/research/font-subset-tool-measure.py",
+      "sha256": "63e366ec74678e78b0c656c79dd07c5f536798d687c5c789eb13a06c92bd1a2c",
+      "bytes": 5271
+    },
+    {
+      "path": "docs/research/font-subset-tool.mjs",
+      "sha256": "d9d81156c1d8adfe5f8717da1b1ddfcbcd54b25f6fe60f30abb6f59b1d10a068",
+      "bytes": 9537
+    },
+    {
+      "path": "docs/research/inert-field-sweep.md",
+      "sha256": "421f7d84eaba2a2a9f8d577d06cc4558d9e7de52b5a39f4f94db0d988ff75079",
+      "bytes": 12717
+    },
+    {
+      "path": "docs/research/ocr-cause-probe.mjs",
+      "sha256": "13a5960b81b53e8c4cc598b2e7587d6c6d08440c6924488fff923941d71f27b5",
+      "bytes": 7373
+    },
+    {
+      "path": "docs/research/ocr-check.py",
+      "sha256": "e231838b5b13eb2e8738913c2bac81e944cab41b2c5bf00f55951babdbfea14c",
+      "bytes": 11940
+    },
+    {
+      "path": "docs/research/ocr-engine-blocked.mjs",
+      "sha256": "d131a55d46b44509531474465df4f90609d104bc42a2efd3c8f1b3ba8af7d280",
+      "bytes": 5324
+    },
+    {
+      "path": "docs/research/ocr-fixture.mjs",
+      "sha256": "71948281d3d6cba7d04bf071b7f0a5f7ed3ce45a72ea2aaf9a45901ef081c1b5",
+      "bytes": 4637
+    },
+    {
+      "path": "docs/research/ocr-round-trip.mjs",
+      "sha256": "cd08963d98648575214d6706d9048ed92cd0fb8a5f40ca2d06a575d16a0bac5c",
+      "bytes": 15901
+    },
+    {
+      "path": "docs/research/organize-campaign-bytes.py",
+      "sha256": "c61f835204bf2c44ea86b1e9986c56a9a0fc32848098c54f84eaa1645995f9da",
+      "bytes": 3030
+    },
+    {
+      "path": "docs/research/organize-campaign.mjs",
+      "sha256": "301eee7fd932a339f2656088c43268105b2c3ffbde664bb26d283eb64f86abd2",
+      "bytes": 11535
+    },
+    {
+      "path": "docs/research/organize-gestures.mjs",
+      "sha256": "df331b307a1593c475df2574736ba5335c06ad94c3e0a5931af44867568f70ad",
+      "bytes": 10467
+    },
+    {
+      "path": "docs/research/password-anywhere-readers.py",
+      "sha256": "d5c513f7fe654604d24c2f9438374edd521e9e21979a3d5a24b46963fc48910e",
+      "bytes": 13999
+    },
+    {
+      "path": "docs/research/password-anywhere-shots.mjs",
+      "sha256": "1a9ffd0a04c799b1a89edf8082eb54a945b45701dde090fa8f4bdf4bca7324fb",
+      "bytes": 11503
+    },
+    {
+      "path": "docs/research/pdf-to-image-controls.mjs",
+      "sha256": "3204f39dab03b747e582de91228099bae66f8651b4f77927f4a59164ab7ea1b1",
+      "bytes": 12353
+    },
+    {
+      "path": "docs/research/pdf-to-image-fixture.mjs",
+      "sha256": "eb72a312a5a11478ac266207266ff93646c23c0253cc9f33617cf25b1bb67aea",
+      "bytes": 5550
+    },
+    {
+      "path": "docs/research/pdf-to-image-ink.py",
+      "sha256": "4d744bee48785f3210717748bc0d06dd02e3d0fc14b5a0397ab35431e3fb2f0d",
+      "bytes": 8679
+    },
+    {
+      "path": "docs/research/protect-dictionary.mjs",
+      "sha256": "54a5dce5807ee56d31730f4d3bd76841f9c356a9a94f33910f87619668d24e5f",
+      "bytes": 5329
+    },
+    {
+      "path": "docs/research/protect-readers.py",
+      "sha256": "8ae5b90dfc7352d910a7b18953564e3643109780e9494b4f14e345bb51edfe3a",
+      "bytes": 11004
+    },
+    {
+      "path": "docs/research/protect-reference.py",
+      "sha256": "9ff0f5d0151df65bb3fb758c088e0a22ab5f54621b1dd31aca5f865d9da5ef90",
+      "bytes": 3617
+    },
+    {
+      "path": "docs/research/rail-measure.py",
+      "sha256": "3f0ee63671e79111214a166f2b9ae9ee5617910e0222eb75bb20e3813d4a7a15",
+      "bytes": 19925
+    },
+    {
+      "path": "docs/research/rail-probe.mjs",
+      "sha256": "781cba2c098e387d3935d38436f30ed6146902cfdaa5169e0cc67aa5e54038ab",
+      "bytes": 10824
+    },
+    {
+      "path": "docs/research/rail-tool-bytes.mjs",
+      "sha256": "b8fa76ab00950aad74af52aba9edf5e9e303a7431f0a9679171f682849875721",
+      "bytes": 5371
+    },
+    {
+      "path": "docs/research/rasterize-fixture.mjs",
+      "sha256": "7059bf8e2ffb3108688400f5f3db3c71a92e7007ba01ecc212709255230e1110",
+      "bytes": 6420
+    },
+    {
+      "path": "docs/research/rasterize-ink.py",
+      "sha256": "1fac8323c53ad938a36fb34637c70775daa3bf2226799494391d6349bad97396",
+      "bytes": 8302
+    },
+    {
+      "path": "docs/research/remove-restrictions-readers.py",
+      "sha256": "d6da22cc0ebdfe54e92d091c337eb9433c921fb4c811e9e9546c169e311d7a86",
+      "bytes": 7164
+    },
+    {
+      "path": "docs/research/repair-damage-corpus.mjs",
+      "sha256": "309a6ad91d0226b6260c71bf657386a9ef770b0b6f267412f9bcc1aef954f1af",
+      "bytes": 4626
+    },
+    {
+      "path": "docs/research/repair-damage-entry.ts",
+      "sha256": "d434f6fff6e4ed27ed3079c5589f6f3d6753c14e749a296a4d61562ad1acc3aa",
+      "bytes": 2936
+    },
+    {
+      "path": "docs/research/repair-damage-internals.ts",
+      "sha256": "14bfc7ba9b3f1ce9c7e853c0917e64510e1ee0b188dac240c0caf235b5602de7",
+      "bytes": 3944
+    },
+    {
+      "path": "docs/research/repair-damage-measure.mjs",
+      "sha256": "59ebb58332c87ac14aae8f869848a88982903468c7caf441acbac572bb2a3d93",
+      "bytes": 4222
+    },
+    {
+      "path": "docs/research/repair-damage-pdfjs.mjs",
+      "sha256": "8eeaf44a8f8899cec908308245b5ea786cddb56ca8cc8c4d26ddac194aed70d0",
+      "bytes": 3305
+    },
+    {
+      "path": "docs/research/repair-damage-readers.py",
+      "sha256": "29f161fe28833260a665d07f13d76b8b6e9ef7fba86699434205ea5461087f8b",
+      "bytes": 12427
+    },
+    {
+      "path": "docs/research/repair-damage-run.sh",
+      "sha256": "a2ae7f2b1d1d09dbbe5192f093ee6ee6e116453766a1697c619d69aa4a89f430",
+      "bytes": 1684
+    },
+    {
+      "path": "docs/research/table-list-tail-after.txt",
+      "sha256": "544afbd18775d457229f0986bd9f3d0c5c0334f3970abf12a597b2776092580f",
+      "bytes": 3174
+    },
+    {
+      "path": "docs/research/table-list-tail-before.txt",
+      "sha256": "8592edb9a20d6f24fd2ec110f08d886238253baf5c8da61b47f1341a042f1310",
+      "bytes": 3173
+    },
+    {
+      "path": "docs/research/table-list-tail-deploy.py",
+      "sha256": "45b7aaa6ff4c5b59767d5af76e79fca5c5514119e83841de7f2e6ce0ecf69e32",
+      "bytes": 2884
+    },
+    {
+      "path": "docs/research/table-list-tail-deployed.txt",
+      "sha256": "b50a0c852bcd70b189590e4cd4e27a54c1441b2f885239a0aed6d2f60aa898d3",
+      "bytes": 1928
+    },
+    {
+      "path": "docs/research/table-list-tail-measure.py",
+      "sha256": "5059727e0519b7705389fb1d50e1b4863c465af0390a81f2e37a4f06529c95b8",
+      "bytes": 4553
+    },
+    {
+      "path": "docs/research/table-list-tail-rig.test.ts",
+      "sha256": "29129db2842296d0240bfc419b5f3d4b7644af90bf4263127e9e887902b871fa",
+      "bytes": 10566
+    },
+    {
+      "path": "docs/research/table-list-tail.vitest.config.ts",
+      "sha256": "f4134fca3b98ee435fd06698bdfe748365388804e9836cff5a906dd67070f038",
+      "bytes": 1191
+    },
+    {
+      "path": "docs/research/text-campaign-dark.mjs",
+      "sha256": "8b7466122d43230dae5f40a381cf120869461a42c5005256369ca7b9bee774ee",
+      "bytes": 2020
+    },
+    {
+      "path": "docs/research/text-campaign-repro.mjs",
+      "sha256": "fa9458ebc49a6629d89cdc79f0b3f16ecd45c96813f90246e9616c6c5ff6c763",
+      "bytes": 7170
+    },
+    {
+      "path": "docs/research/text-edit-faceprobe.mjs",
+      "sha256": "150c1b78060b83a5c4df903f6ec19b0abe78e7586e9fa926972a8a28744806ac",
+      "bytes": 1360
+    },
+    {
+      "path": "docs/research/text-edit-fixture.py",
+      "sha256": "7fbb75020fe93a462c34f6f4c34e514540c8118b52357de3d609399389c0961c",
+      "bytes": 12597
+    },
+    {
+      "path": "docs/research/text-edit-measure.py",
+      "sha256": "1a60f18139eb6ab985f6dd50cb97a6b838d55523becc14dbbd17eb106555408e",
+      "bytes": 16697
+    },
+    {
+      "path": "docs/research/text-edit-probe.mjs",
+      "sha256": "a098680937d8d08bf55ada63f89cdae7f5d64f165d32466b90e8e0e4b70184b2",
+      "bytes": 15333
+    },
+    {
+      "path": "docs/research/text-edit-proof.mjs",
+      "sha256": "5ad6c09748ded23e389f2bd5e323542fcaa96348a0676aae23903c439a32548c",
+      "bytes": 12265
+    },
+    {
+      "path": "docs/research/text-edit-revert.py",
+      "sha256": "bc5c50c0a6ca2edb344e24d45e6132d3da78bbcbe13585c7245ef41ebe91173b",
+      "bytes": 4250
+    },
+    {
+      "path": "docs/research/text-tail-after.txt",
+      "sha256": "da146e7bef22965929908905837e2104c20f4f578aabd0b8ac08d1fcc2171d52",
+      "bytes": 2957
+    },
+    {
+      "path": "docs/research/text-tail-before.txt",
+      "sha256": "5048489608146fe1bd80fc6c40c857884977dbb62994e2008ca8106c58d52b70",
+      "bytes": 2809
+    },
+    {
+      "path": "docs/research/text-tail-deployed.txt",
+      "sha256": "8a86e4988fde9b9a66df15c22e05f15a904e615830bbe3743b2c4e0d837bc490",
+      "bytes": 775
+    },
+    {
+      "path": "docs/research/text-tail-measure.py",
+      "sha256": "a8955e72b8972eeb691030f23adf11f3307783e3ef35fe147869ab8034a403fd",
+      "bytes": 3647
+    },
+    {
+      "path": "docs/research/text-tail-rig.test.ts",
+      "sha256": "bfa2208b51bc92e3a733e7ff39d1f6c1b973c46717d60af4fb9ecbde54cd5040",
+      "bytes": 7013
+    },
+    {
+      "path": "docs/research/text-tail.vitest.config.ts",
+      "sha256": "ae5876835cf30c24795063c111e6b5fcddb6baa4726f5a7e424b41577393b457",
+      "bytes": 1183
+    },
+    {
+      "path": "docs/research/triage-fixtures-images.py",
+      "sha256": "45b375c6202c95195e73ddd4d07c3debbe1da27e44831f32afb324ae56d9f77a",
+      "bytes": 18653
+    },
+    {
+      "path": "docs/research/triage-fixtures.mjs",
+      "sha256": "4eab0f294805542f6ac6a2c4f770ddeeb70f6dfb40dc9ec4a23cf3dce2a6c425",
+      "bytes": 11502
+    },
+    {
+      "path": "docs/research/triage-spec.mjs",
+      "sha256": "8987fda0b06210e7fcbf0fc4e6a14b8ae87b06e001ef22c2198f3974982f5db0",
+      "bytes": 26912
+    },
+    {
+      "path": "docs/research/triage-sweep.sh",
+      "sha256": "61e68216a77e7ef540523b41ea5c5850c3c9b1f33e61c387e8b3dccbfb5283e3",
+      "bytes": 1793
+    },
+    {
+      "path": "docs/research/triage-tool-list.txt",
+      "sha256": "2da6abe5d958c59500429df1d416f5fe4b8e8f3aaaab68a958e4b472c4613465",
+      "bytes": 1738
+    },
+    {
+      "path": "docs/research/triage-verify.json",
+      "sha256": "c98d84de91f91355b9d82d935bf1fab57fcd89a1d63bb2f133f02505d5262f13",
+      "bytes": 3550
+    },
+    {
+      "path": "docs/research/ux-references-commercial.md",
+      "sha256": "7c800835ad95f14baf413ad6bdf52b076986b66f6a6b3d63ebbd0505cf8d6aca",
+      "bytes": 37919
+    },
+    {
+      "path": "docs/research/ux-references-embedpdf-stirling.md",
+      "sha256": "73110d0da26f83390f2f82365c2dfae3adb343144fc046b072def331bac67d37",
+      "bytes": 70024
+    },
+    {
+      "path": "docs/research/ux-references-pdfjs-viewer.md",
+      "sha256": "5d201209d4d865221c36721f4902f887e9dbc2e6f06325fb978b04beb2998388",
+      "bytes": 48891
+    },
+    {
+      "path": "docs/research/wysiwyg-bytes.py",
+      "sha256": "ce4246893b4d1608e0338c77f60d0f9fa28e3516f6a3c528bd1fbf975f2a31d7",
+      "bytes": 16797
+    },
+    {
+      "path": "docs/research/wysiwyg-measure.sh",
+      "sha256": "711497af53ccf0c4f5937638c5bfac9e8d011255bc22ba459597687575316e75",
+      "bytes": 3313
+    },
+    {
+      "path": "docs/research/wysiwyg-rig.mjs",
+      "sha256": "132d866178bd75b52c562986a7cae12bc080db6ffe70a39d74bf78c18a597d9f",
+      "bytes": 19401
+    },
+    {
+      "path": "docs/research/wysiwyg-text-style-findings.md",
+      "sha256": "8777d424960f1d23e4543ab730d656f7e5c9b571fd196f2c911b31bdd56600e4",
+      "bytes": 10325
+    },
+    {
+      "path": "docs/tasks/1-engines.md",
+      "sha256": "7ec491e4498139ad23cb8f306a9af34b0e830fa847ba5bb1fae9dab1ae92c868",
+      "bytes": 3192
+    },
+    {
+      "path": "docs/tasks/10-fix-bookmarks.md",
+      "sha256": "99fe21fccf7678f7b2b5a41d16479fb0c0264c9a352a768a22805e87ef6de593",
+      "bytes": 1473
+    },
+    {
+      "path": "docs/tasks/2-annotations.md",
+      "sha256": "f901933202d6966143323ed2ed5f1ca1445f5ad0fabc9ed8d91d46763bebda7f",
+      "bytes": 2508
+    },
+    {
+      "path": "docs/tasks/3-content-layout.md",
+      "sha256": "fb49716c8d64f4c13c0e1d490cd79be787d1202965d2e84bc8d6ea06946596a2",
+      "bytes": 4039
+    },
+    {
+      "path": "docs/tasks/4-document-parts.md",
+      "sha256": "7e5d78558e5946bde6c0f095685887f473fff1e5b3c989b38d7b6532cb110155",
+      "bytes": 2429
+    },
+    {
+      "path": "docs/tasks/5-analysis.md",
+      "sha256": "cb631aa96174624873ea2154146e9090313d07371a5e0ca30d9e5eb68e061e66",
+      "bytes": 3632
+    },
+    {
+      "path": "docs/tasks/6-annotation-editor.md",
+      "sha256": "e8609fc6f2da42cf5e8f8499a85466428675e6056b9b8d64212593724e27b0ba",
+      "bytes": 4630
+    },
+    {
+      "path": "docs/tasks/7-text-editor.md",
+      "sha256": "df248edcbd9e6113a8a60c1272ab97b6860eb17c89b1fc584b46ad79029d6449",
+      "bytes": 4653
+    },
+    {
+      "path": "docs/tasks/8-pane-views.md",
+      "sha256": "e5f0957876463498b00c5471c5e3ac49814b1ed1799b41105cf2e6c29eaaa905",
+      "bytes": 3158
+    },
+    {
+      "path": "docs/tasks/9-fix-annotations.md",
+      "sha256": "3396ac44c44912b7001c56760e388ae3bbd45ad33c5d760a50a0455d7f89af51",
+      "bytes": 2226
+    },
+    {
+      "path": "docs/tasks/a1-request.md",
+      "sha256": "482b47b27e3f60f15598fded3ba710b93481d07a286e15324aeea0e5d1b69440",
+      "bytes": 4559
+    },
+    {
+      "path": "docs/tasks/a2-request.md",
+      "sha256": "bcccc816b03552548a8424828c3a70b60d36209da9caadf3b0d79f78d0357986",
+      "bytes": 4306
+    },
+    {
+      "path": "docs/tasks/a3-request.md",
+      "sha256": "ee91f269fc4988b47a6bd165051a081d6d4cfe7a778c2b19228f756a8d1d3142",
+      "bytes": 5374
+    },
+    {
+      "path": "docs/tasks/a4-request.md",
+      "sha256": "615dff78c8e6112bb8a715c9f11416d4643876227f61b24c43dfb4036987c415",
+      "bytes": 4483
+    },
+    {
+      "path": "docs/tasks/annotate-wip.patch",
+      "sha256": "a2b74af352cb5a3f0b8eff3beee3b29ffaba5ea44f2612d1daa7efb165218dbc",
+      "bytes": 138965
+    },
+    {
+      "path": "docs/tasks/b1-request.md",
+      "sha256": "9585d6cb92879f1bb894509f6486814d37779cbfead9f986034c66a84f0fa396",
+      "bytes": 4810
+    },
+    {
+      "path": "docs/tasks/b2-request.md",
+      "sha256": "e34adee552748a0c06df726d4d9cc469abd2dd352cc7790815946eee62aa0ae4",
+      "bytes": 3834
+    },
+    {
+      "path": "docs/tasks/b3-request.md",
+      "sha256": "f4700d56b499e7611e3d4f506746df4bd1ac73b46efa349b6358ce98c344724e",
+      "bytes": 3732
+    },
+    {
+      "path": "docs/tasks/b4-request.md",
+      "sha256": "e730e180c902447dbb95c54d9f77620b4faefd6d878d699be226eadcc4158798",
+      "bytes": 9637
+    },
+    {
+      "path": "docs/tasks/b5-request.md",
+      "sha256": "d20e7f33701eed7f4a98fafb4066c7c283c2605bd824c6c04b5285989175775e",
+      "bytes": 8714
+    },
+    {
+      "path": "docs/tasks/b6c-request.md",
+      "sha256": "9f2c46b65a7f705a12726bd11c611a6ae07d898fdde6da2e04a3792f473d4b9b",
+      "bytes": 7044
+    },
+    {
+      "path": "docs/tasks/c1-request.md",
+      "sha256": "fdf2f6535cd6af8d9e01b9911e3df7bc6e5595991611fa97bb7168f9574f8bf0",
+      "bytes": 4674
+    },
+    {
+      "path": "docs/tasks/c2-request.md",
+      "sha256": "73dc8c5327a8e1a25118202deb894271316b6479c745365ed8254a41cf3ea259",
+      "bytes": 4151
+    },
+    {
+      "path": "docs/tasks/c3-request.md",
+      "sha256": "9e85f6b6e27b474c9af4d24ad291446802bfb79678b9ef560e7673ea8c6dc53c",
+      "bytes": 5965
+    },
+    {
+      "path": "docs/tasks/catalogue-request.md",
+      "sha256": "b76e7ab19cb845f91c398951f31d346e252402766be9281f52556dcac7e1867e",
+      "bytes": 3701
+    },
+    {
+      "path": "docs/tasks/convert-from2-request.md",
+      "sha256": "115b9f9e4489b9f7340cc30383bf5d23e617295371ab6a11479c7644d8a54f9c",
+      "bytes": 6792
+    },
+    {
+      "path": "docs/tasks/counts-request.md",
+      "sha256": "51f92c5f8fa2dc2e6dd56a1aeadb5ffcb9e4df90c37f2e2d0fd0d8c8305da538",
+      "bytes": 4318
+    },
+    {
+      "path": "docs/tasks/edit2-request.md",
+      "sha256": "9d3f7515e0fb287d2820f982b265d29a996e9648fbdf09e3185ed7b84aacd2db",
+      "bytes": 7432
+    },
+    {
+      "path": "docs/tasks/field-required-note.md",
+      "sha256": "d2abbac9cecc08e431c21154b0e54057936af6db4b968af55b6460cee0c7585d",
+      "bytes": 1265
+    },
+    {
+      "path": "docs/tasks/m1-request.md",
+      "sha256": "dfb045be5eba3746350c7dc66a4ebdd8de4ef3d3e088844065585fc55cec2934",
+      "bytes": 1651
+    },
+    {
+      "path": "docs/tasks/m2-request.md",
+      "sha256": "faf9102ae6a6736b918e087d918fe20bb3758f285a525adf9d8f815e5da8c3d2",
+      "bytes": 2652
+    },
+    {
+      "path": "docs/tasks/m3-request.md",
+      "sha256": "55e67805ef37d8adffb55948ab98e4d12d5d69cc1fbd57ca30b9774df652c184",
+      "bytes": 4933
+    },
+    {
+      "path": "docs/tasks/m4-request.md",
+      "sha256": "bc5d607047ecf12326bd613223426af14c9e0ef15b351e9af0494820d8f3621d",
+      "bytes": 2477
+    },
+    {
+      "path": "docs/tasks/m5-request.md",
+      "sha256": "b608d71129fb2ac850269cfa51fbdabf3ccf26609a372a5ccb423e37e15c70f2",
+      "bytes": 3897
+    },
+    {
+      "path": "docs/tasks/m6-request.md",
+      "sha256": "3e51f32716fd756a47c87868c6efd7b7b05c448b4da9b933d7c478ee7e672a5b",
+      "bytes": 1836
+    },
+    {
+      "path": "docs/tasks/markup-request.md",
+      "sha256": "e25126b3eb1dc3de80830cb189047058a343a880d5d7d2bde9ce8170db811fce",
+      "bytes": 2510
+    },
+    {
+      "path": "docs/tasks/optimize2-request.md",
+      "sha256": "7c3467aa5c9c446836393832009d1f5cc177e8a21bd312f2420fe47d1fe3b374",
+      "bytes": 4528
+    },
+    {
+      "path": "docs/tasks/parity-request.md",
+      "sha256": "4a9ed9aff05fe2eb540818975efe9b8560cdf01d72b39c3fed2357910b7c1cae",
+      "bytes": 2465
+    },
+    {
+      "path": "docs/tasks/ready-request.md",
+      "sha256": "9f3a78d5eeeeef2522b3c8b0cb81a9a40f9f20a7b0c138f3719c8ea0ec302799",
+      "bytes": 3071
+    },
+    {
+      "path": "docs/tasks/s1-request.md",
+      "sha256": "8223e34711dbf85e5df7fc4fb51a859f7e2a574b65dc5be835be28fa39b0fe8f",
+      "bytes": 4420
+    },
+    {
+      "path": "docs/tasks/s2-request.md",
+      "sha256": "a617b75c439ff3d0a4c9676a517f48353b57178b57c22d842e507af33f5edfdb",
+      "bytes": 4574
+    },
+    {
+      "path": "docs/tasks/security2-request.md",
+      "sha256": "3fde25ae9fbbb94e1e73ada978f283bb89942a17ed7c7bbb5b56822cb5a20365",
+      "bytes": 8444
+    },
+    {
+      "path": "docs/tasks/segment-request.md",
+      "sha256": "598f4e183707fab86daf8ca2c2619f0f5c42e26e2d8a027ac16c8bd85bf38af4",
+      "bytes": 3467
+    },
+    {
+      "path": "docs/tasks/shell2-request.md",
+      "sha256": "34db3bcebb6a00127ea38e6a53773558888b4feba3542d12b9b28045ab0cf141",
+      "bytes": 3776
+    },
+    {
+      "path": "docs/tasks/shell3-request.md",
+      "sha256": "7915569d564a0c95c4b7a7a408ceef15e185500fca9857e2a72c36a263062c4c",
+      "bytes": 7322
+    },
+    {
+      "path": "docs/tasks/typecheck-request.md",
+      "sha256": "db51d930f194bd2bcbe9e0835e3dee45de002fcffd4714db03c0f06e811d45ad",
+      "bytes": 8346
+    },
+    {
+      "path": "docs/TOOL-CAMPAIGN.md",
+      "sha256": "baa9c56dc08cd2bce9773dc52ca4c82cde563104163fd3ababe091f4a4925acb",
+      "bytes": 189683
+    },
+    {
+      "path": "docs/TOOL-TRIAGE.md",
+      "sha256": "ec761e94825f97e464f6fad199e29b9c0673dd194dbce50c5a3fd07995aff821",
+      "bytes": 61959
+    },
+    {
+      "path": "docs/UX-BRIEF.md",
+      "sha256": "5f32897d451fd8748705e48a3c7a41b166445f47a79301bee012d249b01e1889",
+      "bytes": 14751
+    },
+    {
+      "path": "index.html",
+      "sha256": "a130bfd8345bd0aca71f4b96f68e19b45390f0e789a3be081f162b17486097b0",
+      "bytes": 338
+    },
+    {
+      "path": "index.html.artifact.json",
+      "sha256": "a5ce450666aa5d4b5e57896017cd95b20f3a242ad1146814382fa109a852f579",
+      "bytes": 355
+    },
+    {
+      "path": "mkpdf.mjs",
+      "sha256": "19f9ac6204f9bbf9b547d633e86a1a845a59f1a63796124af2939f067995a0c3",
+      "bytes": 694
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "be41867473b8a9e8911c0dae81160aec779d9236bb46d940a5e814824d71c824",
+      "bytes": 283266
+    },
+    {
+      "path": "package.json",
+      "sha256": "7ec94328f01506674c3f10ed1d3af0e716d3b36639a713f492b4c871626f40ad",
+      "bytes": 2087
+    },
+    {
+      "path": "postcss.config.js",
+      "sha256": "98e8d8a143f16216f4b50a2520024f6254987049b2e199026742a96e16ba411e",
+      "bytes": 87
+    },
+    {
+      "path": "public/coi-serviceworker.js",
+      "sha256": "5ef973565b54093e76a803b55434f99cbb11446e10ac8cb3f21958089cfa19ad",
+      "bytes": 6174
+    },
+    {
+      "path": "public/fonts/fonts.css",
+      "sha256": "4dfe8e0bd2a3315cba692652b57ea9ba7ec8a92b9b7fea8d1341b17a4bc97c6f",
+      "bytes": 1413
+    },
+    {
+      "path": "public/fonts/jetbrains-mono-400.ttf",
+      "sha256": "44ce4a84f20d60f24539bd0cef11f79c29e38609e0f8adf18551c9794a5d9dc3",
+      "bytes": 112172
+    },
+    {
+      "path": "public/fonts/jetbrains-mono-500.ttf",
+      "sha256": "3386a05f6ece969e4537de6be894170d20558e82f7d56c8c5d332972ef172160",
+      "bytes": 112204
+    },
+    {
+      "path": "public/fonts/NotoSans-Bold.ttf",
+      "sha256": "5528f4642755845dfc1f7ffff10d1e3887bc9f66d19d6b3ec8ec8d7e58c94c5e",
+      "bytes": 557380
+    },
+    {
+      "path": "public/fonts/NotoSans-Regular.ttf",
+      "sha256": "4c8d67001d3c2977e5d6bf0a4f8add80cd564bd1df60b7569fd23751e7dda02a",
+      "bytes": 556216
+    },
+    {
+      "path": "public/fonts/NotoSansSC-Regular.ttf",
+      "sha256": "a2b93e6c2db05d6bbbf6f27d413ec73269735b7b679019c8a5aa9670ff0ffbf2",
+      "bytes": 8482020
+    },
+    {
+      "path": "public/logo.png",
+      "sha256": "eac919fa1e114acdfdb79961f892bf0ee2a4651e3c99c3d8333efa15122a0c19",
+      "bytes": 492635
+    },
+    {
+      "path": "public/mt-worker.js",
+      "sha256": "c3b4132146cc775846d9c09b8ed8818aafc8181475577a7b033960f23c1f1ed6",
+      "bytes": 2116
+    },
+    {
+      "path": "README.md",
+      "sha256": "e99a690213b97c68e1b024529943f2dfcc33d0530356c5c1528e3023f192e760",
+      "bytes": 28423
+    },
+    {
+      "path": "reports/ant-browser/functional.json",
+      "sha256": "46a478d2dc54cf13d609216e4a57d03ac66aea492d06333c4593793d6782b1cc",
+      "bytes": 671
+    },
+    {
+      "path": "reports/ant-control-inventory.json",
+      "sha256": "a87be379f0694e7fabc8c9774f4f56908b0f1a2adebe6a7ffd79c296818ab744",
+      "bytes": 83106
+    },
+    {
+      "path": "reports/ant-load-only.json",
+      "sha256": "fa2a63e4959abf47c9f753b099e4c6ba48448872f35dc4ce956a64eaadb0b591",
+      "bytes": 13443
+    },
+    {
+      "path": "scripts/ant-browser-proof.mjs",
+      "sha256": "c5b6d0d37b709cddbdbddbe953cf462a8e721596a7ce16c652f33923f9b20ce2",
+      "bytes": 4269
+    },
+    {
+      "path": "scripts/ant-load-only.mjs",
+      "sha256": "7a78f4b2813356fef31258280b489da3e7c88f785451c9e98a075364057c0f71",
+      "bytes": 1239
+    },
+    {
+      "path": "scripts/browser-smoke.mjs",
+      "sha256": "48d873c2232827e3f904ae1b2c954cf1cfeed9ec8b0c90ad8a4a4a91f447a218",
+      "bytes": 4713
+    },
+    {
+      "path": "scripts/copy-ant-build.py",
+      "sha256": "e90e2a483d384372ade5ba3976b54a07d1d81e38cd3d1f207e19e648aa9ee034",
+      "bytes": 1328
+    },
+    {
+      "path": "scripts/copy-pdfjs-assets.mjs",
+      "sha256": "924f5046d6204b72290821ce4f5e405a446d9450f58d19e1b9e36bdad02658e4",
+      "bytes": 1822
+    },
+    {
+      "path": "scripts/encrypted-fixtures.py",
+      "sha256": "424e181253c93ca63f9e9e66ea647e19b7630b06fd1c229ec188a886254756d4",
+      "bytes": 11265
+    },
+    {
+      "path": "scripts/inventory-ant-controls.py",
+      "sha256": "ac0e7ee4a8f37dfcf717426520c84e79f6d88305921431dbe0bc73a4546b7cf1",
+      "bytes": 939
+    },
+    {
+      "path": "scripts/live-aes256-read-proof.mjs",
+      "sha256": "e805efe341c679fb4529ea4f649831b8b9adecb204dbc858559506cf6b59fae8",
+      "bytes": 17018
+    },
+    {
+      "path": "scripts/live-blank-chain-proof.mjs",
+      "sha256": "e174c0d7c06180bd64d6c78d54c62232141b58b3487f67a8e4aeb08d617e64a3",
+      "bytes": 10619
+    },
+    {
+      "path": "scripts/live-merge-proof.mjs",
+      "sha256": "16d55998682e1860572b4b0ab30eb9b6ea3e05d1ce2f6203a40f772f47ad15d9",
+      "bytes": 7278
+    },
+    {
+      "path": "scripts/live-nup-placement-proof.mjs",
+      "sha256": "fa93f92ea93860fe2d6d25d50ebca0a2efa1e03b4128f58a8b4f37c528f7032f",
+      "bytes": 13524
+    },
+    {
+      "path": "scripts/live-protect-proof.mjs",
+      "sha256": "f5f78de6374a3180cb0cc235eaa9f8c0f8dc2ac2c2d064f8d5e6427c21b3f865",
+      "bytes": 13220
+    },
+    {
+      "path": "scripts/live-remove-restrictions-proof.mjs",
+      "sha256": "ad22d7c7277a6cce666dbe60a9f92993075040dfcc1a472a14fa1a58071d2de4",
+      "bytes": 13631
+    },
+    {
+      "path": "scripts/package-ant-source.py",
+      "sha256": "e27cbdbd530249bdf870f2137cd3be419c0521a637840afe45f781860a7fea34",
+      "bytes": 3115
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "96d72f14e0a0f39e1f720b927f7e09616d96b4cd36b553c0141cbb2aaa432c22",
+      "bytes": 998
+    },
+    {
+      "path": "src/AppRoot.tsx",
+      "sha256": "d96b9799b972b846c122fbe49f769ca247fd3930c4e964dc61ccc88c59fc0e73",
+      "bytes": 1466
+    },
+    {
+      "path": "src/components/dashboard/PdfDashboard.tsx",
+      "sha256": "369ea4a5bfe1d9fdd983f5a9716a226584d20ca1d2d68da1af681f40625afc1b",
+      "bytes": 10765
+    },
+    {
+      "path": "src/components/dashboard/ToolCard.tsx",
+      "sha256": "6b8dde54dfecf1529db641105d4bfdb1b32443f1e0880c88f46c3684ca90d05f",
+      "bytes": 5803
+    },
+    {
+      "path": "src/components/dashboard/toolJobs.ts",
+      "sha256": "4a898e4476424ec3f968346039cb8b1d4d3ed22e8a6381c48eecee34d045f75c",
+      "bytes": 10687
+    },
+    {
+      "path": "src/components/dashboard/VideoDashboard.tsx",
+      "sha256": "747b37ba3f13373773bda60ee3a581b616a53e9a4d18fca2cce2d9430ab32619",
+      "bytes": 3138
+    },
+    {
+      "path": "src/components/ErrorBoundary.tsx",
+      "sha256": "47e2bbf5551137be2621590c2b7f66dc6d25db2649d88905a462ebba63462749",
+      "bytes": 3967
+    },
+    {
+      "path": "src/components/landing/Landing.tsx",
+      "sha256": "bab6d9185368974c6c0454407769feb39959a838a1a307f7528503bf003b2dac",
+      "bytes": 19041
+    },
+    {
+      "path": "src/components/layout/AppLayout.tsx",
+      "sha256": "7e4acb12e5fe4896b38f979c2b138a457df0e6a6faadb7bd6cc38a5039f0bcf1",
+      "bytes": 12415
+    },
+    {
+      "path": "src/components/layout/CommandPalette.tsx",
+      "sha256": "e753eaf857e2551fc255fd7e74e46811fa569445ba196ae71058930082c8609c",
+      "bytes": 22340
+    },
+    {
+      "path": "src/components/layout/ToolboxLayout.tsx",
+      "sha256": "5cb9232f440ad8a1c45a672adef3e45804b814998c85d0ae0161f78218432db6",
+      "bytes": 743
+    },
+    {
+      "path": "src/components/layout/ToolWorkspace.tsx",
+      "sha256": "ddbdfb2840050d24a90cced659f8626e6fc101898931559edad800c0aef7a2ff",
+      "bytes": 22302
+    },
+    {
+      "path": "src/components/player/TrimScrubber.tsx",
+      "sha256": "65c18e2be26bf20aca7a30d90e9b76ca9f0f98021b88b33d1ff19e1924c2774f",
+      "bytes": 3451
+    },
+    {
+      "path": "src/components/player/VideoPreview.tsx",
+      "sha256": "dd801373a38d77a694b9ec28184780e4256170d6737955c80bc5a7c27b89f859",
+      "bytes": 1273
+    },
+    {
+      "path": "src/components/tools/AudioTool.tsx",
+      "sha256": "d8d9e8775f2a47e8ba1fb05ff7ee23a5e4feaee1eb93b5c545c9a36025cc5572",
+      "bytes": 3969
+    },
+    {
+      "path": "src/components/tools/CompressTool.tsx",
+      "sha256": "c239fe1ec2c414d5ed6bd5a9e5c3544ff8ba0ea587ff25b17dbbb70d31964088",
+      "bytes": 5459
+    },
+    {
+      "path": "src/components/tools/CropTool.tsx",
+      "sha256": "d891ca4c70154c381ab4bf9406522b4e7eebfc7f3070a082ccf0c3315b115023",
+      "bytes": 3158
+    },
+    {
+      "path": "src/components/tools/GifTool.tsx",
+      "sha256": "f500e28ed62e22b7848130930d00b4bb3faa086c506a7ee9904c8ccb1f707104",
+      "bytes": 5087
+    },
+    {
+      "path": "src/components/tools/MetadataTool.tsx",
+      "sha256": "32fb13e8112f54ee821255a14875ed2721a1b41770449a21392ed50c372f82bb",
+      "bytes": 2060
+    },
+    {
+      "path": "src/components/tools/pdf/convert-from/PDFToImageTool.tsx",
+      "sha256": "6a6105ad697cb4f136ef97f06d8d363eff8cc0e665f038d750ab0e8d281b55b2",
+      "bytes": 3503
+    },
+    {
+      "path": "src/components/tools/pdf/convert-to/ImageToPdfMain.tsx",
+      "sha256": "ef42fdbe085e9f16b5541b15414a2106ecd0cf08f8ebf919b9c173e398e5f7a8",
+      "bytes": 4272
+    },
+    {
+      "path": "src/components/tools/pdf/edit/CropMain.tsx",
+      "sha256": "cb08105acf988520619de7bfdad1eb8d686e19ff236eaff3a8f5af20d8209266",
+      "bytes": 17330
+    },
+    {
+      "path": "src/components/tools/pdf/edit/cropModel.ts",
+      "sha256": "cae3ca097f08c3617b637b81f9b69da351cd9c3bfca328674a69cf196daa0f48",
+      "bytes": 15681
+    },
+    {
+      "path": "src/components/tools/pdf/edit/CropTool.tsx",
+      "sha256": "1086632e23dab6d7485d364013d6a964549519cf20197ac3d9d7d6643fcf9c5b",
+      "bytes": 19394
+    },
+    {
+      "path": "src/components/tools/pdf/edit/FormCreatorMain.tsx",
+      "sha256": "0d0a3cdca11c9b2c3e6b1a611cf4d4d50e0010ca334f0b65ae9537ea1c0492c9",
+      "bytes": 50397
+    },
+    {
+      "path": "src/components/tools/pdf/edit/FormFillMain.tsx",
+      "sha256": "6476f02a65065581e6bc3ec768ef533aa810b26026970c8801006e483144a30a",
+      "bytes": 45328
+    },
+    {
+      "path": "src/components/tools/pdf/editor/AnnotationEditor.tsx",
+      "sha256": "b572e784e7a9d93e94680aca965a8fafa74b0bcb4330395dcb7688bc4088be41",
+      "bytes": 138407
+    },
+    {
+      "path": "src/components/tools/pdf/editor/AnnotationOverlay.tsx",
+      "sha256": "314d61432fab568e89a8fb6ed28ebba95588a4da168ebb75ff2833123259d4ab",
+      "bytes": 39167
+    },
+    {
+      "path": "src/components/tools/pdf/editor/documentFacts.ts",
+      "sha256": "934b6d21405a8d2142ac764d730f69b81e61f5706878bf65ad79503d4a934a7c",
+      "bytes": 5051
+    },
+    {
+      "path": "src/components/tools/pdf/editor/editorModes.ts",
+      "sha256": "c9063c1e72be8dcad57684a5ba374b7d1ae246ffe1c972e5d2e530bb89de86b4",
+      "bytes": 5496
+    },
+    {
+      "path": "src/components/tools/pdf/editor/geometry.ts",
+      "sha256": "9a9fad903da7ae7931fb34fd964578358659b91b6ab7dd1b4fdf489a1acb8182",
+      "bytes": 21707
+    },
+    {
+      "path": "src/components/tools/pdf/editor/history.ts",
+      "sha256": "f566963235403206eb2cf087db817460aec562ea3800919754927108fdda9b92",
+      "bytes": 2775
+    },
+    {
+      "path": "src/components/tools/pdf/editor/inspector.tsx",
+      "sha256": "3ecf44374365a33bdba424b8ba35e46da93dda2123913e6ad0816338ac62ab19",
+      "bytes": 4412
+    },
+    {
+      "path": "src/components/tools/pdf/editor/PdfEditorSurface.tsx",
+      "sha256": "c6e4778c188f57db00b3c5559a0919bf2ea29c3318f5430b8197acf875ca4646",
+      "bytes": 8609
+    },
+    {
+      "path": "src/components/tools/pdf/editor/placement.ts",
+      "sha256": "c4cb9f9634707d07417a2a25e48eeac1a03d0e7c326548e752f5b7f2ad610b91",
+      "bytes": 8086
+    },
+    {
+      "path": "src/components/tools/pdf/editor/quads.ts",
+      "sha256": "f382b62417cd252f9ccf94f07e1de0c885edc6233f584803ed47c13f516a6a54",
+      "bytes": 9355
+    },
+    {
+      "path": "src/components/tools/pdf/editor/QuickModeChips.tsx",
+      "sha256": "28e7acfb00a41ae11533cd3e25f74514f8c485ad2151ee7e8a0f3bd5cabd470d",
+      "bytes": 2887
+    },
+    {
+      "path": "src/components/tools/pdf/editor/quickModes.ts",
+      "sha256": "dcf56d8b3b916ef5acc23eba4756349ac7feee33f1d2a74f82aba20285d4169f",
+      "bytes": 8554
+    },
+    {
+      "path": "src/components/tools/pdf/editor/shortcuts.ts",
+      "sha256": "20afa0e7303c3c1015907c1ef115184076a5d246de75da464514f4f735703e91",
+      "bytes": 12584
+    },
+    {
+      "path": "src/components/tools/pdf/editor/SignaturePad.tsx",
+      "sha256": "846a44ad9e5c46af4d3c813917c56036431fac025e62ad0d677c4a1faa66be73",
+      "bytes": 8497
+    },
+    {
+      "path": "src/components/tools/pdf/editor/specs.ts",
+      "sha256": "57e80c131e4c201ff08bed523edabb01e2c21a0b849bfdc8468495edbcef2c79",
+      "bytes": 56943
+    },
+    {
+      "path": "src/components/tools/pdf/editor/textLayout.ts",
+      "sha256": "29b73284300be6250a63491b38226f4cbe3930179a996e9c87761c10c273ec8c",
+      "bytes": 11935
+    },
+    {
+      "path": "src/components/tools/pdf/editor/tools.ts",
+      "sha256": "0cf3ce0981163d3189d7f5f81fd8b48aba3f1248b79ad102df6da18716bda3d3",
+      "bytes": 11852
+    },
+    {
+      "path": "src/components/tools/pdf/editor/types.ts",
+      "sha256": "811f499d81709803370359ff558454d631bc86783ea3f4062b048741630d9e63",
+      "bytes": 6242
+    },
+    {
+      "path": "src/components/tools/pdf/editor/workspace.ts",
+      "sha256": "405855fce6208cce0b8c30f9f59c1766279c16fea7791967207ac3fec6c133c6",
+      "bytes": 14859
+    },
+    {
+      "path": "src/components/tools/pdf/organize/PageOrganizer.tsx",
+      "sha256": "0dc17ac931132ee724603c365ca4f9dcb42c6aebbaa492fa779e3bf7eff3182a",
+      "bytes": 60445
+    },
+    {
+      "path": "src/components/tools/pdf/organize/plan.ts",
+      "sha256": "c3967de888348cf14dcb5b670d01904f9d0df57b741e3d5c1f5ada9106a5709a",
+      "bytes": 16028
+    },
+    {
+      "path": "src/components/tools/pdf/organize/preview.ts",
+      "sha256": "3729e52bdf7deaa47e6f5112a3778944bed3f0ea8983b283c01b909c34d0d44c",
+      "bytes": 4735
+    },
+    {
+      "path": "src/components/tools/pdf/organize/workspace.ts",
+      "sha256": "9e19ed53d3d6ea9c237a8f76a173d34dd8065b6025a610412c276bcf43288c18",
+      "bytes": 52515
+    },
+    {
+      "path": "src/components/tools/pdf/scan/ScanMain.tsx",
+      "sha256": "eba139371b3656c9cf8b6fa9e46ad73a143f573ad900651fc7d17ce0f42ab803",
+      "bytes": 14369
+    },
+    {
+      "path": "src/components/tools/pdf/scan/ScanTool.tsx",
+      "sha256": "8fd7d48525d9b3d4cefdbee6b02455c32b2c6d39610c7fde0848d61950392139",
+      "bytes": 9391
+    },
+    {
+      "path": "src/components/tools/pdf/security/CompareMain.tsx",
+      "sha256": "9e40664b394610f6e63c77a50bd6b752b0bc1cbd9eafb890bef41697e59c3f2a",
+      "bytes": 26479
+    },
+    {
+      "path": "src/components/tools/pdf/security/CompareTool.tsx",
+      "sha256": "237ffbde9da60b7cc7c5f92495ec4e32f0c026dba91dc558be72a4202ecf7696",
+      "bytes": 13735
+    },
+    {
+      "path": "src/components/tools/pdf/security/RedactMain.tsx",
+      "sha256": "2ad8725f289d2edcd43a56ec405ae25d5a86aeb580ee77d63c64dd0a0bf72d22",
+      "bytes": 27501
+    },
+    {
+      "path": "src/components/tools/pdf/security/RedactTool.tsx",
+      "sha256": "cf65fcf7ab73be5ebbc6dfde2b2420ee184967fee604baa0605d9a1fe8a61a0d",
+      "bytes": 13008
+    },
+    {
+      "path": "src/components/tools/pdf/security/SignMain.tsx",
+      "sha256": "95a91c097cfa1f0f5e84fb691fbb65857820fc21586262dd557706e24dd3eb55",
+      "bytes": 21192
+    },
+    {
+      "path": "src/components/tools/pdf/security/SignTool.tsx",
+      "sha256": "4709da7acc83a8256694c64b871c5697422c72de194f8979ab2edc65ca31bd48",
+      "bytes": 26688
+    },
+    {
+      "path": "src/components/tools/pdf/shared/EmptyState.tsx",
+      "sha256": "1bf96a356da88bcf1827b6ec6fd48a01ab6f34c3c5a932a8f5977fab97e14274",
+      "bytes": 1179
+    },
+    {
+      "path": "src/components/tools/pdf/shared/ErrorPanel.tsx",
+      "sha256": "5389399015bf7386300baba461dab84cf11431ecd9e8a8260c0ebfa645740b0e",
+      "bytes": 2848
+    },
+    {
+      "path": "src/components/tools/pdf/shared/FieldControls.tsx",
+      "sha256": "b565cd66d5ada5de68eeb384e62720a65e10650a173e4ae4b5f85681730881e0",
+      "bytes": 33817
+    },
+    {
+      "path": "src/components/tools/pdf/shared/FileCards.tsx",
+      "sha256": "e03176f890379826dad8bc048c04419abbc7350facb9698e0675782bdb28581c",
+      "bytes": 23552
+    },
+    {
+      "path": "src/components/tools/pdf/shared/FileIntake.tsx",
+      "sha256": "b54c95ad5e3ac4d22291f791218a06b6b6dfc8ce81e6bc4e199cba00e5698d36",
+      "bytes": 12919
+    },
+    {
+      "path": "src/components/tools/pdf/shared/FileQueue.tsx",
+      "sha256": "56bdf4c66b3b655bb9d2d5158a44c28ac76959fa32827f9a4d124e2c5b264438",
+      "bytes": 10265
+    },
+    {
+      "path": "src/components/tools/pdf/shared/focusRing.ts",
+      "sha256": "216aca186a5a157a0cd478208a5a23ca0f24125e17ada6bdf30e11a1eb7b7ede",
+      "bytes": 988
+    },
+    {
+      "path": "src/components/tools/pdf/shared/OutputPreview.tsx",
+      "sha256": "3cb581851f85a56d23712c7be9563f3d3291284e962db3183b465534ed4ba75d",
+      "bytes": 19942
+    },
+    {
+      "path": "src/components/tools/pdf/shared/PageThumbs.tsx",
+      "sha256": "dff1b911ff598b86289a60912bbfcfb8707a48ad26d2fb700407254d3ed2c1b0",
+      "bytes": 12003
+    },
+    {
+      "path": "src/components/tools/pdf/shared/PdfToolPanel.tsx",
+      "sha256": "7226cb077c89b4d3cf44d4afef8081cd15fd4313795cd882bda40cbfd17e4e12",
+      "bytes": 5031
+    },
+    {
+      "path": "src/components/tools/pdf/shared/PreviewPane.tsx",
+      "sha256": "003eed19886954314182573153cdd3777ebad2283fabf82baadc27d7d70a0da1",
+      "bytes": 18389
+    },
+    {
+      "path": "src/components/tools/pdf/shared/ProgressBar.tsx",
+      "sha256": "97086a6e85c53795303dd37ca2bfa51f12bfccd05a18cdc21d6082d0d12f5dd3",
+      "bytes": 2977
+    },
+    {
+      "path": "src/components/tools/pdf/shared/ResultCard.tsx",
+      "sha256": "2e0bbe2ac26028bd0206069fc11a44d0b7307f413c87082faa29526b3c563a1b",
+      "bytes": 12356
+    },
+    {
+      "path": "src/components/tools/pdf/shared/TextStylingControls.tsx",
+      "sha256": "b5fe92d240bf34d7d77a4690b356ab739653d17f99d4feedb62a3a3e0a7aa21a",
+      "bytes": 10403
+    },
+    {
+      "path": "src/components/tools/pdf/shared/toolForm.ts",
+      "sha256": "bd77bf1a7eb233b25d46dacdf319d94b9b536b45aa8d6744bef2b368a32275b4",
+      "bytes": 16943
+    },
+    {
+      "path": "src/components/tools/pdf/shared/ToolSurface.tsx",
+      "sha256": "31ffad1b930d018b7fa93d340476b563887e6a0e67462f13669e0c91cda3a96a",
+      "bytes": 27290
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/draw.ts",
+      "sha256": "7269ebfcfb62dc7c8650366b2d018f93dce170caa3fee635c23765a9b39ae05d",
+      "bytes": 32457
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/editorDom.ts",
+      "sha256": "f29347579448807ead0160e8f32515bd03803504fd60530a31b4cb3be76ea0f8",
+      "bytes": 8477
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/engine.ts",
+      "sha256": "3b4060dc825db926f5ece0f0705114e9267ec84095dd656922ed66c6e4947606",
+      "bytes": 6802
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/faces.ts",
+      "sha256": "9e8a54c0f48364e597ee7397a8a1d184518f811a2dea3f108cef502ca1a65503",
+      "bytes": 25964
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/handoff.ts",
+      "sha256": "8e3a979fdf14def029d7b2145d2411e52c152e98e6493b7352e2bc9a1ccbd5cb",
+      "bytes": 2419
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/keys.ts",
+      "sha256": "45b394b1bf557314162d7f53b76f8a2dcb5a9748f227668509011f38088d3321",
+      "bytes": 6042
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/model.ts",
+      "sha256": "a17804036dbb585ae23bd6c065e9c1f1e374c6f4f094873dba6dbdec49fc7cfb",
+      "bytes": 82491
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/pageAdvice.ts",
+      "sha256": "9de3dedda3d1782a7cd54f71dd663881da5e5c0bb327d01e23c0a4adce58955b",
+      "bytes": 6823
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/panels.tsx",
+      "sha256": "e34a34c28c6751d9d9fa703dffb73705619611814ea9a0df8384fb95c1f2f532",
+      "bytes": 40475
+    },
+    {
+      "path": "src/components/tools/pdf/text-editor/TextEditor.tsx",
+      "sha256": "ba7d4a065e1f5013e3025c31585fff8b78e61541d7757233baa2e9bcc36ae4b7",
+      "bytes": 102321
+    },
+    {
+      "path": "src/components/tools/ResizeTool.tsx",
+      "sha256": "aa0f474d271758edcf4079ab57c427e3e50d3e33d447573d6e44503849d59fc0",
+      "bytes": 4992
+    },
+    {
+      "path": "src/components/tools/SpeedTool.tsx",
+      "sha256": "e69c95c05b3890e52463a29db1f9a6ab3d29f31e0969d16ac488afc3515f4aa7",
+      "bytes": 3584
+    },
+    {
+      "path": "src/components/tools/TrimTool.tsx",
+      "sha256": "216cac1fcbabaac50fdeb0d1f52a22554131c0eead9033bff7fd830591651042",
+      "bytes": 7000
+    },
+    {
+      "path": "src/components/ui/FileDropZone.tsx",
+      "sha256": "1898d87362194a4a7b064796375d7ea9ec027457913900f8c3a32e5b0abc79f0",
+      "bytes": 7632
+    },
+    {
+      "path": "src/components/ui/LogMonitor.tsx",
+      "sha256": "084bcadbe7c8ca56854ede635505b6b1fea87148fed5827ef69cd30a9ac8674c",
+      "bytes": 1681
+    },
+    {
+      "path": "src/components/ui/MemoryWarning.tsx",
+      "sha256": "12910cf46962339461f52434ad10480c27b011b7c7688deb8a0715185148e82e",
+      "bytes": 793
+    },
+    {
+      "path": "src/components/ui/OutputActions.tsx",
+      "sha256": "492c3a8da05f2bc34f42cea606a49b63739f9f769a1ada322751182e26d6eb37",
+      "bytes": 19716
+    },
+    {
+      "path": "src/components/ui/ProgressBar.tsx",
+      "sha256": "bea4687525a854bd65fac26b677f0d08a538881ec37bae0712544e79c2e8b9db",
+      "bytes": 1583
+    },
+    {
+      "path": "src/components/viewer/PDFViewer.tsx",
+      "sha256": "07a8126754b5317db3cddf4aba3f519aa88ad47bfe8e2e9feaedb296330a25bb",
+      "bytes": 4801
+    },
+    {
+      "path": "src/components/viewer/ThumbnailStrip.tsx",
+      "sha256": "bc8e5f24e59098905bc158e05adc7a60c6cc32583222548d7518482a7ece0768",
+      "bytes": 3335
+    },
+    {
+      "path": "src/hooks/useFFmpeg.ts",
+      "sha256": "9ac420bdce9fcd55a05d565754d9e39500a945d8d454840538462fa45daafc30",
+      "bytes": 5099
+    },
+    {
+      "path": "src/hooks/useIsCompact.ts",
+      "sha256": "28fa3acb18765da58fc032fd18570545aa71b39bee79b91e2cc15dd45168b09c",
+      "bytes": 2241
+    },
+    {
+      "path": "src/hooks/usePDFRenderer.ts",
+      "sha256": "acf1b5b6672cf565949e1febddb8450ab0abd815c4e272edcaa14a2448649faf",
+      "bytes": 3905
+    },
+    {
+      "path": "src/hooks/usePdfTool.ts",
+      "sha256": "019c1fe277c081ccce35f04ffd988db39af7026bad151e0b7da484953a3f713a",
+      "bytes": 25442
+    },
+    {
+      "path": "src/hooks/useTheme.ts",
+      "sha256": "50b5b127169fe7ea4fd2397cf2c979e95f69f389162630b674ae4064d255c054",
+      "bytes": 3386
+    },
+    {
+      "path": "src/index.css",
+      "sha256": "92a0c307891748ff5e7542b94235b9065dcdf5fd3a864c50cc2d07ba2e915b40",
+      "bytes": 17691
+    },
+    {
+      "path": "src/lib/constants.ts",
+      "sha256": "5e977b64a066658605c7c8a8fdbbf6f8a6017f4b49fc6b5b2466694e31ae7b47",
+      "bytes": 3252
+    },
+    {
+      "path": "src/lib/ffmpeg/commands.ts",
+      "sha256": "04a300d417cb31a8b1be8753ae13a4b1698aa9f3b890013e7c7cbb34cdd32b00",
+      "bytes": 4379
+    },
+    {
+      "path": "src/lib/ffmpeg/core.ts",
+      "sha256": "30b97b9547b648d17bf6b025afafc56129a7242cb70bfdb252d10a2ded2d7064",
+      "bytes": 2072
+    },
+    {
+      "path": "src/lib/ffmpeg/log-parser.ts",
+      "sha256": "09bbbdeaaafdea7cce3631ac0f52d15af32383d77f94cd22ce6039a2c79cab47",
+      "bytes": 1312
+    },
+    {
+      "path": "src/lib/ffmpeg/types.ts",
+      "sha256": "517f9002d18ad4a167a045bdf8f30f2c405a18ad4ecad8c0bbd9b96fe4f9dd8b",
+      "bytes": 173
+    },
+    {
+      "path": "src/lib/motion.ts",
+      "sha256": "6fa30b10a55fffec8e2c23abbc2819d1946864e08770c1f94af47e0bea495755",
+      "bytes": 1859
+    },
+    {
+      "path": "src/lib/ocr/engine.ts",
+      "sha256": "91f38bd87900e600acd3c7c888d175c2df34c00299f321841ea75db1e1879053",
+      "bytes": 5479
+    },
+    {
+      "path": "src/lib/pdf/core/annotations.ts",
+      "sha256": "182e46fedfe15fb78828f4fe231da1d8762fbddbc43d94513288a6054a2201c0",
+      "bytes": 87335
+    },
+    {
+      "path": "src/lib/pdf/core/archive.ts",
+      "sha256": "db71b8c0acbc6556f05471aa29166cf4adf4ea3d2e3278566d1daed2358ee5b3",
+      "bytes": 6400
+    },
+    {
+      "path": "src/lib/pdf/core/attachments.ts",
+      "sha256": "8e5cfe08e623d73e1ff8f7d5ba9802f201d72269a08bb57100fed16c84015b7f",
+      "bytes": 20715
+    },
+    {
+      "path": "src/lib/pdf/core/blank.ts",
+      "sha256": "0d9f8e155e6b1513ac789b09e5c6919c88c1db835a543df4d9c2c92129dbf2d5",
+      "bytes": 15976
+    },
+    {
+      "path": "src/lib/pdf/core/bookmarks.ts",
+      "sha256": "551d1d4406180bc3ac281981785c9ed38de5d90ad64de7c45cdef22f3a81051e",
+      "bytes": 48035
+    },
+    {
+      "path": "src/lib/pdf/core/compress.ts",
+      "sha256": "dd56fe1be3d9790a8a39af5e778808678fc7108320790cfe6cda5faa4fff18b2",
+      "bytes": 43598
+    },
+    {
+      "path": "src/lib/pdf/core/content.ts",
+      "sha256": "a0df85098f14e94a1edb2b8edbdae30dc2e829c31f9f1e067fdf54805fc7f958",
+      "bytes": 147299
+    },
+    {
+      "path": "src/lib/pdf/core/convert.ts",
+      "sha256": "414763f44654e9920ab9acb7c4f8a074c57d4f9adb82438421fccdf66fc809ea",
+      "bytes": 62818
+    },
+    {
+      "path": "src/lib/pdf/core/crypto.ts",
+      "sha256": "12d8da5464dcde6db6c2b2d39ba2594f5f1b0a67850cbe66ff549a6a7d96df8e",
+      "bytes": 71545
+    },
+    {
+      "path": "src/lib/pdf/core/doc.ts",
+      "sha256": "63ba4b5ed9e490efd6995b3df3fb2a5594e02ebd9ebd5f5d56a9ce00a8c51d1c",
+      "bytes": 29237
+    },
+    {
+      "path": "src/lib/pdf/core/docx-out.ts",
+      "sha256": "d3a85c5f3cf963c35f46c986be41d02f4daad619c6c8d1eb0caaf4c3af4b6e71",
+      "bytes": 11012
+    },
+    {
+      "path": "src/lib/pdf/core/engine-ops.ts",
+      "sha256": "8c6f2323db42d00418d33d0b8bfe1516ed86990233358ee36a8574004d8a7c24",
+      "bytes": 12060
+    },
+    {
+      "path": "src/lib/pdf/core/flatten.ts",
+      "sha256": "f4eac753d094c4b2372d14c63ce053a86356ee86032011ae4c6a28038eb01fbd",
+      "bytes": 16897
+    },
+    {
+      "path": "src/lib/pdf/core/fonts.ts",
+      "sha256": "19efd34c0ae9e74986ef98abc4d2e5975efc83e1afc57e1aeb6b1c8fdd466357",
+      "bytes": 35545
+    },
+    {
+      "path": "src/lib/pdf/core/forms.ts",
+      "sha256": "1760ebffe9ec19bdf66e09f7d2b150946f0071fb1fc5aa3ceaf26e0ae70207b5",
+      "bytes": 24331
+    },
+    {
+      "path": "src/lib/pdf/core/guard.ts",
+      "sha256": "06c270195de766e8682128389459b8a379e500db7376966f9f52dc82d7f95742",
+      "bytes": 59285
+    },
+    {
+      "path": "src/lib/pdf/core/images-out.ts",
+      "sha256": "4787dc4c95a93b4eca5ed189e9365660a3eeffaab4b36e93bd808a220e4fb025",
+      "bytes": 24393
+    },
+    {
+      "path": "src/lib/pdf/core/images.ts",
+      "sha256": "ab89cfe23942b53e3c9d1795e90fd19db215f12906516bda3a6615383c8a7e48",
+      "bytes": 19808
+    },
+    {
+      "path": "src/lib/pdf/core/layers.ts",
+      "sha256": "376c23de489bc00d28bdf8e35f761ab0fdde02a079df0675ff874ffb12a0cfa4",
+      "bytes": 51612
+    },
+    {
+      "path": "src/lib/pdf/core/layout.ts",
+      "sha256": "859084f4009997f4a7e33cac7143795ca61e64391b19b087fa5bbe8823ca1562",
+      "bytes": 61559
+    },
+    {
+      "path": "src/lib/pdf/core/measure.ts",
+      "sha256": "8d2839474aed00bd8c396b5661386f0d3429fd0653062785bf0fe2258961261b",
+      "bytes": 25823
+    },
+    {
+      "path": "src/lib/pdf/core/metadata.ts",
+      "sha256": "d8d066537d1455dd11ed1850c2f82c74e6dfa4afc103fb672bcc8481a06dbfc2",
+      "bytes": 38396
+    },
+    {
+      "path": "src/lib/pdf/core/ocr.ts",
+      "sha256": "329e8e9a2b43c1d0091c9ce8e39805666fbe2e675b1741ea2f699e82e8bfba6e",
+      "bytes": 20263
+    },
+    {
+      "path": "src/lib/pdf/core/office-in.ts",
+      "sha256": "8190b6e4138f4ac1496f958481dbf54bdf06fa5b8dcf815e4c40aa501ad7a254",
+      "bytes": 30808
+    },
+    {
+      "path": "src/lib/pdf/core/pack.ts",
+      "sha256": "86318122c7da4bf1645adb242aef4d3a0116b5c41109c4b5a60448e720a0c3ea",
+      "bytes": 8278
+    },
+    {
+      "path": "src/lib/pdf/core/pages.ts",
+      "sha256": "9759b11c696ce5d0412a589ff085d6631f43a1f2ab69c789343e45e0c902f610",
+      "bytes": 12377
+    },
+    {
+      "path": "src/lib/pdf/core/raster.ts",
+      "sha256": "02af480c865d7017de3018ed1618b1fd5bd7c264030775dc0bc5d94fcb3dfe35",
+      "bytes": 12457
+    },
+    {
+      "path": "src/lib/pdf/core/redact.ts",
+      "sha256": "5afb623245de6bd869f1df79aa22134a6141a0aef4c578cb8e6d64ae4295a21c",
+      "bytes": 54624
+    },
+    {
+      "path": "src/lib/pdf/core/render.ts",
+      "sha256": "67314779b6fb31b02d0ebeadfd73d5338307b309c4f6f3999d9015071ea23f8c",
+      "bytes": 23237
+    },
+    {
+      "path": "src/lib/pdf/core/sanitize.ts",
+      "sha256": "355be47f22c687490fb683d9c806ff9913b9765a1c699c42a38173da943b03ab",
+      "bytes": 14625
+    },
+    {
+      "path": "src/lib/pdf/core/signature.ts",
+      "sha256": "8dc5114c3d1ba2db1ed9ae4f210a47210ce422a2a4e2a7891b484a7de3b002f0",
+      "bytes": 44835
+    },
+    {
+      "path": "src/lib/pdf/core/tables.ts",
+      "sha256": "8b4dc5d8c83275602fbd35a963bbe8274d6d224ad66ae792459d32a5e9a3f257",
+      "bytes": 25123
+    },
+    {
+      "path": "src/lib/pdf/core/text-style.ts",
+      "sha256": "e3f0e3d77f77869a26bf94748fdb9fea0f691c0a73cf2d4ba315ca0326f66ea1",
+      "bytes": 27083
+    },
+    {
+      "path": "src/lib/pdf/engines/auto.ts",
+      "sha256": "25b408e386cfcc641ae8da26eb5aaa9c0dfecc516e183dddf130a85af34d742f",
+      "bytes": 8640
+    },
+    {
+      "path": "src/lib/pdf/engines/cpdf.ts",
+      "sha256": "cb280df1a101da0daae9f635176bd0685b56421c885827f4c107353f90ca8abd",
+      "bytes": 13343
+    },
+    {
+      "path": "src/lib/pdf/engines/ghostscript.ts",
+      "sha256": "0710d5060942c49c8ab54c2956440e1d514232c0107468fd1fdca9504091967e",
+      "bytes": 6229
+    },
+    {
+      "path": "src/lib/pdf/engines/index.ts",
+      "sha256": "f0fc4f3c8c6d924ec3c06d79a0e04fee7b95a547db4cbfe8791f480b21f25c1a",
+      "bytes": 422
+    },
+    {
+      "path": "src/lib/pdf/engines/provider.ts",
+      "sha256": "ebe692f97d50df290431c0bce11c7fb7b8f330e42d849b7306890cecfaf5e018",
+      "bytes": 15280
+    },
+    {
+      "path": "src/lib/pdf/engines/pymupdf.ts",
+      "sha256": "89f9ff37ea435a1cbf685b6e30d16959b78a9bb43a451da9cd16897767d6e15f",
+      "bytes": 14135
+    },
+    {
+      "path": "src/lib/pdf/tools/convert-from.ts",
+      "sha256": "75e359de0add8cad77d9bfa55bd9d75bb8587037faccbb629947142c1dd7d7ed",
+      "bytes": 67444
+    },
+    {
+      "path": "src/lib/pdf/tools/convert-to.ts",
+      "sha256": "c8a095b9484532125934379b08b7cdc6e694b171132bd44cff9360f423a0a5ef",
+      "bytes": 88318
+    },
+    {
+      "path": "src/lib/pdf/tools/edit.ts",
+      "sha256": "6b028b231a4a17bdbb62a3d8bd9f35d7a6e4dcc65fe220e42ae248ccd4550d08",
+      "bytes": 129675
+    },
+    {
+      "path": "src/lib/pdf/tools/helpers.ts",
+      "sha256": "8967847c06a5fb277882e9f83d5628ddd3b7c0a6ab1052b5f1273b34b577869b",
+      "bytes": 19099
+    },
+    {
+      "path": "src/lib/pdf/tools/legacy.ts",
+      "sha256": "73f5cc6b803c8fad2d422f9da04910def3cba1192cf9aac6828ed4cf214ecfaf",
+      "bytes": 23427
+    },
+    {
+      "path": "src/lib/pdf/tools/office.ts",
+      "sha256": "6323e75486dbc81fae03cff43b8400c6a003966464efbcc03bfc20b454959f86",
+      "bytes": 15955
+    },
+    {
+      "path": "src/lib/pdf/tools/optimize.ts",
+      "sha256": "63a93ed4fcf7cb53c0cb32e56d8af0fd218023500e7c83a0db9350746ac47a2a",
+      "bytes": 84974
+    },
+    {
+      "path": "src/lib/pdf/tools/organize.ts",
+      "sha256": "f86d260a70004f3e1675d7e087fa7e081aa913294963c4545c1c5d384b29dbeb",
+      "bytes": 134287
+    },
+    {
+      "path": "src/lib/pdf/tools/registry.ts",
+      "sha256": "92c7d329d61a19902928ab18b8d1348cc271c873d496470507d0015c2f01f892",
+      "bytes": 13432
+    },
+    {
+      "path": "src/lib/pdf/tools/runner.ts",
+      "sha256": "d1953328fbd719f0bfdb7e251b4b00f6e087997dd36a2f6f33154d6b69b0edce",
+      "bytes": 22294
+    },
+    {
+      "path": "src/lib/pdf/tools/security.ts",
+      "sha256": "d0efa6abde619efcc0c02e208f4220429f6d22a8429895dae9cb5ba3d2b68270",
+      "bytes": 128444
+    },
+    {
+      "path": "src/lib/pdf/tools/textStyleFields.ts",
+      "sha256": "1395e4384dc4dbb9f13c9e2526539d2c2c6e1f705f6e6b185ccc902098f0e207",
+      "bytes": 9214
+    },
+    {
+      "path": "src/lib/pdf/tools/types.ts",
+      "sha256": "8a2f26a20b50b793700cfdce92d90d3c198da6d20456a0da4eec7c28295360bf",
+      "bytes": 11286
+    },
+    {
+      "path": "src/lib/pdf-engine/commands.ts",
+      "sha256": "cd311df9593faaded38af6a8ff53fc4145d31c5f4816f67c75a729771d45eea8",
+      "bytes": 37624
+    },
+    {
+      "path": "src/lib/pdf-engine/core.ts",
+      "sha256": "a91abc68168492091a128f95e22e8439278804a6f67d563345da71e6578e7c04",
+      "bytes": 3074
+    },
+    {
+      "path": "src/lib/recents.ts",
+      "sha256": "9896c16d607e70d03ed08102cc8cf201d167f4d8219e51af98fc0b29f457655f",
+      "bytes": 8128
+    },
+    {
+      "path": "src/lib/renderer/core.ts",
+      "sha256": "267f2cec4e96222212069d0cad3edd5c05b09e7492eb39ef5e1e8a2f624ec220",
+      "bytes": 5429
+    },
+    {
+      "path": "src/lib/utils/aspect-ratio.ts",
+      "sha256": "e351a28c81c26e8a7bdd1df93033ac82111411c07251fcd10040796c1cfeb497",
+      "bytes": 702
+    },
+    {
+      "path": "src/lib/utils/bitrate.ts",
+      "sha256": "6ac74f8e6db2a2da4131bead8b01e69b09e3a8ae7c13ce53e771be44bf324e6a",
+      "bytes": 357
+    },
+    {
+      "path": "src/lib/utils/download.ts",
+      "sha256": "8845986ca977ab364d70e8c974930931ddcdb797e05ada523670eebb7c0f22c6",
+      "bytes": 3195
+    },
+    {
+      "path": "src/lib/utils/format.ts",
+      "sha256": "dff5c7c7dee93c41dbf8ee2520be0b3c659c186f936be2b3f44c6525f0635a97",
+      "bytes": 954
+    },
+    {
+      "path": "src/lib/utils/time.ts",
+      "sha256": "9f7096a5264c74bccf556edd6f91ee7501a109496fd5c81612f7c2c49b89193b",
+      "bytes": 1253
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "613347c93136b50a25250d9783e26de4788e62c5f34f550cf2749ace3623c8fa",
+      "bytes": 695
+    },
+    {
+      "path": "src/stores/file-store.ts",
+      "sha256": "7ab4742ca1cd78de9fb99c7dc4361bdd586e523ff84884b212207dfebcefdc76",
+      "bytes": 4530
+    },
+    {
+      "path": "src/stores/process-store.ts",
+      "sha256": "9078965e7e1a963100eb075a291913f569794ee64ff631194e58ad189cd89aeb",
+      "bytes": 14507
+    },
+    {
+      "path": "src/stores/ui-store.ts",
+      "sha256": "9fc64d66e0b1417fb83dba705216b8a94f2b4e89b7aba9e4098f2d74b00f45d2",
+      "bytes": 636
+    },
+    {
+      "path": "src/theme.ts",
+      "sha256": "19df5cdd67e9e5ab5edda1a8062c9e891fd878f1b1f123f8b5b5932ceead4df1",
+      "bytes": 375
+    },
+    {
+      "path": "src/toolbox.css",
+      "sha256": "af8ea4aede622777578a07c820b492fb23d3987bacced1ae3a84d6704aa8396f",
+      "bytes": 3458
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "bc8e672d774401e207e2f17d7881575e1c18f92883b0fff8e4d7a5209efea7f6",
+      "bytes": 7782
+    },
+    {
+      "path": "src/types/mammoth.d.ts",
+      "sha256": "e05be23cd8e753625997ac060702e80f10a7fc1ee29c7a8a8b9b53a0a22815b0",
+      "bytes": 1223
+    },
+    {
+      "path": "src/types/utif.d.ts",
+      "sha256": "68e90fe12a0313b26be0c5ed62c3027e72e81cb4ac7d30360f6efa5568769100",
+      "bytes": 1828
+    },
+    {
+      "path": "tailwind.config.js",
+      "sha256": "fd9e4d1f4ee8e1d1d0f8a5ab0dcc9d6582d34c3d5000c1ecf4d3a1df696ad5c4",
+      "bytes": 4303
+    },
+    {
+      "path": "tests/app/ant-adaptation.test.tsx",
+      "sha256": "941c331aafd33281f67f839e6ef54c310deca61cbf7e08c99b6e90c9662a2b06",
+      "bytes": 2876
+    },
+    {
+      "path": "tests/app/shared-ui.test.tsx",
+      "sha256": "c037a0ab04c0a69201db848698102d007084e862c2aee1a39c3e2e268dafa9ac",
+      "bytes": 60889
+    },
+    {
+      "path": "tests/app/shell.test.tsx",
+      "sha256": "bb1d2c7cebe822dae5dd96c42d86e2c0777ad7d57d86a703a2a2d2c9a5b2ed09",
+      "bytes": 28222
+    },
+    {
+      "path": "tests/app/tool-navigation.test.tsx",
+      "sha256": "b4516b25f3c4093c140f40419a0d69c7594a08b33090a8a5696fce94550fbb16",
+      "bytes": 7900
+    },
+    {
+      "path": "tests/fixtures/cff-face.otf",
+      "sha256": "f1159f1c2123b9d3bdc2cc7b74a42606eb70fa7c370e7ca5b3d6e3c3f35fea76",
+      "bytes": 752
+    },
+    {
+      "path": "tests/fixtures/encrypted/aes-128-user.pdf",
+      "sha256": "782c81a5df863600149456fdd11d216658b57ad906f7f8a1f7535a2ecdbb25c5",
+      "bytes": 4058
+    },
+    {
+      "path": "tests/fixtures/encrypted/aes-256-owner.pdf",
+      "sha256": "c6cfcb39be797d3c17b60afc252f30c85752a85f7dbc9964aa0f2f38bec50279",
+      "bytes": 4358
+    },
+    {
+      "path": "tests/fixtures/encrypted/aes-256-user.pdf",
+      "sha256": "b6856642fbb6496ff541965d4e83a8cf34afa62368de3aa558c58a0a6dc93a6f",
+      "bytes": 4358
+    },
+    {
+      "path": "tests/fixtures/encrypted/mu-aes-128-user.pdf",
+      "sha256": "9efc113a9408879ec779ff86ffc43442663cbe940064f00fb5e1613dbccb500e",
+      "bytes": 3774
+    },
+    {
+      "path": "tests/fixtures/encrypted/mu-aes-256-owner.pdf",
+      "sha256": "91216c9ab867f7e779be4c62150189163e5a92ed0a297db21a261d73bca92598",
+      "bytes": 4016
+    },
+    {
+      "path": "tests/fixtures/encrypted/mu-aes-256-user.pdf",
+      "sha256": "daa3c022dce432180501bd5c02a05b40f2f767c752ea38e2d8eb26b1e4ab708b",
+      "bytes": 4016
+    },
+    {
+      "path": "tests/fixtures/encrypted/mu-rc4-128-user.pdf",
+      "sha256": "a7afa45fb1441140e239096a7f3ee5bb095effe4fd2a26a6d78a16292570beb9",
+      "bytes": 3258
+    },
+    {
+      "path": "tests/fixtures/encrypted/plain.pdf",
+      "sha256": "5a3503d247609a9b2206786dd2185607e393b091b535127f1e8f0e4ab512c33b",
+      "bytes": 2975
+    },
+    {
+      "path": "tests/fixtures/encrypted/rc4-128-owner.pdf",
+      "sha256": "177b83423a042dfa9407b08c5a81919fbb63e2aa3b751aa07faa04c0c04eb518",
+      "bytes": 3524
+    },
+    {
+      "path": "tests/fixtures/encrypted/rc4-128-user.pdf",
+      "sha256": "6090c84436df851c8646376c4501e48eee3af02dca4349ca9848352275fc1836",
+      "bytes": 3524
+    },
+    {
+      "path": "tests/fixtures/encrypted/README.md",
+      "sha256": "9cc25380f91636e4e68302dcbc8bed6fc47e41bd76a06532ce3ebf9184ec856c",
+      "bytes": 5171
+    },
+    {
+      "path": "tests/pdf/_b6probe.test.ts",
+      "sha256": "99d529536e91432a727b739fb797f3da8bd924faee0bec5df207484b9e372f30",
+      "bytes": 11321
+    },
+    {
+      "path": "tests/pdf/annotation-editor.test.ts",
+      "sha256": "5f2ea730ed99c325dfd19ed25e91539826e17df673f1c588693b89246beda876",
+      "bytes": 64467
+    },
+    {
+      "path": "tests/pdf/annotations.test.ts",
+      "sha256": "472533042207d054f871823a83d2d29d6ca2553082b6683cd3a139130c12686f",
+      "bytes": 59308
+    },
+    {
+      "path": "tests/pdf/appearance-harness.ts",
+      "sha256": "df174add9f21d19b0156d3d01d31a97139c491fc646bdc64fdd22bb8af680c99",
+      "bytes": 23403
+    },
+    {
+      "path": "tests/pdf/attachments.test.ts",
+      "sha256": "0f28b3b0723cb65edd2301bc790da453e029482d1c125f8103df004e14683527",
+      "bytes": 5988
+    },
+    {
+      "path": "tests/pdf/blank-page-chain.test.ts",
+      "sha256": "81993c39513664cb63d74d78430cebd79ecf7d00af77f2242d82d09b9b222ee8",
+      "bytes": 31816
+    },
+    {
+      "path": "tests/pdf/bookmarks.test.ts",
+      "sha256": "57e7835122fc3187a9ae261c05c9d2b2ad14b79d707d70434f109361118bfd46",
+      "bytes": 27610
+    },
+    {
+      "path": "tests/pdf/colour-tools-ink.test.ts",
+      "sha256": "e5a2f5e5e1ad2384c21cd243c51d232a52d57df0955675fc64df88d3a7dec816",
+      "bytes": 52450
+    },
+    {
+      "path": "tests/pdf/compare-diff.test.ts",
+      "sha256": "e67f64b6554eebf86b73922e5373a95706aa1c9bde42a0ed1b0ca9f0c0e9bd7c",
+      "bytes": 42818
+    },
+    {
+      "path": "tests/pdf/convert-to-bytes.test.ts",
+      "sha256": "17075b98a545d4dcb100d96371c6bec4edd998793759d970707d6698817c9899",
+      "bytes": 53828
+    },
+    {
+      "path": "tests/pdf/convert-to-harness.ts",
+      "sha256": "1ecaccd1f4b85315435542d1f29f1cf96ad20c9d4c3e1a3612105b136a2de7f3",
+      "bytes": 37097
+    },
+    {
+      "path": "tests/pdf/convert.test.ts",
+      "sha256": "088716dd610332efa3c231d90754fc2db8e94ed4756a6d638d92348010a30ee5",
+      "bytes": 42538
+    },
+    {
+      "path": "tests/pdf/crop-units.test.ts",
+      "sha256": "39ff283fbd53605b79a91042a021061225d6bdf4161d95d1f3ad877dae49c04b",
+      "bytes": 17113
+    },
+    {
+      "path": "tests/pdf/crypto-aes256.test.ts",
+      "sha256": "0648f1a0ec5c4d7d092ab1caf7ce07602f331d6d0142f06e2a5e5344ca88c868",
+      "bytes": 17536
+    },
+    {
+      "path": "tests/pdf/crypto-decrypt.test.ts",
+      "sha256": "23b0800466a9657dece69878f2a3419b1f4dec170624457af65209cda860d8c1",
+      "bytes": 14989
+    },
+    {
+      "path": "tests/pdf/crypto-encrypt.test.ts",
+      "sha256": "8f99fbfffadbbe5fa9f76d232d12f9aa27d24f1d7c638dc8b711984b1f3e0c24",
+      "bytes": 32893
+    },
+    {
+      "path": "tests/pdf/deskew.test.ts",
+      "sha256": "fd5ce37a8d4e5247e1c4fbd9ded5da09df4749c9385139ba38ef47138123b1b2",
+      "bytes": 13507
+    },
+    {
+      "path": "tests/pdf/edge-convert-from.test.ts",
+      "sha256": "6eeec220dcef52904057cb61f8da65ffb08c82333be2dad9518e6495b955f63b",
+      "bytes": 113406
+    },
+    {
+      "path": "tests/pdf/edge-convert-to.test.ts",
+      "sha256": "ae6b1dbea30be33018501880f33418f38217482a60b0cd5f1b5112dde37befc5",
+      "bytes": 39613
+    },
+    {
+      "path": "tests/pdf/edge-edit.test.ts",
+      "sha256": "a8f9fda26d0a12e7941f3cf1123071dcd1137b0d7dd896c4003e9d34c3c0f067",
+      "bytes": 67147
+    },
+    {
+      "path": "tests/pdf/edge-editors.test.ts",
+      "sha256": "5b868d5e971a655c94c0071bb0b1c2814f95fc9bdbda6ea205447babc8a98a93",
+      "bytes": 43926
+    },
+    {
+      "path": "tests/pdf/edge-forms-core.test.ts",
+      "sha256": "8f25cc1dba3bfaef059a68e7f9d7cebc8e9456aa66a681ee2a6ed917a789ce0c",
+      "bytes": 25048
+    },
+    {
+      "path": "tests/pdf/edge-geometry-core.test.ts",
+      "sha256": "76b69c120dc0663e8e2618d10f473a012df49a4c40a6a34aa8b644a5d0ec14bd",
+      "bytes": 22985
+    },
+    {
+      "path": "tests/pdf/edge-optimize.test.ts",
+      "sha256": "e03e8f80f572655eb736167111dd80f6f2d6586f729b42919120a4f0beeaf545",
+      "bytes": 60900
+    },
+    {
+      "path": "tests/pdf/edge-organize.test.ts",
+      "sha256": "1ebcd42d155c561494b1b802eaacbcfc6fd6dd4452e7c718576a2f7aa0dfa974",
+      "bytes": 102040
+    },
+    {
+      "path": "tests/pdf/edge-security.test.ts",
+      "sha256": "c8d315baeec87a989d7b67b58a1437fc873be484894ccae657bca22888136c88",
+      "bytes": 49302
+    },
+    {
+      "path": "tests/pdf/edge-signature-core.test.ts",
+      "sha256": "a46a7b7b738929b0a3668edbb4be50b389b5979e420fcd107ee63530b4742aab",
+      "bytes": 18817
+    },
+    {
+      "path": "tests/pdf/edit-bytes.test.ts",
+      "sha256": "a0b838fd99e230ed317bf2330e3d6c9480c08c3d0d9ee1d3c3fc858cf982d716",
+      "bytes": 69205
+    },
+    {
+      "path": "tests/pdf/editor-surface.test.tsx",
+      "sha256": "8f26b2765fe47de8ba05b5df154b1a28ddcd6a3b4483b9548b64a51fe4ffab78",
+      "bytes": 22446
+    },
+    {
+      "path": "tests/pdf/encrypted-guard.test.ts",
+      "sha256": "7c5ed609dba0260e971c076c26a4d0b93883d7be8b0ac2dbbb621185bca207c2",
+      "bytes": 36936
+    },
+    {
+      "path": "tests/pdf/engine-auto.test.ts",
+      "sha256": "de7cb55adace549479aa399a8c927cd2f0f7f38f9aef9a94f0b02e6570f21755",
+      "bytes": 11914
+    },
+    {
+      "path": "tests/pdf/engines-provider.test.ts",
+      "sha256": "8a57d38d39030a8ebf2d6906b5b1aa07518e734796661f75da374e7ae688de33",
+      "bytes": 15626
+    },
+    {
+      "path": "tests/pdf/field-reach.test.ts",
+      "sha256": "7a16b14f9c0990da1ba521ab2ffe45dfa53bef53e14cc322505d1e10248c1e33",
+      "bytes": 27079
+    },
+    {
+      "path": "tests/pdf/field-required.test.ts",
+      "sha256": "cb60dbd9b901328f32cc60a4a50b16b9ab746109e0c83908c55ef42d847a42fd",
+      "bytes": 6021
+    },
+    {
+      "path": "tests/pdf/flatten-truth.test.ts",
+      "sha256": "2ff0a8cf263825bb327a98bd300aee1d2f6aa5882e457c0a265c7c54cb1c4585",
+      "bytes": 28433
+    },
+    {
+      "path": "tests/pdf/fonts.test.ts",
+      "sha256": "1f66a418b5fdd79058c794dd424a7b7e46e7351d4d2f447698b430753e96b095",
+      "bytes": 24302
+    },
+    {
+      "path": "tests/pdf/gate-harness.ts",
+      "sha256": "8774520ac90cb0556b1ed599761bcaf68438d0f3caef2aeb2078f08cd3637e23",
+      "bytes": 2688
+    },
+    {
+      "path": "tests/pdf/greyscale-ink.test.ts",
+      "sha256": "e2ad4ba1731122d688a67c120b1e4e6f77bb7f6acbd4c959ca9c13aa9f4257e7",
+      "bytes": 39526
+    },
+    {
+      "path": "tests/pdf/grid-placement.test.ts",
+      "sha256": "3b2f69b02fc13cc78e2fba8360eb04d946032c8ab5cf7bd072d8a784487477b4",
+      "bytes": 34108
+    },
+    {
+      "path": "tests/pdf/guard.test.ts",
+      "sha256": "a58c52af814144e8d470df4476f235baf829d91eb7d18bfbd0da8ce8163c0d8e",
+      "bytes": 32762
+    },
+    {
+      "path": "tests/pdf/inert-controls.test.ts",
+      "sha256": "d9454ffe922e33e69b752f7d70c613048e596205be548de44d045d3e307973db",
+      "bytes": 19877
+    },
+    {
+      "path": "tests/pdf/inert-field-sweep.test.ts",
+      "sha256": "95cb3e642e17268e079a4f28c2b0739b096a0aee09f44001d02730e29ea5bb6d",
+      "bytes": 11597
+    },
+    {
+      "path": "tests/pdf/metadata.test.ts",
+      "sha256": "280c10100e745e0e059f978531039ade3a133f5c9c5e243db8f64ceda16beb61",
+      "bytes": 8950
+    },
+    {
+      "path": "tests/pdf/ocr.test.ts",
+      "sha256": "bcc3ebb1c9d8f6c792121d5917ba8b5c7f4cff01a28210e179bbaf7c408a1f6f",
+      "bytes": 19568
+    },
+    {
+      "path": "tests/pdf/optimize-bytes.test.ts",
+      "sha256": "ef878b3e58269db1791002d392bb349161bd7c7680fe918f9790f58f8f18ec94",
+      "bytes": 76692
+    },
+    {
+      "path": "tests/pdf/optional-content.test.ts",
+      "sha256": "fe2a246e9975bb5a46335972c05493ea0668ac35cc9c225f24719a489eece8dc",
+      "bytes": 40992
+    },
+    {
+      "path": "tests/pdf/page-copy-fidelity.test.ts",
+      "sha256": "ad71a175a3d6b17b3f8ad766d8f13c67097893fe2f93034dcf1f5570697bcb14",
+      "bytes": 27430
+    },
+    {
+      "path": "tests/pdf/page-organizer.test.ts",
+      "sha256": "e58dade7c6983746bd0bcd1ed587a39c0ede15c23b0656fa38b8f47dbcb5bdda",
+      "bytes": 13396
+    },
+    {
+      "path": "tests/pdf/pages-out.test.ts",
+      "sha256": "593d04e6f35388f2a84ac3b77c72b5e5d082014e86efc2c5bf7970fb655ad573",
+      "bytes": 16553
+    },
+    {
+      "path": "tests/pdf/parity-definitions.test.ts",
+      "sha256": "0896987ee85ed56c59e515d47a1849c1950b4f6ff4463246e572eadf16277193",
+      "bytes": 22266
+    },
+    {
+      "path": "tests/pdf/parity-surface.test.ts",
+      "sha256": "6714a1c02150bae0836d98ccff57eedf3b2378082b5a8038a80af38666d7849a",
+      "bytes": 31778
+    },
+    {
+      "path": "tests/pdf/password-anywhere.test.ts",
+      "sha256": "52c7b4af8f8fbc567175c2c364f7c30f2dcbb000f03f4ff974605a44b19b3992",
+      "bytes": 36065
+    },
+    {
+      "path": "tests/pdf/pdf-to-image.test.ts",
+      "sha256": "17c13902c0f01547015caf9a30ad46d86fb020bc769d9a24283c665459421eb2",
+      "bytes": 41183
+    },
+    {
+      "path": "tests/pdf/protect-spec.test.ts",
+      "sha256": "12b0e56e4ab57a700ed386b6e5ceca2b77d10252780d4654fd96ea92581e3b29",
+      "bytes": 32963
+    },
+    {
+      "path": "tests/pdf/rasterize-ink.test.ts",
+      "sha256": "50f0881ad163a53aa36988406e769b9e47e0e2e6de7869e069cffab63cc17af5",
+      "bytes": 28086
+    },
+    {
+      "path": "tests/pdf/registry.test.ts",
+      "sha256": "57ef845cec05b13bde23a4f3d7deca427c4283b134e87dda7995d1257a898a96",
+      "bytes": 7737
+    },
+    {
+      "path": "tests/pdf/remove-restrictions.test.ts",
+      "sha256": "5be8b916064ba0bb59049c4508f9e1503df014f743099a851f18f102103994a8",
+      "bytes": 19737
+    },
+    {
+      "path": "tests/pdf/repair-damage-corpus.ts",
+      "sha256": "694787c832ba1c135239fef8a3553b810f7217c6a6edb11f46a26e2d4f0a5373",
+      "bytes": 17351
+    },
+    {
+      "path": "tests/pdf/repair-damage.test.ts",
+      "sha256": "50c5062dac50b6cee4e25a66d86041e2237c8e2fc4fe77ab73317c7985cf6959",
+      "bytes": 12819
+    },
+    {
+      "path": "tests/pdf/scratch-probe.test.ts",
+      "sha256": "3b84a2b49a1f5b2caaa4d3d8edd413ac3f37ccb084136be1038ea207898b6d37",
+      "bytes": 8235
+    },
+    {
+      "path": "tests/pdf/security-bytes.test.ts",
+      "sha256": "fe79777edcb4c53e9d1eb68ecd8966f9b8974fecae49e53739cb64a1fe77fbe4",
+      "bytes": 61481
+    },
+    {
+      "path": "tests/pdf/signature.test.ts",
+      "sha256": "848ddacd1a4b0e400eca38875cb4491dc575fb31619469f2bbad2af651cae678",
+      "bytes": 5071
+    },
+    {
+      "path": "tests/pdf/style-controls-invariant.test.ts",
+      "sha256": "fe20f27b4e606e596fdd24ed70c4f3ee531d14ab8857b877d60c58d081944921",
+      "bytes": 26570
+    },
+    {
+      "path": "tests/pdf/table-list-tail.test.ts",
+      "sha256": "6645c5a73cc07a7569cd209ce966a8aae2e6b58687f78621a0eb9aeda629e714",
+      "bytes": 26923
+    },
+    {
+      "path": "tests/pdf/tables.test.ts",
+      "sha256": "37ebca063687ee184f4e9db73410dde4e5288b777ed59c83aa411e48debe2b69",
+      "bytes": 15105
+    },
+    {
+      "path": "tests/pdf/text-edit-fidelity.test.ts",
+      "sha256": "3ecc63705f627a119dcfa9f795ab2616239e3a2c12fdda864be31b87aca37f36",
+      "bytes": 38822
+    },
+    {
+      "path": "tests/pdf/text-editor.test.ts",
+      "sha256": "f6ef33ecefd220ba4894bf8b828217467029db7908877969c3eef909197e2236",
+      "bytes": 43816
+    },
+    {
+      "path": "tests/pdf/text-paint.test.ts",
+      "sha256": "1a2bceab7dd1b162524fe11fd284883651b24d3deae9e2e6aa3c963e0ab7e31c",
+      "bytes": 15677
+    },
+    {
+      "path": "tests/pdf/text-style-bytes.test.ts",
+      "sha256": "03c1487ea572df6b87b47c1214f495d9ebe67174ccdb11c6f85d40b29cd875ce",
+      "bytes": 17708
+    },
+    {
+      "path": "tests/pdf/text-style.test.ts",
+      "sha256": "34e8cf0629654f4c6dc841f3ca8e24940765fafee4eb730d6b217b509f8d3810",
+      "bytes": 12453
+    },
+    {
+      "path": "tests/pdf/text-tail.test.ts",
+      "sha256": "84b07385ef1feffe325ac1fc73f0e6f15596395facac5c272acd4ac97863e03c",
+      "bytes": 18670
+    },
+    {
+      "path": "tests/pdf/tools-e2e.test.ts",
+      "sha256": "272daef7ceaed5319a04db8372983099df800bf135d38508e272b8512dc9a9f6",
+      "bytes": 19093
+    },
+    {
+      "path": "tests/pdf/ux-annotation.test.ts",
+      "sha256": "05f5ccde844976d97c5147b2447398aa34648cd3b89d6c48b32240e8fcd2083a",
+      "bytes": 79522
+    },
+    {
+      "path": "tests/pdf/ux-definitions.test.ts",
+      "sha256": "6e39dc3e8b1009a294b74c2ee15579f78a21633964ab8d9318c9170f983b061b",
+      "bytes": 22749
+    },
+    {
+      "path": "tests/pdf/ux-organize.test.ts",
+      "sha256": "0bf7ac8d88b145dc9dfbdf61190a2f49678106a0b45842631a8972b629a85c82",
+      "bytes": 51710
+    },
+    {
+      "path": "tests/pdf/ux-rail.test.ts",
+      "sha256": "df55784147df524d93c543146ad2c1c791f46fdcb2037f31c724b79b5c546576",
+      "bytes": 46603
+    },
+    {
+      "path": "tests/pdf/ux-surfaces.test.ts",
+      "sha256": "ded9d96086656a9a36cdfd072e51e381958d679f395ffe2270e4959d74359074",
+      "bytes": 33782
+    },
+    {
+      "path": "tests/pdf/ux-task-shell.test.tsx",
+      "sha256": "3dd179ca9d2cff4f7e6aafe5cafa3c6a1baaff0f45b20065c6092b43077c07ee",
+      "bytes": 72467
+    },
+    {
+      "path": "tests/pdf/ux-text.test.ts",
+      "sha256": "e061e8ded5d11fcf723bf804c21426377385cd5e693de07166c5c6d840c33711",
+      "bytes": 42040
+    },
+    {
+      "path": "tests/setup.ts",
+      "sha256": "c85a74be2eb72ad655bf20b7bee6510e2839e13f49f6ce9a3d5d021b4e99d7ff",
+      "bytes": 2859
+    },
+    {
+      "path": "toolbox.vite.config.ts",
+      "sha256": "7e716f88a3ae9b2f22c3a2fecf32d64af1ec270eb35ea55045ba84a99a37345b",
+      "bytes": 254
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "640597240a5c62d4726fa888572fc2884aef4c2147d8519096cc9630952bb3c8",
+      "bytes": 645
+    },
+    {
+      "path": "tsconfig.tests.json",
+      "sha256": "6f8c01880b8ab9e91f345db2293b52ce1e9f93c5b1683f958162d6dd50f469b1",
+      "bytes": 171
+    },
+    {
+      "path": "vite-env.d.ts",
+      "sha256": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+      "bytes": 39
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "d3fe38bfe846238cec5a921d1cba14be567789fb0ed62a791a08d1f4e427b9d7",
+      "bytes": 1189
+    }
+  ]
+}

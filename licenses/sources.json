@@ -12,7 +12,10 @@
     "url": "https://github.com/ningtoba/BrowserSnip",
     "commit": "b313b890a3aeec0febcb574e2341ee19e5e3e9d3",
     "license": "MIT (declared in README)",
-    "modified": true
+    "modified": true,
+    "source_archive": "browsersnip-source.zip",
+    "source_manifest": "browsersnip-source-manifest.json",
+    "third_party_notices": "browsersnip-third-party.txt"
   },
   {
     "project": "openutility-upstream",
