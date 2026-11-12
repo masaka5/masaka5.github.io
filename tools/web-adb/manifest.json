@@ -1,0 +1,25 @@
+{
+  "name": "Web ADB",
+  "files": [
+    {
+      "path": "app.css",
+      "bytes": 10852,
+      "sha256": "f78625733fd2b0c26558ca1dc7ff5134d3f58a52e37b4d3adb683643028f8044"
+    },
+    {
+      "path": "app.css.LEGAL.txt",
+      "bytes": 1702,
+      "sha256": "5570ef3cdb6a6bf65c80b9018361ccb6ff4d6b32160e9127cefede2dcc2cedc6"
+    },
+    {
+      "path": "app.js",
+      "bytes": 363071,
+      "sha256": "24fa57e3cee9080f6f08885c24f02a108ccc4fd63c1c65a06882c57e3ed87809"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6580,
+      "sha256": "191beb1311dec01a85262aa4ce719b93e9a0bc6c33bf78fe775b41e5ef9503cd"
+    }
+  ]
+}

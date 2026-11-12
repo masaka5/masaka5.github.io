@@ -1,0 +1,25 @@
+{
+  "name": "pocket-toolbox-react-home",
+  "files": [
+    {
+      "path": "assets/home-react/home.css",
+      "bytes": 12543,
+      "sha256": "4f58e86e45c6ec48dfedf396516f37cbc069433ea4009ca77455c6b292184391"
+    },
+    {
+      "path": "assets/home-react/home.js",
+      "bytes": 762605,
+      "sha256": "d46be2e1f2dd74a0ba7ac834de66b02c9864cdf7ccf440c9ad1ae538b539eb8e"
+    },
+    {
+      "path": "assets/home-react/manifest.json",
+      "bytes": 461,
+      "sha256": "0d8dede042e28ef901426754e92ddf9f5983aa709314b7af82becf7b7854658b"
+    },
+    {
+      "path": "licenses/home-react-source.zip",
+      "bytes": 191766,
+      "sha256": "db6bb58cde27164780e8b7e6fd5f931fe481020364d915d0c9834ea94845c8ce"
+    }
+  ]
+}

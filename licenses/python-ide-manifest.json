@@ -1,0 +1,238 @@
+{
+  "name": "toolbox-python-ide",
+  "version": "1.0.0",
+  "entry": "tools/python-ide/",
+  "license": "MIT; third-party original licenses retained",
+  "runtime": {
+    "engine": "Pyodide",
+    "version": "314.0.6",
+    "python": "3.14",
+    "sharedPath": "vendor/pyodide/",
+    "source": "https://github.com/pyodide/pyodide",
+    "license": "vendor/pyodide/LICENSE",
+    "manifest": "licenses/jupyter-manifest.json"
+  },
+  "build": "npm ci && npm run build && npm run package-source",
+  "test": "npm test (Playwright real Chrome; static site at http://127.0.0.1:8765)",
+  "features": [
+    "real CPython WASM",
+    "CodeMirror Python editing",
+    "compile/run stdout/stderr",
+    "pre-filled linewise stdin",
+    "Worker terminate stop/reset",
+    "UTF-8 and binary file import/export",
+    "JSON project import/export",
+    "IndexedDB corruption/conflict protection",
+    "responsive no root scrolling"
+  ],
+  "limits": {
+    "projectBytes": 8388608,
+    "fileBytes": 4194304,
+    "fileCount": 128,
+    "stdoutCharacters": 100000
+  },
+  "dependencies": [
+    {
+      "name": "@codemirror/autocomplete",
+      "version": "6.20.4",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/autocomplete/-/autocomplete-6.20.4.tgz",
+      "integrity": "sha512-yF8RhOf2SXlg00+qtupzLhrglcas61boqaONiNcbPIebHCpJocpqTBA6dyrtUrQO47hqyTdeob/3XnYilT7TaQ=="
+    },
+    {
+      "name": "@codemirror/commands",
+      "version": "6.11.1",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/commands/-/commands-6.11.1.tgz",
+      "integrity": "sha512-O/4hG3SC1YwcmQ0d2UVNDs+AsaNWd1iHVxbTeEBuqH+6bExAiPK3iS/BvpY6rZGURALv4ZD3sIgcCmRvw3ehBg=="
+    },
+    {
+      "name": "@codemirror/lang-python",
+      "version": "6.2.1",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/lang-python/-/lang-python-6.2.1.tgz",
+      "integrity": "sha512-IRjC8RUBhn9mGR9ywecNhB51yePWCGgvHfY1lWN/Mrp3cKuHr0isDKia+9HnvhiWNnMpbGhWrkhuWOc09exRyw=="
+    },
+    {
+      "name": "@codemirror/language",
+      "version": "6.13.1",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/language/-/language-6.13.1.tgz",
+      "integrity": "sha512-zfvU2r3TyylQLMj/te+5CnQ0rSqZi8B1oTCBbQkagcLW4Xc6imab6qN+pEJhsuNOLaJqiRyBXp9UhWA1DhVvDw=="
+    },
+    {
+      "name": "@codemirror/state",
+      "version": "6.7.6",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/state/-/state-6.7.6.tgz",
+      "integrity": "sha512-kAz+AncRtKuIknedxT1bq4XwXv4UowhbkHU1myPrtVb/jZtImWuV5BXzv5vK6i3kYACsdiZiQKFQQ5Mq7elW8w=="
+    },
+    {
+      "name": "@codemirror/streamparser",
+      "version": "6.0.0",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/streamparser/-/streamparser-6.0.0.tgz",
+      "integrity": "sha512-JTFPF6xrfjt0mnfGPgzcLiMwYmvIyNaoizp8BYzv8FE8KrT6GBGDZ190rtt+O7Wke3gG/MFHyiY9YGNeimof4w=="
+    },
+    {
+      "name": "@codemirror/view",
+      "version": "6.43.15",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/view/-/view-6.43.15.tgz",
+      "integrity": "sha512-HHsfpqFeHyXLs983pSRe38Xajs0vFWZQ2BuX0m7Ki8w3jZ5iD8cuR3lBz2/5/X53Dhf32SBHKh6rtSTB6tKeGw=="
+    },
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+      "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g=="
+    },
+    {
+      "name": "@lezer/common",
+      "version": "1.5.5",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/common/-/common-1.5.5.tgz",
+      "integrity": "sha512-Pw7PVCndruF1pb3ebCxpSVpkMHSDjwRCLcTRw+RizUKco5QbWylwq2g4lnG/RYN7yTTQDXE9F77MwtkAyphrjg=="
+    },
+    {
+      "name": "@lezer/highlight",
+      "version": "1.2.5",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/highlight/-/highlight-1.2.5.tgz",
+      "integrity": "sha512-O1GMVKgtf5YspFaRzpmqkVgMtIk2HG9uMAbH6wdAIdNh3TVzCsch/+cRi+6l2//UGDKe6NB9BW3cvuR5ezMQ0w=="
+    },
+    {
+      "name": "@lezer/lr",
+      "version": "1.4.12",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/lr/-/lr-1.4.12.tgz",
+      "integrity": "sha512-On9HU4oMMiHPMkQDgoTnGahjgG5n/MkN38CgG77sMraKLL+3JBbeQNi1FcCXV9QRqwF9/BUXP3caHyJC1fBOTQ=="
+    },
+    {
+      "name": "@lezer/python",
+      "version": "1.1.19",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/python/-/python-1.1.19.tgz",
+      "integrity": "sha512-MhQIURHRytsNzP/YXnqpYKW6la6voAH3kyplTOOiCdjyFY6cWWGFVmYVdHIPrElqSDf4iCDktQCockB9FxuhzQ=="
+    },
+    {
+      "name": "@marijn/find-cluster-break",
+      "version": "1.0.4",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@marijn/find-cluster-break/-/find-cluster-break-1.0.4.tgz",
+      "integrity": "sha512-Wy0V7+SGUjnF9/TkiM1hKVDPj7jKXduPNboMVtHTA8dySMURWqfg/JZ9E2Sq8JgSJmkl7k7Qe9FLeMSrSraWmQ=="
+    },
+    {
+      "name": "crelt",
+      "version": "1.0.7",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/crelt/-/crelt-1.0.7.tgz",
+      "integrity": "sha512-aK6BbWfhf4U/wCcLHKPJl/xa6VkVstRaPywWtMKGwuOLc/wZTyQYuoxgvZnNsBvv7Kg3YTBQYYBCggcviQczuA=="
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.2",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+      "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA=="
+    },
+    {
+      "name": "fflate",
+      "version": "0.8.3",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/fflate/-/fflate-0.8.3.tgz",
+      "integrity": "sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA=="
+    },
+    {
+      "name": "playwright",
+      "version": "1.58.2",
+      "license": "Apache-2.0",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/playwright/-/playwright-1.58.2.tgz",
+      "integrity": "sha512-vA30H8Nvkq/cPBnNw4Q8TWz1EJyqgpuinBcHET0YVJVFldr8JDNiU9LaWAE1KqSkRYazuaBhTpB5ZzShOezQ6A=="
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.58.2",
+      "license": "Apache-2.0",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.58.2.tgz",
+      "integrity": "sha512-yZkEtftgwS8CsfYo7nm0KE8jsvm6i/PTgVtB8DL726wNf6H2IMsDuxCpJj59KDaxCtSnrWan2AeDqM7JBaultg=="
+    },
+    {
+      "name": "style-mod",
+      "version": "4.1.4",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/style-mod/-/style-mod-4.1.4.tgz",
+      "integrity": "sha512-XXWIQt633/EpAFx8aZDOTjBzrCaGmhvEQlQo6MVPfa2OzO2cWo+4hV9h+6UkHYlXGfy+ODXKUdP7Pthmcu5ATw=="
+    },
+    {
+      "name": "w3c-keyname",
+      "version": "2.2.8",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/w3c-keyname/-/w3c-keyname-2.2.8.tgz",
+      "integrity": "sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ=="
+    }
+  ],
+  "files": [
+    {
+      "path": "tools/python-ide/assets/app.css",
+      "bytes": 5098,
+      "sha256": "e64432009203ea7b63a5871352e9fa7d9a881d9460cde537c163170ba8f9d17a"
+    },
+    {
+      "path": "tools/python-ide/assets/app.js",
+      "bytes": 381005,
+      "sha256": "f23411d452b8617b3762609d36edb58091bb7e7f4d9e2a27e727c056578f6953"
+    },
+    {
+      "path": "tools/python-ide/assets/worker.js",
+      "bytes": 4857,
+      "sha256": "c5aae065f283e949d6a76672f507038663503d4bd25d99a950f61d1264e66a39"
+    },
+    {
+      "path": "tools/python-ide/index.html",
+      "bytes": 3661,
+      "sha256": "7cc5e7d824f30e2e7917669ced246cc6925f5cb2a8dfdfe1f3e597b0b8cf7e1f"
+    },
+    {
+      "path": "licenses/python-ide.html",
+      "bytes": 1503,
+      "sha256": "7b86c9f13bc5381c81198b0ed0e7496c282f8e1bfbf5aee85cbf66aa36da9938"
+    },
+    {
+      "path": "licenses/python-ide-MIT.txt",
+      "bytes": 1084,
+      "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962"
+    },
+    {
+      "path": "licenses/python-ide-third-party.txt",
+      "bytes": 47347,
+      "sha256": "1551c4d1f09cae42495eb4d44601e2b2eca8dc5969d2e9f305b0422e4d9144bd"
+    },
+    {
+      "path": "licenses/python-ide-source.zip",
+      "bytes": 989092,
+      "sha256": "04a8da10e283561413de42bae954fc8899b24da663848772fbe33befec8b9da3"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="本地 Markdown 编辑与实时预览，支持表格、代码高亮、导入导出和本地草稿。">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: http:; connect-src 'none'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Markdown 编辑器 · 口袋工具箱</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/app.css">
+<link rel="stylesheet" href="../../assets/tool-shell.css"></head>
+<body>
+<div class="markdown-app">
+  <header><a href="../../">← 口袋工具箱</a><h1>Markdown 编辑器</h1><a class="license" href="../../licenses/markdown.html">开源许可</a></header>
+  <main>
+    <div class="actions" aria-label="文件操作">
+      <button id="import">导入</button><input id="file-input" type="file" accept=".md,.markdown,.txt,text/plain,text/markdown" hidden>
+      <button id="export-md" class="primary">导出 MD</button><button id="export-html">导出 HTML</button><button id="print">打印 / PDF</button>
+      <label class="image-option"><input id="allow-images" type="checkbox">加载外部图片</label>
+    </div>
+    <div class="formatbar" role="toolbar" aria-label="Markdown 格式">
+      <button data-format="heading" title="标题">标题</button><button data-format="bold" title="加粗（Ctrl / ⌘ B）" aria-label="加粗"><b>B</b></button><button data-format="italic" title="斜体（Ctrl / ⌘ I）" aria-label="斜体"><i>I</i></button><button data-format="strike" title="删除线" aria-label="删除线"><s>S</s></button><button data-format="quote">引用</button><button data-format="list">列表</button><button data-format="task">任务</button><button data-format="link" title="链接（Ctrl / ⌘ K）">链接</button><button data-format="code">代码</button><button data-format="table">表格</button>
+      <div class="view-switch" role="group" aria-label="显示模式"><button data-mode="edit" aria-pressed="false">编辑</button><button data-mode="preview" aria-pressed="false">预览</button><button data-mode="split" aria-pressed="true">分栏</button></div>
+    </div>
+    <div id="recovery" class="recovery" hidden><span>本地草稿无法读取，已暂停自动保存。原始数据仍保留。</span><button id="raw-draft">下载原始草稿</button><button id="new-draft">另存新草稿</button></div>
+    <div id="workspace" class="workspace" data-mode="split" data-mobile-mode="edit">
+      <section class="pane editor-pane" aria-label="Markdown 源文"><div class="pane-head"><h2>编辑</h2><span>Markdown</span></div><div id="editor"></div></section>
+      <section class="pane preview-pane" aria-label="Markdown 预览"><div class="pane-head"><h2>预览</h2><span>GFM · 代码高亮</span></div><article id="preview" class="markdown-body" tabindex="0" aria-label="预览内容"></article></section>
+    </div>
+  </main>
+  <footer><span id="status" role="status">正在读取本地草稿…</span><span id="count"></span><span class="privacy">内容仅保存在此浏览器 · 原生 HTML 已禁用</span></footer>
+</div>
+<script type="module" src="./assets/app.js"></script>
+</body></html>

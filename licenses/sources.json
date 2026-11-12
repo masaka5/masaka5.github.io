@@ -446,5 +446,90 @@
     "revision": "e7d4227b025258d41132168157d89c2100facd70",
     "license": "MIT",
     "changes": "Protocol reference only; independent Socket.IO/Engine.IO client for an existing user-provided relay. No relay server shipped."
+  },
+  {
+    "project": "toolbox-markdown",
+    "source": "first-party integration using CodeMirror 6, marked, DOMPurify and highlight.js",
+    "sourceArchive": "licenses/markdown-source.zip",
+    "manifest": "licenses/markdown-manifest.json",
+    "changes": "Chinese local Markdown editor and safe live preview; local draft protection and offline HTML export."
+  },
+  {
+    "project": "toolbox-web-adb",
+    "source": "https://github.com/yume-chan/ya-webadb",
+    "sourceArchive": "licenses/web-adb-source.zip",
+    "manifest": "tools/web-adb/manifest.json",
+    "changes": "Chinese self-hosted WebUSB ADB client, PTY, file operations, single APK installation and screenshot. Browser USB authorization required."
+  },
+  {
+    "project": "toolbox-archives",
+    "source": "first-party integration using 7z-wasm",
+    "sourceArchive": "licenses/archive-source.zip",
+    "changes": "Chinese local WASM archive manager; shared 7z-wasm binary, worker cancellation and bounded extraction."
+  },
+  {
+    "project": "toolbox-photo-editor",
+    "source": "https://github.com/viliusle/miniPaint",
+    "version": "4.14.3",
+    "commit": "c9192c15918eb61f7dd89e362cf8065a276b89e9",
+    "license": "MIT; dependencies MIT/BSD/ISC",
+    "sourceArchive": "licenses/photo-editor-source.zip",
+    "manifest": "licenses/photo-editor-manifest.json",
+    "changes": "Chinese local editor, toolbox theme, no accounts, no remote search or fonts; IndexedDB drafts. PSD is not supported."
+  },
+  {
+    "project": "toolbox-creative",
+    "source": "first-party integration",
+    "sourceArchive": "licenses/creative-source.zip",
+    "changes": "Self-hosted Excalidraw, regexpp railroad diagrams and pinyin-pro; Cloudflare usage collector source."
+  },
+  {
+    "project": "excalidraw",
+    "source": "https://github.com/excalidraw/excalidraw",
+    "version": "0.18.1",
+    "license": "MIT"
+  },
+  {
+    "project": "regexpp",
+    "source": "https://github.com/eslint-community/regexpp",
+    "version": "4.12.3",
+    "license": "MIT"
+  },
+  {
+    "project": "pinyin-pro",
+    "source": "https://github.com/zh-lx/pinyin-pro",
+    "version": "3.29.5",
+    "license": "MIT"
+  },
+  {
+    "project": "toolbox-jupyter",
+    "source": "https://github.com/jupyterlite/jupyterlite",
+    "license": "BSD-3-Clause; dependency notices in source package",
+    "sourceArchive": "licenses/jupyter-source.zip",
+    "manifest": "licenses/jupyter-manifest.json",
+    "changes": "Self-hosted Chinese JupyterLite; shares Pyodide with Python IDE; actual notebook cells and local files."
+  },
+  {
+    "project": "toolbox-python-ide",
+    "source": "first-party integration using CodeMirror 6 and Pyodide",
+    "license": "MIT; dependencies retain their licenses",
+    "sourceArchive": "licenses/python-ide-source.zip",
+    "manifest": "licenses/python-ide-manifest.json",
+    "changes": "Chinese browser CPython IDE; Worker execution, file projects and local drafts."
+  },
+  {
+    "project": "toolbox-powershell-ide",
+    "source": "first-party integration using CodeMirror 6, v86 and xterm.js",
+    "license": "MIT; existing Linux and PowerShell guest license notices retained",
+    "sourceArchive": "licenses/powershell-ide-source.zip",
+    "manifest": "licenses/powershell-ide-manifest.json",
+    "changes": "Chinese PowerShell 7 IDE running real Linux PowerShell in existing browser VM; shares guest images."
+  },
+  {
+    "project": "toolbox-react-home",
+    "source": "first-party React 19 / Ant Design 5 integration",
+    "license": "MIT; complete bundled dependency notices included",
+    "sourceArchive": "licenses/home-react-source.zip",
+    "manifest": "licenses/home-react-manifest.json"
   }
 ]

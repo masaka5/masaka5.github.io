@@ -3,41 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f5f7fa" />
-  <meta name="description" content="硬件、网络、系统命令与设备检测工具。" />
-  <title>工具箱 · 工具目录</title>
+  <meta name="theme-color" content="#f5f6f8" />
+  <meta name="description" content="口袋工具箱：硬件、网络、文件、图像与开发工具，按分类搜索，收藏常用工具。" />
+  <title>口袋工具箱 · 工具目录</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/home.css" />
+  <link rel="stylesheet" href="assets/design-system.css" />
+  <link rel="stylesheet" href="assets/home-react/home.css" />
   <script defer src="assets/catalog.js"></script>
   <script defer src="assets/tool-icon-paths.js"></script>
   <script defer src="assets/tool-icons.js"></script>
-  <script defer src="assets/home.js"></script>
+  <script defer src="assets/usage.js"></script>
+  <script defer src="assets/home-react/home.js"></script>
 </head>
 <body>
-  <div class="toolbox">
-    <aside class="sidebar">
-      <a class="brand" href="./" aria-label="工具箱首页"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>工具箱</span></a>
-      <div class="nav-region">
-        <nav class="category-nav" id="categoryNav" aria-label="工具分类"></nav>
-      </div>
-      <label class="category-picker"><span>分类</span><select id="categorySelect" aria-label="工具分类"></select></label>
-    </aside>
-    <main class="main">
-      <header class="page-header">
-        <div class="heading"><div class="heading-title"><h1 id="toolsHeading">全部工具</h1><span id="resultCount" aria-live="polite"></span></div><button id="resetFilters" type="button" hidden>清除筛选</button></div>
-        <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="toolSearch" type="search" placeholder="搜索工具" autocomplete="off" aria-label="搜索工具" /></label>
-      </header>
-      <nav class="mobile-category-nav" id="mobileCategoryNav" aria-label="工具分类"></nav>
-      <section class="tools-region" aria-labelledby="toolsHeading">
-        <div class="tools-viewport" id="toolsViewport">
-          <div class="tool-grid" id="toolGrid"></div>
-          <div class="empty-state" id="emptyState" hidden><h3>未找到工具</h3><button id="resetSearch" type="button">显示全部</button></div>
-        </div>
-        <nav class="pagination" id="pagination" aria-label="工具分页"><div><button id="prevPage" type="button" aria-label="上一页">←</button><span id="pageStatus" role="status" aria-live="polite"></span><button id="nextPage" type="button" aria-label="下一页">→</button></div></nav>
-      </section>
-      <p id="homeStatus" class="home-status" role="status" hidden></p>
-    </main>
-  </div>
-  <noscript><p class="noscript">请启用 JavaScript，以查看工具目录。</p></noscript>
+  <div id="root"></div>
+  <noscript><p>请启用 JavaScript，以查看工具目录。</p></noscript>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'">
+<title>在线图片编辑器 · 口袋工具箱</title>
+<meta name="description" content="无需登录的本地图片编辑器，支持图层、画笔、文字、裁剪、变形、滤镜及图片导入导出。">
+<link rel="icon" href="data:,"><script src="dist/bundle.js"></script><link rel="stylesheet" href="photo-editor.css"><link rel="stylesheet" href="refinements.css">
+</head><body class="theme-light">
+<header class="toolbox-header"><a href="../../" class="toolbox-back">← 口袋工具箱</a><h1>图片编辑器</h1><div class="quick-actions"><button id="new-document">新建</button><button id="open-document">打开图片</button><button id="save-project">保存项目</button><button id="export-image" class="export-primary">导出图片</button></div><button id="editor-help" aria-label="编辑器使用说明">使用说明</button></header>
+<main class="wrapper" aria-label="图片编辑工作区">
+<nav aria-label="编辑菜单" class="main_menu" id="main_menu"></nav>
+<div class="submenu"><span class="logo">图片编辑</span><div class="block attributes" id="action_attributes"></div><button class="undo_button" id="undo_button" type="button"><span class="sr_only">撤销</span></button></div>
+<div class="sidebar_left" id="tools_container" aria-label="绘图工具"></div>
+<div class="middle_area" id="middle_area"><canvas class="ruler_left" id="ruler_left"></canvas><canvas class="ruler_top" id="ruler_top"></canvas><div class="main_wrapper" id="main_wrapper"><div class="canvas_wrapper" id="canvas_wrapper"><div id="mouse"></div><div class="transparent-grid" id="canvas_minipaint_background"></div><canvas id="canvas_minipaint"><div class="trn error">浏览器需要支持 Canvas 并启用 JavaScript。</div></canvas></div></div></div>
+<aside class="sidebar_right" aria-label="图层与属性">
+<div class="preview block"><h2 class="trn toggle" data-target="toggle_preview">Preview</h2><div id="toggle_preview"></div></div>
+<div class="colors block"><h2 class="trn toggle" data-target="toggle_colors">Colors</h2><div class="content" id="toggle_colors"></div></div>
+<div class="block" id="info_base"><h2 class="trn toggle toggle-full" data-target="toggle_info">Information</h2><div class="content" id="toggle_info"></div></div>
+<div class="details block" id="details_base"><h2 class="trn toggle toggle-full" data-target="toggle_details">Layer details</h2><div class="content details-content" id="toggle_details"></div></div>
+<div class="layers block"><h2 class="trn">Layers</h2><div class="content" id="layers_base"></div></div>
+</aside></main>
+<div class="mobile_menu"><button class="left_mobile_menu" id="left_mobile_menu_button" type="button"><span class="sr_only">显示绘图工具</span></button><button class="right_mobile_menu" id="mobile_menu_button" type="button"><span class="sr_only">显示图层和属性</span></button></div>
+<footer class="editor-status"><span id="save-status" role="status">正在加载编辑器…</span><span>图片在本机处理 · <a href="../../licenses/photo-editor.html">开源许可</a></span></footer>
+<div class="hidden" id="tmp"></div><div id="popups"></div>
+<dialog id="help-dialog"><form method="dialog"><h2>图片编辑器</h2><p>从「打开图片」导入本地图片，或新建画布。左侧选择画笔、文字、裁剪等工具，右侧管理图层与属性。</p><p>选择对象后可移动、缩放、旋转；更多调整与滤镜在上方菜单。Ctrl + Z 撤销，Ctrl + Y 重做。</p><p>「导出图片」支持 PNG、JPG、WebP、GIF、BMP 和 TIFF。要保留可编辑图层，请「保存项目」为 JSON，下次使用「打开图片」载入。</p><p>本编辑器不支持 Photoshop PSD 文件。草稿自动保存在当前浏览器，清理网站数据会删除草稿；重要作品请下载项目文件。</p><p>手机可通过下方两侧按钮展开工具和图层。复杂编辑建议使用电脑。</p><button>知道了</button></form></dialog>
+</body></html>

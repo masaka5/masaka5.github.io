@@ -104,6 +104,120 @@ const ToolboxCatalog = {
   ],
   "tools": [
     {
+      "id": "jupyter",
+      "category": "workspace",
+      "name": "Jupyter 笔记本",
+      "description": "Python · 单元格 · 本地笔记本",
+      "href": "tools/jupyter/",
+      "icon": "notebook-tabs",
+      "tags": [
+        "Jupyter",
+        "Python"
+      ],
+      "keywords": "JupyterLite Notebook IPYNB Python 编程 笔记本 运行 WASM",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/jupyter/",
+          "source": "toolbox",
+          "sourceId": "jupyter"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "python-ide",
+      "category": "workspace",
+      "name": "Python IDE",
+      "description": "编辑 · 编译检查 · 运行",
+      "href": "tools/python-ide/",
+      "icon": "file-code-2",
+      "tags": [
+        "Python",
+        "IDE",
+        "WASM"
+      ],
+      "keywords": "Python CPython Pyodide 编译 运行 开发 IDE 代码 控制台",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/python-ide/",
+          "source": "toolbox",
+          "sourceId": "python-ide"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "powershell-ide",
+      "category": "workspace",
+      "name": "PowerShell 7 IDE",
+      "description": "脚本编辑 · 运行 · 交互终端",
+      "href": "tools/powershell-ide/",
+      "icon": "square-terminal",
+      "tags": [
+        "PowerShell",
+        "IDE",
+        "Linux"
+      ],
+      "keywords": "PowerShell pwsh PS1 7 编辑 编译 运行 脚本 终端 IDE Linux",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/powershell-ide/",
+          "source": "toolbox",
+          "sourceId": "powershell-ide"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "web-adb",
+      "category": "hardware",
+      "name": "安卓调试",
+      "description": "Web ADB · 终端 · 文件 · 应用",
+      "href": "tools/web-adb/",
+      "icon": "smartphone",
+      "tags": [
+        "安卓",
+        "ADB",
+        "USB"
+      ],
+      "keywords": "WebADB Android 安卓 调试 终端 文件 APK 安装 截图 WebUSB",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/web-adb/",
+          "source": "toolbox",
+          "sourceId": "web-adb"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "photo-editor",
+      "category": "image",
+      "name": "图片编辑器",
+      "description": "图层 · 选区 · 画笔 · 滤镜",
+      "href": "tools/photo-editor/",
+      "icon": "brush",
+      "tags": [
+        "图片",
+        "编辑",
+        "图层"
+      ],
+      "keywords": "在线 PS Photoshop 图片 编辑 画笔 图层 选区 裁剪 滤镜 miniPaint",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/photo-editor/",
+          "source": "toolbox",
+          "sourceId": "photo-editor"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
       "id": "broadcast",
       "category": "media",
       "name": "直播工作台",
@@ -13701,20 +13815,20 @@ const ToolboxCatalog = {
     {
       "id": "regex-tester",
       "category": "web",
-      "name": "正则表达式测试器",
-      "description": "使用匹配突出显示和组来测试JavaScript正则表达式。",
+      "name": "正则可视化",
+      "description": "",
       "icon": "regex",
       "tags": [],
-      "keywords": "regex tester regular expression pattern match capture groups regexp test regex-tester 正则表达式测试器",
+      "keywords": "正则表达式 结构图 railroad regex regexp 匹配 分组 SVG PNG",
       "variants": [
         {
-          "name": "正则表达式测试器",
-          "href": "../utilities/?tool=regex-tester&embed=1",
-          "source": "openutility",
+          "name": "正则可视化",
+          "href": "../creative/regex.html",
+          "source": "toolbox",
           "sourceId": "regex-tester"
         }
       ],
-      "href": "tools/tool/?id=regex-tester",
+      "href": "tools/creative/regex.html",
       "iconBadge": ".*"
     },
     {
@@ -21392,20 +21506,20 @@ const ToolboxCatalog = {
     {
       "id": "markdown",
       "category": "text",
-      "name": "Markdown 预览",
+      "name": "Markdown 编辑器",
       "description": "",
       "icon": "notebook-pen",
       "tags": [],
-      "keywords": " markdown Markdown 预览",
+      "keywords": "Markdown 编辑 实时预览 笔记 MD GFM 导入 导出 HTML 本地草稿",
       "variants": [
         {
-          "name": "Markdown 预览",
-          "href": "../conversion/?tool=dev-tools/markdown&embed=1",
-          "source": "localconvert",
-          "sourceId": "dev-tools/markdown"
+          "name": "Markdown 编辑器",
+          "href": "../markdown/",
+          "source": "toolbox",
+          "sourceId": "markdown"
         }
       ],
-      "href": "tools/tool/?id=markdown",
+      "href": "tools/markdown/",
       "iconBadge": ""
     },
     {
@@ -21430,46 +21544,20 @@ const ToolboxCatalog = {
     {
       "id": "archives",
       "category": "files",
-      "name": "压缩包工具",
-      "description": "ZIP · RAR · 7Z · TAR · 解压与打包",
+      "name": "7-Zip 压缩工具",
+      "description": "",
       "icon": "archive",
       "tags": [],
-      "keywords": "extract-archive archives 压缩包工具 create-zip convert-to-zip compress-file decompress-file inspect-archive",
+      "keywords": "7zip 7-Zip wasm ZIP 7z RAR TAR GZIP BZIP2 XZ 压缩 解压 加密 密码 文件管理",
       "variants": [
         {
-          "name": "压缩包工具",
-          "href": "../studio/?embed=1&tool=archives",
-          "source": "zro7-reference",
-          "sourceId": "extract-archive",
-          "origins": [
-            {
-              "source": "zro7-reference",
-              "sourceId": "extract-archive"
-            },
-            {
-              "source": "zro7-reference",
-              "sourceId": "create-zip"
-            },
-            {
-              "source": "zro7-reference",
-              "sourceId": "convert-to-zip"
-            },
-            {
-              "source": "zro7-reference",
-              "sourceId": "compress-file"
-            },
-            {
-              "source": "zro7-reference",
-              "sourceId": "decompress-file"
-            },
-            {
-              "source": "zro7-reference",
-              "sourceId": "inspect-archive"
-            }
-          ]
+          "name": "7-Zip 压缩工具",
+          "href": "../archives/",
+          "source": "toolbox",
+          "sourceId": "archives"
         }
       ],
-      "href": "tools/tool/?id=archives",
+      "href": "tools/archives/",
       "iconBadge": ""
     },
     {
@@ -22045,20 +22133,20 @@ const ToolboxCatalog = {
     {
       "id": "whiteboard",
       "category": "collaboration",
-      "name": "白板",
-      "description": "画笔 · 撤销 · 自动暂存",
-      "icon": "presentation",
+      "name": "画布",
+      "description": "",
+      "icon": "pencil-ruler",
       "tags": [],
-      "keywords": "whiteboard 白板",
+      "keywords": "Excalidraw 白板 手绘 图片 绘图 导入 导出 画布",
       "variants": [
         {
-          "name": "白板",
-          "href": "../studio/?embed=1&tool=whiteboard",
-          "source": "zro7-reference",
+          "name": "画布",
+          "href": "../creative/canvas.html",
+          "source": "toolbox",
           "sourceId": "whiteboard"
         }
       ],
-      "href": "tools/tool/?id=whiteboard",
+      "href": "tools/creative/canvas.html",
       "iconBadge": ""
     },
     {
@@ -22191,6 +22279,25 @@ const ToolboxCatalog = {
       ],
       "href": "tools/tool/?id=voice-dialogue",
       "iconBadge": "音频"
+    },
+    {
+      "id": "pinyin",
+      "tags": [],
+      "name": "汉字转拼音",
+      "category": "text",
+      "description": "",
+      "href": "tools/creative/pinyin.html",
+      "keywords": "中文 拼音 首字母 声调 多音字 pinyin",
+      "variants": [
+        {
+          "name": "汉字转拼音",
+          "href": "../creative/pinyin.html",
+          "source": "toolbox",
+          "sourceId": "pinyin"
+        }
+      ],
+      "icon": "languages",
+      "iconBadge": ""
     }
   ]
 };

@@ -1,0 +1,12 @@
+Source: https://github.com/excalidraw/excalidraw/blob/v0.18.1/packages/excalidraw/fonts/Liberation/index.ts
+
+import LiberationSansRegular from "./LiberationSans-Regular.woff2";
+
+import { type ExcalidrawFontFaceDescriptor } from "../Fonts";
+
+export const LiberationFontFaces: ExcalidrawFontFaceDescriptor[] = [
+  {
+    uri: LiberationSansRegular,
+  },
+];
+

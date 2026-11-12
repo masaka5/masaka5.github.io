@@ -1,0 +1,13 @@
+@import url('../../assets/design-system.css');
+/* Toolbox adaptation; keep JupyterLab's native notebook interactions. */
+:root{--jp-brand-color0:#1d4ed8;--jp-brand-color1:#2563eb;--jp-brand-color2:#60a5fa;--jp-brand-color3:#dbeafe;--jp-ui-font-family:system-ui,"Microsoft YaHei",sans-serif;--jp-layout-color2:#f3f4f6;--jp-border-color1:#e5e7eb}
+html,body{width:100%;height:100%;overflow:hidden!important}
+body{padding-top:44px!important;box-sizing:border-box;transition:none!important}
+#toolbox-header{position:fixed;inset:0 0 auto;height:44px;z-index:10000;display:flex;align-items:center;gap:18px;padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));box-sizing:border-box;border-bottom:1px solid #e5e7eb;background:#fff;color:#374151;font:13px system-ui,"Microsoft YaHei",sans-serif}
+#toolbox-header a{color:#2563eb;text-decoration:none;white-space:nowrap}#toolbox-header a:focus-visible{outline:2px solid #2563eb;outline-offset:3px}#toolbox-header strong{font-weight:600;color:#111827}#toolbox-header .hint{margin-left:auto;color:#6b7280;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#toolbox-header .license{margin-left:auto}
+#jp-main-dock-panel{min-width:0}.jp-SideBar{min-width:0}#jupyterlite-loading-indicator{inset:44px 0 0;height:auto!important}.jupyterlite-moon{animation:none!important}.jupyterlite-loading-indicator-text{font-family:system-ui,"Microsoft YaHei",sans-serif!important}
+@media(max-width:600px){#toolbox-header{gap:10px;font-size:12px}#toolbox-header .hint{display:none}.jp-FileBrowser{min-width:150px!important}.jp-Launcher-card{min-width:90px!important}.jp-Notebook{padding:8px!important}.jp-InputPrompt,.jp-OutputPrompt{width:40px!important;flex:0 0 40px!important}}
+@media(max-width:600px){.lm-MenuBar{overflow-x:auto!important;overflow-y:hidden!important}.lm-MenuBar-content{min-width:max-content!important}.lm-MenuBar-item{padding-left:7px!important;padding-right:7px!important}.jp-StatusBar-item{white-space:nowrap}.jp-StatusBar-Left{overflow:hidden}.jp-StatusBar-Right{min-width:0;overflow:hidden}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+html:root{--jp-brand-color0:#284fa9;--jp-brand-color1:#315fc9;--jp-brand-color2:#6f93dc;--jp-brand-color3:#eef3ff;--jp-layout-color2:#f5f6f8;--jp-border-color1:#e3e7ed;--jp-ui-font-family:"Microsoft YaHei","Segoe UI",system-ui,sans-serif}
+#toolbox-header{border-color:var(--line);color:var(--text);font-family:var(--font-ui)}#toolbox-header a{color:var(--blue)}#toolbox-header strong{color:var(--text)}#toolbox-header .hint{color:var(--muted)}

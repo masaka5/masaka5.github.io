@@ -1,0 +1,26 @@
+name: 工具使用次数快照
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: toolbox-usage-snapshot
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/usage-snapshot.cjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node .github/usage-snapshot.cjs
+        env:
+          USAGE_API_URL: ${{ vars.USAGE_API_URL }}
+          USAGE_SNAPSHOT_TOKEN: ${{ secrets.USAGE_SNAPSHOT_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

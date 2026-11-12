@@ -1,0 +1,267 @@
+{
+  "name": "toolbox-powershell-ide",
+  "version": "1.0.0",
+  "entry": "tools/powershell-ide/",
+  "build": "npm ci && npm test && npm run build && npm run package-source",
+  "license": "MIT integration; shared runtime licenses retained",
+  "runtime": {
+    "engine": "v86 c3945744",
+    "guest": "Alpine x86_64 / PowerShell 7.4.13",
+    "memoryMiB": 1024,
+    "execution": "actual pwsh -NoLogo -File in browser VM",
+    "network": "offline",
+    "additionalImageBytes": 0
+  },
+  "dependencies": [
+    {
+      "name": "@codemirror/commands",
+      "version": "6.11.1",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/commands/-/commands-6.11.1.tgz",
+      "integrity": "sha512-O/4hG3SC1YwcmQ0d2UVNDs+AsaNWd1iHVxbTeEBuqH+6bExAiPK3iS/BvpY6rZGURALv4ZD3sIgcCmRvw3ehBg==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/commands.git"
+    },
+    {
+      "name": "@codemirror/language",
+      "version": "6.13.1",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/language/-/language-6.13.1.tgz",
+      "integrity": "sha512-zfvU2r3TyylQLMj/te+5CnQ0rSqZi8B1oTCBbQkagcLW4Xc6imab6qN+pEJhsuNOLaJqiRyBXp9UhWA1DhVvDw==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/language.git"
+    },
+    {
+      "name": "@codemirror/legacy-modes",
+      "version": "6.5.3",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/legacy-modes/-/legacy-modes-6.5.3.tgz",
+      "integrity": "sha512-xCsmIzH78MyWkib9jlPaaun57XNkfbMIhagfaZVd0iLTqlpw3jXaIcbZm72MTmmn64eTZpBVNjbyYh+QXnxRsg==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/legacy-modes.git"
+    },
+    {
+      "name": "@codemirror/state",
+      "version": "6.7.6",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/state/-/state-6.7.6.tgz",
+      "integrity": "sha512-kAz+AncRtKuIknedxT1bq4XwXv4UowhbkHU1myPrtVb/jZtImWuV5BXzv5vK6i3kYACsdiZiQKFQQ5Mq7elW8w==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/state.git"
+    },
+    {
+      "name": "@codemirror/streamparser",
+      "version": "6.0.0",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/streamparser/-/streamparser-6.0.0.tgz",
+      "integrity": "sha512-JTFPF6xrfjt0mnfGPgzcLiMwYmvIyNaoizp8BYzv8FE8KrT6GBGDZ190rtt+O7Wke3gG/MFHyiY9YGNeimof4w==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/streamparser.git"
+    },
+    {
+      "name": "@codemirror/view",
+      "version": "6.43.15",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@codemirror/view/-/view-6.43.15.tgz",
+      "integrity": "sha512-HHsfpqFeHyXLs983pSRe38Xajs0vFWZQ2BuX0m7Ki8w3jZ5iD8cuR3lBz2/5/X53Dhf32SBHKh6rtSTB6tKeGw==",
+      "repository": "git+https://code.haverbeke.berlin/codemirror/view.git"
+    },
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+      "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g==",
+      "repository": "git+https://github.com/evanw/esbuild.git"
+    },
+    {
+      "name": "@lezer/common",
+      "version": "1.5.5",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/common/-/common-1.5.5.tgz",
+      "integrity": "sha512-Pw7PVCndruF1pb3ebCxpSVpkMHSDjwRCLcTRw+RizUKco5QbWylwq2g4lnG/RYN7yTTQDXE9F77MwtkAyphrjg==",
+      "repository": "git+https://code.haverbeke.berlin/lezer/common.git"
+    },
+    {
+      "name": "@lezer/highlight",
+      "version": "1.2.5",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/highlight/-/highlight-1.2.5.tgz",
+      "integrity": "sha512-O1GMVKgtf5YspFaRzpmqkVgMtIk2HG9uMAbH6wdAIdNh3TVzCsch/+cRi+6l2//UGDKe6NB9BW3cvuR5ezMQ0w==",
+      "repository": "git+https://code.haverbeke.berlin/lezer/highlight.git"
+    },
+    {
+      "name": "@lezer/lr",
+      "version": "1.4.12",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@lezer/lr/-/lr-1.4.12.tgz",
+      "integrity": "sha512-On9HU4oMMiHPMkQDgoTnGahjgG5n/MkN38CgG77sMraKLL+3JBbeQNi1FcCXV9QRqwF9/BUXP3caHyJC1fBOTQ==",
+      "repository": "git+https://code.haverbeke.berlin/lezer/lr.git"
+    },
+    {
+      "name": "@marijn/find-cluster-break",
+      "version": "1.0.4",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/@marijn/find-cluster-break/-/find-cluster-break-1.0.4.tgz",
+      "integrity": "sha512-Wy0V7+SGUjnF9/TkiM1hKVDPj7jKXduPNboMVtHTA8dySMURWqfg/JZ9E2Sq8JgSJmkl7k7Qe9FLeMSrSraWmQ==",
+      "repository": "git+https://code.haverbeke.berlin/marijn/find-cluster-break.git"
+    },
+    {
+      "name": "crelt",
+      "version": "1.0.7",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/crelt/-/crelt-1.0.7.tgz",
+      "integrity": "sha512-aK6BbWfhf4U/wCcLHKPJl/xa6VkVstRaPywWtMKGwuOLc/wZTyQYuoxgvZnNsBvv7Kg3YTBQYYBCggcviQczuA==",
+      "repository": "git+https://code.haverbeke.berlin/marijn/crelt.git"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.2",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+      "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==",
+      "repository": "git+https://github.com/evanw/esbuild.git"
+    },
+    {
+      "name": "fflate",
+      "version": "0.8.3",
+      "license": "MIT",
+      "developmentOnly": true,
+      "source": "https://registry.npmjs.org/fflate/-/fflate-0.8.3.tgz",
+      "integrity": "sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==",
+      "repository": "https://github.com/101arrowz/fflate"
+    },
+    {
+      "name": "style-mod",
+      "version": "4.1.4",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/style-mod/-/style-mod-4.1.4.tgz",
+      "integrity": "sha512-XXWIQt633/EpAFx8aZDOTjBzrCaGmhvEQlQo6MVPfa2OzO2cWo+4hV9h+6UkHYlXGfy+ODXKUdP7Pthmcu5ATw==",
+      "repository": "git+https://code.haverbeke.berlin/marijn/style-mod.git"
+    },
+    {
+      "name": "w3c-keyname",
+      "version": "2.2.8",
+      "license": "MIT",
+      "developmentOnly": false,
+      "source": "https://registry.npmjs.org/w3c-keyname/-/w3c-keyname-2.2.8.tgz",
+      "integrity": "sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==",
+      "repository": "git+https://github.com/marijnh/w3c-keyname.git"
+    }
+  ],
+  "sharedSource": "licenses/integration-source.zip",
+  "sharedProvenance": "licenses/sources.json",
+  "files": [
+    {
+      "path": "tools/powershell-ide/app.css",
+      "bytes": 6874,
+      "sha256": "354bcc8d5bdc770ea2eaf9d714820b438dcfcd56bdffb99cd63f56e64a696d55"
+    },
+    {
+      "path": "tools/powershell-ide/app.js",
+      "bytes": 321222,
+      "sha256": "e8812e6da9ef13fd1c7920bc1331d5adab2155e6f3ec7bc32031710ef6673b19"
+    },
+    {
+      "path": "tools/powershell-ide/index.html",
+      "bytes": 4052,
+      "sha256": "e81b8feef556c6a31437ad7894533bf6be482c914b322a3c5f566dab60f85f4e"
+    },
+    {
+      "path": "licenses/powershell-ide-third-party.txt",
+      "bytes": 33626,
+      "sha256": "6a8075b169deccc4588df64ec632aea665d28cc8837fa658be05573b5fc37dda"
+    },
+    {
+      "path": "licenses/powershell-ide-MIT.txt",
+      "bytes": 1077,
+      "sha256": "a155a55d7471155ae98a7b2bec9afc01fd0958ab6479ee388b5d691b946a701d"
+    },
+    {
+      "path": "licenses/powershell-ide-source.zip",
+      "bytes": 1427319,
+      "sha256": "b0cef17cd5e0b7b4499d40f30605d18dc96d4a8fef15a20dd5be6545e30aebbe"
+    },
+    {
+      "path": "licenses/powershell-ide.html",
+      "bytes": 1991,
+      "sha256": "ed1bb2e639b079ff957fe2f0862eebb85f8a7ce78aac1876b2bfd6a6201c3935"
+    }
+  ],
+  "shared": [
+    {
+      "path": "vendor/v86/libv86.js",
+      "bytes": 381780,
+      "sha256": "135db10e8b0e045747d8962664f0dfd9260f1f7ee6483b8396cdde29bb2a9be7"
+    },
+    {
+      "path": "vendor/v86/v86.wasm",
+      "bytes": 3158226,
+      "sha256": "fc9e655c68eaf8aed50ccf987897bfb211ae793832b498a6d9c6a4733618ad2b"
+    },
+    {
+      "path": "vendor/v86/seabios.bin",
+      "bytes": 131072,
+      "sha256": "73e3f359102e3a9982c35fce98eb7cd08f18303ac7f1ba6ebfbe6cdc1c244d98"
+    },
+    {
+      "path": "vendor/v86/vgabios.bin",
+      "bytes": 36352,
+      "sha256": "a4bc0d80cc3ca028c73dafa8fee396b8d054ce87ebd8abfbd31b06b437607880"
+    },
+    {
+      "path": "vendor/xterm/xterm.js",
+      "bytes": 289441,
+      "sha256": "1f991ac3b4b283ebf96e60ae23a00a52765dd3a2e46fa6fdda9f1aab032f7495"
+    },
+    {
+      "path": "vendor/xterm/xterm.css",
+      "bytes": 5559,
+      "sha256": "ba8e6985669488981ccf40c0cefe3aba80722cb6c92de7ad628b0bd717faf2b6"
+    },
+    {
+      "path": "vendor/xterm/addon-fit.js",
+      "bytes": 1497,
+      "sha256": "bdaefa370b1bfc42ee88d46fe6072400902a4d4b2d45cd93438dda9b23c97089"
+    },
+    {
+      "path": "vendor/xterm/addon-unicode11.js",
+      "bytes": 12253,
+      "sha256": "b0c3be540a9984713aea996966c24ed1a639d11f60d44986b22661e3a8a148d0"
+    },
+    {
+      "path": "tools/webvm/vm-core.js",
+      "bytes": 7725,
+      "sha256": "f4ba2436293ed5195d033223b06acc789a8ee62b7564f78af2bb0218effc6008"
+    },
+    {
+      "path": "tools/webvm/images/vmlinuz.bin",
+      "bytes": 10433536,
+      "sha256": "2743b9622b2e6a3b9dd09817baaf2c1f98dfc2e0fa5241a4285303f22d3433e5"
+    },
+    {
+      "path": "tools/webvm/images/toolbox-x64-pwsh.part1.bin",
+      "bytes": 50331648,
+      "sha256": "a5af7ec12013fb138f01e56fd595be557b249630fb3c9c0306b0b989cb3323a3"
+    },
+    {
+      "path": "tools/webvm/images/toolbox-x64-pwsh.part2.bin",
+      "bytes": 50331648,
+      "sha256": "495c90be97568a213807ee72f8fd7f40c1cc8d912a61981c261839496064b1fe"
+    },
+    {
+      "path": "tools/webvm/images/toolbox-x64-pwsh.part3.bin",
+      "bytes": 22138380,
+      "sha256": "1bc9c4b655f731328864625f6e284bb4ae4280cee2853a1eae7802197abfbb57"
+    }
+  ]
+}

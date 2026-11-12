@@ -1,0 +1,33 @@
+@import url('../../assets/design-system.css');
+/* Compact the inspector so layers remain visible while editing. */
+#toolbox-notifications{position:fixed;right:16px;bottom:42px;display:grid;gap:8px;max-width:min(350px,calc(100vw - 32px));z-index:10000;pointer-events:none}.toolbox-notice{padding:12px 16px;border:1px solid #d5dfef;border-radius:8px;background:#fff;box-shadow:0 5px 24px #20304922;color:#344258;font:12px/1.7 'Microsoft YaHei',sans-serif;pointer-events:auto;cursor:pointer}.toolbox-notice.error{border-left:3px solid #c24949}.toolbox-notice.warning{border-left:3px solid #c28d2a}.toolbox-notice.success{border-left:3px solid #285de5}
+.submenu .logo{background-image:none!important;width:110px;padding-left:12px;pointer-events:none}
+.submenu .logo:after{display:none}
+.sidebar_right{display:grid;grid-template-rows:auto auto auto auto minmax(125px,1fr);align-content:start;overflow-y:auto;gap:8px;min-height:0;min-width:0;margin-right:0;padding-right:5px}
+.sidebar_right>*{min-width:0;max-width:100%}
+.sidebar_right .content{min-width:0}
+#toggle_colors{overflow:auto}
+#color_hex_label{white-space:nowrap;width:42px;min-width:42px}
+#layer_duplicate,#layer_raster{padding:2px 5px;font-size:11px;margin-right:3px}
+.sidebar_right .layer_add{margin-right:4px}.sidebar_right .layers_arrow{padding:2px 5px;margin-left:3px}
+.sidebar_right .block{margin:0;min-height:0;flex-shrink:0}
+.sidebar_right .block.layers{overflow:auto}
+.sidebar_right .block.layers .content{padding-bottom:8px}
+.sidebar_right .block h2{padding:5px 8px}
+.canvas_preview_wrapper{height:58px;overflow:hidden;margin-bottom:4px}
+.preview canvas{height:58px!important;max-width:100%;object-fit:contain;object-position:top left}
+.canvas_preview_details{padding-bottom:4px}
+.ui_color_picker_gradient{height:112px;padding-bottom:0}
+.details-content{height:162px}
+#info_base{display:none}
+.details input{padding:3px 6px}
+.main_menu>ul.menu_bar>li>a{font-size:12px}
+@media(max-width:700px){.main_menu>ul.menu_bar{height:30px;padding:0 2px}.sidebar_right{display:flex;gap:8px}.sidebar_right .block.layers{flex:1;min-height:140px}.sidebar_right .block{flex-shrink:0}.mobile_menu{position:fixed;height:42px;z-index:15;bottom:28px!important}.left_mobile_menu,.right_mobile_menu{width:42px;height:42px;background:#ffffffed;border:1px solid #dce3ed;border-radius:6px}.toolbox-header{z-index:200}}
+@media(max-height:740px) and (min-width:701px){.sidebar_right{grid-template-rows:auto auto auto auto minmax(105px,1fr)}.preview .canvas_preview_wrapper{display:none}.details-content{height:132px}.colors .content{max-height:155px;overflow:auto}}
+html body.theme-light{background:var(--bg);color:var(--text)}
+html body .toolbox-header{background:var(--surface);border-color:var(--line);color:var(--text)}
+html body .toolbox-header button{border-color:var(--line);border-radius:var(--radius-control);color:var(--text)}
+html body .toolbox-header .export-primary{background:var(--blue);border-color:var(--blue);color:white}
+html body .toolbox-back{color:var(--blue)}
+html body .sidebar_right .block{border-color:var(--line);border-radius:var(--radius-panel);box-shadow:none}
+html body .sidebar_right .block h2{background:var(--surface);color:var(--text);border-color:var(--line)}

@@ -1,0 +1,11 @@
+{
+  "name":"pocket-toolbox-usage",
+  "main":"src/worker.js",
+  "compatibility_date":"2025-11-18",
+  "account_id":"d40afc0a5b240a63941928b29f5d9f14",
+  "workers_dev":true,
+  "observability":{"enabled":false},
+  "triggers":{"crons":["17 3 * * *"]},
+  "vars":{"ALLOWED_ORIGINS":"https://tools.manshii.asia,https://masaka5.github.io"},
+  "d1_databases":[{"binding":"DB","database_name":"pocket-toolbox-usage","database_id":"8ae6ab98-005f-49a5-b4ad-02c88e7d7da8"}]
+}

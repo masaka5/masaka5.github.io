@@ -1,0 +1,7 @@
+{
+  "file": "web-adb-source.zip",
+  "bytes": 1315311,
+  "sha256": "a1cb6fe879a66cb271cb5214011494c6b591cd9480457cae046d11bdda4ae07e",
+  "entries": 880,
+  "layout": "Repository-relative integration, tests and runtime; published dependency sources in upstream/. Excludes platform binaries; npm ci restores dependencies."
+}

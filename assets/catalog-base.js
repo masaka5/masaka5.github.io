@@ -11,6 +11,11 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'jupyter',category:'workspace',name:'Jupyter 笔记本',description:'Python · 单元格 · 本地笔记本',href:'tools/jupyter/',icon:'notebook-tabs',tags:['Jupyter','Python'],keywords:'JupyterLite Notebook IPYNB Python 编程 笔记本 运行 WASM'},
+    {id:'python-ide',category:'workspace',name:'Python IDE',description:'编辑 · 编译检查 · 运行',href:'tools/python-ide/',icon:'file-code-2',tags:['Python','IDE','WASM'],keywords:'Python CPython Pyodide 编译 运行 开发 IDE 代码 控制台'},
+    {id:'powershell-ide',category:'workspace',name:'PowerShell 7 IDE',description:'脚本编辑 · 运行 · 交互终端',href:'tools/powershell-ide/',icon:'square-terminal',tags:['PowerShell','IDE','Linux'],keywords:'PowerShell pwsh PS1 7 编辑 编译 运行 脚本 终端 IDE Linux'},
+    {id:'web-adb',category:'hardware',name:'安卓调试',description:'Web ADB · 终端 · 文件 · 应用',href:'tools/web-adb/',icon:'smartphone',tags:['安卓','ADB','USB'],keywords:'WebADB Android 安卓 调试 终端 文件 APK 安装 截图 WebUSB'},
+    {id:'photo-editor',category:'image',name:'图片编辑器',description:'图层 · 选区 · 画笔 · 滤镜',href:'tools/photo-editor/',icon:'brush',tags:['图片','编辑','图层'],keywords:'在线 PS Photoshop 图片 编辑 画笔 图层 选区 裁剪 滤镜 miniPaint'},
     {id:'broadcast',category:'media',name:'直播工作台',description:'场景合成 · 混音 · 推流 · 录制',href:'tools/broadcast/',icon:'radio',tags:['直播','场景','录制'],keywords:'OBS 摄像头 屏幕 窗口 直播 RTMP WHIP 字幕 绿幕 水印 混音'},
     {id:'drawio',category:'collaboration',name:'思维导图与流程图',description:'draw.io · 绘图 · 本地草稿',href:'tools/drawio/',icon:'workflow',tags:['绘图','流程图','思维导图'],keywords:'draw.io diagrams.net 脑图 UML XML SVG PNG'},
     {id:'tiptap',category:'text',name:'富文本文档',description:'Tiptap · 排版 · 表格 · 图片',href:'tools/office-editors/document.html',icon:'file-pen-line',tags:['文档','排版','Tiptap'],keywords:'富文本 编辑器 文档 JSON HTML 本地 草稿'},

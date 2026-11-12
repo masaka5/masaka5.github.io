@@ -12,6 +12,7 @@
   let category = 'all';
   let page = 0;
   let capacity = 1;
+  let usageCounts = Object.create(null), tracker;
   function readFavorites() {
     try {
       const saved = JSON.parse(localStorage.getItem(favoritesKey) || '[]');
@@ -58,6 +59,8 @@
       const card = element('article', 'tool-card');
       const link = element('a', 'tool-link');
       link.href = tool.href;
+      link.addEventListener('click', event => { if (event.isTrusted && event.button === 0) tracker?.track(tool.id); });
+      link.addEventListener('auxclick', event => { if (event.isTrusted && event.button === 1) tracker?.track(tool.id); });
       card.dataset.tool = tool.id;
       card.dataset.group = tool.category;
       card.dataset.icon = tool.icon;
@@ -87,20 +90,28 @@
           (next || search).focus();
         }
       });
-      card.append(link, favorite);
+      const usage = element('span', 'tool-usage', '打开 — 次');
+      usage.title = '累计打开次数';
+      card.append(link, favorite, usage);
       cards.push(card);
       grid.append(card);
     }
   }
 
   function render() {
+    const focused = grid.contains(document.activeElement) ? document.activeElement : null;
+    const sortedIds = ToolboxUsage.rank(cards.map(card => card.dataset.tool), usageCounts);
+    const order = new Map(sortedIds.map((id, index) => [id,index]));
     const query = search.value.trim().toLocaleLowerCase();
-    const filtered = cards.filter(card => (category === 'all' || category === 'favorites' && favorites.has(card.dataset.tool) || card.dataset.group === category) && card.dataset.search.includes(query));
+    const filtered = cards.filter(card => (category === 'all' || category === 'favorites' && favorites.has(card.dataset.tool) || card.dataset.group === category) && card.dataset.search.includes(query)).sort((a,b)=>order.get(a.dataset.tool)-order.get(b.dataset.tool));
+    for (const card of filtered) grid.append(card);
     const pages = Math.max(1, Math.ceil(filtered.length / capacity));
     page = Math.max(0, Math.min(page, pages - 1));
     const visible = new Set(filtered.slice(page * capacity, (page + 1) * capacity));
     for (const card of cards) {
       card.hidden = !visible.has(card);
+      const count = usageCounts[card.dataset.tool];
+      card.querySelector('.tool-usage').textContent = '打开 ' + (count === undefined ? '—' : count.toLocaleString('zh-CN')) + ' 次';
       const button = card.querySelector('.favorite-toggle'), saved = favorites.has(card.dataset.tool);
       const name = card.querySelector('h3').textContent;
       button.setAttribute('aria-pressed', String(saved));
@@ -118,6 +129,7 @@
     document.getElementById('pageStatus').textContent = `${page + 1} / ${pages}`;
     document.getElementById('prevPage').disabled = page === 0;
     document.getElementById('nextPage').disabled = page === pages - 1;
+    if (focused && !focused.closest('.tool-card').hidden) focused.focus({preventScroll:true});
   }
   function chooseCategory(value) {
     category = value;
@@ -166,5 +178,6 @@
   window.addEventListener('storage', event => {
     if (event.key === favoritesKey || event.key === null) { favorites = readFavorites(); render(); }
   });
+  tracker = ToolboxUsage.start(tools.map(tool => tool.id), counts => { usageCounts = counts; render(); });
   measure();
 })();

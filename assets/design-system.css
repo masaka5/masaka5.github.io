@@ -14,6 +14,10 @@ html:root {
   --accent: var(--blue);
   --radius-panel: 10px;
   --radius-control: 7px;
+  --font-ui: "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+  --font-code: Consolas, "Cascadia Code", "Microsoft YaHei", monospace;
+  --control-height: 34px;
+  --focus-ring: #315fc92e;
 }
 
 html body {
@@ -37,8 +41,51 @@ html body button.text-button {
 
 html body .ops-panel,
 html body .studio-controls,
-html body .studio-stage {
+html body .studio-stage,
+html body .tool-panels > .panel,
+html body .archive-shell .settings,
+html body .archive-shell .browser {
   border-radius: var(--radius-panel);
+  border-color: var(--line);
+  background: var(--surface);
+  box-shadow: none;
+}
+
+html body :is(.ops-header, .tool-header, .panel-head, .panel-title) {
+  border-color: var(--line);
+}
+
+html body :is(button.primary, a.primary) {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+html body :is(button.secondary, a.secondary) {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text);
+  font-weight: 500;
+  box-shadow: none;
+}
+
+html body :is(button.primary, button.secondary):focus-visible,
+html body :is(input, select, textarea):focus-visible {
+  outline-color: var(--blue);
+}
+
+html body :is(.ops-panel, .panel, .studio-controls, .studio-stage) h2 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+html body dialog {
+  border-color: var(--line);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  color: var(--text);
 }
 
 html body .status[data-tone="error"] {

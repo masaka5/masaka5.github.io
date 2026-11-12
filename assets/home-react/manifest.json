@@ -1,0 +1,19 @@
+{
+  "name": "pocket-toolbox-react-home",
+  "framework": "React 19 + Ant Design 5",
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "antd": "5.29.3"
+  },
+  "artifacts": {
+    "home.js": {
+      "bytes": 762605,
+      "sha256": "d46be2e1f2dd74a0ba7ac834de66b02c9864cdf7ccf440c9ad1ae538b539eb8e"
+    },
+    "home.css": {
+      "bytes": 12543,
+      "sha256": "4f58e86e45c6ec48dfedf396516f37cbc069433ea4009ca77455c6b292184391"
+    }
+  }
+}

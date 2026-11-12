@@ -1,0 +1,21 @@
+@import url('./design-system.css');
+
+/* Shared shell only: preserve native canvas, editor and terminal controls. */
+html body :is(.connection,.panels,.action-card,.pane,.canvas-panel,aside,.work){
+  border-color:var(--line);border-radius:var(--radius-panel);background:var(--surface);box-shadow:none;
+}
+html body :is(.toolbar,.actions,.formatbar,.header-actions,.connection-actions,.file-actions,.panel-head,.pane-head,.terminal-keys,header,.pathbar,.operation,.mobile-tabs,.zoom) > button,
+html body .tab,html body .file-label {
+  border-radius:var(--radius-control);font-weight:500;
+}
+html body :is(.toolbar,.actions,.formatbar,.header-actions,.connection-actions,.file-actions,.panel-head,.pane-head,.terminal-keys,header,.pathbar,.operation,.mobile-tabs,.zoom) > button:not(.primary):not(.tab):not([aria-pressed=true]) {
+  background:var(--surface);border-color:var(--line);color:var(--text);
+}
+html body :is(.tab.active,.file[aria-current=true],.mobile-tabs button[aria-pressed=true],.view-switch button[aria-pressed=true]){background:#eef3ff;color:var(--blue);border-color:#cdd9f1}
+html body :is(header,footer,.panel-head,.pane-head,.io,.input-panel,.info-cell,.pathbar input,.file-list,.file-row,.guide,.capture-preview){border-color:var(--line)}
+html body :is(header a,.license,.file-type){color:var(--blue)}
+html body :is(.engine,.connection p,#connection-state,.panel-heading p,.info-cell span,.note,.operation,footer,.status,.pane-head span,.panel-head>span){color:var(--muted)}
+html body :is(.creative,.markdown-app,.app)>header h1{font-size:18px;font-weight:600}
+html body :is(.pane-head,.panel-head,.panel-heading) h2{font-size:14px;font-weight:600}
+html body .canvas-panel .excalidraw{--color-primary:#315fc9;--color-primary-darker:#284fa9;--color-primary-darkest:#203f87;--color-primary-light:#eef3ff;--border-radius-lg:10px;--border-radius-md:7px}
+@media(max-width:700px){html body :is(.creative,.markdown-app,.app)>header h1{font-size:16px}}
