@@ -1,4 +1,4 @@
-import { normalizeProject, normalizeSource, SOURCE_TYPES, uid, clamp } from './broadcast-core.js';
+import { normalizeProject, normalizeSource, SOURCE_TYPES, DEFAULT_OUTPUT, OUTPUT_LIMITS, uid, clamp } from './broadcast-core.js';
 import { Compositor } from './compositor.js';
 
 const LABELS={camera:'摄像头',screen:'屏幕共享',window:'窗口共享',microphone:'麦克风',image:'图片',video:'视频',text:'文字',countdown:'倒计时'};
@@ -46,6 +46,7 @@ export class BroadcastEngine {
     const project=normalizeProject(snapshot);
     if(this.recording)throw new Error('录制时不能替换整个项目');
     if(!this.compositor)await this.initialize();
+    this._validateOutput(project);
     const staged=new Map();
     try {
       for(const scene of project.scenes)for(const source of scene.sources){
@@ -117,8 +118,19 @@ export class BroadcastEngine {
     for(const scene of this.project.scenes){const index=scene.sources.findIndex(s=>s.id===id);if(index<0)continue;
       const next=Math.max(0,Math.min(scene.sources.length-1,index+Math.sign(delta)));const [source]=scene.sources.splice(index,1);scene.sources.splice(next,0,source);this._dirty=true;this._emit();return;}
   }
+  getOutputLimits() {
+    const gl=this.compositor?.gl;
+    if(!gl)return {maxWidth:OUTPUT_LIMITS.maxDimension,maxHeight:OUTPUT_LIMITS.maxDimension};
+    const viewport=gl.getParameter(gl.MAX_VIEWPORT_DIMS),buffer=gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+    return {maxWidth:Math.min(OUTPUT_LIMITS.maxDimension,buffer,viewport[0]),maxHeight:Math.min(OUTPUT_LIMITS.maxDimension,buffer,viewport[1])};
+  }
+  _validateOutput({width,height}) {
+    const limits=this.getOutputLimits();
+    if(width>limits.maxWidth||height>limits.maxHeight)throw new Error(`当前设备最大画布为 ${limits.maxWidth} × ${limits.maxHeight}`);
+  }
   setOutput({width=this.project.width,height=this.project.height,fps=this.project.fps}={}) {
     const output=normalizeProject({width,height,fps});
+    this._validateOutput(output);
     if(this.recording && (output.width!==this.project.width || output.height!==this.project.height))throw new Error('录制期间请保持画布分辨率不变');
     this.project.width=output.width;this.project.height=output.height;
     if(this.project.fps!==output.fps)this._nextFrame=undefined;
@@ -138,13 +150,13 @@ export class BroadcastEngine {
     }
     return this.outputStream;
   }
-  async startRecording({mimeType,videoBitsPerSecond=6000000}={}) {
+  async startRecording({mimeType,videoBitsPerSecond=DEFAULT_OUTPUT.videoBitsPerSecond}={}) {
     if(this.recording)throw new Error('正在录制');
     if(!globalThis.MediaRecorder)throw new Error('当前浏览器不支持本地录制');
     await this.resumeAudio();
     const selected=mimeType || ['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4'].find(type=>MediaRecorder.isTypeSupported(type));
     if(selected && !MediaRecorder.isTypeSupported(selected))throw new Error('不支持所选录制格式');
-    const recorder=new MediaRecorder(this.getOutputStream(),{...(selected?{mimeType:selected}:{}),videoBitsPerSecond:clamp(videoBitsPerSecond,500000,40000000,6000000)});
+    const recorder=new MediaRecorder(this.getOutputStream(),{...(selected?{mimeType:selected}:{}),videoBitsPerSecond:clamp(videoBitsPerSecond,500000,40000000,DEFAULT_OUTPUT.videoBitsPerSecond)});
     this._recordChunks=[];this._recordBytes=0;this.recordingBlob=null;this.recorder=recorder;this._recordError=null;this._recordStopReason='manual';
     this._recordingResult=new Promise((resolve,reject)=>{this._resolveRecording=resolve;this._rejectRecording=reject;});
     // Attach a handler immediately: encoder errors must not become unhandled promise rejections.
@@ -228,7 +240,9 @@ export class BroadcastEngine {
     if(timestamp<this._nextFrame-1)return;
     // An early rAF consumes this deadline exactly once. Modulo correction would leave
     // the prior deadline unchanged when elapsed is just below period and double count it.
-    this._nextFrame+=Math.max(1,Math.floor((timestamp-this._nextFrame+1)/period)+1)*period;
+    // Catch up only deadlines that have actually passed; the early-rAF tolerance
+    // must not consume a second, still-future deadline at fractional frame rates.
+    this._nextFrame+=Math.max(1,Math.floor((timestamp-this._nextFrame)/period)+1)*period;
     this._lastFrame=timestamp;
     const sources=this.activeScene?.sources || [];
     const animated=sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));

@@ -1,4 +1,6 @@
 export const SOURCE_TYPES = ['camera','screen','window','microphone','image','video','text','countdown'];
+export const DEFAULT_OUTPUT = Object.freeze({width:2560,height:1440,fps:60,videoBitsPerSecond:12000000});
+export const OUTPUT_LIMITS = Object.freeze({minDimension:64,maxDimension:8192,maxPixels:7680*4320,minFPS:1,maxFPS:120});
 export const clamp = (value,min,max,fallback=min) => Number.isFinite(Number(value)) ? Math.min(max,Math.max(min,Number(value))) : fallback;
 export const uid = () => globalThis.crypto?.randomUUID?.() || `src-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,9)}`;
 export function normalizeSource(input={}) {
@@ -25,9 +27,9 @@ export function normalizeProject(input={}) {
     })};
   });
   if(!scenes.length) scenes.push({id:uid(),name:'主场景',sources:[]});
-  let width=Math.round(clamp(s.width,320,1920,1280)),height=Math.round(clamp(s.height,180,1920,720));
-  if(width*height>1920*1080){const ratio=Math.sqrt(1920*1080/(width*height));width=Math.floor(width*ratio);height=Math.floor(height*ratio);}
-  return {version:1,width,height,fps:Math.round(clamp(s.fps,10,60,30)),
+  let width=Math.round(clamp(s.width,OUTPUT_LIMITS.minDimension,OUTPUT_LIMITS.maxDimension,DEFAULT_OUTPUT.width)),height=Math.round(clamp(s.height,OUTPUT_LIMITS.minDimension,OUTPUT_LIMITS.maxDimension,DEFAULT_OUTPUT.height));
+  if(width*height>OUTPUT_LIMITS.maxPixels){const ratio=Math.sqrt(OUTPUT_LIMITS.maxPixels/(width*height));width=Math.floor(width*ratio);height=Math.floor(height*ratio);}
+  return {version:1,width,height,fps:Math.round(clamp(s.fps,OUTPUT_LIMITS.minFPS,OUTPUT_LIMITS.maxFPS,DEFAULT_OUTPUT.fps)*1000)/1000,
     activeSceneId:scenes.some(scene=>scene.id===s.activeSceneId)?s.activeSceneId:scenes[0].id,scenes};
 }
 export function hitTestSource(source,x,y) {

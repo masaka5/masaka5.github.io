@@ -24,13 +24,13 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 27127,
-      "sha256": "419cf9f35620501d16e671d869f2f5f1484985861a0131a63828c85732aa7301"
+      "bytes": 28467,
+      "sha256": "d46b4b013062c81b661ed3f7676c982ea1a72dae0a4b3dbcb4e6ca9f75f820a3"
     },
     {
       "file": "broadcast-core.js",
-      "bytes": 3617,
-      "sha256": "c71aac4f6924556792fb959c60265e2184177b25932b7729a348074ad4ee03b8"
+      "bytes": 4058,
+      "sha256": "015dbbb9b9526c89ac43cb0cb35850324e6184dd75f904b1b6e91667a7d10893"
     },
     {
       "file": "compositor.js",
@@ -39,13 +39,13 @@
     },
     {
       "file": "engine.js",
-      "bytes": 21886,
-      "sha256": "4da4221ae795a947d19ed41304cd377c8c2fdaefea0c5e28d2e4da36d59d29d3"
+      "bytes": 22832,
+      "sha256": "46a90203dfcb2968203c2923f824d25b50e8660bb6d7e30544868b7a173c0868"
     },
     {
       "file": "index.html",
-      "bytes": 13541,
-      "sha256": "d6b6bbb52b8eb533cb4a41f5e54b9f00204a42d183ec5c5e9a4f22e240a444c9"
+      "bytes": 14347,
+      "sha256": "89549d53f146f3ffe884e86a5d07fe98cfe6760c0e43a76554262c65191ee75e"
     },
     {
       "file": "publisher.js",
