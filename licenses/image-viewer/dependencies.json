@@ -345,8 +345,53 @@
     "license": "MIT"
   },
   {
+    "name": "fflate",
+    "version": "0.8.3",
+    "license": "MIT"
+  },
+  {
     "name": "@imagemagick/magick-wasm",
     "version": "0.0.37",
     "license": "Apache-2.0"
+  },
+  {
+    "name": "@resvg/resvg-wasm",
+    "version": "2.6.2",
+    "license": "MPL-2.0"
+  },
+  {
+    "name": "wmf-emf-renderer",
+    "version": "0.2.1",
+    "license": "MIT"
+  },
+  {
+    "name": "pako",
+    "version": "1.0.11",
+    "license": "(MIT AND Zlib)"
+  },
+  {
+    "name": "upng-js",
+    "version": "2.1.0",
+    "license": "MIT"
+  },
+  {
+    "name": "dxf-parser",
+    "version": "1.1.2",
+    "license": "MIT"
+  },
+  {
+    "name": "loglevel",
+    "version": "1.9.2",
+    "license": "MIT"
+  },
+  {
+    "name": "libraw-wasm-nothread",
+    "version": "1.6.0-nothread.1",
+    "license": "ISC"
+  },
+  {
+    "name": "@okathira/ghostpdl-wasm",
+    "version": "1.1.0",
+    "license": "AGPL-3.0-or-later"
   }
 ]

@@ -28,6 +28,7 @@ let queue=Promise.resolve();
 self.onmessage=({data})=>{queue=queue.then(()=>handle(data));};
 async function handle(data){
  try{
+  browserNetwork.configure(data.network);
   const py=await initialize();
   if(data.type==='catalog'){
    const text=py.runPython(`import json\nfrom yt_dlp.extractor import gen_extractor_classes\nfrom yt_dlp.options import parseOpts\n_parser, _options, _urls = parseOpts([])\njson.dumps({'extractors': [{'name':cls.IE_NAME,'description':str(getattr(cls,'IE_DESC','') or '')} for cls in gen_extractor_classes()], 'options':[{'names':o._short_opts+o._long_opts,'help':o.help or ''}for group in [_parser]+_parser.option_groups for o in group.option_list if o._long_opts and o.help != 'SUPPRESSHELP']})`);

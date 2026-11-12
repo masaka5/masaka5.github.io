@@ -1,7 +1,7 @@
 """Browser network adapter for the unmodified yt-dlp Python package.
 
-Runs only inside a dedicated Pyodide Worker. Requests obey browser CORS and TLS.
-It never forwards credentials to an unconfigured relay or spoofs restricted headers.
+Runs inside a dedicated Pyodide Worker. Approved Bilibili hosts can use the
+configured streaming relay; cookies are never forwarded to that relay.
 """
 import io, json
 from js import XMLHttpRequest, Uint8Array
@@ -68,10 +68,11 @@ class BrowserRH(RequestHandler):
                 raise HTTPError(response)
             return response
         xhr = XMLHttpRequest.new()
-        xhr.open(request.method, request.url, False)
+        plan = json.loads(browser_network.plan(request.url, request.method, json.dumps(dict(request.headers))))
+        xhr.open(plan['method'], plan['url'], False)
         xhr.timeout = int(self._calculate_timeout(request) * 1000)
         xhr.responseType = 'arraybuffer'
-        for key, value in request.headers.items():
+        for key, value in plan['headers'].items():
             lower = key.lower()
             if lower in ('cookie', 'referer', 'user-agent', 'host', 'origin', 'accept-encoding', 'connection', 'content-length'):
                 continue
@@ -87,7 +88,7 @@ class BrowserRH(RequestHandler):
         body = bytes(Uint8Array.new(xhr.response).to_py()) if xhr.response is not None else b''
         if len(body) > 32 * 1024 * 1024:
             raise TransportError('解析响应超过 32 MB；请使用媒体直链下载，避免解析阶段读取完整大文件')
-        response = Response(io.BytesIO(body), xhr.responseURL or request.url, headers, xhr.status)
+        response = Response(io.BytesIO(body), xhr.getResponseHeader('X-Media-URL') or xhr.responseURL or request.url, headers, xhr.status)
         if xhr.status >= 400:
             raise HTTPError(response)
         return response

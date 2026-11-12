@@ -1,7 +1,7 @@
 {
   "sourceArchive": "media-player-source.zip",
-  "archiveBytes": 51603,
-  "archiveSha256": "35ca6d0a072dfeac2fbe13aaa2ce6985bb586f88404da66b75bd24f0f7ac5b10",
+  "archiveBytes": 54220,
+  "archiveSha256": "58016198dbbae1dce4b4e2cb5ec98851f5c4597076d51557e9542c527d3898e9",
   "files": [
     {
       "path": "_scratch/media-player-integration/LICENSE",
@@ -10,8 +10,8 @@
     },
     {
       "path": "_scratch/media-player-integration/README.md",
-      "bytes": 4237,
-      "sha256": "3b00ceaa60760831931423cd4ccb1042b0e1713a405f743cf90d1c091d6f4184"
+      "bytes": 4877,
+      "sha256": "ebf4f560fff7fe377627a354b365c12fbfe315a7e159452eb26be5fc8ec2eb80"
     },
     {
       "path": "_scratch/media-player-integration/build.mjs",
@@ -45,8 +45,8 @@
     },
     {
       "path": "_scratch/media-player-integration/src/core.mjs",
-      "bytes": 4450,
-      "sha256": "9c3d3cfb832d3388e578fdd85b3210d6ec76f8849f35c679f649d8bdbc297e7e"
+      "bytes": 4851,
+      "sha256": "6822caef26af1cd453a6826902fc54057a9612ce15be412f53117014f5c6c4f9"
     },
     {
       "path": "_scratch/media-player-integration/src/engine.mjs",
@@ -55,8 +55,8 @@
     },
     {
       "path": "_scratch/media-player-integration/src/main.jsx",
-      "bytes": 18456,
-      "sha256": "f8f2922e704c2bdcd126f7464fe4f200140b8c5b2b43714104b5a64e4c89df5b"
+      "bytes": 18543,
+      "sha256": "8e424d00b2d63312ac22b5b117cc43203c3595827894fc55cf93f7d35da2dc25"
     },
     {
       "path": "_scratch/media-player-integration/src/style.css",
@@ -71,7 +71,7 @@
     {
       "path": "_scratch/media-player-integration/test/artifacts/results.json",
       "bytes": 6977,
-      "sha256": "4c350767ed072adf44516446cbe466eaada8a2023a23e7fab46690bbcc32e89c"
+      "sha256": "7a197bbd90d76caf02cedc79679627d22b7790fe05d8e51634878d4b2ff17c7c"
     },
     {
       "path": "_scratch/media-player-integration/test/browser.py",
@@ -89,14 +89,24 @@
       "sha256": "fcd60dc141074caf6691f32469e5af8932b81f4a0266de8667ca87e74ec98af0"
     },
     {
+      "path": "_scratch/media-player-integration/test/containers-browser.py",
+      "bytes": 2032,
+      "sha256": "5df6532d320a64e7d2a874487dfc1b68e33dc9c2daad93b88f97ea46ea26aa18"
+    },
+    {
+      "path": "_scratch/media-player-integration/test/containers.test.mjs",
+      "bytes": 859,
+      "sha256": "08a456800b9cffbe128b124c58d13e3c37a2075ae41d52b54d67fff288596a70"
+    },
+    {
       "path": "_scratch/media-player-integration/test/core.test.mjs",
-      "bytes": 3703,
-      "sha256": "b11b0013c4e82718478bd27fb734234505c0e8fde3d223d4b071a93c30c24b29"
+      "bytes": 3724,
+      "sha256": "789767558dc48b9f9a09f15b8721bb22d1f8d19b296642f7b4990b163c169eaa"
     },
     {
       "path": "_scratch/media-player-integration/test/harness.mjs",
-      "bytes": 1984,
-      "sha256": "e4808b0a34776ce1f55297885a66054d789ae1a3fc0ac37181a732e30fa1e848"
+      "bytes": 2779,
+      "sha256": "61e560ee4ea8d2e68ddbdbb4cb39292880aae2815f05d3623f109f5aedb4a3d5"
     },
     {
       "path": "_scratch/media-player-integration/test/probe-debug.py",
@@ -126,7 +136,7 @@
     {
       "path": "toolbox-site/tools/media-player/manifest.json",
       "bytes": 1220,
-      "sha256": "3a6bd54fe68e9e475af2a20a4c2a651755a9f79d8f953ce409fcfd5505c9f245"
+      "sha256": "e461b6f77d46e50d2b93c5cd15b58210364da1c3d7cd95c7c878f4b8094bac19"
     }
   ],
   "sharedRuntime": [

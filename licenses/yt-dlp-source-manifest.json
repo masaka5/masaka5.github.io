@@ -1,12 +1,12 @@
 {
   "sourceArchive": "yt-dlp-source.zip",
-  "archiveBytes": 60498,
-  "archiveSha256": "77b073b5018306cbd479b30f28d9eb6df774d8e94264d60983d403d49292aa42",
+  "archiveBytes": 68425,
+  "archiveSha256": "37fde408c782717e337eb429d1e281b95976c79bbf8f82fe56b1b1646c10e672",
   "files": [
     {
       "path": "_scratch/yt-dlp-integration/build.mjs",
-      "bytes": 1626,
-      "sha256": "ef5be143ed37e1158048030c6c98957112e0b7f36920e17665f648d516aabbb6"
+      "bytes": 1685,
+      "sha256": "362ffa5cd68000cf50c8d1f3640df31fed159f5be0ce70c79541ee78e3a14993"
     },
     {
       "path": "_scratch/yt-dlp-integration/index.html",
@@ -29,14 +29,34 @@
       "sha256": "4a6dd168d327d05d261887784f6c6ed89dca94d0cc36bfe7c263e6ffb0dd40d5"
     },
     {
+      "path": "_scratch/yt-dlp-integration/relay/pages-build.mjs",
+      "bytes": 336,
+      "sha256": "3859346a646a83be9dd20b2f31908a68a01f45d44899abbd69e18c54ffd5b435"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/relay/test/worker.test.mjs",
+      "bytes": 2761,
+      "sha256": "19ad7ce1806ee6432357e29184225571c9c90db9db3dd243e49ee55e82ab8418"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/relay/worker.mjs",
+      "bytes": 4058,
+      "sha256": "a6897e07e14f0adcb8f81f3222b06ebdf920fcd9191228824c774c7f1a48e0f4"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/relay/wrangler.jsonc",
+      "bytes": 306,
+      "sha256": "ffa5cd8394cecb97f18a8a1700023d90e662a46fd8b842901ab6bef1b22f14c8"
+    },
+    {
       "path": "_scratch/yt-dlp-integration/src/App.jsx",
-      "bytes": 25735,
-      "sha256": "03b154a923b8f720b940595fbc5b2a77e49e52b63b1c9233c16d40a9fcf7f80e"
+      "bytes": 26119,
+      "sha256": "40aee4d4662d03a7e53bff19ec4eec5b67051608b3b6dc0fb209863dde089b9a"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/browser-network.mjs",
-      "bytes": 1021,
-      "sha256": "5a389851940694b5fadedb86f7a6a27607b12e7a16663da6b733b3614653ef3c"
+      "bytes": 1208,
+      "sha256": "cb5e61ba16b33a1f70751d1f30dff8169a4a778316d43b9cc421b7a69c537916"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/core.mjs",
@@ -45,8 +65,8 @@
     },
     {
       "path": "_scratch/yt-dlp-integration/src/download.mjs",
-      "bytes": 6055,
-      "sha256": "7e1cf924f68c2b79103710882b5d4efb57503ef459b45acca59719053e3949a2"
+      "bytes": 6065,
+      "sha256": "8cdd6a24652d1b97e0b828d101161b97a2a6ceeb5bc39dd5a949e77ed4f188d3"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/ffmpeg.mjs",
@@ -60,8 +80,8 @@
     },
     {
       "path": "_scratch/yt-dlp-integration/src/network.py",
-      "bytes": 4298,
-      "sha256": "f31413c619462bbae32deba3b6519ad824a445e3fa76664d6a5f98480c854ecf"
+      "bytes": 4431,
+      "sha256": "d2b5cd627efe6b521b3d0ff6676927c7cc32b4c4534b0604079d198231e77618"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/postprocess.mjs",
@@ -70,13 +90,13 @@
     },
     {
       "path": "_scratch/yt-dlp-integration/src/segments.mjs",
-      "bytes": 3523,
-      "sha256": "b527fd7b687583dd77561b83cf8ff7af58baf286c865bd680018c9d4cc7b69e2"
+      "bytes": 3572,
+      "sha256": "d2fc80706f387c2cb3e556d383a54c56133b1a1d4f422df61853f4d4d55bd6e6"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/Settings.jsx",
-      "bytes": 4046,
-      "sha256": "1a690b80a3d654f8a5314002f6c3794c7fce7d2b57edfb86dceffac25b9072f9"
+      "bytes": 4053,
+      "sha256": "7e1907a12b096f6acd1b92ea2fc5170cf351b452c22723dce8406ceeb3461f68"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/storage.mjs",
@@ -85,18 +105,23 @@
     },
     {
       "path": "_scratch/yt-dlp-integration/src/style.css",
-      "bytes": 2608,
-      "sha256": "27d64d9b8a6cb07170fb2ab1c2820843bf02fbe26ba0d37705ab427965e14c49"
+      "bytes": 2851,
+      "sha256": "38b914ae0ced0b203a361d039e587fc4a0fe2f6121f5504e6ebebf687992e2bc"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/src/transport.mjs",
+      "bytes": 2218,
+      "sha256": "167086d4b00831adc2b917e444d50e2e998d3685e77803e538ca1150f7030aa6"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/view-state.mjs",
-      "bytes": 1568,
-      "sha256": "7012bbd421c5a879fbd2509e31c7873b2983aa763a96e14f0837e14b36491088"
+      "bytes": 1666,
+      "sha256": "084b5022f73ab82ed2e843ce578ebe938f94a039d4fd925efd3e399c87717a72"
     },
     {
       "path": "_scratch/yt-dlp-integration/src/worker.js",
-      "bytes": 3980,
-      "sha256": "9615fcbaa39c15e918075fc05f18c4f5b4e4ea8a025916d644445ea85b481385"
+      "bytes": 4022,
+      "sha256": "b55dd36c1dade88e5eec12d0c61fd644337496d63d886feae7546d4d5d861f2a"
     },
     {
       "path": "_scratch/yt-dlp-integration/test/core.test.mjs",
@@ -112,6 +137,11 @@
       "path": "_scratch/yt-dlp-integration/test/segments.test.mjs",
       "bytes": 2044,
       "sha256": "cfd04fc3bc50ce59e6376bf94890761fd6253aabb29ef0bbe99b2a19ff98579d"
+    },
+    {
+      "path": "_scratch/yt-dlp-integration/test/transport.test.mjs",
+      "bytes": 2601,
+      "sha256": "c235eb1d500caee9fa428401f09fb81bd2a2525f46ee04ef2db889da7e5f5a29"
     },
     {
       "path": "_scratch/yt-dlp-integration/test/view-state.test.mjs",
@@ -144,6 +174,11 @@
       "sha256": "d499658568520d3fe2aa801582132e9c171c3517c4a2692cb7c5edc53d74205e"
     },
     {
+      "path": "_scratch/ops-tests/yt-dlp-relay-live.py",
+      "bytes": 1516,
+      "sha256": "f3070953fc4e1b350ab0baa2b02cc1938570b054d162f1deafe1200593002b00"
+    },
+    {
       "path": "_scratch/ops-tests/yt-dlp-transfers.py",
       "bytes": 6494,
       "sha256": "271ea5439af0d7201c08589726addaf381256fb611a6f7f7b5a3d756bde1bc9b"
@@ -160,8 +195,8 @@
     },
     {
       "path": "_scratch/package-yt-dlp.py",
-      "bytes": 3371,
-      "sha256": "8827db4d9c7e6b6e9d85d3ed142b65d2ae7e1a7ff6b796188bc2647f3f431981"
+      "bytes": 3443,
+      "sha256": "8c1bc8faf0b2fb8382ce535015bc4072aefbb3e91f202cf187b875945e6ed6db"
     },
     {
       "path": "toolbox-site/licenses/yt-dlp/THIRD-PARTY-NOTICES.txt",

@@ -3,13 +3,13 @@
   "files": [
     {
       "file": "assets/app.css",
-      "bytes": 2608,
-      "sha256": "27d64d9b8a6cb07170fb2ab1c2820843bf02fbe26ba0d37705ab427965e14c49"
+      "bytes": 2850,
+      "sha256": "c3d14aeca33d112416d17ee4e1ba8684d635ade864d09cb406c9ff1c7ae12f28"
     },
     {
       "file": "assets/app.js",
-      "bytes": 1209255,
-      "sha256": "c4794a3102150b94a8e5d1f8a55fde0a3acbb768e40ecd613bb445f29383bb66"
+      "bytes": 1211550,
+      "sha256": "8c734966b189f692d5fdf741b8b859bc0fbe8968d49d2a2bb63a71526e8aecae"
     },
     {
       "file": "assets/ffmpeg-worker.js",
@@ -18,8 +18,8 @@
     },
     {
       "file": "browser-network.mjs",
-      "bytes": 1021,
-      "sha256": "5a389851940694b5fadedb86f7a6a27607b12e7a16663da6b733b3614653ef3c"
+      "bytes": 1208,
+      "sha256": "cb5e61ba16b33a1f70751d1f30dff8169a4a778316d43b9cc421b7a69c537916"
     },
     {
       "file": "index.html",
@@ -28,8 +28,8 @@
     },
     {
       "file": "network.py",
-      "bytes": 4298,
-      "sha256": "f31413c619462bbae32deba3b6519ad824a445e3fa76664d6a5f98480c854ecf"
+      "bytes": 4431,
+      "sha256": "d2b5cd627efe6b521b3d0ff6676927c7cc32b4c4534b0604079d198231e77618"
     },
     {
       "file": "runtime/yt_dlp-2026.10.26.whl",
@@ -37,9 +37,14 @@
       "sha256": "a05c5b5d8562f7e8a62f5334348b406af4930d56d3a65f8021d14af0e22339ae"
     },
     {
+      "file": "transport.mjs",
+      "bytes": 2218,
+      "sha256": "167086d4b00831adc2b917e444d50e2e998d3685e77803e538ca1150f7030aa6"
+    },
+    {
       "file": "worker.js",
-      "bytes": 3980,
-      "sha256": "9615fcbaa39c15e918075fc05f18c4f5b4e4ea8a025916d644445ea85b481385"
+      "bytes": 4022,
+      "sha256": "b55dd36c1dade88e5eec12d0c61fd644337496d63d886feae7546d4d5d861f2a"
     }
   ]
 }

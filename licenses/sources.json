@@ -579,14 +579,16 @@
   {
     "project": "image-viewer-browser",
     "version": "1.0.0",
-    "license": "MIT integration; dependency notices preserved",
+    "license": "MIT integration; ImageMagick/resvg/LibRaw/Ghostscript and dependency licenses retained (including LGPL/CDDL/AGPL)",
     "source_archive": "image-viewer/source.zip",
     "source_manifest": "image-viewer/source-manifest.json",
     "runtime_manifest": "tools/image-viewer/manifest.json",
     "reuses": [
       "tools/conversion/assets/magick-DgWW1YxY.wasm"
     ],
-    "engine": "ImageMagick0.0.37 WASM; original integration, not native ImageGlass"
+    "engine": "ImageMagick 0.0.37, resvg 2.6.2, LibRaw WASM 1.6.0-nothread.1 and GhostPDL WASM 1.1.0; original browser integration",
+    "corresponding_engine_sources": "image-viewer/source.zip / notices/engine-build-sources.tar.xz",
+    "notices": "image-viewer/THIRD-PARTY-NOTICES.txt"
   },
   {
     "project": "ffmpeg-core-shared",
