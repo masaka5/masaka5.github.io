@@ -1,7 +1,12 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-12T13:16:14.024Z",
+  "updatedAt": "2026-11-12T14:45:49.118Z",
   "counts": {
+    "jupyter": 0,
+    "python-ide": 0,
+    "powershell-ide": 0,
+    "web-adb": 0,
+    "photo-editor": 0,
     "broadcast": 0,
     "drawio": 0,
     "tiptap": 0,
