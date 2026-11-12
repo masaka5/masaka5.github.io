@@ -3,9 +3,13 @@
  let stream=null,running=false,epoch=0,count=0,seen=new Set(),lastSeen=new Map(),sound=null;
  let decoderReady=null;
  const saved=Ops.readState(),ids=['scanMode','scanSeparator','scanSound','deduplicate'];Ops.restoreFields(saved,ids);
- if(typeof saved.output==='string'&&saved.output.length<=800000)$('scanOutput').value=saved.output;
- count=Number.isSafeInteger(saved.count)&&saved.count>=0?saved.count:0;$('scanCount').textContent=count+' 条';
- function remember(){Ops.saveState({...Ops.readState(),...Ops.fieldValues(ids),output:$('scanOutput').value,count});}
+ // Only numeric barcode batches are eligible for automatic recovery. QR text
+ // can contain passwords or signed links that cannot be reliably classified.
+ const cacheable=text=>typeof text==='string'&&text.length<=800000&&/^[0-9\s]*$/.test(text);
+ if(cacheable(saved.output))$('scanOutput').value=saved.output;
+ count=cacheable(saved.output)&&Number.isSafeInteger(saved.count)&&saved.count>=0?saved.count:0;$('scanCount').textContent=count+' 条';
+ function remember(){const output=$('scanOutput').value,eligible=cacheable(output);Ops.saveState({...Ops.fieldValues(ids),view:Ops.readState().view,output:eligible?output:'',count:eligible?count:0});}
+ remember();
  for(const id of ids){$(id).addEventListener('change',remember);}
  const status=(text,error=false)=>Ops.status($('scanStatus'),text,error);
  const decoderFailure=error=>/abort|wasm|webassembly|fetch/i.test(error?.message||'')?'识别组件加载失败，请重新部署完整工具包。':'识别失败，请调整码面后重试。';

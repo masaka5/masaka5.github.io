@@ -28,6 +28,8 @@
   let current=0, testing=false, paused=false, animation=0, hideTimer=0, elapsed=0, lastTime=0;
   let previousFocus=null, nativeFullscreen=false, tile=null, tileId='';
   let link=null, motionEpoch=Date.now();
+  let saved={};try{saved=JSON.parse(sessionStorage.getItem('pocket-monitor-view-v1')||'{}')||{};}catch{}
+  function remember(){try{sessionStorage.setItem('pocket-monitor-view-v1',JSON.stringify({pattern:patterns[current].id,speed:document.getElementById('motionSpeed').value}));}catch{}}
   const dynamic=()=>['breathing','motion'].includes(patterns[current].kind);
 
   for (const group of groups) {
@@ -41,6 +43,7 @@
     index=((index%patterns.length)+patterns.length)%patterns.length;
     if(!remote&&link?.intent({kind:'select',index}))return;
     current=index;
+    remember();
     elapsed=0;lastTime=0;paused=false;motionEpoch=Date.now();
     const pattern=patterns[current];
     stage.dataset.pattern=pattern.id;
@@ -207,7 +210,9 @@
   let resizeFrame=0;
   new ResizeObserver(()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(resize);}).observe(stage);
   window.addEventListener('resize',resize);
-  select(0);
+  if(typeof saved.speed==='string'&&Number(saved.speed)>=Number(document.getElementById('motionSpeed').min)&&Number(saved.speed)<=Number(document.getElementById('motionSpeed').max)){document.getElementById('motionSpeed').value=saved.speed;document.getElementById('speedValue').textContent=saved.speed+' px/s';}
+  select(Math.max(0,patterns.findIndex(p=>p.id===saved.pattern)));
+  document.getElementById('motionSpeed').addEventListener('input',remember);
   link=window.createMonitorLink({
     patternCount:patterns.length,
     getState:()=>({index:current,speed:Number(document.getElementById('motionSpeed').value),paused,elapsed:paused?elapsed:Math.max(0,Date.now()-motionEpoch),sentAt:Date.now()}),

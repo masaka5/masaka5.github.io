@@ -1,6 +1,12 @@
 import {SerialSession,encodePayload,validateOptions} from './serial-core.js';
 import {flashOptions} from './flash-core.js';
 const $=id=>document.getElementById(id);let session=null,connecting=false,disconnecting=false,portBlocked=false,paused=false,rx=0,tx=0,timer=null,periodicActive=false,sendBusy=false,decoder=new TextDecoder(),log='',renderTimer=0,flashBusy=false;
+const viewKey='pocket-serial-view-v1',fields=['baudRate','dataBits','stopBits','parity','flowControl','sendMode','lineEnding','interval','receiveHex','timestamps','follow','flashBaud'];let selectedTab='monitor',saved={};
+try{saved=JSON.parse(sessionStorage.getItem(viewKey)||'{}')||{};}catch{}
+for(const id of fields){const el=$(id),value=saved[id];if(el.type==='checkbox'){if(typeof value==='boolean')el.checked=value;}else if(typeof value==='string'&&value.length<30&&(el.tagName!=='SELECT'||[...el.options].some(o=>o.value===value)))el.value=value;}
+function saveView(){const value=Object.fromEntries(fields.map(id=>[id,$(id).type==='checkbox'?$(id).checked:$(id).value]));try{sessionStorage.setItem(viewKey,JSON.stringify({...value,tab:selectedTab,settings:$('settings').classList.contains('open')}));}catch{}}
+for(const id of fields){$(id).addEventListener('input',saveView);$(id).addEventListener('change',saveView);}
+function showTab(tab){selectedTab=tab;for(const b of document.querySelectorAll('[data-tab]'))b.setAttribute('aria-pressed',String(b.dataset.tab===tab));$('monitor').hidden=tab!=='monitor';$('firmware').hidden=tab!=='firmware';saveView();}
 function status(id,text,error=false){$(id).textContent=text;$(id).dataset.tone=error?'error':'';}
 function counts(){$('counts').textContent=`接收 ${rx.toLocaleString()} B · 发送 ${tx.toLocaleString()} B`;}
 function render(){renderTimer=0;if(!paused){$('log').textContent=log;if($('follow').checked)$('log').scrollTop=$('log').scrollHeight;}}
@@ -21,7 +27,7 @@ $('clear').onclick=()=>{log='';$('log').textContent='';decoder=new TextDecoder()
 $('export').onclick=()=>{const url=URL.createObjectURL(new Blob([log],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='serial-'+Date.now()+'.log';a.click();setTimeout(()=>URL.revokeObjectURL(url),60000);};
 $('resetCounts').onclick=()=>{rx=tx=0;counts();};
 $('settingsToggle').onclick=()=>{const open=$('settings').classList.toggle('open');$('settingsToggle').setAttribute('aria-expanded',String(open));};
-for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{for(const b of document.querySelectorAll('[data-tab]'))b.setAttribute('aria-pressed',String(b===button));$('monitor').hidden=button.dataset.tab!=='monitor';$('firmware').hidden=button.dataset.tab!=='firmware';};
+for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>showTab(button.dataset.tab);
 function addFirmware(){const row=document.createElement('div');row.className='firmware-row';row.innerHTML='<label><span>固件 BIN</span><input type="file" accept=".bin,application/octet-stream" aria-label="固件 BIN"></label><label><span>写入地址</span><input class="address" placeholder="0x1000" aria-label="写入地址" spellcheck="false"></label><button aria-label="移除固件">×</button>';row.querySelector('button').onclick=()=>row.remove();$('firmwareFiles').append(row);}
 $('addFirmware').onclick=addFirmware;addFirmware();
 $('flashSize').replaceChildren(new Option('自动识别 · 保留镜像头','keep'));
@@ -32,3 +38,5 @@ $('flash').onclick=async()=>{if(flashBusy||connecting)return;let segments;try{co
 window.addEventListener('pagehide',()=>{stopTimer();session?.close().catch(()=>{});});
 if(!navigator.serial){$('support').textContent='需要桌面 Chrome / Edge 与 HTTPS';status('connectionStatus','当前浏览器不支持 Web Serial',true);$('settings').classList.add('open');}
 controls();
+if(saved.settings===true){$('settings').classList.add('open');$('settingsToggle').setAttribute('aria-expanded','true');}
+$('settingsToggle').addEventListener('click',saveView);$('lineEnding').disabled=$('sendMode').value==='hex';showTab(saved.tab==='firmware'?'firmware':'monitor');
