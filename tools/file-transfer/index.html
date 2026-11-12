@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="浏览器之间通过 WebRTC 直传文件，支持暂停、断点续传和完整性校验。"
+    />
+    <title>文件直传 · 工具箱</title>
+    <link rel="icon" href="../../assets/favicon.svg" />
+    <link rel="stylesheet" href="../../assets/ops.css" />
+    <link rel="stylesheet" href="transfer.css" />
+  </head>
+  <body>
+    <div class="transfer-shell">
+      <header class="ops-header">
+        <a class="back-link" href="../../">← 工具箱</a>
+        <h1>文件直传</h1>
+        <span class="connection-badge" id="connectionStatus">未连接</span>
+      </header>
+      <main class="transfer-main">
+        <section class="connection-panel" aria-label="连接设备">
+          <div class="connection-head">
+            <h2>连接设备</h2>
+            <button class="text-button" id="newPassword">生成密码</button>
+          </div>
+          <label class="field"
+            ><span>连接密码</span>
+            <div class="password-field">
+              <input
+                id="password"
+                type="password"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="128"
+                aria-describedby="passwordNote"
+              /><button
+                class="secondary"
+                id="showPassword"
+                aria-label="显示密码"
+              >
+                显示</button
+              ><button class="secondary" id="copyPassword">复制</button>
+            </div></label
+          >
+          <div class="connect-row">
+            <label class="field"
+              ><span>连接方式</span
+              ><select id="strategy">
+                <option value="mqtt">MQTT</option>
+                <option value="nostr">Nostr</option>
+              </select></label
+            ><button id="connect" class="primary">连接</button
+            ><button id="disconnect" class="secondary" hidden>断开</button>
+          </div>
+          <p id="passwordNote" class="help">两端使用相同密码和连接方式。</p>
+          <p class="status" id="connectionNote" role="status"></p>
+        </section>
+        <section class="tasks-panel" aria-label="文件传输">
+          <div class="tasks-head">
+            <h2>传输任务</h2>
+            <button id="chooseFile" class="primary" disabled>选择文件</button
+            ><input id="files" type="file" hidden />
+          </div>
+          <div class="task-current" id="taskCurrent">
+            <div class="task-empty">连接后选择文件，接收方确认后开始。</div>
+          </div>
+          <p
+            class="status"
+            id="transferNotice"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <div class="saved-head">
+            <h2>本地接收</h2>
+            <span id="storageMode"></span>
+          </div>
+          <div class="saved-list" id="savedList">
+            <div class="task-empty">暂无接收文件</div>
+          </div>
+          <p class="cache-note">
+            刷新后可续传，发送方需重选原文件。清理浏览器数据会移除接收缓存。
+          </p>
+        </section>
+      </main>
+      <footer class="transfer-footer">
+        <span>文件经 WebRTC 直传</span><span>信令仅用于建立连接</span>
+      </footer>
+    </div>
+    <dialog id="receiveDialog" aria-labelledby="receiveTitle">
+      <h2 id="receiveTitle">接收文件</h2>
+      <p id="offerName"></p>
+      <p id="offerSize"></p>
+      <div class="dialog-actions">
+        <button id="rejectFile" class="secondary">拒绝</button
+        ><button id="acceptFile" class="primary">接收</button>
+      </div>
+    </dialog>
+    <dialog id="deleteDialog" aria-labelledby="deleteTitle">
+      <h2 id="deleteTitle">删除本地缓存</h2>
+      <p id="deleteName"></p>
+      <div class="dialog-actions">
+        <button id="cancelDelete" class="secondary">取消</button
+        ><button id="confirmDelete" class="primary">删除</button>
+      </div>
+    </dialog>
+    <script type="module" src="transfer.js"></script>
+  </body>
+</html>

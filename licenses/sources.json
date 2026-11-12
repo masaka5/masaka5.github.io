@@ -370,5 +370,11 @@
     "version": "2.0.0",
     "sourceArchive": "licenses/monitor-source.zip",
     "changes": "First-party Canvas patterns with Window Management placement and BroadcastChannel session synchronization. No additional third-party runtime."
+  },
+  {
+    "project": "file-transfer-toolbox",
+    "version": "1.0.0",
+    "sourceArchive": "licenses/file-transfer-source.zip",
+    "changes": "First-party password-derived WebRTC direct transfer with chunk SHA-256, durable OPFS/IndexedDB resume and worker hashing. Reuses local Trystero 0.27.0 and hash-wasm; corresponding source archives licenses/meeting-source.zip and licenses/hash-wasm-source.zip."
   }
 ]

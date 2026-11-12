@@ -11,6 +11,7 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'file-transfer',category:'meetings',name:'文件直传',description:'设备直连 · 断点续传 · 完整校验',href:'tools/file-transfer/',icon:'send',tags:['P2P','WebRTC','续传'],keywords:'浏览器 文件 直传 传输 分享 设备 发送 接收 密码 断点续传 WebRTC P2P 本地'},
     {id:'bsod',category:'windows',name:'蓝屏分析',description:'停止代码 · 转储解析 · 驱动关联',href:'tools/bsod/',icon:'monitor-x',tags:['蓝屏','DMP','WASM'],keywords:'BlueScreenView Windows 蓝屏 minidump 内核 转储 dmp dump bugcheck 停止代码 崩溃 驱动 分析'},
     {id:'iso',category:'files',name:'镜像工具',description:'镜像浏览 · 文件提取 · 镜像制作',href:'tools/iso/',icon:'disc-3',tags:['ISO','WIM','IMG','VHD'],keywords:'iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM'},
     {id:'folder-analysis',category:'windows',name:'文件夹分析',description:'空间分析 · 重复文件 · 类型统计',href:'tools/folder-analysis/',icon:'folder-search',tags:['文件夹','重复','空间'],keywords:'WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV'},

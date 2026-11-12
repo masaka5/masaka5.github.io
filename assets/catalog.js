@@ -104,6 +104,29 @@ const ToolboxCatalog = {
   ],
   "tools": [
     {
+      "id": "file-transfer",
+      "category": "meetings",
+      "name": "文件直传",
+      "description": "设备直连 · 断点续传 · 完整校验",
+      "href": "tools/file-transfer/",
+      "icon": "send",
+      "tags": [
+        "P2P",
+        "WebRTC",
+        "续传"
+      ],
+      "keywords": "浏览器 文件 直传 传输 分享 设备 发送 接收 密码 断点续传 WebRTC P2P 本地",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/file-transfer/",
+          "source": "toolbox",
+          "sourceId": "file-transfer"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
       "id": "bsod",
       "category": "windows",
       "name": "蓝屏分析",
