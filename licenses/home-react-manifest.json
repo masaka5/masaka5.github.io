@@ -9,17 +9,17 @@
     {
       "path": "assets/home-react/home.js",
       "bytes": 762605,
-      "sha256": "d46be2e1f2dd74a0ba7ac834de66b02c9864cdf7ccf440c9ad1ae538b539eb8e"
+      "sha256": "3c9fb9043ce14262d67b409602013c4c0bf93ffb0cc020f3503cffd4eb690ce0"
     },
     {
       "path": "assets/home-react/manifest.json",
       "bytes": 461,
-      "sha256": "b7126d9d0d4e4f88913b9a74a0f92d11374d254e90f87c929d72642da0661080"
+      "sha256": "c8b11d2c3b94192e049e133bf66ac657d5d96eb4552fd31e2a3163fe56c31197"
     },
     {
       "path": "licenses/home-react-source.zip",
-      "bytes": 192443,
-      "sha256": "cb74080aeb5d41a38e22984e6a9807648eec61c8b22987f7ee71552ffa984e51"
+      "bytes": 192439,
+      "sha256": "e973a842989fed8b72880807995471ecf4933e7e670fc054df6917049fdf57ea"
     }
   ]
 }

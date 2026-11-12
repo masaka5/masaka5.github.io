@@ -90,8 +90,8 @@
           (next || search).focus();
         }
       });
-      const usage = element('span', 'tool-usage', '打开 — 次');
-      usage.title = '累计打开次数';
+      const usage = element('span', 'tool-usage', '使用 — 次');
+      usage.title = '累计使用次数';
       card.append(link, favorite, usage);
       cards.push(card);
       grid.append(card);
@@ -111,7 +111,7 @@
     for (const card of cards) {
       card.hidden = !visible.has(card);
       const count = usageCounts[card.dataset.tool];
-      card.querySelector('.tool-usage').textContent = '打开 ' + (count === undefined ? '—' : count.toLocaleString('zh-CN')) + ' 次';
+      card.querySelector('.tool-usage').textContent = '使用 ' + (count === undefined ? '—' : count.toLocaleString('zh-CN')) + ' 次';
       const button = card.querySelector('.favorite-toggle'), saved = favorites.has(card.dataset.tool);
       const name = card.querySelector('h3').textContent;
       button.setAttribute('aria-pressed', String(saved));
