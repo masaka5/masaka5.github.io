@@ -20,8 +20,9 @@ export function localPrompt(messages=[]){
 
 export function localError(message){
  const value=String(message||'');
- if(/webgpu|gpu|shader/i.test(value))return'当前浏览器的 WebGPU 不可用，正在尝试 CPU/WASM 模式。';
- if(/memory|allocation|out of|内存/i.test(value))return'设备内存不足，请关闭其他标签页或减少上下文后重试。';
+ if(value==='local-webgpu-required')return'本地模型需要支持 WebGPU 的 Chrome 或 Edge，并开启硬件加速。';
+ if(/memory|allocation|bad_alloc|out of|内存/i.test(value))return'设备内存不足，请关闭其他标签页或减少上下文后重试。';
+ if(/webgpu|gpu|shader|backend|onnx|wasm|session/i.test(value))return'本地推理引擎启动失败，请重新加载模型或启用浏览器硬件加速。';
  if(/fetch|network|下载|model/i.test(value))return'模型下载失败，请检查网络后重试。模型会自动使用浏览器缓存。';
  return'本地模型运行失败，请重试或切换到接口模式。';
 }

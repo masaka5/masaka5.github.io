@@ -1,21 +1,21 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-local4';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id),MB=1024*1024;
   const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
   const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
   let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null;
-  const localClient=new LocalAiClient({onProgress:info=>status(`模型准备中 · ${Math.round(info.value*100)}%`),onReady:info=>{localMode=true;$('modelLabel').textContent=info.label+` · ${info.device==='webgpu'?'WebGPU':'兼容模式'}`;status('本地模型已就绪。');},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onError:error=>status(error,true)});
+  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{localMode=true;$('modelLabel').textContent=info.label+` · ${info.device==='webgpu'?'WebGPU':'兼容模式'}`;status('模型已就绪');},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
   function controls(){
     const busy=!!controller||localBusy;
-    for(const id of ['prompt','attach','files','newChat','openSettings'])$(id).disabled=busy||reading;
+    for(const id of ['prompt','attach','files','newChat','openSettings','localChat','useLocal','setupChat'])$(id).disabled=busy||reading;
     $('send').disabled=busy||reading;$('send').hidden=busy;$('stop').hidden=!busy;
     $('chatFeed').setAttribute('aria-busy',String(busy));
     document.querySelectorAll('.attachment button').forEach(button=>button.disabled=busy||reading);
   }
   function clearChat(){
-    history=[];localHistory=[];attachments=[];localRaw='';localActive=null;if(localMode)$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
+    history=[];localHistory=[];attachments=[];localRaw='';localActive=null;if(localMode)$('modelLabel').textContent=LOCAL_LABEL+(localClient.ready?' · '+(localClient.device==='webgpu'?'WebGPU':'兼容模式'):' · 未加载');$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
     $('chatEmpty').hidden=false;$('exportChat').disabled=true;$('prompt').value='';status('');
   }
   function endpoint(value){
@@ -27,10 +27,10 @@ import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
     if(url.search)throw Error('请勿将密钥放在网址参数中，请填写下方密钥。');
     return url.href;
   }
-  $('openSettings').onclick=$('setupChat').onclick=()=>{localMode=false;$('settingsStatus').textContent='';$('settings').showModal();};
+  $('openSettings').onclick=$('setupChat').onclick=()=>{$('settingsStatus').textContent='';$('settings').showModal();};
   async function openLocal(){
-    localMode=true;$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('首次使用需要下载模型，进度会显示在这里。');
-    try{await localClient.load();}catch(error){localMode=false;status(error.message||'本地模型启动失败。',true);}
+    localMode=true;$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('正在准备模型…');
+    try{await localClient.load();$('modelLabel').textContent=LOCAL_LABEL+' · '+(localClient.device==='webgpu'?'WebGPU':'兼容模式');}catch(error){$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';status(error.message||'本地模型启动失败。',true);}
   }
   $('localChat').onclick=$('useLocal').onclick=()=>openLocal();
   $('closeSettings').onclick=()=>$('settings').close();
@@ -40,7 +40,7 @@ import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
       if(!next.model)throw Error('请填写模型名称。');
       if(/[\r\n]/.test(next.key))throw Error('密钥格式不正确。');
       if(config&&(config.url!==next.url||config.model!==next.model))clearChat();
-      config=next;$('modelLabel').textContent=next.model;$('modelLabel').title=new URL(next.url).host;
+      localMode=false;config=next;$('modelLabel').textContent=next.model;$('modelLabel').title=new URL(next.url).host;
       $('settings').close();status('接口已配置，可发送消息。');$('prompt').focus();
     }catch(error){Ops.status($('settingsStatus'),error.message,true);}
   };
@@ -103,8 +103,8 @@ import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
     $('chatFeed').append(card);$('chatFeed').scrollTop=$('chatFeed').scrollHeight;
     $('exportChat').disabled=false;return {card,body,label};
   }
-  function renderLocal(reply,raw){
-    const parsed=splitThinking(raw);reply.body.textContent=parsed.answer||'正在生成…';
+  function renderLocal(reply,raw,finished=false){
+    const parsed=splitThinking(raw);reply.body.textContent=parsed.answer||(finished?'本次未生成最终回答，可缩短问题后重试。':parsed.thinking?'正在思考…':'正在生成…');
     let details=reply.card.querySelector('.thinking');
     if(!details){details=document.createElement('details');details.className='thinking';const summary=document.createElement('summary');summary.textContent='思考过程';details.append(summary,document.createElement('div'));reply.card.insertBefore(details,reply.body);}
     details.querySelector('div').textContent=parsed.thinking;details.hidden=!parsed.thinking;
@@ -112,11 +112,12 @@ import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
   function localAttachmentText(files){return files.filter(file=>!file.image).map(file=>`\n附件：${file.name}\n${file.data}`).join('');}
   async function submitLocal(text,files){
     if(files.some(file=>file.image)){status('本地 1.5B 模型只支持文字，请切换接口模式处理图片。',true);return;}
-    if(!localClient.ready){await openLocal();if(!localClient.ready)return;}
+    localBusy=true;controls();
+    if(!localClient.ready){await openLocal();if(!localClient.ready){localBusy=false;controls();return;}}
     const content=(text||'')+localAttachmentText(files),user={role:'user',content};localHistory.push(user);
-    localBusy=true;controls();const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.card.dataset.state='working';localRaw='';localActive=reply;status('本地生成中 · 思考过程可展开');
-    try{const answer=await localClient.ask(localHistory,{maxTokens:768});localHistory.push({role:'assistant',content:answer});reply.card.dataset.state='complete';$('prompt').value='';attachments=[];renderAttachments();status('');}
-    catch(error){localHistory.pop();reply.card.dataset.state='error';reply.label.textContent='未完成';reply.body.textContent='本地生成失败，请重试。';status(error.message||'本地生成失败。',true);}
+    const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
+    try{const answer=await localClient.ask(localHistory,{id:reply.id,maxTokens:384});localRaw=answer;renderLocal(reply,answer,true);if(!answer.trim())throw Error('模型未输出文本，请重试。');const finalAnswer=splitThinking(answer).answer;if(finalAnswer)localHistory.push({role:'assistant',content:finalAnswer});else localHistory.pop();reply.card.dataset.state='complete';$('prompt').value='';attachments=[];renderAttachments();status('');}
+    catch(error){localHistory.pop();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.body.textContent=error.message||'本地生成失败，请重试。';else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
     finally{localBusy=false;localActive=null;controls();$('prompt').focus();}
   }
   function content(text,files){
@@ -163,9 +164,9 @@ import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
       if(!answer.trim())throw Error('接口没有返回文本，请检查模型设置。');return answer;
     }finally{try{await reader.cancel();}catch(_){}reader.releaseLock();}
   }
-  $('stop').onclick=()=>{if(localBusy){localClient.stop();localClient.dispose();localBusy=false;localActive=null;status('已停止本地生成。');controls();}else controller?.abort();};
+  $('stop').onclick=()=>{if(localBusy){localClient.stop();status('已停止本地生成。');}else controller?.abort();};
   $('chatForm').onsubmit=async event=>{
-    event.preventDefault();if(controller||reading)return;
+    event.preventDefault();if(controller||reading||localBusy)return;
     const text=$('prompt').value.trim(),files=[...attachments];if(!text&&!files.length){status('请输入问题或添加附件。');return;}
     if(localMode){await submitLocal(text,files);return;}
     if(!config){$('settings').showModal();Ops.status($('settingsStatus'),'先配置接口，再发送消息。');return;}
