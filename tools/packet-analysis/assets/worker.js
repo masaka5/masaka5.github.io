@@ -1,6 +1,7 @@
 import {Wiregasm,vectorToArray} from './wiregasm-api.js';
 import loader from './wiregasm.js';
-let wg=null,initializing=null,filename='',rawSize=0;
+import {EtlReader,looksLikeEtl} from './etl.js?v=20261114-etl1';
+let wg=null,initializing=null,filename='',etl=null,sourceName='';
 const MAX_SIZE=256*1024*1024;
 function plain(value){
  if(value==null||typeof value!=='object')return value;
@@ -26,18 +27,38 @@ async function ready(){
 }
 function valid(filter=''){const result=wg.testFilter(filter);if(!result.ok)throw Error('过滤表达式无效：'+result.error);return filter;}
 function listing({filter='',page=1,size=100}){valid(filter);return plain(wg.frames(filter,Math.max(0,page-1)*Math.min(size,500),Math.min(size,500)));}
+function clearCapture(){
+ if(wg.session){wg.session.delete();wg.session=null;}
+ if(filename)try{wg.lib.FS.unlink(`${wg.uploadDir}/${filename}`);}catch{}
+}
+function loadCapture(bytes,name){
+ clearCapture();filename=name;
+ const response=wg.load(filename,bytes);if(response.code!==0)throw Error(response.error||'不支持此抓包文件，或文件已损坏');
+ return{summary:response.summary,version:wg.lib.wiresharkVersion(),columns:wg.columns(),list:listing({}),etl:etl?{...etl.stats,mode:etl.mode}:null};
+}
 async function handle(m){
  if(m.method==='init'){await ready();return{version:wg.lib.wiresharkVersion(),columns:wg.columns()};}
  if(m.method==='load'){
   await ready();if(m.bytes.byteLength>MAX_SIZE)throw Error('单个抓包文件不能超过 256 MB');
-  // Reset the old session and remove its upload to keep repeated opens bounded.
-  if(wg.session){wg.session.delete();wg.session=null;}
-  try{wg.lib.FS.unlink(`${wg.uploadDir}/${filename}`);}catch{}
-  filename='capture'+(String(m.name).match(/(\.[a-z0-9]+){1,2}$/i)?.[0]||'.pcap');rawSize=m.bytes.byteLength;
-  const response=wg.load(filename,new Uint8Array(m.bytes));if(response.code!==0)throw Error(response.error||'不支持此抓包文件，或文件已损坏');
-  return{summary:response.summary,version:wg.lib.wiresharkVersion(),columns:wg.columns(),list:listing({})};
+  clearCapture();etl=null;sourceName=String(m.name||'capture');
+  if(looksLikeEtl(m.bytes,sourceName)){
+   self.postMessage({type:'status',text:'正在通过 WASM 解析 ETL'});
+   const reader=await EtlReader.open(m.bytes);etl=reader;
+   return loadCapture(reader.convert(),'capture-etl.pcapng');
+  }
+  return loadCapture(new Uint8Array(m.bytes),'capture'+(sourceName.match(/(\.[a-z0-9]+){1,2}$/i)?.[0]||'.pcap'));
  }
  if(!wg)throw Error('请先打开抓包文件');
+ if(m.method==='etl-view'){
+  if(!etl)throw Error('请先打开 ETL 文件');
+  self.postMessage({type:'status',text:'正在切换 ETL 视图'});
+  return loadCapture(etl.convert(m.mode==='events'?'events':'packets'),'capture-etl.pcapng');
+ }
+ if(m.method==='capture'){
+  if(!etl||!wg.session)throw Error('请先打开 ETL 文件');
+  const data=wg.lib.FS.readFile(`${wg.uploadDir}/${filename}`);
+  return{bytes:data.buffer,name:sourceName.replace(/\.etl$/i,'')+'-'+etl.mode+'.pcapng'};
+ }
  if(m.method==='frames')return listing(m);
  if(m.method==='frame')return plain(wg.frame(m.number));
  if(m.method==='filter')return wg.testFilter(m.filter);
@@ -63,4 +84,4 @@ async function handle(m){
 }
 // Serialize calls: the Wireshark session is not reentrant.
 let chain=Promise.resolve();
-self.onmessage=({data:m})=>{chain=chain.then(async()=>{try{const result=await handle(m);self.postMessage({id:m.id,result});}catch(error){self.postMessage({id:m.id,error:String(error?.message||error)});}});};
+self.onmessage=({data:m})=>{chain=chain.then(async()=>{try{const result=await handle(m);self.postMessage({id:m.id,result},m.method==='capture'?[result.bytes]:[]);}catch(error){self.postMessage({id:m.id,error:String(error?.message||error)});}});};

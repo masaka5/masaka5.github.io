@@ -22404,11 +22404,11 @@ const ToolboxCatalog = {
       "id": "packet-analysis",
       "category": "network",
       "name": "抓包分析",
-      "description": "Wireshark WASM · 过滤 · 协议树",
+      "description": "ETL · PCAP · 协议树 · 流追踪",
       "href": "tools/packet-analysis/",
       "icon": "network",
-      "tags": ["Wireshark", "PCAP", "WASM"],
-      "keywords": "Wireshark PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点"
+      "tags": ["Wireshark", "ETL", "WASM"],
+      "keywords": "Wireshark ETL ETW netsh PktMon PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点"
     },
     {
       "id": "hex-wasm",
