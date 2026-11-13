@@ -1,0 +1,82 @@
+{
+  "name": "会议纪要",
+  "engine": "sherpa-onnx 2.0.1 SIMD WASM",
+  "model": "Fun-ASR-Nano INT8",
+  "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+  "summary": "Spark-X2.6-4B Q4 + Pi; direct-answer document mode",
+  "version": "b18dad420fbb",
+  "artifacts": {
+    "app.js": {
+      "bytes": 923345,
+      "sha256": "66d60eec72f929e632c178a46fccb30d4623d7c41afef8942d320a811f2799ea"
+    },
+    "app.css": {
+      "bytes": 9250,
+      "sha256": "59bb43c5c4900d4c652e8b5a2e73db391fbf222f69edb2e80c2119d565452755"
+    },
+    "summary-worker.js": {
+      "bytes": 109123,
+      "sha256": "5e9b9a60ac7f9dc1ad06d009178f91c0d373d4c7e3c62fbe03f2d8f2bcc83cc1"
+    },
+    "client.mjs": {
+      "bytes": 1692,
+      "sha256": "3cd699c1f50d2d03242677f7acad49910a200e922802181fb7ea35949d736eb4"
+    },
+    "capture.mjs": {
+      "bytes": 5330,
+      "sha256": "5f3b02f76ba7744817b33d0efb3e9172e4a43b7a0d7a0036d1e55bff2cd882c8"
+    },
+    "core.mjs": {
+      "bytes": 3982,
+      "sha256": "ebd9733ea50f43780dcfbade7e9eaea9c94ec4ee92653585cef08b570e6e369f"
+    },
+    "storage.mjs": {
+      "bytes": 2264,
+      "sha256": "994f82cd5113b7cafefa05deca5986b9ad21bfb78a7e108aff7ccb773b49f973"
+    },
+    "media.mjs": {
+      "bytes": 1840,
+      "sha256": "539c73c1e461565707aebc6317eb3c4f88063d7cf0cad026f50a891b3885a7a1"
+    },
+    "worker.mjs": {
+      "bytes": 7348,
+      "sha256": "3e5aec890405a71fa84e09bd9e50280caaa6df894be36862294311b486c04901"
+    },
+    "models.mjs": {
+      "bytes": 668,
+      "sha256": "d61ff15385efe87a919df0435ff3425fa2469dbcbf42e21d7b5d7d3e1217c45e"
+    },
+    "summary-client.mjs": {
+      "bytes": 668,
+      "sha256": "5107df382626992bee1a2accb3b581974ca158e3d80069f6cfc77d3734fe3595"
+    },
+    "vendor/sherpa.mjs": {
+      "bytes": 104824,
+      "sha256": "f8c4b0b4277cfb6e62b4a2aff3ee5329af375d6930488318cbf0de535d63c56d"
+    },
+    "vendor/sherpa.wasm": {
+      "bytes": 15203446,
+      "sha256": "9b2851acd37eee1a04207fdfcb70adaff99963b8fda55f6a9dd7bcabd0ecd1e3"
+    },
+    "vendor/asr.mjs": {
+      "bytes": 54741,
+      "sha256": "4c2323e3da1881b7b649ad05f7468685e7aa897212f781d650746775dc4d7f49"
+    },
+    "vendor/vad.mjs": {
+      "bytes": 8740,
+      "sha256": "2a10242a78fd0bb4e806f5c696bd406af4cd2126446282f967cae57d4eecd2b7"
+    },
+    "vendor/speaker-diarization.mjs": {
+      "bytes": 7837,
+      "sha256": "2a89f5109e822f0100853847ec0dd2edaf4d78d0fae685916f6450f2dd4cf6ae"
+    },
+    "vendor/silero_vad.onnx": {
+      "bytes": 643854,
+      "sha256": "9e2449e1087496d8d4caba907f23e0bd3f78d91fa552479bb9c23ac09cbb1fd6"
+    },
+    "vendor/campplus.onnx": {
+      "bytes": 28281164,
+      "sha256": "aa3cfc16963a10586a9393f5035d6d6b57e98d358b347f80c2a30bf4f00ceba2"
+    }
+  }
+}
