@@ -1,0 +1,45 @@
+{
+  "name": "在线会议与协作白板",
+  "files": [
+    {
+      "file": "board.css",
+      "bytes": 2397,
+      "sha256": "4ae24e7d045954a4ea5d289044fdef16f6902aa9e1dae3c95f93194451173001"
+    },
+    {
+      "file": "index.html",
+      "bytes": 10837,
+      "sha256": "da16ce66457b3f6ba8efe6cac20aa2c6b7db70c78ff2b9b9fb4cb2020f667022"
+    },
+    {
+      "file": "meeting-board.js",
+      "bytes": 102395,
+      "sha256": "fd6cabd370c25b894802a5cffdb65befcc1899e9d90013cb867634f099e60365"
+    },
+    {
+      "file": "meeting-core.js",
+      "bytes": 2251,
+      "sha256": "9f67291fd0d541f040cce5f6b2d5188a1e4dffad934241052d5766ef42ad6757"
+    },
+    {
+      "file": "meeting-media.js",
+      "bytes": 2507,
+      "sha256": "9b56ffe00a48c2a765d8508b631126a59073eb2255c03ed53f4fdb18aea7697c"
+    },
+    {
+      "file": "meeting-transport.js",
+      "bytes": 6618,
+      "sha256": "790c5cfc5a591122649d9cea0ae451de2e857a97edbf4cd01c58cff418e8aa41"
+    },
+    {
+      "file": "meeting.css",
+      "bytes": 15617,
+      "sha256": "e1f94b763ecc257371443f56dff2f2465963f5db8ecbda57b7d292a33559cb15"
+    },
+    {
+      "file": "meeting.js",
+      "bytes": 19274,
+      "sha256": "866205010b880a0f0e7f1b396e232fc960b66806e44ac41f3e6ca3d512af212f"
+    }
+  ]
+}

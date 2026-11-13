@@ -1,0 +1,128 @@
+{
+  "sourceArchive": "../meeting-source.zip",
+  "archiveBytes": 2680382,
+  "archiveSha256": "461afab15b5e4562f03f60004574b65c3f00f18c2a6a33c8b8bbc7a2eb9fdb6e",
+  "updatedSources": [
+    {
+      "path": "_scratch/meeting-build/README-whiteboard.md",
+      "bytes": 1889,
+      "sha256": "cd94b7f1e974f358deaf55e082c263848957f066e39165d2bda6fe8bd2143e01"
+    },
+    {
+      "path": "_scratch/meeting-build/build-board.mjs",
+      "bytes": 1002,
+      "sha256": "9fb835a4e94e93cd8ffcb8b87959821a417c7a9d621c41b303c6c045a98fd9e5"
+    },
+    {
+      "path": "_scratch/meeting-build/build.mjs",
+      "bytes": 996,
+      "sha256": "e027b2bc896f5399af01ffaa3fd2d5a1cd6f720d145856b442e8ceb96eb3678f"
+    },
+    {
+      "path": "_scratch/meeting-build/package-lock.json",
+      "bytes": 36826,
+      "sha256": "e7d5a6f4a6ad4187671b8e0329d80aafc818d277ffc153799b5044e030574539"
+    },
+    {
+      "path": "_scratch/meeting-build/package.json",
+      "bytes": 258,
+      "sha256": "5abbfd34847ca5a32f0845da7fa6e15ba3ab5e0c1aff6d47a17f448c35322366"
+    },
+    {
+      "path": "_scratch/meeting-build/src/board-model.mjs",
+      "bytes": 3667,
+      "sha256": "c933ee36187e7306a2a573af2a62c5da9ff0cc536798835fcf5a7235db4d375c"
+    },
+    {
+      "path": "_scratch/meeting-build/src/board-render.mjs",
+      "bytes": 1950,
+      "sha256": "204d240f1dfbd92945d0ebec32d978205e608d7f72157bf5807fc0adf3b311a1"
+    },
+    {
+      "path": "_scratch/meeting-build/src/board-storage.mjs",
+      "bytes": 1309,
+      "sha256": "32fb335c659faffc9f048af118ddaf1984a9a697e1a7fb0e01050476b3e15f8c"
+    },
+    {
+      "path": "_scratch/meeting-build/src/board-sync.mjs",
+      "bytes": 1893,
+      "sha256": "51c70578cae845cfef7d5ca358a08b3401083357659ac2b9bccee862024a4194"
+    },
+    {
+      "path": "_scratch/meeting-build/src/board-ui.mjs",
+      "bytes": 11534,
+      "sha256": "5d7b66c0008b149293d4168fa9ed24525d80825435f00b0f597136a0f3968638"
+    },
+    {
+      "path": "_scratch/meeting-build/tests/board-model.test.mjs",
+      "bytes": 2705,
+      "sha256": "b4f61518b05d9ce82ce89d22e101ceb5b7b3cfcfd5cfbd3faa961d5ddfdbb292"
+    },
+    {
+      "path": "_scratch/meeting-build/tests/board-sync.test.mjs",
+      "bytes": 1194,
+      "sha256": "e49f70dcf34f7971ad99deb282f62da154bbca5b3ee159a0bc78f51d3a8e311c"
+    },
+    {
+      "path": "_scratch/ops-tests/meeting-whiteboard-cross.py",
+      "bytes": 1969,
+      "sha256": "6f351a2869478d5291e02dcb8ed0bfa52e8947403511927ddceb232e4a9f9c05"
+    },
+    {
+      "path": "_scratch/ops-tests/meeting-whiteboard.py",
+      "bytes": 9321,
+      "sha256": "e19995bdc2c33c3f78456528378af919fd3ce9761e4df4db26d7a847151f0873"
+    },
+    {
+      "path": "_scratch/package-meeting-whiteboard.py",
+      "bytes": 2447,
+      "sha256": "465854b71f94890bf07d267752d5e87019aa63cf7f7aa90b6e5ac37ab083bb99"
+    },
+    {
+      "path": "toolbox-site/licenses/meeting-whiteboard/THIRD-PARTY-NOTICES.txt",
+      "bytes": 3530,
+      "sha256": "5919aadfb36a18890ffa57b13650fc74777227e5c461636ebe42eac2d3bcd016"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/board.css",
+      "bytes": 2397,
+      "sha256": "4ae24e7d045954a4ea5d289044fdef16f6902aa9e1dae3c95f93194451173001"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/index.html",
+      "bytes": 10837,
+      "sha256": "da16ce66457b3f6ba8efe6cac20aa2c6b7db70c78ff2b9b9fb4cb2020f667022"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting-board.js",
+      "bytes": 102395,
+      "sha256": "fd6cabd370c25b894802a5cffdb65befcc1899e9d90013cb867634f099e60365"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting-core.js",
+      "bytes": 2251,
+      "sha256": "9f67291fd0d541f040cce5f6b2d5188a1e4dffad934241052d5766ef42ad6757"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting-media.js",
+      "bytes": 2507,
+      "sha256": "9b56ffe00a48c2a765d8508b631126a59073eb2255c03ed53f4fdb18aea7697c"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting-transport.js",
+      "bytes": 6618,
+      "sha256": "790c5cfc5a591122649d9cea0ae451de2e857a97edbf4cd01c58cff418e8aa41"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting.css",
+      "bytes": 15617,
+      "sha256": "e1f94b763ecc257371443f56dff2f2465963f5db8ecbda57b7d292a33559cb15"
+    },
+    {
+      "path": "toolbox-site/tools/meeting/meeting.js",
+      "bytes": 19274,
+      "sha256": "866205010b880a0f0e7f1b396e232fc960b66806e44ac41f3e6ca3d512af212f"
+    }
+  ],
+  "dependency": "yjs@13.6.31 (MIT)"
+}

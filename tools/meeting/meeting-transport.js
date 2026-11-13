@@ -9,6 +9,9 @@ export class MeetingTransport extends EventTarget{
   this.library=library;
   const room=this.room=library.joinRoom({appId:'tools.manshii.asia/meeting/v1',identity:'none',password:this.invite.key,maxUsers:6,maxReceiveBytes:1024*1024,turnConfig:this.turn,relayConfig:{redundancy:4,warnOnRelayFailure:false}},this.invite.room);
   const profile=this.profileAction=room.makeAction('profile'),chat=this.chatAction=room.makeAction('chat'),stop=this.stopAction=room.makeAction('stop');
+  const board=this.boardAction=room.makeAction('board-v1');
+  board.onReceive(({byteLength})=>byteLength<=900*1024+1);
+  board.onMessage((data,{peerId})=>{if(!this.closed&&this.members.has(peerId)&&data instanceof Uint8Array&&data.length<=900*1024+1)this.emit('board',{data,peerId});});
   for(const action of [profile,chat,stop])action.onReceive(({byteLength})=>byteLength<=12000);
   profile.onMessage((data,{peerId})=>{
    if(!this.members.has(peerId)||!data||typeof data.name!=='string'||data.name.length>80||!Array.isArray(data.streams)||data.streams.length>3||!data.streams.every(validMedia))return;
@@ -26,6 +29,7 @@ export class MeetingTransport extends EventTarget{
   stop.onMessage((data,{peerId})=>{if(!validMedia(data))return;const id=peerId+':'+data.token,entry=this.remote.get(id);if(entry){this.remote.delete(id);this.emit('streamremoved',entry);}});
   room.onPeerJoin(({peerId})=>{
    if(this.closed)return;this.members.set(peerId,{name:'参会者',mic:false,camera:false,sharing:false});this.emit('members');
+   this.emit('peerjoin',{peerId});
    this.sendProfile(peerId).catch(()=>{});
    for(const entry of this.local.values())if(entry.stream.getTracks().some(t=>t.readyState==='live'))room.addStream(entry.stream,{target:peerId,metadata:{kind:entry.kind,token:entry.token}}).catch(()=>this.emit('notice','向新成员发送媒体失败'));
   });
@@ -47,6 +51,7 @@ export class MeetingTransport extends EventTarget{
  async publish(entry){if(this.closed||!this.room)return;this.local.set(entry.kind,entry);await this.sendProfile();if(!this.closed&&this.local.get(entry.kind)===entry)await this.room.addStream(entry.stream,{metadata:{kind:entry.kind,token:entry.token}});}
  async unpublish(entry){if(this.local.get(entry.kind)===entry)this.local.delete(entry.kind);if(this.closed||!this.room)return;this.room.removeStream(entry.stream);await Promise.allSettled([this.stopAction.send({kind:entry.kind,token:entry.token}),this.sendProfile()]);}
  async sendChat(text){if(this.closed||!this.members.size)throw Error('等待其他成员加入后再发送');const data={id:randomID(),text:text.trim(),at:Date.now()};if(!validChat(data))throw Error('消息需为 1–2000 个字');await this.chatAction.send(data);return data;}
+ async sendBoard(data,target){if(this.closed||!this.boardAction)return;if(!(data instanceof Uint8Array)||data.length>900*1024+1)throw Error('白板同步包超出限制');if(target&&!this.members.has(target))return;if(!target&&!this.members.size)return;await this.boardAction.send(data,{target});}
  diagnostics(){const sockets=this.library?.getRelaySockets()||{};return {strategy:this.invite.via,relays:Object.values(sockets).filter(s=>s.readyState===1).length,peers:this.members.size,turn:this.turn.length>0};}
  async leave(){if(this.closed)return;this.closed=true;this.local.clear();this.remote.clear();this.members.clear();await this.room?.leave();this.emit('closed');}
 }

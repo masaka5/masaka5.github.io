@@ -523,15 +523,15 @@ const ToolboxCatalog = {
       "id": "meeting",
       "category": "meetings",
       "name": "在线会议",
-      "description": "多人音视频 · 屏幕共享 · 聊天",
+      "description": "音视频 · 屏幕共享 · 协作白板",
       "href": "tools/meeting/",
       "icon": "video",
       "tags": [
         "会议",
         "共享",
-        "聊天"
+        "白板"
       ],
-      "keywords": "Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC",
+      "keywords": "Teams 多人 在线 开会 语音 视频 摄像头 屏幕 声音 共享 会议室 WebRTC 白板 CRDT Yjs 实时协作 绘图 聊天",
       "variants": [
         {
           "name": "标准",

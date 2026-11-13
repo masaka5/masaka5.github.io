@@ -3,23 +3,23 @@
   "files": [
     {
       "bytes": 787868,
-      "path": "assets/home-react/home.js",
-      "sha256": "ef21895ce01928a8acef46f594cba68fcbe41d790b60f7de614c7174fab01d2e"
+      "sha256": "ef21895ce01928a8acef46f594cba68fcbe41d790b60f7de614c7174fab01d2e",
+      "path": "assets/home-react/home.js"
     },
     {
       "bytes": 17058,
-      "path": "assets/home-react/home.css",
-      "sha256": "2c07a9088371052fa6eb8b600974a7eb5f46e73bbcdd3f3faefdc8f20b94163a"
+      "sha256": "2c07a9088371052fa6eb8b600974a7eb5f46e73bbcdd3f3faefdc8f20b94163a",
+      "path": "assets/home-react/home.css"
     },
     {
       "bytes": 495,
-      "path": "assets/home-react/manifest.json",
-      "sha256": "23195f716b7b510a6fc8806d1467e613b7df50acf544d883505f026853d8f1cc"
+      "sha256": "23195f716b7b510a6fc8806d1467e613b7df50acf544d883505f026853d8f1cc",
+      "path": "assets/home-react/manifest.json"
     },
     {
-      "bytes": 285616,
-      "path": "licenses/home-react-source.zip",
-      "sha256": "1a70b5eb63379237d51cc64e3eba4a72f9ee38d6b994f7858e877c1c59ce315e"
+      "bytes": 285640,
+      "sha256": "15152e8afd493dfc3bd10919dd90e387a163c53eb24dcd56f5eed3dbeb5b6900",
+      "path": "licenses/home-react-source.zip"
     }
   ]
 }

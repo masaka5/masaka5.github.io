@@ -1,9 +1,14 @@
 import {createInvite,parseInvite,inviteURL,inviteCode,cleanName,turnConfig} from './meeting-core.js';
 import {MeetingMedia,mediaError} from './meeting-media.js';
-import {MeetingTransport} from './meeting-transport.js';
+import {MeetingTransport} from './meeting-transport.js?v=whiteboard1';
+import {MeetingWhiteboard} from './meeting-board.js';
 const $=id=>document.getElementById(id),icon=name=>ToolboxIcons.svg(name);
 document.querySelectorAll('[data-icon]').forEach(el=>el.replaceWith(icon(el.dataset.icon)));
 const app=window.meetingApp={transport:null,invite:null,turn:[],busy:false,leaving:false,joinedAt:0,tiles:new Map(),audio:new Map(),page:0,pinned:null,presentation:false,unread:0};
+const whiteboard=app.whiteboard=new MeetingWhiteboard(document.getElementById('meetingWhiteboard'),{onError:text=>notice(text,'error')});
+replaceIcon(document.getElementById('openWhiteboard'),'notebook-pen');
+function boardView(active){whiteboard.setActive(active);$('meetingWhiteboard').hidden=!active;$('videoStage').hidden=active;$('openWhiteboard').setAttribute('aria-pressed',String(active));$('toggleLayout').disabled=active;}
+$('openWhiteboard').onclick=()=>boardView($('meetingWhiteboard').hidden);
 const media=app.media=new MeetingMedia((entry,active)=>{
  if(app.transport&&!app.transport.closed){const task=active?app.transport.publish(entry):app.transport.unpublish(entry);task.catch(()=>notice('媒体发送失败，请重新启用设备'));}
  if(active)addEntry({...entry,id:'self:'+entry.token,local:true,peerId:'self'});else removeEntry('self:'+entry.token);
@@ -51,6 +56,7 @@ async function enter(invite){
   await transport.connect();if(app.transport!==transport||transport.closed)return;
   history.replaceState(null,'',inviteURL(invite));app.joinedAt=Date.now();app.page=0;app.pinned=null;app.presentation=false;clearChat();
   $('meetingLobby').hidden=true;$('meetingRoom').hidden=false;$('lobbyStatus').textContent='';$('roomTitle').textContent='会议 · '+invite.room.slice(0,6);$('conversationPanel').hidden=true;
+  await whiteboard.connect(transport,invite);boardView(false);
   const published=await Promise.allSettled([...media.entries.values()].map(entry=>transport.publish(entry)));
   renderPeople();renderTiles();updateConnection();
   notice(published.some(r=>r.status==='rejected')?'媒体发送失败，可重新开启设备；文字会议仍可使用':'');
@@ -105,9 +111,9 @@ $('chatText').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e
 async function copyInvite(){if(!app.invite)return;try{await navigator.clipboard.writeText(inviteURL(app.invite));notice('邀请链接已复制');}catch{notice('无法读取剪贴板，请复制地址栏中的完整链接');}}
 $('copyInvite').onclick=$('inviteFromEmpty').onclick=copyInvite;
 $('enableSound').onclick=async()=>{const targets=[...app.audio.values(),...[...app.tiles.values()].filter(t=>!t.entry.local).map(t=>t.video)];const results=await Promise.allSettled(targets.map(a=>a.play()));$('enableSound').hidden=results.every(r=>r.status==='fulfilled');};
-async function leave(){if(app.leaving)return;app.leaving=true;const t=app.transport;app.transport=null;media.stopAll();for(const id of [...app.tiles.keys(),...app.audio.keys()])removeEntry(id);await t?.leave();app.joinedAt=0;$('meetingRoom').hidden=true;$('meetingLobby').hidden=false;setStatus('已离开');notice('已离开会议，麦克风和共享已关闭');if(app.invite)useInvite(app.invite);app.leaving=false;}
+async function leave(){if(app.leaving)return;app.leaving=true;const t=app.transport;app.transport=null;media.stopAll();for(const id of [...app.tiles.keys(),...app.audio.keys()])removeEntry(id);boardView(false);await whiteboard.disconnect();await t?.leave();app.joinedAt=0;$('meetingRoom').hidden=true;$('meetingLobby').hidden=false;setStatus('已离开');notice('已离开会议，麦克风和共享已关闭');if(app.invite)useInvite(app.invite);app.leaving=false;}
 $('leaveMeeting').onclick=leave;
-window.addEventListener('pagehide',()=>{media.stopAll();app.transport?.leave().catch(()=>{});});
+window.addEventListener('pagehide',()=>{media.stopAll();whiteboard.disconnect().catch(()=>{});app.transport?.leave().catch(()=>{});});
 for(const el of document.querySelectorAll('[data-close]'))el.onclick=()=>el.closest('dialog').close();
 $('openSettings').onclick=async()=>{
  $('settingsStatus').textContent='';$('relayStrategy').disabled=!!app.transport&&!app.transport.closed;$('strategyNote').textContent=$('relayStrategy').disabled?'连接方式在离会后可修改。':'更换后需重新发送邀请链接。';
