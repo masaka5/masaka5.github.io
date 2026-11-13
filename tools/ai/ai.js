@@ -1,25 +1,75 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-spark1';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-spark1';
-import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-context2';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-context2';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-context2';
+import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-context2';
+import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-context2';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
   const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
   const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
   let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID();
-  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{if(localMode){$('modelLabel').textContent=info.label+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onError:error=>status(error,true)});
+  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{if(localMode){$('modelLabel').textContent=info.label+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);scheduleSave();}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);scheduleSave();}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onContext:event=>contextEvent(event),onCheckpoint:()=>void persist(),onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
+  const store=new ConversationStore(),tasks={local:null,api:null},contexts={local:null,api:null},archivedTasks=[];
+  let saveTimer=null,restoring=true,storageProblem=false,interrupted=null;
+  const mode=()=>localMode?'local':'api';
+  const currentTask=()=>tasks[mode()];
+  function renderMemory(){
+    const task=currentTask(),context=contexts[mode()];
+    $('contextStrip').hidden=!task&&!context;
+    $('taskStatus').hidden=!task;
+    $('taskStatus').textContent=task?(task.status==='completed'?'任务已完成':task.status==='pending'?'任务待继续':'任务进行中'):'';
+    $('taskStatus').dataset.state=task?.status||'';
+    $('contextNotice').hidden=!context;
+    $('contextNotice').dataset.state=context?.state||'';
+    $('contextNotice').textContent=context?.state==='compacting'?'正在整理上下文…':context?.state==='error'?'整理未完成 · 原文已保留':context?'上下文已整理 · 原文已保留':'';
+  }
+  function contextEvent(event){
+    const key=mode(),previous=contexts[key]||{};
+    if(event.type==='compaction_start')contexts[key]={...previous,state:'compacting',before:event.tokensBefore};
+    else if(event.type==='compaction_end')contexts[key]={...previous,state:'ready',before:event.tokensBefore,after:event.tokensAfter,count:(previous.count||0)+1};
+    else if(event.type==='compaction_error')contexts[key]={...previous,state:'error'};
+    renderMemory();if(event.type!=='compaction_summary'&&event.type!=='compaction_progress')void persist();
+  }
+  function beginTask(text){
+    const key=mode(),task=tasks[key];
+    if(!task||task.status==='completed'){if(task)archivedTasks.push(task);tasks[key]=createTask(text||'处理附件');}
+    else tasks[key]={...task,status:'in_progress'};
+    renderMemory();
+  }
+  function completeReply(value){
+    const reply=readTaskReply(value);if(reply.completed)tasks[mode()]=finishTask(currentTask(),true);
+    renderMemory();return reply.text;
+  }
+  function snapshot(){return {history,localHistory,localMode,sessionId:localClient.sessionId,checkpoint:localClient.checkpoint,apiSessionId,apiCheckpoint,tasks,contexts,archivedTasks,interrupted:localActive?{mode:'local',raw:localRaw}:interrupted,draft:$('prompt').value,shortcut:$('sendShortcut').value};}
+  async function persist(){
+    if(restoring)return false;clearTimeout(saveTimer);saveTimer=null;
+    try{await store.save(snapshot());storageProblem=false;return true;}
+    catch{if(!storageProblem)status('浏览器未能保存记录，请导出对话后再刷新。',true);storageProblem=true;return false;}
+  }
+  function scheduleSave(){if(!saveTimer)saveTimer=setTimeout(()=>void persist(),1000);}
+  function renderTranscript(){
+    $('chatFeed').replaceChildren($('chatEmpty'));$('chatEmpty').hidden=false;
+    for(const item of localMode?localHistory:history){
+      if(item.role==='assistant'){const reply=message('assistant',item.content);reply.card.dataset.state='complete';if(item.raw)renderLocal(reply,item.raw,true);}
+      else message('user',item.display??(typeof item.content==='string'?item.content:item.content.filter(p=>p.type==='text').map(p=>p.text).join('\n')),item.files||[]);
+    }
+    if(interrupted?.mode===mode()){const reply=message('assistant','生成已中断，原始消息已保留。');reply.card.dataset.state='error';reply.label.textContent='未完成';if(interrupted.raw&&localMode)renderLocal(reply,interrupted.raw,true);else if(interrupted.raw)reply.body.textContent=interrupted.raw;}
+    renderMemory();
+  }
   let localSubmission=null;
   function controls(){
     const busy=!!controller||localBusy;
-    for(const id of ['prompt','attach','files','newChat','clearChat','openSettings','localChat','useLocal','setupChat'])$(id).disabled=busy||reading;
+    for(const id of ['prompt','attach','files','newChat','clearChat','openSettings','localChat','useLocal','setupChat','taskStatus'])$(id).disabled=busy||reading;
     $('send').disabled=busy||reading;$('send').hidden=busy;$('stop').hidden=!busy;
     $('chatFeed').setAttribute('aria-busy',String(busy));
     document.querySelectorAll('.attachment button').forEach(button=>button.disabled=busy||reading);
   }
   function clearChat(){
     history=[];localHistory=[];attachments=[];localRaw='';localActive=null;localClient.resetContext();apiCheckpoint=null;apiSessionId=crypto.randomUUID();if(localMode)$('modelLabel').textContent=LOCAL_LABEL+(localClient.ready?' · WebGPU':' · 未加载');$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
-    $('chatEmpty').hidden=false;$('exportChat').disabled=true;$('prompt').value='';status('');
+    tasks.local=null;tasks.api=null;contexts.local=null;contexts.api=null;archivedTasks.length=0;interrupted=null;
+    $('chatEmpty').hidden=false;$('exportChat').disabled=true;$('prompt').value='';status('');renderMemory();void persist();
   }
   function endpoint(value){
     let url;try{url=new URL(value);}catch(_){throw Error('请填写完整的 API 地址。');}
@@ -32,7 +82,7 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
   }
   $('openSettings').onclick=$('setupChat').onclick=()=>{$('settingsStatus').textContent='';$('settings').showModal();};
   async function openLocal(){
-    localMode=true;$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('正在准备模型…');
+    if(!localMode){localMode=true;renderTranscript();void persist();}$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('正在准备模型…');
     try{await navigator.storage?.persist?.().catch(()=>false);await localClient.load();$('modelLabel').textContent=LOCAL_LABEL+' · WebGPU';}catch(error){$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';status(error.message||'本地模型启动失败。',true);}
   }
   $('localChat').onclick=$('useLocal').onclick=()=>openLocal();
@@ -43,7 +93,7 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
       if(!next.model)throw Error('请填写模型名称。');
       if(/[\r\n]/.test(next.key))throw Error('密钥格式不正确。');
       if(config&&(config.url!==next.url||config.model!==next.model))clearChat();
-      localMode=false;config=next;$('modelLabel').textContent=next.model;$('modelLabel').title=new URL(next.url).host;
+      localMode=false;config=next;renderTranscript();void persist();$('modelLabel').textContent=next.model;$('modelLabel').title=new URL(next.url).host;
       $('settings').close();status('接口已配置，可发送消息。');$('prompt').focus();
     }catch(error){Ops.status($('settingsStatus'),error.message,true);}
   };
@@ -106,7 +156,7 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
   }
   function renderLocal(reply,raw,finished=false){
     const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;
-    const parsed=splitThinking(raw);reply.body.textContent=parsed.answer||(finished?'生成未完成，消息已保留。':parsed.thinking?'正在思考…':'正在生成…');
+    const parsed=splitThinking(raw);reply.body.textContent=readTaskReply(parsed.answer).text||(finished?'生成未完成，消息已保留。':parsed.thinking?'正在思考…':'正在生成…');
     let details=reply.card.querySelector('.thinking');
     if(!details){details=document.createElement('details');details.className='thinking';const summary=document.createElement('summary');summary.textContent='思考过程';details.append(summary,document.createElement('div'));reply.card.insertBefore(details,reply.body);}
     details.querySelector('div').textContent=parsed.thinking;details.hidden=!parsed.thinking;
@@ -117,11 +167,13 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
     if(files.some(file=>file.image)){status('Spark 模型支持文字，图片请使用接口模式。',true);return;}
     const submission=localSubmission={cancelled:false};localBusy=true;controls();
     if(!localClient.ready){await openLocal();if(submission.cancelled)return;if(!localClient.ready){localBusy=false;localSubmission=null;controls();return;}}
-    const content=(text||'')+localAttachmentText(files),user={role:'user',content};localHistory.push(user);
+    const content=(text||'')+localAttachmentText(files),user={role:'user',content,display:text,files};
+    if(localHistory.at(-1)?.role!=='user'||localHistory.at(-1).content!==content)localHistory.push(user);
+    beginTask(text);interrupted={mode:'local',raw:''};await persist();
     const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
-    try{const answer=await localClient.ask(localHistory,{id:reply.id});localRaw=answer;const finalAnswer=splitThinking(answer).answer;if(!finalAnswer.trim())throw Error('模型未返回答案，消息已保留。');renderLocal(reply,answer,true);localHistory.push({role:'assistant',content:finalAnswer});reply.card.dataset.state='complete';$('prompt').value='';attachments=[];renderAttachments();status('');}
-    catch(error){localHistory.pop();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.body.textContent=error.message||'本地生成失败，请重试。';else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
-    finally{localBusy=false;localActive=null;localSubmission=null;controls();$('prompt').focus();}
+    try{const answer=await localClient.ask(localHistory,{id:reply.id,task:currentTask()});localRaw=answer;const finalAnswer=completeReply(splitThinking(answer).answer);if(!finalAnswer.trim())throw Error('模型未返回答案，消息已保留。');renderLocal(reply,answer,true);localHistory.push({role:'assistant',content:finalAnswer,raw:answer});reply.card.dataset.state='complete';interrupted=null;$('prompt').value='';attachments=[];renderAttachments();status('');}
+    catch(error){interrupted={mode:'local',raw:localRaw};tasks.local={...tasks.local,status:'pending'};renderMemory();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.body.textContent=error.message||'本地生成失败，请重试。';else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
+    finally{localBusy=false;localActive=null;localSubmission=null;controls();await persist();$('prompt').focus();}
   }
   function content(text,files){
     const parts=[];if(text)parts.push({type:'text',text});
@@ -173,10 +225,13 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
     const text=$('prompt').value.trim(),files=[...attachments];if(!text&&!files.length){status('请输入问题或添加附件。');return;}
     if(localMode){await submitLocal(text,files);return;}
     if(!config){$('settings').showModal();Ops.status($('settingsStatus'),'先配置接口，再发送消息。');return;}
-    const user={role:'user',content:content(text,files)},messages=[...history,user];
+    const user={role:'user',content:content(text,files),display:text,files};
+    if(history.at(-1)?.role!=='user'||JSON.stringify(history.at(-1).content)!==JSON.stringify(user.content))history.push(user);
+    const messages=[...history];beginTask(text);interrupted={mode:'api',raw:''};
     controller=new AbortController();const signal=controller.signal;
     controls();const sent=message('user',text,files),reply=message('assistant','正在等待回复…');reply.card.dataset.state='working';status('正在请求 '+new URL(config.url).host+'…');
     try{
+      await persist();
       const request=async(items,onText=()=>{})=>{
        const headers={'Content-Type':'application/json'};if(config.key)headers.Authorization='Bearer '+config.key;
        const response=await fetch(config.url,{method:'POST',headers,body:JSON.stringify({model:config.model,messages:items.map(({role,content})=>({role,content})),stream:true}),signal,credentials:'omit',referrerPolicy:'no-referrer',redirect:'error',cache:'no-store'});
@@ -185,7 +240,9 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
       };
       const asText=value=>typeof value==='string'?value:value.map(part=>part.type==='text'?part.text:'[图片附件]').join('\n');
       const originals=messages.map((m,index)=>({...m,sourceIndex:index}));
+      const taskNote=taskContext(currentTask()),withTask=items=>taskNote?[taskNote,...items]:items;
       const contextHarness=new ContextHarness({window:config.contextWindow||32768,
+       count:items=>withTask(items).reduce((n,m)=>n+estimateTextTokens(m.content)+8,0),onEvent:contextEvent,
        summarize:async({previous,messages,targetTokens})=>{status('整理上下文…');let response=await request([{role:'user',content:summaryPrompt(previous,messages,targetTokens)}]);while(response.stopReason==='length'){const follow=await request([{role:'user',content:summaryPrompt(previous,messages,targetTokens)},{role:'assistant',content:response.text},{role:'user',content:'继续完成摘要，不要重复。'}]);response={text:response.text+follow.text,stopReason:follow.stopReason};}return response;}
       });
       const project=async(items,force=false)=>{
@@ -196,23 +253,46 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
       while(reason==='length'){
        status('生成中…');
        let result;
-       try{result=await request(inference,value=>{const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;reply.body.textContent=answer+value;if(follow)feed.scrollTop=feed.scrollHeight;});}
+       try{result=await request(withTask(inference),value=>{const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;reply.body.textContent=readTaskReply(answer+value).text;interrupted={mode:'api',raw:answer+value};scheduleSave();if(follow)feed.scrollTop=feed.scrollHeight;});}
        catch(error){if(error.overflow&&!recover){recover=true;apiCheckpoint=null;inference=await project(inference,true);continue;}throw error;}
        answer+=result.text;reason=result.stopReason;
        if(reason==='length'){apiCheckpoint=null;inference=await project([...inference,{role:'assistant',content:result.text},{role:'user',content:'接着上文继续，不要重复已输出的内容。'}]);}
       }
       if(signal.aborted)throw new DOMException('Aborted','AbortError');
-      history.push(user,{role:'assistant',content:answer});reply.card.dataset.state='complete';
+      answer=completeReply(answer);history.push({role:'assistant',content:answer});reply.body.textContent=answer;reply.card.dataset.state='complete';interrupted=null;
       $('prompt').value='';attachments=[];renderAttachments();status('');
     }catch(error){
+      tasks.api={...tasks.api,status:'pending'};renderMemory();
       const explanation=signal.aborted?'已停止，消息和附件已保留。':error instanceof TypeError?'无法连接接口，请检查地址、网络及跨域设置。':error.message;
       sent.card.dataset.state='error';reply.card.dataset.state='error';reply.label.textContent='未完成';
       reply.body.textContent=(reply.body.textContent==='正在等待回复…'?'':reply.body.textContent+'\n\n')+explanation;status(explanation,true);
-    }finally{controller=null;controls();$('prompt').focus();}
+    }finally{controller=null;controls();await persist();$('prompt').focus();}
   };
   $('exportChat').onclick=()=>{
     const text=[...document.querySelectorAll('.message')].map(card=>(card.dataset.role==='user'?'你':'助手')+'\n'+card.querySelector('.message-body').textContent+(card.querySelector('.message-files')?'\n附件：'+card.querySelector('.message-files').textContent:'')).join('\n\n');
     Ops.save(text,'AI-对话.txt');
   };
+  $('taskStatus').onclick=()=>{const task=currentTask();if(!task)return;$('taskGoal').value=task.goal;$('taskFacts').value=task.facts.join('\n');$('taskComplete').textContent=task.status==='completed'?'继续任务':'标记完成';$('taskDialog').showModal();};
+  $('closeTask').onclick=()=>$('taskDialog').close();
+  $('taskForm').onsubmit=event=>{event.preventDefault();const task=currentTask();if(!task)return;tasks[mode()]={...task,goal:$('taskGoal').value.trim()||task.goal,facts:$('taskFacts').value.split('\n').map(v=>v.trim()).filter(Boolean)};renderMemory();$('taskDialog').close();void persist();};
+  $('taskComplete').onclick=()=>{tasks[mode()]=finishTask(currentTask(),currentTask().status!=='completed');renderMemory();$('taskDialog').close();void persist();};
+  $('contextNotice').onclick=()=>{const checkpoint=localMode?localClient.checkpoint:apiCheckpoint;$('contextSummary').textContent=checkpoint?.summary||'本次整理尚未完成，原始对话保持不变。';$('contextDialog').showModal();};
+  $('closeContext').onclick=()=>$('contextDialog').close();
+  $('prompt').addEventListener('input',scheduleSave);
+  window.addEventListener('pagehide',()=>void persist());
+  async function restore(){
+    reading=true;controls();
+    try{const saved=await store.read();if(saved?.version===1){
+      history=Array.isArray(saved.history)?saved.history:[];localHistory=Array.isArray(saved.localHistory)?saved.localHistory:[];
+      localMode=saved.localMode!==false;localClient.sessionId=saved.sessionId||localClient.sessionId;localClient.checkpoint=saved.checkpoint||null;
+      apiSessionId=saved.apiSessionId||apiSessionId;apiCheckpoint=saved.apiCheckpoint||null;
+      Object.assign(tasks,saved.tasks||{});Object.assign(contexts,saved.contexts||{});archivedTasks.push(...(saved.archivedTasks||[]));
+      for(const key of ['local','api'])if(contexts[key]?.state==='compacting')contexts[key].state='error';
+      interrupted=saved.interrupted||null;$('prompt').value=saved.draft||'';
+      if(saved.shortcut)$('sendShortcut').value=saved.shortcut;
+      renderTranscript();if(!localMode)$('modelLabel').textContent='接口模式 · 需配置密钥';
+    }}catch{status('无法读取浏览器会话记录。',true);}finally{restoring=false;reading=false;controls();}
+  }
+  void restore();
   if('serviceWorker' in navigator)navigator.serviceWorker.register('./ai-sw.js',{scope:'./',updateViaCache:'none'}).catch(()=>{});
 })();

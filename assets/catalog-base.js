@@ -13,6 +13,7 @@ const ToolboxCatalog = {
   ],
   tools: [
     {id:'minutes',category:'meetings',name:'会议纪要',description:'录音转写 · 发言人 · 纪要整理',href:'tools/minutes/',icon:'file-audio',tags:['会议','语音','WASM'],keywords:'会议 纪要 录音 音频 视频 转写 字幕 摘要 待办 发言人 sherpa-onnx FunASR Nano 本地 离线'},
+    {id:'breeze-tts',category:'media',name:'语音工作室',description:'中文英文 · 声音设计 · 音色复刻',href:'tools/breeze-tts/',icon:'mic-2',tags:['语音','WASM','WebGPU'],keywords:'Breeze TTS 2 3B 语音合成 文本转语音 音色克隆 声音设计 声音指令 中文 英文 Q4 本地 离线'},
     {id:'anki',category:'learning',name:'Anki 语言学习',description:'英语 · 日语 · 间隔复习',href:'tools/anki/',icon:'book-open-check',tags:['Anki','FSRS','WASM'],keywords:'Anki 英语 日语 词库 单词 学习 记忆 卡片 FSRS APKG 填空 离线 复习'},
     {id:'qr-transfer',category:'meetings',name:'动态二维码传输',description:'喷泉编码 · 离线传输 · 密码保护',href:'tools/qr-transfer/',icon:'qr-code',tags:['二维码','离线','传输'],keywords:'动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传 喷泉码 5GB Version40'},
     {id:'browser-fingerprint',category:'security',name:'浏览器指纹',description:'设备特征 · 指纹检测 · 浏览器对比',href:'tools/browser-fingerprint/',icon:'fingerprint',tags:['NeoPrint','指纹','隐私'],keywords:'NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU'},

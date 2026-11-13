@@ -27,6 +27,7 @@ export function localPrompt(messages=[]){
 
 export function localError(message){
  const value=String(message||'');
+ if(/local-task-memory-too-large/.test(value))return'固定重点超过当前模型窗口，请在任务设置中精简后重试。原始对话已保留。';
  if(/local-compaction/.test(value))return'上下文压缩未完成，原始对话已保留，请重试。';
  if(/local-empty/.test(value))return'模型没有返回答案，原始消息已保留，请重试。';
  if(/local-context-overflow/.test(value))return'模型窗口已满，上下文压缩未完成，请重试。';

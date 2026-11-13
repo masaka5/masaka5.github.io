@@ -1,5 +1,5 @@
 {
-  "version": "20261114-spark1",
+  "version": "20261114-context2",
   "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
   "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
   "quantization": "q4f16",

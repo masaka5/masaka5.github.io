@@ -108,11 +108,121 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
-    {"id":"minutes","category":"meetings","name":"会议纪要","description":"录音转写 · 发言人 · 纪要整理","href":"tools/minutes/","icon":"file-audio","tags":["会议","语音","WASM"],"keywords":"会议 纪要 录音 音频 视频 转写 字幕 摘要 待办 发言人 sherpa-onnx FunASR Nano 本地 离线","variants":[{"name":"标准","href":"tools/minutes/","source":"toolbox","sourceId":"minutes"}]},
-    {"id":"anki","category":"learning","name":"Anki 语言学习","description":"英语 · 日语 · 间隔复习","href":"tools/anki/","icon":"book-open-check","tags":["Anki","FSRS","WASM"],"keywords":"Anki 英语 日语 词库 单词 学习 记忆 卡片 FSRS APKG 填空 离线 复习","variants":[{"name":"标准","href":"tools/anki/","source":"toolbox","sourceId":"anki"}]},
-    {"id":"qr-transfer","category":"meetings","name":"动态二维码传输","description":"喷泉编码 · 离线传输 · 密码保护","href":"tools/qr-transfer/","icon":"qr-code","tags":["二维码","离线","传输"],"keywords":"动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传 喷泉码 5GB Version40","variants":[{"name":"标准","href":"tools/qr-transfer/","source":"toolbox","sourceId":"qr-transfer"}]},
-    {"id":"browser-fingerprint","category":"security","name":"浏览器指纹","description":"设备特征 · 指纹检测 · 浏览器对比","href":"tools/browser-fingerprint/","icon":"fingerprint","tags":["NeoPrint","指纹","隐私"],"keywords":"NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU","variants":[{"name":"标准","href":"tools/browser-fingerprint/","source":"toolbox","sourceId":"browser-fingerprint"}]},
-    {"id":"remote","category":"network","name":"远程连接","description":"RDP · VNC · SSH","href":"tools/remote/","icon":"monitor","tags":["远程","设备","网关"],"keywords":"远程桌面 SSH VNC RDP 设备管理 Windows 网关","variants":[{"name":"标准","href":"tools/remote/","source":"toolbox","sourceId":"remote"}]},
+    {
+      "id": "minutes",
+      "category": "meetings",
+      "name": "会议纪要",
+      "description": "录音转写 · 发言人 · 纪要整理",
+      "href": "tools/minutes/",
+      "icon": "file-audio",
+      "tags": [
+        "会议",
+        "语音",
+        "WASM"
+      ],
+      "keywords": "会议 纪要 录音 音频 视频 转写 字幕 摘要 待办 发言人 sherpa-onnx FunASR Nano 本地 离线",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/minutes/",
+          "source": "toolbox",
+          "sourceId": "minutes"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "breeze-tts",
+      "category": "media",
+      "name": "语音工作室",
+      "description": "中文英文 · 声音设计 · 音色复刻",
+      "href": "tools/breeze-tts/",
+      "icon": "clapperboard",
+      "tags": [
+        "语音",
+        "WASM",
+        "WebGPU"
+      ],
+      "keywords": "Breeze TTS 2 3B 语音合成 文本转语音 音色克隆 声音设计 声音指令 中文 英文 Q4 本地 离线",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/breeze-tts/",
+          "source": "toolbox",
+          "sourceId": "breeze-tts"
+        }
+      ],
+      "iconBadge": "音频"
+    },
+    {
+      "id": "anki",
+      "category": "learning",
+      "name": "Anki 语言学习",
+      "description": "英语 · 日语 · 间隔复习",
+      "href": "tools/anki/",
+      "icon": "book-open-check",
+      "tags": [
+        "Anki",
+        "FSRS",
+        "WASM"
+      ],
+      "keywords": "Anki 英语 日语 词库 单词 学习 记忆 卡片 FSRS APKG 填空 离线 复习",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/anki/",
+          "source": "toolbox",
+          "sourceId": "anki"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "qr-transfer",
+      "category": "meetings",
+      "name": "动态二维码传输",
+      "description": "喷泉编码 · 离线传输 · 密码保护",
+      "href": "tools/qr-transfer/",
+      "icon": "qr-code",
+      "tags": [
+        "二维码",
+        "离线",
+        "传输"
+      ],
+      "keywords": "动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传 喷泉码 5GB Version40",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/qr-transfer/",
+          "source": "toolbox",
+          "sourceId": "qr-transfer"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "browser-fingerprint",
+      "category": "security",
+      "name": "浏览器指纹",
+      "description": "设备特征 · 指纹检测 · 浏览器对比",
+      "href": "tools/browser-fingerprint/",
+      "icon": "fingerprint",
+      "tags": [
+        "NeoPrint",
+        "指纹",
+        "隐私"
+      ],
+      "keywords": "NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/browser-fingerprint/",
+          "source": "toolbox",
+          "sourceId": "browser-fingerprint"
+        }
+      ],
+      "iconBadge": ""
+    },
     {
       "id": "yt-dlp",
       "category": "media",
@@ -758,6 +868,29 @@ const ToolboxCatalog = {
       "iconBadge": ""
     },
     {
+      "id": "remote",
+      "category": "network",
+      "name": "远程连接",
+      "description": "RDP · VNC · SSH",
+      "href": "tools/remote/",
+      "icon": "network",
+      "tags": [
+        "远程",
+        "设备",
+        "网关"
+      ],
+      "keywords": "远程桌面 SSH VNC RDP 设备管理 Windows 网关",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/remote/",
+          "source": "toolbox",
+          "sourceId": "remote"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
       "id": "subnet",
       "category": "network",
       "name": "IP／子网计算器",
@@ -957,7 +1090,7 @@ const ToolboxCatalog = {
           "sourceId": "recorder"
         }
       ],
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "dns",
@@ -1071,6 +1204,121 @@ const ToolboxCatalog = {
           "href": "../conversion/?tool=dev-tools/diff&embed=1",
           "source": "localconvert",
           "sourceId": "dev-tools/diff"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "packet-analysis",
+      "category": "network",
+      "name": "抓包分析",
+      "description": "ETL · PCAP · 协议树 · 流追踪",
+      "href": "tools/packet-analysis/",
+      "icon": "network",
+      "tags": [
+        "Wireshark",
+        "ETL",
+        "WASM"
+      ],
+      "keywords": "Wireshark ETL ETW netsh PktMon PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/packet-analysis/",
+          "source": "toolbox",
+          "sourceId": "packet-analysis"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "hex-wasm",
+      "category": "files",
+      "name": "十六进制分析",
+      "description": "WASM · 搜索 · 字段解析 · 校验",
+      "href": "tools/hex-wasm/",
+      "icon": "folder-open",
+      "tags": [
+        "HEX",
+        "WASM",
+        "文件"
+      ],
+      "keywords": "十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/hex-wasm/",
+          "source": "toolbox",
+          "sourceId": "hex-wasm"
+        }
+      ],
+      "iconBadge": "HEX"
+    },
+    {
+      "id": "ocr",
+      "category": "image",
+      "name": "图片文字识别",
+      "description": "PP-OCRv6 Tiny · 图片 · 相机",
+      "href": "tools/ocr/",
+      "icon": "image",
+      "tags": [
+        "OCR",
+        "中文",
+        "相机"
+      ],
+      "keywords": "PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/ocr/",
+          "source": "toolbox",
+          "sourceId": "ocr"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "qr-batch",
+      "category": "encoding",
+      "name": "批量二维码",
+      "description": "字段模板 · 标签排版 · 打印",
+      "href": "tools/qr-batch/",
+      "icon": "qr-code",
+      "tags": [
+        "二维码",
+        "CSV",
+        "打印"
+      ],
+      "keywords": "批量二维码 CSV JSON 字段模板 标签 打印 QR",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/qr-batch/",
+          "source": "toolbox",
+          "sourceId": "qr-batch"
+        }
+      ],
+      "iconBadge": ""
+    },
+    {
+      "id": "topospace",
+      "category": "network",
+      "name": "空间网络编辑器",
+      "description": "2D/3D 拓扑 · 设备连接 · 本地工程",
+      "href": "tools/topospace/",
+      "icon": "network",
+      "tags": [
+        "TopoSpace",
+        "拓扑",
+        "3D"
+      ],
+      "keywords": "TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程",
+      "variants": [
+        {
+          "name": "标准",
+          "href": "tools/topospace/",
+          "source": "toolbox",
+          "sourceId": "topospace"
         }
       ],
       "iconBadge": ""
@@ -2074,7 +2322,7 @@ const ToolboxCatalog = {
       "category": "frontend",
       "name": "盒子阴影发生器",
       "description": "通过调整偏移、模糊、扩散、颜色和插入来直观地设计CSS盒阴影，然后复制现成的盒阴影规则。",
-      "icon": "palette",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "box shadow css blur spread generator box-shadow-generator 盒子阴影发生器 box-shadow preview design web-box-shadow-generator CSS盒子阴影生成器",
       "variants": [
@@ -10939,7 +11187,7 @@ const ToolboxCatalog = {
       "category": "security",
       "name": "许可证密钥生成器",
       "description": "生成具有可配置校验和组的分组许可证/序列密钥。",
-      "icon": "code-xml",
+      "icon": "shield-check",
       "tags": [],
       "keywords": "license key serial number product activation code crockford base32 checksum crc32 product-key license-key-generator 许可证密钥生成器",
       "variants": [
@@ -15444,7 +15692,7 @@ const ToolboxCatalog = {
       "category": "data",
       "name": "SSN格式测试号码生成器",
       "description": "生成格式有效但不可签发的美国SSN测试号码(例如900-xx-xxxx、666区域)用于QA。",
-      "icon": "calculator",
+      "icon": "database",
       "tags": [],
       "keywords": "fake ssn test social security number never issued qa data itin placeholder test-data us ssn-format-test-generator SSN格式测试号码生成器",
       "variants": [
@@ -15900,7 +16148,7 @@ const ToolboxCatalog = {
       "category": "web",
       "name": "括号和报价余额检查器",
       "description": "验证方括号、圆括号、大括号和引号在文本中是平衡的。",
-      "icon": "text-cursor-input",
+      "icon": "code-xml",
       "tags": [],
       "keywords": "balanced brackets matching parentheses brace balance quote syntax check unbalanced mismatched bracket validate quotes text-text-bracket-matcher 括号和报价余额检查器",
       "variants": [
@@ -16216,7 +16464,7 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=time-timecode-frames-converter",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "time-unit-converter",
@@ -17666,7 +17914,7 @@ const ToolboxCatalog = {
       "category": "frontend",
       "name": "HTML数据-*到JS数据集转换器",
       "description": "将data-*属性转换为element.dataset访问表达式并返回。",
-      "icon": "code-xml",
+      "icon": "panels-top-left",
       "tags": [],
       "keywords": "data attribute dataset camelcase kebab-case data-* html javascript data-attribute convert web-data-attribute-to-dataset HTML数据-*到JS数据集转换器",
       "variants": [
@@ -22113,7 +22361,7 @@ const ToolboxCatalog = {
     },
     {
       "id": "flashcards",
-      "category": "learning",
+      "category": "text",
       "name": "词汇卡片",
       "description": "",
       "icon": "gallery-vertical-end",
@@ -22347,7 +22595,7 @@ const ToolboxCatalog = {
         }
       ],
       "href": "tools/tool/?id=capture",
-      "iconBadge": ""
+      "iconBadge": "音频"
     },
     {
       "id": "domain-info",
@@ -22406,56 +22654,6 @@ const ToolboxCatalog = {
       ],
       "href": "tools/tool/?id=voice-dialogue",
       "iconBadge": "音频"
-    },
-    {
-      "id": "packet-analysis",
-      "category": "network",
-      "name": "抓包分析",
-      "description": "ETL · PCAP · 协议树 · 流追踪",
-      "href": "tools/packet-analysis/",
-      "icon": "network",
-      "tags": ["Wireshark", "ETL", "WASM"],
-      "keywords": "Wireshark ETL ETW netsh PktMon PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点"
-    },
-    {
-      "id": "hex-wasm",
-      "category": "files",
-      "name": "十六进制分析",
-      "description": "WASM · 搜索 · 字段解析 · 校验",
-      "href": "tools/hex-wasm/",
-      "icon": "file-code-2",
-      "tags": ["HEX", "WASM", "文件"],
-      "keywords": "十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端"
-    },
-    {
-      "id": "ocr",
-      "category": "image",
-      "name": "图片文字识别",
-      "description": "PP-OCRv6 Tiny · 图片 · 相机",
-      "href": "tools/ocr/",
-      "icon": "scan",
-      "tags": ["OCR", "中文", "相机"],
-      "keywords": "PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理"
-    },
-    {
-      "id": "qr-batch",
-      "category": "encoding",
-      "name": "批量二维码",
-      "description": "字段模板 · 标签排版 · 打印",
-      "href": "tools/qr-batch/",
-      "icon": "qr-code",
-      "tags": ["二维码", "CSV", "打印"],
-      "keywords": "批量二维码 CSV JSON 字段模板 标签 打印 QR"
-    },
-    {
-      "id": "topospace",
-      "category": "network",
-      "name": "空间网络编辑器",
-      "description": "2D/3D 拓扑 · 设备连接 · 本地工程",
-      "href": "tools/topospace/",
-      "icon": "network",
-      "tags": ["TopoSpace", "拓扑", "3D"],
-      "keywords": "TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程"
     },
     {
       "id": "pinyin",

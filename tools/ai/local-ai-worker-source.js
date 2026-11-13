@@ -2,6 +2,7 @@ import {loadSpark} from './spark-runtime.mjs';
 import {LOCAL_MODEL,splitThinking} from './local-ai-core.mjs';
 import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs';
 import {runLocalTurn} from './local-ai-generation.mjs';
+import {taskContext} from './conversation-journal.mjs';
 
 let generator=null,loading=null,active=null;
 const device='webgpu',post=message=>self.postMessage(message);
@@ -40,12 +41,14 @@ async function generate(message){
  const task=active={id,controller:new AbortController()};const signal=task.controller.signal;
  try{
   const model=await load(),rt=runtime(model);signal.throwIfAborted();
-  const harness=new ContextHarness({window:rt.window,reserve:1024,count:rt.count,textTokens:rt.textTokens,
+  const taskNote=taskContext(message.task,{maxTokens:Math.min(1024,Math.floor(rt.window*.2)),textTokens:rt.textTokens});
+  const withTask=messages=>taskNote?[taskNote,...messages]:messages;
+  const harness=new ContextHarness({window:rt.window,reserve:1024,count:messages=>rt.count(withTask(messages)),textTokens:rt.textTokens,
    summarize:async({previous,messages,targetTokens})=>{
     post({type:'phase',id,phase:'compacting'});
     const result=await infer(model,rt.chatPrompt([{role:'user',content:summaryPrompt(previous,messages,targetTokens)}],false),id,{chunkTokens:targetTokens*2,temperature:.2,signal});
     return {...result,text:splitThinking(result.text).answer.trim()};
-   },onEvent:event=>{post({type:'activity',id});if(event.type==='compaction_start')post({type:'phase',id,phase:'compacting'});}
+   },onEvent:event=>{post({type:'context',id,event});post({type:'activity',id});if(event.type==='compaction_start')post({type:'phase',id,phase:'compacting'});}
   });
   const history=message.messages.map(item=>({role:item.role==='assistant'?'assistant':'user',content:String(item.content??'')}));
   const prepared=await harness.prepare(history,{checkpoint:message.checkpoint,sessionId:message.sessionId,signal});
@@ -53,7 +56,7 @@ async function generate(message){
   const result=await runLocalTurn({messages:prepared.messages,initialPrefix:'<think>',signal,
    prepare:async(messages,prefix)=>{
     const combined=[...messages,...(prefix?[{role:'assistant',content:prefix}]:[])];
-    if(rt.count(combined)<=rt.window-1024)return {messages,prefix};
+    if(rt.count(withTask(combined))<=rt.window-1024)return {messages,prefix};
     const reduced=await harness.prepare(combined,{sessionId:message.sessionId+':active',signal});
     const next=[...reduced.messages];let tail='';if(next.at(-1)?.role==='assistant')tail=next.pop().content;
     if(prefix.includes('<think>')&&!tail.includes('<think>'))tail=splitThinking(prefix).thinkingDone?'<think>\n</think>\n'+tail:'<think>\n'+tail;
@@ -62,7 +65,7 @@ async function generate(message){
    generate:({messages,prefix,onToken})=>{
     post({type:'phase',id,phase:'generating'});
     // Spark's template already supplies <think>; append only the generated suffix.
-    const prompt=rt.chatPrompt(messages)+(prefix.startsWith('<think>')?prefix.slice(7):prefix);
+    const prompt=rt.chatPrompt(withTask(messages))+(prefix.startsWith('<think>')?prefix.slice(7):prefix);
     return infer(model,prompt,id,{onToken,signal});
    },onText:text=>post({type:'snapshot',id,text}),onEvent:()=>post({type:'activity',id})
   });
