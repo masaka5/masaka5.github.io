@@ -1,6 +1,7 @@
 import { normalizeProject, normalizeSource, SOURCE_TYPES, DEFAULT_OUTPUT, OUTPUT_LIMITS, uid, clamp } from './broadcast-core.js?v=20261113-effects1';
-import { Compositor } from './compositor.js?v=20261113-effects1';
+import { Compositor } from './compositor.js?v=20261113-lowlatency1';
 import {makeFade,fadeValue} from './effects.js?v=20261113-effects1';
+import {PublishCompositor} from './publish-compositor.js?v=20261113-lowlatency1';
 
 const LABELS={camera:'摄像头',screen:'屏幕共享',window:'窗口共享',microphone:'麦克风',image:'图片',video:'视频',text:'文字',countdown:'倒计时'};
 const COPY=value=>JSON.parse(JSON.stringify(value));
@@ -149,9 +150,25 @@ export class BroadcastEngine {
     if(this.project.fps!==output.fps)this._nextFrame=undefined;
     this.project.fps=output.fps;
     if(this.canvas.width!==output.width)this.canvas.width=output.width;if(this.canvas.height!==output.height)this.canvas.height=output.height;
+    if(this.publishCanvas){const ratio=Math.max(1,output.width/1920,output.height/1080);this.publishCanvas.width=Math.max(64,Math.round(output.width/ratio)&~1);this.publishCanvas.height=Math.max(64,Math.round(output.height/ratio)&~1);this.publishCompositor?.dispose();this.publishCompositor=new PublishCompositor(this.publishCanvas,{onError:e=>this._error(e)});}
     this._dirty=true;this._emit();return {width:output.width,height:output.height,fps:output.fps};
   }
   setMasterGain(gain){if(this.masterGain)this.masterGain.gain.setTargetAtTime(clamp(gain,0,2,1),this.audioContext.currentTime,.015);}
+  getPublishStream({realtime=true}={}){
+    if(!realtime)return this.getOutputStream();
+    if(!this.publishStream){
+      try {
+      const canvas=document.createElement('canvas'),scale=Math.max(1,this.project.width/1920,this.project.height/1080);canvas.width=Math.max(64,Math.round(this.project.width/scale)&~1);canvas.height=Math.max(64,Math.round(this.project.height/scale)&~1);
+      this.publishCanvas=canvas;this.publishCompositor=new PublishCompositor(canvas,{onError:error=>this._error(error)});
+      if(this.canvas.parentElement){canvas.className='publish-preview';canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';this.canvas.parentElement.insertBefore(canvas,this.canvas.nextSibling);}
+      this.publishCompositor.render(this.activeScene,this.runtimes,performance.now(),this.fades,this.project);
+      this._publishCapture=canvas.captureStream(0);let track=this._publishCapture.getVideoTracks()[0];if(typeof track.requestFrame!=='function'){track.stop();this._publishCapture=canvas.captureStream(this.project.fps);}
+      this.publishStream=new MediaStream([...this._publishCapture.getVideoTracks(),...(this.audioDestination?.stream.getAudioTracks()||[])]);this._dirty=true;
+      } catch(error){this.releasePublishStream();throw error;}
+    }
+    return this.publishStream;
+  }
+  releasePublishStream(){for(const track of this._publishCapture?.getVideoTracks()||[])track.stop();this.publishCompositor?.dispose();this.publishCanvas?.remove();this.publishStream=null;this.publishCanvas=null;this.publishCompositor=null;this._publishCapture=null;this._dirty=true;}
   getOutputStream() {
     if(!this.compositor)throw new Error('请先初始化合成器');
     if(!this.outputStream){
@@ -233,7 +250,7 @@ export class BroadcastEngine {
     });
   }
   _watchFrames(runtime){
-    if(runtime.element.requestVideoFrameCallback){runtime.frameCallback=true;const frame=()=>{if(runtime.released)return;runtime.dirty=true;runtime.frameId=runtime.element.requestVideoFrameCallback(frame);};runtime.frameId=runtime.element.requestVideoFrameCallback(frame);}
+    if(runtime.element.requestVideoFrameCallback){runtime.frameCallback=true;const frame=()=>{if(runtime.released)return;runtime.dirty=true;runtime.frameVersion=(runtime.frameVersion||0)+1;runtime.frameId=runtime.element.requestVideoFrameCallback(frame);};runtime.frameId=runtime.element.requestVideoFrameCallback(frame);}
   }
   _connectAudio(runtime) {
     runtime.gainNode=this.audioContext.createGain();runtime.gainNode.gain.value=0;runtime.analyser=this.audioContext.createAnalyser();runtime.analyser.fftSize=256;runtime.samples=new Float32Array(runtime.analyser.fftSize);
@@ -261,12 +278,16 @@ export class BroadcastEngine {
     const sources=this.activeScene?.sources || [];
     const animated=this.fades.size>0||sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));
     if(this._dirty || animated){
-      const start=performance.now();if(this.compositor.render(this.activeScene,this.runtimes,timestamp,this.fades)){this.stats.frames++;this._sampleFrames++;}
+      const start=performance.now();let rendered=false;
+      if(this.publishCompositor)rendered=this.publishCompositor.render(this.activeScene,this.runtimes,timestamp,this.fades,this.project);
+      if(!this.publishCompositor||this.recording||this._dirty)rendered=this.compositor.render(this.activeScene,this.runtimes,timestamp,this.fades)||rendered;
+      if(rendered){this.stats.frames++;this._sampleFrames++;}
       let finished=false;for(const[id,fade]of this.fades)if(timestamp>=fade.start+fade.duration){this.fades.delete(id);finished=true;}if(finished)this._syncAudio();
       this.stats.renderMs=performance.now()-start;this._dirty=false;
     }
     // A retained output can sample the already composed image without redrawing every layer.
     this._canvasStream?.getVideoTracks()[0]?.requestFrame?.();
+    this._publishCapture?.getVideoTracks()[0]?.requestFrame?.();
     if(timestamp-this._sampleStart>=1000){this.stats.fps=Math.round(this._sampleFrames*1000/(timestamp-this._sampleStart));this._sampleFrames=0;this._sampleStart=timestamp;}
     if(this.recording)this.stats.recordingDuration=(timestamp-this._recordStarted)/1000;
     if(timestamp-this._lastState>500){
@@ -274,19 +295,19 @@ export class BroadcastEngine {
       this.stats.audioLevels=levels;this._emit(false);
     }
   }
-  renderNow(){this._dirty=true;if(this.compositor)this.compositor.render(this.activeScene,this.runtimes,performance.now(),this.fades);}
+  renderNow(){this._dirty=true;if(this.compositor)this.compositor.render(this.activeScene,this.runtimes,performance.now(),this.fades);if(this.publishCompositor){this.publishCompositor.render(this.activeScene,this.runtimes,performance.now(),this.fades,this.project);this._publishCapture?.getVideoTracks()[0]?.requestFrame?.();}}
   _release(id,runtimes=this.runtimes,removeTexture=true) {
     this.fades.delete(id);
     const runtime=runtimes.get(id);if(runtime){runtime.released=true;if(runtime.frameId!=null)runtime.element.cancelVideoFrameCallback?.(runtime.frameId);runtime.stream?.getTracks().forEach(track=>track.stop());
       if(runtime.element instanceof HTMLVideoElement){runtime.element.pause();runtime.element.srcObject=null;runtime.element.removeAttribute('src');runtime.element.load();}
       runtime.audioNode?.disconnect();runtime.gainNode?.disconnect();runtime.analyser?.disconnect();if(runtime.url)URL.revokeObjectURL(runtime.url);runtimes.delete(id);}
-    if(removeTexture)this.compositor?.remove(id);
+    if(removeTexture){this.compositor?.remove(id);this.publishCompositor?.remove(id);}
   }
   _pruneAssets(){const used=new Set(this.project.scenes.flatMap(scene=>scene.sources.map(source=>source.assetId)));for(const id of this.assets.keys())if(!used.has(id))this.assets.delete(id);}
   _error(error){try{this.onError(error instanceof Error?error:new Error(String(error)));}catch{}}
   _emit(changed=true){try{this.onState({project:this.project,stats:{...this.stats,recording:this.recording},sources:Object.fromEntries(this.project.scenes.flatMap(scene=>scene.sources.map(source=>[source.id,this.getSourceStatus(source.id)]))),changed});}catch(error){console.error('Broadcast UI state callback:',error);}}
   async dispose(){
-    if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this._raf);await this.stopRecording();
+    if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this._raf);await this.stopRecording();this.releasePublishStream();
     for(const id of this.runtimes.keys())this._release(id);for(const track of this.outputStream?.getTracks() || [])track.stop();this.silenceSource?.stop();this.silenceSource?.disconnect();this.compositor?.dispose();await this.audioContext?.close();this.assets.clear();
   }
 }

@@ -3,7 +3,7 @@
     {
       "project": "toolbox-broadcast",
       "source": "first-party browser studio",
-      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/95c0bbbb17b2a425feef4494ab60781b922ef6fb/licenses/broadcast-source.zip",
+      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/d851257b717683c2993d24f3eda810d442e6f6bd/licenses/broadcast-source.zip",
       "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
     },
     {
@@ -24,8 +24,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 26360,
-      "sha256": "8ac9ebbaf5ff7e59de44e66989b5226c5fafa6f885236e27bef8384e78868d68"
+      "bytes": 27571,
+      "sha256": "0294a45cb3312e5fca02d2ce55dc08bf15a703e473cf44b2c3bb0cf2f4b9790e"
     },
     {
       "file": "broadcast-core.js",
@@ -34,8 +34,8 @@
     },
     {
       "file": "compositor.js",
-      "bytes": 11156,
-      "sha256": "87fcc41c362ba27075f93e3adb46705a30c8fe8352d0df1f878239883c954123"
+      "bytes": 11746,
+      "sha256": "70f5958bdca2028ea30eb7d60aa3d46ce53e9cb05de8ce2e702c8bfd11c5afbe"
     },
     {
       "file": "effects-ui.js",
@@ -49,18 +49,28 @@
     },
     {
       "file": "engine.js",
-      "bytes": 25711,
-      "sha256": "8820718be2af645f5c0e8bb0f73bbaf13a8cc074bdb68e81a6ad56c6c4c34377"
+      "bytes": 28404,
+      "sha256": "4884306f580b7ca80fa8533fde21d6bbd9b020510f84079f146182c3faa371b5"
     },
     {
       "file": "index.html",
-      "bytes": 16608,
-      "sha256": "5b6a3471b0eb6bfc62eac98b744b34efa7aadab38c6b2352c245fbb61e249a0d"
+      "bytes": 16612,
+      "sha256": "52f5157a4bdaa8f0c92e9a7a6612bc612dedf39c822bac03f0cc896baacd9b67"
+    },
+    {
+      "file": "low-latency.js",
+      "bytes": 4629,
+      "sha256": "cb7393b30add575823bfeca7ea97adc9ecb19c2e81998f6cc703dbbc2af56a65"
+    },
+    {
+      "file": "publish-compositor.js",
+      "bytes": 2228,
+      "sha256": "ce1f505bb1b94d6be8f5c4aa06db3def7e82fbe3dd979163417eecef6f90c67f"
     },
     {
       "file": "publisher.js",
-      "bytes": 19010,
-      "sha256": "347320fd7f4a84b165d8c5c742a6e00487ee2dcacdff79d9332ea378ca5bee61"
+      "bytes": 22023,
+      "sha256": "a7b39c403cade429341efdf67991f778d182950a6ba8abb66c4ca3c7dde9ebb9"
     },
     {
       "file": "shortcuts.js",
