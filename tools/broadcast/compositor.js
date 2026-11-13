@@ -1,9 +1,15 @@
-import { formatCountdown } from './broadcast-core.js';
+import { formatCountdown } from './broadcast-core.js?v=20261113-effects1';
+import {normalizeEffects,fadeValue} from './effects.js?v=20261113-effects1';
 
 const VERTEX=`attribute vec2 position; attribute vec2 uv; varying vec2 texUV; void main(){gl_Position=vec4(position,0.,1.);texUV=uv;}`;
-const FRAGMENT=`precision mediump float; varying vec2 texUV; uniform sampler2D image; uniform float opacity; uniform float keyed; uniform vec3 keyColor; uniform float tolerance; uniform float softness; uniform float scrollOffset; uniform float scrollSpan;uniform float atlasTiles;uniform float atlasSpan;
+const FRAGMENT=`precision mediump float;varying vec2 texUV;uniform sampler2D image;uniform float opacity;uniform float keyed;uniform vec3 keyColor;uniform float tolerance;uniform float softness;uniform float scrollOffset;uniform float scrollSpan;uniform float atlasTiles;uniform float atlasSpan;
+uniform float brightness;uniform float contrast;uniform float saturation;uniform float hue;uniform float grayscale;uniform float sepia;uniform float invert;uniform vec2 blurStep;
 vec2 chroma(vec3 c){return vec2(-.168736*c.r-.331264*c.g+.5*c.b,.5*c.r-.418688*c.g-.081312*c.b);}
-void main(){vec2 p=texUV;if(scrollSpan>0.){float position=fract(p.x*scrollSpan+scrollOffset)*atlasSpan;float tile=floor(position);p.x=fract(position);p.y=(atlasTiles-1.-tile+p.y)/atlasTiles;}vec4 c=texture2D(image,p);float a=1.;if(keyed>.5){float d=distance(chroma(c.rgb),chroma(keyColor));a=smoothstep(tolerance,tolerance+softness,d);float spill=(1.-a)*.7;c.g=min(c.g,mix(c.g,max(c.r,c.b),spill));}gl_FragColor=vec4(c.rgb,c.a*opacity*a);}`;
+vec4 sampleColor(vec2 p){vec4 c=texture2D(image,clamp(p,vec2(0.),vec2(1.)));if(keyed>.5){float d=distance(chroma(c.rgb),chroma(keyColor));float a=smoothstep(tolerance,tolerance+softness,d);c.g=min(c.g,mix(c.g,max(c.r,c.b),(1.-a)*.7));c.a*=a;}return vec4(c.rgb*c.a,c.a);}
+void main(){vec2 p=texUV;if(scrollSpan>0.){float position=fract(p.x*scrollSpan+scrollOffset)*atlasSpan;float tile=floor(position);p.x=fract(position);p.y=(atlasTiles-1.-tile+p.y)/atlasTiles;}
+vec4 c=sampleColor(p);if(blurStep.x>0.||blurStep.y>0.){c*=.25;c+=(sampleColor(p+vec2(blurStep.x,0.))+sampleColor(p-vec2(blurStep.x,0.))+sampleColor(p+vec2(0.,blurStep.y))+sampleColor(p-vec2(0.,blurStep.y)))*.125;c+=(sampleColor(p+blurStep)+sampleColor(p-blurStep)+sampleColor(p+vec2(blurStep.x,-blurStep.y))+sampleColor(p+vec2(-blurStep.x,blurStep.y)))*.0625;}
+vec3 rgb=c.a>.0001?c.rgb/c.a:vec3(0.);float y=dot(rgb,vec3(.299,.587,.114));vec2 iq=vec2(dot(rgb,vec3(.596,-.274,-.322)),dot(rgb,vec3(.211,-.523,.312)));float cs=cos(hue),sn=sin(hue);iq=vec2(iq.x*cs-iq.y*sn,iq.x*sn+iq.y*cs);rgb=vec3(y+.956*iq.x+.621*iq.y,y-.272*iq.x-.647*iq.y,y-1.106*iq.x+1.703*iq.y);
+rgb*=brightness;rgb=(rgb-.5)*contrast+.5;y=dot(rgb,vec3(.2126,.7152,.0722));rgb=mix(vec3(y),rgb,saturation);rgb=mix(rgb,vec3(dot(rgb,vec3(.299,.587,.114))),grayscale);vec3 vintage=vec3(dot(rgb,vec3(.393,.769,.189)),dot(rgb,vec3(.349,.686,.168)),dot(rgb,vec3(.272,.534,.131)));rgb=mix(rgb,vintage,sepia);rgb=mix(rgb,1.-rgb,invert);gl_FragColor=vec4(clamp(rgb,0.,1.),c.a*opacity);}`;
 
 /** GPU composition: source textures are uploaded only when a decoded frame changes. */
 export class Compositor {
@@ -18,7 +24,7 @@ export class Compositor {
     if(!gl.getProgramParameter(this.program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(this.program));
     gl.useProgram(this.program);this.buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,this.buffer);
     for(const [name,offset] of [['position',0],['uv',8]]){const loc=gl.getAttribLocation(this.program,name);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,16,offset);}
-    this.uniforms=Object.fromEntries(['opacity','keyed','keyColor','tolerance','softness','scrollOffset','scrollSpan','atlasTiles','atlasSpan'].map(name=>[name,gl.getUniformLocation(this.program,name)]));
+    this.uniforms=Object.fromEntries(['opacity','keyed','keyColor','tolerance','softness','scrollOffset','scrollSpan','atlasTiles','atlasSpan','brightness','contrast','saturation','hue','grayscale','sepia','invert','blurStep'].map(name=>[name,gl.getUniformLocation(this.program,name)]));
     gl.uniform1i(gl.getUniformLocation(this.program,'image'),0);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
     this.lost=false;
     this.onLost=e=>{e.preventDefault();this.lost=true;this.onError(new Error('GPU 合成上下文丢失，请重新载入页面。'));};
@@ -56,10 +62,11 @@ export class Compositor {
     } else entry.offset=0;
     return entry.textCanvas;
   }
-  render(scene,runtimes,time=performance.now()) {
+  render(scene,runtimes,time=performance.now(),fades=new Map()) {
     if(this.lost)return false;const gl=this.gl;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(.025,.032,.045,1);gl.clear(gl.COLOR_BUFFER_BIT);
     for(const source of scene?.sources || []) {
-      if(!source.visible || source.opacity<=0 || source.type==='microphone')continue;
+      const fade=fades.get(source.id),alpha=fade?fadeValue(fade,time):(source.visible?1:0);
+      if(alpha<=0 || source.opacity<=0 || source.type==='microphone')continue;
       const runtime=runtimes.get(source.id);
       const image=['text','countdown'].includes(source.type)?this.textImage(source,time):runtime?.element;
       if(!image || (image instanceof HTMLVideoElement && image.readyState<2) || (image instanceof HTMLImageElement && !image.complete))continue;
@@ -81,7 +88,10 @@ export class Compositor {
       const corners=[[-width/2,-height/2,u0,v1],[width/2,-height/2,u1,v1],[-width/2,height/2,u0,v0],[width/2,height/2,u1,v0]];
       const vertices=new Float32Array(corners.flatMap(([x,y,u,v])=>[(cx+x*cos-y*sin)/this.canvas.width*2-1,1-(cy+x*sin+y*cos)/this.canvas.height*2,u,v]));
       gl.bufferData(gl.ARRAY_BUFFER,vertices,gl.STREAM_DRAW);
-      gl.uniform1f(this.uniforms.opacity,source.opacity);gl.uniform1f(this.uniforms.keyed,source.chromaKey?1:0);
+      const filters=source.filters||normalizeEffects();
+      for(const name of ['brightness','contrast','saturation','grayscale','sepia','invert'])gl.uniform1f(this.uniforms[name],filters[name]);
+      gl.uniform1f(this.uniforms.hue,filters.hue*Math.PI/180);gl.uniform2f(this.uniforms.blurStep,filters.blur/Math.max(1,width),filters.blur/Math.max(1,height));
+      gl.uniform1f(this.uniforms.opacity,source.opacity*alpha);gl.uniform1f(this.uniforms.keyed,source.chromaKey?1:0);
       const hex=source.chromaColor.slice(1);gl.uniform3f(this.uniforms.keyColor,parseInt(hex.slice(0,2),16)/255,parseInt(hex.slice(2,4),16)/255,parseInt(hex.slice(4,6),16)/255);
       gl.uniform1f(this.uniforms.tolerance,source.chromaTolerance);gl.uniform1f(this.uniforms.softness,source.chromaSoftness);
       gl.uniform1f(this.uniforms.scrollOffset,source.scrollSpeed?entry.offset||0:0);

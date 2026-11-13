@@ -1,3 +1,4 @@
+import {normalizeEffects,normalizeAnimation} from './effects.js?v=20261113-effects1';
 export const SOURCE_TYPES = ['camera','screen','window','microphone','image','video','text','countdown'];
 export const DEFAULT_OUTPUT = Object.freeze({width:2560,height:1440,fps:60,videoBitsPerSecond:12000000});
 export const OUTPUT_LIMITS = Object.freeze({minDimension:64,maxDimension:8192,maxPixels:7680*4320,minFPS:1,maxFPS:120});
@@ -15,7 +16,7 @@ export function normalizeSource(input={}) {
     chromaTolerance:clamp(s.chromaTolerance,0,1,.28),chromaSoftness:clamp(s.chromaSoftness,.001,.5,.08),
     duration:clamp(s.duration,0,86400,300),countdownStartedAt:clamp(s.countdownStartedAt,0,9e15,Date.now()),
     loop:s.loop!==false,paused:!!s.paused,assetId:s.assetId?String(s.assetId):null,fileName:String(s.fileName || '').slice(0,250),
-    deviceId:s.deviceId?String(s.deviceId):null,fit:s.fit==='cover'?'cover':'contain'};
+    deviceId:s.deviceId?String(s.deviceId):null,fit:s.fit==='cover'?'cover':'contain',filters:normalizeEffects(s.filters),animation:normalizeAnimation(s.animation)};
 }
 export function normalizeProject(input={}) {
   const s = input && typeof input === 'object' ? input : {};

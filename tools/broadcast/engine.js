@@ -1,5 +1,6 @@
-import { normalizeProject, normalizeSource, SOURCE_TYPES, DEFAULT_OUTPUT, OUTPUT_LIMITS, uid, clamp } from './broadcast-core.js';
-import { Compositor } from './compositor.js';
+import { normalizeProject, normalizeSource, SOURCE_TYPES, DEFAULT_OUTPUT, OUTPUT_LIMITS, uid, clamp } from './broadcast-core.js?v=20261113-effects1';
+import { Compositor } from './compositor.js?v=20261113-effects1';
+import {makeFade,fadeValue} from './effects.js?v=20261113-effects1';
 
 const LABELS={camera:'摄像头',screen:'屏幕共享',window:'窗口共享',microphone:'麦克风',image:'图片',video:'视频',text:'文字',countdown:'倒计时'};
 const COPY=value=>JSON.parse(JSON.stringify(value));
@@ -10,7 +11,7 @@ export class BroadcastEngine {
     if(!canvas)throw new Error('需要提供合成画布');
     this.canvas=canvas;this.onState=onState;this.onError=onError;this.onRecordingReady=onRecordingReady;
     this.project=normalizeProject();this.runtimes=new Map();this.assets=new Map();this.stats={frames:0,fps:0,renderMs:0,recording:false,recordingDuration:0,audioLevels:{}};
-    this._dirty=true;this._lastFrame=0;this._sampleStart=performance.now();this._sampleFrames=0;this._lastState=0;this.disposed=false;
+    this._dirty=true;this._lastFrame=0;this._sampleStart=performance.now();this._sampleFrames=0;this._lastState=0;this.disposed=false;this.fades=new Map();
   }
   async initialize(project) {
     if(this.disposed)throw new Error('合成器已经关闭');
@@ -62,7 +63,7 @@ export class BroadcastEngine {
       throw error;
     }
     for(const id of this.runtimes.keys())this._release(id);
-    this.runtimes=staged;this.project=project;this.setOutput(project);
+    this.runtimes=staged;this.project=project;this.fades.clear();this.setOutput(project);
     this._syncAudio();this._pruneAssets();this._dirty=true;this._emit();return this.snapshot();
   }
   createScene(name='新场景') {
@@ -81,6 +82,14 @@ export class BroadcastEngine {
     this.project.activeSceneId=id;this._syncAudio();this._dirty=true;this._emit();
   }
   renameScene(id,name){const scene=this.project.scenes.find(s=>s.id===id);if(scene){scene.name=String(name).slice(0,100);this._emit();}}
+  async duplicateSource(id){const s=this.getSource(id);if(!s)throw Error('素材不存在');if(this.activeScene.sources.length>=32)throw Error('每个场景最多 32 个来源');const stream=this.runtimes.get(id)?.stream?.clone();try{return await this.addSource(s.type,{...COPY(s),name:s.name+' 副本',x:s.x+20,y:s.y+20,locked:false,...(stream?{stream}:{})});}catch(error){stream?.getTracks().forEach(t=>t.stop());throw error;}}
+  async duplicateScene(id=this.activeScene.id){
+    const original=this.project.scenes.find(s=>s.id===id);if(!original)throw Error('场景不存在');if(this.project.scenes.length>=16)throw Error('最多创建 16 个场景');
+    const scene={id:uid(),name:original.name+' 副本',sources:[]},staged=new Map();
+    try{for(const s of original.sources){const copy=normalizeSource({...COPY(s),id:uid()}),runtime=this.runtimes.get(s.id);if(['image','video'].includes(s.type)||runtime?.stream)await this._prepare(copy,runtime?.stream?{stream:runtime.stream.clone()}:{},staged);scene.sources.push(copy);}if(this.disposed||this.project.scenes.length>=16||!this.project.scenes.includes(original))throw Error('场景复制已取消');}
+    catch(error){for(const key of staged.keys())this._release(key,staged);throw error;}
+    for(const[key,value]of staged)this.runtimes.set(key,value);this.project.scenes.push(scene);this.switchScene(scene.id);return scene;
+  }
   async addSource(type,options={}) {
     if(!SOURCE_TYPES.includes(type))throw new Error('不支持的来源类型');
     if(this.activeScene.sources.length>=32)throw new Error('每个场景最多 32 个来源');
@@ -96,7 +105,7 @@ export class BroadcastEngine {
       if(!this.project.scenes.includes(scene))throw new Error('添加期间场景已被移除，请重新添加');
       if(scene.sources.length>=32)throw new Error('每个场景最多 32 个来源');
       scene.sources.push(source);this._syncAudio();this._dirty=true;this._emit();return source;
-    }catch(error){this._release(source.id);if(source.assetId)this.assets.delete(source.assetId);this._error(error);throw error;}
+    }catch(error){this._release(source.id);if(options.file&&source.assetId)this.assets.delete(source.assetId);this._error(error);throw error;}
   }
   async reconnectSource(id,options={}) {
     const source=this.getSource(id);if(!source)throw new Error('来源不存在');
@@ -105,7 +114,10 @@ export class BroadcastEngine {
   }
   updateSource(id,patch) {
     const source=this.getSource(id);if(!source)return;
+    const now=performance.now(),oldVisible=source.visible,oldFade=this.fades.get(id),current=oldFade?fadeValue(oldFade,now):(oldVisible?1:0);
     const normalized=normalizeSource({...source,...patch,id:source.id,type:source.type});
+    if(normalized.animation.type==='fade'&&oldVisible!==normalized.visible)this.fades.set(id,makeFade(current,normalized.visible?1:0,now,normalized.animation.duration));
+    else if(normalized.animation.type==='none')this.fades.delete(id);
     Object.assign(source,normalized);this._dirty=true;this._syncAudio();
     const runtime=this.runtimes.get(id);if(runtime?.element instanceof HTMLVideoElement)runtime.element.loop=source.loop;
     this._emit();return source;
@@ -114,6 +126,7 @@ export class BroadcastEngine {
     for(const scene of this.project.scenes){const index=scene.sources.findIndex(s=>s.id===id);if(index>=0){scene.sources.splice(index,1);this._release(id);this._dirty=true;this._pruneAssets();this._emit();return;}}
   }
   setSourcePaused(id,paused){return this.updateSource(id,{paused:!!paused});}
+  previewFade(id,direction='in'){const source=this.getSource(id);if(!source||source.type==='microphone')return;const now=performance.now(),duration=source.animation.duration;source.visible=direction!=='out';this.fades.set(id,makeFade(direction==='out'?1:0,direction==='out'?0:1,now,duration));this._syncAudio();this._dirty=true;this._emit();}
   moveSource(id,delta) {
     for(const scene of this.project.scenes){const index=scene.sources.findIndex(s=>s.id===id);if(index<0)continue;
       const next=Math.max(0,Math.min(scene.sources.length-1,index+Math.sign(delta)));const [source]=scene.sources.splice(index,1);scene.sources.splice(next,0,source);this._dirty=true;this._emit();return;}
@@ -184,7 +197,8 @@ export class BroadcastEngine {
     const runtime={status:'loading',dirty:true,active:false};runtimes.set(source.id,runtime);
     if(['camera','microphone','screen','window'].includes(source.type)) {
       if(!navigator.mediaDevices)throw new Error('媒体捕获需要 HTTPS 或 localhost 安全环境');
-      if(source.type==='camera')runtime.stream=await navigator.mediaDevices.getUserMedia({video:{width:{ideal:1920},height:{ideal:1080},frameRate:{ideal:this.project.fps},...(source.deviceId?{deviceId:{exact:source.deviceId}}:{})},audio:false});
+      if(options.stream)runtime.stream=options.stream;
+      else if(source.type==='camera')runtime.stream=await navigator.mediaDevices.getUserMedia({video:{width:{ideal:1920},height:{ideal:1080},frameRate:{ideal:this.project.fps},...(source.deviceId?{deviceId:{exact:source.deviceId}}:{})},audio:false});
       else if(source.type==='microphone')runtime.stream=await navigator.mediaDevices.getUserMedia({video:false,audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:false,...(source.deviceId?{deviceId:{exact:source.deviceId}}:{})}});
       else runtime.stream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:this.project.fps},displaySurface:source.type==='window'?'window':'monitor'},audio:true,preferCurrentTab:false,selfBrowserSurface:'exclude'});
       if(this.disposed || runtime.released || runtimes.get(source.id)!==runtime){for(const track of runtime.stream.getTracks())track.stop();throw new Error('捕获请求已取消');}
@@ -229,8 +243,8 @@ export class BroadcastEngine {
   _syncAudio() {
     const activeIds=new Set(this.activeScene?.sources.map(source=>source.id));
     for(const [id,runtime] of this.runtimes){
-      const source=this.getSource(id);const active=!!source && activeIds.has(id) && source.visible && runtime.status==='ready';runtime.active=active;
-      if(runtime.gainNode)runtime.gainNode.gain.setTargetAtTime(active && !source.muted && !(source.type==='video' && source.paused)?source.gain:0,this.audioContext.currentTime,.015);
+      const source=this.getSource(id),fade=this.fades.get(id);const active=!!source && activeIds.has(id) && (source.visible||!!fade)&& runtime.status==='ready';runtime.active=active;
+      if(runtime.gainNode){const now=this.audioContext.currentTime,gain=runtime.gainNode.gain,audible=active&&!source.muted&&!(source.type==='video'&&source.paused);gain.cancelScheduledValues(now);if(fade&&audible){gain.setValueAtTime(source.gain*fadeValue(fade,performance.now()),now);gain.linearRampToValueAtTime(source.gain*fade.to,now+Math.max(0,(fade.start+fade.duration-performance.now())/1000));}else gain.setTargetAtTime(audible?source.gain:0,now,.015);}
       if(source?.type==='video' && runtime.element){if(active && !source.paused)runtime.element.play().catch(()=>{});else runtime.element.pause();}
     }
   }
@@ -245,9 +259,10 @@ export class BroadcastEngine {
     this._nextFrame+=Math.max(1,Math.floor((timestamp-this._nextFrame)/period)+1)*period;
     this._lastFrame=timestamp;
     const sources=this.activeScene?.sources || [];
-    const animated=sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));
+    const animated=this.fades.size>0||sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));
     if(this._dirty || animated){
-      const start=performance.now();if(this.compositor.render(this.activeScene,this.runtimes,timestamp)){this.stats.frames++;this._sampleFrames++;}
+      const start=performance.now();if(this.compositor.render(this.activeScene,this.runtimes,timestamp,this.fades)){this.stats.frames++;this._sampleFrames++;}
+      let finished=false;for(const[id,fade]of this.fades)if(timestamp>=fade.start+fade.duration){this.fades.delete(id);finished=true;}if(finished)this._syncAudio();
       this.stats.renderMs=performance.now()-start;this._dirty=false;
     }
     // A retained output can sample the already composed image without redrawing every layer.
@@ -259,8 +274,9 @@ export class BroadcastEngine {
       this.stats.audioLevels=levels;this._emit(false);
     }
   }
-  renderNow(){this._dirty=true;if(this.compositor)this.compositor.render(this.activeScene,this.runtimes,performance.now());}
+  renderNow(){this._dirty=true;if(this.compositor)this.compositor.render(this.activeScene,this.runtimes,performance.now(),this.fades);}
   _release(id,runtimes=this.runtimes,removeTexture=true) {
+    this.fades.delete(id);
     const runtime=runtimes.get(id);if(runtime){runtime.released=true;if(runtime.frameId!=null)runtime.element.cancelVideoFrameCallback?.(runtime.frameId);runtime.stream?.getTracks().forEach(track=>track.stop());
       if(runtime.element instanceof HTMLVideoElement){runtime.element.pause();runtime.element.srcObject=null;runtime.element.removeAttribute('src');runtime.element.load();}
       runtime.audioNode?.disconnect();runtime.gainNode?.disconnect();runtime.analyser?.disconnect();if(runtime.url)URL.revokeObjectURL(runtime.url);runtimes.delete(id);}

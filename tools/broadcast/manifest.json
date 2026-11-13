@@ -3,7 +3,7 @@
     {
       "project": "toolbox-broadcast",
       "source": "first-party browser studio",
-      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/b728807b6ab7a88e324824eb1af4baa25b733855/licenses/broadcast-source.zip",
+      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/8eb087e4739b29759342266da5ec947395bf5845/licenses/broadcast-source.zip",
       "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
     },
     {
@@ -24,33 +24,48 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 28467,
-      "sha256": "d46b4b013062c81b661ed3f7676c982ea1a72dae0a4b3dbcb4e6ca9f75f820a3"
+      "bytes": 26338,
+      "sha256": "2d454d77c67ef8cb1f39c601373dd747126f66f66dbc425e53dbea694e0912b6"
     },
     {
       "file": "broadcast-core.js",
-      "bytes": 4058,
-      "sha256": "015dbbb9b9526c89ac43cb0cb35850324e6184dd75f904b1b6e91667a7d10893"
+      "bytes": 4222,
+      "sha256": "c3456824cb6f4de9aa00b73265df74003e7cd731df76f8150e12f5841fadcfb9"
     },
     {
       "file": "compositor.js",
-      "bytes": 9272,
-      "sha256": "12544015846e59b5dcc10d119a1a2d26a1583885b1a3ad046236af40c492716e"
+      "bytes": 11156,
+      "sha256": "87fcc41c362ba27075f93e3adb46705a30c8fe8352d0df1f878239883c954123"
+    },
+    {
+      "file": "effects-ui.js",
+      "bytes": 3794,
+      "sha256": "802c1faa09339b371e81249e2e57f0bf0d1ee04f159fd1ae70ba30d18b2f7de4"
+    },
+    {
+      "file": "effects.js",
+      "bytes": 1357,
+      "sha256": "00ddad6871448c3c1fde7cfb5e30287d54c6103f0b1d7bfea5a1d3e3333ea6df"
     },
     {
       "file": "engine.js",
-      "bytes": 22832,
-      "sha256": "46a90203dfcb2968203c2923f824d25b50e8660bb6d7e30544868b7a173c0868"
+      "bytes": 25711,
+      "sha256": "8820718be2af645f5c0e8bb0f73bbaf13a8cc074bdb68e81a6ad56c6c4c34377"
     },
     {
       "file": "index.html",
-      "bytes": 16567,
-      "sha256": "726561b579f3ce600e25beb6de8c1d16c2285831c45d54f26d78bea2827f3dea"
+      "bytes": 16607,
+      "sha256": "d9fc6dbbccb628c214dfd997bd47102b1db918aefac35398b3d9bf0c3491ff46"
     },
     {
       "file": "publisher.js",
       "bytes": 18593,
       "sha256": "8c406c09c107dccffdee2f0fbd037f61c363ae2040b35a6cf35d988450b7c331"
+    },
+    {
+      "file": "shortcuts.js",
+      "bytes": 5905,
+      "sha256": "5646c0b21b8d9c980a7d490b1101cfb75618ec76a58eba38800323a8a5e8ce2e"
     },
     {
       "file": "store.js",
@@ -59,8 +74,18 @@
     },
     {
       "file": "style.css",
-      "bytes": 14679,
-      "sha256": "e930353cb855aad0ccc1b691410796903e8d4099597c1117e067e972fa0a72de"
+      "bytes": 17084,
+      "sha256": "3f63bece8e8b8d7342da5ef4fabbb496528d53192262993e2b1975883a977dd7"
+    },
+    {
+      "file": "transform-ui.js",
+      "bytes": 5806,
+      "sha256": "2b9e28dda65a9477c59544811f7136672ec8e0650c86d48df2183daeaaaeebbb"
+    },
+    {
+      "file": "transform.js",
+      "bytes": 1226,
+      "sha256": "486436f4a3ea3139700a398112f38d385c887033a214eaea059b06ce924b6bda"
     }
   ]
 }
