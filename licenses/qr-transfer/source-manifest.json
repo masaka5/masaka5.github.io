@@ -1,16 +1,22 @@
 {
   "sourceArchive": "source.zip",
+  "license": "AGPL-3.0-or-later",
   "compression": "@bokuweb/zstd-wasm@0.0.27",
   "hash": "hash-wasm@4.12.0",
-  "scanner": "shared vendor/zxing",
+  "scanner": "decimen-codec 0.2.0 / dc2b8c5; shared ZXing fallback",
+  "upstream": "https://github.com/bearea/decimen-optical/tree/5301fc2020716b5a97d4edf6e1793c3dedbf6e17",
+  "decoderBuildSource": {
+    "path": "decimen-build-source.tar.xz",
+    "sha256": "da09ec5e5a34305594150757aa5a1c170951bd474d5c2dc01d5de92e6eeb7465"
+  },
   "protocol": "PQF2/PFR2/PQS2",
-  "archiveBytes": 95370,
-  "archiveSha256": "d4fb603052c4b71fd512ecac122e85860e11ca70b638e89983c6e7294233b79c",
+  "archiveBytes": 162341,
+  "archiveSha256": "973a58338eabf48c1ea05c8efcaccfe908176025765b5c5aa663489898e892e6",
   "files": [
     {
       "path": "qr-transfer/build.mjs",
-      "bytes": 4239,
-      "sha256": "d597ebee243b58afc67f220f8624090b3ca1b73ea9cd407772b46be6765d4be3"
+      "bytes": 5287,
+      "sha256": "e6147d56e64d1af9b6d2bee6d7470fca8c804a1f9d60f27865f9a6658ea853d2"
     },
     {
       "path": "qr-transfer/index.html",
@@ -49,8 +55,8 @@
     },
     {
       "path": "qr-transfer/package-source.py",
-      "bytes": 2224,
-      "sha256": "ab790f287d859fe9c997593125445d829cb9fc2e4b3221e59cbd2d34392a15a7"
+      "bytes": 3493,
+      "sha256": "e3a68bce101b3b9765329d11df87a3d78d97502f9b8b0c6f15721835bbad0071"
     },
     {
       "path": "qr-transfer/package.json",
@@ -59,18 +65,18 @@
     },
     {
       "path": "qr-transfer/README.md",
-      "bytes": 3602,
-      "sha256": "29fdfb8549480cbffe16502856541e983ac6c5b1cae3a5d14ca5a8ebed937184"
+      "bytes": 4531,
+      "sha256": "490c1754c33f0b667aad1131f353a3152b51722b415970831fbd7afcca321b03"
     },
     {
       "path": "qr-transfer/src/camera.mjs",
-      "bytes": 3059,
-      "sha256": "54282bb403bde927d37fdc34e271af412794c8cb1e15ad4dc316794756791770"
+      "bytes": 4526,
+      "sha256": "30f5f39d98f9f40c0dbefbe02a7b01a2ec5ad59b1dd79f9fbf4a1bf4af6a33b4"
     },
     {
       "path": "qr-transfer/src/CameraView.jsx",
-      "bytes": 3299,
-      "sha256": "1507e2a0bf763737a3faa4d796a7b885ce3f52f09ac7c4fb2ad6a80bddf1cdc6"
+      "bytes": 3838,
+      "sha256": "37dd793d63a45d82640765e9466c44fdfc44406f3219678434f443bc85fd8d73"
     },
     {
       "path": "qr-transfer/src/client.mjs",
@@ -83,14 +89,24 @@
       "sha256": "394c85803855938c1c821db3cdbaa1c598f26685ab4075f2223c0ef4ab8372fc"
     },
     {
+      "path": "qr-transfer/src/decode-pool.mjs",
+      "bytes": 1437,
+      "sha256": "5b52fa4a7a97117ae0e390bb99f74d92215c1eb658aed99cb753e6774a895364"
+    },
+    {
+      "path": "qr-transfer/src/decode-worker.mjs",
+      "bytes": 2880,
+      "sha256": "40f6422100553aefa9cff1b8e6fea03f6a2339448600963f9e7eaa9c6bcca059"
+    },
+    {
       "path": "qr-transfer/src/disk.mjs",
-      "bytes": 4714,
-      "sha256": "ade5aaeb4065aee45b99302bd9ba760fd115e059857f042776de303f4a5e27ee"
+      "bytes": 5626,
+      "sha256": "b16b551055fd847731250710233ff34a09e5c4fe3b8b4f51f4623066d6977e29"
     },
     {
       "path": "qr-transfer/src/fountain-worker.mjs",
-      "bytes": 6225,
-      "sha256": "196c8c4af2505edb8b2cbb707656ab248bc703f4c8f040e3761a60f509e9978b"
+      "bytes": 7496,
+      "sha256": "82c3be48da31f90d783bc529cf74b1771cc8a4db97a8a4e5aef4204d9ec616d8"
     },
     {
       "path": "qr-transfer/src/fountain.mjs",
@@ -99,13 +115,18 @@
     },
     {
       "path": "qr-transfer/src/FountainReceive.jsx",
-      "bytes": 6610,
-      "sha256": "b5e8972d8411eec7998ccfc3f769c4ae5b655d96d91e29ce1a986cb61afb61f8"
+      "bytes": 7017,
+      "sha256": "e24e3a42447062b3d6d4b3fecb0f86fda6a6a21223e5334502e273c2aeac7e9e"
     },
     {
       "path": "qr-transfer/src/FountainSend.jsx",
-      "bytes": 10336,
-      "sha256": "b487373698861ebde255507151ec3221993334c8a72464f9513701af5a541b2b"
+      "bytes": 12035,
+      "sha256": "e6117e619e041e92992cae334c4237923edbb6cd29488c7ed7d8101ad0b68936"
+    },
+    {
+      "path": "qr-transfer/src/grid.mjs",
+      "bytes": 2727,
+      "sha256": "81a88b159b634f5d0becc9aeae9c13ced43f54a7554c9d924e2a884a226e339f"
     },
     {
       "path": "qr-transfer/src/main.jsx",
@@ -144,13 +165,13 @@
     },
     {
       "path": "qr-transfer/src/style.css",
-      "bytes": 11003,
-      "sha256": "f635806acb42e2283602da66765ddc9d343bf170600d09bb15cee016b0ba884e"
+      "bytes": 11115,
+      "sha256": "1ac554ba471473aeb7ecf59189ca9ba5e2af8e32167206917c9f912acb1d89a6"
     },
     {
       "path": "qr-transfer/src/ui.jsx",
-      "bytes": 2124,
-      "sha256": "ff5f2556ac85b8ccd002466a03716e6ab2c6cd328e5c2f1fb16aaeb1c9ebee08"
+      "bytes": 3355,
+      "sha256": "da9b0f799cf6445d885a986d051faeb4aad9c6a713617922f00c17f949210194"
     },
     {
       "path": "qr-transfer/src/update.mjs",
@@ -169,8 +190,8 @@
     },
     {
       "path": "qr-transfer/sw.js",
-      "bytes": 2324,
-      "sha256": "97c52c475b7cebfa3545ead86a5b7f74e4a37cb90a6dc3da06a523425f783357"
+      "bytes": 2370,
+      "sha256": "8e930a19fff04c50496231676108f02859c8d9b18600534f9a14dec66a29b428"
     },
     {
       "path": "qr-transfer/tests/browser.py",
@@ -179,8 +200,8 @@
     },
     {
       "path": "qr-transfer/tests/cache-upgrade.py",
-      "bytes": 4906,
-      "sha256": "239be2776a37afafdc7dcd69cf4371eab280f258d1ea7551265a1a3921e34f66"
+      "bytes": 5083,
+      "sha256": "4135f53c3b9eed1abe36163f15dc63da3341eb4c3eb9ce30fb696538ff94e848"
     },
     {
       "path": "qr-transfer/tests/camera-browser.py",
@@ -203,6 +224,11 @@
       "sha256": "e43c6f671b2037bb45807010b81d10be61ad8fb2448bcdf27daba1c6c2b8f62f"
     },
     {
+      "path": "qr-transfer/tests/decode-pool.test.mjs",
+      "bytes": 1397,
+      "sha256": "1100dc691b4f78da89c6bbb2136d98b5aeb85253351b54029582fd28d89550ce"
+    },
+    {
       "path": "qr-transfer/tests/disk.test.mjs",
       "bytes": 876,
       "sha256": "5071b49e318669634f6b88f5b25eb9ddb2078b26f722ffd364a9a7f6659adaed"
@@ -214,8 +240,8 @@
     },
     {
       "path": "qr-transfer/tests/fountain-camera.py",
-      "bytes": 3960,
-      "sha256": "2626de6d10e2786c0a50faa1544722bc0ef3c8a5c22684bcffc2c07af28c6e5a"
+      "bytes": 4060,
+      "sha256": "f79fde6d0932b726ce4cc7f604eb7adb95ab6bd08e2dc79dc9750f724f8d0975"
     },
     {
       "path": "qr-transfer/tests/fountain-cross.py",
@@ -231,6 +257,21 @@
       "path": "qr-transfer/tests/fountain.test.mjs",
       "bytes": 3505,
       "sha256": "fca974ba043552f85781f1dce62288bef89fec7931524f95ce8665737542c1b5"
+    },
+    {
+      "path": "qr-transfer/tests/grid-browser.py",
+      "bytes": 4169,
+      "sha256": "d14ba180b48895e29ea662e8f3b05f455b30f0e602a74e37fd6b24dee625a19c"
+    },
+    {
+      "path": "qr-transfer/tests/grid-camera.py",
+      "bytes": 3727,
+      "sha256": "55c925e5257438b254468faa40398dff0b200a9910de501b79bc40f3c862d852"
+    },
+    {
+      "path": "qr-transfer/tests/grid.test.mjs",
+      "bytes": 1885,
+      "sha256": "82fc217a8b572b94a5a62f426c7242781e84a6415e99bff41bfb08cf56d18d57"
     },
     {
       "path": "qr-transfer/tests/offline-update.test.mjs",
@@ -253,6 +294,11 @@
       "sha256": "b7991f23ad3604197e264db1ce5872c2da5ccde02960537e6824dd10f9d23469"
     },
     {
+      "path": "qr-transfer/tests/storage-browser.py",
+      "bytes": 1292,
+      "sha256": "c5d8e6b7ea1b3e247b02c0d4b31cba34c3cf0b004b1ed8b5a06621bab5f74712"
+    },
+    {
       "path": "qr-transfer/tests/stream-package.test.mjs",
       "bytes": 2027,
       "sha256": "f1fb0b0e22d48ef4711571ec6af0276cd1655694161ae34f4a2fbba9128bfbf7"
@@ -263,6 +309,56 @@
       "sha256": "9bd1d89ef1ef6a3cea8a85c38676d20198dd8ae0e3bd3bf5d5f2c74e667c48f3"
     },
     {
+      "path": "qr-transfer/vendor/decimen/codec/decimen_codec.d.ts",
+      "bytes": 2648,
+      "sha256": "15830332f8fbc02767545108a9ef91f15140730331285f449cfea1c8dbe02af4"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/codec/decimen_codec.js",
+      "bytes": 53470,
+      "sha256": "38aac3ecbb9039f490486b9f91683fb3c5bcbdf73e397292e86f4cc155dc1636"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/codec/LICENSE.zxing-cpp",
+      "bytes": 11560,
+      "sha256": "2e54cd84a645bea25943c75dd8ae67cb291e66a47a11578333c9b4b3b6b86c85"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/codec/NOTICE.md",
+      "bytes": 961,
+      "sha256": "98f3c30b0014041ebd1a6d88ae3d5034ec10f1c8eaf49cc677752bce68ee58b7"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/LICENSE",
+      "bytes": 35184,
+      "sha256": "e0eedba615d5cd1b986afb6c5b3a4b1ae33713e7e9dc74d19daec5e3221f9d2e"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/NOTICE",
+      "bytes": 2604,
+      "sha256": "a7aa95426940f1aa4e16e01b3049a8bfa6e7535389a9c80ee78ba153cc2752d6"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/qr-raster.ts",
+      "bytes": 3349,
+      "sha256": "cb04cd46e65ff5a87b66c280034069d9f559f3999ccde0e4bdd27f08b88a459f"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/SOURCE.md",
+      "bytes": 1340,
+      "sha256": "6ccca62b02a071a7fcd84ef0a3970b6e7033d10dee036ef8a9b2deb1701a19c4"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/worker-pool.mjs",
+      "bytes": 1806,
+      "sha256": "5e2acb3ed078ff8ce310696a96c86745229f6224f6d43a10a0396b0c66a8b0f9"
+    },
+    {
+      "path": "qr-transfer/vendor/decimen/worker-pool.ts",
+      "bytes": 4290,
+      "sha256": "2876a7dbc0ac9f4036d32eae314fba205cf5d93c69e2afd8ac05b07452c9652e"
+    },
+    {
       "path": "qr-transfer/notices/THIRD-PARTY-NOTICES.txt",
       "bytes": 83810,
       "sha256": "0e21ee359340e89ea9f63d6746ab5500bd1df08fc15fae7ad3598935760e762c"
@@ -271,6 +367,16 @@
       "path": "qr-transfer/notices/dependencies.json",
       "bytes": 5982,
       "sha256": "2aca795b688e43ba6b0931437c067e468c3b78cf6537ca7e2903ab0c106d02da"
+    },
+    {
+      "path": "qr-transfer/notices/DECIMEN-LICENSE.txt",
+      "bytes": 35184,
+      "sha256": "e0eedba615d5cd1b986afb6c5b3a4b1ae33713e7e9dc74d19daec5e3221f9d2e"
+    },
+    {
+      "path": "qr-transfer/notices/DECIMEN-NOTICE.txt",
+      "bytes": 3566,
+      "sha256": "426f932e2556829ed0166eaf7871bb3739d356bc407508934ccba4d0acbcccc6"
     }
   ]
 }
