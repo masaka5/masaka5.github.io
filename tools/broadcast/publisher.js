@@ -1,4 +1,4 @@
-import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs} from './low-latency.js?v=20261113-lowlatency1';
+import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs,videoProgress} from './low-latency.js?v=20261113-stability1';
 /* Browser transports: RFC 9725 WHIP and api.video-browser-to-rtmp Socket.IO 4.
  * Protocol reference (no upstream code copied): apivideo/api.video-browser-to-rtmp
  * e7d4227b025258d41132168157d89c2100facd70, server/src/{connection,types}.ts (MIT).
@@ -31,9 +31,10 @@ function endpointURL(value, protocols, label, allowHTTP = false) {
 }
 
 export class BroadcastPublisher {
-  constructor({ onState = () => {}, onError = () => {} } = {}) {
+  constructor({ onState = () => {}, onError = () => {}, onRecoverVideo = () => {} } = {}) {
     this.onState = onState;
     this.onError = onError;
+    this.onRecoverVideo = onRecoverVideo;
     this._stats = { state: 'idle', delivery: null, bitrateKbps: 0, fps: 0, width: 0, height: 0, elapsed: 0, attempts: 0, rttMs: null, encodeMs: null, queueMs: null };
     this._generation = 0;
   }
@@ -229,7 +230,7 @@ export class BroadcastPublisher {
     await waitFor(pc.setRemoteDescription({ type: 'answer', sdp: await waitFor(response.text(), signal) }), signal);
     inspect();
     await waitFor(Promise.race([connected.promise, attempt.failed.promise]), signal, 25000);
-    let previous = null, budget = null, sampling = false;
+    let previous = null, budget = null, sampling = false, health = null;
     const applyBudget=async next=>{for(const sender of videoSenders){if(!sender.getParameters||!sender.setParameters)continue;const parameters=sender.getParameters();if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';parameters.encodings=parameters.encodings?.length?parameters.encodings:[{}];parameters.encodings.forEach(encoding=>{encoding.maxBitrate=next.maxBitrate;encoding.maxFramerate=next.maxFramerate;encoding.scaleResolutionDownBy=next.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high';});try{await sender.setParameters(parameters);}catch{const fallback=sender.getParameters();fallback.encodings=fallback.encodings?.length?fallback.encodings:[{}];fallback.encodings.forEach(e=>{e.maxBitrate=next.maxBitrate;e.maxFramerate=next.maxFramerate;});try{await sender.setParameters(fallback);}catch{/* Optional realtime hints are browser-dependent. */}}}};
     const sample = async () => {
       if (sampling || signal.aborted || pc.connectionState !== 'connected') return;
@@ -239,6 +240,12 @@ export class BroadcastPublisher {
         if (signal.aborted || this._attempt !== attempt) return;
         const parsed=readStreamStats(report,previous?.snapshot);const metrics=parsed.metrics;this._stats.bitrateKbps=metrics.bitrateKbps;this._stats.fps=metrics.fps;this._stats.width=metrics.width||this._stats.width;this._stats.height=metrics.height||this._stats.height;this._stats.rttMs=metrics.rttMs;this._stats.encodeMs=metrics.encodeMs;this._stats.queueMs=metrics.sendQueueMs;
         this._stats.codec=metrics.codec;this._stats.transport=metrics.transport;this._stats.qualityLimitationReason=metrics.qualityLimitationReason;this._stats.availableKbps=metrics.availableKbps;
+        if(videoSenders.length){
+          health=videoProgress(health,parsed.snapshot,Date.now());this._stats.videoHealth=health.status;this._stats.videoFrames=parsed.snapshot.videoFrames;
+          if(health.status==='stalled'&&this._stats.state==='live'){this._state('stalled');try{this.onRecoverVideo();}catch{/* Recovery must not interrupt transport monitoring. */}}
+          else if(health.status==='healthy'&&this._stats.state==='stalled')this._state('live');
+          if(health.reconnect)attempt.failed.reject(failure('视频发送停滞，正在重新连接'));
+        }
         previous=parsed;const next=nextStreamBudget(policy,budget,metrics),changed=!budget||next.maxBitrate!==budget.maxBitrate||next.scaleResolutionDownBy!==budget.scaleResolutionDownBy;budget=next;if(changed)await applyBudget(next);
       } catch { /* A closed peer has no stats. */ } finally { sampling = false; }
     };

@@ -1,0 +1,32 @@
+{
+  "samples": 149,
+  "lastDecoded": {
+    "frames": 12607,
+    "received": 12612,
+    "fps": 44,
+    "freezeCount": 2,
+    "freezeDuration": 5.649,
+    "dropped": 0,
+    "lost": 0,
+    "keyframes": 52,
+    "width": 1920,
+    "height": 1080,
+    "pli": 2
+  },
+  "flvDecodeExit": 0,
+  "jsHeapMiB": [
+    2.14,
+    3.04
+  ],
+  "fpsMedian": 46.0,
+  "encodeMedianMs": 5.365,
+  "renderMedianMs": 0.10000002384185791,
+  "events": [
+    "idle",
+    "connecting",
+    "live",
+    "stalled",
+    "live"
+  ],
+  "errors": []
+}

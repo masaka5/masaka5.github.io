@@ -6,7 +6,7 @@ export function streamPolicy(conf={}){
  return{mode,width,height,maxFramerate,maxBitrate:bound(conf.videoBitsPerSecond,300000,mode==='realtime'?8000000:40000000,mode==='realtime'?6000000:12000000),scaleResolutionDownBy,maxScale:Math.max(scaleResolutionDownBy,Math.min(width/320,height/180))};
 }
 export function readStreamStats(report,previous){
- const snapshot={bytes:0,frames:0,encode:0,sendDelay:0,packets:0,time:0};
+ const snapshot={bytes:0,frames:0,encode:0,sendDelay:0,packets:0,time:0,videoFrames:null,videoBytes:null};
  const metrics={bitrateKbps:0,fps:0,width:0,height:0,encodeMs:null,sendQueueMs:null,rttMs:null,availableKbps:null,codec:'',transport:'',qualityLimitationReason:'none'};
  let pair,video;
  report.forEach(s=>{
@@ -14,6 +14,7 @@ export function readStreamStats(report,previous){
   snapshot.bytes+=s.bytesSent||0;snapshot.sendDelay+=s.totalPacketSendDelay||0;snapshot.packets+=s.packetsSent||0;snapshot.time=Math.max(snapshot.time,s.timestamp||0);
   if((s.kind||s.mediaType)==='video'){video=s;snapshot.frames+=s.framesEncoded||0;snapshot.encode+=s.totalEncodeTime||0;metrics.fps=s.framesPerSecond||0;metrics.width=s.frameWidth||0;metrics.height=s.frameHeight||0;metrics.qualityLimitationReason=s.qualityLimitationReason||'none';metrics.codec=(report.get(s.codecId)?.mimeType||'').replace(/^video\//i,'');const transport=report.get(s.transportId);if(transport?.selectedCandidatePairId)pair=report.get(transport.selectedCandidatePairId);}
  });
+ if(video){snapshot.videoFrames=Number.isFinite(video.framesEncoded)?video.framesEncoded:null;snapshot.videoBytes=Number.isFinite(video.bytesSent)?video.bytesSent:null;}
  if(!pair)report.forEach(s=>{if(s.type==='candidate-pair'&&s.state==='succeeded'&&(s.selected||s.nominated))pair=s;});
  const usable=previous&&snapshot.time>previous.time&&snapshot.bytes>=previous.bytes&&snapshot.frames>=previous.frames,base=usable?previous:{bytes:0,frames:0,encode:0,sendDelay:0,packets:0,time:0};
  if(usable)metrics.bitrateKbps=Math.round((snapshot.bytes-base.bytes)*8/(snapshot.time-base.time));
@@ -39,4 +40,14 @@ export function nextStreamBudget(policy,state,metrics){
 export function realtimeCodecs(codecs=[]){
  const rank=c=>{const name=c.mimeType?.toLowerCase();if(name==='video/h264')return /packetization-mode=1/.test(c.sdpFmtpLine||'')?0:1;if(name==='video/vp8')return 2;if(name==='video/rtx')return 4;return 3;};
  return[...codecs].sort((a,b)=>rank(a)-rank(b));
+}
+export function videoProgress(previous,snapshot,now){
+ const state={frameAt:now,byteAt:now,...previous,status:'healthy',reconnect:false,reason:''};
+ for(const[key,at]of [['videoFrames','frameAt'],['videoBytes','byteAt']]){
+  const value=snapshot[key];if(!Number.isFinite(value)){state[at]=now;state[key]=null;continue;}
+  if(!Number.isFinite(state[key])||value!==state[key])state[at]=now;state[key]=value;
+ }
+ const frameAge=now-state.frameAt,byteAge=now-state.byteAt,age=Math.max(frameAge,byteAge);
+ if(age>=5000){state.status='stalled';state.reason=frameAge>=byteAge?'encoder':'transport';state.reconnect=age>=10000;}
+ return state;
 }

@@ -1,0 +1,54 @@
+{
+  "before": {
+    "hidden": false,
+    "frames": 46,
+    "rendered": 51,
+    "last": 2155.1,
+    "video": 1.841566,
+    "clock": 2165.5,
+    "rtp": {
+      "frames": 44,
+      "fps": 30,
+      "bytes": 43281
+    }
+  },
+  "hiddenStart": {
+    "hidden": false,
+    "frames": 79,
+    "rendered": 83,
+    "last": 3222.6,
+    "video": 3.856983,
+    "clock": 4180.899999976158,
+    "rtp": {
+      "frames": 76,
+      "fps": 2,
+      "bytes": 51604
+    }
+  },
+  "hiddenEnd": {
+    "hidden": false,
+    "frames": 86,
+    "rendered": 91,
+    "last": 11245.5,
+    "video": 11.859378,
+    "clock": 12183.299999952316,
+    "rtp": {
+      "frames": 84,
+      "fps": 1,
+      "bytes": 63938
+    }
+  },
+  "restored": {
+    "hidden": false,
+    "frames": 118,
+    "rendered": 122,
+    "last": 13197.1,
+    "video": 12.890815,
+    "clock": 13214.699999928474,
+    "rtp": {
+      "frames": 115,
+      "fps": 30,
+      "bytes": 74472
+    }
+  }
+}

@@ -24,8 +24,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 27571,
-      "sha256": "0294a45cb3312e5fca02d2ce55dc08bf15a703e473cf44b2c3bb0cf2f4b9790e"
+      "bytes": 27692,
+      "sha256": "f98f41f532f6a1858a5f987c1dd853838b213da2d32f841deb123cf5669597b2"
     },
     {
       "file": "broadcast-core.js",
@@ -49,28 +49,33 @@
     },
     {
       "file": "engine.js",
-      "bytes": 28404,
-      "sha256": "4884306f580b7ca80fa8533fde21d6bbd9b020510f84079f146182c3faa371b5"
+      "bytes": 29827,
+      "sha256": "a24bb98eea3e7fe774e67781402938fc641382154322da62829da60ed717cbac"
+    },
+    {
+      "file": "frame-clock.js",
+      "bytes": 591,
+      "sha256": "df6fa375535f1fde7b1f3283188a53354a2ee43567bd1b15069bb2a96efa9d2c"
     },
     {
       "file": "index.html",
-      "bytes": 16612,
-      "sha256": "52f5157a4bdaa8f0c92e9a7a6612bc612dedf39c822bac03f0cc896baacd9b67"
+      "bytes": 16610,
+      "sha256": "993f76e54c77c513b363d73c632ba1c17044cec9ddd6b1b3e7808673dc27fec1"
     },
     {
       "file": "low-latency.js",
-      "bytes": 4629,
-      "sha256": "cb7393b30add575823bfeca7ea97adc9ecb19c2e81998f6cc703dbbc2af56a65"
+      "bytes": 5469,
+      "sha256": "5cfeb23b7d47888a5f814ab6ae6f921918ac275ed4f38d25a6b3f782f62c6fc6"
     },
     {
       "file": "publish-compositor.js",
-      "bytes": 2228,
-      "sha256": "ce1f505bb1b94d6be8f5c4aa06db3def7e82fbe3dd979163417eecef6f90c67f"
+      "bytes": 2266,
+      "sha256": "175d1644f26fd795ed32fe63c0806a3653c4cf85deed856bb43cd6c942d99fa8"
     },
     {
       "file": "publisher.js",
-      "bytes": 22023,
-      "sha256": "a7b39c403cade429341efdf67991f778d182950a6ba8abb66c4ca3c7dde9ebb9"
+      "bytes": 22703,
+      "sha256": "c13333ac092c55ebba02547ac154fba8bfab59a101217581fe09a0a5ddeda834"
     },
     {
       "file": "shortcuts.js",
@@ -84,8 +89,8 @@
     },
     {
       "file": "style.css",
-      "bytes": 17084,
-      "sha256": "3f63bece8e8b8d7342da5ef4fabbb496528d53192262993e2b1975883a977dd7"
+      "bytes": 17195,
+      "sha256": "5befa6c920683f00c84aa630fdc8153c4a12f90f046d25aa50bcc85f5c4a2a20"
     },
     {
       "file": "transform-ui.js",

@@ -1,0 +1,542 @@
+[
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567939.0710878,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5344,
+      "recv_bytes": 2943783,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567941.1006143,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5445,
+      "recv_bytes": 2956022,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567943.1161835,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5545,
+      "recv_bytes": 2966166,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567945.1329443,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5646,
+      "recv_bytes": 2966166,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567947.1476142,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5746,
+      "recv_bytes": 2976587,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567949.1580653,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5847,
+      "recv_bytes": 2986680,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567951.1729295,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 5947,
+      "recv_bytes": 2986680,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567953.1888838,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6048,
+      "recv_bytes": 2997055,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567955.1935902,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6148,
+      "recv_bytes": 3007264,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567957.2014005,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6249,
+      "recv_bytes": 3007264,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567959.2113264,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6349,
+      "recv_bytes": 3017593,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567961.2166626,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6450,
+      "recv_bytes": 3027708,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567963.2210581,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6550,
+      "recv_bytes": 3027708,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567965.2492774,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6651,
+      "recv_bytes": 3037948,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567967.2535,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6751,
+      "recv_bytes": 3048321,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567969.282033,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6852,
+      "recv_bytes": 3048321,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567971.2935965,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 6952,
+      "recv_bytes": 3058392,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567973.3057618,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7053,
+      "recv_bytes": 3068707,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567975.3236074,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7153,
+      "recv_bytes": 3068707,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567977.3336883,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7254,
+      "recv_bytes": 3079063,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567979.3476393,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7355,
+      "recv_bytes": 3089243,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567981.3582373,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7455,
+      "recv_bytes": 3089243,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567983.3686762,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7556,
+      "recv_bytes": 3099572,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567985.3825612,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7656,
+      "recv_bytes": 3109600,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567987.414033,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7757,
+      "recv_bytes": 3109600,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567989.431565,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 7908,
+      "recv_bytes": 3119951,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567991.4503658,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 8008,
+      "recv_bytes": 3130196,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567993.4619472,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 8108,
+      "recv_bytes": 3140506,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567995.4771001,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 8209,
+      "recv_bytes": 3140506,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  },
+  {
+    "state": "connected",
+    "time": 0,
+    "ready": 0,
+    "inbound": null,
+    "at": 1794567997.4950223,
+    "server": {
+      "id": "vid-7gc7560",
+      "video_frames": 2815,
+      "audio_frames": 8310,
+      "recv_bytes": 3150751,
+      "clients": 2,
+      "publish": {
+        "active": true,
+        "cid": "5x61u85t"
+      }
+    }
+  }
+]
