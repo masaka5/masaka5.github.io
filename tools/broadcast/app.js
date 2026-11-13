@@ -1,6 +1,6 @@
 import {BroadcastEngine} from './engine.js?v=20261113-effects1';
 import {formatCountdown,DEFAULT_OUTPUT,OUTPUT_LIMITS} from './broadcast-core.js?v=20261113-effects1';
-import {BroadcastPublisher} from './publisher.js';
+import {BroadcastPublisher} from './publisher.js?v=20261113-whip-http1';
 import * as Store from './store.js';
 import {TransformEditor} from './transform-ui.js?v=20261113-effects1';
 import {createEffectsPanel} from './effects-ui.js?v=20261113-effects1';

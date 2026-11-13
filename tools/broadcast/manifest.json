@@ -3,7 +3,7 @@
     {
       "project": "toolbox-broadcast",
       "source": "first-party browser studio",
-      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/8eb087e4739b29759342266da5ec947395bf5845/licenses/broadcast-source.zip",
+      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/95c0bbbb17b2a425feef4494ab60781b922ef6fb/licenses/broadcast-source.zip",
       "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
     },
     {
@@ -24,8 +24,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 26338,
-      "sha256": "2d454d77c67ef8cb1f39c601373dd747126f66f66dbc425e53dbea694e0912b6"
+      "bytes": 26360,
+      "sha256": "8ac9ebbaf5ff7e59de44e66989b5226c5fafa6f885236e27bef8384e78868d68"
     },
     {
       "file": "broadcast-core.js",
@@ -54,13 +54,13 @@
     },
     {
       "file": "index.html",
-      "bytes": 16607,
-      "sha256": "d9fc6dbbccb628c214dfd997bd47102b1db918aefac35398b3d9bf0c3491ff46"
+      "bytes": 16608,
+      "sha256": "5b6a3471b0eb6bfc62eac98b744b34efa7aadab38c6b2352c245fbb61e249a0d"
     },
     {
       "file": "publisher.js",
-      "bytes": 18593,
-      "sha256": "8c406c09c107dccffdee2f0fbd037f61c363ae2040b35a6cf35d988450b7c331"
+      "bytes": 19010,
+      "sha256": "347320fd7f4a84b165d8c5c742a6e00487ee2dcacdff79d9332ea378ca5bee61"
     },
     {
       "file": "shortcuts.js",
