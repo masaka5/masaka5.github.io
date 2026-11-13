@@ -1,0 +1,23 @@
+{
+  "name": "浏览器指纹",
+  "version": "1.0.0",
+  "engine": "NeoPrint 0.3.2",
+  "upstream": "36c84b2aa377961f5eb28c5749f79df49c5fa824",
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 3053,
+      "sha256": "3f3fb7ba28fa7523d4d1a20072e57fc97cb4da9f8bafde8e220d66f41aca22f1"
+    },
+    {
+      "file": "assets/app.js",
+      "bytes": 1106998,
+      "sha256": "850e75ccbf37d592f9cd21f8fe78363f740c7da8f287af07eba4ca428dc15e04"
+    },
+    {
+      "file": "assets/app.css",
+      "bytes": 7022,
+      "sha256": "c4f4d6941609fce0fe04e65393e488fed932e5f9a127f9ddbf45ebcb1b57aaee"
+    }
+  ]
+}

@@ -103,6 +103,7 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
+    {"id":"browser-fingerprint","category":"security","name":"浏览器指纹","description":"设备特征 · 指纹检测 · 浏览器对比","href":"tools/browser-fingerprint/","icon":"fingerprint","tags":["NeoPrint","指纹","隐私"],"keywords":"NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU","variants":[{"name":"标准","href":"tools/browser-fingerprint/","source":"toolbox","sourceId":"browser-fingerprint"}]},
     {"id":"remote","category":"network","name":"远程连接","description":"RDP · VNC · SSH","href":"tools/remote/","icon":"monitor","tags":["远程","设备","网关"],"keywords":"远程桌面 SSH VNC RDP 设备管理 Windows 网关","variants":[{"name":"标准","href":"tools/remote/","source":"toolbox","sourceId":"remote"}]},
     {
       "id": "yt-dlp",

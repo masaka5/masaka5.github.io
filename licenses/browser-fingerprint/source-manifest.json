@@ -1,0 +1,354 @@
+{
+  "sourceArchive": "source.zip",
+  "upstream": "https://github.com/neoprintjs/neoprint",
+  "commit": "36c84b2aa377961f5eb28c5749f79df49c5fa824",
+  "archiveBytes": 106413,
+  "archiveSha256": "8cfcce46c6078bf6524f9a1fa51470fd9382399ad346e627525125337ac5fde9",
+  "files": [
+    {
+      "path": "browser-fingerprint/build.mjs",
+      "bytes": 3251,
+      "sha256": "d0b781637a547ce2c670093c45da96d2e340fbab61bdf4d61f427089b2598b9e"
+    },
+    {
+      "path": "browser-fingerprint/index.html",
+      "bytes": 776,
+      "sha256": "d3daa2e15b5dd44c7451704db48c819e9ae0559962a5e4a76d3fb2cca357503d"
+    },
+    {
+      "path": "browser-fingerprint/LICENSE",
+      "bytes": 1084,
+      "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962"
+    },
+    {
+      "path": "browser-fingerprint/notices/@ant-design_icons-svg.txt",
+      "bytes": 1099,
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70"
+    },
+    {
+      "path": "browser-fingerprint/notices/toggle-selection.txt",
+      "bytes": 1090,
+      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d"
+    },
+    {
+      "path": "browser-fingerprint/package-lock.json",
+      "bytes": 52005,
+      "sha256": "e77278f9e16d98850ffaf38fae6ff036f09438a046030159e986a0f526e12014"
+    },
+    {
+      "path": "browser-fingerprint/package-source.py",
+      "bytes": 2211,
+      "sha256": "75464b986964bf5832b74184d5ba9b80e23f25981c66e009db63f2df316e5417"
+    },
+    {
+      "path": "browser-fingerprint/package.json",
+      "bytes": 300,
+      "sha256": "f963fb5ba401580fa031c19a879660e2b78be95f87dcd491b1b816a6430f833d"
+    },
+    {
+      "path": "browser-fingerprint/README.md",
+      "bytes": 1597,
+      "sha256": "e6ddcc4fc2d3e37430971a69d272fdf99498b06a34fa21c989e4181cab0c0a11"
+    },
+    {
+      "path": "browser-fingerprint/src/collect.ts",
+      "bytes": 1683,
+      "sha256": "5e4abe4a9a9e212a1a3e5177bf49c28890dac25b6c4100956ba6075186aefef8"
+    },
+    {
+      "path": "browser-fingerprint/src/main.jsx",
+      "bytes": 16895,
+      "sha256": "9c089ddc28de99677418f3add30db58b997b16644dc9d4c98fd42e6628c38b99"
+    },
+    {
+      "path": "browser-fingerprint/src/model.mjs",
+      "bytes": 6695,
+      "sha256": "3a5311f15e85f55d47e0d25b5bfc081a1eaa5949150453840ff2d71e859385cc"
+    },
+    {
+      "path": "browser-fingerprint/src/style.css",
+      "bytes": 7034,
+      "sha256": "5b67ce6e4e07ee1711121c8de5044a8a001f7f2414bd5cebf6ef8ab6cb2aca71"
+    },
+    {
+      "path": "browser-fingerprint/tests/browser.py",
+      "bytes": 6371,
+      "sha256": "313511889eb8c64a2686880a40583351f78730eac2dcdc7a57bd1d7d221d2957"
+    },
+    {
+      "path": "browser-fingerprint/tests/hash.test.mjs",
+      "bytes": 1137,
+      "sha256": "108873cd6a38926cc74419b43b1f7d227307d29e1cd048dbd01b7c25d0707d02"
+    },
+    {
+      "path": "browser-fingerprint/tests/model.test.mjs",
+      "bytes": 1982,
+      "sha256": "7dc9bb16a7d14f2e51c6e3dc351705d44d356e477c96baf3fee3173f842b52d7"
+    },
+    {
+      "path": "browser-fingerprint/tests/pairing-browser.py",
+      "bytes": 4015,
+      "sha256": "25685b7fa5c974d15dda06fa78065f5a2518599e165f87a49b04bd0a1f17cdb2"
+    },
+    {
+      "path": "browser-fingerprint/tests/pairing.test.mjs",
+      "bytes": 804,
+      "sha256": "5315dc9303d6264e011ca134fd0abf080ae8fa46d811bcd5b8e0df4344b507b0"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/LICENSE",
+      "bytes": 1095,
+      "sha256": "fb2213e78ab799a5dd71b649c158d3b7b056797b719dcb65aff474d9f559dda9"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/package.json",
+      "bytes": 2100,
+      "sha256": "a37b5e28c5bcab2c75c8fc49d220de9097d8e1d4fac27c4f71508e73f6a10473"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/anti-detect.ts",
+      "bytes": 13640,
+      "sha256": "64770330e105c468c3edf45b45c71584d09aabe68f64e16f0c7d0482d4262b1c"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/attest.ts",
+      "bytes": 8377,
+      "sha256": "65eb9660194e06f6143ed34470b27026c4bdcfc3de3e905a468d4e8a221470f8"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/bot.ts",
+      "bytes": 4681,
+      "sha256": "6ea3ea244bb01cb7b8e9c5cb749dd15deecffd9618eab65510f81a8f468a32a3"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/compare.ts",
+      "bytes": 1180,
+      "sha256": "bc8fe6be2c550d5062c0037b317090106a139d62a50456cdd7bab3ec8455c818"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/confidence.ts",
+      "bytes": 1635,
+      "sha256": "48f1b2278338fe6560d624fa75b826d721f3a30faed61ea6c0ef9a596b0c47a9"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/cross-browser.ts",
+      "bytes": 10552,
+      "sha256": "1598a1124063cbbf59a60028304a61adabeac052b91b8ad9bc9086714fac747f"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/entropy.ts",
+      "bytes": 1034,
+      "sha256": "ecb66277dba0ff8bdf0d5173c75cc9771b878987d12300ba26ddc1c4f3abac4b"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/environment.ts",
+      "bytes": 7837,
+      "sha256": "1e35692042f8bbf6beea3f9ae774b8e939ad8a1bd0beb16bc222b3e8aef1cb2a"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/incognito.ts",
+      "bytes": 3502,
+      "sha256": "f34948ecbe8c071ff5cf46da1eef9c2960235f02d910d85d3c5c1e38a6a162b4"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/inconsistency.ts",
+      "bytes": 4220,
+      "sha256": "b2f55fccfc2e66296a0d2c184186bed24aa3e4bf05c33eff3b957f4aef2290d4"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/index.ts",
+      "bytes": 903,
+      "sha256": "a25e756fa27c8e7de7af8cb66ab287809cdd6024cc96acbcaf94210576da52e0"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/noise.ts",
+      "bytes": 3034,
+      "sha256": "23a9d258bc698e919c9252561c994b3e1379ae906421755bbd4699a370e9e425"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/protocol.ts",
+      "bytes": 1782,
+      "sha256": "4882e2742aad6cb80ec3d412faa242264344f210059267cb97814c625d832f25"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/server-hints.ts",
+      "bytes": 2027,
+      "sha256": "19fcc4ad75ea1d857b5ec338b80b53f990e974ca8b058bee08e079ecaa4d75ee"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/stable-id.ts",
+      "bytes": 1531,
+      "sha256": "413a628cf64091b977e00f854dad66b316c509d5dda752ea7257d6d4fc431eb6"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/analysis/weighted-id.ts",
+      "bytes": 1653,
+      "sha256": "f037239570baafefd14eebe23c18e17bfdc636a8037bbd836accc2cfa6c4f931"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/behavior/index.ts",
+      "bytes": 5954,
+      "sha256": "5727cbb7bed4a37932ab9a81dd8df3111c5b4eb0b03b765140c65a5c23acdc46"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/audio.ts",
+      "bytes": 2720,
+      "sha256": "ec9752c230eaa8568682305953404a1375ab9f82060e464f91d9a91b5cbc7ec7"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/canvas.ts",
+      "bytes": 1491,
+      "sha256": "2896f7ad6fd7a675c8c07e1fe59aa2e92efcb825fbfa9e47a7cb159bc4d2be46"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/css-features.ts",
+      "bytes": 2040,
+      "sha256": "c170255e0b3563c49e5d00126239d077e83063a45b4003358bd0a76ce5df3b85"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/dom-rect.ts",
+      "bytes": 1670,
+      "sha256": "04fa17001a24cb09de3104fe18d7b5e7831c5e04c27d98f0d260ab572dc510b5"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/fonts.ts",
+      "bytes": 2146,
+      "sha256": "a13e7aa37023d9c907f1899b01329e95432c949c32bb44293e16bbb670c82e95"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/gpu.ts",
+      "bytes": 1835,
+      "sha256": "117aac899fea0b0bc77b50f46962da636ee98a7bcb999767631c46bec123b6d8"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/hardware-perf.ts",
+      "bytes": 3929,
+      "sha256": "ee85c6c665d881665ba5f37af95ebbfd4458835e24f376f06a07dadf47abd32a"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/index.ts",
+      "bytes": 2128,
+      "sha256": "9478542b1f68c84fe43c72ac308a4734d2a4f8bbb55df580663027f67b3fd0f4"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/intl.ts",
+      "bytes": 1319,
+      "sha256": "b1cda8714c2ef27ae954f5870b785d1ca751b04d4dbb7efc34705f655b3ba0ae"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/math-fp.ts",
+      "bytes": 1215,
+      "sha256": "1796ad70e10495884e354aa532ab3bbb6184542abb02b2d9aa6742a09d1d993d"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/media.ts",
+      "bytes": 1853,
+      "sha256": "9d7865ccd59ae5aa9945f07178ed17c1ab7764291a1c75b78aa9dd78c74abad5"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/navigator-info.ts",
+      "bytes": 948,
+      "sha256": "a0b7f1de25a56471f8b55044e8e8f552af7ff0dd6f5e042382d53a8c635f9853"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/network.ts",
+      "bytes": 786,
+      "sha256": "3743e3e21f0efbcfa86fe7d90ca4afac282f510750f04f38a1713010c2949a7a"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/permissions.ts",
+      "bytes": 1240,
+      "sha256": "8d1dcb16dd1fed73b3714e783294348c2b43d83fb1bb1ed8aace4d414411658c"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/screen.ts",
+      "bytes": 1345,
+      "sha256": "5e03186342d27295e5e6b05240b29260659c7c042ad10a82c615a358f9e5a4c1"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/shader-precision.ts",
+      "bytes": 2153,
+      "sha256": "1cb6433d7bc1cd2acf00f5d2c1881f29bab4d607b93b33ba1515a0069d826338"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/speech.ts",
+      "bytes": 1294,
+      "sha256": "538ced5a2118a062c150e682a1ad49648392237fff7e524bc224a0c7570aa6e4"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/storage.ts",
+      "bytes": 1481,
+      "sha256": "831d1445aecff141a5e9770107779061d334479fa559a964ac3ccb0ca549cd8d"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/svg.ts",
+      "bytes": 2462,
+      "sha256": "529d791b73fed80e48aef024560a9dfcae19cf23003dd6d7aa04ccf2ad4583c3"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/timing.ts",
+      "bytes": 1336,
+      "sha256": "4d357adb9fea4addc3a49fd5c86114eb7f0a3c403813533609d90a7fd9604275"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/webgl-render.ts",
+      "bytes": 5831,
+      "sha256": "1668fa21b69b51ef9dcbf242cc3004e7c018f4f6b72e52386946b0c033074e49"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/webgl.ts",
+      "bytes": 2694,
+      "sha256": "a43a0198bc2b5743d7c8e4a74a0f65f6352ceff31ec0b82e89f618a9a2e1877c"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/collectors/webrtc.ts",
+      "bytes": 2290,
+      "sha256": "ee5e915f20dbd32f4b4d57782677d2b0e60b845842e1bcc07ac3a3de42de49ee"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/core/engine.ts",
+      "bytes": 6858,
+      "sha256": "537ee583d8717c05930e8414892a7d4e352dd1be33e7b5463209007b55b81a0a"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/core/hash.ts",
+      "bytes": 1911,
+      "sha256": "4d66e45b1c5c1114d05b6af888cd69e06c3ff9107b08d7534f51ed5c2c80cad1"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/core/worker-runner.ts",
+      "bytes": 1078,
+      "sha256": "c77523bf1d215e87a4753e1538c8fd98c5dcaf34f2385003f443e60519019a6f"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/index.ts",
+      "bytes": 8034,
+      "sha256": "822a1689db838cecc866756935e405c59c27b6ad307ee6528c384df2f36f07d6"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/lifecycle/index.ts",
+      "bytes": 7158,
+      "sha256": "defc5dd994a36e998f39f060314d0703b47b90a7da79286c00f9c7baa7397d26"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/session/index.ts",
+      "bytes": 5531,
+      "sha256": "b3b207db7db88512b5385fe0772f7f2b8f5bd6972cb514bcdad9153eb86cf9ef"
+    },
+    {
+      "path": "browser-fingerprint/vendor/neoprint/src/types.ts",
+      "bytes": 2590,
+      "sha256": "0fd60b842cd5c9c26d45b1a394b2372b3ff3beaf591e8a086bec03a2d2c5ccac"
+    },
+    {
+      "path": "browser-fingerprint/notices/THIRD-PARTY-NOTICES.txt",
+      "bytes": 80946,
+      "sha256": "0b0a23441f1b8424a332ce62f5ccb8694c0bce9cf03098a4608ab79e745d0222"
+    },
+    {
+      "path": "browser-fingerprint/notices/dependencies.json",
+      "bytes": 5908,
+      "sha256": "a562cc3e79e742aa3193c5db2fe49c9563437ef602e952d05767f28574f534a9"
+    }
+  ]
+}
