@@ -4,18 +4,18 @@
   "hash": "hash-wasm@4.12.0",
   "scanner": "shared vendor/zxing",
   "protocol": "PQF2/PFR2/PQS2",
-  "archiveBytes": 90010,
-  "archiveSha256": "88424c8a4a2981c7810fb18dcabf2d2fabf8ffcd25d55885bad9a23e34ba8e18",
+  "archiveBytes": 95370,
+  "archiveSha256": "d4fb603052c4b71fd512ecac122e85860e11ca70b638e89983c6e7294233b79c",
   "files": [
     {
       "path": "qr-transfer/build.mjs",
-      "bytes": 3598,
-      "sha256": "153b3154a16ac48fdec0363c5f366231e2de8249b03c0e27b7444406aebdeafc"
+      "bytes": 4239,
+      "sha256": "d597ebee243b58afc67f220f8624090b3ca1b73ea9cd407772b46be6765d4be3"
     },
     {
       "path": "qr-transfer/index.html",
-      "bytes": 934,
-      "sha256": "47b059a1316b133f122030bb8b546916eca55e210fe810e705e4dfc5c96c7715"
+      "bytes": 964,
+      "sha256": "a6933642e72970b84b61ba77108aeb62e4aa64dfc197fe2db34d35f6cec57d27"
     },
     {
       "path": "qr-transfer/LICENSE",
@@ -45,7 +45,7 @@
     {
       "path": "qr-transfer/package-lock.json",
       "bytes": 52670,
-      "sha256": "976bc8f334dde10f37e3092c0ab0027a9634c81a1037967798d773bc9cfd4404"
+      "sha256": "812cf67ae4472f65fad1b0f696ea639bdd2d3f6dcf0c522d21ecad61d28d48a3"
     },
     {
       "path": "qr-transfer/package-source.py",
@@ -55,12 +55,12 @@
     {
       "path": "qr-transfer/package.json",
       "bytes": 351,
-      "sha256": "bdbdedbbbe52b350e4ce4696b599cc444f9875ddd80647b6f44346c694027ed2"
+      "sha256": "d95acb893975fb711b5b2e1dfbff006ea77c45250a3d3c4923e2888881b74a5d"
     },
     {
       "path": "qr-transfer/README.md",
-      "bytes": 2958,
-      "sha256": "61e4360c6eea3cfd910e539b11c4eb0b102caf77f74d412de7a6f1ad97ba1d69"
+      "bytes": 3602,
+      "sha256": "29fdfb8549480cbffe16502856541e983ac6c5b1cae3a5d14ca5a8ebed937184"
     },
     {
       "path": "qr-transfer/src/camera.mjs",
@@ -74,8 +74,8 @@
     },
     {
       "path": "qr-transfer/src/client.mjs",
-      "bytes": 1090,
-      "sha256": "d5bdb88c91763201dcbdc6528add07b90a0ab0317ddcf0914a31b07b1b67e4a8"
+      "bytes": 1109,
+      "sha256": "b515717a951af7c21d6523e63ceb5c06e7fe6ab1f54e9fb08a5888a07250d9f1"
     },
     {
       "path": "qr-transfer/src/codec.mjs",
@@ -109,8 +109,8 @@
     },
     {
       "path": "qr-transfer/src/main.jsx",
-      "bytes": 3185,
-      "sha256": "d94d4e9834969abc66fc08dd48c76367e505ca198b06be79e77c48b410fa45e3"
+      "bytes": 3207,
+      "sha256": "40a302547b850bfdae7d87906834d36b879ad82ab4b100d582effc972b8d843f"
     },
     {
       "path": "qr-transfer/src/package.mjs",
@@ -153,6 +153,11 @@
       "sha256": "ff5f2556ac85b8ccd002466a03716e6ab2c6cd328e5c2f1fb16aaeb1c9ebee08"
     },
     {
+      "path": "qr-transfer/src/update.mjs",
+      "bytes": 1277,
+      "sha256": "15927141f73a620655a53abe37ffad7ef5cfe57d5a5f580a5e29d0b7ef3bd679"
+    },
+    {
       "path": "qr-transfer/src/worker.mjs",
       "bytes": 587,
       "sha256": "11308479ae978abc166965f247c0935be8ca53bac10866096abdff733ded5022"
@@ -164,13 +169,18 @@
     },
     {
       "path": "qr-transfer/sw.js",
-      "bytes": 1680,
-      "sha256": "6f02e8d40258244773d4406b283cc52dd7aa7ac5c211944448ee75f19718ed24"
+      "bytes": 2324,
+      "sha256": "97c52c475b7cebfa3545ead86a5b7f74e4a37cb90a6dc3da06a523425f783357"
     },
     {
       "path": "qr-transfer/tests/browser.py",
       "bytes": 5863,
       "sha256": "56a0f5318ad80845a59e418485b75d1208d5c7c75900f08739b1e3dcbfeb73f7"
+    },
+    {
+      "path": "qr-transfer/tests/cache-upgrade.py",
+      "bytes": 4906,
+      "sha256": "239be2776a37afafdc7dcd69cf4371eab280f258d1ea7551265a1a3921e34f66"
     },
     {
       "path": "qr-transfer/tests/camera-browser.py",
@@ -223,6 +233,11 @@
       "sha256": "fca974ba043552f85781f1dce62288bef89fec7931524f95ce8665737542c1b5"
     },
     {
+      "path": "qr-transfer/tests/offline-update.test.mjs",
+      "bytes": 1791,
+      "sha256": "132ddcb5111493121e3d7bddb306a048f41fef098fb97609dba9df6d05360e81"
+    },
+    {
       "path": "qr-transfer/tests/package.test.mjs",
       "bytes": 1648,
       "sha256": "360ffb2f9bdbf152f0421b346acd55d6065649fb3f8c90585cbf8a534ad5ca50"
@@ -241,6 +256,11 @@
       "path": "qr-transfer/tests/stream-package.test.mjs",
       "bytes": 2027,
       "sha256": "f1fb0b0e22d48ef4711571ec6af0276cd1655694161ae34f4a2fbba9128bfbf7"
+    },
+    {
+      "path": "qr-transfer/update.html",
+      "bytes": 887,
+      "sha256": "9bd1d89ef1ef6a3cea8a85c38676d20198dd8ae0e3bd3bf5d5f2c74e667c48f3"
     },
     {
       "path": "qr-transfer/notices/THIRD-PARTY-NOTICES.txt",

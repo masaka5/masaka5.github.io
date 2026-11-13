@@ -1,24 +1,35 @@
 {
   "name": "动态二维码传输",
-  "version": "2.0.0",
+  "version": "2.0.1",
+  "revision": "b120fc2bd71f4c9b",
   "protocol": "PQF2 / PFR2 / PQS2",
   "encoding": "systematic GF(2) fountain, 128 shards/generation",
   "defaultPayloadBytes": 2916,
   "files": [
     {
       "file": "index.html",
-      "bytes": 3176,
-      "sha256": "5d513bd6f936375446d8b7f724750e3f7fb6fded134bc4b4db0cdfb2e3ad7983"
+      "bytes": 3214,
+      "sha256": "a4f4b47830171b1f9e5459400dc6dd11d7db562016daea48915d5c410f0c07a4"
+    },
+    {
+      "file": "update.html",
+      "bytes": 891,
+      "sha256": "b398875982c0fc443223554d9b62c4d6c929defe7469c9355680eb734d2ab207"
     },
     {
       "file": "sw.js",
-      "bytes": 1687,
-      "sha256": "3fac525c56d6c53a7ba55e2718b3c26f694e3f94569902bd852dd06d2c2e4412"
+      "bytes": 2335,
+      "sha256": "4d92ec0c0e0045164c02f67aeabcefb6f34994d602279abcc5259a106869f237"
+    },
+    {
+      "file": "assets/update.js",
+      "bytes": 1052,
+      "sha256": "f92e9f875bb4cf6814a4fcaa6f6006c6422f8f5efa0b708c7549dca1a44a00b7"
     },
     {
       "file": "assets/app.js",
-      "bytes": 933721,
-      "sha256": "4367c3fc9f0d2322dd3924d8c97fac65e4f175618bfb17b1f11dbc225a4b0bbc"
+      "bytes": 933762,
+      "sha256": "baa83bab61f285c3f9ceb378719556f0c7981cdfe70abec237cf9f800ae86f7a"
     },
     {
       "file": "assets/app.css",
