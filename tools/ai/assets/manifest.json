@@ -1,0 +1,10 @@
+{
+  "model": "onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX",
+  "quantization": "q4f16",
+  "runtime": "Transformers.js 4.3.2",
+  "cache": "Cache API",
+  "files": [
+    "local-ai-client.js",
+    "local-ai-worker.js"
+  ]
+}

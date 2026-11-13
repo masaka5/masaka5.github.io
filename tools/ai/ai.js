@@ -1,19 +1,21 @@
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id),MB=1024*1024;
   const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
   const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
-  let config=null,history=[],attachments=[],controller=null,reading=false;
+  let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null;
+  const localClient=new LocalAiClient({onProgress:info=>status(`模型准备中 · ${Math.round(info.value*100)}%`),onReady:info=>{localMode=true;$('modelLabel').textContent=info.label+` · ${info.device==='webgpu'?'WebGPU':'兼容模式'}`;status('本地模型已就绪。');},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
   function controls(){
-    const busy=!!controller;
+    const busy=!!controller||localBusy;
     for(const id of ['prompt','attach','files','newChat','openSettings'])$(id).disabled=busy||reading;
     $('send').disabled=busy||reading;$('send').hidden=busy;$('stop').hidden=!busy;
     $('chatFeed').setAttribute('aria-busy',String(busy));
     document.querySelectorAll('.attachment button').forEach(button=>button.disabled=busy||reading);
   }
   function clearChat(){
-    history=[];attachments=[];$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
+    history=[];localHistory=[];attachments=[];localRaw='';localActive=null;if(localMode)$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
     $('chatEmpty').hidden=false;$('exportChat').disabled=true;$('prompt').value='';status('');
   }
   function endpoint(value){
@@ -25,7 +27,12 @@
     if(url.search)throw Error('请勿将密钥放在网址参数中，请填写下方密钥。');
     return url.href;
   }
-  $('openSettings').onclick=$('setupChat').onclick=()=>{$('settingsStatus').textContent='';$('settings').showModal();};
+  $('openSettings').onclick=$('setupChat').onclick=()=>{localMode=false;$('settingsStatus').textContent='';$('settings').showModal();};
+  async function openLocal(){
+    localMode=true;$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('首次使用需要下载模型，进度会显示在这里。');
+    try{await localClient.load();}catch(error){localMode=false;status(error.message||'本地模型启动失败。',true);}
+  }
+  $('localChat').onclick=$('useLocal').onclick=()=>openLocal();
   $('closeSettings').onclick=()=>$('settings').close();
   $('settingsForm').onsubmit=event=>{
     event.preventDefault();try{
@@ -96,6 +103,22 @@
     $('chatFeed').append(card);$('chatFeed').scrollTop=$('chatFeed').scrollHeight;
     $('exportChat').disabled=false;return {card,body,label};
   }
+  function renderLocal(reply,raw){
+    const parsed=splitThinking(raw);reply.body.textContent=parsed.answer||'正在生成…';
+    let details=reply.card.querySelector('.thinking');
+    if(!details){details=document.createElement('details');details.className='thinking';const summary=document.createElement('summary');summary.textContent='思考过程';details.append(summary,document.createElement('div'));reply.card.insertBefore(details,reply.body);}
+    details.querySelector('div').textContent=parsed.thinking;details.hidden=!parsed.thinking;
+  }
+  function localAttachmentText(files){return files.filter(file=>!file.image).map(file=>`\n附件：${file.name}\n${file.data}`).join('');}
+  async function submitLocal(text,files){
+    if(files.some(file=>file.image)){status('本地 1.5B 模型只支持文字，请切换接口模式处理图片。',true);return;}
+    if(!localClient.ready){await openLocal();if(!localClient.ready)return;}
+    const content=(text||'')+localAttachmentText(files),user={role:'user',content};localHistory.push(user);
+    localBusy=true;controls();const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.card.dataset.state='working';localRaw='';localActive=reply;status('本地生成中 · 思考过程可展开');
+    try{const answer=await localClient.ask(localHistory,{maxTokens:768});localHistory.push({role:'assistant',content:answer});reply.card.dataset.state='complete';$('prompt').value='';attachments=[];renderAttachments();status('');}
+    catch(error){localHistory.pop();reply.card.dataset.state='error';reply.label.textContent='未完成';reply.body.textContent='本地生成失败，请重试。';status(error.message||'本地生成失败。',true);}
+    finally{localBusy=false;localActive=null;controls();$('prompt').focus();}
+  }
   function content(text,files){
     const parts=[];if(text)parts.push({type:'text',text});
     for(const file of files){
@@ -140,11 +163,12 @@
       if(!answer.trim())throw Error('接口没有返回文本，请检查模型设置。');return answer;
     }finally{try{await reader.cancel();}catch(_){}reader.releaseLock();}
   }
-  $('stop').onclick=()=>controller?.abort();
+  $('stop').onclick=()=>{if(localBusy){localClient.stop();localClient.dispose();localBusy=false;localActive=null;status('已停止本地生成。');controls();}else controller?.abort();};
   $('chatForm').onsubmit=async event=>{
     event.preventDefault();if(controller||reading)return;
-    if(!config){$('settings').showModal();Ops.status($('settingsStatus'),'先配置接口，再发送消息。');return;}
     const text=$('prompt').value.trim(),files=[...attachments];if(!text&&!files.length){status('请输入问题或添加附件。');return;}
+    if(localMode){await submitLocal(text,files);return;}
+    if(!config){$('settings').showModal();Ops.status($('settingsStatus'),'先配置接口，再发送消息。');return;}
     const user={role:'user',content:content(text,files)},messages=[...history,user];
     if(history.length>=60||JSON.stringify(messages).length>20*MB){status('当前对话过长，请新建对话后继续。',true);return;}
     controller=new AbortController();const signal=controller.signal;let timedOut=false;
