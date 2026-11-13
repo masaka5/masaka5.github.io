@@ -1,7 +1,7 @@
 import { normalizeProject, normalizeSource, SOURCE_TYPES, DEFAULT_OUTPUT, OUTPUT_LIMITS, uid, clamp } from './broadcast-core.js?v=20261113-effects1';
-import { Compositor } from './compositor.js?v=20261113-lowlatency1';
+import { Compositor } from './compositor.js?v=20261113-stability1';
 import {makeFade,fadeValue} from './effects.js?v=20261113-effects1';
-import {PublishCompositor} from './publish-compositor.js?v=20261113-lowlatency1';
+import {PublishCompositor} from './publish-compositor.js?v=20261113-stability1';
 
 const LABELS={camera:'摄像头',screen:'屏幕共享',window:'窗口共享',microphone:'麦克风',image:'图片',video:'视频',text:'文字',countdown:'倒计时'};
 const COPY=value=>JSON.parse(JSON.stringify(value));
@@ -26,7 +26,7 @@ export class BroadcastEngine {
         this.silenceSource=this.audioContext.createConstantSource();this.silenceSource.offset.value=0;this.silenceSource.connect(this.masterGain);this.silenceSource.start();
       }
       this.canvas.width=this.project.width;this.canvas.height=this.project.height;
-      this._loop=timestamp=>{if(this.disposed)return;this._tick(timestamp);this._raf=requestAnimationFrame(this._loop);};this._raf=requestAnimationFrame(this._loop);
+      this._loop=timestamp=>{if(this.disposed)return;this._lastRafAt=performance.now();try{this._safeTick(timestamp);}finally{this._raf=requestAnimationFrame(this._loop);}};this._raf=requestAnimationFrame(this._loop);
     }
     if(project)await this.loadProject(project);else this._emit();
     return this;
@@ -154,8 +154,17 @@ export class BroadcastEngine {
     this._dirty=true;this._emit();return {width:output.width,height:output.height,fps:output.fps};
   }
   setMasterGain(gain){if(this.masterGain)this.masterGain.gain.setTargetAtTime(clamp(gain,0,2,1),this.audioContext.currentTime,.015);}
+  _safeTick(timestamp){try{this._tick(timestamp);}catch(error){this._dirty=true;if(!this._renderErrorAt||timestamp-this._renderErrorAt>5000){this._renderErrorAt=timestamp;this._error(error);}}}
+  _syncFrameClock(){
+    const active=!!this.publishStream||this.recording;
+    if(!active){this._frameClock?.terminate();this._frameClock=null;return;}
+    if(!this._frameClock&&typeof Worker==='function'){
+      try{this._frameClock=new Worker(new URL('./frame-clock.js?v=20261113-stability1',import.meta.url));this._frameClock.onmessage=()=>{try{if(!this.disposed&&performance.now()-(this._lastRafAt||0)>Math.max(100,2000/this.project.fps))this._safeTick(performance.now());}finally{this._frameClock?.postMessage({ack:true});}};this._frameClock.onerror=()=>{this._error(new Error('后台送帧不可用，请保持直播页面可见'));this._frameClock?.terminate();this._frameClock=null;};}catch{this._error(new Error('后台送帧不可用，请保持直播页面可见'));}
+    }
+    this._frameClock?.postMessage(this.project.fps);
+  }
   getPublishStream({realtime=true}={}){
-    if(!realtime)return this.getOutputStream();
+    if(!realtime){const stream=this.getOutputStream();this.publishStream=stream;this._dirty=true;this._syncFrameClock();return stream;}
     if(!this.publishStream){
       try {
       const canvas=document.createElement('canvas'),scale=Math.max(1,this.project.width/1920,this.project.height/1080);canvas.width=Math.max(64,Math.round(this.project.width/scale)&~1);canvas.height=Math.max(64,Math.round(this.project.height/scale)&~1);
@@ -164,11 +173,12 @@ export class BroadcastEngine {
       this.publishCompositor.render(this.activeScene,this.runtimes,performance.now(),this.fades,this.project);
       this._publishCapture=canvas.captureStream(0);let track=this._publishCapture.getVideoTracks()[0];if(typeof track.requestFrame!=='function'){track.stop();this._publishCapture=canvas.captureStream(this.project.fps);}
       this.publishStream=new MediaStream([...this._publishCapture.getVideoTracks(),...(this.audioDestination?.stream.getAudioTracks()||[])]);this._dirty=true;
+      this._syncFrameClock();
       } catch(error){this.releasePublishStream();throw error;}
     }
     return this.publishStream;
   }
-  releasePublishStream(){for(const track of this._publishCapture?.getVideoTracks()||[])track.stop();this.publishCompositor?.dispose();this.publishCanvas?.remove();this.publishStream=null;this.publishCanvas=null;this.publishCompositor=null;this._publishCapture=null;this._dirty=true;}
+  releasePublishStream(){for(const track of this._publishCapture?.getVideoTracks()||[])track.stop();this.publishCompositor?.dispose();this.publishCanvas?.remove();this.publishStream=null;this.publishCanvas=null;this.publishCompositor=null;this._publishCapture=null;this._dirty=true;this._syncFrameClock();}
   getOutputStream() {
     if(!this.compositor)throw new Error('请先初始化合成器');
     if(!this.outputStream){
@@ -198,12 +208,13 @@ export class BroadcastEngine {
       if(completed)return;completed=true;
       this.recordingBlob=new Blob(this._recordChunks,{type:recorder.mimeType || selected || 'video/webm'});this._recordChunks=[];
       this.stats.recording=false;this.stats.recordingDuration=(performance.now()-this._recordStarted)/1000;
+      this._syncFrameClock();
       const meta={mimeType:this.recordingBlob.type,bytes:this.recordingBlob.size,duration:this.stats.recordingDuration,startedAt:this._recordStartedAt,reason:this._recordStopReason,...(this._recordError?{error:this._recordError.message}:{})};
       if(this._recordError && !this.recordingBlob.size)this._rejectRecording(this._recordError);else this._resolveRecording(this.recordingBlob);
       if(this.recordingBlob.size){try{Promise.resolve(this.onRecordingReady(this.recordingBlob,meta)).catch(error=>this._error(error));}catch(error){this._error(error);}}
       this._emit();
     };
-    recorder.start(1000);this._recordStarted=performance.now();this._recordStartedAt=Date.now();this.stats.recording=true;this.stats.recordingDuration=0;this._emit();return {mimeType:recorder.mimeType};
+    recorder.start(1000);this._recordStarted=performance.now();this._recordStartedAt=Date.now();this.stats.recording=true;this.stats.recordingDuration=0;this._syncFrameClock();this._emit();return {mimeType:recorder.mimeType};
   }
   async stopRecording() {
     if(!this.recorder)return this.recordingBlob || null;
@@ -277,13 +288,14 @@ export class BroadcastEngine {
     this._lastFrame=timestamp;
     const sources=this.activeScene?.sources || [];
     const animated=this.fades.size>0||sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));
-    if(this._dirty || animated){
+    const heartbeat=!!this.publishStream||!!this._publishCapture;
+    if(this._dirty || animated || heartbeat&&timestamp-(this._lastPaint||0)>=100){
       const start=performance.now();let rendered=false;
       if(this.publishCompositor)rendered=this.publishCompositor.render(this.activeScene,this.runtimes,timestamp,this.fades,this.project);
       if(!this.publishCompositor||this.recording||this._dirty)rendered=this.compositor.render(this.activeScene,this.runtimes,timestamp,this.fades)||rendered;
       if(rendered){this.stats.frames++;this._sampleFrames++;}
       let finished=false;for(const[id,fade]of this.fades)if(timestamp>=fade.start+fade.duration){this.fades.delete(id);finished=true;}if(finished)this._syncAudio();
-      this.stats.renderMs=performance.now()-start;this._dirty=false;
+      this.stats.renderMs=performance.now()-start;this._lastPaint=timestamp;this._dirty=false;
     }
     // A retained output can sample the already composed image without redrawing every layer.
     this._canvasStream?.getVideoTracks()[0]?.requestFrame?.();
