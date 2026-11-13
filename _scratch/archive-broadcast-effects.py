@@ -18,7 +18,7 @@ with tempfile.TemporaryDirectory(prefix='broadcast-effects-source-')as temporary
  extra += sorted((ROOT/'_scratch').glob('broadcast-latency-final-*.json'))
  extra += [ROOT/'_scratch/broadcast-latency-edge.json',ROOT/'_scratch/broadcast-latency-firefox.json',ROOT/'_scratch/broadcast-latency-features.json']
  extra += [ROOT/'_scratch'/name for name in ['broadcast-stability-report.md','broadcast-srs-observe.json','broadcast-srs-stability-final.json','broadcast-background-before.json','broadcast-background-final.json','broadcast-latency-stability-final.json','broadcast-stability-summary.json','summarize-broadcast-stability.py']]
- extra += [ROOT/'_scratch'/name for name in ['broadcast-bitrate-plan.md','broadcast-bitrate-report.md','broadcast-bitrate-before.json','broadcast-bitrate-after.json','broadcast-bitrate-engine.json','broadcast-bitrate-engine-blocks.json']]
+ extra += [ROOT/'_scratch'/name for name in ['broadcast-bitrate-plan.md','broadcast-teams-design.md','broadcast-bitrate-report.md','broadcast-bitrate-before.json','broadcast-bitrate-after.json','broadcast-bitrate-engine.json','broadcast-bitrate-engine-blocks.json']]
  for path in extra:
   blob=git('hash-object','-w','--stdin',input=path.read_bytes()).decode().strip()
   git('update-index','--add','--cacheinfo','100644',blob,path.relative_to(ROOT).as_posix(),env=env)
