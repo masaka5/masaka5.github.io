@@ -1,0 +1,190 @@
+{
+  "sourceArchive": "source.zip",
+  "compression": "@bokuweb/zstd-wasm@0.0.27",
+  "scanner": "shared vendor/zxing",
+  "protocol": "PQT1/PQR1/PQE1/PQP1",
+  "archiveBytes": 59621,
+  "archiveSha256": "2c63ff3048faa0b2539c3334b184c533bebd17a1b3dc6712ee16be04fec2370d",
+  "files": [
+    {
+      "path": "qr-transfer/build.mjs",
+      "bytes": 3504,
+      "sha256": "d0fe64560caabe932fb74aea96a3f42af05d5fac2c10814dad69c4f09734fb6b"
+    },
+    {
+      "path": "qr-transfer/index.html",
+      "bytes": 934,
+      "sha256": "47b059a1316b133f122030bb8b546916eca55e210fe810e705e4dfc5c96c7715"
+    },
+    {
+      "path": "qr-transfer/LICENSE",
+      "bytes": 1084,
+      "sha256": "9cdcf09c5359bfed30c1028038d93f982a110c2c08e6fe74e2c56a7989865962"
+    },
+    {
+      "path": "qr-transfer/notices/@ant-design_icons-svg.txt",
+      "bytes": 1099,
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70"
+    },
+    {
+      "path": "qr-transfer/notices/@bokuweb_zstd-wasm.txt",
+      "bytes": 1375,
+      "sha256": "31c528811f1b482849497671e93af694c1cf448a718563dc3cdda46c4a8d521d"
+    },
+    {
+      "path": "qr-transfer/notices/toggle-selection.txt",
+      "bytes": 1090,
+      "sha256": "771e50e27b24269923639e8e0cc650e7187ffeab5726f6a6f47d9ea83865089d"
+    },
+    {
+      "path": "qr-transfer/notices/zstd-BSD.txt",
+      "bytes": 1549,
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    {
+      "path": "qr-transfer/package-lock.json",
+      "bytes": 52351,
+      "sha256": "a5d27eec043192b556dfa50b4a94c8981c859903f7ab01b3bb2936fa32b27f44"
+    },
+    {
+      "path": "qr-transfer/package-source.py",
+      "bytes": 2203,
+      "sha256": "72bbab3b2e3d5fbeec35aed7882a158d9a594e198e884b5235876d8183281a28"
+    },
+    {
+      "path": "qr-transfer/package.json",
+      "bytes": 330,
+      "sha256": "d77d82ad0a76af450559fd0c286a596619b441cf9ae3e2b9fb3ed86c8eb4e8ca"
+    },
+    {
+      "path": "qr-transfer/README.md",
+      "bytes": 1743,
+      "sha256": "a7df4e0e9122808f07cfe6f1c220fe7a3a6bb3a591d18b255c78aad278f0c46f"
+    },
+    {
+      "path": "qr-transfer/src/camera.mjs",
+      "bytes": 2813,
+      "sha256": "a7380be36cac4c8e5cec6144aae76d0451cec44c222c0039d646c59a5b45d97f"
+    },
+    {
+      "path": "qr-transfer/src/CameraView.jsx",
+      "bytes": 3274,
+      "sha256": "61f91cae558487233e535bcec88f0f0f9a9fc95504dba4357e46378a330ea745"
+    },
+    {
+      "path": "qr-transfer/src/client.mjs",
+      "bytes": 962,
+      "sha256": "17c62c0ac380f440bda4f3bc4834f9de32f00c1aca89a2dd9af78539b7703c6e"
+    },
+    {
+      "path": "qr-transfer/src/codec.mjs",
+      "bytes": 485,
+      "sha256": "394c85803855938c1c821db3cdbaa1c598f26685ab4075f2223c0ef4ab8372fc"
+    },
+    {
+      "path": "qr-transfer/src/main.jsx",
+      "bytes": 3169,
+      "sha256": "f47de5e26877b28ffa26c3b497749f26d93a888e26e4980f935b368afe0c4b00"
+    },
+    {
+      "path": "qr-transfer/src/package.mjs",
+      "bytes": 6090,
+      "sha256": "bea6315a5945d3adcf51d3f809dcf8891f04860fedad5125e25d4ff9bfd6d446"
+    },
+    {
+      "path": "qr-transfer/src/protocol.mjs",
+      "bytes": 5754,
+      "sha256": "9104bfd0ec1952f68a0352ee31c7b0ed3a2d6edda7f0a549be6c6c0fefade844"
+    },
+    {
+      "path": "qr-transfer/src/Receive.jsx",
+      "bytes": 7012,
+      "sha256": "9d008da4e49feae94d4f0b80c6337b275e9361d775017810af35ca35e816da2d"
+    },
+    {
+      "path": "qr-transfer/src/Send.jsx",
+      "bytes": 9336,
+      "sha256": "ff485f38b6a27cd5282af4c6de3d7460631bd729bd4c04b0d19b451d629dc1b8"
+    },
+    {
+      "path": "qr-transfer/src/storage.mjs",
+      "bytes": 1580,
+      "sha256": "df8dc476e58c8569c97ac763ca39230f44b7da11c6c00cc6c480fbb4a3a6ce82"
+    },
+    {
+      "path": "qr-transfer/src/style.css",
+      "bytes": 10912,
+      "sha256": "333f6ead542ed1e77c78c4fd0a21c4cdc2706bcd4cfeb00bccb44b386a469029"
+    },
+    {
+      "path": "qr-transfer/src/ui.jsx",
+      "bytes": 929,
+      "sha256": "4191f20cdbeda2c620d742db93d9b38c31c43229d8d59b6a27e909a27c3f0c24"
+    },
+    {
+      "path": "qr-transfer/src/worker.mjs",
+      "bytes": 587,
+      "sha256": "11308479ae978abc166965f247c0935be8ca53bac10866096abdff733ded5022"
+    },
+    {
+      "path": "qr-transfer/src/zstd-size.mjs",
+      "bytes": 1193,
+      "sha256": "007eeebc06c3cf57aaa28982d3fa71b314a05425f05e43fdeb33a28ecf50c308"
+    },
+    {
+      "path": "qr-transfer/sw.js",
+      "bytes": 1680,
+      "sha256": "6f02e8d40258244773d4406b283cc52dd7aa7ac5c211944448ee75f19718ed24"
+    },
+    {
+      "path": "qr-transfer/tests/browser.py",
+      "bytes": 5863,
+      "sha256": "56a0f5318ad80845a59e418485b75d1208d5c7c75900f08739b1e3dcbfeb73f7"
+    },
+    {
+      "path": "qr-transfer/tests/camera-browser.py",
+      "bytes": 5141,
+      "sha256": "2cbf548b1c6545060d5a820f795c98dd0b5a24d47c884654a017096bbd045d0b"
+    },
+    {
+      "path": "qr-transfer/tests/camera.test.mjs",
+      "bytes": 976,
+      "sha256": "bfde1de99dba9d998665c9585444307b39436fd6d072fbb430556393cd7a6cc1"
+    },
+    {
+      "path": "qr-transfer/tests/codec.test.mjs",
+      "bytes": 1093,
+      "sha256": "e836cf1a5fb09d5185861d3df8d8960b8fcec54c0aa1b22d6e277612f5ae26c9"
+    },
+    {
+      "path": "qr-transfer/tests/cross-browser.py",
+      "bytes": 2459,
+      "sha256": "e43c6f671b2037bb45807010b81d10be61ad8fb2448bcdf27daba1c6c2b8f62f"
+    },
+    {
+      "path": "qr-transfer/tests/package.test.mjs",
+      "bytes": 1648,
+      "sha256": "360ffb2f9bdbf152f0421b346acd55d6065649fb3f8c90585cbf8a534ad5ca50"
+    },
+    {
+      "path": "qr-transfer/tests/protocol.test.mjs",
+      "bytes": 1618,
+      "sha256": "ed2effe3fd90822470c08e97738bd8f63935dabb54ca252a35473f80a1aa11aa"
+    },
+    {
+      "path": "qr-transfer/tests/repair-browser.py",
+      "bytes": 2205,
+      "sha256": "b7991f23ad3604197e264db1ce5872c2da5ccde02960537e6824dd10f9d23469"
+    },
+    {
+      "path": "qr-transfer/notices/THIRD-PARTY-NOTICES.txt",
+      "bytes": 82142,
+      "sha256": "4bc8924af45b5196f0281c63fcb1a53ab86e9fccfdb2ecb22e8a8c65bbb3527a"
+    },
+    {
+      "path": "qr-transfer/notices/dependencies.json",
+      "bytes": 5902,
+      "sha256": "791a0c23843f01cfb12b12a011c4f37c0064b6e2a60332c52e969d34e42774df"
+    }
+  ]
+}

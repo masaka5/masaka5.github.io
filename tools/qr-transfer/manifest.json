@@ -1,0 +1,37 @@
+{
+  "name": "动态二维码传输",
+  "version": "1.0.0",
+  "protocol": "PQT1 / PQE1 / PQP1",
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 3176,
+      "sha256": "d2f087f9689f5168e2ec755c5cdc8ad27fe4ab1eba61521867c2c7c64add9304"
+    },
+    {
+      "file": "sw.js",
+      "bytes": 1687,
+      "sha256": "c84386c6a9e30f93d0e229ec0375edf68f7f2d66349adcb82ffc5b2d240d78b9"
+    },
+    {
+      "file": "assets/app.js",
+      "bytes": 936859,
+      "sha256": "32f22b22b945f9d8acd961ff852e44535ad9052a67ee6139a83ae932a4297e47"
+    },
+    {
+      "file": "assets/app.css",
+      "bytes": 10900,
+      "sha256": "819121e4efae4b7bb875b955e1dd5d39d5367e4d1f4f59e941bba1146d1c0f4e"
+    },
+    {
+      "file": "assets/worker.js",
+      "bytes": 13031,
+      "sha256": "0fd0de8c57f699c82b73bd2f3ddf21373662075a503a190827afb345688e3785"
+    },
+    {
+      "file": "assets/zstd.wasm",
+      "bytes": 251806,
+      "sha256": "80260eee5795ee8072bb5821e203730c74dca3909938f5ac1128da67f96223df"
+    }
+  ]
+}

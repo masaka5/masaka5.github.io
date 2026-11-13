@@ -11,6 +11,7 @@ const ToolboxCatalog = {
     { id:'ai', name:'AI 助手', icon:'chat' },
   ],
   tools: [
+    {id:'qr-transfer',category:'meetings',name:'动态二维码传输',description:'离线传输 · 断帧补收 · 密码保护',href:'tools/qr-transfer/',icon:'qr-code',tags:['二维码','离线','传输'],keywords:'动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传'},
     {id:'browser-fingerprint',category:'security',name:'浏览器指纹',description:'设备特征 · 指纹检测 · 浏览器对比',href:'tools/browser-fingerprint/',icon:'fingerprint',tags:['NeoPrint','指纹','隐私'],keywords:'NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU'},
     {id:'yt-dlp',category:'media',name:'媒体下载',description:'批量解析 · 分段下载 · 断点续传',href:'tools/yt-dlp/',icon:'download',tags:['yt-dlp','WASM'],keywords:'yt-dlp 下载 视频 音频 字幕 缩略图 HLS DASH FFmpeg 续传'},
     {id:'jupyter',category:'workspace',name:'Jupyter 笔记本',description:'Python · 单元格 · 本地笔记本',href:'tools/jupyter/',icon:'notebook-tabs',tags:['Jupyter','Python'],keywords:'JupyterLite Notebook IPYNB Python 编程 笔记本 运行 WASM'},
