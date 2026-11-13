@@ -73,7 +73,12 @@ const ToolboxCatalog = {
     {id:'dns',category:'network',name:'DNS 查询',description:'多公共节点 · 记录解析对比',href:'tools/dns/',icon:'network',tags:['DNS','DoH','解析'],keywords:'阿里 DNSPod Google Cloudflare Quad9 域名 A AAAA MX TXT CNAME PTR'},
     {id:'ip-location',category:'network',name:'IP 地理位置',description:'公网 IP · 运营商 · 近似位置',href:'tools/ip-location/',icon:'network',tags:['IP','运营商','位置'],keywords:'IP 归属 ASN IPv4 IPv6 城市 时区'},
     {id:'switch-commands',category:'network',name:'交换机命令速查',description:'多厂商 CLI · 搜索与复制',href:'tools/switch-commands/',icon:'network',tags:['交换机','命令','网络运维'],keywords:'Cisco 华为 Huawei H3C 新华三 锐捷 Ruijie Juniper Aruba TP-Link Ubiquiti MikroTik VLAN Trunk PoE STP'},
-    {id:'text-diff',category:'text',name:'文本差异对比',description:'并排比较 · 导出 unified diff',href:'tools/text-diff/',icon:'convert',tags:['文本','代码','差异'],keywords:'diff 比较 代码 配置 文件 修改 对比 jsdiff'}
+    {id:'text-diff',category:'text',name:'文本差异对比',description:'并排比较 · 导出 unified diff',href:'tools/text-diff/',icon:'convert',tags:['文本','代码','差异'],keywords:'diff 比较 代码 配置 文件 修改 对比 jsdiff'},
+    {id:'packet-analysis',category:'network',name:'抓包分析',description:'Wireshark WASM · 过滤 · 协议树',href:'tools/packet-analysis/',icon:'network',tags:['Wireshark','PCAP','WASM'],keywords:'Wireshark PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点'},
+    {id:'hex-wasm',category:'files',name:'十六进制分析',description:'WASM · 搜索 · 字段解析 · 校验',href:'tools/hex-wasm/',icon:'file-code-2',tags:['HEX','WASM','文件'],keywords:'十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端'},
+    {id:'ocr',category:'image',name:'图片文字识别',description:'PP-OCRv6 Tiny · 图片 · 相机',href:'tools/ocr/',icon:'scan',tags:['OCR','中文','相机'],keywords:'PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理'},
+    {id:'qr-batch',category:'encoding',name:'批量二维码',description:'字段模板 · 标签排版 · 打印',href:'tools/qr-batch/',icon:'qr-code',tags:['二维码','CSV','打印'],keywords:'批量二维码 CSV JSON 字段模板 标签 打印 QR'},
+    {id:'topospace',category:'network',name:'空间网络编辑器',description:'2D/3D 拓扑 · 设备连接 · 本地工程',href:'tools/topospace/',icon:'network',tags:['TopoSpace','拓扑','3D'],keywords:'TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程'}
   ]
 };
 if (typeof module !== 'undefined' && module.exports) module.exports = ToolboxCatalog;

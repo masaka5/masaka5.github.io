@@ -22401,6 +22401,56 @@ const ToolboxCatalog = {
       "iconBadge": "音频"
     },
     {
+      "id": "packet-analysis",
+      "category": "network",
+      "name": "抓包分析",
+      "description": "Wireshark WASM · 过滤 · 协议树",
+      "href": "tools/packet-analysis/",
+      "icon": "network",
+      "tags": ["Wireshark", "PCAP", "WASM"],
+      "keywords": "Wireshark PCAP PCAPNG CAP 抓包 协议树 显示过滤 TCP UDP HTTP 流追踪 会话 端点"
+    },
+    {
+      "id": "hex-wasm",
+      "category": "files",
+      "name": "十六进制分析",
+      "description": "WASM · 搜索 · 字段解析 · 校验",
+      "href": "tools/hex-wasm/",
+      "icon": "file-code-2",
+      "tags": ["HEX", "WASM", "文件"],
+      "keywords": "十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端"
+    },
+    {
+      "id": "ocr",
+      "category": "image",
+      "name": "图片文字识别",
+      "description": "PP-OCRv6 Tiny · 图片 · 相机",
+      "href": "tools/ocr/",
+      "icon": "scan",
+      "tags": ["OCR", "中文", "相机"],
+      "keywords": "PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理"
+    },
+    {
+      "id": "qr-batch",
+      "category": "encoding",
+      "name": "批量二维码",
+      "description": "字段模板 · 标签排版 · 打印",
+      "href": "tools/qr-batch/",
+      "icon": "qr-code",
+      "tags": ["二维码", "CSV", "打印"],
+      "keywords": "批量二维码 CSV JSON 字段模板 标签 打印 QR"
+    },
+    {
+      "id": "topospace",
+      "category": "network",
+      "name": "空间网络编辑器",
+      "description": "2D/3D 拓扑 · 设备连接 · 本地工程",
+      "href": "tools/topospace/",
+      "icon": "network",
+      "tags": ["TopoSpace", "拓扑", "3D"],
+      "keywords": "TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程"
+    },
+    {
       "id": "pinyin",
       "tags": [],
       "name": "汉字转拼音",

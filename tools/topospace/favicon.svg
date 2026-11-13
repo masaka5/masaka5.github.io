@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="7" fill="#080c18"/>
+
+  <!-- Isometric cube – top face -->
+  <polygon points="16,5 27,11 16,17 5,11" fill="#1e4a8a"/>
+  <!-- Isometric cube – left face -->
+  <polygon points="5,11 16,17 16,27 5,21" fill="#0d2040"/>
+  <!-- Isometric cube – right face -->
+  <polygon points="27,11 16,17 16,27 27,21" fill="#163060"/>
+
+  <!-- Edge highlights -->
+  <polyline points="16,5 5,11 5,21 16,27 27,21 27,11 16,5"
+            fill="none" stroke="#3a7adf" stroke-width="0.8" stroke-linejoin="round"/>
+  <line x1="16" y1="17" x2="16" y2="27" stroke="#2a5cbf" stroke-width="0.8"/>
+  <line x1="16" y1="17" x2="5"  y2="11" stroke="#2a5cbf" stroke-width="0.8"/>
+  <line x1="16" y1="17" x2="27" y2="11" stroke="#2a5cbf" stroke-width="0.8"/>
+
+  <!-- Node glow on top-face center -->
+  <circle cx="16" cy="11" r="2.8" fill="#1a3a7a" opacity="0.7"/>
+  <circle cx="16" cy="11" r="1.6" fill="#5599ff"/>
+</svg>
