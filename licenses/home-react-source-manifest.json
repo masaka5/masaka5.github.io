@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "toolbox-site/index.html",
-      "sha256": "46af3c161443a342f3a0d066983da2a128dad74b4811bef5781c16d8142d043f",
-      "bytes": 178283
+      "sha256": "754e6acd1dc044f9f518489c6b715a49779939a4b736b0b001b26ea8dba9c5c2",
+      "bytes": 185970
     },
     {
       "path": "toolbox-site/assets/catalog-seo.css",
@@ -53,8 +53,8 @@
     },
     {
       "path": "_scratch/home-react-integration/build.mjs",
-      "sha256": "e4d723bd534fae23134c0d76da8dadc6e809de89c801f75f8d13cb84782bfe9e",
-      "bytes": 3242
+      "sha256": "784a4fc7e25019c2544d3c10f68e4e9e57c92064da17b89c2ba559d5bbdaeb42",
+      "bytes": 3594
     },
     {
       "path": "_scratch/home-react-integration/LICENSE",
@@ -68,13 +68,18 @@
     },
     {
       "path": "_scratch/home-react-integration/package-source.ps1",
-      "sha256": "687d3124a88cc8b62490b342aa2cd5bebeee6eb034c24ebd575a64a62f393376",
-      "bytes": 2526
+      "sha256": "4efb47df3a8305ad9e6dc19ce20b69c29229bba8c489002ddc3268a0d375d996",
+      "bytes": 2546
     },
     {
       "path": "_scratch/home-react-integration/package.json",
       "sha256": "151a5b99c0ee9e37f03e1931b12425e08456574e9842f29bc2d2489525002697",
       "bytes": 260
+    },
+    {
+      "path": "_scratch/home-react-integration/prepare-entry.mjs",
+      "sha256": "b1fbd34eec272a06712c618524696ce87864106fd3cddc796275ee9040ab9d74",
+      "bytes": 2660
     },
     {
       "path": "_scratch/home-react-integration/README.md",
@@ -93,13 +98,13 @@
     },
     {
       "path": "_scratch/home-react-integration/src/main.jsx",
-      "sha256": "6b4a0c1fa4c5307d0fcb7628098bfe919f49281926371a1ad3eb21a80c06a95a",
-      "bytes": 18254
+      "sha256": "beb7d9e8b8054727586d8e0828e1c874fe7351045e53c4cb75442e162c05f137",
+      "bytes": 18438
     },
     {
       "path": "_scratch/home-react-integration/src/style.css",
-      "sha256": "2a5a1626a3abf2bf9db8dd5e355ce6c8801b9f755ded4fa10cea87dba6d161d9",
-      "bytes": 17276
+      "sha256": "dff5538caac84919f7efd713e7fd052a16dbbf8f75090a060f4f344663cf5982",
+      "bytes": 18301
     },
     {
       "path": "_scratch/home-react-integration/src/theme.js",
@@ -147,7 +152,7 @@
       "bytes": 1042
     }
   ],
-  "archiveSha256": "a172ad03bd313df9fab6b34c1d48b108dc2d4543af6555ee3e72172b00d89399",
-  "archiveBytes": 285665,
+  "archiveBytes": 287704,
+  "archiveSha256": "c80e7c5a9704e05af816d583700cda2f261e44963ac69f972ff188266078ca13",
   "schema": 1
 }

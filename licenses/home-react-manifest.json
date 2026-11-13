@@ -1,25 +1,25 @@
 {
+  "name": "pocket-toolbox-react-home",
   "files": [
     {
       "path": "assets/home-react/home.js",
-      "sha256": "ef21895ce01928a8acef46f594cba68fcbe41d790b60f7de614c7174fab01d2e",
-      "bytes": 787868
+      "sha256": "1acaea30cdde85fb897063eb06abd69ed8b905ed80c6ec9c62099fa7b3fc8deb",
+      "bytes": 788013
     },
     {
       "path": "assets/home-react/home.css",
-      "sha256": "2c07a9088371052fa6eb8b600974a7eb5f46e73bbcdd3f3faefdc8f20b94163a",
-      "bytes": 17058
+      "sha256": "8efb5ca4fe2660ae969e0af0effe429c14698180bfe5042f3d482785c87f74ff",
+      "bytes": 17992
     },
     {
       "path": "assets/home-react/manifest.json",
-      "sha256": "23195f716b7b510a6fc8806d1467e613b7df50acf544d883505f026853d8f1cc",
+      "sha256": "4fff8baae5710a418424a1238bdce9fc6169936a28ef42d8b3a1b1de6ad06ae3",
       "bytes": 495
     },
     {
       "path": "licenses/home-react-source.zip",
-      "sha256": "a172ad03bd313df9fab6b34c1d48b108dc2d4543af6555ee3e72172b00d89399",
-      "bytes": 285665
+      "sha256": "c80e7c5a9704e05af816d583700cda2f261e44963ac69f972ff188266078ca13",
+      "bytes": 287704
     }
-  ],
-  "name": "pocket-toolbox-react-home"
+  ]
 }
