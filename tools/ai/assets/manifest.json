@@ -1,10 +1,24 @@
 {
+  "version": "20261114-pi2",
   "model": "onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX",
   "quantization": "q4f16",
   "runtime": "Transformers.js 4.3.2",
+  "agentRuntime": "@earendil-works/pi-agent-core 1.5.2",
+  "upstream": "https://github.com/earendil-works/pi",
+  "upstreamCommit": "21e4cb80dddd4330806247818b1f4ec19af95fa5",
+  "context": "Token-aware checkpoint projection; original transcript retained",
   "cache": "Cache API",
   "files": [
     "local-ai-client.js",
-    "local-ai-worker.js"
-  ]
+    "local-ai-worker.js",
+    "pi-runtime.js"
+  ],
+  "sources": [
+    "../local-ai-worker-source.js",
+    "../local-ai-generation.mjs",
+    "../local-ai-harness.mjs",
+    "../local-ai-core.mjs",
+    "../local-ai-client.js"
+  ],
+  "notice": "../pi-NOTICE.txt"
 }
