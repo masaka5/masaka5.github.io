@@ -21,11 +21,11 @@ function waitFor(promise, signal, ms = 20000) {
     Promise.resolve(promise).then(v => done(resolve, v), e => done(reject, e));
   });
 }
-function endpointURL(value, protocols, label) {
+function endpointURL(value, protocols, label, allowHTTP = false) {
   let url;
   try { url = new URL(String(value || '').trim()); } catch { throw failure(`请填写有效的${label}`, false); }
   if (!protocols.includes(url.protocol) || url.username || url.password || url.hash) throw failure(`${label}格式不受支持`, false);
-  if (globalThis.location?.protocol === 'https:' && ['http:', 'ws:'].includes(url.protocol)) throw failure(`${label}必须使用 HTTPS / WSS`, false);
+  if (!allowHTTP && globalThis.location?.protocol === 'https:' && ['http:', 'ws:'].includes(url.protocol)) throw failure(`${label}必须使用 HTTPS / WSS`, false);
   return url;
 }
 
@@ -52,7 +52,7 @@ export class BroadcastPublisher {
     if (generation !== this._generation) throw abortError();
     if (!stream?.getTracks?.().some(track => track.readyState === 'live')) throw failure('请先添加有效的视频或音频来源', false);
     const conf = { ...options };
-    if (conf.mode === 'whip') conf.endpoint = endpointURL(conf.endpoint, ['https:', 'http:'], 'WHIP 地址').href;
+    if (conf.mode === 'whip') conf.endpoint = endpointURL(conf.endpoint, ['https:', 'http:'], 'WHIP 地址', true).href;
     else if (conf.mode === 'rtmp') {
       if (!conf.relayURL) throw failure('浏览器不能直接推送 RTMP；请填写已有的 api.video 兼容转发服务地址', false);
       const relay = endpointURL(conf.relayURL, ['https:', 'http:', 'ws:', 'wss:'], '转发服务地址');
@@ -148,7 +148,15 @@ export class BroadcastPublisher {
     if (typeof RTCPeerConnection !== 'function') throw failure('当前浏览器不支持 WebRTC 推流', false);
     const { signal } = attempt;
     const auth = conf.token ? { Authorization: `Bearer ${conf.token}` } : {};
-    const request = (url, options) => waitFor(fetch(url, { credentials: 'omit', redirect: 'error', signal, ...options }), signal);
+    const request = async (url, options) => {
+      try { return await waitFor(fetch(url, { credentials: 'omit', redirect: 'error', signal, ...options }), signal); }
+      catch (error) {
+        if (error.name === 'TypeError' && new URL(url).protocol === 'http:' && globalThis.location?.protocol === 'https:') {
+          throw failure('HTTP WHIP 请求失败，请检查浏览器不安全内容、本地网络访问权限、服务跨域设置与网络');
+        }
+        throw error;
+      }
+    };
     let iceServers = [];
     const options = await request(conf.endpoint, { method: 'OPTIONS', headers: auth });
     if ([401, 403].includes(options.status)) throw failure('WHIP 鉴权失败，请检查令牌与推流权限', false);
@@ -207,7 +215,7 @@ export class BroadcastPublisher {
     if (response.status !== 201) throw failure(`WHIP 服务拒绝推流（HTTP ${response.status}）`, ![400, 401, 403, 404, 405, 406, 415].includes(response.status));
     const location = response.headers.get('Location');
     if (!location) throw failure('WHIP 服务未返回会话地址；请检查 CORS 是否公开 Location', false);
-    sessionURL = endpointURL(new URL(location, conf.endpoint).href, ['http:', 'https:'], 'WHIP 会话地址').href;
+    sessionURL = endpointURL(new URL(location, conf.endpoint).href, ['http:', 'https:'], 'WHIP 会话地址', true).href;
     if (!response.headers.get('Content-Type')?.toLowerCase().includes('application/sdp')) throw failure('WHIP 服务没有返回有效的 SDP 应答', false);
     await waitFor(pc.setRemoteDescription({ type: 'answer', sdp: await waitFor(response.text(), signal) }), signal);
     inspect();

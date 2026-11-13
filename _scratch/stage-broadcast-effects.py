@@ -9,7 +9,7 @@ manifest['references'][0]['sourceArchive']='https://raw.githubusercontent.com/ma
 names=['tools/broadcast/'+p.name for p in sorted(folder.iterdir())if p.is_file()]
 for name in names:
  target=REPO/name
- if target.name=='manifest.json':target.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+ if target.name=='manifest.json':target.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
  else:shutil.copyfile(SITE/name,target)
 subprocess.run(['git','-c','core.autocrlf=false','add','--',*names],cwd=REPO,check=True)
 for row in manifest['files']:

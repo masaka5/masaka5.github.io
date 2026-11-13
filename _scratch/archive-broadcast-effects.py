@@ -1,6 +1,6 @@
 """Archive tested studio sources independently of the Pages runtime branch."""
 from pathlib import Path
-import subprocess,os,tempfile,json
+import subprocess,os,tempfile,json,sys
 ROOT=Path(__file__).resolve().parent.parent;REPO=ROOT/'_scratch/masaka5-toolbox-upstream'
 BRANCH='source-archive-20261113'
 def git(*args,env=None,input=None):return subprocess.check_output(['git',*args],cwd=REPO,env=env,input=input)
@@ -19,6 +19,6 @@ with tempfile.TemporaryDirectory(prefix='broadcast-effects-source-')as temporary
   blob=git('hash-object','-w','--stdin',input=path.read_bytes()).decode().strip()
   git('update-index','--add','--cacheinfo','100644',blob,path.relative_to(ROOT).as_posix(),env=env)
  tree=git('write-tree',env=env).decode().strip()
- commit=git('-c','user.name=Codex','-c','user.email=codex@openai.com','commit-tree',tree,'-p',remote,'-m','Archive studio transforms, GPU effects, fades and keyboard editing with tests').decode().strip()
+ commit=git('-c','user.name=Codex','-c','user.email=codex@openai.com','commit-tree',tree,'-p',remote,'-m',sys.argv[1]if len(sys.argv)>1 else'Archive studio transforms, GPU effects, fades and keyboard editing with tests').decode().strip()
  git('push','origin',commit+':refs/heads/'+BRANCH)
  print(json.dumps({'archiveBranch':BRANCH,'commit':commit,'updatedFiles':len(names)+len(extra)}))
