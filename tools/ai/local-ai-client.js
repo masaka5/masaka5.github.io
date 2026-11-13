@@ -1,11 +1,11 @@
-import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-pi2';
+import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-spark1';
 export class LocalAiClient{
  constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onDone=()=>{},onError=()=>{}}={}){
   this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onDone,onError};this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
  }
  ensureWorker(){
   if(this.worker)return;
-  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-pi2',import.meta.url),{type:'module'});
+  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-spark1',import.meta.url),{type:'module'});
   worker.onmessage=event=>{if(this.worker===worker)this.message(event.data||{});};
   worker.onerror=event=>{event.preventDefault?.();if(this.worker===worker)this.fail('本地模型运行中断，请重试。');};
   worker.onmessageerror=()=>{if(this.worker===worker)this.fail('本地模型通信中断，请重试。');};
@@ -13,14 +13,15 @@ export class LocalAiClient{
  message(message){
   const item=this.pending.get(message.id);
   if(message.type==='progress')this.handlers.onProgress(message);
-  else if(message.type==='ready'){this.ready=true;this.device=message.device;this.loadDeferred?.resolve();this.loadDeferred=null;this.loading=null;this.handlers.onReady({model:LOCAL_MODEL,label:LOCAL_LABEL,device:message.device});}
+  else if(message.type==='ready'){this.ready=true;this.device=message.device;this.cacheStored=message.cacheStored;this.loadDeferred?.resolve();this.loadDeferred=null;this.loading=null;this.handlers.onReady({...message,model:LOCAL_MODEL,label:LOCAL_LABEL});}
   else if(message.type==='token'&&item){if(message.text)item.touch(true);this.handlers.onToken(message.id,message.text);}
   else if(message.type==='snapshot'&&item){if(message.text)item.touch(true);this.handlers.onSnapshot(message.id,message.text);}
   else if(message.type==='activity'&&item)item.touch();
   else if(message.type==='phase'&&item){item.touch();this.handlers.onPhase(message.id,message.phase);}
   else if(message.type==='checkpoint'&&item)this.checkpoint=message.checkpoint;
   else if(message.type==='done'&&item){this.pending.delete(message.id);item.clear();this.handlers.onDone(message.id,message.text,message.device);item.resolve(message.text);}
-  else if(message.type==='error')this.fail(localError(message.code));
+  else if(message.type==='cancelled'&&item){this.pending.delete(message.id);item.clear();item.reject(Error('已停止本地生成。'));}
+  else if(message.type==='error'&&(!message.id||item))this.fail(localError(message.code));
  }
  load(){this.ensureWorker();if(this.ready)return Promise.resolve();if(this.loading)return this.loading;this.loading=new Promise((resolve,reject)=>{this.loadDeferred={resolve,reject};});this.worker.postMessage({type:'init'});return this.loading;}
  ask(messages,{id=crypto.randomUUID(),idleMs=120000,firstTokenMs=0,maxMs=0}={}){
@@ -37,8 +38,8 @@ export class LocalAiClient{
    item.touch();this.worker.postMessage({type:'generate',id,messages,checkpoint:this.checkpoint,sessionId:this.sessionId});
   });
  }
- resetContext(){this.checkpoint=null;this.sessionId=crypto.randomUUID();}
- stop(){this.dispose();}
+ resetContext(){this.checkpoint=null;this.sessionId=crypto.randomUUID();this.worker?.postMessage({type:'reset'});}
+ stop(){for(const [id,item]of this.pending){item.stopping=true;this.worker?.postMessage({type:'cancel',id});item.touch();}}
  fail(message){this.dispose(message);this.handlers.onError(message);}
  dispose(message='已停止本地生成。'){this.worker?.terminate();this.worker=null;this.ready=false;this.loading=null;this.loadDeferred?.reject(Error(message));this.loadDeferred=null;for(const item of this.pending.values()){item.clear();item.reject(Error(message));}this.pending.clear();}
 }

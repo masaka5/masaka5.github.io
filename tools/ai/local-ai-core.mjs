@@ -1,5 +1,5 @@
-export const LOCAL_MODEL='onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX';
-export const LOCAL_LABEL='DeepSeek-R1 · Qwen 1.5B';
+export const LOCAL_MODEL='mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU';
+export const LOCAL_LABEL='Spark-X2.6 · 4B Q4';
 
 export function splitThinking(value=''){
  const text=String(value),open=text.indexOf('<think>');
@@ -17,7 +17,7 @@ export function splitThinking(value=''){
 }
 
 export function localPrompt(messages=[]){
- const lines=['你是一个简洁、准确的中文助手。请先在 <think> 和 </think> 中进行简要分析，再给出清晰的最终答案。'];
+ const lines=['你是一个中文助手。'];
  for(const message of messages){
   const role=message.role==='assistant'?'助手':'用户';
   lines.push(`${role}：${String(message.content||'')}`);

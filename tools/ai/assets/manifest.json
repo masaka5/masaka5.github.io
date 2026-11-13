@@ -1,13 +1,14 @@
 {
-  "version": "20261114-pi2",
-  "model": "onnx-community/DeepSeek-R1-Distill-Qwen-1.5B-ONNX",
+  "version": "20261114-spark1",
+  "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
+  "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
   "quantization": "q4f16",
-  "runtime": "Transformers.js 4.3.2",
+  "runtime": "ONNX Runtime Web 1.31.0-dev.20260918-bc8e7ed75",
   "agentRuntime": "@earendil-works/pi-agent-core 1.5.2",
   "upstream": "https://github.com/earendil-works/pi",
   "upstreamCommit": "21e4cb80dddd4330806247818b1f4ec19af95fa5",
   "context": "Token-aware checkpoint projection; original transcript retained",
-  "cache": "Cache API",
+  "cache": "64MiB resumable Cache API chunks + offline service worker",
   "files": [
     "local-ai-client.js",
     "local-ai-worker.js",

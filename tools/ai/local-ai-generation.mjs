@@ -1,11 +1,11 @@
 import {runAgentLoop,createAssistantMessageEventStream} from './assets/pi-runtime.js';
 import {splitThinking} from './local-ai-core.mjs';
-const modelInfo={id:'browser-local',name:'本地模型',api:'browser-webgpu',provider:'browser',baseUrl:'',reasoning:true,input:['text'],cost:{input:0,output:0,cacheRead:0,cacheWrite:0},contextWindow:16384,maxTokens:16384};
+const modelInfo={id:'spark-x2.6-4b-q4',name:'Spark-X2.6-4B Q4',api:'browser-webgpu',provider:'browser',baseUrl:'',reasoning:true,input:['text'],cost:{input:0,output:0,cacheRead:0,cacheWrite:0},contextWindow:32768,maxTokens:32768};
 const zeroUsage=()=>({input:0,output:0,cacheRead:0,cacheWrite:0,totalTokens:0,cost:{input:0,output:0,cacheRead:0,cacheWrite:0,total:0}});
 
 /** Pi owns the turn lifecycle; the browser provides the model stream adapter. */
-export async function runLocalTurn({messages,generate,prepare=async(messages,prefix)=>({messages,prefix}),onText=()=>{},onEvent=()=>{},signal}){
- let raw='',prefix='',inferenceMessages=messages,lastReason='stop',failure=null;
+export async function runLocalTurn({messages,generate,prepare=async(messages,prefix)=>({messages,prefix}),onText=()=>{},onEvent=()=>{},signal,initialPrefix=''}){
+ let raw=initialPrefix,prefix=initialPrefix,inferenceMessages=messages,lastReason='stop',failure=null;
  const context={messages:[],tools:[]};
  const config={model:modelInfo,convertToLlm:items=>items,
   prepareRequest:async()=>{

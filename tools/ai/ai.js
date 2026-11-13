@@ -1,16 +1,18 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-pi2';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi2';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-spark1';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-spark1';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-spark1';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
   const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
   const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
   let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID();
-  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{if(localMode){$('modelLabel').textContent=info.label+' · WebGPU';status('模型已就绪');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onError:error=>status(error,true)});
+  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{if(localMode){$('modelLabel').textContent=info.label+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
+  let localSubmission=null;
   function controls(){
     const busy=!!controller||localBusy;
-    for(const id of ['prompt','attach','files','newChat','openSettings','localChat','useLocal','setupChat'])$(id).disabled=busy||reading;
+    for(const id of ['prompt','attach','files','newChat','clearChat','openSettings','localChat','useLocal','setupChat'])$(id).disabled=busy||reading;
     $('send').disabled=busy||reading;$('send').hidden=busy;$('stop').hidden=!busy;
     $('chatFeed').setAttribute('aria-busy',String(busy));
     document.querySelectorAll('.attachment button').forEach(button=>button.disabled=busy||reading);
@@ -31,7 +33,7 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
   $('openSettings').onclick=$('setupChat').onclick=()=>{$('settingsStatus').textContent='';$('settings').showModal();};
   async function openLocal(){
     localMode=true;$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('正在准备模型…');
-    try{await localClient.load();$('modelLabel').textContent=LOCAL_LABEL+' · '+(localClient.device==='webgpu'?'WebGPU':'兼容模式');}catch(error){$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';status(error.message||'本地模型启动失败。',true);}
+    try{await navigator.storage?.persist?.().catch(()=>false);await localClient.load();$('modelLabel').textContent=LOCAL_LABEL+' · WebGPU';}catch(error){$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';status(error.message||'本地模型启动失败。',true);}
   }
   $('localChat').onclick=$('useLocal').onclick=()=>openLocal();
   $('closeSettings').onclick=()=>$('settings').close();
@@ -50,6 +52,7 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
     $('modelLabel').textContent='尚未配置接口';$('modelLabel').removeAttribute('title');$('settings').close();status('已清除接口配置。');
   };
   $('newChat').onclick=()=>{clearChat();$('prompt').focus();};
+  $('clearChat').onclick=()=>{clearChat();$('prompt').focus();};
   $('attach').onclick=()=>$('files').click();
   function renderAttachments(){
     $('attachments').replaceChildren();
@@ -83,7 +86,9 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
   }
   $('files').onchange=()=>addFiles([...$('files').files]);
   $('prompt').addEventListener('paste',event=>{const files=[...event.clipboardData.files];if(files.length){event.preventDefault();addFiles(files);}});
-  $('prompt').addEventListener('keydown',event=>{if(event.key==='Enter'&&(event.ctrlKey||event.metaKey)&&!event.isComposing){event.preventDefault();if(!controller&&!reading)$('chatForm').requestSubmit();}});
+  try{$('sendShortcut').value=localStorage.getItem('pocket-ai-send-shortcut')||'enter';}catch{}
+  $('sendShortcut').onchange=()=>{try{localStorage.setItem('pocket-ai-send-shortcut',$('sendShortcut').value);}catch{}};
+  $('prompt').addEventListener('keydown',event=>{if(shouldSend(event,$('sendShortcut').value)){event.preventDefault();if(!controller&&!reading&&!localBusy)$('chatForm').requestSubmit();}});
   function message(role,text,files=[]){
     $('chatEmpty').hidden=true;
     const card=Ops.node('article','message');card.dataset.role=role;
@@ -109,14 +114,14 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
   }
   function localAttachmentText(files){return files.filter(file=>!file.image).map(file=>`\n附件：${file.name}\n${file.data}`).join('');}
   async function submitLocal(text,files){
-    if(files.some(file=>file.image)){status('本地 1.5B 模型只支持文字，请切换接口模式处理图片。',true);return;}
-    localBusy=true;controls();
-    if(!localClient.ready){await openLocal();if(!localClient.ready){localBusy=false;controls();return;}}
+    if(files.some(file=>file.image)){status('Spark 模型支持文字，图片请使用接口模式。',true);return;}
+    const submission=localSubmission={cancelled:false};localBusy=true;controls();
+    if(!localClient.ready){await openLocal();if(submission.cancelled)return;if(!localClient.ready){localBusy=false;localSubmission=null;controls();return;}}
     const content=(text||'')+localAttachmentText(files),user={role:'user',content};localHistory.push(user);
     const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
     try{const answer=await localClient.ask(localHistory,{id:reply.id});localRaw=answer;const finalAnswer=splitThinking(answer).answer;if(!finalAnswer.trim())throw Error('模型未返回答案，消息已保留。');renderLocal(reply,answer,true);localHistory.push({role:'assistant',content:finalAnswer});reply.card.dataset.state='complete';$('prompt').value='';attachments=[];renderAttachments();status('');}
     catch(error){localHistory.pop();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.body.textContent=error.message||'本地生成失败，请重试。';else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
-    finally{localBusy=false;localActive=null;controls();$('prompt').focus();}
+    finally{localBusy=false;localActive=null;localSubmission=null;controls();$('prompt').focus();}
   }
   function content(text,files){
     const parts=[];if(text)parts.push({type:'text',text});
@@ -162,7 +167,7 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
       if(!answer.trim())throw Error('接口没有返回文本，请检查模型设置。');return {text:answer,stopReason:finishReason==='length'?'length':'stop'};
     }finally{try{await reader.cancel();}catch(_){}reader.releaseLock();}
   }
-  $('stop').onclick=()=>{if(localBusy){localClient.stop();status('已停止本地生成。');}else controller?.abort();};
+  $('stop').onclick=()=>{if(localBusy){if(localSubmission)localSubmission.cancelled=true;localClient.stop();if(!localClient.pending.size){localBusy=false;localSubmission=null;controls();}status('已停止本地生成。');}else controller?.abort();};
   $('chatForm').onsubmit=async event=>{
     event.preventDefault();if(controller||reading||localBusy)return;
     const text=$('prompt').value.trim(),files=[...attachments];if(!text&&!files.length){status('请输入问题或添加附件。');return;}
@@ -209,4 +214,5 @@ import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-pi
     const text=[...document.querySelectorAll('.message')].map(card=>(card.dataset.role==='user'?'你':'助手')+'\n'+card.querySelector('.message-body').textContent+(card.querySelector('.message-files')?'\n附件：'+card.querySelector('.message-files').textContent:'')).join('\n\n');
     Ops.save(text,'AI-对话.txt');
   };
+  if('serviceWorker' in navigator)navigator.serviceWorker.register('./ai-sw.js',{scope:'./',updateViaCache:'none'}).catch(()=>{});
 })();
