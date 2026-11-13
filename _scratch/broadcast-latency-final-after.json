@@ -1,0 +1,140 @@
+[
+  {
+    "browser": "chromium",
+    "mode": "engine",
+    "output": [
+      1280,
+      720,
+      30
+    ],
+    "decoded": {
+      "samples": 150,
+      "p50": 68,
+      "p95": 85,
+      "max": 85,
+      "inbound": {
+        "frames": 206,
+        "dropped": 0,
+        "jitterMs": 0,
+        "jitterBufferMs": 7.343014563106797,
+        "processingMs": 7.477470873786408
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 206,
+        "fps": 30,
+        "width": 640,
+        "height": 360,
+        "encodeMs": 0.6165048543689321,
+        "packetQueueMs": 0.06407755102040816,
+        "quality": "bandwidth",
+        "encoder": null,
+        "codec": "video/H264"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 112,
+        "fps": 30,
+        "width": 640,
+        "height": 360,
+        "elapsed": 7,
+        "attempts": 0,
+        "rttMs": 0,
+        "encodeMs": 0.8,
+        "queueMs": 0,
+        "codec": "H264",
+        "transport": "udp",
+        "qualityLimitationReason": "bandwidth",
+        "availableKbps": 5564.8
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "adaptivePtime": false,
+              "maxBitrate": 8000000,
+              "maxFramerate": 30,
+              "networkPriority": "high",
+              "priority": "high",
+              "scaleResolutionDownBy": 1
+            }
+          ],
+          "degradationPreference": "maintain-framerate"
+        }
+      ],
+      "renderMs": 2.200000047683716
+    }
+  },
+  {
+    "browser": "chromium",
+    "mode": "engine",
+    "output": [
+      2560,
+      1440,
+      60
+    ],
+    "decoded": {
+      "samples": 282,
+      "p50": 50,
+      "p95": 67,
+      "max": 68,
+      "inbound": {
+        "frames": 416,
+        "dropped": 0,
+        "jitterMs": 0,
+        "jitterBufferMs": 8.107992788461539,
+        "processingMs": 8.22295673076923
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 417,
+        "fps": 60,
+        "width": 480,
+        "height": 270,
+        "encodeMs": 0.6738609112709832,
+        "packetQueueMs": 0.06437306843267109,
+        "quality": "bandwidth",
+        "encoder": null,
+        "codec": "video/H264"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 242,
+        "fps": 60,
+        "width": 480,
+        "height": 270,
+        "elapsed": 7,
+        "attempts": 0,
+        "rttMs": 0,
+        "encodeMs": 0.55,
+        "queueMs": 0,
+        "codec": "H264",
+        "transport": "udp",
+        "qualityLimitationReason": "bandwidth",
+        "availableKbps": 5898.666
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "adaptivePtime": false,
+              "maxBitrate": 8000000,
+              "maxFramerate": 60,
+              "networkPriority": "high",
+              "priority": "high",
+              "scaleResolutionDownBy": 1
+            }
+          ],
+          "degradationPreference": "maintain-framerate"
+        }
+      ],
+      "renderMs": 8.799999952316284
+    }
+  }
+]

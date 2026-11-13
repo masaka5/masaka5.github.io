@@ -1,0 +1,69 @@
+[
+  {
+    "browser": "firefox",
+    "mode": "engine",
+    "output": [
+      2560,
+      1440,
+      60
+    ],
+    "decoded": {
+      "samples": 313,
+      "p50": 50,
+      "p95": 51,
+      "max": 52,
+      "inbound": {
+        "frames": 419,
+        "dropped": 0,
+        "jitterMs": 0.6444444444444445,
+        "jitterBufferMs": 10.511143198090691,
+        "processingMs": 11.344773269689737
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 420,
+        "fps": 60,
+        "width": 1280,
+        "height": 720,
+        "encodeMs": 1.2666666666666668,
+        "packetQueueMs": NaN,
+        "quality": null,
+        "encoder": null,
+        "codec": "video/VP8"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 550,
+        "fps": 59,
+        "width": 1280,
+        "height": 720,
+        "elapsed": 7,
+        "attempts": 0,
+        "rttMs": 0,
+        "encodeMs": 1.38,
+        "queueMs": null,
+        "codec": "VP8",
+        "transport": "udp",
+        "qualityLimitationReason": "none",
+        "availableKbps": null
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "maxBitrate": 8000000,
+              "maxFramerate": 60,
+              "priority": "high",
+              "scaleResolutionDownBy": 1
+            }
+          ],
+          "degradationPreference": "maintain-framerate"
+        }
+      ],
+      "renderMs": 4
+    }
+  }
+]

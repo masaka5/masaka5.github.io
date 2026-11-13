@@ -1,0 +1,124 @@
+[
+  {
+    "browser": "chromium",
+    "mode": "engine",
+    "output": [
+      1280,
+      720,
+      30
+    ],
+    "decoded": {
+      "samples": 135,
+      "p50": 67,
+      "p95": 117,
+      "max": 118,
+      "inbound": {
+        "frames": 203,
+        "dropped": 0,
+        "jitterMs": 1,
+        "jitterBufferMs": 7.705064039408867,
+        "processingMs": 7.831610837438423
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 204,
+        "fps": 30,
+        "width": 480,
+        "height": 270,
+        "encodeMs": 0.5392156862745098,
+        "packetQueueMs": 0.0006208333333333333,
+        "quality": "bandwidth",
+        "encoder": null,
+        "codec": "video/VP8"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 190,
+        "fps": 30,
+        "width": 480,
+        "height": 270,
+        "elapsed": 7,
+        "attempts": 0
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "adaptivePtime": false,
+              "maxBitrate": 12000000,
+              "maxFramerate": 30,
+              "networkPriority": "low",
+              "priority": "low"
+            }
+          ],
+          "degradationPreference": null
+        }
+      ],
+      "renderMs": 4.700000047683716
+    }
+  },
+  {
+    "browser": "chromium",
+    "mode": "engine",
+    "output": [
+      2560,
+      1440,
+      60
+    ],
+    "decoded": {
+      "samples": 60,
+      "p50": 315,
+      "p95": 393,
+      "max": 404,
+      "inbound": {
+        "frames": 80,
+        "dropped": 0,
+        "jitterMs": 4,
+        "jitterBufferMs": 8.710224999999998,
+        "processingMs": 9.042925
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 82,
+        "fps": 12,
+        "width": 640,
+        "height": 360,
+        "encodeMs": 1.707317073170732,
+        "packetQueueMs": 0.01607758620689655,
+        "quality": "bandwidth",
+        "encoder": null,
+        "codec": "video/VP8"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 85,
+        "fps": 12,
+        "width": 640,
+        "height": 360,
+        "elapsed": 7,
+        "attempts": 0
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "adaptivePtime": false,
+              "maxBitrate": 12000000,
+              "maxFramerate": 60,
+              "networkPriority": "low",
+              "priority": "low"
+            }
+          ],
+          "degradationPreference": null
+        }
+      ],
+      "renderMs": 16.5
+    }
+  }
+]

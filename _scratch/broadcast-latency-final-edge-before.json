@@ -1,0 +1,63 @@
+[
+  {
+    "browser": "edge",
+    "mode": "engine",
+    "output": [
+      2560,
+      1440,
+      60
+    ],
+    "decoded": {
+      "samples": 285,
+      "p50": 53,
+      "p95": 54,
+      "max": 54,
+      "inbound": {
+        "frames": 409,
+        "dropped": 0,
+        "jitterMs": 0,
+        "jitterBufferMs": 7.2830220048899745,
+        "processingMs": 8.217765281173593
+      }
+    },
+    "sender": {
+      "rtp": {
+        "frames": 408,
+        "fps": 59,
+        "width": 1280,
+        "height": 720,
+        "encodeMs": 1.745098039215686,
+        "packetQueueMs": 0.07099641148325359,
+        "quality": "bandwidth",
+        "encoder": null,
+        "codec": "video/VP8"
+      },
+      "publisher": {
+        "state": "live",
+        "delivery": "peer",
+        "bitrateKbps": 754,
+        "fps": 59,
+        "width": 1280,
+        "height": 720,
+        "elapsed": 7,
+        "attempts": 0
+      },
+      "parameters": [
+        {
+          "encodings": [
+            {
+              "active": true,
+              "adaptivePtime": false,
+              "maxBitrate": 12000000,
+              "maxFramerate": 60,
+              "networkPriority": "low",
+              "priority": "low"
+            }
+          ],
+          "degradationPreference": null
+        }
+      ],
+      "renderMs": 2.5
+    }
+  }
+]

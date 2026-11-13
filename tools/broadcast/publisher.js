@@ -1,3 +1,4 @@
+import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs} from './low-latency.js?v=20261113-lowlatency1';
 /* Browser transports: RFC 9725 WHIP and api.video-browser-to-rtmp Socket.IO 4.
  * Protocol reference (no upstream code copied): apivideo/api.video-browser-to-rtmp
  * e7d4227b025258d41132168157d89c2100facd70, server/src/{connection,types}.ts (MIT).
@@ -33,7 +34,7 @@ export class BroadcastPublisher {
   constructor({ onState = () => {}, onError = () => {} } = {}) {
     this.onState = onState;
     this.onError = onError;
-    this._stats = { state: 'idle', delivery: null, bitrateKbps: 0, fps: 0, width: 0, height: 0, elapsed: 0, attempts: 0 };
+    this._stats = { state: 'idle', delivery: null, bitrateKbps: 0, fps: 0, width: 0, height: 0, elapsed: 0, attempts: 0, rttMs: null, encodeMs: null, queueMs: null };
     this._generation = 0;
   }
 
@@ -68,7 +69,7 @@ export class BroadcastPublisher {
     const settings = stream.getTracks().find(track => track.kind === 'video')?.getSettings?.() || {};
     this._stats = { state: 'connecting', delivery: conf.mode === 'rtmp' ? 'relay' : 'peer', bitrateKbps: 0,
       fps: settings.frameRate || conf.fps || 0, width: settings.width || conf.width || 0, height: settings.height || conf.height || 0,
-      elapsed: 0, attempts: 0 };
+      elapsed: 0, attempts: 0, rttMs: null, encodeMs: null, queueMs: null };
     this._started = 0;
     this._controller = new AbortController();
     const ready = deferred();
@@ -170,7 +171,10 @@ export class BroadcastPublisher {
         iceServers.push(server);
       }
     }
-    const pc = new RTCPeerConnection({ iceServers, bundlePolicy: 'max-bundle' });
+    const pc = new RTCPeerConnection({ iceServers, bundlePolicy: 'max-bundle', iceCandidatePoolSize: 2 });
+    const videoSettings=stream.getTracks().find(t=>t.kind==='video')?.getSettings?.()||{};
+    const policy=streamPolicy({...conf,width:videoSettings.width||conf.width,height:videoSettings.height||conf.height,latencyMode:conf.latencyMode||'realtime'});
+    const videoSenders=[];
     let sessionURL = null;
     attempt.cleanups.push(async () => {
       pc.onconnectionstatechange = null;
@@ -194,12 +198,17 @@ export class BroadcastPublisher {
     };
     pc.onconnectionstatechange = inspect;
     for (const track of stream.getTracks().filter(track => track.readyState === 'live')) {
-      const sender = pc.addTrack(track, stream);
-      if (track.kind === 'video' && conf.videoBitsPerSecond && sender.getParameters) {
+      const transceiver=typeof pc.addTransceiver==='function'?pc.addTransceiver(track,{direction:'sendonly',streams:[stream]}):null;
+      const sender = transceiver?.sender || pc.addTrack(track, stream);
+      if (track.kind === 'video' && sender.getParameters) {
         const parameters = sender.getParameters();
         parameters.encodings = parameters.encodings?.length ? parameters.encodings : [{}];
-        parameters.encodings.forEach(encoding => { encoding.maxBitrate = Number(conf.videoBitsPerSecond); if (conf.fps) encoding.maxFramerate = Number(conf.fps); });
+        if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';
+        parameters.encodings.forEach(encoding => { encoding.maxBitrate = policy.maxBitrate; encoding.maxFramerate = policy.maxFramerate; encoding.scaleResolutionDownBy=policy.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high'; });
         try { await sender.setParameters(parameters); } catch { /* Browser may apply bandwidth only after negotiation. */ }
+        videoSenders.push(sender);
+        const transceiverCaps=globalThis.RTCRtpSender?.getCapabilities?.('video');
+        if(transceiver?.setCodecPreferences&&transceiverCaps?.codecs?.length){try{transceiver.setCodecPreferences(realtimeCodecs(transceiverCaps.codecs));}catch{/* Browser may reject codec ordering. */}}
       }
     }
     await waitFor(pc.setLocalDescription(await waitFor(pc.createOffer(), signal)), signal);
@@ -220,25 +229,17 @@ export class BroadcastPublisher {
     await waitFor(pc.setRemoteDescription({ type: 'answer', sdp: await waitFor(response.text(), signal) }), signal);
     inspect();
     await waitFor(Promise.race([connected.promise, attempt.failed.promise]), signal, 25000);
-    let previous = null, sampling = false;
+    let previous = null, budget = null, sampling = false;
+    const applyBudget=async next=>{for(const sender of videoSenders){if(!sender.getParameters||!sender.setParameters)continue;const parameters=sender.getParameters();if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';parameters.encodings=parameters.encodings?.length?parameters.encodings:[{}];parameters.encodings.forEach(encoding=>{encoding.maxBitrate=next.maxBitrate;encoding.maxFramerate=next.maxFramerate;encoding.scaleResolutionDownBy=next.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high';});try{await sender.setParameters(parameters);}catch{const fallback=sender.getParameters();fallback.encodings=fallback.encodings?.length?fallback.encodings:[{}];fallback.encodings.forEach(e=>{e.maxBitrate=next.maxBitrate;e.maxFramerate=next.maxFramerate;});try{await sender.setParameters(fallback);}catch{/* Optional realtime hints are browser-dependent. */}}}};
     const sample = async () => {
       if (sampling || signal.aborted || pc.connectionState !== 'connected') return;
       sampling = true;
       try {
         const report = await pc.getStats();
         if (signal.aborted || this._attempt !== attempt) return;
-        let bytes = 0, timestamp = 0;
-        report.forEach(stat => {
-          if (stat.type !== 'outbound-rtp' || stat.isRemote) return;
-          bytes += stat.bytesSent || 0; timestamp = Math.max(timestamp, stat.timestamp || 0);
-          if ((stat.kind || stat.mediaType) === 'video') {
-            this._stats.fps = stat.framesPerSecond || 0;
-            this._stats.width = stat.frameWidth || this._stats.width;
-            this._stats.height = stat.frameHeight || this._stats.height;
-          }
-        });
-        if (previous && timestamp > previous.timestamp) this._stats.bitrateKbps = Math.round(Math.max(0, bytes - previous.bytes) * 8 / (timestamp - previous.timestamp));
-        previous = { bytes, timestamp };
+        const parsed=readStreamStats(report,previous?.snapshot);const metrics=parsed.metrics;this._stats.bitrateKbps=metrics.bitrateKbps;this._stats.fps=metrics.fps;this._stats.width=metrics.width||this._stats.width;this._stats.height=metrics.height||this._stats.height;this._stats.rttMs=metrics.rttMs;this._stats.encodeMs=metrics.encodeMs;this._stats.queueMs=metrics.sendQueueMs;
+        this._stats.codec=metrics.codec;this._stats.transport=metrics.transport;this._stats.qualityLimitationReason=metrics.qualityLimitationReason;this._stats.availableKbps=metrics.availableKbps;
+        previous=parsed;const next=nextStreamBudget(policy,budget,metrics),changed=!budget||next.maxBitrate!==budget.maxBitrate||next.scaleResolutionDownBy!==budget.scaleResolutionDownBy;budget=next;if(changed)await applyBudget(next);
       } catch { /* A closed peer has no stats. */ } finally { sampling = false; }
     };
     await sample();
@@ -259,8 +260,10 @@ export class BroadcastPublisher {
     const emit = (name, value, binary = false) => {
       const id = nextID++, ack = deferred();
       acknowledgements.set(id, ack);
-      if (binary) { socket.send(`451-${id}${JSON.stringify([name, { _placeholder: true, num: 0 }])}`); socket.send(value); }
-      else socket.send(`42${id}${JSON.stringify(value === undefined ? [name] : [name, value])}`);
+      try {
+        if (binary) { socket.send(`451-${id}${JSON.stringify([name, { _placeholder: true, num: 0 }])}`); socket.send(value); }
+        else socket.send(`42${id}${JSON.stringify(value === undefined ? [name] : [name, value])}`);
+      } catch { ack.reject(failure('转发连接已断开')); }
       return waitFor(ack.promise, signal, 15000).finally(() => acknowledgements.delete(id));
     };
     let heartbeatWindow = 45000;
@@ -297,27 +300,25 @@ export class BroadcastPublisher {
       acknowledgements.clear();
     });
     await waitFor(Promise.race([opened.promise, attempt.failed.promise]), signal);
-    await emit('start', { rtmp: conf.rtmp, framerate: Number(conf.fps) || 30, audioSampleRate: 48000,
-      audioBitsPerSecond: 128000, videoBitsPerSecond: Number(conf.videoBitsPerSecond) || 2500000 });
-    recorder = new MediaRecorder(stream, { mimeType, audioBitsPerSecond: 128000, videoBitsPerSecond: Number(conf.videoBitsPerSecond) || 2500000 });
+    const policy=streamPolicy(conf);
+    await emit('start', { rtmp: conf.rtmp, framerate: policy.maxFramerate, audioSampleRate: 48000,
+      audioBitsPerSecond: 128000, videoBitsPerSecond: policy.maxBitrate });
+    recorder = new MediaRecorder(stream, { mimeType, audioBitsPerSecond: 128000, videoBitsPerSecond: policy.maxBitrate });
     recorder.onerror = () => reject(failure('浏览器媒体编码失败'));
-    // One FIFO chain preserves WebM header/chunk order and bounds memory during a slow relay.
-    let chain = Promise.resolve();
+    // A small ACK window keeps the encoder and network busy without allowing unbounded latency.
+    const pending=[],outstanding=new Map();let pumping=false,inflight=0,oldest=0;
+    const pump=()=>{if(pumping)return;pumping=true;while(pending.length&&inflight<4&&!signal.aborted){const item=pending.shift();inflight++;outstanding.set(item,item.time);emit('binarystream',item.data,true).then(()=>{if(signal.aborted)return;bytes+=item.data.size;const timestamp=Date.now();if(timestamp>previous.timestamp)this._stats.bitrateKbps=Math.round((bytes-previous.bytes)*8/(timestamp-previous.timestamp));previous={bytes,timestamp};firstMedia.resolve();}).catch(reject).finally(()=>{inflight--;queuedBytes-=item.data.size;outstanding.delete(item);oldest=Math.min(...outstanding.values(),...pending.map(p=>p.time));if(!Number.isFinite(oldest))oldest=0;pump();});}pumping=false;};
     recorder.ondataavailable = event => {
       if (!event.data?.size || signal.aborted) return;
+      const now=Date.now();this._stats.queueMs=oldest?Math.max(0,now-oldest):0;
+      if(oldest&&now-oldest>800){reject(failure('转发数据积压，正在重新连接以降低延迟'));return;}
       queuedBytes += event.data.size;
       if (queuedBytes > 8 * 1024 * 1024 || socket.bufferedAmount > 8 * 1024 * 1024) { reject(failure('转发服务接收过慢，正在重新连接')); return; }
-      chain = chain.then(async () => {
-        if (signal.aborted || this._attempt !== attempt) return;
-        await emit('binarystream', event.data, true);
-        bytes += event.data.size; queuedBytes -= event.data.size;
-        const timestamp = Date.now();
-        if (timestamp > previous.timestamp) this._stats.bitrateKbps = Math.round((bytes - previous.bytes) * 8 / (timestamp - previous.timestamp));
-        previous = { bytes, timestamp };
-        firstMedia.resolve();
-      }).catch(reject);
+      const item={data:event.data,time:now};pending.push(item);if(!oldest)oldest=now;pump();
     };
-    recorder.start(250);
+    recorder.start(50);
+    const backlog=setInterval(()=>{if(!signal.aborted&&oldest&&Date.now()-oldest>800)reject(failure('转发数据积压，正在重新连接以降低延迟'));},200);
+    attempt.cleanups.push(()=>{clearInterval(backlog);pending.length=0;outstanding.clear();});
     await waitFor(Promise.race([firstMedia.promise, attempt.failed.promise]), signal);
   }
 }

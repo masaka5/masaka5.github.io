@@ -14,7 +14,9 @@ with tempfile.TemporaryDirectory(prefix='broadcast-effects-source-')as temporary
  for name in names:
   blob=git('hash-object','-w','--stdin',input=(ROOT/'toolbox-site'/name).read_bytes()).decode().strip()
   git('update-index','--add','--cacheinfo','100644',blob,name,env=env)
- extra=[ROOT/'_scratch/broadcast-interaction-plan.md',ROOT/'_scratch/archive-broadcast-effects.py',ROOT/'_scratch/stage-broadcast-effects.py']
+ extra=[ROOT/'_scratch/broadcast-interaction-plan.md',ROOT/'_scratch/broadcast-low-latency-plan.md',ROOT/'_scratch/archive-broadcast-effects.py',ROOT/'_scratch/stage-broadcast-effects.py']
+ extra += sorted((ROOT/'_scratch').glob('broadcast-latency-final-*.json'))
+ extra += [ROOT/'_scratch/broadcast-latency-edge.json',ROOT/'_scratch/broadcast-latency-firefox.json',ROOT/'_scratch/broadcast-latency-features.json']
  for path in extra:
   blob=git('hash-object','-w','--stdin',input=path.read_bytes()).decode().strip()
   git('update-index','--add','--cacheinfo','100644',blob,path.relative_to(ROOT).as_posix(),env=env)
