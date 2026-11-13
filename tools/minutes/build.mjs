@@ -13,7 +13,7 @@ const result = await build({
   entryPoints: [path.join(root, "src/app.jsx")],
   outfile: path.join(root, "assets/app.js"),
   nodePaths: [deps],
-  external: ["../*.mjs", "../../ai/*"],
+  external: ["../*.mjs", "../../ai/*", "../../../assets/*"],
   bundle: true,
   minify: true,
   format: "esm",

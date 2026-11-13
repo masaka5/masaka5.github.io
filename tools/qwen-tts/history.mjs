@@ -1,6 +1,6 @@
 let opening;
 function database(){return opening??=new Promise((resolve,reject)=>{
- const request=indexedDB.open('pocket-breeze-audio',1);
+ const request=indexedDB.open('pocket-qwen-audio',1);
  request.onupgradeneeded=()=>request.result.createObjectStore('records',{keyPath:'id'});
  request.onsuccess=()=>resolve(request.result);request.onerror=()=>{opening=null;reject(request.error);};
 });}

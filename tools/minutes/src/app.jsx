@@ -43,6 +43,7 @@ import {
 } from "@ant-design/icons";
 import { SpeechClient } from "../client.mjs";
 import { MeetingRecorder, audioSamples } from "../capture.mjs";
+import { LiveSpeechQueue } from "../live.mjs";
 import {
   blankMeeting,
   listMeetings,
@@ -50,6 +51,7 @@ import {
   removeMeeting,
   saveAudio,
   getAudio,
+  liveStore,
 } from "../storage.mjs";
 import {
   assignSpeakers,
@@ -58,9 +60,11 @@ import {
   summaryBatches,
   minutesPrompt,
   wavBytes,
+  extractMinutes,
 } from "../core.mjs";
 import { splitThinking } from "../../ai/local-ai-client.js";
 import { SummaryClient } from "../summary-client.mjs";
+import { recordToolUse } from "../../../assets/tool-use.mjs";
 import "./style.css";
 const date = (n) =>
     new Date(n).toLocaleString("zh-CN", {
@@ -95,6 +99,8 @@ function settingsInitial() {
       system: false,
       language: "",
       hotwords: "",
+      engine: /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent) ? 'sensevoice' : 'funasr',
+      summaryEngine: /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent) ? 'extract' : 'ai',
       ...JSON.parse(localStorage.getItem("pocket-minutes-options") || "{}"),
     };
   } catch {
@@ -104,6 +110,8 @@ function settingsInitial() {
       system: false,
       language: "",
       hotwords: "",
+      engine: 'sensevoice',
+      summaryEngine: 'extract',
     };
   }
 }
@@ -143,6 +151,8 @@ function Minutes() {
     busyRef = useRef(false),
     recordingRef = useRef(false);
   const recordingError = useRef(null);
+  const liveRef = useRef(null);
+  const liveBuffer = useRef([]), liveBufferSize = useRef(0), liveOffset = useRef(0), liveChunkOffset = useRef(0), liveActive = useRef(false);
   optionsRef.current = settings;
   current.current = meeting;
   busyRef.current = busy;
@@ -183,11 +193,13 @@ function Minutes() {
   };
   const event = (e) => {
     if (e.type === "progress") setProgress(e);
-    if (e.type === "ready") setReady(true);
+    if (e.type === "ready") {setReady(true);setProgress(null);}
     if (e.type === "cache" && !e.stored)
       setError("模型可使用，但缓存空间不足，下次可能需要重新下载");
-    if (e.type === "segment" && activeJob.current === current.current.id)
-      update((m) => ({ rows: [...m.rows, e.segment] }));
+    if (e.type === "segment" && activeJob.current === current.current.id){
+      const segment=liveActive.current?{...e.segment,start:e.segment.start+liveChunkOffset.current,end:e.segment.end+liveChunkOffset.current}:e.segment;
+      update((m) => ({ rows: [...m.rows, segment] }));
+    }
     if (e.type === "fatal") setReady(false);
   };
   if (!speechRef.current) speechRef.current = new SpeechClient(event);
@@ -249,6 +261,11 @@ function Minutes() {
       }
     }, 250);
     return () => clearInterval(tick);
+  }, []);
+  useEffect(() => {
+    const resize=()=>document.documentElement.style.setProperty('--app-height',`${window.visualViewport?.height||innerHeight}px`);
+    resize();window.visualViewport?.addEventListener('resize',resize);
+    return ()=>window.visualViewport?.removeEventListener('resize',resize);
   }, []);
   useEffect(() => {
     const before = (e) => {
@@ -320,11 +337,27 @@ function Minutes() {
     recordingError.current = null;
     setTimer(0);
     const recorder = (recordRef.current = new MeetingRecorder());
+    liveRef.current = new LiveSpeechQueue({
+      call: (type, data) => {
+        if(type==='live-start'){liveActive.current=true;return speechRef.current.call('init',{options:data.options});}
+        if(type==='live-audio'){
+          liveChunkOffset.current=liveOffset.current;liveOffset.current+=(data.samples?.length||0)/16000;
+          return speechRef.current.call('transcribe',{samples:data.samples,options:settings});
+        }
+        if(type==='live-finish'){liveActive.current=false;return Promise.resolve();}
+      },
+      store: liveStore,
+      onError: (e) => setError("实时转写暂时中断：" + e.message),
+    });
     try {
       await recorder.start({
         system: settings.system,
         onLevel: setLevel,
         onEnded: () => finishRecord(),
+        onPcm: (samples) => {
+          liveBuffer.current.push(samples);liveBufferSize.current+=samples.length;
+          if(liveBufferSize.current>=64000){const packet=new Float32Array(liveBufferSize.current);let at=0;for(const part of liveBuffer.current){packet.set(part,at);at+=part.length;}liveBuffer.current=[];liveBufferSize.current=0;liveRef.current?.push(packet).catch(() => {});}
+        },
         onError: (e) => {
           recordingError.current = e;
           finishRecord();
@@ -352,9 +385,14 @@ function Minutes() {
       if(stopRef.current){await recorder.stop();await storeQueue.current;update({status:'stopped'});await loadAudio(item.id);return;}
       setRecording(true);
       recordingRef.current = true;
+      liveBuffer.current=[];liveBufferSize.current=0;liveOffset.current=0;liveChunkOffset.current=0;
+      activeJob.current = item.id;
+      recordToolUse("minutes");
+      void liveRef.current.start({ ...settings }).catch(()=>{});
       setPaused(false);
       update({ status: "recording", audioType: recorder.mime });
     } catch (e) {
+      speechRef.current.dispose();
       setError(e.message);
       update({ status: "draft" });
     } finally {
@@ -372,18 +410,25 @@ function Minutes() {
     setPaused(false);
     try {
       await recordRef.current.stop();
+      if(liveBufferSize.current){const packet=new Float32Array(liveBufferSize.current);let at=0;for(const part of liveBuffer.current){packet.set(part,at);at+=part.length;}liveBuffer.current=[];liveBufferSize.current=0;await liveRef.current?.push(packet);}
       latestTime.current = recordRef.current.duration;
       await storeQueue.current;
       if (recordingError.current) throw recordingError.current;
-      update({ duration: latestTime.current, status: "draft" });
+      update({ duration: latestTime.current, status: "transcribing" });
       await storeQueue.current;
       await loadAudio(current.current.id);
+      await liveRef.current?.finish();
+      activeJob.current = null;
       if (stopRef.current) {
         update({ status: "stopped" });
         return;
       }
       busyRef.current = false;
-      await transcribe();
+      if (current.current.rows.length) {
+        if (optionsRef.current.autoSpeakers) await diarize(await samples());
+        if (optionsRef.current.autoSummary) await summarize();
+        update({ status: "complete" });
+      } else await transcribe();
     } catch (e) {
       setError(e.message);
       update({
@@ -394,6 +439,8 @@ function Minutes() {
         await loadAudio(current.current.id);
       } catch {}
     } finally {
+      activeJob.current = null;
+      setProgress(null);
       busyRef.current = false;
       setBusy(false);
     }
@@ -415,6 +462,7 @@ function Minutes() {
       item.originalName = file.name;
       await activate(item);
       await saveAudio(item.id, 0, file);
+      recordToolUse('minutes');
       await persist(item);
       await loadAudio(item.id);
     });
@@ -443,6 +491,10 @@ function Minutes() {
     if (!item.rows.length) throw Error("请先完成转写");
     update({ status: "summarizing" });
     setTab("summary");
+    if(optionsRef.current.summaryEngine==='extract'){
+      update({summary:extractMinutes(item.rows,item.names)});
+      return;
+    }
     if (!aiRef.current)
       aiRef.current = new SummaryClient({
         onProgress: (p) =>
@@ -803,7 +855,7 @@ function Minutes() {
           <div className="empty-panel">
             <SoundOutlined />
             <p>
-              {busy
+              {recording ? "聆听中…" : busy
                 ? "正在识别语音…"
                 : query
                   ? "没有匹配内容"
@@ -890,7 +942,7 @@ function Minutes() {
             icon={<HistoryOutlined />}
             onClick={() => setHistoryOpen(true)}
           />
-          <Tooltip title="设置">
+            <Tooltip title="设置">
             <Button
               aria-label="设置"
               icon={<SettingOutlined />}
@@ -1047,7 +1099,7 @@ function Minutes() {
                   disabled={recording}
                   options={[
                     { value: "mic", label: "麦克风" },
-                    { value: "system", label: "系统音频 + 麦克风" },
+                    ...(!navigator.mediaDevices?.getDisplayMedia?[]:[{ value: "system", label: "系统音频 + 麦克风" }]),
                   ]}
                   onChange={(value) =>
                     setSettings({ ...settings, system: value === "system" })
@@ -1181,14 +1233,19 @@ function Minutes() {
               onChange={(v) => setSettings({ ...settings, speakerCount: v })}
             />
           </Form.Item>
-          <div className="model-note">
-            语音模型约 1.0 GB · 纪要模型约 2.8 GB
-            <br />
-            首次使用下载，后续读取浏览器缓存。
-          </div>
+          <Form.Item label="识别模型">
+            <Select value={settings.engine||'funasr'} disabled={actionsDisabled}
+              options={[{value:'sensevoice',label:'轻量 · 240 MB'},{value:'funasr',label:'标准 · 1 GB'}]}
+              onChange={engine=>{speechRef.current.dispose();setReady(false);setSettings({...settings,engine});}} />
+          </Form.Item>
+          <Form.Item label="纪要整理">
+            <Select value={settings.summaryEngine||'ai'} disabled={actionsDisabled}
+              options={[{value:'extract',label:'原文摘录'},{value:'ai',label:'AI 整理 · 2.8 GB'}]}
+              onChange={summaryEngine=>setSettings({...settings,summaryEngine})} />
+          </Form.Item>
           <Button
             style={{ marginTop: 16 }}
-            disabled={busy}
+            disabled={busy || recording}
             loading={busy && progress?.percent < 100}
             onClick={() =>
               perform(() =>

@@ -1,10 +1,11 @@
 let opened;
 export function database() {
   return (opened ||= new Promise((resolve, reject) => {
-    const r = indexedDB.open("pocket-minutes", 1);
+    const r = indexedDB.open("pocket-minutes", 2);
     r.onupgradeneeded = () => {
-      r.result.createObjectStore("meetings", { keyPath: "id" });
-      r.result.createObjectStore("audio", { keyPath: ["meeting", "index"] });
+      if(!r.result.objectStoreNames.contains("meetings"))r.result.createObjectStore("meetings", { keyPath: "id" });
+      if(!r.result.objectStoreNames.contains("audio"))r.result.createObjectStore("audio", { keyPath: ["meeting", "index"] });
+      if(!r.result.objectStoreNames.contains("live"))r.result.createObjectStore("live", { keyPath: "id" });
     };
     r.onsuccess = () => resolve(r.result);
     r.onerror = () => reject(r.error);
@@ -31,6 +32,11 @@ export const listMeetings = () =>
   );
 export const saveAudio = (meeting, index, blob) =>
   transaction("audio", "readwrite", (s) => s.put({ meeting, index, blob }));
+export const liveStore = {
+  put: (id,samples) => transaction('live','readwrite',s=>s.put({id,samples})),
+  get: id => transaction('live','readonly',s=>s.get(id)).then(row=>row.samples),
+  remove: id => transaction('live','readwrite',s=>s.delete(id)),
+};
 export async function getAudio(meeting) {
   const rows = await transaction("audio", "readonly", (s) =>
     s.getAll(

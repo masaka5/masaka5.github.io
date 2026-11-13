@@ -1,0 +1,54 @@
+.hex-mobile-tabs{display:none}
+@media(max-width:900px){
+ .hex-shell .hex-mobile-tabs{display:flex;flex:none;gap:20px;padding:0 12px;border-bottom:1px solid #e3e7ed;min-height:40px}
+ .hex-mobile-tabs button{background:none;border:0;border-bottom:2px solid transparent;color:#687588;font:inherit;font-size:13px;padding:8px 0;min-width:44px}
+ .hex-mobile-tabs button[aria-pressed=true]{border-color:#315fc9;color:#315fc9}
+ .hex-shell .inspector{display:flex;overflow:auto;flex:1;min-width:0}
+ .hex-shell[data-pane=hex] .inspector,.hex-shell[data-pane=inspect] .file-panel{display:none}
+ .hex-shell .search-row{flex-wrap:wrap}.hex-shell .search-row input{min-width:80px}
+ .hex-shell .search-row select{display:block;max-width:105px;width:auto}
+ .hex-shell .stats{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;overflow:visible}
+ .hex-shell .ops-header{min-height:54px;padding:0 12px;gap:12px;flex:none}
+ .hex-shell .ops-header h1{font-size:17px}
+ .hex-shell .tab-panel{overflow:auto;flex:1;min-height:180px}
+ .hex-shell .analysis-card{flex:none}.hex-shell .ai-footer{padding:5px 12px;flex:none;gap:8px;font-size:10px}
+}
+@media(max-width:850px){
+ .packet-shell>header{flex-wrap:wrap;gap:8px;padding:10px 12px}
+ .packet-shell>header>.ant-space{gap:5px!important;flex:none;margin-left:auto}
+ .packet-shell>header .tool-title{min-width:0}.packet-shell>header .tool-title h1{font-size:16px}
+ .packet-shell>header .ant-btn{min-width:32px;padding-inline:7px}
+ .packet-shell .packet-toolbar .ant-input-affix-wrapper{min-height:38px}
+ .packet-shell .packet-actions .ant-space{flex-wrap:wrap;row-gap:6px!important;justify-content:flex-start}
+ .packet-shell .packet-pagination{gap:6px;flex-wrap:wrap;min-height:40px}
+ .packet-shell .packet-pagination>.ant-pagination{margin-left:auto}
+}
+@media(max-width:550px){
+ .pocket-shell .pocket-toolbar{gap:8px;min-height:56px}
+ .pocket-shell .pocket-toolbar h1{font-size:16px}
+ .pocket-shell .project-actions button{min-height:34px}
+ .pocket-shell .toolbar{gap:6px;max-height:112px;overflow:auto;padding:8px}
+ .pocket-shell .toolbar .btn,.pocket-shell .toolbar .mode-btn,.pocket-shell .toolbar .sel{min-height:32px}
+ .pocket-shell .workspace{margin:6px;min-height:0}
+ .pocket-shell .left-dock{max-width:82vw;width:260px!important}
+ .pocket-shell .right-dock{max-width:82vw;width:280px!important}
+ .pocket-shell .space-badge,.pocket-shell .device-status-badge{max-width:calc(100vw - 24px);white-space:normal;overflow-wrap:anywhere}
+ .pocket-shell .space-badge{right:8px!important;left:auto!important}
+ @media (max-width:600px){
+  .pocket-shell .space-badge,.pocket-shell .device-status-badge{display:none!important}
+ }
+ .ocr-shell main{padding:10px;gap:10px}
+ .ocr-shell .ops-header{min-height:54px;flex:none;gap:8px}
+ .ocr-shell .input-actions button,.ocr-shell .output-head button{min-height:36px}
+ .ocr-shell .output-head{row-gap:4px}
+ .ocr-shell .ocr-output textarea{font-size:16px}
+}
+@media(max-height:450px){
+ .hex-shell .ops-header,.ocr-shell .ops-header{min-height:42px}
+ .hex-shell .hex-mobile-tabs{min-height:32px}
+ .hex-shell main,.ocr-shell main{padding-block:6px}
+ .ocr-shell main{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+ .packet-shell>header{min-height:44px;padding-block:5px}
+ .packet-shell .packet-toolbar{padding-block:5px}
+ .packet-shell .mobile-tabs{margin-bottom:6px}
+}

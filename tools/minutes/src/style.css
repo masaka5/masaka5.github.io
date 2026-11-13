@@ -33,7 +33,7 @@ button {
   font: inherit;
 }
 .minutes-shell {
-  height: 100dvh;
+  height: min(100dvh,var(--app-height,100dvh));
   display: flex;
   flex-direction: column;
 }
@@ -277,13 +277,18 @@ button {
   font-size: 19px;
   font-variant-numeric: tabular-nums;
   color: #52617a;
-  letter-spacing: 0.03em;
 }
 .record-extra {
   min-width: 125px;
   display: flex;
   justify-content: flex-end;
 }
+.record-extra .ant-btn{min-height:36px}
+.tool-header{padding-top:env(safe-area-inset-top);min-height:calc(58px + env(safe-area-inset-top))}
+.minutes-main{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+.ant-modal-body{max-height:calc(100dvh - 190px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.transcript-scroll{overscroll-behavior:contain}
+@media(max-width:400px){.record-bar{column-gap:6px}.record-controls{gap:5px}.record-controls .ant-btn,.import-button{padding-inline:9px}.record-meter time{font-size:14px}}
 .record-extra .ant-select {
   width: 192px;
 }

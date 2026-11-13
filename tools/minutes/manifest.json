@@ -4,47 +4,47 @@
   "model": "Fun-ASR-Nano INT8",
   "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
   "summary": "Spark-X2.6-4B Q4 + Pi; direct-answer document mode",
-  "version": "b18dad420fbb",
+  "version": "12ad432f6c5f",
   "artifacts": {
     "app.js": {
-      "bytes": 923345,
-      "sha256": "66d60eec72f929e632c178a46fccb30d4623d7c41afef8942d320a811f2799ea"
+      "bytes": 925884,
+      "sha256": "c753ff8d470cc933c87c45584d929129c0464bdcba01bddfbdbaffc78842f13d"
     },
     "app.css": {
-      "bytes": 9250,
-      "sha256": "59bb43c5c4900d4c652e8b5a2e73db391fbf222f69edb2e80c2119d565452755"
+      "bytes": 9793,
+      "sha256": "d24247fb0e40275993e23404e5f10014e5a02b3942d3d8169bd1da89f14849bc"
     },
     "summary-worker.js": {
-      "bytes": 109123,
-      "sha256": "5e9b9a60ac7f9dc1ad06d009178f91c0d373d4c7e3c62fbe03f2d8f2bcc83cc1"
+      "bytes": 111569,
+      "sha256": "482ba68c20f8cc914a95681fd0a566209bd843cb955e1c00f2ca32c0cce6d2f3"
     },
     "client.mjs": {
-      "bytes": 1692,
-      "sha256": "3cd699c1f50d2d03242677f7acad49910a200e922802181fb7ea35949d736eb4"
+      "bytes": 1738,
+      "sha256": "b3acd1f5e47dfbe88186666715a3e2601f62b7e56fc68e4f10961ba7b9bacaa2"
     },
     "capture.mjs": {
-      "bytes": 5330,
-      "sha256": "5f3b02f76ba7744817b33d0efb3e9172e4a43b7a0d7a0036d1e55bff2cd882c8"
+      "bytes": 8312,
+      "sha256": "3843c7a55816711876151e7e8c46e787a1c7b5e8e33ab976bd1f917b1a6d56d1"
     },
     "core.mjs": {
-      "bytes": 3982,
-      "sha256": "ebd9733ea50f43780dcfbade7e9eaea9c94ec4ee92653585cef08b570e6e369f"
+      "bytes": 6644,
+      "sha256": "3dad93475b186e1b9aace6746ce4e168a0f63f6da8bbfe911a29bfde45681aa4"
     },
     "storage.mjs": {
-      "bytes": 2264,
-      "sha256": "994f82cd5113b7cafefa05deca5986b9ad21bfb78a7e108aff7ccb773b49f973"
+      "bytes": 2726,
+      "sha256": "5e140dc1cf3998190d027f23f96268186b7fdded1e379fd73a602e8af0ebd429"
     },
     "media.mjs": {
       "bytes": 1840,
       "sha256": "539c73c1e461565707aebc6317eb3c4f88063d7cf0cad026f50a891b3885a7a1"
     },
     "worker.mjs": {
-      "bytes": 7348,
-      "sha256": "3e5aec890405a71fa84e09bd9e50280caaa6df894be36862294311b486c04901"
+      "bytes": 9257,
+      "sha256": "7a63d3fa02824ed8a81b7a96cf4fac0e18a591baa8cc57494b1928974fc8dd54"
     },
     "models.mjs": {
-      "bytes": 668,
-      "sha256": "d61ff15385efe87a919df0435ff3425fa2469dbcbf42e21d7b5d7d3e1217c45e"
+      "bytes": 907,
+      "sha256": "344b6799926003a526ef4eaec116964ab9b6540b8af6c907ace7011189312d3d"
     },
     "summary-client.mjs": {
       "bytes": 668,

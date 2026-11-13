@@ -1,9 +1,10 @@
-import { StreamResampler } from "./core.mjs";
+import { StreamResampler, decodeWav } from "./core.mjs";
 export class MeetingRecorder {
   async start({
     system = false,
     onChunk = () => {},
     onLevel = () => {},
+    onPcm = () => {},
     onEnded = () => {},
     onError = () => {},
   } = {}) {
@@ -36,11 +37,46 @@ export class MeetingRecorder {
         .forEach((track) =>
           track.addEventListener("ended", onEnded, { once: true }),
         );
-      this.context = new AudioContext();
+      const AudioContextClass=globalThis.AudioContext||globalThis.webkitAudioContext;
+      if(!AudioContextClass)throw Error('当前浏览器不支持音频采集');
+      this.context = new AudioContextClass();
       await this.context.resume();
       this.output = this.context.createMediaStreamDestination();
       this.analyser = this.context.createAnalyser();
       this.analyser.fftSize = 256;
+      // Keep an uncompressed PCM tap beside MediaRecorder.  Container chunks
+      // are not independently decodable on mobile, so live transcription uses
+      // this tap while the same chunks remain available for the final audio.
+      let worklet=false;
+      if(this.context.audioWorklet){
+        try{
+          await this.context.audioWorklet.addModule(new URL('./pcm-worklet.mjs',import.meta.url));
+          this.processor=new AudioWorkletNode(this.context,'meeting-pcm',{numberOfInputs:1,numberOfOutputs:1,outputChannelCount:[1]});worklet=true;
+          this.flushes=new Map();
+          this.processor.port.onmessage=({data})=>{
+            if(data.samples)onPcm(data.samples);
+            if(data.type==='flushed'){this.flushes.get(data.id)?.();this.flushes.delete(data.id);}
+          };
+        }catch{}
+      }
+      this.worklet=worklet;
+      if(!worklet)this.processor = this.context.createScriptProcessor(4096, 2, 1);
+      this.resampler = new StreamResampler(this.context.sampleRate, 16000);
+      const silent = this.context.createGain();
+      silent.gain.value = 0;
+      this.processor.connect(silent).connect(this.context.destination);
+      if(!worklet)this.processor.onaudioprocess = (event) => {
+        if(this.recorder?.state!=="recording")return;
+        const input = event.inputBuffer;
+        if (!input?.length) return;
+        const mono = new Float32Array(input.length);
+        for (let channel = 0; channel < input.numberOfChannels; channel++) {
+          const data = input.getChannelData(channel);
+          for (let i = 0; i < mono.length; i++) mono[i] += data[i] / input.numberOfChannels;
+        }
+        const samples = this.resampler.push(mono);
+        if (samples.length) onPcm(samples);
+      };
       const sources = this.streams.map((s) =>
         this.context.createMediaStreamSource(
           new MediaStream(s.getAudioTracks()),
@@ -51,6 +87,7 @@ export class MeetingRecorder {
         gain.gain.value = sources.length > 1 ? 0.7 : 1;
         s.connect(gain).connect(this.output);
         gain.connect(this.analyser);
+        gain.connect(this.processor);
       });
       const mime = ["audio/webm;codecs=opus", "audio/mp4", "audio/webm"].find(
         (t) => MediaRecorder.isTypeSupported(t),
@@ -68,6 +105,7 @@ export class MeetingRecorder {
       );
       this.recorder.addEventListener("stop", onEnded, { once: true });
       this.recorder.start(1000);
+      if(worklet)this.processor.port.postMessage({type:'state',enabled:true});
       this.startedAt = performance.now();
       this.pausedAt = null;
       this.pausedTotal = 0;
@@ -96,6 +134,7 @@ export class MeetingRecorder {
   pause() {
     if (this.recorder?.state === "recording") {
       this.recorder.pause();
+      if(this.worklet)this.processor.port.postMessage({type:'state',enabled:false});
       this.pausedAt = performance.now();
     }
   }
@@ -104,6 +143,7 @@ export class MeetingRecorder {
       this.pausedTotal += performance.now() - this.pausedAt;
       this.pausedAt = null;
       this.recorder.resume();
+      if(this.worklet)this.processor.port.postMessage({type:'state',enabled:true});
     }
   }
   get duration() {
@@ -120,6 +160,14 @@ export class MeetingRecorder {
   }
   async stop() {
     this.finishedAt ??= performance.now();
+    if(this.worklet&&this.context?.state==='running'){
+      await new Promise(resolve=>{
+        const id=crypto.randomUUID(),timer=setTimeout(resolve,1500);
+        this.flushes.set(id,()=>{clearTimeout(timer);resolve();});
+        this.processor.port.postMessage({type:'state',enabled:false});
+        this.processor.port.postMessage({type:'flush',id});
+      });
+    }
     if (this.recorder && this.recorder.state !== "inactive")
       await new Promise((resolve) => {
         this.recorder.addEventListener("stop", resolve, { once: true });
@@ -129,14 +177,21 @@ export class MeetingRecorder {
   }
   async cleanup() {
     clearInterval(this.meter);
+    if (this.processor) {
+      this.processor.onaudioprocess = null;
+      this.processor.disconnect();
+    }
     this.streams?.forEach((s) => s.getTracks().forEach((t) => t.stop()));
     if (this.context?.state !== "closed") await this.context?.close();
   }
 }
 export async function audioSamples(blob) {
-  const context = new OfflineAudioContext(1, 1, 16000);
+  const bytes=await blob.arrayBuffer(),wav=decodeWav(new Uint8Array(bytes));
+  if(wav)return wav.rate===16000?wav.samples:new StreamResampler(wav.rate).push(wav.samples);
+  const Context=globalThis.OfflineAudioContext||globalThis.webkitOfflineAudioContext;
   try {
-    const decoded = await context.decodeAudioData(await blob.arrayBuffer()),
+    if(!Context)throw Error('use decoder');
+    const context=new Context(1,1,16000),decoded = await context.decodeAudioData(bytes),
       mono = new Float32Array(decoded.length);
     for (let c = 0; c < decoded.numberOfChannels; c++) {
       const channel = decoded.getChannelData(c);

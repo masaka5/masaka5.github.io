@@ -20,7 +20,7 @@ export class SpeechClient {
           this.worker = null;
         } else if (
           (e.type === "ready" && this.pending?.type === "init") ||
-          ["complete", "speakers"].includes(e.type)
+          ["complete", "speakers", "live-ready", "live-audio-done", "live-done"].includes(e.type)
         ) {
           this.pending?.resolve(e);
           this.pending = null;

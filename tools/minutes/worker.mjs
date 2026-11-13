@@ -2,8 +2,8 @@ import factory from "./vendor/sherpa.mjs";
 import { OfflineRecognizer } from "./vendor/asr.mjs";
 import { createVad } from "./vendor/vad.mjs";
 import { createOfflineSpeakerDiarization } from "./vendor/speaker-diarization.mjs";
-import { ModelCache } from "../ai/spark-cache.mjs";
-import { ASR_BASE, ASR_FILES, DIARIZATION_FILES } from "./models.mjs";
+import { PortableModelCache as ModelCache } from "./model-cache.mjs";
+import { ASR_BASE, ASR_FILES, LITE_BASE, LITE_FILES, DIARIZATION_FILES } from "./models.mjs";
 let M,
   recognizer,
   vad,
@@ -13,6 +13,7 @@ let M,
   stopped = false,
   logs = [],
   decodeOptions = {};
+let liveOptions = {}, liveRemainder = new Float32Array(), liveActive = false;
 const emit = (type, value = {}) => postMessage({ type, ...value });
 async function mount(name, bytes) {
   const path = "/models/" + name;
@@ -35,6 +36,7 @@ async function init(options = {}) {
     cache = new ModelCache({
       cache: store,
       chunkSize: 16 * 1024 * 1024,
+      fetcher:(url,options={})=>fetch(url,{...options,cache:'no-store',signal:AbortSignal.timeout(90000)}),
       onState: (s) => emit("cache", s),
     });
     emit("progress", { label: "初始化语音引擎", percent: 0 });
@@ -50,10 +52,11 @@ async function init(options = {}) {
       onAbort: (s) => emit("fatal", { error: String(s) }),
     });
     M.FS.mkdirTree("/models/Qwen3-0.6B");
+    const lite=options.engine==='sensevoice',files=lite?LITE_FILES:ASR_FILES,base=lite?LITE_BASE:ASR_BASE;
     let done = 0,
-      total = ASR_FILES.reduce((n, f) => n + f[1], 0);
-    for (const [name, size] of ASR_FILES) {
-      const bytes = await cache.bytes(`${ASR_BASE}/${name}`, size, (n) => {
+      total = files.reduce((n, f) => n + f[1], 0);
+    for (const [name, size] of files) {
+      const bytes = await cache.bytes(`${base}/${name}`, size, (n) => {
         done += n;
         emit("progress", {
           label: "加载 " + name.split("/").at(-1),
@@ -69,28 +72,17 @@ async function init(options = {}) {
       ),
     );
     emit("progress", { label: "编译识别模型", percent: 96 });
+    const modelConfig = lite ? {
+      senseVoice:{model:'/models/model.int8.onnx',language:(options.language||'auto').toLowerCase().replace('chinese','zh').replace('english','en').replace('japanese','ja'),useInverseTextNormalization:1},
+      tokens:'/models/tokens.txt',numThreads:1,provider:'cpu',debug:0,
+    } : {
+      funasrNano:{encoderAdaptor:'/models/encoder_adaptor.int8.onnx',llm:'/models/llm.int8.onnx',embedding:'/models/embedding.int8.onnx',tokenizer:'/models/Qwen3-0.6B',maxNewTokens:512,temperature:1e-6,topP:.8,seed:42,language:options.language||'',itn:1,hotwords:options.hotwords||''},
+      numThreads:1,provider:'cpu',debug:0,tokens:'',
+    };
     recognizer = new OfflineRecognizer(
       {
         featConfig: { sampleRate: 16000, featureDim: 80 },
-        modelConfig: {
-          funasrNano: {
-            encoderAdaptor: "/models/encoder_adaptor.int8.onnx",
-            llm: "/models/llm.int8.onnx",
-            embedding: "/models/embedding.int8.onnx",
-            tokenizer: "/models/Qwen3-0.6B",
-            maxNewTokens: 512,
-            temperature: 1e-6,
-            topP: 0.8,
-            seed: 42,
-            language: options.language || "",
-            itn: 1,
-            hotwords: options.hotwords || "",
-          },
-          numThreads: 1,
-          provider: "cpu",
-          debug: 0,
-          tokens: "",
-        },
+        modelConfig,
       },
       M,
     );
@@ -102,7 +94,7 @@ async function init(options = {}) {
         threshold: 0.5,
         minSilenceDuration: 0.55,
         minSpeechDuration: 0.2,
-        maxSpeechDuration: 20,
+        maxSpeechDuration: 8,
         windowSize: 512,
       },
       sampleRate: 16000,
@@ -112,7 +104,7 @@ async function init(options = {}) {
     });
     if (!vad.handle) throw Error("语音分段模型初始化失败");
     // ONNX sessions own weights now; release model file buffers from MEMFS.
-    for (const [name] of ASR_FILES) M.FS.unlink("/models/" + name);
+    for (const [name] of files) M.FS.unlink("/models/" + name);
     emit("ready", {
       version: M.UTF8ToString(M._SherpaOnnxGetVersionStr()),
       heap: M.HEAPU8.length,
@@ -134,7 +126,7 @@ function decode(samples, start) {
     stream.acceptWaveform(16000, samples);
     recognizer.decode(stream);
     const r = recognizer.getResult(stream);
-    const text = (r.text || "").trim();
+    const text = (r.text || "").replace(/<\|[^|]*\|>/g,'').trim();
     if (text)
       emit("segment", {
         segment: {
@@ -189,6 +181,39 @@ async function transcribe(samples, options = {}) {
     heap: M.HEAPU8.length,
   });
 }
+async function liveStart(options = {}) {
+  liveOptions = options;
+  decodeOptions = options;
+  stopped = false;
+  liveRemainder = new Float32Array();
+  liveActive = true;
+  await init(options);
+  vad.reset();
+  emit("live-ready");
+}
+async function liveAudio(samples) {
+  if (!liveActive) await liveStart(liveOptions);
+  const input=new Float32Array(liveRemainder.length+samples.length);
+  input.set(liveRemainder);input.set(samples,liveRemainder.length);
+  const end=input.length-input.length%512;
+  liveRemainder=input.slice(end);
+  for (let at = 0; at < end; at += 512) {
+    if (stopped) break;
+    vad.acceptWaveform(input.subarray(at,at+512));
+    while (!vad.isEmpty()) {
+      const seg = vad.front(); vad.pop(); decode(seg.samples, seg.start);
+    }
+  }
+  emit("live-audio-done");
+}
+async function liveFinish() {
+  if (!liveActive) return;
+  if(liveRemainder.length){const tail=new Float32Array(512);tail.set(liveRemainder);vad.acceptWaveform(tail);liveRemainder=new Float32Array();}
+  vad.flush();
+  while (!vad.isEmpty()) { const seg = vad.front(); vad.pop(); decode(seg.samples, seg.start); }
+  liveActive = false;
+  emit("live-done");
+}
 async function speakers(samples, count) {
   await init();
   if (!diarizer) {
@@ -196,6 +221,7 @@ async function speakers(samples, count) {
     const optionalCache = new ModelCache({
       cache: cache.cache,
       chunkSize: 32 * 1024 * 1024,
+      fetcher:(url,options={})=>fetch(url,{...options,cache:'no-store',signal:AbortSignal.timeout(90000)}),
     });
     for (const [name, url, size] of DIARIZATION_FILES) {
       const bytes = await optionalCache.bytes(url, size);
@@ -233,6 +259,9 @@ onmessage = ({ data }) => {
       if (data.type === "init") await init(data.options);
       else if (data.type === "transcribe")
         await transcribe(data.samples, data.options);
+      else if (data.type === "live-start") await liveStart(data.options);
+      else if (data.type === "live-audio") await liveAudio(data.samples);
+      else if (data.type === "live-finish") await liveFinish();
       else if (data.type === "speakers")
         await speakers(data.samples, data.count);
     } catch (e) {

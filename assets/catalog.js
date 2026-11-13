@@ -132,24 +132,24 @@ const ToolboxCatalog = {
       "iconBadge": ""
     },
     {
-      "id": "breeze-tts",
+      "id": "qwen-tts",
       "category": "media",
       "name": "语音工作室",
-      "description": "中文英文 · 声音设计 · 音色复刻",
-      "href": "tools/breeze-tts/",
-      "icon": "clapperboard",
+      "description": "预设音色 · 声音设计 · 音色克隆",
+      "href": "tools/qwen-tts/",
+      "icon": "mic-2",
       "tags": [
         "语音",
         "WASM",
-        "WebGPU"
+        "Q4"
       ],
-      "keywords": "Breeze TTS 2 3B 语音合成 文本转语音 音色克隆 声音设计 声音指令 中文 英文 Q4 本地 离线",
+      "keywords": "Qwen3 TTS 1.7B 语音合成 文本转语音 官方音色 声音设计 音色克隆 中文 英文 Q4 本地 离线",
       "variants": [
         {
           "name": "标准",
-          "href": "tools/breeze-tts/",
+          "href": "tools/qwen-tts/",
           "source": "toolbox",
-          "sourceId": "breeze-tts"
+          "sourceId": "qwen-tts"
         }
       ],
       "iconBadge": "音频"
