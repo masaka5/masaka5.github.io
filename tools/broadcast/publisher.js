@@ -199,6 +199,9 @@ export class BroadcastPublisher {
     };
     pc.onconnectionstatechange = inspect;
     for (const track of stream.getTracks().filter(track => track.readyState === 'live')) {
+      if (track.kind === 'video') {
+        try { track.contentHint = conf.contentHint || (policy.mode === 'realtime' ? 'motion' : 'detail'); } catch { /* Optional browser hint. */ }
+      }
       const transceiver=typeof pc.addTransceiver==='function'?pc.addTransceiver(track,{direction:'sendonly',streams:[stream]}):null;
       const sender = transceiver?.sender || pc.addTrack(track, stream);
       if (track.kind === 'video' && sender.getParameters) {
@@ -243,7 +246,7 @@ export class BroadcastPublisher {
         this._stats.videoBitrateKbps=metrics.videoBitrateKbps;this._stats.encoderTargetKbps=metrics.encoderTargetKbps;this._stats.configuredKbps=Math.round(policy.maxBitrate/1000);
         if(videoSenders.length){
           health=videoProgress(health,parsed.snapshot,Date.now());this._stats.videoHealth=health.status;this._stats.videoFrames=parsed.snapshot.videoFrames;
-          if(health.status==='stalled'&&this._stats.state==='live'){this._state('stalled');try{this.onRecoverVideo();}catch{/* Recovery must not interrupt transport monitoring. */}}
+          if(health.status==='stalled'&&this._stats.state==='live'){this._state('stalled');for(const sender of videoSenders){try{sender.requestKeyFrame?.();}catch{/* Optional keyframe request. */}}try{this.onRecoverVideo();}catch{/* Recovery must not interrupt transport monitoring. */}}
           else if(health.status==='healthy'&&this._stats.state==='stalled')this._state('live');
           if(health.reconnect)attempt.failed.reject(failure('视频发送停滞，正在重新连接'));
         }

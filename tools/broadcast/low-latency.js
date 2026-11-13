@@ -27,16 +27,22 @@ export function readStreamStats(report,previous){
  return{snapshot,metrics};
 }
 export function nextStreamBudget(policy,state,metrics){
- const next={maxBitrate:policy.maxBitrate,maxFramerate:policy.maxFramerate,scaleResolutionDownBy:policy.scaleResolutionDownBy,pressure:0,healthy:0,...state};
+ const next={maxBitrate:policy.maxBitrate,maxFramerate:policy.maxFramerate,scaleResolutionDownBy:policy.scaleResolutionDownBy,pressure:0,healthy:0,bandwidthPressure:0,bandwidthHealthy:0,availableKbps:null,...state};
  if(policy.mode==='quality')return next;
  const cpu=metrics.qualityLimitationReason==='cpu'||metrics.encodeMs>1000/policy.maxFramerate*.7,queue=metrics.sendQueueMs>40;
  next.pressure=cpu||queue?next.pressure+1:0;
  const floor=Math.min(600000,policy.maxBitrate);
+ if(Number.isFinite(metrics.availableKbps)&&metrics.availableKbps>0)next.availableKbps=Number.isFinite(next.availableKbps)?next.availableKbps*.7+metrics.availableKbps*.3:metrics.availableKbps;
+ const bandwidthLimited=metrics.qualityLimitationReason==='bandwidth'&&Number.isFinite(next.availableKbps)&&next.availableKbps*1000<next.maxBitrate*.9;
+ next.bandwidthPressure=bandwidthLimited?next.bandwidthPressure+1:0;
+ next.bandwidthHealthy=!bandwidthLimited&&Number.isFinite(next.availableKbps)&&next.availableKbps*1000>next.maxBitrate*1.4?next.bandwidthHealthy+1:0;
  if(queue&&Number.isFinite(metrics.availableKbps)&&metrics.availableKbps>0){const ceiling=Math.max(floor,Math.min(policy.maxBitrate,Math.floor(metrics.availableKbps*1000*.8)));if(ceiling<next.maxBitrate)next.maxBitrate=ceiling;}
- if(next.pressure>=3){next.scaleResolutionDownBy=Math.min(policy.maxScale,next.scaleResolutionDownBy*1.25);next.maxBitrate=Math.max(floor,Math.min(next.maxBitrate,Math.round(policy.maxBitrate/next.scaleResolutionDownBy)));next.pressure=0;}
+ const bandwidthLevel=next.bandwidthPressure;
+ if(bandwidthLevel>=3&&Number.isFinite(next.availableKbps)){const ceiling=Math.max(floor,Math.min(policy.maxBitrate,Math.floor(next.availableKbps*1000*.82)));if(ceiling<next.maxBitrate)next.maxBitrate=ceiling;next.bandwidthPressure=0;}
+ if(next.pressure>=3||bandwidthLevel>=6){next.scaleResolutionDownBy=Math.min(policy.maxScale,next.scaleResolutionDownBy*1.25);next.maxBitrate=Math.max(floor,Math.min(next.maxBitrate,Math.round(policy.maxBitrate/next.scaleResolutionDownBy)));next.pressure=0;next.bandwidthPressure=0;}
  // Chromium may keep reporting 'bandwidth' because our own cap is below its estimate.
  // Recover from measured headroom; this label alone must not lock in a past backoff.
- const bandwidthHeadroom=Number.isFinite(metrics.availableKbps)&&metrics.availableKbps*1000>next.maxBitrate*1.4;
+ const bandwidthHeadroom=Number.isFinite(next.availableKbps)&&next.availableKbps*1000>next.maxBitrate*1.4;
  const headroom=!cpu&&!queue&&Number.isFinite(metrics.encodeMs)&&metrics.encodeMs<1000/policy.maxFramerate*.55&&(bandwidthHeadroom||(!Number.isFinite(metrics.availableKbps)&&metrics.qualityLimitationReason!=='bandwidth'));
  next.healthy=headroom?next.healthy+1:0;
  if(next.healthy>=10){next.scaleResolutionDownBy=Math.max(policy.scaleResolutionDownBy,next.scaleResolutionDownBy/1.25);next.maxBitrate=Math.min(policy.maxBitrate,Math.round(next.maxBitrate*1.15));next.healthy=0;}
