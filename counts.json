@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-13T11:14:33.127Z",
+  "updatedAt": "2026-11-13T18:36:13.295Z",
   "counts": {
     "qr-transfer": 14,
     "browser-fingerprint": 4,
@@ -37,7 +37,7 @@
     "ip-batch": 0,
     "mac": 0,
     "network": 5,
-    "ai": 0,
+    "ai": 1,
     "scan": 1,
     "devices": 1,
     "recorder": 0,
@@ -1072,7 +1072,7 @@
     "powerpoint-to-pdf": 0,
     "epub-to-pdf": 0,
     "email-to-pdf": 0,
-    "digitize-document": 0,
+    "digitize-document": 1,
     "pdf-to-text": 0,
     "pdf-to-markdown": 0,
     "pdf-to-json": 0,
