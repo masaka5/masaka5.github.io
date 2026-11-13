@@ -5070,13 +5070,22 @@ Module["WORKERFS"] = WORKERFS;
 // end include: postlibrary.js
 function browser_audio(samples, count) {
   const copy = HEAPF32.slice(samples >>> 2, (samples >>> 2) + count);
-  postMessage({
-    type: "audio",
-    samples: copy
-  }, [ copy.buffer ]);
+  Module.onAudio(copy);
 }
 
 browser_audio.sig = "vii";
+
+function browser_cancelled() {
+  return globalThis.breezeCancelled ? 1 : 0;
+}
+
+browser_cancelled.sig = "i";
+
+function browser_segment(part, total) {
+  if (Module.onSegment) Module.onSegment(part, total);
+}
+
+browser_segment.sig = "vii";
 
 // Imports from the Wasm binary.
 var _breeze_init, _breeze_free, _breeze_sample_rate, _breeze_last_error, _browser_generate, _free, _malloc, _emwgpuCreateBindGroup, _emwgpuCreateBindGroupLayout, _emwgpuCreateCommandBuffer, _emwgpuCreateCommandEncoder, _emwgpuCreateComputePassEncoder, _emwgpuCreateComputePipeline, _emwgpuCreateExternalTexture, _emwgpuCreatePipelineLayout, _emwgpuCreateQuerySet, _emwgpuCreateRenderBundle, _emwgpuCreateRenderBundleEncoder, _emwgpuCreateRenderPassEncoder, _emwgpuCreateRenderPipeline, _emwgpuCreateSampler, _emwgpuCreateSurface, _emwgpuCreateTexture, _emwgpuCreateTextureView, _emwgpuCreateAdapter, _emwgpuImportBuffer, _emwgpuCreateDevice, _emwgpuCreateQueue, _emwgpuCreateShaderModule, _emwgpuOnCompilationInfoCompleted, _emwgpuOnCreateComputePipelineCompleted, _emwgpuOnCreateRenderPipelineCompleted, _emwgpuOnDeviceLostCompleted, _emwgpuOnMapAsyncCompleted, _emwgpuOnPopErrorScopeCompleted, _emwgpuOnRequestAdapterCompleted, _emwgpuOnRequestDeviceCompleted, _emwgpuOnWorkDoneCompleted, _emwgpuOnUncapturedError, _memalign, ___trap, __emscripten_stack_restore, __emscripten_stack_alloc, _emscripten_stack_get_current, memory, __indirect_function_table, wasmMemory, wasmTable;
@@ -5138,6 +5147,8 @@ var wasmImports = {
   /** @export */ _abort_js: __abort_js,
   /** @export */ _tzset_js: __tzset_js,
   /** @export */ browser_audio,
+  /** @export */ browser_cancelled,
+  /** @export */ browser_segment,
   /** @export */ clock_time_get: _clock_time_get,
   /** @export */ emscripten_get_heap_max: _emscripten_get_heap_max,
   /** @export */ emscripten_has_asyncify: _emscripten_has_asyncify,
