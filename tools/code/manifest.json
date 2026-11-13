@@ -166,11 +166,6 @@
       "sha256": "dad1d135d6758bdc2c187be64e2fb5974e81fe48605ecf9d97c4bf093e174a83"
     },
     {
-      "file": "assets/extension.js-oHSVqHmI.map",
-      "bytes": 3668775,
-      "sha256": "ec2f140fba4dca80a80770868128f84f6f694ac767425bbc50d2121ce85fd4fc"
-    },
-    {
       "file": "assets/extensionHost.worker-y3sx3pd0.js",
       "bytes": 2033586,
       "sha256": "c90dcda3b708d00910928bf7e1d72593bec3904e0beec1d11e35a0401a51c733"
@@ -1204,11 +1199,6 @@
       "file": "assets/tsserver.web-BS0Dd2W2.js",
       "bytes": 6086678,
       "sha256": "a320509e639f7b795e2be0e915802250956e8542b03dd6ebc6edadb630eb360a"
-    },
-    {
-      "file": "assets/tsserver.web.js-CpAzMPUj.map",
-      "bytes": 14771126,
-      "sha256": "78f936072b06eb095753cc3924d2ef04faa12da5e0adbe28f4a3aa1754306a2b"
     },
     {
       "file": "assets/typescript-BgDXb0oW.code-snippets",

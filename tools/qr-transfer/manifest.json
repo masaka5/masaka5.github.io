@@ -49,8 +49,8 @@
     },
     {
       "file": "assets/decode-worker.js",
-      "bytes": 31449,
-      "sha256": "81fc0949bf997db773a8337675398c043aa9780301a151ec456ff688e404b311"
+      "bytes": 31544,
+      "sha256": "9336fbfc591cd6e0d0b888a51baf28633a2d78754fc1f9b13f1a235945047d60"
     },
     {
       "file": "assets/decimen.wasm.gz",

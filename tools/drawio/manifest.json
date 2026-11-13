@@ -26,11 +26,6 @@
       "sha256": "0f97157dd2a3f3dc2b9a173d28ababdf0bb94386d526dc77b11191ef2036069e"
     },
     {
-      "file": "SOURCE.md",
-      "bytes": 906,
-      "sha256": "d82401d1da913c60c8ed29c2b113c63615ca003fd08108f358f6c2f78a4de39f"
-    },
-    {
       "file": "vendor/clear.html",
       "bytes": 3751,
       "sha256": "a08cf1b4d0f6c524424f06ff83a7bc5ef92c4f26f97996fcd93406b7b49bb4d2"
@@ -11401,11 +11396,6 @@
       "sha256": "327a2353479ada892ab73f8070b682cd68c3367cef8347d0331d189b991de38d"
     },
     {
-      "file": "vendor/js/cryptojs/README.md",
-      "bytes": 3687,
-      "sha256": "a6acba32051470163b9f0f351f4645179c49dcbaab77f6ef32fa6dc361d1c409"
-    },
-    {
       "file": "vendor/js/deflate/base64.js",
       "bytes": 4280,
       "sha256": "1064c5ecc79a98ca1179f9e1c20a70f1d50fa637b2a3854a8b8fb20e85e9901c"
@@ -11414,11 +11404,6 @@
       "file": "vendor/js/deflate/pako.min.js",
       "bytes": 47427,
       "sha256": "d8eacf535b9a7f524e118c8c1ab99d45cab2d55b50be23914c4b141c6b3b5c12"
-    },
-    {
-      "file": "vendor/js/deflate/README.md",
-      "bytes": 173,
-      "sha256": "e2e91421ac18ac6aebe0fe3c90a324d6e260f44596637d4ee9dbfc3e57ad831f"
     },
     {
       "file": "vendor/js/elk/drawio-elk.min.js",
@@ -11444,11 +11429,6 @@
       "file": "vendor/js/freehand/perfect-freehand.js",
       "bytes": 4859,
       "sha256": "987dac64dceeba68467916022418d35b903b9718890eadbe23422fcfcfce6732"
-    },
-    {
-      "file": "vendor/js/freehand/README.md",
-      "bytes": 86,
-      "sha256": "10ce133d9fd231b1adb1e9b42c1e60d0fc688bdfde4c160770b53cbee8690dc0"
     },
     {
       "file": "vendor/js/gliffy/drawio-gliffy.min.js",
@@ -11479,11 +11459,6 @@
       "file": "vendor/js/libavoid-js/LICENSE.txt",
       "bytes": 27032,
       "sha256": "94bbccc53053821c77cfd9fe097b04701a63caff69caa14873289488e5b7e1b6"
-    },
-    {
-      "file": "vendor/js/libavoid-js/README.md",
-      "bytes": 5316,
-      "sha256": "61cf4ec7708a07637e96b727120d822f83bf9e2890ce2a62f70039f558899250"
     },
     {
       "file": "vendor/js/main.js",
@@ -11554,11 +11529,6 @@
       "file": "vendor/js/PreConfig.js",
       "bytes": 941,
       "sha256": "067f058a512d7d83896afd85e9b4609bee24f71082794b25d89e7f4f3c278b5d"
-    },
-    {
-      "file": "vendor/js/rough/README.md",
-      "bytes": 72,
-      "sha256": "a25fe69c9ade636d53298dd25d2ea317178ca59fed850afcb723b8e2381d366c"
     },
     {
       "file": "vendor/js/rough/rough.min.js",
@@ -12306,11 +12276,6 @@
       "sha256": "944b89d7c202b148ad9a36e2916017278be99d14badada313961fd673ed8c97a"
     },
     {
-      "file": "vendor/resources/CONTRIBUTING.md",
-      "bytes": 1572,
-      "sha256": "77ea34f614d9d8f193b0a0146ce88f457e7777173dd3456a733fede27187cd9f"
-    },
-    {
       "file": "vendor/resources/dia.txt",
       "bytes": 152306,
       "sha256": "9bd230b6b32af1967e58e478fd6138d3ed7692bd619ab64c9bd92248d55e01f5"
@@ -12319,11 +12284,6 @@
       "file": "vendor/resources/dia_zh.txt",
       "bytes": 102588,
       "sha256": "3ac96feecdd26ed63ff5dd99cc34fa4a8295daa80ccd0f7086a506d3d9c89f5e"
-    },
-    {
-      "file": "vendor/resources/README.md",
-      "bytes": 470,
-      "sha256": "03853d8299f3dbf036d9a43201af3f2d9e5a31c2e06a115cadff16382a5ee03e"
     },
     {
       "file": "vendor/service-worker.js",

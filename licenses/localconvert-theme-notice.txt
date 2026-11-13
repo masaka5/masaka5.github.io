@@ -1,7 +1,0 @@
-LocalConvert standalone toolbox adaptation
-Copyright belongs to the original contributors. License: AGPL-3.0 (localconvert-AGPL.txt).
-Modified: standalone Svelte routing/localization and Ant theme shell/controls. Original converter engines retained.
-Corresponding modified source: localconvert-source.zip; manifest: localconvert-source-manifest.json.
-Dependency license texts are in third-party-notices.txt; source references and locked versions are in package-lock.json.
-Build: npm ci; npx vite build --config toolbox.vite.config.ts --outDir .toolbox-build --emptyOutDir.
-Original static runtime worker, cmaps and demuxer remain at tools/conversion and are not copied into the source ZIP.

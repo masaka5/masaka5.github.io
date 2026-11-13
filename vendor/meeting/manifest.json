@@ -274,8 +274,8 @@
     },
     {
       "file": "SOURCE.txt",
-      "bytes": 146,
-      "sha256": "062dbf1a9df5dde2b86de24087f0e9fea1aec9b551acf099168d7a75d139df36"
+      "bytes": 241,
+      "sha256": "9c6d3fd869efd7d6b71c256912802296284b49f7db94fb3db1c8a1ceb6fbcd0a"
     },
     {
       "file": "versions.json",
@@ -283,5 +283,5 @@
       "sha256": "b80df061a23de0688966a75dfe66caf7660603835c0c59f19cab7ce359ad8798"
     }
   ],
-  "source_zip": "../../licenses/meeting-source.zip"
+  "source_zip": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/b728807b6ab7a88e324824eb1af4baa25b733855/licenses/meeting-source.zip"
 }

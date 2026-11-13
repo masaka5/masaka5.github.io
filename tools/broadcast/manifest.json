@@ -3,7 +3,7 @@
     {
       "project": "toolbox-broadcast",
       "source": "first-party browser studio",
-      "sourceArchive": "licenses/broadcast-source.zip",
+      "sourceArchive": "https://raw.githubusercontent.com/masaka5/masaka5.github.io/b728807b6ab7a88e324824eb1af4baa25b733855/licenses/broadcast-source.zip",
       "changes": "Independent WebGL compositor, Web Audio mixer, MediaRecorder capture, IndexedDB projects and recordings; no backend shipped."
     },
     {

@@ -10,8 +10,8 @@ libffi, zlib, pixman, PCRE2, gvdb, Emscripten runtime, browser_wasi_shim,
 xterm-pty and container2wasm retain their respective copyright/license terms.
 
 Full preserved license texts, source archives, exact SHA256 manifests, local
-patches and build instructions are available at ../../licenses/qemu/index.html
-and ../../licenses/qemu/README.md on this same distribution.
+patches and build instructions are available at https://raw.githubusercontent.com/masaka5/masaka5.github.io/b728807b6ab7a88e324824eb1af4baa25b733855/licenses/qemu/index.html
+and https://raw.githubusercontent.com/masaka5/masaka5.github.io/b728807b6ab7a88e324824eb1af4baa25b733855/licenses/qemu/README.md in the immutable source archive.
 
 The original prebuilt QEMU/proxy source-build correspondence is unverified.
 See README for the explicit provenance limits; reproducible build or complete
