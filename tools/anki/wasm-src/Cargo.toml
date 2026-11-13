@@ -1,0 +1,18 @@
+[package]
+name = "pocket-anki-scheduler"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+fsrs = "=6.6.0"
+getrandom = { version = "0.4", features = ["wasm_js"] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

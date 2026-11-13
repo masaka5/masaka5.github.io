@@ -1,0 +1,8 @@
+import{build}from'esbuild';import{copyFile,readFile,writeFile,mkdir}from'node:fs/promises';import binaryen from'binaryen';
+const root=new URL('./',import.meta.url);await mkdir(new URL('assets/',root),{recursive:true});
+const common={bundle:true,minify:true,format:'esm',target:['es2022'],legalComments:'none',logLevel:'info'};
+await build({...common,entryPoints:[new URL('src/app.jsx',root).pathname.replace(/^\/(\w:)/,'$1')].map(decodeURIComponent),outfile:decodeURIComponent(new URL('assets/app.js',root).pathname).replace(/^\/(\w:)/,'$1'),define:{'process.env.NODE_ENV':'"production"'}});
+await build({...common,entryPoints:[decodeURIComponent(new URL('worker.mjs',root).pathname).replace(/^\/(\w:)/,'$1')],outfile:decodeURIComponent(new URL('assets/worker.js',root).pathname).replace(/^\/(\w:)/,'$1'),external:['fs','path','crypto']});
+await copyFile(new URL('node_modules/sql.js/dist/sql-wasm.wasm',root),new URL('assets/sql-wasm.wasm',root));
+// Optional Rust rebuild: cd wasm-src && cargo build --release --target wasm32-unknown-unknown
+try{const bytes=await readFile(new URL('wasm-src/target/wasm32-unknown-unknown/release/pocket_anki_scheduler.wasm',root)),module=binaryen.readBinary(bytes);const names=Array.from({length:module.getNumExports()},(_,i)=>binaryen.getExportInfo(module.getExportByIndex(i)).name);for(const name of names)if(!['memory','schedule'].includes(name))module.removeExport(name);module.runPasses(['remove-unused-module-elements','dce','strip-debug']);await writeFile(new URL('assets/fsrs.wasm',root),module.emitBinary());module.dispose();}catch(error){if(error.code!=='ENOENT')throw error;}
