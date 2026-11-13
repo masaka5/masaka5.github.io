@@ -1,0 +1,3350 @@
+{
+  "errors": [],
+  "runs": [
+    {
+      "variant": "baseline",
+      "samples": [
+        {
+          "seconds": 2.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 2,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.37,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 2051.076,
+              "videoHealth": "healthy",
+              "videoFrames": 115
+            },
+            "v": {
+              "target": 1951874,
+              "bytes": 2830,
+              "frames": 115,
+              "fps": 59,
+              "qp": 1474,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 2051076,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "55b08267-29bd-4758-bbea-d8eeb2936c4f"
+            }
+          },
+          "serverKbps": null,
+          "serverFrames": 68
+        },
+        {
+          "seconds": 4.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 4,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.52,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 2051.076,
+              "videoHealth": "healthy",
+              "videoFrames": 234
+            },
+            "v": {
+              "target": 1970000,
+              "bytes": 3901,
+              "frames": 234,
+              "fps": 61,
+              "qp": 2902,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 2051076,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "8fbc5ac0-f92f-44b3-b7df-21169cfa1080"
+            }
+          },
+          "serverKbps": 54,
+          "serverFrames": 186
+        },
+        {
+          "seconds": 6.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 6,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.42,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 2051.076,
+              "videoHealth": "healthy",
+              "videoFrames": 353
+            },
+            "v": {
+              "target": 1970000,
+              "bytes": 4999,
+              "frames": 356,
+              "fps": 60,
+              "qp": 4366,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 2051076,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "d886ba6d-bb13-4fb6-b3bf-0ed8bf266383"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 306
+        },
+        {
+          "seconds": 8.1,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 61,
+              "width": 640,
+              "height": 360,
+              "elapsed": 8,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.08,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4574.857,
+              "videoHealth": "healthy",
+              "videoFrames": 473
+            },
+            "v": {
+              "target": 4395000,
+              "bytes": 9768,
+              "frames": 477,
+              "fps": 60,
+              "qp": 5915,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4574857,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "8d4397f4-44e0-41cf-8b20-e1618dc46061"
+            }
+          },
+          "serverKbps": 60,
+          "serverFrames": 426
+        },
+        {
+          "seconds": 10.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3392,
+              "fps": 40,
+              "width": 640,
+              "height": 360,
+              "elapsed": 10,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 2.35,
+              "queueMs": 90.39,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 5076.872,
+              "videoHealth": "healthy",
+              "videoFrames": 543
+            },
+            "v": {
+              "target": 3541393,
+              "bytes": 1055684,
+              "frames": 547,
+              "fps": 42,
+              "qp": 8676,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 5076872,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "4d5d89ac-bb62-46ef-8638-940e8954071e"
+            }
+          },
+          "serverKbps": 2518,
+          "serverFrames": 495
+        },
+        {
+          "seconds": 12.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3579,
+              "fps": 56,
+              "width": 640,
+              "height": 360,
+              "elapsed": 12,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 2.61,
+              "queueMs": 2.33,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 5764.26,
+              "videoHealth": "healthy",
+              "videoFrames": 655
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 1961481,
+              "frames": 660,
+              "fps": 56,
+              "qp": 13237,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 5764260,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "a1ddc463-4211-4d3c-a5d1-77169f84ef43"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 599
+        },
+        {
+          "seconds": 14.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3647,
+              "fps": 54,
+              "width": 640,
+              "height": 360,
+              "elapsed": 14,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 2.72,
+              "queueMs": 3.03,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6078.268,
+              "videoHealth": "healthy",
+              "videoFrames": 764
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 2894660,
+              "frames": 771,
+              "fps": 56,
+              "qp": 17708,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6078268,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "5aba2174-f1a4-48fb-b1e1-4d46f0724f53"
+            }
+          },
+          "serverKbps": 5493,
+          "serverFrames": 709
+        },
+        {
+          "seconds": 16.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3691,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 16,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.23,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6128.374,
+              "videoHealth": "healthy",
+              "videoFrames": 877
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 3739859,
+              "frames": 884,
+              "fps": 60,
+              "qp": 21701,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6128374,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "1e9580fc-79cf-4f3b-b9c1-9762a0dedb03"
+            }
+          },
+          "serverKbps": 5482,
+          "serverFrames": 819
+        },
+        {
+          "seconds": 18.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3029,
+              "fps": 49,
+              "width": 480,
+              "height": 270,
+              "elapsed": 18,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.2,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6128.374,
+              "videoHealth": "healthy",
+              "videoFrames": 984
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 4572483,
+              "frames": 991,
+              "fps": 50,
+              "qp": 25394,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6128374,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "ee62a8ee-ec95-43a8-a679-266d0b2bdcc3"
+            }
+          },
+          "serverKbps": 5189,
+          "serverFrames": 935
+        },
+        {
+          "seconds": 20.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3923,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 20,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.58,
+              "queueMs": 1.23,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6361.76,
+              "videoHealth": "healthy",
+              "videoFrames": 1093
+            },
+            "v": {
+              "target": 3392367,
+              "bytes": 5565940,
+              "frames": 1101,
+              "fps": 58,
+              "qp": 29131,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6361760,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "a6295da4-fad2-44e0-afad-0bc4fb3b96ee"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 1036
+        },
+        {
+          "seconds": 22.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3677,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 22,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.8,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6461.173,
+              "videoHealth": "healthy",
+              "videoFrames": 1212
+            },
+            "v": {
+              "target": 3595272,
+              "bytes": 6504765,
+              "frames": 1221,
+              "fps": 61,
+              "qp": 33289,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6461173,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "0d419ff6-ed07-4639-94e2-191c664a14d4"
+            }
+          },
+          "serverKbps": 5888,
+          "serverFrames": 1154
+        },
+        {
+          "seconds": 24.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3602,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 24,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.78,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6461.173,
+              "videoHealth": "healthy",
+              "videoFrames": 1331
+            },
+            "v": {
+              "target": 3625160,
+              "bytes": 7423665,
+              "frames": 1340,
+              "fps": 60,
+              "qp": 37398,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6461173,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "a85ad6ae-03c0-4613-b9bc-72cd80e4ff56"
+            }
+          },
+          "serverKbps": 5728,
+          "serverFrames": 1274
+        },
+        {
+          "seconds": 26.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3721,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 26,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.69,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6461.173,
+              "videoHealth": "healthy",
+              "videoFrames": 1447
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 8340400,
+              "frames": 1458,
+              "fps": 59,
+              "qp": 41427,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6461173,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "c392a0ff-9a18-4b0e-9d98-9aeedb42d76f"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 1390
+        },
+        {
+          "seconds": 28.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3787,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 28,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.83,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6461.173,
+              "videoHealth": "healthy",
+              "videoFrames": 1565
+            },
+            "v": {
+              "target": 3688000,
+              "bytes": 9315363,
+              "frames": 1579,
+              "fps": 60,
+              "qp": 45596,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6461173,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "BFPtzsrHIgkX11oh",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 3688807,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "dac255d2-bf37-4713-8775-1d8cc834f155"
+            }
+          },
+          "serverKbps": 5619,
+          "serverFrames": 1508
+        }
+      ],
+      "signals": {
+        "offer": "v=0\r\no=- 8137826028306302218 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 46eba146-227e-4856-9f67-978a3f6281b5\r\nm=video 9 UDP/TLS/RTP/SAVPF 102 103 108 109 116 117 118 119 104 107 114 115 39 40 96 97 45 46 98 99 100 101 122 123 124\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=candidate:2968068785 1 udp 2113937151 438fc82c-2a33-4bb8-9eb7-1d41ddf974f0.local 57806 typ host generation 0 network-cost 999\r\na=ice-ufrag:XWTe\r\na=ice-pwd:4uNxYhlFuwJgXw7BBE5F9b8T\r\na=ice-options:trickle\r\na=fingerprint:sha-256 EC:B6:07:CC:6E:31:A3:54:33:CD:BD:0A:49:EC:BC:AC:E9:70:FC:88:C9:83:F3:F7:6A:BE:41:A7:93:E7:76:90\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:46eba146-227e-4856-9f67-978a3f6281b5 941ea8be-be2a-4c26-82b9-91c62518912c\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:118 H264/90000\r\na=rtcp-fb:118 goog-remb\r\na=rtcp-fb:118 transport-cc\r\na=rtcp-fb:118 ccm fir\r\na=rtcp-fb:118 nack\r\na=rtcp-fb:118 nack pli\r\na=fmtp:118 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=64001f\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:122 red/90000\r\na=rtpmap:123 rtx/90000\r\na=fmtp:123 apt=122\r\na=rtpmap:124 ulpfec/90000\r\na=ssrc-group:FID 1441924956 1337736439\r\na=ssrc:1441924956 cname:BFPtzsrHIgkX11oh\r\na=ssrc:1441924956 msid:46eba146-227e-4856-9f67-978a3f6281b5 941ea8be-be2a-4c26-82b9-91c62518912c\r\na=ssrc:1337736439 cname:BFPtzsrHIgkX11oh\r\na=ssrc:1337736439 msid:46eba146-227e-4856-9f67-978a3f6281b5 941ea8be-be2a-4c26-82b9-91c62518912c\r\n",
+        "answer": "v=0\r\no=SRS/8.0.74(Free) 1049114606709891386 2 IN IP4 0.0.0.0\r\ns=SRSPublishSession\r\nt=0 0\r\na=ice-lite\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS live/codex-bitrate-1794570457\r\nm=video 9 UDP/TLS/RTP/SAVPF 108 122\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:2ij7581w\r\na=ice-pwd:9t4f497s38d3b08727xgoe753578r5n4\r\na=fingerprint:sha-256 53:3D:5F:11:89:6D:84:E0:37:59:F1:96:29:14:28:C8:E2:56:AC:6F:52:1A:EE:25:C8:C6:44:20:8D:36:2F:2E\r\na=setup:passive\r\na=mid:0\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:122 red/90000\r\na=candidate:0 1 udp 2130706431 10.160.66.161 8000 typ host generation 0\r\na=candidate:1 1 udp 2130706431 172.22.0.1 8000 typ host generation 0\r\na=candidate:2 1 udp 2130706431 192.168.202.1 8000 typ host generation 0\r\na=candidate:3 1 udp 2130706431 192.168.56.1 8000 typ host generation 0\r\na=candidate:4 1 udp 2130706431 192.168.73.1 8000 typ host generation 0\r\n"
+      }
+    },
+    {
+      "variant": "motion",
+      "samples": [
+        {
+          "seconds": 2.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 2,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.87,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 1867.2,
+              "videoHealth": "healthy",
+              "videoFrames": 116
+            },
+            "v": {
+              "target": 1773770,
+              "bytes": 2839,
+              "frames": 116,
+              "fps": 60,
+              "qp": 1486,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 1867200,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "5844bd9b-edc8-451e-afa6-12250f00c3fe"
+            }
+          },
+          "serverKbps": null,
+          "serverFrames": 91
+        },
+        {
+          "seconds": 4.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 4,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.73,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 1867.2,
+              "videoHealth": "healthy",
+              "videoFrames": 236
+            },
+            "v": {
+              "target": 1787110,
+              "bytes": 3919,
+              "frames": 236,
+              "fps": 61,
+              "qp": 2926,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 1867200,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "b48b68ab-0717-44b5-aa92-f1023e7eb90b"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 211
+        },
+        {
+          "seconds": 6.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 6,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.72,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 1867.2,
+              "videoHealth": "healthy",
+              "videoFrames": 356
+            },
+            "v": {
+              "target": 1793000,
+              "bytes": 4999,
+              "frames": 356,
+              "fps": 61,
+              "qp": 4366,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 1867200,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "80216ff3-7615-4142-9d8d-53e0b85625ef"
+            }
+          },
+          "serverKbps": 29,
+          "serverFrames": 331
+        },
+        {
+          "seconds": 8.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 51,
+              "width": 640,
+              "height": 360,
+              "elapsed": 8,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.69,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 3623.466,
+              "videoHealth": "healthy",
+              "videoFrames": 460
+            },
+            "v": {
+              "target": 3481000,
+              "bytes": 9590,
+              "frames": 460,
+              "fps": 51,
+              "qp": 5698,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 3623466,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "3a494940-83c7-4d74-abfe-8e117e3dfd6e"
+            }
+          },
+          "serverKbps": 62,
+          "serverFrames": 438
+        },
+        {
+          "seconds": 10.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2252,
+              "fps": 31,
+              "width": 640,
+              "height": 360,
+              "elapsed": 10,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 3.45,
+              "queueMs": 84.55,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 3965.236,
+              "videoHealth": "healthy",
+              "videoFrames": 514
+            },
+            "v": {
+              "target": 2435000,
+              "bytes": 770728,
+              "frames": 516,
+              "fps": 33,
+              "qp": 7847,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 3965236,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "64596348-b4d6-4dbf-ab2f-ee5f0f38cad1"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 481
+        },
+        {
+          "seconds": 12.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2904,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 12,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.68,
+              "queueMs": 1.78,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4216.522,
+              "videoHealth": "healthy",
+              "videoFrames": 620
+            },
+            "v": {
+              "target": 2922000,
+              "bytes": 1444135,
+              "frames": 624,
+              "fps": 59,
+              "qp": 11777,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4216522,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "6d6af53f-1bec-4d8f-a07f-b358d5d43a29"
+            }
+          },
+          "serverKbps": 3693,
+          "serverFrames": 583
+        },
+        {
+          "seconds": 14.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2892,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 14,
+              "attempts": 0,
+              "rttMs": 1,
+              "encodeMs": 1.92,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4779.862,
+              "videoHealth": "healthy",
+              "videoFrames": 736
+            },
+            "v": {
+              "target": 2906827,
+              "bytes": 2203174,
+              "frames": 742,
+              "fps": 59,
+              "qp": 15973,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4779862,
+              "rtt": 0.001
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "03b1be4f-8cac-4ed3-bcb1-45fa089afa32"
+            }
+          },
+          "serverKbps": 4373,
+          "serverFrames": 700
+        },
+        {
+          "seconds": 16.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2897,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 16,
+              "attempts": 0,
+              "rttMs": 1,
+              "encodeMs": 1.9,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4929.989,
+              "videoHealth": "healthy",
+              "videoFrames": 855
+            },
+            "v": {
+              "target": 2915638,
+              "bytes": 2941747,
+              "frames": 861,
+              "fps": 60,
+              "qp": 20184,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4929989,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "957dc698-b354-4173-8d2d-a98698ffc52f"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 817
+        },
+        {
+          "seconds": 18.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2796,
+              "fps": 58,
+              "width": 480,
+              "height": 270,
+              "elapsed": 18,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.9,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 972
+            },
+            "v": {
+              "target": 2922000,
+              "bytes": 3672101,
+              "frames": 980,
+              "fps": 58,
+              "qp": 24468,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "4fccfec7-6560-465d-90a3-a4d77f7f491e"
+            }
+          },
+          "serverKbps": 4428,
+          "serverFrames": 935
+        },
+        {
+          "seconds": 20.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3035,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 20,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.82,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 1090
+            },
+            "v": {
+              "target": 2922000,
+              "bytes": 4393828,
+              "frames": 1098,
+              "fps": 60,
+              "qp": 28689,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "133de654-d561-43cc-af51-9a61c110f6d3"
+            }
+          },
+          "serverKbps": 4484,
+          "serverFrames": 1053
+        },
+        {
+          "seconds": 22.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3004,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 22,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.8,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 1208
+            },
+            "v": {
+              "target": 2905644,
+              "bytes": 5133396,
+              "frames": 1217,
+              "fps": 59,
+              "qp": 32934,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "3e0ecfc2-e105-470f-8213-ab58f57b0129"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 1172
+        },
+        {
+          "seconds": 24.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3059,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 24,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.57,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 1328
+            },
+            "v": {
+              "target": 2873212,
+              "bytes": 5882809,
+              "frames": 1338,
+              "fps": 61,
+              "qp": 37254,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "633c15df-3054-43b4-8ec1-578c5db061aa"
+            }
+          },
+          "serverKbps": 4577,
+          "serverFrames": 1291
+        },
+        {
+          "seconds": 26.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2840,
+              "fps": 61,
+              "width": 480,
+              "height": 270,
+              "elapsed": 26,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.68,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 1448
+            },
+            "v": {
+              "target": 2922000,
+              "bytes": 6620052,
+              "frames": 1458,
+              "fps": 60,
+              "qp": 41585,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "e6abeccb-c243-4632-92d1-883ec522af6a"
+            }
+          },
+          "serverKbps": 4534,
+          "serverFrames": 1411
+        },
+        {
+          "seconds": 28.2,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 2027,
+              "fps": 44,
+              "width": 480,
+              "height": 270,
+              "elapsed": 28,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.42,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4967.061,
+              "videoHealth": "healthy",
+              "videoFrames": 1550
+            },
+            "v": {
+              "target": 2922000,
+              "bytes": 7247547,
+              "frames": 1560,
+              "fps": 46,
+              "qp": 45254,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4967061,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "OMphlp5mWx1QtWBw",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 2922222,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "05824ea5-200e-4923-80b4-c0442bc4f199"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 1518
+        }
+      ],
+      "signals": {
+        "offer": "v=0\r\no=- 6085593294643839816 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS d820ad88-ef77-44b3-9594-1bb210effc00\r\nm=video 9 UDP/TLS/RTP/SAVPF 102 103 108 109 116 117 118 119 104 107 114 115 39 40 96 97 45 46 98 99 100 101 122 123 124\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=candidate:1188371898 1 udp 2113937151 327c621b-646e-4cd2-89da-e05efd3cdb44.local 60097 typ host generation 0 network-cost 999\r\na=ice-ufrag:L/Dr\r\na=ice-pwd:+K7mhtP/CRcGCgNEu381hibm\r\na=ice-options:trickle\r\na=fingerprint:sha-256 DF:63:80:38:FD:1B:87:30:C3:36:1C:CC:36:EB:F6:FC:F6:B4:BA:AA:61:7D:CA:9C:E1:6E:E4:9A:EE:41:1F:27\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:d820ad88-ef77-44b3-9594-1bb210effc00 a41b53f3-d650-47e2-90e9-96e300885bda\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:118 H264/90000\r\na=rtcp-fb:118 goog-remb\r\na=rtcp-fb:118 transport-cc\r\na=rtcp-fb:118 ccm fir\r\na=rtcp-fb:118 nack\r\na=rtcp-fb:118 nack pli\r\na=fmtp:118 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=64001f\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:122 red/90000\r\na=rtpmap:123 rtx/90000\r\na=fmtp:123 apt=122\r\na=rtpmap:124 ulpfec/90000\r\na=ssrc-group:FID 4250452582 1083322078\r\na=ssrc:4250452582 cname:OMphlp5mWx1QtWBw\r\na=ssrc:4250452582 msid:d820ad88-ef77-44b3-9594-1bb210effc00 a41b53f3-d650-47e2-90e9-96e300885bda\r\na=ssrc:1083322078 cname:OMphlp5mWx1QtWBw\r\na=ssrc:1083322078 msid:d820ad88-ef77-44b3-9594-1bb210effc00 a41b53f3-d650-47e2-90e9-96e300885bda\r\n",
+        "answer": "v=0\r\no=SRS/8.0.74(Free) 2535784501903703221 2 IN IP4 0.0.0.0\r\ns=SRSPublishSession\r\nt=0 0\r\na=ice-lite\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS live/codex-bitrate-1794570486\r\nm=video 9 UDP/TLS/RTP/SAVPF 108 122\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:671284q0\r\na=ice-pwd:2j53ow4722656i9n8688ymz7i9h9g60o\r\na=fingerprint:sha-256 53:3D:5F:11:89:6D:84:E0:37:59:F1:96:29:14:28:C8:E2:56:AC:6F:52:1A:EE:25:C8:C6:44:20:8D:36:2F:2E\r\na=setup:passive\r\na=mid:0\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:122 red/90000\r\na=candidate:0 1 udp 2130706431 10.160.66.161 8000 typ host generation 0\r\na=candidate:1 1 udp 2130706431 172.22.0.1 8000 typ host generation 0\r\na=candidate:2 1 udp 2130706431 192.168.202.1 8000 typ host generation 0\r\na=candidate:3 1 udp 2130706431 192.168.56.1 8000 typ host generation 0\r\na=candidate:4 1 udp 2130706431 192.168.73.1 8000 typ host generation 0\r\n"
+      }
+    },
+    {
+      "variant": "start",
+      "samples": [
+        {
+          "seconds": 2.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 2,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.32,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4308.266,
+              "videoHealth": "healthy",
+              "videoFrames": 116
+            },
+            "v": {
+              "target": 4095520,
+              "bytes": 2853,
+              "frames": 116,
+              "fps": 59,
+              "qp": 1483,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4308266,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "d8e809e9-5453-4821-aa92-9e7c7b87829f"
+            }
+          },
+          "serverKbps": null,
+          "serverFrames": 62
+        },
+        {
+          "seconds": 4.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 4,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.43,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4308.266,
+              "videoHealth": "healthy",
+              "videoFrames": 236
+            },
+            "v": {
+              "target": 4124123,
+              "bytes": 3933,
+              "frames": 236,
+              "fps": 60,
+              "qp": 2923,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4308266,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "a8425635-3c8c-4024-b2ee-f4e31f6aadc4"
+            }
+          },
+          "serverKbps": 90,
+          "serverFrames": 182
+        },
+        {
+          "seconds": 6.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 60,
+              "width": 480,
+              "height": 270,
+              "elapsed": 6,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.45,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 4308.266,
+              "videoHealth": "healthy",
+              "videoFrames": 356
+            },
+            "v": {
+              "target": 4139000,
+              "bytes": 5013,
+              "frames": 356,
+              "fps": 60,
+              "qp": 4363,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 4308266,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "dd5271a7-0ff3-4439-bcde-c55845933e2a"
+            }
+          },
+          "serverKbps": 29,
+          "serverFrames": 303
+        },
+        {
+          "seconds": 8.0,
+          "phase": "static",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4,
+              "fps": 60,
+              "width": 640,
+              "height": 360,
+              "elapsed": 8,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 0.83,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 5724.923,
+              "videoHealth": "healthy",
+              "videoFrames": 476
+            },
+            "v": {
+              "target": 5501000,
+              "bytes": 9533,
+              "frames": 476,
+              "fps": 60,
+              "qp": 5877,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 5724923,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 8000000,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "cc7c1797-6224-4567-93af-419831401dab"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 423
+        },
+        {
+          "seconds": 10.0,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3807,
+              "fps": 11,
+              "width": 960,
+              "height": 540,
+              "elapsed": 10,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 5.55,
+              "queueMs": 73.13,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6304.004,
+              "videoHealth": "healthy",
+              "videoFrames": 506
+            },
+            "v": {
+              "target": 3938333,
+              "bytes": 1223526,
+              "frames": 506,
+              "fps": 11,
+              "qp": 7013,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6304004,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "0842c551-e7b1-4f3a-ba1f-1f711f072321"
+            }
+          },
+          "serverKbps": 3079,
+          "serverFrames": 487
+        },
+        {
+          "seconds": 12.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3456,
+              "fps": 55,
+              "width": 640,
+              "height": 360,
+              "elapsed": 12,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 2.55,
+              "queueMs": 1.24,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 6673.212,
+              "videoHealth": "healthy",
+              "videoFrames": 600
+            },
+            "v": {
+              "target": 3496924,
+              "bytes": 2199035,
+              "frames": 603,
+              "fps": 54,
+              "qp": 10909,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 6673212,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "fc124d91-a89e-4368-9a79-df03967499da"
+            }
+          },
+          "serverKbps": 5869,
+          "serverFrames": 545
+        },
+        {
+          "seconds": 14.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4481,
+              "fps": 58,
+              "width": 640,
+              "height": 360,
+              "elapsed": 14,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 2.44,
+              "queueMs": 1.34,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 7136.693,
+              "videoHealth": "healthy",
+              "videoFrames": 716
+            },
+            "v": {
+              "target": 4726000,
+              "bytes": 3332491,
+              "frames": 720,
+              "fps": 59,
+              "qp": 15569,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 7136693,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "c6cd800d-c5fb-43f7-88b8-335b10f389f2"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 657
+        },
+        {
+          "seconds": 16.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 3551,
+              "fps": 47,
+              "width": 480,
+              "height": 270,
+              "elapsed": 16,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.49,
+              "queueMs": 0.19,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 7281.04,
+              "videoHealth": "healthy",
+              "videoFrames": 816
+            },
+            "v": {
+              "target": 3938333,
+              "bytes": 4305793,
+              "frames": 821,
+              "fps": 49,
+              "qp": 19345,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 7281040,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "199bc338-0c5b-4887-86f1-6f5a2a3cdeed"
+            }
+          },
+          "serverKbps": 6790,
+          "serverFrames": 764
+        },
+        {
+          "seconds": 18.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 5190,
+              "fps": 56,
+              "width": 480,
+              "height": 270,
+              "elapsed": 18,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.41,
+              "queueMs": 0.9,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8028.624,
+              "videoHealth": "healthy",
+              "videoFrames": 929
+            },
+            "v": {
+              "target": 4484153,
+              "bytes": 5581527,
+              "frames": 934,
+              "fps": 56,
+              "qp": 23122,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8028624,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "3bab76a5-2329-49ec-bed8-64533835350c"
+            }
+          },
+          "serverKbps": 7067,
+          "serverFrames": 873
+        },
+        {
+          "seconds": 20.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4775,
+              "fps": 58,
+              "width": 480,
+              "height": 270,
+              "elapsed": 20,
+              "attempts": 0,
+              "rttMs": 1,
+              "encodeMs": 1.37,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8096.099,
+              "videoHealth": "healthy",
+              "videoFrames": 1043
+            },
+            "v": {
+              "target": 4726000,
+              "bytes": 6827565,
+              "frames": 1049,
+              "fps": 59,
+              "qp": 26929,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8096099,
+              "rtt": 0.001
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "757e5258-4597-4193-b3e0-7cf4a862219a"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 985
+        },
+        {
+          "seconds": 22.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4412,
+              "fps": 56,
+              "width": 480,
+              "height": 270,
+              "elapsed": 22,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.49,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8096.099,
+              "videoHealth": "healthy",
+              "videoFrames": 1156
+            },
+            "v": {
+              "target": 4726000,
+              "bytes": 7961156,
+              "frames": 1163,
+              "fps": 57,
+              "qp": 30766,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8096099,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "305b5ccd-f16f-438f-95e7-19fc15c6d755"
+            }
+          },
+          "serverKbps": 7319,
+          "serverFrames": 1100
+        },
+        {
+          "seconds": 24.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4877,
+              "fps": 57,
+              "width": 480,
+              "height": 270,
+              "elapsed": 24,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.14,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8096.099,
+              "videoHealth": "healthy",
+              "videoFrames": 1270
+            },
+            "v": {
+              "target": 4665995,
+              "bytes": 9141265,
+              "frames": 1277,
+              "fps": 57,
+              "qp": 34588,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8096099,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "a8a5586e-60de-4751-85a6-64ce30608fa3"
+            }
+          },
+          "serverKbps": 7170,
+          "serverFrames": 1214
+        },
+        {
+          "seconds": 26.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 4950,
+              "fps": 58,
+              "width": 480,
+              "height": 270,
+              "elapsed": 26,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.46,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8159.581,
+              "videoHealth": "healthy",
+              "videoFrames": 1386
+            },
+            "v": {
+              "target": 4644171,
+              "bytes": 10358495,
+              "frames": 1394,
+              "fps": 59,
+              "qp": 38475,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8159581,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "b549d9d3-4065-49d7-8b41-a48e64ec1888"
+            }
+          },
+          "serverKbps": 0,
+          "serverFrames": 1330
+        },
+        {
+          "seconds": 28.1,
+          "phase": "motion",
+          "sender": {
+            "pub": {
+              "state": "live",
+              "delivery": "peer",
+              "bitrateKbps": 5037,
+              "fps": 59,
+              "width": 480,
+              "height": 270,
+              "elapsed": 28,
+              "attempts": 0,
+              "rttMs": 0,
+              "encodeMs": 1.6,
+              "queueMs": 0,
+              "codec": "H264",
+              "transport": "udp",
+              "qualityLimitationReason": "bandwidth",
+              "availableKbps": 8159.581,
+              "videoHealth": "healthy",
+              "videoFrames": 1501
+            },
+            "v": {
+              "target": 4726000,
+              "bytes": 11535182,
+              "frames": 1509,
+              "fps": 59,
+              "qp": 42326,
+              "quality": "bandwidth",
+              "encoder": null
+            },
+            "pair": {
+              "available": 8159581,
+              "rtt": 0
+            },
+            "parameters": {
+              "codecs": [
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/H264",
+                  "sdpFmtpLine": "level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f",
+                  "payloadType": 108
+                },
+                {
+                  "clockRate": 90000,
+                  "mimeType": "video/red",
+                  "payloadType": 122
+                }
+              ],
+              "headerExtensions": [
+                {
+                  "encrypted": false,
+                  "id": 4,
+                  "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01"
+                }
+              ],
+              "rtcp": {
+                "cname": "daiOxoDbxxfdQpn6",
+                "reducedSize": true
+              },
+              "degradationPreference": "maintain-framerate",
+              "encodings": [
+                {
+                  "active": true,
+                  "adaptivePtime": false,
+                  "maxBitrate": 4726444,
+                  "maxFramerate": 60,
+                  "networkPriority": "high",
+                  "priority": "high",
+                  "scaleResolutionDownBy": 1
+                }
+              ],
+              "transactionId": "bf92347f-802f-47bb-b565-b26d1d87569a"
+            }
+          },
+          "serverKbps": 7234,
+          "serverFrames": 1444
+        }
+      ],
+      "signals": {
+        "offer": "v=0\r\no=- 7901441460208850090 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS a2df4375-2ff4-4329-ab5e-5ceaa66f8538\r\nm=video 9 UDP/TLS/RTP/SAVPF 102 103 108 109 116 117 118 119 104 107 114 115 39 40 96 97 45 46 98 99 100 101 122 123 124\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=candidate:4137505954 1 udp 2113937151 6f5a7778-5436-43a3-a7ce-19cdc7d33f81.local 64416 typ host generation 0 network-cost 999\r\na=ice-ufrag:oH3B\r\na=ice-pwd:jll/SViwvM5MOcuZEQ2YEkJz\r\na=ice-options:trickle\r\na=fingerprint:sha-256 B7:35:FA:CE:17:F7:FA:D6:09:70:EF:DE:6B:0A:53:EC:75:E2:E9:83:B1:1B:8F:15:10:B8:A5:38:DD:60:BA:E5\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:a2df4375-2ff4-4329-ab5e-5ceaa66f8538 bea51603-aa50-4ad6-b223-38c69212724f\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:118 H264/90000\r\na=rtcp-fb:118 goog-remb\r\na=rtcp-fb:118 transport-cc\r\na=rtcp-fb:118 ccm fir\r\na=rtcp-fb:118 nack\r\na=rtcp-fb:118 nack pli\r\na=fmtp:118 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=64001f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f;x-google-start-bitrate=4000;x-google-max-bitrate=8000\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:122 red/90000\r\na=rtpmap:123 rtx/90000\r\na=fmtp:123 apt=122\r\na=rtpmap:124 ulpfec/90000\r\na=ssrc-group:FID 149878037 3752764242\r\na=ssrc:149878037 cname:daiOxoDbxxfdQpn6\r\na=ssrc:149878037 msid:a2df4375-2ff4-4329-ab5e-5ceaa66f8538 bea51603-aa50-4ad6-b223-38c69212724f\r\na=ssrc:3752764242 cname:daiOxoDbxxfdQpn6\r\na=ssrc:3752764242 msid:a2df4375-2ff4-4329-ab5e-5ceaa66f8538 bea51603-aa50-4ad6-b223-38c69212724f\r\n",
+        "answer": "v=0\r\no=SRS/8.0.74(Free) 153849926631037284 2 IN IP4 0.0.0.0\r\ns=SRSPublishSession\r\nt=0 0\r\na=ice-lite\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS live/codex-bitrate-1794570515\r\nm=video 9 UDP/TLS/RTP/SAVPF 108 122\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:h7f96091\r\na=ice-pwd:jqm7x888e53w917v316203m2206d9a47\r\na=fingerprint:sha-256 53:3D:5F:11:89:6D:84:E0:37:59:F1:96:29:14:28:C8:E2:56:AC:6F:52:1A:EE:25:C8:C6:44:20:8D:36:2F:2E\r\na=setup:passive\r\na=mid:0\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:122 red/90000\r\na=candidate:0 1 udp 2130706431 10.160.66.161 8000 typ host generation 0\r\na=candidate:1 1 udp 2130706431 172.22.0.1 8000 typ host generation 0\r\na=candidate:2 1 udp 2130706431 192.168.202.1 8000 typ host generation 0\r\na=candidate:3 1 udp 2130706431 192.168.56.1 8000 typ host generation 0\r\na=candidate:4 1 udp 2130706431 192.168.73.1 8000 typ host generation 0\r\n"
+      }
+    }
+  ]
+}

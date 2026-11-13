@@ -1,4 +1,4 @@
-import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs,videoProgress} from './low-latency.js?v=20261113-stability1';
+import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs,videoProgress} from './low-latency.js?v=20261113-bitrate1';
 /* Browser transports: RFC 9725 WHIP and api.video-browser-to-rtmp Socket.IO 4.
  * Protocol reference (no upstream code copied): apivideo/api.video-browser-to-rtmp
  * e7d4227b025258d41132168157d89c2100facd70, server/src/{connection,types}.ts (MIT).
@@ -240,13 +240,14 @@ export class BroadcastPublisher {
         if (signal.aborted || this._attempt !== attempt) return;
         const parsed=readStreamStats(report,previous?.snapshot);const metrics=parsed.metrics;this._stats.bitrateKbps=metrics.bitrateKbps;this._stats.fps=metrics.fps;this._stats.width=metrics.width||this._stats.width;this._stats.height=metrics.height||this._stats.height;this._stats.rttMs=metrics.rttMs;this._stats.encodeMs=metrics.encodeMs;this._stats.queueMs=metrics.sendQueueMs;
         this._stats.codec=metrics.codec;this._stats.transport=metrics.transport;this._stats.qualityLimitationReason=metrics.qualityLimitationReason;this._stats.availableKbps=metrics.availableKbps;
+        this._stats.videoBitrateKbps=metrics.videoBitrateKbps;this._stats.encoderTargetKbps=metrics.encoderTargetKbps;this._stats.configuredKbps=Math.round(policy.maxBitrate/1000);
         if(videoSenders.length){
           health=videoProgress(health,parsed.snapshot,Date.now());this._stats.videoHealth=health.status;this._stats.videoFrames=parsed.snapshot.videoFrames;
           if(health.status==='stalled'&&this._stats.state==='live'){this._state('stalled');try{this.onRecoverVideo();}catch{/* Recovery must not interrupt transport monitoring. */}}
           else if(health.status==='healthy'&&this._stats.state==='stalled')this._state('live');
           if(health.reconnect)attempt.failed.reject(failure('视频发送停滞，正在重新连接'));
         }
-        previous=parsed;const next=nextStreamBudget(policy,budget,metrics),changed=!budget||next.maxBitrate!==budget.maxBitrate||next.scaleResolutionDownBy!==budget.scaleResolutionDownBy;budget=next;if(changed)await applyBudget(next);
+        previous=parsed;const next=nextStreamBudget(policy,budget,metrics),changed=!budget||next.maxBitrate!==budget.maxBitrate||next.scaleResolutionDownBy!==budget.scaleResolutionDownBy;budget=next;this._stats.budgetKbps=Math.round(next.maxBitrate/1000);if(changed)await applyBudget(next);
       } catch { /* A closed peer has no stats. */ } finally { sampling = false; }
     };
     await sample();
