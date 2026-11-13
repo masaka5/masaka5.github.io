@@ -9,12 +9,12 @@
   },
   "artifacts": {
     "home.js": {
-      "bytes": 787868,
-      "sha256": "ef21895ce01928a8acef46f594cba68fcbe41d790b60f7de614c7174fab01d2e"
+      "bytes": 788013,
+      "sha256": "1acaea30cdde85fb897063eb06abd69ed8b905ed80c6ec9c62099fa7b3fc8deb"
     },
     "home.css": {
-      "bytes": 17058,
-      "sha256": "2c07a9088371052fa6eb8b600974a7eb5f46e73bbcdd3f3faefdc8f20b94163a"
+      "bytes": 17992,
+      "sha256": "8efb5ca4fe2660ae969e0af0effe429c14698180bfe5042f3d482785c87f74ff"
     }
   }
 }
