@@ -103,7 +103,7 @@ const ToolboxCatalog = {
     }
   ],
   "tools": [
-    {"id":"qr-transfer","category":"meetings","name":"动态二维码传输","description":"离线传输 · 断帧补收 · 密码保护","href":"tools/qr-transfer/","icon":"qr-code","tags":["二维码","离线","传输"],"keywords":"动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传","variants":[{"name":"标准","href":"tools/qr-transfer/","source":"toolbox","sourceId":"qr-transfer"}]},
+    {"id":"qr-transfer","category":"meetings","name":"动态二维码传输","description":"喷泉编码 · 离线传输 · 密码保护","href":"tools/qr-transfer/","icon":"qr-code","tags":["二维码","离线","传输"],"keywords":"动态 二维码 QR 文件 文本 数据 传输 WASM Zstandard ZXing 离线 扫码 加密 密码 断帧 续传 喷泉码 5GB Version40","variants":[{"name":"标准","href":"tools/qr-transfer/","source":"toolbox","sourceId":"qr-transfer"}]},
     {"id":"browser-fingerprint","category":"security","name":"浏览器指纹","description":"设备特征 · 指纹检测 · 浏览器对比","href":"tools/browser-fingerprint/","icon":"fingerprint","tags":["NeoPrint","指纹","隐私"],"keywords":"NeoPrint 浏览器 指纹 设备 跨浏览器 检测 本地 隐私 Canvas WebGL WebGPU","variants":[{"name":"标准","href":"tools/browser-fingerprint/","source":"toolbox","sourceId":"browser-fingerprint"}]},
     {"id":"remote","category":"network","name":"远程连接","description":"RDP · VNC · SSH","href":"tools/remote/","icon":"monitor","tags":["远程","设备","网关"],"keywords":"远程桌面 SSH VNC RDP 设备管理 Windows 网关","variants":[{"name":"标准","href":"tools/remote/","source":"toolbox","sourceId":"remote"}]},
     {

@@ -348,5 +348,10 @@
     "name": "@bokuweb/zstd-wasm",
     "version": "0.0.27",
     "license": "MIT"
+  },
+  {
+    "name": "hash-wasm",
+    "version": "4.12.0",
+    "license": "MIT"
   }
 ]
