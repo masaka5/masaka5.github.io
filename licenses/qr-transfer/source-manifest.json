@@ -10,13 +10,13 @@
     "sha256": "da09ec5e5a34305594150757aa5a1c170951bd474d5c2dc01d5de92e6eeb7465"
   },
   "protocol": "PQF2/PFR2/PQS2",
-  "archiveBytes": 162341,
-  "archiveSha256": "973a58338eabf48c1ea05c8efcaccfe908176025765b5c5aa663489898e892e6",
+  "archiveBytes": 171755,
+  "archiveSha256": "136b2bb22c983d2fb855ec0ae9e81b4882fd80e70e9c1ac0597e7eec3377bde2",
   "files": [
     {
       "path": "qr-transfer/build.mjs",
-      "bytes": 5287,
-      "sha256": "e6147d56e64d1af9b6d2bee6d7470fca8c804a1f9d60f27865f9a6658ea853d2"
+      "bytes": 5329,
+      "sha256": "c925b08e3531ae9049424ac2149cb9862649e6547fc3c7e3f0525ab6932a0e4d"
     },
     {
       "path": "qr-transfer/index.html",
@@ -55,8 +55,8 @@
     },
     {
       "path": "qr-transfer/package-source.py",
-      "bytes": 3493,
-      "sha256": "e3a68bce101b3b9765329d11df87a3d78d97502f9b8b0c6f15721835bbad0071"
+      "bytes": 3531,
+      "sha256": "8e36676c61a60b96bc2f1340cab25a8cfbf8bf085053797abdf9ee1597361858"
     },
     {
       "path": "qr-transfer/package.json",
@@ -65,18 +65,18 @@
     },
     {
       "path": "qr-transfer/README.md",
-      "bytes": 4531,
-      "sha256": "490c1754c33f0b667aad1131f353a3152b51722b415970831fbd7afcca321b03"
+      "bytes": 5418,
+      "sha256": "46e4447a5b1471dc9cb9b3d13bf5be8ea833f1708aeb796ceebafa53e45e7e92"
     },
     {
       "path": "qr-transfer/src/camera.mjs",
-      "bytes": 4526,
-      "sha256": "30f5f39d98f9f40c0dbefbe02a7b01a2ec5ad59b1dd79f9fbf4a1bf4af6a33b4"
+      "bytes": 5715,
+      "sha256": "fceaa25d1845bce0d627db13386e43b283fd91901b9fd6eff93c7d0f112f9269"
     },
     {
       "path": "qr-transfer/src/CameraView.jsx",
-      "bytes": 3838,
-      "sha256": "37dd793d63a45d82640765e9466c44fdfc44406f3219678434f443bc85fd8d73"
+      "bytes": 3923,
+      "sha256": "f7b1281c1e8e998dd7d6bf8c5dbe125412f0dc3c2b6d362058b69d46e3495000"
     },
     {
       "path": "qr-transfer/src/client.mjs",
@@ -89,14 +89,19 @@
       "sha256": "394c85803855938c1c821db3cdbaa1c598f26685ab4075f2223c0ef4ab8372fc"
     },
     {
+      "path": "qr-transfer/src/color.mjs",
+      "bytes": 755,
+      "sha256": "fa281b53b2221ee9a529ffc9c6d7d98881b091ca108c41f2c5db96c24ceedb1d"
+    },
+    {
       "path": "qr-transfer/src/decode-pool.mjs",
       "bytes": 1437,
       "sha256": "5b52fa4a7a97117ae0e390bb99f74d92215c1eb658aed99cb753e6774a895364"
     },
     {
       "path": "qr-transfer/src/decode-worker.mjs",
-      "bytes": 2880,
-      "sha256": "40f6422100553aefa9cff1b8e6fea03f6a2339448600963f9e7eaa9c6bcca059"
+      "bytes": 3414,
+      "sha256": "80511735898f52a32a699b62ab5e232fae0e2557f8a25f3d93ff0034baf3bde1"
     },
     {
       "path": "qr-transfer/src/disk.mjs",
@@ -105,13 +110,13 @@
     },
     {
       "path": "qr-transfer/src/fountain-worker.mjs",
-      "bytes": 7496,
-      "sha256": "82c3be48da31f90d783bc529cf74b1771cc8a4db97a8a4e5aef4204d9ec616d8"
+      "bytes": 7616,
+      "sha256": "1c61059cad15ffdf8e31a66d9d3ece724428f0d02595cb81f9c2e23a66ad1ef0"
     },
     {
       "path": "qr-transfer/src/fountain.mjs",
-      "bytes": 6591,
-      "sha256": "9f5441ac8027e11c3cf24b47fb8af094dcc183726cb035590e4029079a701999"
+      "bytes": 6651,
+      "sha256": "7da1dedc12a1345ff2f1d6d0bac3075a496fbaed6a06a7c5a3974fe0f761f169"
     },
     {
       "path": "qr-transfer/src/FountainReceive.jsx",
@@ -120,13 +125,13 @@
     },
     {
       "path": "qr-transfer/src/FountainSend.jsx",
-      "bytes": 12035,
-      "sha256": "e6117e619e041e92992cae334c4237923edbb6cd29488c7ed7d8101ad0b68936"
+      "bytes": 12276,
+      "sha256": "e9b9ee4736b15d7af9877650930263ee32fc38d1118edf9bf8952b994e4bb661"
     },
     {
       "path": "qr-transfer/src/grid.mjs",
-      "bytes": 2727,
-      "sha256": "81a88b159b634f5d0becc9aeae9c13ced43f54a7554c9d924e2a884a226e339f"
+      "bytes": 3476,
+      "sha256": "f8b5ab3aa71cdd2213d33590c6a23e93f37a95bedf182798590b3d96026574a5"
     },
     {
       "path": "qr-transfer/src/main.jsx",
@@ -200,8 +205,8 @@
     },
     {
       "path": "qr-transfer/tests/cache-upgrade.py",
-      "bytes": 5083,
-      "sha256": "4135f53c3b9eed1abe36163f15dc63da3341eb4c3eb9ce30fb696538ff94e848"
+      "bytes": 5226,
+      "sha256": "25532a21dc5cfd0e86772b7c19f94f337ad5b97b4a1648713433c3598bec1737"
     },
     {
       "path": "qr-transfer/tests/camera-browser.py",
@@ -217,6 +222,21 @@
       "path": "qr-transfer/tests/codec.test.mjs",
       "bytes": 1093,
       "sha256": "e836cf1a5fb09d5185861d3df8d8960b8fcec54c0aa1b22d6e277612f5ae26c9"
+    },
+    {
+      "path": "qr-transfer/tests/color-browser.py",
+      "bytes": 6066,
+      "sha256": "b03d7b6284d614e90bf13181e7c572c79bf9f4baf7a62261f878e42756bed213"
+    },
+    {
+      "path": "qr-transfer/tests/color-camera.py",
+      "bytes": 3627,
+      "sha256": "cb7ab068a0da6d35c03af5122d664d2886382f4d74c9b21d1a689a567580d12d"
+    },
+    {
+      "path": "qr-transfer/tests/color.test.mjs",
+      "bytes": 1133,
+      "sha256": "2a93b2326e4c240d9d3b562346d85e2951d2802b7522acc3065fc20508791160"
     },
     {
       "path": "qr-transfer/tests/cross-browser.py",
@@ -235,8 +255,8 @@
     },
     {
       "path": "qr-transfer/tests/fountain-browser.py",
-      "bytes": 5428,
-      "sha256": "4f8d1147a4a35ef1d5ea7d99997be5030d6821170e9c10232b6277078e3d2a88"
+      "bytes": 5747,
+      "sha256": "07714e2c05ef472bb16e480dec2e39d736bd76ec51ed19f6e111385b7e122317"
     },
     {
       "path": "qr-transfer/tests/fountain-camera.py",
@@ -245,13 +265,13 @@
     },
     {
       "path": "qr-transfer/tests/fountain-cross.py",
-      "bytes": 1852,
-      "sha256": "014ea147eadbe3615902017a2f5cb0e106ce70adf775225596fe1964955629ae"
+      "bytes": 2170,
+      "sha256": "7734a2f6f2b720db9b1d23f24ea94bdfed67aaba2d47c2e77702609aff71628e"
     },
     {
       "path": "qr-transfer/tests/fountain-large.py",
-      "bytes": 5328,
-      "sha256": "54e62cd36d417e501ea69858fe471678ca63476bb19fcda81480490ce61e4211"
+      "bytes": 5648,
+      "sha256": "2743386529f74e40c1e87e5d85d455fec9b2118ddeff9f5f33f5c63c35455ce5"
     },
     {
       "path": "qr-transfer/tests/fountain.test.mjs",
@@ -260,13 +280,13 @@
     },
     {
       "path": "qr-transfer/tests/grid-browser.py",
-      "bytes": 4169,
-      "sha256": "d14ba180b48895e29ea662e8f3b05f455b30f0e602a74e37fd6b24dee625a19c"
+      "bytes": 4308,
+      "sha256": "e12b1ca53652064b465d645d2eb114d0e2833a9533cbd7e5a6903d3d3fad9ab7"
     },
     {
       "path": "qr-transfer/tests/grid-camera.py",
-      "bytes": 3727,
-      "sha256": "55c925e5257438b254468faa40398dff0b200a9910de501b79bc40f3c862d852"
+      "bytes": 3870,
+      "sha256": "00990c43ff9d8ebfe619ef9f5aa5365ce238763449a22d95a2f7e316cee4456b"
     },
     {
       "path": "qr-transfer/tests/grid.test.mjs",
@@ -292,6 +312,11 @@
       "path": "qr-transfer/tests/repair-browser.py",
       "bytes": 2205,
       "sha256": "b7991f23ad3604197e264db1ce5872c2da5ccde02960537e6824dd10f9d23469"
+    },
+    {
+      "path": "qr-transfer/tests/repair-color.py",
+      "bytes": 2415,
+      "sha256": "3066591d300a036d3920409bb8bd8b1611c2da4cb54d837f243124d0edf56c90"
     },
     {
       "path": "qr-transfer/tests/storage-browser.py",

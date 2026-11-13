@@ -1,35 +1,36 @@
 {
   "name": "动态二维码传输",
-  "version": "2.1.0",
-  "revision": "8bc8ece846d231a5",
-  "protocol": "PQF2 / PFR2 / PQS2",
-  "encoding": "Decimen multi-QR grid + tracked WASM + systematic GF(2) fountain",
+  "version": "2.2.0",
+  "revision": "2bc70f8bf2b535dc",
+  "protocol": "PQF2 (RGB flag) / PFR2 / PQS2",
+  "encoding": "RGB three-plane multi-QR + Decimen tracked WASM + systematic GF(2) fountain",
   "defaultPayloadBytes": 2916,
+  "defaultMode": "color",
   "files": [
     {
       "file": "index.html",
       "bytes": 3214,
-      "sha256": "589e08cb9ab0236dad559c823fede60bb64fb21f79714b34f7f9f70df75e4c87"
+      "sha256": "411b6415abd70951d6dec7d3d5e7a7b580b36ccba0628bf88cdb70333d679c45"
     },
     {
       "file": "update.html",
       "bytes": 891,
-      "sha256": "6cdf48706ea0d54126e65e4ab25b80b29a4bca616a9223d47240322125d6a2c1"
+      "sha256": "f438dfcf2e77d039d5c7cba8bf391f43a0c3a66c6ad6b5f192189e1877ed755e"
     },
     {
       "file": "sw.js",
       "bytes": 2381,
-      "sha256": "d81f3fefbdc04b177b2b28ce2855981021d8dce74ee288e3a7c6349a234c0ad3"
+      "sha256": "24096dabf5ad56873a9b7f9405c957cfc5caa55c8b03d8752dcafacf590cb409"
     },
     {
       "file": "assets/update.js",
       "bytes": 1052,
-      "sha256": "043e3bfc217ee9e2a16180a26f959ffac9b6ff1fcbac8553a841f4c74d00bd2f"
+      "sha256": "f503f087976dc0fd2f98021bab944e425d680ba62c0f4152fd07056f13e554f8"
     },
     {
       "file": "assets/app.js",
-      "bytes": 940232,
-      "sha256": "c9282ba191ab2162fec9088b8afc260274bf791568990ad661d38962d7c06e5b"
+      "bytes": 942551,
+      "sha256": "6bd036cc8fa552ea14dfe41ea319d9d724868fe85aaa4a067015c4120ac4f8d6"
     },
     {
       "file": "assets/app.css",
@@ -38,8 +39,8 @@
     },
     {
       "file": "assets/worker.js",
-      "bytes": 64900,
-      "sha256": "8be443ff84e7655c2a2f81ac436ff0586de0d19b55581804bb86ba9aa43ff92d"
+      "bytes": 65544,
+      "sha256": "6e2c1025c8ebb8f49cfa27dec9cc2622905ff874496b194b73b8994e3272a56a"
     },
     {
       "file": "assets/zstd.wasm",
@@ -48,8 +49,8 @@
     },
     {
       "file": "assets/decode-worker.js",
-      "bytes": 29393,
-      "sha256": "da3803e5774b1a57d409efc9a2a4ab70784ba02caa8bdc5a2fad22d2ed824489"
+      "bytes": 31449,
+      "sha256": "81fc0949bf997db773a8337675398c043aa9780301a151ec456ff688e404b311"
     },
     {
       "file": "assets/decimen.wasm.gz",
