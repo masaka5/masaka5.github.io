@@ -102,6 +102,11 @@ class StaticKV {
 
 export async function loadSpark({ profile=selectModelProfile(),base,variant,staticKV=true,onProgress,onDeviceLost }={}) {
   profile=profile||MODEL_PROFILES.desktop;
+  // WebGPU EP intentionally keeps shape/index helpers on CPU. ORT reports that
+  // expected mixed execution as a warning during session creation; keep real
+  // initialization and inference failures visible without flooding production
+  // consoles with a non-actionable provider-assignment message.
+  ort.env.logLevel='error';
   base ||= `https://huggingface.co/${profile.model}/resolve/${profile.revision}`;
   const t0 = performance.now();
   const gpu = await webgpuInfo();
