@@ -15,9 +15,10 @@
 .chat-feed{overflow:auto;min-height:0;padding:26px max(4px,8%);scrollbar-width:thin;scroll-padding:20px}
 .chat-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
 .chat-empty h2{font-size:26px;font-weight:500;text-wrap:balance}.chat-empty p{color:var(--muted);font-size:12px}.chat-empty .web-note{margin-top:4px;max-width:340px}.empty-actions{display:flex;gap:10px}
-.message{max-width:900px;margin:0 auto 26px;min-width:0}.message-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:12px;color:var(--muted)}.message-head strong{font-weight:500;color:var(--text)}.message-head button{margin-left:auto}.message-body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.85;font-size:15px}
+.message{max-width:900px;margin:0 auto 26px;min-width:0}.message-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:12px;color:var(--muted)}.message-head strong{font-weight:500;color:var(--text)}.message-head button{margin-left:auto}.message-head .code-toggle{margin-left:0}.message-body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.85;font-size:15px}
 .message[data-role='user']{background:#edf2fb;border:1px solid #e1e8f5;padding:13px 17px;border-radius:10px;margin-right:0;max-width:82%}.message[data-state='error'] .message-body{color:var(--red)}.message[data-state='working'] .message-head strong{color:var(--blue)}
 .thinking{margin:0 0 10px;border-left:2px solid #cbd8f5;padding-left:11px;color:var(--muted);font-size:13px}.thinking summary{cursor:pointer;color:var(--blue);font-size:12px}.thinking div{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;margin-top:6px}
+.code-block{margin:14px 0;border:1px solid #d7e0ef;border-radius:10px;background:#f7f9fc;overflow:hidden;white-space:normal}.code-summary{display:flex;align-items:center;min-height:32px;padding:7px 11px;color:#536581;font-size:11px;cursor:pointer;list-style-position:inside}.code-summary::marker{color:#8194b5}.code-language{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:600}.code-toolbar{display:flex;justify-content:flex-end;padding:0 10px 5px}.code-copy{margin:0!important;padding:4px 8px;font-size:11px}.code-block pre{margin:0;padding:10px 12px;overflow:auto;border-top:1px solid #e5ebf4;background:#f1f4f9;white-space:pre;line-height:1.6;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}.code-block code{font:inherit;color:#24324a}
 .message-images{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.message-images img{max-width:180px;max-height:120px;border-radius:6px;object-fit:contain}.message-files{font-size:12px;color:var(--muted);margin-top:8px}
 .composer{margin:0 max(0px,8%) 8px;border:1px solid #d5deec;border-radius:12px;background:#fff;padding:14px 17px;box-shadow:0 2px 8px #202d4006}.composer:focus-within{border-color:#8aa7eb}
 .composer textarea{border:0;padding:0;outline:none;box-shadow:none;min-height:60px;max-height:140px;height:66px;font:14px/1.7 'Segoe UI','Microsoft YaHei',sans-serif}.composer textarea:focus-visible{outline:none}
@@ -65,6 +66,7 @@ dialog{overscroll-behavior:contain}
   .message-head{gap:7px;margin-bottom:5px}
   .message-head button{padding:5px 4px}
   .message-body{font-size:14px;line-height:1.75}
+  .code-block{margin:11px 0;border-radius:8px}.code-summary{padding:6px 9px}.code-toolbar{padding:0 8px 4px}.code-block pre{padding:9px 10px;font-size:11px;max-width:100%;}
   .message-images img{max-width:min(180px,72vw);max-height:120px}
   .composer{
     margin:0 0 6px;

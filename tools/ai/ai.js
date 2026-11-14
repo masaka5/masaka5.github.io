@@ -1,8 +1,9 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-workerfix1';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-workerfix1';
-import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-workerfix1';
-import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-workerfix1';
-import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-workerfix1';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-codeblocks1';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-codeblocks1';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-codeblocks1';
+import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-codeblocks1';
+import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-codeblocks1';
+import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks1';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
@@ -55,7 +56,7 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-workerfix
       if(item.role==='assistant'){const reply=message('assistant',item.content);reply.card.dataset.state='complete';if(item.raw)renderLocal(reply,item.raw,true);}
       else message('user',item.display??(typeof item.content==='string'?item.content:item.content.filter(p=>p.type==='text').map(p=>p.text).join('\n')),item.files||[]);
     }
-    if(interrupted?.mode===mode()){const reply=message('assistant','生成已中断，原始消息已保留。');reply.card.dataset.state='error';reply.label.textContent='未完成';if(interrupted.raw&&localMode)renderLocal(reply,interrupted.raw,true);else if(interrupted.raw)reply.body.textContent=interrupted.raw;}
+    if(interrupted?.mode===mode()){const reply=message('assistant','生成已中断，原始消息已保留。');reply.card.dataset.state='error';reply.label.textContent='未完成';if(interrupted.raw&&localMode)renderLocal(reply,interrupted.raw,true);else if(interrupted.raw)reply.setText(interrupted.raw);}
     renderMemory();
   }
   let localSubmission=null;
@@ -143,20 +144,33 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-workerfix
     $('chatEmpty').hidden=true;
     const card=Ops.node('article','message');card.dataset.role=role;
     const head=Ops.node('div','message-head'),label=Ops.node('strong','',role==='user'?'你':'助手');head.append(label);
-    const body=Ops.node('div','message-body',text);card.append(head,body);
+    const body=Ops.node('div','message-body');card.append(head,body);
+    let currentText=String(text??''),codeHidden=false;
+    const codeToggle=Ops.node('button','text-button code-toggle','隐藏代码');codeToggle.type='button';codeToggle.hidden=true;codeToggle.setAttribute('aria-label','隐藏或显示代码块');
+    const setText=value=>{
+      currentText=String(value??'');
+      if(role==='assistant'){
+        const rendered=renderMessageBody(body,currentText,{onCopy:code=>Ops.copy(code,$('chatStatus'))});
+        codeToggle.hidden=!rendered.codeBlocks;
+        codeToggle.textContent=codeHidden?'显示代码':'隐藏代码';
+        codeToggle.setAttribute('aria-label',codeHidden?'显示全部代码':'隐藏全部代码');
+        rendered.toggleAll?.(!codeHidden);
+      }else body.textContent=currentText;
+    };
     if(role==='assistant'){
       const copy=Ops.node('button','text-button','复制');copy.type='button';copy.onclick=()=>Ops.copy(body.textContent,$('chatStatus'));head.append(copy);
+      codeToggle.onclick=()=>{codeHidden=!codeHidden;setText(currentText);};head.append(codeToggle);
     }
     const images=Ops.node('div','message-images');
     files.filter(file=>file.image).forEach(file=>{const img=document.createElement('img');img.src=file.data;img.alt=file.name;images.append(img);});
     if(images.childElementCount)card.append(images);
     if(files.length)card.append(Ops.node('p','message-files',files.map(file=>file.name).join(' · ')));
     $('chatFeed').append(card);$('chatFeed').scrollTop=$('chatFeed').scrollHeight;
-    $('exportChat').disabled=false;return {card,body,label};
+    $('exportChat').disabled=false;setText(text);return {card,body,label,setText,getText:()=>currentText,codeToggle};
   }
   function renderLocal(reply,raw,finished=false){
     const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;
-    const parsed=splitThinking(raw);reply.body.textContent=readTaskReply(parsed.answer).text||(finished?'生成未完成，消息已保留。':parsed.thinking?'正在思考…':'正在生成…');
+    const parsed=splitThinking(raw);reply.setText(readTaskReply(parsed.answer).text||(finished?'生成未完成，消息已保留。':parsed.thinking?'正在思考…':'正在生成…'));
     let details=reply.card.querySelector('.thinking');
     if(!details){details=document.createElement('details');details.className='thinking';const summary=document.createElement('summary');summary.textContent='思考过程';details.append(summary,document.createElement('div'));reply.card.insertBefore(details,reply.body);}
     details.querySelector('div').textContent=parsed.thinking;details.hidden=!parsed.thinking;
@@ -172,7 +186,7 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-workerfix
     beginTask(text);interrupted={mode:'local',raw:''};await persist();
     const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
     try{const answer=await localClient.ask(localHistory,{id:reply.id,task:currentTask()});localRaw=answer;const finalAnswer=completeReply(splitThinking(answer).answer);if(!finalAnswer.trim())throw Error('模型未返回答案，消息已保留。');renderLocal(reply,answer,true);localHistory.push({role:'assistant',content:finalAnswer,raw:answer});reply.card.dataset.state='complete';interrupted=null;$('prompt').value='';attachments=[];renderAttachments();status('');}
-    catch(error){interrupted={mode:'local',raw:localRaw};tasks.local={...tasks.local,status:'pending'};renderMemory();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.body.textContent=error.message||'本地生成失败，请重试。';else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
+    catch(error){interrupted={mode:'local',raw:localRaw};tasks.local={...tasks.local,status:'pending'};renderMemory();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.setText(error.message||'本地生成失败，请重试。');else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
     finally{localBusy=false;localActive=null;localSubmission=null;controls();await persist();$('prompt').focus();}
   }
   function content(text,files){
@@ -253,19 +267,19 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-workerfix
       while(reason==='length'){
        status('生成中…');
        let result;
-       try{result=await request(withTask(inference),value=>{const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;reply.body.textContent=readTaskReply(answer+value).text;interrupted={mode:'api',raw:answer+value};scheduleSave();if(follow)feed.scrollTop=feed.scrollHeight;});}
+       try{result=await request(withTask(inference),value=>{const feed=$('chatFeed'),follow=feed.scrollHeight-feed.scrollTop-feed.clientHeight<90;reply.setText(readTaskReply(answer+value).text);interrupted={mode:'api',raw:answer+value};scheduleSave();if(follow)feed.scrollTop=feed.scrollHeight;});}
        catch(error){if(error.overflow&&!recover){recover=true;apiCheckpoint=null;inference=await project(inference,true);continue;}throw error;}
        answer+=result.text;reason=result.stopReason;
        if(reason==='length'){apiCheckpoint=null;inference=await project([...inference,{role:'assistant',content:result.text},{role:'user',content:'接着上文继续，不要重复已输出的内容。'}]);}
       }
       if(signal.aborted)throw new DOMException('Aborted','AbortError');
-      answer=completeReply(answer);history.push({role:'assistant',content:answer});reply.body.textContent=answer;reply.card.dataset.state='complete';interrupted=null;
+      answer=completeReply(answer);history.push({role:'assistant',content:answer});reply.setText(answer);reply.card.dataset.state='complete';interrupted=null;
       $('prompt').value='';attachments=[];renderAttachments();status('');
     }catch(error){
       tasks.api={...tasks.api,status:'pending'};renderMemory();
       const explanation=signal.aborted?'已停止，消息和附件已保留。':error instanceof TypeError?'无法连接接口，请检查地址、网络及跨域设置。':error.message;
       sent.card.dataset.state='error';reply.card.dataset.state='error';reply.label.textContent='未完成';
-      reply.body.textContent=(reply.body.textContent==='正在等待回复…'?'':reply.body.textContent+'\n\n')+explanation;status(explanation,true);
+      reply.setText((reply.getText()==='正在等待回复…'?'':reply.getText()+'\n\n')+explanation);status(explanation,true);
     }finally{controller=null;controls();await persist();$('prompt').focus();}
   };
   $('exportChat').onclick=()=>{

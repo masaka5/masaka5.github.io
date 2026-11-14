@@ -1,5 +1,5 @@
 {
-  "version": "20261114-4b-workerfix1",
+  "version": "20261114-4b-codeblocks1",
   "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
   "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
   "quantization": "4B q4f16 / q4",
@@ -11,6 +11,7 @@
   "cache": "64MiB 可恢复 Cache API 分片",
   "files": [
     "local-ai-client.js",
+    "../message-render.mjs",
     "local-ai-worker.js",
     "pi-runtime.js"
   ],
