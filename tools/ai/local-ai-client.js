@@ -7,7 +7,12 @@ export class LocalAiClient{
   if(this.worker)return;
   const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-4b-mobilefix1',import.meta.url),{type:'module'});
   worker.onmessage=event=>{if(this.worker===worker)this.message(event.data||{});};
-  worker.onerror=event=>{event.preventDefault?.();if(this.worker===worker)this.fail(event.message?`本地模型运行中断：${event.message}`:'本地模型运行中断，请重试。');};
+  worker.onerror=event=>{
+   event.preventDefault?.();
+   if(this.worker!==worker)return;
+   const detail=[event.message,event.filename,event.lineno&&`line ${event.lineno}`,event.colno&&`col ${event.colno}`].filter(Boolean).join(' · ');
+   this.fail(detail?`本地模型运行中断：${detail}`:'本地模型运行中断，请重试。');
+  };
   worker.onmessageerror=()=>{if(this.worker===worker)this.fail('本地模型通信中断，请重试。');};
  }
  message(message){
