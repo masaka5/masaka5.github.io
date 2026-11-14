@@ -9,17 +9,17 @@
     {
       "path": "index.html",
       "bytes": 816,
-      "sha256": "5936fc44cd5220647907260081a99687e1766dfd025ae3d50c65bb397b522f7f"
+      "sha256": "794cc2d28ae29d95e1a1e593befb5a876ce2511c9a64fffe394fdb70ccdec3d6"
     },
     {
-      "path": "assets/index-Df6fyf_V.css",
-      "bytes": 19436,
-      "sha256": "94ecadad3a76db82a7edec55602786904f09f82313892110b1105f6f2b981ec5"
+      "path": "assets/index-BHTkP_dW.css",
+      "bytes": 28962,
+      "sha256": "379e692b92d74bd3b88b53bb10d91ce9813762b0913f2f5a41d73c3680976f20"
     },
     {
-      "path": "assets/index-DEK__hnG.js",
-      "bytes": 481723,
-      "sha256": "43c9c01454035da11eee72e63e467b02bbc99c9a5af1979fff8852cfb36b186d"
+      "path": "assets/index-bb1UZQrD.js",
+      "bytes": 500913,
+      "sha256": "feef583984ab0d94247dc9cced55598958abe7a073f529ffe335168d8e177f35"
     },
     {
       "path": "scrcpy-server-v5.0.1",
