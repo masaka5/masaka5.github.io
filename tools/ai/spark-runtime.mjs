@@ -111,10 +111,6 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   ort.env.wasm.wasmPaths=new URL('./ort/',import.meta.url).href;
   const cache=await openModelCache({profile});
   const meta=await cache.json(`${base}/spark.json`);
-  // Several mobile WebGPU implementations advertise shader-f16 but fail while
-  // compiling the q4f16 graph (ORT error 9971848). The official q4 graph uses
-  // the same INT4 weights with float32 activations and is the portable mobile
-  // path; keep q4f16 as the faster desktop default.
   // 4B remains the only profile on every device. Mobile browsers use the
   // smaller f16 activation graph when the GPU supports it, with q4 fallback.
   variant ||= gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4";
