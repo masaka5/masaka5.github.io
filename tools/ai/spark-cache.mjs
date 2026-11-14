@@ -83,12 +83,12 @@ export class ModelCache{
   return buffer;
  }
 }
-export async function openModelCache({profile=MODEL_PROFILES.desktop,onState=()=>{},chunkSize}={}){
+export async function openModelCache({profile=MODEL_PROFILES.desktop,onState=()=>{},chunkSize,nav=globalThis.navigator}={}){
  let cache=null;
  // Cleanup is a migration only; cache/storage failures must not prevent inference.
  try{await removeLegacyModelCache();}catch{}
  const key=`pocket-spark-${profile.id}-${profile.revision}`;
  try{cache=await globalThis.caches?.open(key);}catch{cache=null;}
- const mobileChunk=isMobileBrowser() ? 16*1024*1024 : 64*1024*1024;
+ const mobileChunk=isMobileBrowser(nav) ? 16*1024*1024 : 64*1024*1024;
  return new ModelCache({cache,onState,chunkSize:chunkSize??mobileChunk});
 }
