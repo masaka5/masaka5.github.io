@@ -78,10 +78,10 @@ const summaryBuild = await build({
     },
   ],
 });
-const files = ["app.js", "app.css", "summary-worker.js"],
+const files = ["app.js", "app.css", "summary-worker.js", "../../assets/tool-use.mjs", "../../assets/usage.js", "../../assets/usage-config.json"],
   artifacts = {};
 for (const file of files) {
-  const bytes = await readFile(path.join(root, "assets", file));
+  const bytes = await readFile(file.startsWith("../../") ? path.resolve(root, file) : path.join(root, "assets", file));
   artifacts[file] = {
     bytes: bytes.length,
     sha256: createHash("sha256").update(bytes).digest("hex"),

@@ -4,7 +4,7 @@
   "model": "Fun-ASR-Nano INT8",
   "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
   "summary": "Spark-X2.6-4B Q4 + Pi; direct-answer document mode",
-  "version": "12ad432f6c5f",
+  "version": "a27d75c27ee6",
   "artifacts": {
     "app.js": {
       "bytes": 925884,
@@ -17,6 +17,18 @@
     "summary-worker.js": {
       "bytes": 111569,
       "sha256": "482ba68c20f8cc914a95681fd0a566209bd843cb955e1c00f2ca32c0cce6d2f3"
+    },
+    "../../assets/tool-use.mjs": {
+      "bytes": 1715,
+      "sha256": "186109389c641a8849eddebac4fb9e3840e0189e49147db7b8a882a3cb4f2c34"
+    },
+    "../../assets/usage.js": {
+      "bytes": 3793,
+      "sha256": "bc4f56299f7bd39d0316403e9283c88f09d70e288ce5c53f2b311dd1507dd80c"
+    },
+    "../../assets/usage-config.json": {
+      "bytes": 153,
+      "sha256": "29b9b2a7be521ca89034ed9c82e4477b0f2b7d1bd8eddf3287d8e77af75974a6"
     },
     "client.mjs": {
       "bytes": 1738,
