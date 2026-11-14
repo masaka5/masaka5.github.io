@@ -7,7 +7,7 @@
 import * as ort from "onnxruntime-web/webgpu";
 import { loadChat } from "./spark-chat.mjs";
 
-import {MODEL_BASE,MODEL_SIZES,openModelCache} from "./spark-cache.mjs";
+import {MODEL_PROFILES,selectModelProfile,openModelCache} from "./spark-cache.mjs";
 function argmax(x) {
   let best = 0;
   let max = x[0];
@@ -99,14 +99,16 @@ class StaticKV {
   }
 }
 
-export async function loadSpark({ base = MODEL_BASE, variant, staticKV = true, onProgress, onDeviceLost } = {}) {
+export async function loadSpark({ profile=selectModelProfile(),base,variant,staticKV=true,onProgress,onDeviceLost }={}) {
+  profile=profile||MODEL_PROFILES.desktop;
+  base ||= `https://huggingface.co/${profile.model}/resolve/${profile.revision}`;
   const t0 = performance.now();
   const gpu = await webgpuInfo();
   if (!gpu)
     throw new Error("WebGPU is not available. Use a recent Chrome or Edge (113+) on desktop, or Chrome 121+ on Android; on Linux enable chrome://flags/#enable-unsafe-webgpu.");
   ort.env.wasm.numThreads=1;
   ort.env.wasm.wasmPaths=new URL('./ort/',import.meta.url).href;
-  const cache=await openModelCache();
+  const cache=await openModelCache({profile});
   const meta=await cache.json(`${base}/spark.json`);
   variant ||= gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4";
   const v = meta.variants[variant];
@@ -129,10 +131,11 @@ export async function loadSpark({ base = MODEL_BASE, variant, staticKV = true, o
   // The downloaded bytes (2.8 GB) live only inside this function: once ORT has uploaded the weights to
   // the GPU nothing references them, so the page does not keep a second copy of the model in RAM.
   const { session, tDownload } = await (async () => {
-    const [graph, ...chunks] = await Promise.all([
-      cache.bytes(`${base}/${v.file}`,MODEL_SIZES[v.file]),
-      ...v.external_data.map((f) => cache.bytes(`${base}/${f}`,MODEL_SIZES[f],tick)),
-    ]);
+    // Keep one large response in flight on phones. Concurrent multi-GB
+    // allocations can fail before the first progress callback is delivered.
+    const graph=await cache.bytes(`${base}/${v.file}`,profile.sizes[v.file],tick);
+    const chunks=[];
+    for(const f of v.external_data)chunks.push(await cache.bytes(`${base}/${f}`,profile.sizes[f],tick));
     const tDownload = performance.now();
     ort.env.webgpu.powerPreference = "high-performance";
     ort.env.webgpu.adapter = gpu.adapter;
@@ -275,7 +278,9 @@ export async function loadSpark({ base = MODEL_BASE, variant, staticKV = true, o
   }
 
   return {
-    model: meta.model ?? null,
+    model: profile.model,
+    label: profile.label,
+    profile: profile.id,
     contextWindow:4096,
     cacheStored:cache.stored,
     cacheHits:cache.hits,

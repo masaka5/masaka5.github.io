@@ -1,14 +1,16 @@
 {
-  "version": "20261114-context2",
+  "version": "20261114-mobile2",
   "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
   "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
+  "mobileModel": "mohdmahmodi/Spark-X2.6-1.7B-ONNX-WebGPU",
+  "mobileRevision": "fda6533f2fd90264a0b9df86167be1a230130d90",
   "quantization": "q4f16",
   "runtime": "ONNX Runtime Web 1.31.0-dev.20260918-bc8e7ed75",
   "agentRuntime": "@earendil-works/pi-agent-core 1.5.2",
   "upstream": "https://github.com/earendil-works/pi",
   "upstreamCommit": "21e4cb80dddd4330806247818b1f4ec19af95fa5",
   "context": "Token-aware checkpoint projection; original transcript retained",
-  "cache": "64MiB resumable Cache API chunks + offline service worker",
+  "cache": "移动端 16MiB / 桌面端 64MiB 可恢复 Cache API 分片",
   "files": [
     "local-ai-client.js",
     "local-ai-worker.js",

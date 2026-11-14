@@ -1,15 +1,15 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-context2';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-context2';
-import {shouldSend} from './chat-shortcuts.mjs?v=20261114-context2';
-import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-context2';
-import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-context2';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-mobile2';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-mobile2';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-mobile2';
+import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-mobile2';
+import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-mobile2';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
   const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
   const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
-  let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID();
-  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{if(localMode){$('modelLabel').textContent=info.label+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);scheduleSave();}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);scheduleSave();}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onContext:event=>contextEvent(event),onCheckpoint:()=>void persist(),onError:error=>status(error,true)});
+  let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID(),localLabel=LOCAL_LABEL;
+  const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{localLabel=info.label||LOCAL_LABEL;if(localMode){$('modelLabel').textContent=localLabel+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);scheduleSave();}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);scheduleSave();}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onContext:event=>contextEvent(event),onCheckpoint:()=>void persist(),onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
   const store=new ConversationStore(),tasks={local:null,api:null},contexts={local:null,api:null},archivedTasks=[];
   let saveTimer=null,restoring=true,storageProblem=false,interrupted=null;
@@ -67,7 +67,7 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-context2';
     document.querySelectorAll('.attachment button').forEach(button=>button.disabled=busy||reading);
   }
   function clearChat(){
-    history=[];localHistory=[];attachments=[];localRaw='';localActive=null;localClient.resetContext();apiCheckpoint=null;apiSessionId=crypto.randomUUID();if(localMode)$('modelLabel').textContent=LOCAL_LABEL+(localClient.ready?' · WebGPU':' · 未加载');$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
+    history=[];localHistory=[];attachments=[];localRaw='';localActive=null;localClient.resetContext();apiCheckpoint=null;apiSessionId=crypto.randomUUID();if(localMode)$('modelLabel').textContent=localLabel+(localClient.ready?' · WebGPU':' · 未加载');$('attachments').replaceChildren();$('chatFeed').replaceChildren($('chatEmpty'));
     tasks.local=null;tasks.api=null;contexts.local=null;contexts.api=null;archivedTasks.length=0;interrupted=null;
     $('chatEmpty').hidden=false;$('exportChat').disabled=true;$('prompt').value='';status('');renderMemory();void persist();
   }
@@ -83,7 +83,7 @@ import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-context2';
   $('openSettings').onclick=$('setupChat').onclick=()=>{$('settingsStatus').textContent='';$('settings').showModal();};
   async function openLocal(){
     if(!localMode){localMode=true;renderTranscript();void persist();}$('modelLabel').textContent=LOCAL_LABEL+' · 准备中';status('正在准备模型…');
-    try{await navigator.storage?.persist?.().catch(()=>false);await localClient.load();$('modelLabel').textContent=LOCAL_LABEL+' · WebGPU';}catch(error){$('modelLabel').textContent=LOCAL_LABEL+' · 未加载';status(error.message||'本地模型启动失败。',true);}
+    try{await navigator.storage?.persist?.().catch(()=>false);await localClient.load();$('modelLabel').textContent=localLabel+' · WebGPU';}catch(error){$('modelLabel').textContent=localLabel+' · 未加载';status(error.message||'本地模型启动失败。',true);}
   }
   $('localChat').onclick=$('useLocal').onclick=()=>openLocal();
   $('closeSettings').onclick=()=>$('settings').close();

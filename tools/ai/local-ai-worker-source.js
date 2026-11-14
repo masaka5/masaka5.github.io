@@ -1,20 +1,22 @@
 import {loadSpark} from './spark-runtime.mjs';
 import {LOCAL_MODEL,splitThinking} from './local-ai-core.mjs';
+import {selectModelProfile} from './spark-cache.mjs';
 import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs';
 import {runLocalTurn} from './local-ai-generation.mjs';
 import {taskContext} from './conversation-journal.mjs';
 
-let generator=null,loading=null,active=null;
+let generator=null,loading=null,active=null,profile=null;
 const device='webgpu',post=message=>self.postMessage(message);
 async function load(){
  if(generator)return generator;if(loading)return loading;
  loading=(async()=>{
-  post({type:'progress',value:0,status:'准备 Spark Q4'});
-  generator=await loadSpark({
+  profile=selectModelProfile();
+  post({type:'progress',value:0,status:`准备 ${profile.label}`});
+  generator=await loadSpark({profile,
    onProgress:info=>post({type:'progress',value:info.loaded/info.total,status:info.downloadedBytes?'下载模型':'读取模型缓存',cacheStored:info.cacheStored}),
    onDeviceLost:()=>{generator=null;active?.controller.abort(Error('WebGPU device lost'));post({type:'error',code:'WebGPU device lost'});}
   });
-  post({type:'ready',device,model:LOCAL_MODEL,cacheStored:generator.cacheStored,variant:generator.variant,contextWindow:generator.contextWindow});return generator;
+  post({type:'ready',device,model:generator.model||LOCAL_MODEL,label:generator.label||profile.label,profile:generator.profile||profile.id,cacheStored:generator.cacheStored,variant:generator.variant,contextWindow:generator.contextWindow});return generator;
  })();try{return await loading;}finally{loading=null;}
 }
 function runtime(model){
