@@ -9,7 +9,7 @@
     {
       "path": "index.html",
       "bytes": 879,
-      "sha256": "61d85ac052a86ce6c8e5512435bd52c2e3c96445679a50b28318deb6dd8f5a93"
+      "sha256": "6f19847396d24f75ef91e797cd3506d97a8982eb5a3dd4903cade5f24df1ef35"
     },
     {
       "path": "favicon.svg",
@@ -17,12 +17,12 @@
       "sha256": "1c9798afb3971959e6bca064e97aaeddc0498bbab587e2fb289a2fade3d10d21"
     },
     {
-      "path": "assets/index-BRho4z5W.css",
-      "bytes": 31162,
-      "sha256": "570d13c00ee3409ba15d5f192c571a4a718ddff1b47a952e7ebe1046f1c7ba0d"
+      "path": "assets/index-BXIy-nQJ.css",
+      "bytes": 32816,
+      "sha256": "edd92dfada725d6ceb014b9f545bed60253f7838dddb96cee770e2054c5c3d4c"
     },
     {
-      "path": "assets/index-DAkMsz_z.js",
+      "path": "assets/index-B__HzuXm.js",
       "bytes": 505538,
       "sha256": "e85113be1c51537fa6af6031f26a10d0988bbb02af061a89b71e4f305130b370"
     },
