@@ -1,10 +1,10 @@
 {
-  "version": "20261114-mobile3",
+  "version": "20261114-mobile4",
   "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
   "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
   "mobileModel": "mohdmahmodi/Spark-X2.6-1.7B-ONNX-WebGPU",
   "mobileRevision": "fda6533f2fd90264a0b9df86167be1a230130d90",
-  "quantization": "q4f16",
+  "quantization": "desktop q4f16 / mobile q4",
   "runtime": "ONNX Runtime Web 1.31.0-dev.20260918-bc8e7ed75",
   "agentRuntime": "@earendil-works/pi-agent-core 1.5.2",
   "upstream": "https://github.com/earendil-works/pi",

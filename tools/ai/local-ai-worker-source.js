@@ -73,13 +73,14 @@ async function generate(message){
   });
   signal.throwIfAborted();post({type:'done',id,text:result.text,device});
  }catch(error){
+  console.error('[Spark worker error]',error?.stack||error?.message||error);
   if(signal.aborted)post({type:'cancelled',id});
-  else post({type:'error',id,code:String(error?.message||'local-model-error')});
+  else post({type:'error',id,code:String(error?.stack||error?.message||'local-model-error')});
  }finally{if(active===task)active=null;}
 }
 self.onmessage=event=>{
  const message=event.data||{};
- if(message.type==='init')load().catch(error=>post({type:'error',code:String(error?.message||'local-model-error')}));
+ if(message.type==='init')load().catch(error=>{console.error('[Spark worker load error]',error?.stack||error?.message||error);post({type:'error',code:String(error?.stack||error?.message||'local-model-error')});});
  else if(message.type==='generate')void generate(message);
  else if(message.type==='cancel'&&active?.id===message.id)active.controller.abort(Error('已停止'));
  else if(message.type==='reset'&&!active)generator?.resetContext();

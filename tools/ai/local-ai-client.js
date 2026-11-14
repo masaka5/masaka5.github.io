@@ -1,11 +1,11 @@
-import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-mobile3';
+import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-mobile4';
 export class LocalAiClient{
  constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onContext=()=>{},onCheckpoint=()=>{},onDone=()=>{},onError=()=>{}}={}){
   this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
  }
  ensureWorker(){
   if(this.worker)return;
-  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-mobile3',import.meta.url),{type:'module'});
+  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-mobile4',import.meta.url),{type:'module'});
   worker.onmessage=event=>{if(this.worker===worker)this.message(event.data||{});};
   worker.onerror=event=>{event.preventDefault?.();if(this.worker===worker)this.fail('本地模型运行中断，请重试。');};
   worker.onmessageerror=()=>{if(this.worker===worker)this.fail('本地模型通信中断，请重试。');};
@@ -22,7 +22,7 @@ export class LocalAiClient{
   else if(message.type==='checkpoint'&&item){this.checkpoint=message.checkpoint;this.handlers.onCheckpoint(this.checkpoint);}
   else if(message.type==='done'&&item){this.pending.delete(message.id);item.clear();this.handlers.onDone(message.id,message.text,message.device);item.resolve(message.text);}
   else if(message.type==='cancelled'&&item){this.pending.delete(message.id);item.clear();item.reject(Error('已停止本地生成。'));}
-  else if(message.type==='error'&&(!message.id||item))this.fail(localError(message.code));
+ else if(message.type==='error'&&(!message.id||item)){console.error('[Spark local error]',message.code);this.fail(localError(message.code));}
  }
  load(){this.ensureWorker();if(this.ready)return Promise.resolve();if(this.loading)return this.loading;this.loading=new Promise((resolve,reject)=>{this.loadDeferred={resolve,reject};});this.worker.postMessage({type:'init'});return this.loading;}
  ask(messages,{id=crypto.randomUUID(),idleMs=120000,firstTokenMs=0,maxMs=0,task=null}={}){

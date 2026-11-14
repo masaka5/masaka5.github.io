@@ -111,7 +111,11 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   ort.env.wasm.wasmPaths=new URL('./ort/',import.meta.url).href;
   const cache=await openModelCache({profile});
   const meta=await cache.json(`${base}/spark.json`);
-  variant ||= gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4";
+  // Several mobile WebGPU implementations advertise shader-f16 but fail while
+  // compiling the q4f16 graph (ORT error 9971848). The official q4 graph uses
+  // the same INT4 weights with float32 activations and is the portable mobile
+  // path; keep q4f16 as the faster desktop default.
+  variant ||= profile.id.endsWith("1.7b") ? "q4" : (gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4");
   const v = meta.variants[variant];
   if (!v) throw new Error(`variant ${variant} not exported (have: ${Object.keys(meta.variants)})`);
   const kvType = v.activations ?? (variant.endsWith("16") ? "float16" : "float32");
@@ -122,7 +126,9 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   if (v.max_tensor_bytes && gpu.maxBuffer < v.max_tensor_bytes)
     throw new Error(`This GPU allows ${(gpu.maxBuffer / 1e6).toFixed(0)} MB per buffer; the model needs ${(v.max_tensor_bytes / 1e6).toFixed(0)} MB.`);
 
-  const [chat, gen] = await Promise.all([loadChat(base,u=>cache.json(u)), cache.json(`${base}/generation_config.json`)]);
+  let chat, gen;
+  try { [chat, gen] = await Promise.all([loadChat(base,u=>cache.json(u)), cache.json(`${base}/generation_config.json`)]); }
+  catch (error) { throw new Error(`Spark metadata/tokenizer load failed: ${String(error?.stack || error?.message || error)}`); }
 
   let done = 0;
   const total = v.bytes;
@@ -142,12 +148,13 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
     ort.env.webgpu.adapter = gpu.adapter;
     const preferredOutputLocation = { logits: "cpu" };
     for (const n of kvNames) preferredOutputLocation[`present.${n}`] = "gpu-buffer";
-    const session = await ort.InferenceSession.create(graph, {
+    let session;
+    try { session = await ort.InferenceSession.create(graph, {
       executionProviders: ["webgpu"],
       graphOptimizationLevel: "all",
       externalData: v.external_data.map((f, i) => ({ path: f.split("/").pop(), data: chunks[i] })),
       preferredOutputLocation,
-    });
+    }); } catch (error) { throw new Error(`Spark ONNX session init failed (${profile.id}/${variant}): ${String(error?.stack || error?.message || error)}`); }
     return { session, tDownload };
   })();
   const tReady = performance.now();
@@ -159,8 +166,9 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   // 128 MiB); the largest is the MLP intermediate, [S, intermediate_size]. onnxruntime-web's (Skip)LayerNorm kernels
   // only reach the first binding of a split buffer, so without pieces the fp32 hidden state of a 16k prompt (168 MB)
   // came out as zeros, without an error. With a 2 GB binding limit (Windows desktops) a prompt is never split.
-  // ORT's mobile WebGPU layer-norm path is safe when prefill chunks are
-  // aligned to its 256-token tile and fit inside one storage binding.
+  // Keep each prefill activation below the GPU storage binding limit.  The
+  // helper also aligns chunks to the 256-token tile required by ORT's mobile
+  // WebGPU layer-norm path.
   const prefillChunk = computePrefillChunk(gpu.maxBinding, meta.intermediate_size, kvType);
   const device = await ort.env.webgpu.device;
   const kv = staticKV ? new StaticKV(device, kvNames, meta.kv_heads, meta.head_dim, kvType) : null;
