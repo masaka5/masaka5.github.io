@@ -1,4 +1,5 @@
 .ai-shell{max-width:1280px;margin:auto;padding:0 34px;height:100dvh;display:grid;grid-template-rows:58px 42px auto minmax(0,1fr) auto 28px}
+.ai-shell>.ops-header{grid-row:1}.ai-shell>.ai-toolbar{grid-row:2}.ai-shell>.context-strip{grid-row:3}.ai-shell>.chat-feed{grid-row:4}.ai-shell>.composer{grid-row:5}.ai-shell>.ai-footer{grid-row:6}
 .context-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 0 0;min-width:0}.context-strip[hidden]{display:none}
 .task-status,.context-notice{border:1px solid #d9e4f5;border-radius:6px;padding:4px 10px;background:#f0f5ff;color:#315da8;font-size:12px;line-height:1.5;white-space:normal;text-align:left}
 .task-status[data-state='completed']{background:#f0f9f3;border-color:#cde8d4;color:#357348}.task-status[data-state='pending'],.context-notice[data-state='error']{background:#fff8ea;border-color:#f0dfb7;color:#876324}
@@ -26,3 +27,96 @@
 dialog{border:1px solid var(--line);border-radius:12px;color:var(--text);padding:24px;width:min(500px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:auto;background:#fff;box-shadow:0 20px 70px #202d4026}dialog::backdrop{background:#202d4040}dialog form{display:flex;flex-direction:column;gap:15px}dialog h2{font-size:16px}.settings-note{color:var(--muted);font-size:12px;line-height:1.65}
 @media(max-width:760px){.ai-shell{padding:0 14px;grid-template-rows:54px 42px auto minmax(0,1fr) auto 38px}.ai-head-actions{gap:12px}.ai-toolbar>div{gap:12px}.ai-toolbar{font-size:11px}.ai-toolbar a{display:none}.chat-feed{padding:18px 3px}.chat-empty h2{font-size:23px}.message[data-role='user']{max-width:90%;padding:12px 14px}.message-body{font-size:14px}.composer{margin:0 0 7px;padding:12px}.attachment-note{display:none}.chat-empty .web-note{max-width:250px}.ai-footer{margin:0;padding-bottom:env(safe-area-inset-bottom)}.compose-actions{margin-top:5px}.composer textarea{height:64px;min-height:64px}}
 @media(max-height:450px){.ai-shell{grid-template-rows:42px 34px auto minmax(0,1fr) auto 24px}.chat-feed{padding:8px 14px}.chat-empty{gap:8px}.chat-empty h2{font-size:20px}.chat-empty .web-note{display:none}.composer{padding:8px 12px;margin-bottom:5px}.composer textarea{height:38px;min-height:38px}.compose-actions{margin-top:3px}.message{margin-bottom:14px}}
+
+/* AI 助手的紧凑布局：保留现有交互，只降低窄屏操作密度。 */
+.ai-shell{min-width:0;overflow:hidden}
+.ai-toolbar,.ai-toolbar>div,.compose-actions,.compose-actions>div,.ai-head-actions{min-width:0}
+.ai-toolbar>div{overflow:hidden}
+.ai-toolbar .text-button,.ai-toolbar a{white-space:nowrap}
+.composer{min-width:0}
+.composer textarea{field-sizing:content;overflow:auto}
+.message-head strong{min-width:0}
+dialog{overscroll-behavior:contain}
+
+@media (max-width:760px){
+  .ai-shell{
+    padding:0 max(12px,env(safe-area-inset-left)) 0 max(12px,env(safe-area-inset-right));
+    grid-template-rows:auto auto minmax(0,1fr) auto auto;
+    min-height:100dvh;
+  }
+  .ai-shell>.ops-header{min-height:54px;padding:8px 0;gap:8px;flex-wrap:nowrap}
+  .ai-shell>.ops-header h1{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .back-link{flex-shrink:0;white-space:nowrap}
+  .ai-head-actions{gap:4px;flex-shrink:0}
+  .ai-head-actions .text-button{padding:7px 6px;border-radius:6px;background:#f4f7fc;white-space:nowrap}
+  .ai-toolbar{gap:8px;min-height:40px;padding:5px 0;align-items:center}
+  .ai-toolbar>span{max-width:44vw;line-height:1.35}
+  .ai-toolbar>div{gap:4px;justify-content:flex-end;overflow-x:auto;scrollbar-width:none}
+  .ai-toolbar>div::-webkit-scrollbar{display:none}
+  .ai-toolbar .text-button{padding:5px 6px}
+  .chat-feed{padding:14px 0 10px;scroll-padding:12px}
+  .chat-empty{gap:14px;padding:0 10px}
+  .chat-empty h2{font-size:22px}
+  .empty-actions{width:100%;max-width:300px}
+  .empty-actions button{flex:1;min-height:40px}
+  .message{width:100%;max-width:none;margin-bottom:18px}
+  .message[data-role='user']{max-width:92%;margin-left:auto;padding:10px 12px;border-radius:12px}
+  .message[data-role='assistant']{padding:0 4px}
+  .message-head{gap:7px;margin-bottom:5px}
+  .message-head button{padding:5px 4px}
+  .message-body{font-size:14px;line-height:1.75}
+  .message-images img{max-width:min(180px,72vw);max-height:120px}
+  .composer{
+    margin:0 0 6px;
+    padding:10px;
+    border-radius:14px;
+    margin-bottom:calc(6px + env(safe-area-inset-bottom));
+  }
+  .attachments{max-height:48px;gap:6px}
+  .attachment{padding:3px 6px;font-size:11px}
+  .attachment>span{max-width:36vw}
+  .composer textarea{
+    min-height:52px;
+    max-height:128px;
+    height:auto;
+    padding:2px 1px;
+    line-height:1.65;
+  }
+  .compose-actions{gap:6px;margin-top:7px;align-items:center}
+  .compose-actions>div{gap:4px;overflow:hidden}
+  .compose-actions .secondary,.compose-actions .primary{min-height:36px;padding:7px 10px}
+  #attach{font-size:0;width:38px;padding:7px 0}
+  #attach::after{content:'＋';font-size:18px;line-height:1}
+  #sendShortcut{max-width:118px;padding-left:4px;padding-right:4px;font-size:10px}
+  #send{min-width:58px}
+  #stop{min-width:58px}
+  .ai-footer{margin:0;padding:0 3px;min-height:26px;padding-bottom:env(safe-area-inset-bottom)}
+  .ai-footer .status{font-size:10px;line-height:1.35}
+  dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px);padding:16px;border-radius:14px}
+  dialog .actions{position:sticky;bottom:calc(-16px - env(safe-area-inset-bottom));padding:12px 0 env(safe-area-inset-bottom);background:#fff}
+  #contextSummary{font-size:12px;line-height:1.7}
+}
+
+@media (max-width:380px){
+  .ai-shell{padding-left:10px;padding-right:10px}
+  .ai-head-actions .text-button{font-size:10px;padding-left:4px;padding-right:4px}
+  .ai-toolbar>span{max-width:40vw;font-size:10px}
+  .message[data-role='user']{max-width:94%}
+  .compose-actions .secondary,.compose-actions .primary{padding-left:8px;padding-right:8px}
+  #sendShortcut{max-width:104px}
+}
+
+@media (max-height:450px) and (max-width:900px){
+  .ai-shell{grid-template-rows:auto auto minmax(0,1fr) auto 24px}
+  .ai-shell>.ops-header{min-height:42px;padding:4px 0}
+  .ai-toolbar{min-height:32px;padding:2px 0}
+  .chat-feed{padding-top:6px;padding-bottom:4px}
+  .chat-empty{gap:7px}
+  .chat-empty h2{font-size:19px}
+  .chat-empty .web-note{display:none}
+  .composer{padding:7px 9px;margin-bottom:3px}
+  .composer textarea{min-height:36px;max-height:72px}
+  .compose-actions{margin-top:4px}
+  .compose-actions .secondary,.compose-actions .primary{min-height:30px;padding-top:4px;padding-bottom:4px}
+  .ai-footer{min-height:20px}
+}
