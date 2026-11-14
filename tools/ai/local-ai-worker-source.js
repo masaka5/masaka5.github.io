@@ -16,7 +16,7 @@ async function load(){
    onProgress:info=>post({type:'progress',value:info.loaded/info.total,status:info.downloadedBytes?'下载模型':'读取模型缓存',cacheStored:info.cacheStored}),
    onDeviceLost:()=>{generator=null;active?.controller.abort(Error('WebGPU device lost'));post({type:'error',code:'WebGPU device lost'});}
   });
-  post({type:'ready',device,model:generator.model||LOCAL_MODEL,label:generator.label||profile.label,profile:generator.profile||profile.id,cacheStored:generator.cacheStored,variant:generator.variant,contextWindow:generator.contextWindow});return generator;
+  post({type:'ready',device,model:generator.model||LOCAL_MODEL,label:generator.label||profile.label,profile:generator.profile||profile.id,cacheStored:generator.cacheStored,variant:generator.variant,contextWindow:generator.contextWindow,vocabSize:generator.vocabSize,prefillChunk:generator.prefillChunk});return generator;
  })();try{return await loading;}finally{loading=null;}
 }
 function runtime(model){

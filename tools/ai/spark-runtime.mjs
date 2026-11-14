@@ -8,6 +8,7 @@ import * as ort from "onnxruntime-web/webgpu";
 import { loadChat } from "./spark-chat.mjs";
 
 import {MODEL_PROFILES,selectModelProfile,openModelCache} from "./spark-cache.mjs";
+import {DEFAULT_VOCAB_SIZE,computePrefillChunk,resolveContextWindow} from "./spark-runtime-config.mjs";
 function argmax(x) {
   let best = 0;
   let max = x[0];
@@ -158,8 +159,9 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   // 128 MiB); the largest is the MLP intermediate, [S, intermediate_size]. onnxruntime-web's (Skip)LayerNorm kernels
   // only reach the first binding of a split buffer, so without pieces the fp32 hidden state of a 16k prompt (168 MB)
   // came out as zeros, without an error. With a 2 GB binding limit (Windows desktops) a prompt is never split.
-  const actBytes = (meta.intermediate_size ?? 0) * (kvType === "float16" ? 2 : 4);
-  const prefillChunk = actBytes ? Math.min(256, Math.max(1, Math.floor(gpu.maxBinding / actBytes))) : Infinity;
+  // ORT's mobile WebGPU layer-norm path is safe when prefill chunks are
+  // aligned to its 256-token tile and fit inside one storage binding.
+  const prefillChunk = computePrefillChunk(gpu.maxBinding, meta.intermediate_size, kvType);
   const device = await ort.env.webgpu.device;
   const kv = staticKV ? new StaticKV(device, kvNames, meta.kv_heads, meta.head_dim, kvType) : null;
   // Token ids whose K/V currently sit at positions 0..n-1 of the static cache. A new prompt that
@@ -225,7 +227,6 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
       pos = total;
       if (kv) cached = cached.concat(ids);
       onActivity?.();
-      for(const tensor of Object.values(feeds))tensor.dispose?.();
       return out;
     };
     try {
@@ -281,7 +282,9 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
     model: profile.model,
     label: profile.label,
     profile: profile.id,
-    contextWindow:4096,
+    contextWindow: resolveContextWindow(meta),
+    vocabSize: meta.vocab_size ?? DEFAULT_VOCAB_SIZE,
+    prefillChunk,
     cacheStored:cache.stored,
     cacheHits:cache.hits,
     resetContext(){cached=[];kv?.dispose();},

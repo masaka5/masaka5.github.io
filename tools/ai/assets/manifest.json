@@ -1,5 +1,5 @@
 {
-  "version": "20261114-mobile2",
+  "version": "20261114-mobile3",
   "model": "mohdmahmodi/Spark-X2.6-4B-ONNX-WebGPU",
   "revision": "02ffadffdd28aa89347e6ab22ea6cf066241a5bf",
   "mobileModel": "mohdmahmodi/Spark-X2.6-1.7B-ONNX-WebGPU",
