@@ -19,6 +19,10 @@ nav{flex-direction:row;width:100%;gap:4px;padding:0;overflow:visible}
 .multi-device-shell>.connection .connection-actions{gap:6px}
 .multi-device-shell>.connection .connection-actions button{min-height:31px;padding:5px 11px}
 .device-pane{grid-column:1;grid-row:2}.stream-pane{grid-column:2;grid-row:2}.control-pane{grid-column:3;grid-row:2}
+.stream-stage canvas{cursor:crosshair;touch-action:none;user-select:none;-webkit-user-select:none}
+.group-toggle{min-height:28px;padding:3px 9px;border-color:#d9e1eb;color:#66758b;font-size:11px}
+.group-toggle[aria-pressed="true"]{border-color:#285de5;background:#285de5;color:#fff}
+.group-toggle[aria-pressed="true"]:hover:not(:disabled){background:#1f4fcc;color:#fff}
 .panel-heading>div{display:none}
 .panel-heading{justify-content:flex-end;min-height:0;margin-bottom:12px}
 
@@ -33,7 +37,9 @@ nav{flex-direction:row;width:100%;gap:4px;padding:0;overflow:visible}
   .device-list{flex-direction:column;min-height:0;padding:7px;overflow:auto}
   .device-card{min-width:0;margin:0 0 6px;padding:8px}
   .control-pane{grid-column:1/-1;min-height:54px;height:auto}
-  .control-pane .pane-title{display:none}
+  .control-pane .pane-title{display:flex;min-height:30px;padding:4px 8px}
+  .control-pane .pane-title strong{font-size:11px}
+  .control-pane .group-toggle{min-height:24px;padding:2px 7px;font-size:10px}
   .group-toolbar{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:7px}
   .group-toolbar button{min-height:34px;padding:5px 6px;font-size:11px}
   .task-log{display:none}

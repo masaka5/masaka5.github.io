@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "app.css",
-      "bytes": 17832,
-      "sha256": "d30717bf501c464ce47dc197030607c332e4424bc774c817e2d4479997b68b8d"
+      "bytes": 18363,
+      "sha256": "559d13f10f1aac628ced36d8a3f0e14aa4ccbf8df588954d72913e6ade422951"
     },
     {
       "path": "app.css.LEGAL.txt",
@@ -13,13 +13,13 @@
     },
     {
       "path": "app.js",
-      "bytes": 397510,
-      "sha256": "7b4a3310ea6578b1d5803cb2c883567d09c6e5a8a5d9d91d87a71ff676867ab9"
+      "bytes": 404311,
+      "sha256": "357c2fa3c1007b57028ce31d5644d883b0a307f199084c5ff71810dcdaeb04dd"
     },
     {
       "path": "index.html",
-      "bytes": 7839,
-      "sha256": "cb3d152e0922482ccc8b4e4501d63303daafcdbc7d4c4fd5c035f8f95a5607aa"
+      "bytes": 8034,
+      "sha256": "96943177962a1a7fa3d8680d86e510e9010c4e6522c8c64ba1aea0b5d6eb93bb"
     },
     {
       "path": "scrcpy-worker.js",
