@@ -7,33 +7,23 @@ export const MODEL_PROFILES={
    'onnx/model_q4.onnx':185623,'onnx/model_q4.onnx_data':1893029120,'onnx/model_q4.onnx_data_1':1152259840,
   },
  },
- mobile:{
-  id:'spark-x2.6-1.7b',label:'Spark-X2.6 · 1.7B Q4（移动端）',model:'mohdmahmodi/Spark-X2.6-1.7B-ONNX-WebGPU',
-  revision:'fda6533f2fd90264a0b9df86167be1a230130d90',
-  sizes:{
-   'onnx/model_q4f16.onnx':157915,'onnx/model_q4f16.onnx_data':1207566336,
-   'onnx/model_q4.onnx':156366,'onnx/model_q4.onnx_data':1335492608,
-  },
- },
 };
 export const MODEL_REVISION=MODEL_PROFILES.desktop.revision;
 export const MODEL_BASE=`https://huggingface.co/${MODEL_PROFILES.desktop.model}/resolve/${MODEL_REVISION}`;
 export const MODEL_CACHE=`pocket-spark-q4-${MODEL_REVISION}`;
 export const MODEL_SIZES=MODEL_PROFILES.desktop.sizes;
 
-export function isMobileBrowser(nav=globalThis.navigator){
- if(!nav)return false;
- if(nav.userAgentData?.mobile===true)return true;
- return /Android|iPhone|iPad|iPod|Windows Phone|Mobile/i.test(nav.userAgent||'');
-}
-
-export function selectModelProfile(nav=globalThis.navigator){
- return isMobileBrowser(nav)?MODEL_PROFILES.mobile:MODEL_PROFILES.desktop;
+export function selectModelProfile(){
+ // 移动端也使用官方 4B Q4 配置，避免维护两套模型和缓存。
+ return MODEL_PROFILES.desktop;
 }
 
 // Delete only the retired model, including entries in a shared Transformers cache.
 export async function removeLegacyModelCache(storage=globalThis.caches){
  if(!storage)return;
+ for(const name of await storage.keys()){
+  if(/^pocket-spark-spark-x2\.6-1\.7b-/i.test(name)) await storage.delete(name);
+ }
  for(const name of await storage.keys()){
   const cache=await storage.open(name);
   for(const req of await cache.keys())if(/onnx-community\/DeepSeek-R1-Distill-Qwen-1\.5B-ONNX\//i.test(decodeURIComponent(req.url)))await cache.delete(req);
@@ -93,5 +83,5 @@ export async function openModelCache({profile=MODEL_PROFILES.desktop,onState=()=
  try{await removeLegacyModelCache();}catch{}
  const key=`pocket-spark-${profile.id}-${profile.revision}`;
  try{cache=await globalThis.caches?.open(key);}catch{cache=null;}
- return new ModelCache({cache,onState,chunkSize:chunkSize??(profile.id.endsWith('1.7b')?16*1024*1024:64*1024*1024)});
+ return new ModelCache({cache,onState,chunkSize:chunkSize??64*1024*1024});
 }

@@ -1,6 +1,6 @@
 import {loadSpark} from './spark-runtime.mjs';
 import {LOCAL_MODEL,splitThinking} from './local-ai-core.mjs';
-import {selectModelProfile} from './spark-cache.mjs';
+import {MODEL_PROFILES} from './spark-cache.mjs';
 import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs';
 import {runLocalTurn} from './local-ai-generation.mjs';
 import {taskContext} from './conversation-journal.mjs';
@@ -10,7 +10,7 @@ const device='webgpu',post=message=>self.postMessage(message);
 async function load(){
  if(generator)return generator;if(loading)return loading;
  loading=(async()=>{
-  profile=selectModelProfile();
+  profile=MODEL_PROFILES.desktop;
   post({type:'progress',value:0,status:`准备 ${profile.label}`});
   generator=await loadSpark({profile,
    onProgress:info=>post({type:'progress',value:info.loaded/info.total,status:info.downloadedBytes?'下载模型':'读取模型缓存',cacheStored:info.cacheStored}),

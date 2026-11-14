@@ -1,8 +1,8 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-mobile4';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-mobile4';
-import {shouldSend} from './chat-shortcuts.mjs?v=20261114-mobile4';
-import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-mobile4';
-import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-mobile4';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-only';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-only';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-only';
+import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-only';
+import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-only';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);

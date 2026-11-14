@@ -115,7 +115,7 @@ export async function loadSpark({ profile=selectModelProfile(),base,variant,stat
   // compiling the q4f16 graph (ORT error 9971848). The official q4 graph uses
   // the same INT4 weights with float32 activations and is the portable mobile
   // path; keep q4f16 as the faster desktop default.
-  variant ||= profile.id.endsWith("1.7b") ? "q4" : (gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4");
+  variant ||= gpu.f16 && meta.variants.q4f16 ? "q4f16" : "q4";
   const v = meta.variants[variant];
   if (!v) throw new Error(`variant ${variant} not exported (have: ${Object.keys(meta.variants)})`);
   const kvType = v.activations ?? (variant.endsWith("16") ? "float16" : "float32");
