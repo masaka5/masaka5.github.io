@@ -13,6 +13,12 @@ export const MODEL_BASE=`https://huggingface.co/${MODEL_PROFILES.desktop.model}/
 export const MODEL_CACHE=`pocket-spark-q4-${MODEL_REVISION}`;
 export const MODEL_SIZES=MODEL_PROFILES.desktop.sizes;
 
+export function isMobileBrowser(nav=globalThis.navigator){
+ if(!nav)return false;
+ if(nav.userAgentData?.mobile===true)return true;
+ return /Android|iPhone|iPad|iPod|Windows Phone|Mobile/i.test(nav.userAgent||'');
+}
+
 export function selectModelProfile(){
  // 移动端也使用官方 4B Q4 配置，避免维护两套模型和缓存。
  return MODEL_PROFILES.desktop;
@@ -83,5 +89,6 @@ export async function openModelCache({profile=MODEL_PROFILES.desktop,onState=()=
  try{await removeLegacyModelCache();}catch{}
  const key=`pocket-spark-${profile.id}-${profile.revision}`;
  try{cache=await globalThis.caches?.open(key);}catch{cache=null;}
- return new ModelCache({cache,onState,chunkSize:chunkSize??64*1024*1024});
+ const mobileChunk=isMobileBrowser() ? 16*1024*1024 : 64*1024*1024;
+ return new ModelCache({cache,onState,chunkSize:chunkSize??mobileChunk});
 }
