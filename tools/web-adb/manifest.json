@@ -1,35 +1,35 @@
 {
-  "name": "Web ADB",
+  "name": "Pocket Toolbox Android Console",
+  "upstream": {
+    "name": "ya-webadb",
+    "license": "MIT",
+    "version": "3.0.0-beta.5"
+  },
   "files": [
     {
-      "path": "app.css",
-      "bytes": 18363,
-      "sha256": "559d13f10f1aac628ced36d8a3f0e14aa4ccbf8df588954d72913e6ade422951"
-    },
-    {
-      "path": "app.css.LEGAL.txt",
-      "bytes": 1702,
-      "sha256": "5570ef3cdb6a6bf65c80b9018361ccb6ff4d6b32160e9127cefede2dcc2cedc6"
-    },
-    {
-      "path": "app.js",
-      "bytes": 408927,
-      "sha256": "ac52a4e71258a4a0646ea4388f2a7a7c1b8e8670cd1329f85898991dc450bb32"
-    },
-    {
       "path": "index.html",
-      "bytes": 8034,
-      "sha256": "28e4371dc485a8e5aa2198d6ed8250077b7100df3e09e3d36e0c869fff1dfd64"
+      "bytes": 816,
+      "sha256": "5936fc44cd5220647907260081a99687e1766dfd025ae3d50c65bb397b522f7f"
     },
     {
-      "path": "scrcpy-worker.js",
-      "bytes": 8163,
-      "sha256": "c50f99466e9b87d2a330c978005dffc1168c53ad0e7c038e4e83e2728efda804"
+      "path": "assets/index-Df6fyf_V.css",
+      "bytes": 19436,
+      "sha256": "94ecadad3a76db82a7edec55602786904f09f82313892110b1105f6f2b981ec5"
     },
     {
-      "path": "wasm/scrcpy-parser.wasm",
-      "bytes": 805,
-      "sha256": "4be6282d95e421a43c9a088c52aea15185d9a05cc03682c48627dbdd900e1c5c"
+      "path": "assets/index-DEK__hnG.js",
+      "bytes": 481723,
+      "sha256": "43c9c01454035da11eee72e63e467b02bbc99c9a5af1979fff8852cfb36b186d"
+    },
+    {
+      "path": "scrcpy-server-v5.0.1",
+      "bytes": 733930,
+      "sha256": "764eb6f79811d5211fe9df341120882ba9994c7a61b897d7bf3fb662e53bc536"
+    },
+    {
+      "path": "scrcpy-server.LICENSE",
+      "bytes": 11387,
+      "sha256": "01c12035bf35af37241298dc7ad538eb2a07e5c940437bc6876feeaa9d1951d0"
     }
   ]
 }
