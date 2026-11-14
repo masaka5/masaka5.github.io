@@ -1,9 +1,9 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-codeblocks1';
-import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-codeblocks1';
-import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-codeblocks1';
-import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-codeblocks1';
-import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-codeblocks1';
-import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks1';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-codeblocks2';
+import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-codeblocks2';
+import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-codeblocks2';
+import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-codeblocks2';
+import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-codeblocks2';
+import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks2';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);

@@ -30,11 +30,9 @@ export function renderMessageBody(container,value,{onCopy=()=>{}}={}){
     const details=document.createElement('details');details.className='code-block';details.open=true;
     const summary=document.createElement('summary');summary.className='code-summary';
     const label=document.createElement('span');label.className='code-language';label.textContent=block.language||'代码';
-    summary.append(label);details.append(summary);
-    const toolbar=document.createElement('div');toolbar.className='code-toolbar';
     const copy=document.createElement('button');copy.type='button';copy.className='text-button code-copy';copy.textContent='复制';copy.setAttribute('aria-label','复制代码');
     copy.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();onCopy(block.text,copy);});
-    toolbar.append(copy);details.append(toolbar);
+    summary.append(label,copy);details.append(summary);
     const pre=document.createElement('pre');const code=document.createElement('code');code.textContent=block.text;pre.append(code);details.append(pre);
     container.append(details);detailsList.push(details);
   }
