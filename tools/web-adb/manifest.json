@@ -8,18 +8,23 @@
   "files": [
     {
       "path": "index.html",
-      "bytes": 816,
-      "sha256": "794cc2d28ae29d95e1a1e593befb5a876ce2511c9a64fffe394fdb70ccdec3d6"
+      "bytes": 879,
+      "sha256": "61d85ac052a86ce6c8e5512435bd52c2e3c96445679a50b28318deb6dd8f5a93"
     },
     {
-      "path": "assets/index-BHTkP_dW.css",
-      "bytes": 28962,
-      "sha256": "379e692b92d74bd3b88b53bb10d91ce9813762b0913f2f5a41d73c3680976f20"
+      "path": "favicon.svg",
+      "bytes": 230,
+      "sha256": "1c9798afb3971959e6bca064e97aaeddc0498bbab587e2fb289a2fade3d10d21"
     },
     {
-      "path": "assets/index-bb1UZQrD.js",
-      "bytes": 500913,
-      "sha256": "feef583984ab0d94247dc9cced55598958abe7a073f529ffe335168d8e177f35"
+      "path": "assets/index-BRho4z5W.css",
+      "bytes": 31162,
+      "sha256": "570d13c00ee3409ba15d5f192c571a4a718ddff1b47a952e7ebe1046f1c7ba0d"
+    },
+    {
+      "path": "assets/index-DAkMsz_z.js",
+      "bytes": 505538,
+      "sha256": "e85113be1c51537fa6af6031f26a10d0988bbb02af061a89b71e4f305130b370"
     },
     {
       "path": "scrcpy-server-v5.0.1",
