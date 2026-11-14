@@ -1,11 +1,11 @@
-import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-4b-codeblocks2';
+import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-4b-codeblocks3';
 export class LocalAiClient{
  constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onContext=()=>{},onCheckpoint=()=>{},onDone=()=>{},onError=()=>{}}={}){
   this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
  }
  ensureWorker(){
   if(this.worker)return;
-  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-4b-codeblocks2',import.meta.url),{type:'module'});
+  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-4b-codeblocks3',import.meta.url),{type:'module'});
   worker.onmessage=event=>{if(this.worker===worker)this.message(event.data||{});};
   worker.onerror=event=>{
    event.preventDefault?.();
