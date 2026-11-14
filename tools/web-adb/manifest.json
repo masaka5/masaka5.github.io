@@ -13,13 +13,13 @@
     },
     {
       "path": "app.js",
-      "bytes": 404311,
-      "sha256": "357c2fa3c1007b57028ce31d5644d883b0a307f199084c5ff71810dcdaeb04dd"
+      "bytes": 408927,
+      "sha256": "ac52a4e71258a4a0646ea4388f2a7a7c1b8e8670cd1329f85898991dc450bb32"
     },
     {
       "path": "index.html",
       "bytes": 8034,
-      "sha256": "96943177962a1a7fa3d8680d86e510e9010c4e6522c8c64ba1aea0b5d6eb93bb"
+      "sha256": "28e4371dc485a8e5aa2198d6ed8250077b7100df3e09e3d36e0c869fff1dfd64"
     },
     {
       "path": "scrcpy-worker.js",

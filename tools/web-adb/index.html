@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="通过浏览器 WebUSB 直接连接 Android，使用终端、传输文件、安装 APK 与截图。"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"><title>Web ADB · 口袋工具箱</title><link rel="stylesheet" href="./app.css?v=20261115d"><link rel="stylesheet" href="../../assets/tool-shell.css"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="通过浏览器 WebUSB 直接连接 Android，使用终端、传输文件、安装 APK 与截图。"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"><title>Web ADB · 口袋工具箱</title><link rel="stylesheet" href="./app.css?v=20261115e"><link rel="stylesheet" href="../../assets/tool-shell.css"></head>
 <body>
 <header><a class="back" href="../../">← 口袋工具箱</a><h1>安卓调试</h1><button id="help-button" class="help">连接指南</button></header>
 <main>
@@ -22,5 +22,5 @@
 </main>
 <footer><span>口袋工具箱 · 本地 USB 连接</span></footer>
 <dialog id="help-dialog"><h2>连接 Android 设备</h2><ol><li>在手机「关于手机」中连续点击版本号，开启开发者选项。</li><li>开启 USB 调试，用数据线连接电脑并解锁手机。</li><li>点击「连接设备」后选择手机，在手机上允许 RSA 调试授权。</li></ol><p>连接多台设备时继续点击「添加设备」。投屏区域支持点击、滑动和长按；开启「群控」后，操作会同步到所有已连接设备。</p><p>需要桌面 Chrome / Edge 与 HTTPS。Firefox、Safari 暂不支持 WebUSB。Windows 如无法连接，请检查 Android USB 驱动；接口被占用时，请退出桌面 adb 或其他调试工具后重试。</p><p>调试密钥保存在此浏览器的 IndexedDB 中，用于下次认证；网站不会上传密钥。可清除此网站数据删除密钥，并在手机开发者选项中撤销 USB 调试授权。</p><form method="dialog"><button class="primary">知道了</button></form></dialog>
-<script type="module" src="./app.js?v=20261115d"></script>
+<script type="module" src="./app.js?v=20261115e"></script>
 </body></html>
