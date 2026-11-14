@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "app.css",
-      "bytes": 10852,
-      "sha256": "f78625733fd2b0c26558ca1dc7ff5134d3f58a52e37b4d3adb683643028f8044"
+      "bytes": 12547,
+      "sha256": "8bdccb5697edf307f69370db2437eee758f971b5b72e389fe9e075921636467c"
     },
     {
       "path": "app.css.LEGAL.txt",
@@ -13,13 +13,23 @@
     },
     {
       "path": "app.js",
-      "bytes": 363071,
-      "sha256": "24fa57e3cee9080f6f08885c24f02a108ccc4fd63c1c65a06882c57e3ed87809"
+      "bytes": 392736,
+      "sha256": "5f0001c48a65ded1ae751f5ab5e90b510a44b71b51d65cff8495ce2045c454f6"
     },
     {
       "path": "index.html",
-      "bytes": 8666,
-      "sha256": "ddf3b2188a5c82a802bbbe696e953e0f7f2624678945ee96a0978aed23a486d5"
+      "bytes": 7847,
+      "sha256": "505c136cf14abcd4513ae9002390b2e8ef3049300f6316ce11ab1d2ff55ec399"
+    },
+    {
+      "path": "scrcpy-worker.js",
+      "bytes": 8163,
+      "sha256": "c50f99466e9b87d2a330c978005dffc1168c53ad0e7c038e4e83e2728efda804"
+    },
+    {
+      "path": "wasm/scrcpy-parser.wasm",
+      "bytes": 805,
+      "sha256": "4be6282d95e421a43c9a088c52aea15185d9a05cc03682c48627dbdd900e1c5c"
     }
   ]
 }
