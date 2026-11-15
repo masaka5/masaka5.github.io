@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-15T11:13:16.295Z",
+  "updatedAt": "2026-11-15T17:50:38.754Z",
   "counts": {
     "packet-analysis": 0,
     "hex-wasm": 0,
@@ -9,6 +9,9 @@
     "topospace": 0,
     "qwen-tts": 1,
     "minutes": 1,
+    "netsim": 3,
+    "windows-policy": 1,
+    "winget-generator": 1,
     "anki": 6,
     "qr-transfer": 16,
     "browser-fingerprint": 4,
