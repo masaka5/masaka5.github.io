@@ -2,16 +2,125 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#f5f6f8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <title>NetSim 网络模拟器 · 口袋工具箱</title>
-    <script type="module" crossorigin src="./assets/app-D6nluxBi.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/app-C3y8pK78.css">
+    <style>
+      :root {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+        color: #182230;
+        background: #f4f6fa;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+      * { box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+      body { min-width: 320px; }
+      .shell { display: flex; flex-direction: column; width: 100%; height: 100dvh; min-height: 0; }
+      .topbar {
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        flex: 0 0 58px;
+        min-width: 0;
+        padding: 0 22px;
+        border-bottom: 1px solid #e7ebf1;
+        background: rgba(255,255,255,.96);
+        box-shadow: 0 2px 8px rgba(24,34,48,.035);
+      }
+      .brand { display: flex; align-items: center; gap: 10px; min-width: max-content; }
+      .brand-mark {
+        display: grid; width: 30px; height: 30px; place-items: center;
+        border-radius: 9px; color: #fff; background: #1677ff;
+      }
+      .brand-mark svg { width: 18px; height: 18px; }
+      .brand-name { font-size: 15px; font-weight: 650; letter-spacing: -.2px; }
+      .divider { width: 1px; height: 22px; background: #e7ebf1; }
+      .switcher {
+        display: inline-flex; align-items: center; gap: 3px; min-width: 0;
+        padding: 3px; border: 1px solid #e7ebf1; border-radius: 10px; background: #f7f8fa;
+      }
+      .tab {
+        height: 34px; padding: 0 15px; border: 0; border-radius: 7px; background: transparent;
+        color: #5b6573; font: inherit; font-size: 13px; font-weight: 550; white-space: nowrap;
+        cursor: pointer; transition: color .16s ease, background .16s ease, box-shadow .16s ease;
+      }
+      .tab:hover { color: #1677ff; }
+      .tab[aria-pressed="true"] {
+        color: #1677ff; background: #fff; box-shadow: 0 1px 3px rgba(22,119,255,.12), 0 1px 2px rgba(0,0,0,.05);
+      }
+      .stage { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: #f5f6f8; }
+      .simulator {
+        position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+        border: 0; background: #f5f6f8; visibility: hidden; pointer-events: none;
+      }
+      .simulator.is-active { visibility: visible; pointer-events: auto; }
+      @media (max-width: 640px) {
+        .topbar { flex-basis: 56px; gap: 12px; padding: 0 12px; }
+        .brand { gap: 8px; }
+        .brand-mark { width: 28px; height: 28px; }
+        .brand-name { font-size: 14px; }
+        .divider { height: 20px; }
+        .switcher { gap: 2px; }
+        .tab { height: 32px; padding: 0 10px; font-size: 12px; }
+      }
+      @media (max-width: 390px) {
+        .topbar { gap: 8px; padding: 0 9px; }
+        .brand-name { font-size: 13px; }
+        .tab { padding: 0 8px; font-size: 11px; }
+      }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-
-
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand" aria-label="NetSim 网络模拟器">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="6" rx="1.5"/><rect x="14" y="14" width="7" height="6" rx="1.5"/><path d="M10 7h2.5a2 2 0 0 1 2 2v5M14 17h-2.5a2 2 0 0 1-2-2v-5"/></svg>
+          </span>
+          <span class="brand-name">网络模拟器</span>
+        </div>
+        <span class="divider" aria-hidden="true"></span>
+        <nav class="switcher" role="tablist" aria-label="模拟器版本">
+          <button class="tab" id="tab-linux" type="button" role="tab" aria-controls="sim-linux" aria-pressed="true">Linux 网络实验</button>
+          <button class="tab" id="tab-multivendor" type="button" role="tab" aria-controls="sim-multivendor" aria-pressed="false">多厂商网络模拟</button>
+        </nav>
+      </header>
+      <main class="stage">
+        <iframe class="simulator is-active" id="sim-linux" title="Linux 网络模拟器" src="./linux/" allow="clipboard-read; clipboard-write; fullscreen" allowfullscreen></iframe>
+        <iframe class="simulator" id="sim-multivendor" title="多厂商网络模拟器" data-src="./multivendor/" allow="clipboard-read; clipboard-write; fullscreen" allowfullscreen></iframe>
+      </main>
+    </div>
+    <script>
+      (() => {
+        const buttons = [document.getElementById('tab-linux'), document.getElementById('tab-multivendor')];
+        const frames = [document.getElementById('sim-linux'), document.getElementById('sim-multivendor')];
+        let active = 'linux';
+        try { active = localStorage.getItem('netsim-active-view') === 'multivendor' ? 'multivendor' : 'linux'; } catch {}
+        const select = (view) => {
+          const index = view === 'multivendor' ? 1 : 0;
+          const frame = frames[index];
+          if (frame && !frame.src && frame.dataset.src) frame.src = frame.dataset.src;
+          buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+          frames.forEach((item, i) => {
+            item.classList.toggle('is-active', i === index);
+            item.setAttribute('aria-hidden', String(i !== index));
+          });
+          active = view;
+          try { localStorage.setItem('netsim-active-view', view); } catch {}
+          requestAnimationFrame(() => {
+            try { frame?.contentWindow?.dispatchEvent(new Event('resize')); } catch {}
+          });
+        };
+        buttons[0].addEventListener('click', () => select('linux'));
+        buttons[1].addEventListener('click', () => select('multivendor'));
+        select(active);
+      })();
+    </script>
   </body>
 </html>
