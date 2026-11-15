@@ -1,5 +1,8 @@
 ["packet-analysis","hex-wasm","ocr","qr-batch","topospace","qwen-tts",
   "minutes",
+  "netsim",
+  "windows-policy",
+  "winget-generator",
   "anki",
   "qr-transfer",
   "browser-fingerprint",
