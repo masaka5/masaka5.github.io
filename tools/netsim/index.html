@@ -92,7 +92,7 @@
         </nav>
       </header>
       <main class="stage">
-        <iframe class="simulator is-active" id="sim-linux" title="Linux 网络模拟器" src="./linux/" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
+        <iframe class="simulator is-active" id="sim-linux" title="Linux 网络模拟器" data-src="./linux/" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
         <iframe class="simulator" id="sim-multivendor" title="多厂商网络模拟器" data-src="./multivendor/" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
       </main>
     </div>
@@ -102,10 +102,17 @@
         const frames = [document.getElementById('sim-linux'), document.getElementById('sim-multivendor')];
         let active = 'linux';
         try { active = localStorage.getItem('netsim-active-view') === 'multivendor' ? 'multivendor' : 'linux'; } catch {}
+        const loadFrame = (frame) => {
+          if (!frame || frame.dataset.loaded === 'true' || !frame.dataset.src) return;
+          const url = new URL(frame.dataset.src, window.location.href);
+          url.searchParams.set('v', Date.now().toString(36));
+          frame.src = url.toString();
+          frame.dataset.loaded = 'true';
+        };
         const select = (view) => {
           const index = view === 'multivendor' ? 1 : 0;
           const frame = frames[index];
-          if (frame && !frame.src && frame.dataset.src) frame.src = frame.dataset.src;
+          loadFrame(frame);
           buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
           frames.forEach((item, i) => {
             item.classList.toggle('is-active', i === index);
