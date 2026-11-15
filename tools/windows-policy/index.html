@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6f8">
+  <meta name="description" content="Windows 组策略 ADMX 在线编辑器，支持中文分类、关键字搜索、状态编辑及导入导出。">
+  <title>组策略编辑器 · 口袋工具箱</title>
+  <link rel="canonical" href="https://tools.manshii.asia/catalog/windows-policy/">
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="policy.css">
+</head>
+<body>
+  <div class="policy-shell">
+    <header class="policy-header">
+      <a href="../../" aria-label="返回口袋工具箱">← 工具箱</a>
+      <div class="title-block">
+        <h1>Windows 组策略编辑器</h1>
+        <span id="datasetStatus">正在加载模板</span>
+      </div>
+      <div class="header-actions">
+        <button id="importTemplate" data-short="ADMX">导入 ADMX / ADML</button>
+        <button id="importState" data-short="导入">导入状态</button>
+        <button id="exportState" data-short="导出" class="primary">导出状态</button>
+        <button id="exportRegistry" data-short="REG">导出 REG</button>
+        <input id="templateFiles" type="file" accept=".admx,.adml,.xml" multiple hidden>
+        <input id="stateFile" type="file" accept=".json" hidden>
+      </div>
+    </header>
+
+    <main class="policy-main">
+      <aside class="category-panel" aria-label="策略分类">
+        <div class="panel-title"><strong>策略分类</strong><span id="categoryTotal">—</span></div>
+        <label class="category-search">
+          <span class="sr-only">筛选策略分类</span>
+          <input id="categoryFilter" type="search" placeholder="筛选分类" autocomplete="off" spellcheck="false">
+        </label>
+        <nav id="categories" class="category-list" aria-label="策略分类列表"></nav>
+      </aside>
+
+      <section class="result-panel" aria-label="策略搜索结果">
+        <div class="result-toolbar">
+          <label class="keyword-search">
+            <span class="sr-only">关键字搜索策略</span>
+            <input id="keyword" type="search" placeholder="搜索策略、说明或注册表" autocomplete="off" spellcheck="false">
+          </label>
+          <select id="classFilter" aria-label="策略作用域">
+            <option value="all">全部作用域</option>
+            <option value="Machine">计算机</option>
+            <option value="User">用户</option>
+            <option value="Both">两者</option>
+          </select>
+        </div>
+        <div class="result-summary">
+          <span id="resultSummary">正在加载</span>
+          <button id="clearFilters" type="button" hidden>清除筛选</button>
+          <span id="editedCount">0 项修改</span>
+        </div>
+        <div id="policyResults" class="policy-results" aria-live="polite"></div>
+        <div class="pager">
+          <button id="prevPage" type="button" aria-label="上一页">‹</button>
+          <span id="pageInfo">1 / 1</span>
+          <button id="nextPage" type="button" aria-label="下一页">›</button>
+        </div>
+      </section>
+
+      <section class="editor-panel" aria-label="策略编辑器">
+        <div id="editorEmpty" class="editor-empty">
+          <strong>选择策略</strong>
+          <span>查看、编辑并导出配置</span>
+        </div>
+        <article id="policyEditor" hidden>
+          <header class="policy-heading">
+            <div>
+              <span id="policyClass" class="scope"></span>
+              <h2 id="policyName">—</h2>
+              <code id="policyPath">—</code>
+            </div>
+            <span id="policyStateBadge" class="state-badge">未配置</span>
+          </header>
+          <p id="policyDescription" class="policy-description"></p>
+          <div class="policy-meta-grid">
+            <div><span>模板</span><strong id="policyTemplate">—</strong></div>
+            <div><span>命名空间</span><strong id="policyNamespace">—</strong></div>
+            <div class="wide"><span>注册表位置</span><code id="policyKey">—</code></div>
+            <div class="wide"><span>值名称</span><code id="policyValueName">—</code></div>
+            <div class="wide"><span>支持范围</span><strong id="policySupported">—</strong></div>
+          </div>
+          <section class="editor-form">
+            <div class="form-head">
+              <h3>策略状态</h3>
+              <select id="targetHive" aria-label="注册表配置单元">
+                <option value="HKLM">HKLM</option>
+                <option value="HKCU">HKCU</option>
+              </select>
+            </div>
+            <div id="stateOptions" class="state-options" role="radiogroup" aria-label="策略状态">
+              <button type="button" data-policy-state="unconfigured" class="active" role="radio" aria-checked="true">未配置</button>
+              <button type="button" data-policy-state="enabled" role="radio" aria-checked="false">已启用</button>
+              <button type="button" data-policy-state="disabled" role="radio" aria-checked="false">已禁用</button>
+            </div>
+            <div id="parameterFields" class="parameter-fields"></div>
+            <div class="form-actions">
+              <button id="resetPolicy" type="button">恢复未配置</button>
+              <button id="savePolicy" type="button" class="primary">保存策略</button>
+            </div>
+          </section>
+          <section class="source-section">
+            <div class="form-head"><h3>ADMX 参数</h3><span id="sourceHint">内置模板</span></div>
+            <pre id="policySource"></pre>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="policy.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6f8">
+  <meta name="description" content="搜索 Winget 软件仓库，批量选择软件并生成安装命令。">
+  <title>Winget 命令生成器 · 口袋工具箱</title>
+  <link rel="canonical" href="https://tools.manshii.asia/catalog/winget-generator/">
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="winget.css">
+</head>
+<body>
+  <div class="winget-shell">
+    <header class="wg-header">
+      <a href="../../">← 工具箱</a>
+      <div><h1>Winget 命令生成器</h1><span id="repoStatus">正在读取软件仓库</span></div>
+      <strong id="selectedCount">0 个已选择</strong>
+    </header>
+    <main class="wg-main">
+      <section class="wg-packages">
+        <div class="wg-toolbar">
+          <label class="search"><span>搜索软件</span><input id="query" type="search" placeholder="Chrome、PowerToys、VS Code…" autocomplete="off"></label>
+          <button id="searchButton" class="primary">搜索</button>
+          <button id="selectVisible">全选结果</button>
+          <button id="clearSelection">清空选择</button>
+        </div>
+        <div class="wg-filters"><button data-kind="all" class="active">全部</button><button data-kind="popular">热门</button><button data-kind="selected">已选择</button><span id="resultCount">0 个结果</span></div>
+        <div id="results" class="wg-results" aria-live="polite"></div>
+      </section>
+      <aside class="wg-builder">
+        <section>
+          <div class="section-head"><h2>自定义添加</h2><span>包标识</span></div>
+          <div class="manual-row"><input id="manualId" placeholder="Publisher.Package" autocomplete="off"><button id="addManual">添加</button></div>
+        </section>
+        <section>
+          <div class="section-head"><h2>命令选项</h2><span id="optionState">安装</span></div>
+          <label class="field"><span>安装范围</span><select id="scope"><option value="">默认</option><option value="user">当前用户</option><option value="machine">整台电脑</option></select></label>
+          <label class="check"><input id="silent" type="checkbox" checked><span>静默安装</span></label>
+          <label class="check"><input id="agreements" type="checkbox" checked><span>自动接受协议</span></label>
+          <label class="check"><input id="exact" type="checkbox" checked><span>精确匹配包标识</span></label>
+        </section>
+        <section class="output-section">
+          <div class="section-head"><h2>安装命令</h2><button id="regenerate">重新生成</button></div>
+          <pre id="output" tabindex="0">请选择需要安装的软件</pre>
+          <div class="output-actions"><button id="copy" class="primary">复制命令</button><button id="download">下载 .ps1</button></div>
+        </section>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="winget.js"></script>
+</body>
+</html>
