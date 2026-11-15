@@ -261,6 +261,18 @@ function selectPolicy(id) {
   $('#policySupported').textContent = current.supportedOn || '—';
   $('#targetHive').value = currentState.hive;
   $('#sourceHint').textContent = current.lang === 'custom' ? '自定义模板' : '内置模板';
+  renderPolicySource();
+  renderState();
+  renderParameters();
+  renderResults();
+}
+
+function renderPolicySource() {
+  const sourceSection = $('.source-section');
+  if (!current || !sourceSection.open) {
+    $('#policySource').textContent = '';
+    return;
+  }
   $('#policySource').textContent = JSON.stringify({
     elements: current.elements || [],
     presentationElements: current.presentationElements || [],
@@ -269,9 +281,6 @@ function selectPolicy(id) {
     enabledList: current.enabledList,
     disabledList: current.disabledList
   }, null, 2);
-  renderState();
-  renderParameters();
-  renderResults();
 }
 
 function renderState() {
@@ -653,5 +662,6 @@ $('#stateFile').addEventListener('change', event => {
 });
 $('#exportState').addEventListener('click', exportState);
 $('#exportRegistry').addEventListener('click', exportRegistry);
+$('.source-section').addEventListener('toggle', renderPolicySource);
 
 load();

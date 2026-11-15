@@ -25,13 +25,19 @@
           <button id="selectVisible">全选结果</button>
           <button id="clearSelection">清空选择</button>
         </div>
-        <div class="wg-filters"><button data-kind="all" class="active">全部</button><button data-kind="popular">热门</button><button data-kind="selected">已选择</button><span id="resultCount">0 个结果</span></div>
+        <div class="wg-filters"><button data-kind="all" class="active">全部</button><button data-kind="popular">热门</button><button data-kind="selected">已选择</button><select id="searchSource" aria-label="搜索来源"><option value="community">winget · 软件</option><option value="store">msstore · Microsoft Store</option><option value="font">winget-font · 字体</option><option value="custom">第三方仓库</option></select><span id="resultCount">0 个结果</span></div>
         <div id="results" class="wg-results" aria-live="polite"></div>
       </section>
       <aside class="wg-builder">
         <section>
-          <div class="section-head"><h2>自定义添加</h2><span>包标识</span></div>
+          <div class="section-head"><h2>按 ID 添加</h2><span id="manualLabel">包标识</span></div>
           <div class="manual-row"><input id="manualId" placeholder="Publisher.Package" autocomplete="off"><button id="addManual">添加</button></div>
+        </section>
+        <section id="sourceConfig" hidden>
+          <div class="section-head"><h2>第三方 Winget 源</h2><span>REST API</span></div>
+          <label class="field"><span>源名称</span><input id="customSourceName" placeholder="公司内网源" autocomplete="off"></label>
+          <label class="field"><span>源地址</span><input id="customSourceUrl" type="url" placeholder="https://example.com/api" autocomplete="url"></label>
+          <div class="source-actions"><button id="saveSource" class="primary">保存仓库</button><span id="sourceMessage" role="status"></span></div>
         </section>
         <section>
           <div class="section-head"><h2>命令选项</h2><span id="optionState">安装</span></div>
@@ -44,6 +50,7 @@
           <div class="section-head"><h2>安装命令</h2><button id="regenerate">重新生成</button></div>
           <pre id="output" tabindex="0">请选择需要安装的软件</pre>
           <div class="output-actions"><button id="copy" class="primary">复制命令</button><button id="download">下载 .ps1</button></div>
+          <span id="actionStatus" class="action-status" role="status" aria-live="polite"></span>
         </section>
       </aside>
     </main>

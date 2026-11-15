@@ -235,6 +235,8 @@ input:focus, select:focus, textarea:focus { border-color: #7da0e8; box-shadow: 0
 .policy-meta-grid strong, .policy-meta-grid code { margin-top: 2px; color: #405067; font-size: 9px; }
 .policy-meta-grid code { font-family: Consolas, monospace; }
 .editor-form, .source-section { margin-top: 10px; padding: 10px; border: 1px solid #e3e9f1; border-radius: 9px; }
+.source-section > summary { cursor: pointer; }
+.source-section:not([open]) > summary { margin-bottom: 0; }
 .form-head { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
 .form-head h3 { flex: 1; margin: 0; font-size: 11px; }
 .form-head span { color: #8a96a7; font-size: 8px; }
