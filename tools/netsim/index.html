@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f5f7fb" />
+    <meta name="theme-color" content="#f5f7fa" />
     <meta name="color-scheme" content="light" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <title>NetSim 网络模拟器 · 口袋工具箱</title>
     <style>
       :root {
-        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
-        color: #182230;
-        background: #f4f6fa;
+        font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+        color: #202d40;
+        background: #f5f7fa;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
@@ -28,35 +28,35 @@
         flex: 0 0 58px;
         min-width: 0;
         padding: 0 22px;
-        border-bottom: 1px solid #e7ebf1;
+        border-bottom: 1px solid #e4e9f0;
         background: rgba(255,255,255,.96);
-        box-shadow: 0 2px 8px rgba(24,34,48,.035);
+        box-shadow: 0 2px 8px rgba(32,45,64,.035);
       }
       .brand { display: flex; align-items: center; gap: 10px; min-width: max-content; }
       .brand-mark {
         display: grid; width: 30px; height: 30px; place-items: center;
-        border-radius: 9px; color: #fff; background: #1677ff;
+        border-radius: 9px; color: #fff; background: #285de5;
       }
       .brand-mark svg { width: 18px; height: 18px; }
       .brand-name { font-size: 15px; font-weight: 650; letter-spacing: -.2px; }
-      .divider { width: 1px; height: 22px; background: #e7ebf1; }
+      .divider { width: 1px; height: 22px; background: #e4e9f0; }
       .switcher {
         display: inline-flex; align-items: center; gap: 3px; min-width: 0;
-        padding: 3px; border: 1px solid #e7ebf1; border-radius: 10px; background: #f7f8fa;
+        padding: 3px; border: 1px solid #e4e9f0; border-radius: 10px; background: #f5f7fa;
       }
       .tab {
         height: 34px; padding: 0 15px; border: 0; border-radius: 7px; background: transparent;
-        color: #5b6573; font: inherit; font-size: 13px; font-weight: 550; white-space: nowrap;
+        color: #728095; font: inherit; font-size: 13px; font-weight: 550; white-space: nowrap;
         cursor: pointer; transition: color .16s ease, background .16s ease, box-shadow .16s ease;
       }
-      .tab:hover { color: #1677ff; }
+      .tab:hover { color: #285de5; }
       .tab[aria-pressed="true"] {
-        color: #1677ff; background: #fff; box-shadow: 0 1px 3px rgba(22,119,255,.12), 0 1px 2px rgba(0,0,0,.05);
+        color: #285de5; background: #fff; box-shadow: 0 1px 3px rgba(40,93,229,.12), 0 1px 2px rgba(0,0,0,.05);
       }
-      .stage { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: #f5f6f8; }
+      .stage { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: #f5f7fa; }
       .simulator {
         position: absolute; inset: 0; display: block; width: 100%; height: 100%;
-        border: 0; background: #f5f6f8; visibility: hidden; pointer-events: none;
+        border: 0; background: #f5f7fa; visibility: hidden; pointer-events: none;
       }
       .simulator.is-active { visibility: visible; pointer-events: auto; }
       @media (max-width: 640px) {
@@ -92,8 +92,8 @@
         </nav>
       </header>
       <main class="stage">
-        <iframe class="simulator is-active" id="sim-linux" title="Linux 网络模拟器" src="./linux/" allow="clipboard-read; clipboard-write; fullscreen" allowfullscreen></iframe>
-        <iframe class="simulator" id="sim-multivendor" title="多厂商网络模拟器" data-src="./multivendor/" allow="clipboard-read; clipboard-write; fullscreen" allowfullscreen></iframe>
+        <iframe class="simulator is-active" id="sim-linux" title="Linux 网络模拟器" src="./linux/" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
+        <iframe class="simulator" id="sim-multivendor" title="多厂商网络模拟器" data-src="./multivendor/" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
       </main>
     </div>
     <script>
