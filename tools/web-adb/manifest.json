@@ -9,7 +9,7 @@
     {
       "path": "index.html",
       "bytes": 879,
-      "sha256": "3af09fbf05103fbfbea96d7d080501058c4337199fd05026aad5655889b1d8a5"
+      "sha256": "061c3589feff48aaa4f4ab492e30076f983b0cd764f392177527e395b1b314c4"
     },
     {
       "path": "favicon.svg",
@@ -22,9 +22,9 @@
       "sha256": "128e6a853bcbaf4ff843313f2747e28468eef8b4a50d03c319768572288e0b56"
     },
     {
-      "path": "assets/index-DKmi7vBi.js",
-      "bytes": 560894,
-      "sha256": "8da4bd57bba5ee1be50f56b09cd91ca9194eb77179d33e2836b33cf450b2c0c3"
+      "path": "assets/index-BU3qR1vA.js",
+      "bytes": 565664,
+      "sha256": "43343e6f75bfe4282190362733b6297763d4866f9e9470f84c4a7ad3f0a70743"
     },
     {
       "path": "scrcpy-server-v5.0.1",
