@@ -84,6 +84,7 @@ const ToolboxCatalog = {
     {id:'hex-wasm',category:'files',name:'十六进制分析',description:'WASM · 搜索 · 字段解析 · 校验',href:'tools/hex-wasm/',icon:'file-code-2',tags:['HEX','WASM','文件'],keywords:'十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端'},
     {id:'ocr',category:'image',name:'图片文字识别',description:'PP-OCRv6 Tiny · 图片 · 相机',href:'tools/ocr/',icon:'scan',tags:['OCR','中文','相机'],keywords:'PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理'},
     {id:'qr-batch',category:'encoding',name:'批量二维码与条形码',description:'多格式数据 · 21 种条形码 · 模板打印',href:'tools/qr-batch/',icon:'qr-code',tags:['二维码','条形码','CSV','打印'],keywords:'批量二维码与条形码 CSV JSON 逐行 21种条形码 画布模板 标签打印'},
+    {id:'countdown-overlay',category:'time',name:'透明倒计时',description:'多段定时 · 画中画 · 画布编辑',href:'tools/countdown-overlay/',icon:'timer',tags:['倒计时','画中画','多段定时'],keywords:'透明倒计时 画中画 Document Picture-in-Picture PIP 多段定时 阶段 衔接文字 快捷键 本地'}
     {id:'netsim',category:'network',name:'NetSim 网络模拟器',description:'拓扑设计 · Linux 命令 · 防火墙 · 动态路由',href:'tools/netsim/',icon:'waypoints',tags:['NetSim','拓扑','Linux','WASM'],keywords:'NetSim 网络模拟器 网络拓扑 Linux iproute2 ping traceroute nftables iptables DHCP DNS RIP VLAN Wi-Fi containerlab Docker Compose'},
     {id:'topospace',category:'network',name:'空间网络编辑器',description:'2D/3D 拓扑 · 设备连接 · 本地工程',href:'tools/topospace/',icon:'network',tags:['TopoSpace','拓扑','3D'],keywords:'TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程'}
   ]
