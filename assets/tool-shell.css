@@ -1,5 +1,5 @@
 @import url('./design-system.css');
-@import url("reference-tool-theme.css");
+@import url("reference-tool-theme.css?v=20261116a");
 
 /* Shared shell only: preserve native canvas, editor and terminal controls. */
 html body :is(.connection,.panels,.action-card,.pane,.canvas-panel,aside,.work){

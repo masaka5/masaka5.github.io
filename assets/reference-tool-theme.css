@@ -168,3 +168,21 @@ body.seo-page header .open{padding:7px 12px;border-radius:9px;background:var(--a
 body.seo-page header .open:hover{background:var(--accent-strong);text-decoration:none}
 body.seo-page .workspace{border-color:var(--line);background:var(--surface)}
 @media(max-width:760px){body.seo-page>header{padding:10px 14px;gap:10px}.seo-page .directory{padding:14px;gap:10px}}
+/* Unified feature-card finish across built-in and catalog tools. */
+html body :is(.action-card,.advanced-card,.analysis-card,.camera-card,.command-card,.comment-card,.device-card,.display-card,.dns-card,.fn-card,.glass-card,.input-card,.key-card,.mirror-card,.network-card,.overview-card,.preview-card,.receive-card,.resource-card,.settings-card,.snapshot-card,.stat-card,.system-command-card,.tool-card,.workspace-card,[data-slot='card']) {
+  border-color: var(--line) !important;
+  border-radius: 16px !important;
+  background: var(--surface) !important;
+  box-shadow: 0 1px 3px rgba(15,23,42,.035) !important;
+}
+html body :is(a.action-card,a.advanced-card,a.analysis-card,a.command-card,a.device-card,a.network-card,a.overview-card,a.preview-card,a.resource-card,a.snapshot-card,a.system-command-card,a.workspace-card,button.action-card,button.advanced-card,button.command-card,button.device-card,button.network-card,button.resource-card,button.system-command-card,button.workspace-card):hover {
+  border-color: #c7d2fe !important;
+  box-shadow: 0 12px 28px -14px rgba(79,70,229,.2) !important;
+}
+:where(.action-card,.advanced-card,.analysis-card,.camera-card,.command-card,.comment-card,.device-card,.display-card,.dns-card,.fn-card,.glass-card,.input-card,.key-card,.mirror-card,.network-card,.overview-card,.preview-card,.receive-card,.resource-card,.settings-card,.snapshot-card,.stat-card,.system-command-card,.tool-card,.workspace-card,[data-slot='card']) :where(.card-title,.card-heading,h2,h3) {
+  color: var(--text);
+  letter-spacing: -.01em;
+}
+html body :is(.action-card,.advanced-card,.analysis-card,.camera-card,.command-card,.device-card,.display-card,.dns-card,.fn-card,.input-card,.key-card,.mirror-card,.network-card,.overview-card,.preview-card,.receive-card,.resource-card,.settings-card,.snapshot-card,.stat-card,.system-command-card,.tool-card,.workspace-card) :is(.card-description,.card-copy p,.card-meta,small) {
+  color: var(--muted);
+}
