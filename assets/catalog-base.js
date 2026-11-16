@@ -72,7 +72,7 @@ const ToolboxCatalog = {
     {id:'ip-batch',category:'network',name:'IP 批量整理',description:'去重排序 · 网段合并',href:'tools/ip-batch/',icon:'network',tags:['IP','CIDR','合并'],keywords:'IPv4 IPv6 批量 地址范围 整理'},
     {id:'mac',category:'network',name:'MAC 地址转换',description:'格式转换 · 地址类型',href:'tools/mac/',icon:'convert',tags:['MAC','OUI','EUI-64'],keywords:'物理地址 网卡 单播 组播 广播'},
     {id:'network',category:'network',name:'网络测速与延迟',description:'上下行测速 · 服务访问延迟',href:'tools/network/',icon:'network',tags:['测速','延迟','网络'],keywords:'带宽 下载 上传 运营商 云服务 游戏 厂商 HTTPS WeGame Steam Epic 战网 EA Ubisoft Xbox'},
-    {id:'ai',category:'ai',name:'AI 助手',description:'对话 · TXT · 粘贴长文本',href:'tools/ai/',icon:'chat',tags:['AI','图片','文件'],keywords:'ChatGPT 豆包 助手 API 上传 对话'},
+    {id:'ai',category:'ai',name:'AI 助手',description:'对话 · TXT · 粘贴长文本',href:'tools/ai/',icon:'chat',tags:['AI','TXT','对话'],keywords:'ChatGPT 豆包 助手 API TXT 长文本 粘贴 附件 对话'},
     {id:'scan',category:'peripheral',name:'条码与二维码',description:'摄像头 · 图片 · 扫码枪',href:'tools/scan/',icon:'scan',tags:['QR','条形码','扫码枪'],keywords:'扫码 二维码 QR Code128 EAN UPC PDF417 DataMatrix 摄像头 图片 输入 扫描'},
     {id:'devices',category:'peripheral',name:'外设检测',description:'键盘 · 鼠标 · 麦克风 · 摄像头',href:'tools/devices/',icon:'devices',tags:['键盘','鼠标','摄像头'],keywords:'外设 声道 手柄 游戏手柄 麦克风 音频 输入测试 USB'},
     {id:'recorder',category:'peripheral',name:'屏幕录制',description:'录制预览 · 浏览器暂存 · 下载',href:'tools/recorder/',icon:'record',tags:['录屏','暂存','视频'],keywords:'屏幕录制 摄像头 视频 下载 IndexedDB'} ,
