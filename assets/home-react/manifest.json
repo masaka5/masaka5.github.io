@@ -10,11 +10,11 @@
   "artifacts": {
     "home.js": {
       "bytes": 792741,
-      "sha256": "819085dca1596292b336f8e3e6625126087fe32e0c7af1d2377c959f3aa65b74"
+      "sha256": "48e6b6e819b5b29435672b6dbb0dd5f6ea227241f836dd5bf6a864e13d68b499"
     },
     "home.css": {
-      "bytes": 33288,
-      "sha256": "0f139dc79eca7c9f009f6c23a011d437fa008af33a890b77ae01cc886ab54ffd"
+      "bytes": 37248,
+      "sha256": "613ab7d1cb3f595c9061109fc8dfae06b552203e8c20b7e261b9abb6352adc4b"
     }
   }
 }
