@@ -1,6 +1,7 @@
 /* Shared finishing layer for bundled tools. Processing and preview canvases keep
    their own layout; chrome, forms and panels follow the toolbox theme. */
 @import url("design-system.css");
+@import url("reference-tool-theme.css");
 html:root{color-scheme:light;--tool-blue:#315fc9;--tool-line:#e3e7ed;--tool-text:#242d3a;--tool-muted:#687588}
 .toolbox-shell{background:#f5f6f8!important}
 .toolbox-workspace{scrollbar-width:thin;scrollbar-color:#cbd3df transparent;overscroll-behavior:contain}

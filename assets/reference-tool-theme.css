@@ -1,0 +1,170 @@
+/* Shared reference theme for every toolbox tool. Layout and behavior remain local. */
+html:root {
+  color-scheme: light;
+  --bg: #f8f9fb;
+  --surface: #fff;
+  --panel: #fff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --blue: #6366f1;
+  --accent: #6366f1;
+  --accent-strong: #4f46e5;
+  --accent-soft: #eef2ff;
+  --danger: #dc2626;
+  --red: #dc2626;
+  --green: #059669;
+  --radius-panel: 16px;
+  --radius-control: 10px;
+  --font-ui: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-code: 'Cascadia Code', Consolas, 'Microsoft YaHei', monospace;
+  --focus-ring: rgba(99, 102, 241, .22);
+}
+
+html { background: var(--bg); }
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { color: #fff; background: var(--accent); }
+:where(h1,h2,h3) { letter-spacing: -.015em; text-wrap: balance; }
+:where(p) { text-wrap: pretty; }
+
+:where(input,select,textarea) {
+  border-color: var(--line);
+  border-radius: var(--radius-control);
+  background-color: var(--surface);
+  color: var(--text);
+}
+:where(input,select,textarea)::placeholder { color: #94a3b8; }
+:where(input,select,textarea):focus-visible,
+:where(button,a):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+:where(button,.button,.btn) { border-radius: var(--radius-control); font-weight: 500; }
+:where(button.primary,.button.primary,.btn.primary,.primary-action) {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: none;
+}
+:where(button.primary,.button.primary,.btn.primary,.primary-action):hover {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+}
+:where(.secondary,.button.secondary,.btn.secondary) {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+}
+
+/* Shared headers become a compact white workspace chrome. */
+:where(.tool-shell,.ops-shell,.studio-shell,.toolbox-shell,.archive-shell,.creative,.markdown-app) > :where(header,.tool-header,.ops-header,.studio-header,.archive-header) {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+}
+:where(.tool-header,.ops-header,.studio-header,.archive-header) h1,
+:where(.tool-shell,.ops-shell,.studio-shell,.toolbox-shell,.archive-shell,.creative,.markdown-app) > header h1 {
+  color: var(--text);
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+:where(.back-link,.home-link) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+:where(.back-link,.home-link):hover { color: var(--accent); border-color: #c7d2fe; background: var(--accent-soft); }
+
+:where(.panel,.ops-panel,.tool-panels>.panel,.studio-controls,.studio-stage,.archive-shell .settings,.archive-shell .browser,.result-item,.metric,.tool-surface,.toolbox-workspace [data-slot='card']) {
+  border-color: var(--line);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(15,23,42,.035);
+}
+:where(.panel-head,.pane-head,.panel-heading,.tool-surface-heading) { border-color: var(--line); }
+:where(.section-tabs button,.workspace-tabs button,.network-tabs button,.filter-tabs button,.view-switch button)[aria-pressed='true'],
+:where(.workspace-tabs button.active,.tab.active,.tab[aria-selected='true']) {
+  color: var(--accent);
+  border-color: #c7d2fe;
+  background: var(--accent-soft);
+}
+:where(.category-item,.filter-chip,.sample-chip,.quick-item) {
+  border-color: var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+}
+:where(.category-item,.filter-chip,.sample-chip,.quick-item):hover { border-color: #c7d2fe; color: var(--accent-strong); background: var(--accent-soft); }
+:where(.status,.help,.note,.inline-note) { color: var(--muted); }
+:where(table) { border-color: var(--line); }
+:where(table th) { color: var(--muted); background: #f8fafc; }
+:where(table td) { border-color: var(--line); }
+:where(dialog,[role='dialog'],.modal) { border-color: var(--line); border-radius: var(--radius-panel); background: var(--surface); color: var(--text); }
+:where(pre,code,.code-area,.mono,.font-mono) { font-family: var(--font-code); }
+
+/* Toolbox integration pages keep their canvases and editors; only surfaces are normalized. */
+.toolbox-shell { background: var(--bg) !important; }
+.toolbox-workspace { color: var(--text); }
+.toolbox-workspace :is(.font-display,.font-body) { font-family: var(--font-ui) !important; }
+.toolbox-workspace :is([data-slot='button'],.doodle-btn,.fn-btn) { border-radius: var(--radius-control) !important; box-shadow: none; }
+.toolbox-workspace :is([data-slot='input'],[data-slot='select-trigger'],.fn-input,.fn-select) {
+  border-color: var(--line) !important;
+  border-radius: var(--radius-control) !important;
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+.toolbox-workspace :is([data-slot='card'],.fn-card,.tool-card,.panel) { border-color: var(--line); border-radius: var(--radius-panel); background: var(--surface); box-shadow: none; }
+.toolbox-workspace .tool-btn-primary,
+.toolbox-workspace .btn-primary,
+.toolbox-workspace [data-variant='default'][data-slot='button'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.toolbox-workspace [data-slot='tabs-list'] { border-radius: var(--radius-control); background: #f1f5f9; }
+.toolbox-workspace [data-slot='tabs-trigger'][data-state='active'] { color: var(--accent); background: var(--surface); }
+
+/* Existing bespoke tool accents now resolve to the reference indigo. */
+:where(.ops-shell,.tool-shell,.studio-shell,.archive-shell,.markdown-app,.creative) {
+  --tool-blue: var(--accent);
+  --tool-line: var(--line);
+  --tool-text: var(--text);
+  --tool-muted: var(--muted);
+}
+:where(.ops-shell,.tool-shell,.studio-shell,.archive-shell) :where(.active,[aria-current='page']) { color: var(--accent-strong); }
+:where(.ops-shell,.tool-shell,.studio-shell,.archive-shell) :where(.primary,.primary-action) { background: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 760px) {
+  :where(.tool-shell,.ops-shell,.studio-shell,.archive-shell) { padding-left: 14px; padding-right: 14px; }
+  :where(.tool-header,.ops-header,.studio-header,.archive-header) h1 { font-size: 18px; }
+  :where(.panel,.ops-panel,.studio-controls,.studio-stage) { border-radius: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}/* Category and catalog pages. */
+html body.seo-page{background:var(--bg);color:var(--text);font-family:var(--font-ui)}
+body.seo-page>header{min-height:64px;padding:12px 28px;border-color:var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px)}
+body.seo-page>header>a:first-child{display:inline-flex;align-items:center;min-height:34px;padding:4px 10px;border-radius:9px;background:var(--accent-soft);color:var(--accent-strong);font-weight:600}
+body.seo-page>header>a:nth-child(2){color:var(--muted)}
+body.seo-page h1{color:var(--text);font-weight:650;letter-spacing:-.02em}
+body.seo-page .directory{padding:24px 28px}
+body.seo-page .directory a{padding:18px;border-color:var(--line);border-radius:16px;background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(15,23,42,.035);transition:border-color .15s ease,box-shadow .15s ease}
+body.seo-page .directory a:hover{border-color:#c7d2fe;box-shadow:0 12px 28px -14px rgba(79,70,229,.2);text-decoration:none}
+body.seo-page .directory small{color:var(--muted)}
+body.seo-page header .open{padding:7px 12px;border-radius:9px;background:var(--accent);color:#fff;font-weight:500}
+body.seo-page header .open:hover{background:var(--accent-strong);text-decoration:none}
+body.seo-page .workspace{border-color:var(--line);background:var(--surface)}
+@media(max-width:760px){body.seo-page>header{padding:10px 14px;gap:10px}.seo-page .directory{padding:14px;gap:10px}}
