@@ -132,7 +132,7 @@ function timePanelMarkup(){
   <div class="time-status" id="time-status" data-status="${settings.status}"><span class="status-dot"></span><span id="status-label">${statusText(settings.status)}</span><span>·</span><span id="stage-status">${currentStage().name}${settings.phase==='transition'?' · 衔接':''}</span><span>·</span><span id="remaining-label">${formatTime(currentRemaining())}</span></div>
   <div class="primary-controls"><button class="btn primary" data-action="start" ${settings.status==='running'?'disabled':''}>${icon('play')}开始</button><button class="btn" data-action="pause" ${settings.status!=='running'?'disabled':''}>${icon('pause')}暂停</button><button class="btn" data-action="reset">${icon('reset')}重置</button></div>
   <div class="setting-list"><div class="setting-row"><span>阶段提示音</span><label class="switch"><input id="sound-input" type="checkbox" ${settings.sound?'checked':''}><span></span></label></div><div class="setting-row"><span>画面透明度</span><input id="opacity-input" type="range" min="10" max="100" value="${settings.opacity}"><strong id="opacity-value">${settings.opacity}%</strong></div></div>
-  <div class="shortcuts"><div class="shortcut-row"><span><kbd>空格</kbd> 开始 / 暂停</span><span><kbd>R</kbd> 重置</span></div><div class="shortcut-row"><span><kbd>P</kbd> 画中画</span><span><kbd>↑</kbd><kbd>↓</kbd> 调整阶段</span></div></div>
+  <div class="shortcuts"><div class="shortcut-row"><span><kbd>空格</kbd> 开始 / 暂停</span><span><kbd>R</kbd> 重置</span></div><div class="shortcut-row"><span><kbd>P</kbd> 画中画</span><span><kbd>↑</kbd><kbd>↓</kbd> 调整阶段</span></div><div class="shortcut-row"><span><kbd>S</kbd> 提示音</span><span><kbd>T</kbd> 透明背景</span></div></div>
   <div class="support-note">透明背景由页面控制，悬浮窗口外框由浏览器决定。</div>
  </div>`;
 }
@@ -239,7 +239,7 @@ async function openPictureInPicture(){
   try{
    const win=await window.documentPictureInPicture.requestWindow({width:settings.canvas.width,height:settings.canvas.height,disallowReturnToOpener:false,preferInitialWindowPlacement:false});
    pipWindow=win;win.document.title='透明倒计时';win.document.documentElement.style.background='transparent';win.document.body.style.background='transparent';renderOverlayDocument(win.document,snapshot());
-   win.addEventListener('resize',()=>renderOverlayDocument(win.document,snapshot()));win.addEventListener('pagehide',()=>{pipWindow=null;},{once:true});showToast('画中画已打开');
+   win.addEventListener('resize',()=>renderOverlayDocument(win.document,snapshot()));win.addEventListener('pagehide',()=>{pipWindow=null;},{once:true});win.document.addEventListener('keydown',event=>{const action=overlayKeyAction(event);if(!action)return;event.preventDefault();performOverlayShortcut(action);});showToast('画中画已打开');
   }catch(error){showToast('画中画不可用，已切换到悬浮窗口');openFallbackWindow();}
  }else{openFallbackWindow();}
 }
@@ -290,6 +290,15 @@ function beginDrag(event){
  const end=()=>{window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',end);refreshInspector();renderCanvas();saveSoon();publish();};
  window.addEventListener('pointermove',move);window.addEventListener('pointerup',end,{once:true});
 }
+function adjustActiveDuration(delta){
+ if(settings.status==='running'){showToast('请先暂停再调整时长');return;}
+ const stage=currentStage();selectedStageId=stage.id;stage.durationMs=clamp(stage.durationMs+delta,1000,359999000);if(settings.phase==='timer')settings.remainingMs=stage.durationMs;settings.status='idle';refreshTimePanel();renderCanvas();updateControls();saveSoon();publish();
+}
+function closeOverlayWindows(){const pip=activePipWindow();if(pip){pip.close();pipWindow=null;}if(fallbackWindow&&!fallbackWindow.closed){fallbackWindow.close();fallbackWindow=null;}}
+function performOverlayShortcut(action){
+ if(action==='toggle')toggleTimer();else if(action==='reset')resetTimer();else if(action==='up')adjustActiveDuration(60000);else if(action==='down')adjustActiveDuration(-60000);else if(action==='sound'){settings.sound=!settings.sound;saveSoon();showToast(settings.sound?'提示音已开启':'提示音已关闭');}else if(action==='transparent'){settings.canvas.transparent=!settings.canvas.transparent;renderCanvas();saveSoon();publish();showToast(settings.canvas.transparent?'透明背景已开启':'透明背景已关闭');}else if(action==='close')closeOverlayWindows();
+}
+function overlayKeyAction(event){const key=event.key.toLowerCase();if(event.code==='Space')return'toggle';if(key==='r')return'reset';if(key==='p'||key==='escape')return'close';if(key==='s')return'sound';if(key==='t')return'transparent';if(event.key==='ArrowUp')return'up';if(event.key==='ArrowDown')return'down';return'';}
 function handleKey(event){
  const target=event.target;if(target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement||target?.isContentEditable)return;
  if(event.code==='Space'){event.preventDefault();toggleTimer();return;}if(event.key.toLowerCase()==='r'){event.preventDefault();resetTimer();return;}if(event.key.toLowerCase()==='p'){event.preventDefault();openPictureInPicture();return;}
@@ -306,7 +315,7 @@ function bindMain(){
  document.addEventListener('click',handleClick);document.addEventListener('input',handleField);document.addEventListener('change',handleField);$('#stage').addEventListener('pointerdown',beginDrag);
 
  window.addEventListener('keydown',handleKey);new ResizeObserver(()=>renderCanvas()).observe($('#stage'));
- channel?.addEventListener('message',event=>{if(event.data?.type==='hello')publish();});
+ channel?.addEventListener('message',event=>{if(event.data?.type==='hello')publish();if(event.data?.type==='command'&&event.data.action)performOverlayShortcut(event.data.action);});
 }
 
 function startOverlayMode(){
@@ -317,6 +326,7 @@ function startOverlayMode(){
  channel?.addEventListener('message',receive);
  window.addEventListener('message',event=>{if(event.data?.type==='countdown-state'){overlayState=event.data.state;renderOverlayDocument(document,overlayState);}});
  window.addEventListener('resize',()=>renderOverlayDocument(document,overlayState));
+ document.addEventListener('keydown',event=>{const action=overlayKeyAction(event);if(!action)return;event.preventDefault();if(action==='close'){window.close();return;}channel?.postMessage({type:'command',action});});
  let last=-1;
  const frame=()=>{const second=Math.ceil(stateRemaining(overlayState)/1000);if(second!==last){updateOverlayDynamic(document,overlayState);last=second;}requestAnimationFrame(frame);};requestAnimationFrame(frame);
 }
