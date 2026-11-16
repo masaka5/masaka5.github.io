@@ -4,11 +4,11 @@ import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-codeblocks4';
 import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-codeblocks4';
 import {estimateTextTokens} from './local-ai-harness.mjs?v=20261114-4b-codeblocks4';
 import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4';
+import {MAX_TEXT_FILE,MAX_ATTACHMENTS,LONG_PASTE,DEFAULT_ATTACHMENT_PROMPT,formatBytes,decodeTextBuffer,compactText,attachmentContext,composedMessage} from './ai-attachments.mjs?v=20261116-textattach';
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
-  const imageTypes=new Set(['image/png','image/jpeg','image/webp']);
-  const textExtensions=/\.(txt|md|csv|json|log|xml|yaml|yml|html|css|js|ts|py|sh|ps1|sql|ini|conf)$/i;
+  function pastedTextCount(){return attachments.filter(file=>file.pasted).length;}
   let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID(),localLabel=LOCAL_LABEL;
   const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{localLabel=info.label||LOCAL_LABEL;if(localMode){$('modelLabel').textContent=localLabel+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);scheduleSave();}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);scheduleSave();}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onContext:event=>contextEvent(event),onCheckpoint:()=>void persist(),onError:error=>status(error,true)});
   const status=(message,error=false)=>Ops.status($('chatStatus'),message,error);
@@ -108,35 +108,47 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
   function renderAttachments(){
     $('attachments').replaceChildren();
     attachments.forEach((file,index)=>{
-      const card=Ops.node('div','attachment');
-      if(file.image){const img=document.createElement('img');img.src=file.data;img.alt='';card.append(img);}
+      const card=Ops.node('div','attachment'+(file.pasted?' is-pasted':''));
       const name=Ops.node('span','',file.name);name.title=file.name;
+      const meta=Ops.node('small','attachment-meta',`${file.pasted?'粘贴文本':'TXT'} · ${formatBytes(file.compactedSize||file.size)}`);
       const remove=Ops.node('button','','×');remove.type='button';remove.setAttribute('aria-label','移除 '+file.name);
-      remove.onclick=()=>{attachments.splice(index,1);renderAttachments();};card.append(name,remove);$('attachments').append(card);
+      remove.onclick=()=>{attachments.splice(index,1);renderAttachments();};card.append(name,meta,remove);$('attachments').append(card);
     });controls();
+  }
+  function addPastedText(value){
+    if(controller||reading||localBusy)return false;
+    if(value.length<LONG_PASTE)return false;
+    if(attachments.length>=MAX_ATTACHMENTS){status(`最多可添加 ${MAX_ATTACHMENTS} 个文本附件。`,true);return true;}
+    const compacted=compactText(value);
+    const compactedSize=new Blob([compacted]).size;attachments.push({name:`粘贴文本 ${pastedTextCount()+1}.txt`,pasted:true,size:new Blob([value]).size,compactedSize,data:compacted});
+    renderAttachments();status(`长文本已压缩为附件 · ${formatBytes(compactedSize)}`);return true;
   }
   async function addFiles(files){
     if(controller||reading||!files.length)return;
-    reading=true;controls();status('正在读取附件…');
+    if(attachments.length+files.length>MAX_ATTACHMENTS){status(`最多可添加 ${MAX_ATTACHMENTS} 个文本附件。`,true);return;}
+    reading=true;controls();status('正在压缩 TXT…');
     try{
       const added=[];
       for(const file of files){
+        if(!(file.type==='text/plain'||/\.txt$/i.test(file.name)))throw Error(`仅支持 TXT：${file.name}`);
         if(!file.size)throw Error(file.name+' 是空文件。');
-        if(imageTypes.has(file.type)){
-          const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('读取图片失败。'));reader.readAsDataURL(file);});
-          added.push({name:file.name,size:file.size,image:true,data});
-        }else{
-          if(!textExtensions.test(file.name))throw Error('不支持此文件格式：'+file.name+'。PDF、Office 文件请到官方网页版上传。');
-          let text;try{text=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer());}catch(_){throw Error(file.name+' 需要保存为 UTF-8 文本。');}
-          if(text.includes('\0'))throw Error(file.name+' 不是可读取的文本文件。');
-          added.push({name:file.name,size:file.size,image:false,data:text});
-        }
+        if(file.size>MAX_TEXT_FILE)throw Error(`${file.name} 超过 3 MB。`);
+        const raw=decodeTextBuffer(await file.arrayBuffer());
+        if(raw.includes('\u0000'))throw Error(file.name+' 不是可读取的文本文件。');
+        const compacted=compactText(raw);
+        if(!compacted)throw Error(file.name+' 没有可发送的文本。');
+        added.push({name:file.name,size:file.size,compactedSize:new Blob([compacted]).size,data:compacted,pasted:false});
       }
-      attachments.push(...added);renderAttachments();status('附件已就绪，点击发送后提交。');
+      attachments.push(...added);renderAttachments();status('文本已压缩，发送后与当前对话一起提交。');
     }catch(error){status(error.message,true);}finally{reading=false;$('files').value='';controls();}
   }
   $('files').onchange=()=>addFiles([...$('files').files]);
-  $('prompt').addEventListener('paste',event=>{const files=[...event.clipboardData.files];if(files.length){event.preventDefault();addFiles(files);}});
+  $('prompt').addEventListener('paste',event=>{
+    const files=[...event.clipboardData.files];
+    if(files.length){event.preventDefault();addFiles(files);return;}
+    const copied=event.clipboardData.getData('text/plain');
+    if(addPastedText(copied))event.preventDefault();
+  });
   try{$('sendShortcut').value=localStorage.getItem('pocket-ai-send-shortcut')||'enter';}catch{}
   $('sendShortcut').onchange=()=>{try{localStorage.setItem('pocket-ai-send-shortcut',$('sendShortcut').value);}catch{}};
   $('prompt').addEventListener('keydown',event=>{if(shouldSend(event,$('sendShortcut').value)){event.preventDefault();if(!controller&&!reading&&!localBusy)$('chatForm').requestSubmit();}});
@@ -161,9 +173,6 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
       const copy=Ops.node('button','text-button','复制');copy.type='button';copy.onclick=()=>Ops.copy(body.textContent,$('chatStatus'));head.append(copy);
       codeToggle.onclick=()=>{codeHidden=!codeHidden;setText(currentText);};head.append(codeToggle);
     }
-    const images=Ops.node('div','message-images');
-    files.filter(file=>file.image).forEach(file=>{const img=document.createElement('img');img.src=file.data;img.alt=file.name;images.append(img);});
-    if(images.childElementCount)card.append(images);
     if(files.length)card.append(Ops.node('p','message-files',files.map(file=>file.name).join(' · ')));
     $('chatFeed').append(card);$('chatFeed').scrollTop=$('chatFeed').scrollHeight;
     $('exportChat').disabled=false;setText(text);return {card,body,label,setText,getText:()=>currentText,codeToggle};
@@ -176,27 +185,19 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
     details.querySelector('div').textContent=parsed.thinking;details.hidden=!parsed.thinking;
     if(follow)feed.scrollTop=feed.scrollHeight;
   }
-  function localAttachmentText(files){return files.filter(file=>!file.image).map(file=>`\n附件：${file.name}\n${file.data}`).join('');}
   async function submitLocal(text,files){
-    if(files.some(file=>file.image)){status('Spark 模型支持文字，图片请使用接口模式。',true);return;}
+    const displayText=text||(files.length?DEFAULT_ATTACHMENT_PROMPT:'');
     const submission=localSubmission={cancelled:false};localBusy=true;controls();
     if(!localClient.ready){await openLocal();if(submission.cancelled)return;if(!localClient.ready){localBusy=false;localSubmission=null;controls();return;}}
-    const content=(text||'')+localAttachmentText(files),user={role:'user',content,display:text,files};
-    if(localHistory.at(-1)?.role!=='user'||localHistory.at(-1).content!==content)localHistory.push(user);
-    beginTask(text);interrupted={mode:'local',raw:''};await persist();
-    const sent=message('user',text,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
+    const messageText=composedMessage(displayText,files),user={role:'user',content:messageText,display:displayText,files};
+    if(localHistory.at(-1)?.role!=='user'||localHistory.at(-1).content!==messageText)localHistory.push(user);
+    beginTask(displayText);interrupted={mode:'local',raw:''};await persist();
+    const sent=message('user',displayText,files),reply=message('assistant','正在生成…');reply.id=crypto.randomUUID();reply.card.dataset.state='working';localRaw='';localActive=reply;status('生成中…');
     try{const answer=await localClient.ask(localHistory,{id:reply.id,task:currentTask()});localRaw=answer;const finalAnswer=completeReply(splitThinking(answer).answer);if(!finalAnswer.trim())throw Error('模型未返回答案，消息已保留。');renderLocal(reply,answer,true);localHistory.push({role:'assistant',content:finalAnswer,raw:answer});reply.card.dataset.state='complete';interrupted=null;$('prompt').value='';attachments=[];renderAttachments();status('');}
     catch(error){interrupted={mode:'local',raw:localRaw};tasks.local={...tasks.local,status:'pending'};renderMemory();reply.card.dataset.state='error';reply.label.textContent='未完成';if(!localRaw)reply.setText(error.message||'本地生成失败，请重试。');else renderLocal(reply,localRaw,true);status(error.message||'本地生成失败。',true);}
     finally{localBusy=false;localActive=null;localSubmission=null;controls();await persist();$('prompt').focus();}
   }
-  function content(text,files){
-    const parts=[];if(text)parts.push({type:'text',text});
-    for(const file of files){
-      if(file.image)parts.push({type:'image_url',image_url:{url:file.data}});
-      else parts.push({type:'text',text:`附件：${file.name}\n<file_content>\n${file.data}\n</file_content>`});
-    }
-    return files.length?parts:text;
-  }
+  function content(text,files){return composedMessage(text,files);}
   async function responseText(response,onText){
     const reader=response.body?.getReader();if(!reader)throw Error('接口没有返回可读取的内容。');
     const decoder=new TextDecoder();let buffer='',answer='',done=false,finishReason='stop';
@@ -206,7 +207,7 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
       const data=line.slice(5).trim();if(!data)return;
       if(data==='[DONE]'){done=true;return;}
       let result;try{result=JSON.parse(data);}catch(_){throw Error('接口流式数据格式不正确。');}
-      if(result.error)throw Error('接口返回错误，请检查模型名称、额度与图片支持。');
+      if(result.error)throw Error('接口返回错误，请检查模型名称、额度与文本接口设置。');
       const choice=result.choices?.[0],part=choice?.delta?.content;
       if(typeof part==='string'){answer+=part;onText(answer);}
       if(choice?.finish_reason){
@@ -224,7 +225,7 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
       if(streaming){if(buffer.trim())chunk(buffer.trim());if(!done)throw Error('连接提前中断，请重试。');}
       else{
         let result;try{result=JSON.parse(buffer);}catch(_){throw Error('接口未返回对话数据，请检查 API 地址。');}
-        if(result.error)throw Error('接口返回错误，请检查模型名称、额度与图片支持。');
+        if(result.error)throw Error('接口返回错误，请检查模型名称、额度与文本接口设置。');
         answer=result.choices?.[0]?.message?.content;
         finishReason=result.choices?.[0]?.finish_reason||'stop';
         if(typeof answer!=='string')throw Error('此接口返回格式不兼容 Chat Completions。');
@@ -239,11 +240,11 @@ import {renderMessageBody} from './message-render.mjs?v=20261114-4b-codeblocks4'
     const text=$('prompt').value.trim(),files=[...attachments];if(!text&&!files.length){status('请输入问题或添加附件。');return;}
     if(localMode){await submitLocal(text,files);return;}
     if(!config){$('settings').showModal();Ops.status($('settingsStatus'),'先配置接口，再发送消息。');return;}
-    const user={role:'user',content:content(text,files),display:text,files};
+    const displayText=text||(files.length?DEFAULT_ATTACHMENT_PROMPT:''),user={role:'user',content:content(displayText,files),display:displayText,files};
     if(history.at(-1)?.role!=='user'||JSON.stringify(history.at(-1).content)!==JSON.stringify(user.content))history.push(user);
-    const messages=[...history];beginTask(text);interrupted={mode:'api',raw:''};
+    const messages=[...history];beginTask(displayText);interrupted={mode:'api',raw:''};
     controller=new AbortController();const signal=controller.signal;
-    controls();const sent=message('user',text,files),reply=message('assistant','正在等待回复…');reply.card.dataset.state='working';status('正在请求 '+new URL(config.url).host+'…');
+    controls();const sent=message('user',displayText,files),reply=message('assistant','正在等待回复…');reply.card.dataset.state='working';status('正在请求 '+new URL(config.url).host+'…');
     try{
       await persist();
       const request=async(items,onText=()=>{})=>{
