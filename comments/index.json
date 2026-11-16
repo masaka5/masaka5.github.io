@@ -1,7 +1,8 @@
 {
   "schema": 1,
-  "lastSeq": 1,
+  "lastSeq": 2,
   "files": [
-    "comments/000000000001.json"
+    "comments/000000000001.json",
+    "comments/000000000002.json"
   ]
 }
