@@ -1,10 +1,10 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "files": [
     {
       "file": "index.html",
       "bytes": 12903,
-      "sha256": "03dd70141c2b8c793fafbf1d72226e168dc4b991e9fda0351fc63c6a3447c429"
+      "sha256": "a58e4fc06c22deb76a18de0e60cb2b36e80449adfceb32053e2a8767c698afba"
     },
     {
       "file": "store-worker.js",
@@ -43,8 +43,8 @@
     },
     {
       "file": "transfer.js",
-      "bytes": 39720,
-      "sha256": "f13b02adf5b6b15c5669a95b3ad9034cfd8f968fb2b148282ea147c62082abc6"
+      "bytes": 40566,
+      "sha256": "dc1f0c99adf12a4afcf199efd990409774f8cb0135afc1e241f7b22780e1c41f"
     }
   ]
 }

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文档匿名化 · 口袋工具箱</title>
+    <meta name="description" content="浏览器本地文档脱敏工具，支持 DOCX、XLSX、PDF、图片 OCR、敏感信息识别、占位符恢复和文档导出。" />
+    <meta name="keywords" content="文档脱敏,隐私保护,个人信息,本地处理,DOCX,XLSX,PDF,OCR" />
+    <meta name="author" content="口袋工具箱" />
+    <meta name="theme-color" content="#f8f9fb" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="文档匿名化 · 口袋工具箱" />
+    <meta property="og:description" content="在浏览器本地识别并替换个人信息，支持占位符恢复、DOCX、XLSX、PDF 与图片 OCR。" />
+    <meta property="og:url" content="https://tools.manshii.asia/catalog/doccloak/" />
+    <meta property="og:site_name" content="口袋工具箱" />
+    <meta property="og:image" content="https://tools.manshii.asia/assets/share-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="文档匿名化工具" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="文档匿名化 · 口袋工具箱" />
+    <meta name="twitter:description" content="Full answers for you, fake data for the AI. Swap PII for stand-ins before sharing with AI, restore the real values in the reply. 100% in your browser, 浏览器本地处理。" />
+    <meta name="twitter:image" content="https://tools.manshii.asia/assets/share-card.png" />
+
+    <link rel="canonical" href="https://tools.manshii.asia/catalog/doccloak/" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/tools/doccloak/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/tools/doccloak/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/tools/doccloak/apple-touch-icon.png" />
+
+    <link rel="preload" href="/tools/doccloak/fonts/fraunces-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/tools/doccloak/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- JSON-LD: SoftwareApplication schema for Google rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DocCloak",
+      "description": "浏览器本地文档脱敏工具，支持个人信息识别、占位符替换与恢复、DOCX、XLSX、PDF 和图片 OCR。文档不会上传。",
+      "url": "https://tools.manshii.asia/catalog/doccloak/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires a modern browser with WebAssembly support",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "softwareVersion": "0.17.2",
+      "featureList": [
+        "Detects 14 entity types: persons, emails, phones, SSNs, credit cards, dates, currencies, IP addresses, IBANs, addresses, companies, secrets, API keys and custom labels",
+        "全部在浏览器本地运行，无后端和遥测",
+        "Eight ML models (BardS.ai EU PII v1, v2 and v3, GLiNER PII Small and Base, GLiNER2 Privacy Filter, OpenAI Privacy Filter), downloaded from pinned commits and SHA-256 verified",
+        "Regex pattern detection for 19 regions (US, China, Japan and 16 European countries)",
+        "Round-trip de-anonymization restores names in AI responses",
+        "支持 DOCX、XLSX、PDF、图片和纯文本，保留可处理的文档结构",
+        "图片 OCR 与脱敏导出",
+        "Works offline after the first load (Service Worker app shell, cached model)",
+        "9 种界面语言，默认中文"
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/tools/doccloak/assets/index-BAz5Wa0o.js"></script>
+    <link rel="stylesheet" crossorigin href="/tools/doccloak/assets/index-Byw1cqqn.css">
+    <link rel="stylesheet" href="/assets/reference-tool-theme.css?v=20261116c">
+  <script defer src="/assets/reference-tool-shell.js?v=20261116c"></script>
+</head>
+  <body>
+    <div id="root"></div>
+    <noscript><div style="max-width:720px;margin:4rem auto;padding:2rem;font-family:system-ui,sans-serif"><h1>文档脱敏</h1><p>此工具需要启用 JavaScript，所有文档处理均在浏览器本地完成。</p></div></noscript>
+  </body>
+</html>

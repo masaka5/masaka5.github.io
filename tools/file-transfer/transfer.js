@@ -44,6 +44,13 @@ const activeStates = new Set([
   "transferring",
   "verifying",
 ]);
+const transferIconPaths = {
+  moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />',
+  copy: '<rect width="14" height="14" x="8" y="8" rx="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m17 8-5-5-5 5" /><path d="M12 3v12" />',
+  pause: '<rect x="14" y="4" width="4" height="16" rx="1" /><rect x="6" y="4" width="4" height="16" rx="1" />',
+  play: '<path d="m6 3 14 9-14 9V3Z" />',
+};
 const states = {
   hashing: "校验文件",
   offered: "等待接收",
@@ -80,10 +87,22 @@ const fileExtension = (name) => {
   const match = /\.([a-z0-9]{1,8})$/i.exec(name || "");
   return match ? match[1].toUpperCase() : "FILE";
 };
+function appendIcon(wrapper, name) {
+  if (transferIconPaths[name]) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    svg.innerHTML = transferIconPaths[name];
+    wrapper.append(svg);
+    return;
+  }
+  if (window.ToolboxIcons) wrapper.append(window.ToolboxIcons.svg(name));
+}
 const icon = (name) => {
   const wrapper = document.createElement("span");
   wrapper.dataset.icon = name;
-  if (window.ToolboxIcons) wrapper.append(window.ToolboxIcons.svg(name));
+  appendIcon(wrapper, name);
   return wrapper;
 };
 const node = (tag, text, className) => {
@@ -102,8 +121,8 @@ const iconButton = (name, label, className = "icon-button") => {
 };
 function decorateIcons(root = document) {
   for (const holder of root.querySelectorAll("[data-icon]")) {
-    if (holder.firstElementChild || !window.ToolboxIcons) continue;
-    holder.append(window.ToolboxIcons.svg(holder.dataset.icon));
+    if (holder.firstElementChild) continue;
+    appendIcon(holder, holder.dataset.icon);
   }
 }
 function notice(text, tone = "") {
