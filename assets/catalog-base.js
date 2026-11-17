@@ -24,6 +24,7 @@ const ToolboxCatalog = {
     {id:'powershell-ide',category:'workspace',name:'PowerShell 7 IDE',description:'脚本编辑 · 运行 · 交互终端',href:'tools/powershell-ide/',icon:'square-terminal',tags:['PowerShell','IDE','Linux'],keywords:'PowerShell pwsh PS1 7 编辑 编译 运行 脚本 终端 IDE Linux'},
     {id:'web-adb',category:'hardware',name:'安卓调试',description:'多设备 · 投屏控制 · 文件应用 · P2P',href:'tools/web-adb/',icon:'smartphone',tags:['安卓','ADB','Scrcpy','P2P'],keywords:'WebADB Tango Android 安卓 多设备 投屏 控制 终端 文件 APK Scrcpy WebRTC P2P 远程共享 WebUSB'},
     {id:'photo-editor',category:'image',name:'图片编辑器',description:'图层 · 选区 · 画笔 · 滤镜',href:'tools/photo-editor/',icon:'brush',tags:['图片','编辑','图层'],keywords:'在线 PS Photoshop 图片 编辑 画笔 图层 选区 裁剪 滤镜 miniPaint'},
+    {id:'image-watermark',category:'image',name:'图片批量水印',description:'批量处理 · 平铺水印 · 位置调整 · ZIP 下载',href:'tools/image-watermark/',icon:'stamp',tags:['水印','批量','图片'],keywords:'Image Watermark 图片水印 批量 水印 文字 平铺 位置 透明度 旋转 ZIP 本地 隐私 证件 保护'},
     {id:'broadcast',category:'media',name:'直播工作台',description:'场景合成 · 混音 · 推流 · 录制',href:'tools/broadcast/',icon:'radio',tags:['直播','场景','录制'],keywords:'OBS 摄像头 屏幕 窗口 直播 RTMP WHIP 字幕 绿幕 水印 混音'},
     {id:'drawio',category:'collaboration',name:'思维导图与流程图',description:'draw.io · 绘图 · 本地草稿',href:'tools/drawio/',icon:'workflow',tags:['绘图','流程图','思维导图'],keywords:'draw.io diagrams.net 脑图 UML XML SVG PNG'},
     {id:'tiptap',category:'text',name:'富文本文档',description:'Tiptap · 排版 · 表格 · 图片',href:'tools/office-editors/document.html',icon:'file-pen-line',tags:['文档','排版','Tiptap'],keywords:'富文本 编辑器 文档 JSON HTML 本地 草稿'},
@@ -85,7 +86,7 @@ const ToolboxCatalog = {
     {id:'hex-wasm',category:'files',name:'十六进制分析',description:'WASM · 搜索 · 字段解析 · 校验',href:'tools/hex-wasm/',icon:'file-code-2',tags:['HEX','WASM','文件'],keywords:'十六进制 hex binary 文件分析 CRC32 熵 搜索 字符串 小端 大端'},
     {id:'ocr',category:'image',name:'图片文字识别',description:'PP-OCRv6 Tiny · 图片 · 相机',href:'tools/ocr/',icon:'scan',tags:['OCR','中文','相机'],keywords:'PP-OCRv6 Tiny OCR 图片识别 相机 中文 文本复制 自动整理'},
     {id:'qr-batch',category:'encoding',name:'批量二维码与条形码',description:'多格式数据 · 21 种条形码 · 模板打印',href:'tools/qr-batch/',icon:'qr-code',tags:['二维码','条形码','CSV','打印'],keywords:'批量二维码与条形码 CSV JSON 逐行 21种条形码 画布模板 标签打印'},
-    {id:'countdown-overlay',category:'time',name:'透明倒计时',description:'多段定时 · 画中画 · 画布编辑',href:'tools/countdown-overlay/',icon:'timer',tags:['倒计时','画中画','多段定时'],keywords:'透明倒计时 画中画 Document Picture-in-Picture PIP 多段定时 阶段 衔接文字 快捷键 本地'}
+    {id:'countdown-overlay',category:'time',name:'透明倒计时',description:'多段定时 · 画中画 · 画布编辑',href:'tools/countdown-overlay/',icon:'timer',tags:['倒计时','画中画','多段定时'],keywords:'透明倒计时 画中画 Document Picture-in-Picture PIP 多段定时 阶段 衔接文字 快捷键 本地'},
     {id:'netsim',category:'network',name:'NetSim 网络模拟器',description:'拓扑设计 · Linux 命令 · 防火墙 · 动态路由',href:'tools/netsim/',icon:'waypoints',tags:['NetSim','拓扑','Linux','WASM'],keywords:'NetSim 网络模拟器 网络拓扑 Linux iproute2 ping traceroute nftables iptables DHCP DNS RIP VLAN Wi-Fi containerlab Docker Compose'},
     {id:'topospace',category:'network',name:'空间网络编辑器',description:'2D/3D 拓扑 · 设备连接 · 本地工程',href:'tools/topospace/',icon:'network',tags:['TopoSpace','拓扑','3D'],keywords:'TopoSpace 网络拓扑 设备 链路 3D 2D 机柜 本地工程'}
   ]

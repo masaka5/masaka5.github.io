@@ -1,0 +1,39 @@
+{
+  "name": "图片批量水印",
+  "version": "1.0.0",
+  "source": "https://github.com/unilei/image-watermark-tool",
+  "license": "MIT",
+  "engine": "OffscreenCanvas worker pool + Canvas 2D",
+  "limits": {
+    "fileBytes": 41943040,
+    "files": 40,
+    "totalBytes": 230686720
+  },
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 7278,
+      "sha256": "8a130390bc6ae8db52c5d3af944c3cd3a493d84456afbc04eb948a8ee12069d1"
+    },
+    {
+      "file": "style.css",
+      "bytes": 11714,
+      "sha256": "8ace8fa342e7e1a6922ad00786a1fc0acaa1e5368d5d9dbec497c253f0f165f4"
+    },
+    {
+      "file": "app.js",
+      "bytes": 14381,
+      "sha256": "9aaca25533f893a326462f8c536144704ff3b4fa415997640f4c6be747562286"
+    },
+    {
+      "file": "watermark-core.js",
+      "bytes": 4602,
+      "sha256": "ba9ada04d30f1598b7100de74cfbe877cd56006317d878d4ae9c9455ac6e0d11"
+    },
+    {
+      "file": "watermark-worker.js",
+      "bytes": 578,
+      "sha256": "0cf6818abc83653dab80c781a6f11629ab83a4351a0171c832ad3316f209d612"
+    }
+  ]
+}

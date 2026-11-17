@@ -25,6 +25,7 @@
   "code",
   "serial",
   "file-watermark",
+  "image-watermark",
   "meeting",
   "stress",
   "monitor",

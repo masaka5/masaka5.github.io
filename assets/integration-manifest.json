@@ -6125,6 +6125,11 @@
       "source": "zro7-reference",
       "sourceId": "voice-command-playground",
       "tool": "voice-dialogue"
+    },
+    {
+      "source": "unilei-image-watermark",
+      "sourceId": "pages/index.vue",
+      "tool": "image-watermark"
     }
   ],
   "unavailable": [
