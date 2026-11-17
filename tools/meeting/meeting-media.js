@@ -11,12 +11,13 @@ export class MeetingMedia{
   try{
    if(kind==='screen'){
     if(!navigator.mediaDevices.getDisplayMedia)throw new DOMException('unsupported','NotSupportedError');
-    stream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:15,max:30},width:{ideal:1920}},audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},systemAudio:'include',selfBrowserSurface:'exclude',surfaceSwitching:'include'});
+    stream=await navigator.mediaDevices.getDisplayMedia({video:{width:{ideal:1920,max:2560},height:{ideal:1080,max:1440},frameRate:{ideal:30,max:30},resizeMode:'crop-and-scale'},audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},systemAudio:'include',selfBrowserSurface:'exclude',surfaceSwitching:'include'});
    }else{
     const chosen=deviceId?{deviceId:{exact:deviceId}}:{};
-    stream=await navigator.mediaDevices.getUserMedia(kind==='mic'?{audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,...chosen},video:false}:{video:{width:{ideal:1280},height:{ideal:720},frameRate:{ideal:24,max:30},...chosen},audio:false});
+    stream=await navigator.mediaDevices.getUserMedia(kind==='mic'?{audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,...chosen},video:false}:{video:{width:{ideal:1920,max:1920},height:{ideal:1080,max:1080},aspectRatio:{ideal:16/9},frameRate:{ideal:30,max:30},resizeMode:'crop-and-scale',...chosen},audio:false});
    }
    if(generation!==this.generation){stream.getTracks().forEach(t=>t.stop());return;}
+   for(const track of stream.getTracks()){try{track.contentHint=track.kind==='video'?(kind==='screen'?'text':'motion'):(kind==='screen'?'music':'speech');}catch{}}
    const entry={kind,token:randomID(),stream,audio:stream.getAudioTracks().length>0};this.entries.set(kind,entry);
    const primary=kind==='mic'?stream.getAudioTracks()[0]:stream.getVideoTracks()[0];
    if(!primary){this.stop(kind);throw new DOMException('No track','NotFoundError');}

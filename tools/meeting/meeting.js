@@ -1,6 +1,6 @@
 import {createInvite,parseInvite,inviteURL,inviteCode,cleanName,turnConfig} from './meeting-core.js';
-import {MeetingMedia,mediaError} from './meeting-media.js';
-import {MeetingTransport} from './meeting-transport.js?v=whiteboard1';
+import {MeetingMedia,mediaError} from './meeting-media.js?v=20261117-meetingperf1';
+import {MeetingTransport} from './meeting-transport.js?v=20261117-meetingperf1';
 import {MeetingWhiteboard} from './meeting-board.js';
 const $=id=>document.getElementById(id),icon=name=>ToolboxIcons.svg(name);
 document.querySelectorAll('[data-icon]').forEach(el=>el.replaceWith(icon(el.dataset.icon)));
@@ -121,7 +121,7 @@ $('openSettings').onclick=async()=>{
  $('settingsDialog').showModal();
 };
 $('settingsForm').onsubmit=e=>{e.preventDefault();try{app.turn=turnConfig($('turnURL').value,$('turnUser').value,$('turnPassword').value);if(!app.transport||app.transport.closed){if(app.invite){app.invite={...app.invite,via:$('relayStrategy').value};useInvite(app.invite);history.replaceState(null,'',inviteURL(app.invite));}}$('settingsDialog').close();if(app.transport)notice('设备选择下次启用时生效，中继设置需重新入会');}catch(error){$('settingsStatus').textContent=error.message;}};
-function diagnostic(){const d=app.transport?.diagnostics();const rows=[['连接方式',d?d.strategy.toUpperCase():$('relayStrategy').value.toUpperCase()],['信令连接',d?d.relays+' 个':'未入会'],['参会人数',d?d.peers+1+' 人':'—'],['TURN 中继',d?.turn?'已配置':'未配置'],['屏幕声音',media.entries.get('screen')?(media.entries.get('screen').audio?'已捕获':'未捕获'):'未共享']];$('diagnosticsList').replaceChildren();for(const [name,value]of rows){const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=name;dd.textContent=value;row.append(dt,dd);$('diagnosticsList').append(row);}}
+function diagnostic(){const d=app.transport?.diagnostics(),q=d?.quality,quality=q?.senders?`${(q.videoKbps/1000).toFixed(1)} Mbps · ${q.fps} fps${Number.isFinite(q.rttMs)?' · '+q.rttMs+' ms':''} · ${q.state==='limited'?'已限速':q.state==='adapting'?'调整中':'稳定'}`:'待发送';const rows=[['连接方式',d?d.strategy.toUpperCase():$('relayStrategy').value.toUpperCase()],['信令连接',d?d.relays+' 个':'未入会'],['参会人数',d?d.peers+1+' 人':'—'],['媒体链路',quality],['TURN 中继',d?.turn?'已配置':'未配置'],['屏幕声音',media.entries.get('screen')?(media.entries.get('screen').audio?'已捕获':'未捕获'):'未共享']];$('diagnosticsList').replaceChildren();for(const [name,value]of rows){const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=name;dd.textContent=value;row.append(dt,dd);$('diagnosticsList').append(row);}}
 $('openDiagnostics').onclick=()=>{diagnostic();$('diagnosticsDialog').showModal();};
 window.addEventListener('offline',()=>{if(app.transport)notice('网络已断开，正在等待恢复','error');});window.addEventListener('online',()=>{if(app.transport)notice('网络已恢复，正在重新连接');});
 setInterval(()=>{if(!app.joinedAt)return;const elapsed=Math.floor((Date.now()-app.joinedAt)/1000);$('meetingTime').textContent=String(Math.floor(elapsed/60)).padStart(2,'0')+':'+String(elapsed%60).padStart(2,'0');updateConnection();if($('diagnosticsDialog').open)diagnostic();},1000);
