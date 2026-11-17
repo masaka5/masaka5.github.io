@@ -1,4 +1,4 @@
-import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs,videoProgress} from './low-latency.js?v=20261113-bitrate1';
+import {streamPolicy,readStreamStats,nextStreamBudget,realtimeCodecs,videoProgress} from './low-latency.js?v=20261117-streamperf1';
 /* Browser transports: RFC 9725 WHIP and api.video-browser-to-rtmp Socket.IO 4.
  * Protocol reference (no upstream code copied): apivideo/api.video-browser-to-rtmp
  * e7d4227b025258d41132168157d89c2100facd70, server/src/{connection,types}.ts (MIT).
@@ -208,11 +208,15 @@ export class BroadcastPublisher {
         const parameters = sender.getParameters();
         parameters.encodings = parameters.encodings?.length ? parameters.encodings : [{}];
         if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';
-        parameters.encodings.forEach(encoding => { encoding.maxBitrate = policy.maxBitrate; encoding.maxFramerate = policy.maxFramerate; encoding.scaleResolutionDownBy=policy.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high'; });
+        parameters.encodings.forEach(encoding => { encoding.active=true;encoding.maxBitrate=policy.maxBitrate;encoding.minBitrate=policy.minBitrate;encoding.maxFramerate=policy.maxFramerate;encoding.scaleResolutionDownBy=policy.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high'; });
         try { await sender.setParameters(parameters); } catch { /* Browser may apply bandwidth only after negotiation. */ }
         videoSenders.push(sender);
         const transceiverCaps=globalThis.RTCRtpSender?.getCapabilities?.('video');
         if(transceiver?.setCodecPreferences&&transceiverCaps?.codecs?.length){try{transceiver.setCodecPreferences(realtimeCodecs(transceiverCaps.codecs));}catch{/* Browser may reject codec ordering. */}}
+      } else if (track.kind === 'audio' && sender.getParameters) {
+        const parameters=sender.getParameters();parameters.encodings=parameters.encodings?.length?parameters.encodings:[{}];
+        parameters.encodings.forEach(encoding=>{encoding.active=true;encoding.maxBitrate=128000;encoding.priority='high';encoding.networkPriority='high';});
+        try{await sender.setParameters(parameters);}catch{/* Audio defaults remain valid. */}
       }
     }
     await waitFor(pc.setLocalDescription(await waitFor(pc.createOffer(), signal)), signal);
@@ -234,7 +238,7 @@ export class BroadcastPublisher {
     inspect();
     await waitFor(Promise.race([connected.promise, attempt.failed.promise]), signal, 25000);
     let previous = null, budget = null, sampling = false, health = null;
-    const applyBudget=async next=>{for(const sender of videoSenders){if(!sender.getParameters||!sender.setParameters)continue;const parameters=sender.getParameters();if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';parameters.encodings=parameters.encodings?.length?parameters.encodings:[{}];parameters.encodings.forEach(encoding=>{encoding.maxBitrate=next.maxBitrate;encoding.maxFramerate=next.maxFramerate;encoding.scaleResolutionDownBy=next.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high';});try{await sender.setParameters(parameters);}catch{const fallback=sender.getParameters();fallback.encodings=fallback.encodings?.length?fallback.encodings:[{}];fallback.encodings.forEach(e=>{e.maxBitrate=next.maxBitrate;e.maxFramerate=next.maxFramerate;});try{await sender.setParameters(fallback);}catch{/* Optional realtime hints are browser-dependent. */}}}};
+    const applyBudget=async next=>{let raised=false;for(const sender of videoSenders){if(!sender.getParameters||!sender.setParameters)continue;const current=sender.getParameters();if(budget&&next.maxBitrate>budget.maxBitrate)raised=true;const parameters=sender.getParameters();if(policy.mode==='realtime')parameters.degradationPreference='maintain-framerate';parameters.encodings=parameters.encodings?.length?parameters.encodings:[{}];parameters.encodings.forEach(encoding=>{encoding.active=true;encoding.maxBitrate=next.maxBitrate;encoding.minBitrate=next.minBitrate;encoding.maxFramerate=next.maxFramerate;encoding.scaleResolutionDownBy=next.scaleResolutionDownBy;encoding.priority='high';encoding.networkPriority='high';});try{await sender.setParameters(parameters);}catch{const fallback=sender.getParameters();fallback.encodings=fallback.encodings?.length?fallback.encodings:[{}];fallback.encodings.forEach(e=>{e.active=true;e.maxBitrate=next.maxBitrate;e.maxFramerate=next.maxFramerate;});try{await sender.setParameters(fallback);}catch{/* Optional realtime hints are browser-dependent. */}}}if(raised)for(const sender of videoSenders){try{sender.requestKeyFrame?.();}catch{/* Optional keyframe request. */}}};
     const sample = async () => {
       if (sampling || signal.aborted || pc.connectionState !== 'connected') return;
       sampling = true;
@@ -253,8 +257,10 @@ export class BroadcastPublisher {
         previous=parsed;const next=nextStreamBudget(policy,budget,metrics),changed=!budget||next.maxBitrate!==budget.maxBitrate||next.scaleResolutionDownBy!==budget.scaleResolutionDownBy;budget=next;this._stats.budgetKbps=Math.round(next.maxBitrate/1000);if(changed)await applyBudget(next);
       } catch { /* A closed peer has no stats. */ } finally { sampling = false; }
     };
+    await applyBudget(policy);
+    budget={...policy,pressure:0,healthy:0,bandwidthPressure:0,bandwidthHealthy:0,availableKbps:null};
     await sample();
-    const timer = setInterval(sample, 1000);
+    const timer = setInterval(sample, 750);
     attempt.cleanups.push(() => clearInterval(timer));
   }
 

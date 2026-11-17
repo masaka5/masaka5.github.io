@@ -171,7 +171,7 @@ export class BroadcastEngine {
       this.publishCanvas=canvas;this.publishCompositor=new PublishCompositor(canvas,{onError:error=>this._error(error)});
       if(this.canvas.parentElement){canvas.className='publish-preview';canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';this.canvas.parentElement.insertBefore(canvas,this.canvas.nextSibling);}
       this.publishCompositor.render(this.activeScene,this.runtimes,performance.now(),this.fades,this.project);
-      this._publishCapture=canvas.captureStream(0);let track=this._publishCapture.getVideoTracks()[0];if(typeof track.requestFrame!=='function'){track.stop();this._publishCapture=canvas.captureStream(this.project.fps);}
+      this._publishCapture=canvas.captureStream(0);let track=this._publishCapture.getVideoTracks()[0];if(typeof track.requestFrame!=='function'){track.stop();this._publishCapture=canvas.captureStream(this.project.fps);track=this._publishCapture.getVideoTracks()[0];}try{track.contentHint='motion';}catch{}
       this.publishStream=new MediaStream([...this._publishCapture.getVideoTracks(),...(this.audioDestination?.stream.getAudioTracks()||[])]);this._dirty=true;
       this._syncFrameClock();
       } catch(error){this.releasePublishStream();throw error;}
@@ -183,7 +183,7 @@ export class BroadcastEngine {
     if(!this.compositor)throw new Error('请先初始化合成器');
     if(!this.outputStream){
       if(!this.canvas.captureStream)throw new Error('当前浏览器不支持画布捕获');
-      this._canvasStream=this.canvas.captureStream(0);const track=this._canvasStream.getVideoTracks()[0];
+      this._canvasStream=this.canvas.captureStream(0);let track=this._canvasStream.getVideoTracks()[0];if(typeof track.requestFrame!=='function'){track.stop();this._canvasStream=this.canvas.captureStream(this.project.fps);track=this._canvasStream.getVideoTracks()[0];}try{track.contentHint='motion';}catch{}
       if(typeof track.requestFrame!=='function'){track.stop();this._canvasStream=this.canvas.captureStream(this.project.fps);}
       this.outputStream=new MediaStream([...this._canvasStream.getVideoTracks(),...(this.audioDestination?.stream.getAudioTracks()||[])]);
       this._dirty=true;
@@ -289,7 +289,7 @@ export class BroadcastEngine {
     const sources=this.activeScene?.sources || [];
     const animated=this.fades.size>0||sources.some(source=>source.visible && (['camera','screen','window','countdown'].includes(source.type)||(source.type==='video' && !source.paused)||source.scrollSpeed));
     const heartbeat=!!this.publishStream||!!this._publishCapture;
-    if(this._dirty || animated || heartbeat&&timestamp-(this._lastPaint||0)>=100){
+    if(this._dirty || animated || heartbeat){
       const start=performance.now();let rendered=false;
       if(this.publishCompositor)rendered=this.publishCompositor.render(this.activeScene,this.runtimes,timestamp,this.fades,this.project);
       if(!this.publishCompositor||this.recording||this._dirty)rendered=this.compositor.render(this.activeScene,this.runtimes,timestamp,this.fades)||rendered;

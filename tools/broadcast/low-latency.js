@@ -3,7 +3,9 @@ const bound=(n,min,max,fallback)=>Math.max(min,Math.min(max,finite(n,fallback)))
 export function streamPolicy(conf={}){
  const width=bound(conf.width,64,8192,1920),height=bound(conf.height,64,8192,1080),mode=conf.latencyMode==='quality'?'quality':'realtime';
  const maxFramerate=bound(conf.fps,1,mode==='realtime'?60:120,30),scaleResolutionDownBy=mode==='realtime'?Math.max(1,width/1920,height/1080):1;
- return{mode,width,height,maxFramerate,maxBitrate:bound(conf.videoBitsPerSecond,300000,40000000,12000000),scaleResolutionDownBy,maxScale:Math.max(scaleResolutionDownBy,Math.min(width/320,height/180))};
+ const maxBitrate=bound(conf.videoBitsPerSecond,300000,40000000,12000000);
+ const minBitrate=mode==='realtime'?Math.min(maxBitrate,Math.max(450000,Math.round(maxBitrate*.32))):maxBitrate;
+ return{mode,width,height,maxFramerate,maxBitrate,minBitrate,scaleResolutionDownBy,maxScale:Math.max(scaleResolutionDownBy,Math.min(width/320,height/180))};
 }
 export function readStreamStats(report,previous){
  const snapshot={bytes:0,frames:0,encode:0,sendDelay:0,packets:0,time:0,videoFrames:null,videoBytes:null};
@@ -27,25 +29,31 @@ export function readStreamStats(report,previous){
  return{snapshot,metrics};
 }
 export function nextStreamBudget(policy,state,metrics){
- const next={maxBitrate:policy.maxBitrate,maxFramerate:policy.maxFramerate,scaleResolutionDownBy:policy.scaleResolutionDownBy,pressure:0,healthy:0,bandwidthPressure:0,bandwidthHealthy:0,availableKbps:null,...state};
+ const next={maxBitrate:policy.maxBitrate,minBitrate:policy.minBitrate,maxFramerate:policy.maxFramerate,scaleResolutionDownBy:policy.scaleResolutionDownBy,pressure:0,healthy:0,bandwidthPressure:0,bandwidthHealthy:0,availableKbps:null,...state};
  if(policy.mode==='quality')return next;
- const cpu=metrics.qualityLimitationReason==='cpu'||metrics.encodeMs>1000/policy.maxFramerate*.7,queue=metrics.sendQueueMs>40;
+ const frameBudget=1000/policy.maxFramerate;
+ const cpu=metrics.qualityLimitationReason==='cpu'||metrics.encodeMs>frameBudget*.82;
+ const queue=metrics.sendQueueMs>45;
  next.pressure=cpu||queue?next.pressure+1:0;
- const floor=Math.min(600000,policy.maxBitrate);
- if(Number.isFinite(metrics.availableKbps)&&metrics.availableKbps>0)next.availableKbps=Number.isFinite(next.availableKbps)?next.availableKbps*.7+metrics.availableKbps*.3:metrics.availableKbps;
- const bandwidthLimited=metrics.qualityLimitationReason==='bandwidth'&&Number.isFinite(next.availableKbps)&&next.availableKbps*1000<next.maxBitrate*.9;
+ const hardFloor=Math.min(450000,policy.maxBitrate);
+ const applyCap=value=>{next.maxBitrate=Math.max(hardFloor,Math.min(policy.maxBitrate,Math.floor(value)));next.minBitrate=Math.min(policy.minBitrate||hardFloor,Math.max(hardFloor,Math.round(next.maxBitrate*.55)));};
+ if(Number.isFinite(metrics.availableKbps)&&metrics.availableKbps>0)next.availableKbps=Number.isFinite(next.availableKbps)?next.availableKbps*.65+metrics.availableKbps*.35:metrics.availableKbps;
+ const available=Number.isFinite(next.availableKbps)?next.availableKbps*1000:NaN;
+ const bandwidthLimited=metrics.qualityLimitationReason==='bandwidth'&&Number.isFinite(available)&&available<next.maxBitrate*.94;
  next.bandwidthPressure=bandwidthLimited?next.bandwidthPressure+1:0;
- next.bandwidthHealthy=!bandwidthLimited&&Number.isFinite(next.availableKbps)&&next.availableKbps*1000>next.maxBitrate*1.4?next.bandwidthHealthy+1:0;
- if(queue&&Number.isFinite(metrics.availableKbps)&&metrics.availableKbps>0){const ceiling=Math.max(floor,Math.min(policy.maxBitrate,Math.floor(metrics.availableKbps*1000*.8)));if(ceiling<next.maxBitrate)next.maxBitrate=ceiling;}
+ next.bandwidthHealthy=!bandwidthLimited&&Number.isFinite(available)&&available>next.maxBitrate*1.18?next.bandwidthHealthy+1:0;
+ if(queue&&Number.isFinite(available)&&available>0){const ceiling=available*.84;if(ceiling<next.maxBitrate)applyCap(ceiling);}
  const bandwidthLevel=next.bandwidthPressure;
- if(bandwidthLevel>=3&&Number.isFinite(next.availableKbps)){const ceiling=Math.max(floor,Math.min(policy.maxBitrate,Math.floor(next.availableKbps*1000*.82)));if(ceiling<next.maxBitrate)next.maxBitrate=ceiling;next.bandwidthPressure=0;}
- if(next.pressure>=3||bandwidthLevel>=6){next.scaleResolutionDownBy=Math.min(policy.maxScale,next.scaleResolutionDownBy*1.25);next.maxBitrate=Math.max(floor,Math.min(next.maxBitrate,Math.round(policy.maxBitrate/next.scaleResolutionDownBy)));next.pressure=0;next.bandwidthPressure=0;}
- // Chromium may keep reporting 'bandwidth' because our own cap is below its estimate.
- // Recover from measured headroom; this label alone must not lock in a past backoff.
- const bandwidthHeadroom=Number.isFinite(next.availableKbps)&&next.availableKbps*1000>next.maxBitrate*1.4;
- const headroom=!cpu&&!queue&&Number.isFinite(metrics.encodeMs)&&metrics.encodeMs<1000/policy.maxFramerate*.55&&(bandwidthHeadroom||(!Number.isFinite(metrics.availableKbps)&&metrics.qualityLimitationReason!=='bandwidth'));
+ if(bandwidthLevel>=2&&Number.isFinite(available)){const ceiling=available*.9;if(ceiling<next.maxBitrate)applyCap(ceiling);next.bandwidthPressure=0;}
+ if(next.pressure>=4||bandwidthLevel>=5){next.scaleResolutionDownBy=Math.min(policy.maxScale,next.scaleResolutionDownBy*1.2);applyCap(Math.min(next.maxBitrate,policy.maxBitrate/next.scaleResolutionDownBy));next.pressure=0;next.bandwidthPressure=0;}
+ const bandwidthHeadroom=Number.isFinite(available)&&available>next.maxBitrate*1.18;
+ const headroom=!cpu&&!queue&&Number.isFinite(metrics.encodeMs)&&metrics.encodeMs<frameBudget*.7&&(bandwidthHeadroom||next.bandwidthHealthy>=2||(!Number.isFinite(metrics.availableKbps)&&metrics.qualityLimitationReason!=='bandwidth'));
  next.healthy=headroom?next.healthy+1:0;
- if(next.healthy>=10){next.scaleResolutionDownBy=Math.max(policy.scaleResolutionDownBy,next.scaleResolutionDownBy/1.25);next.maxBitrate=Math.min(policy.maxBitrate,Math.round(next.maxBitrate*1.15));next.healthy=0;}
+ if(next.healthy>=4){
+   next.scaleResolutionDownBy=Math.max(policy.scaleResolutionDownBy,next.scaleResolutionDownBy/1.12);
+   applyCap(next.maxBitrate*1.2);
+   next.healthy=0;next.bandwidthHealthy=0;
+ }
  return next;
 }
 export function realtimeCodecs(codecs=[]){

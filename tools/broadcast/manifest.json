@@ -24,8 +24,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 28196,
-      "sha256": "ec256a36464bb4deb73267452299ec248efbf5946061c38811c561889c86986c"
+      "bytes": 28200,
+      "sha256": "778ea5bfda1b23da881f120eb417ecbfe46c3e51b79f8a71ea15061fe1599bd1"
     },
     {
       "file": "broadcast-core.js",
@@ -49,8 +49,8 @@
     },
     {
       "file": "engine.js",
-      "bytes": 29827,
-      "sha256": "a24bb98eea3e7fe774e67781402938fc641382154322da62829da60ed717cbac"
+      "bytes": 30078,
+      "sha256": "ec2217d70034de6b6fbaf5137d58d41f113f9ec0ab7dc63abf6625ba3c410559"
     },
     {
       "file": "frame-clock.js",
@@ -59,13 +59,13 @@
     },
     {
       "file": "index.html",
-      "bytes": 16608,
-      "sha256": "b43676fcd91c39eb5ce63c9fc497a1626e20f27b672c874cf6ec28011b044503"
+      "bytes": 16759,
+      "sha256": "d276c8c41a57d00d07d1af394e7f2455c83c0d2e4898b44cdc15415380f9b5b7"
     },
     {
       "file": "low-latency.js",
-      "bytes": 7047,
-      "sha256": "d602d504dffdf5c34fb5005bb8c760d752590d42fa0af4e3a46f00386df7d20e"
+      "bytes": 7104,
+      "sha256": "62fdc4de45f27a11c9cd0b1228d5bf760a44af49fa983f055216dd61af2f1ec8"
     },
     {
       "file": "publish-compositor.js",
@@ -74,8 +74,8 @@
     },
     {
       "file": "publisher.js",
-      "bytes": 23235,
-      "sha256": "6bdb667b1744d5d040a5bb0de9c3d4ca4702d8c6850424d0f4b0cbcd0dd95943"
+      "bytes": 24165,
+      "sha256": "546b70cfeda5ad2abfbf8640980bb7fe3ae5d936ba858915b661467d48e8b379"
     },
     {
       "file": "shortcuts.js",
