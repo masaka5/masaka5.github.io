@@ -1,4 +1,4 @@
-import { metadata, validId, validOffset, CHUNK_SIZE } from "./transfer-core.js";
+import { metadata, validId, validOffset, CHUNK_SIZE } from "./transfer-core.js?v=20261117b";
 export class TransferStore {
   constructor() {
     this.fallbackLimit = 256 * 1024 * 1024;

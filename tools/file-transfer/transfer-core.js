@@ -43,24 +43,50 @@ export async function deriveConnection(password) {
   );
   return { room: hex(bits.slice(32)), key: hex(bits.slice(0, 32)) };
 }
+function safeName(value) {
+  return (
+    String(value || "未命名文件")
+      .replace(/[\\/\x00-\x1f\x7f]/g, "_")
+      .slice(0, 255) || "未命名文件"
+  );
+}
+function safePath(value, name) {
+  const parts = String(value || name || "未命名文件")
+    .replace(/\\/g, "/")
+    .split("/")
+    .filter(Boolean)
+    .map((part) =>
+      part
+        .replace(/[\x00-\x1f\x7f<>:"|?*]/g, "_")
+        .trim()
+        .slice(0, 120),
+    )
+    .filter((part) => part && part !== "." && part !== "..");
+  if (!parts.length) parts.push(safeName(name));
+  return parts.slice(-32).join("/");
+}
 export function metadata(m) {
   if (
     !m ||
     !validId(m.id) ||
-    m.hash !== m.id ||
+    !validId(m.hash) ||
     !Number.isSafeInteger(m.size) ||
     m.size < 0 ||
     m.size > MAX_FILE_SIZE ||
     typeof m.name !== "string" ||
     m.name.length > 255 ||
+    (m.path !== undefined &&
+      (typeof m.path !== "string" || m.path.length > 1024)) ||
     typeof m.type !== "string" ||
     m.type.length > 127
   )
     throw new Error("文件信息无效");
+  const name = safeName(m.name);
   return {
     id: m.id,
-    hash: m.id,
-    name: m.name.replace(/[\\/\x00-\x1f\x7f]/g, "_") || "未命名文件",
+    hash: m.hash,
+    name,
+    path: safePath(m.path, name),
     size: m.size,
     type: m.type,
   };

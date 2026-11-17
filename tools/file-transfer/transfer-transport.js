@@ -1,17 +1,35 @@
-import { deriveConnection } from "./transfer-core.js";
+import { deriveConnection } from "./transfer-core.js?v=20261117b";
+
+export const MAX_PEERS = 8;
 const jsonSize = (value) =>
   new TextEncoder().encode(JSON.stringify(value)).byteLength;
+
 export class TransferTransport extends EventTarget {
   constructor({ password, via = "mqtt" }) {
     super();
     this.password = password;
     this.via = via;
     this.closed = false;
-    this.peer = null;
+    this.peers = new Map();
     this.room = null;
+  }
+  get peer() {
+    return this.peers.keys().next().value || null;
+  }
+  get peerIds() {
+    return [...this.peers.keys()];
   }
   emit(type, detail) {
     this.dispatchEvent(new CustomEvent(type, { detail }));
+  }
+  hasPeer(peerId) {
+    return !!peerId && this.peers.has(peerId);
+  }
+  addPeer(peerId) {
+    if (!peerId || this.peers.has(peerId) || this.peers.size >= MAX_PEERS - 1)
+      return;
+    this.peers.set(peerId, { id: peerId, connectedAt: Date.now() });
+    this.emit("connected", peerId);
   }
   async connect() {
     if (!["mqtt", "nostr"].includes(this.via)) throw Error("连接方式无效");
@@ -22,10 +40,10 @@ export class TransferTransport extends EventTarget {
     this.library = library;
     const room = (this.room = library.joinRoom(
       {
-        appId: "tools.manshii.asia/file-transfer/v1",
+        appId: "tools.manshii.asia/file-transfer/v2",
         identity: "none",
         password: connection.key,
-        maxUsers: 2,
+        maxUsers: MAX_PEERS,
         maxReceiveBytes: 1024 * 1024,
         turnConfig: [],
         relayConfig: { redundancy: 4, warnOnRelayFailure: false },
@@ -35,52 +53,47 @@ export class TransferTransport extends EventTarget {
     const control = (this.control = room.makeAction("control")),
       chunk = (this.chunk = room.makeAction("chunk"));
     control.onReceive(
-      ({ peerId, byteLength }) => peerId === this.peer && byteLength <= 4096,
+      ({ peerId, byteLength }) =>
+        this.hasPeer(peerId) && byteLength <= 4096,
     );
     chunk.onReceive(
       ({ peerId, byteLength, metadata }) =>
-        peerId === this.peer &&
+        this.hasPeer(peerId) &&
         byteLength <= 262144 &&
         metadata &&
         jsonSize(metadata) <= 4096,
     );
     control.onMessage((data, { peerId }) => {
       if (
-        peerId === this.peer &&
+        this.hasPeer(peerId) &&
         data &&
         typeof data === "object" &&
         jsonSize(data) <= 4096
       )
-        this.emit("control", data);
+        this.emit("control", { data, peerId });
     });
     chunk.onMessage((bytes, { peerId, metadata }) => {
       if (
-        peerId === this.peer &&
+        this.hasPeer(peerId) &&
         bytes instanceof Uint8Array &&
         bytes.byteLength <= 262144
       )
-        this.emit("chunk", { bytes, meta: metadata });
+        this.emit("chunk", { bytes, meta: metadata, peerId });
     });
-    room.onPeerJoin(({ peerId }) => {
-      if (this.closed || (this.peer && this.peer !== peerId)) return;
-      this.peer = peerId;
-      this.emit("connected", peerId);
-    });
+    room.onPeerJoin(({ peerId }) => this.addPeer(peerId));
     room.onPeerLeave(({ peerId }) => {
-      if (this.peer === peerId) {
-        this.peer = null;
-        this.emit("disconnected");
-      }
+      if (!this.peers.delete(peerId)) return;
+      this.emit("disconnected", peerId);
     });
     room.onError((error) =>
       this.emit(
         "notice",
         {
-          "room-full": "已有两台设备连接，请更换密码",
-          "peer-connect-failed": "当前网络无法直连，请切换网络后重试",
-          "relay-failed": "信令连接失败，可切换连接方式后重试",
+          "room-full": "房间设备已满",
+          "peer-connect-failed": "无法直连，请切换网络后重试",
+          "relay-failed": "信令连接失败，请切换信令方式",
           "decrypt-failed": "连接密码不匹配",
-        }[error.code] || "连接出现中断，请重新连接",
+        }[error.code] || "连接中断，请重新连接",
       ),
     );
     let timeout;
@@ -100,28 +113,31 @@ export class TransferTransport extends EventTarget {
     } finally {
       clearTimeout(timeout);
     }
-    if (!this.closed) this.emit("ready");
+    if (this.closed) return;
+    const existing = this.room?.getPeers?.() || {};
+    for (const peerId of Object.keys(existing)) this.addPeer(peerId);
+    this.emit("ready");
   }
-  async sendControl(data) {
-    if (this.closed || !this.peer) throw Error("设备已断开");
+  async sendControl(data, peerId = this.peer) {
+    if (this.closed || !this.hasPeer(peerId)) throw Error("设备已断开");
     if (jsonSize(data) > 4096) throw Error("控制信息超出限制");
-    await this.control.send(data, { target: this.peer });
+    await this.control.send(data, { target: peerId });
   }
-  async sendChunk(bytes, meta) {
-    if (this.closed || !this.peer) throw Error("设备已断开");
+  async sendChunk(bytes, meta, peerId = this.peer) {
+    if (this.closed || !this.hasPeer(peerId)) throw Error("设备已断开");
     if (bytes.byteLength > 262144 || jsonSize(meta) > 4096)
       throw Error("文件块超出限制");
-    await this.chunk.send(bytes, { target: this.peer, metadata: meta });
+    await this.chunk.send(bytes, { target: peerId, metadata: meta });
   }
-  async stats() {
+  async stats(peerId = this.peer) {
     const result = {
-      state: this.peer ? "已直连" : "等待设备",
+      state: this.hasPeer(peerId) ? "已直连" : "等待设备",
       bytesSent: 0,
       bytesReceived: 0,
       local: null,
       remote: null,
     };
-    const peer = this.room?.getPeers()?.[this.peer];
+    const peer = this.room?.getPeers()?.[peerId];
     if (!peer) return result;
     const stats = await peer.connection.getStats();
     stats.forEach((item) => {
@@ -142,8 +158,8 @@ export class TransferTransport extends EventTarget {
     if (this.closed) return;
     this.closed = true;
     this.password = null;
-    this.peer = null;
+    this.peers.clear();
     await this.room?.leave();
-    this.emit("disconnected");
+    this.emit("disconnected", null);
   }
 }

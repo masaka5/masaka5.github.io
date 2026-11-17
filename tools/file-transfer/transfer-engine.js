@@ -6,7 +6,7 @@ import {
   digest,
   randomPassword,
   metadata,
-} from "./transfer-core.js";
+} from "./transfer-core.js?v=20261117b";
 const active = (task) =>
   task &&
   ["hashing", "offered", "transferring", "verifying"].includes(task.state);
@@ -77,7 +77,7 @@ export class TransferEngine extends EventTarget {
     this.connected = false;
     this.pause(false);
   }
-  async offer(file) {
+  async offer(file, options = {}) {
     if (!this.connected || this.closed) throw new Error("请先连接另一台设备");
     if (active(this.incoming) || active(this.outgoing))
       throw new Error("已有文件正在传输");
@@ -85,6 +85,7 @@ export class TransferEngine extends EventTarget {
       throw new Error("文件过大或无效");
     const task = (this.outgoing = {
       name: file.name || "未命名文件",
+      path: options.path || file.webkitRelativePath || file.name || "未命名文件",
       size: file.size,
       type: file.type || "",
       offset: 0,
@@ -96,19 +97,27 @@ export class TransferEngine extends EventTarget {
     this.latest = task;
     this.changed();
     try {
-      const hash = await this.store.hashFile(file, (progress) => {
-        if (this.fresh(task, generation)) {
-          task.hashProgress = progress;
-          this.changed();
-        }
-      });
+      const hash = validId(options.hash)
+        ? options.hash
+        : await this.store.hashFile(file, (progress) => {
+            if (this.fresh(task, generation)) {
+              task.hashProgress = progress;
+              this.changed();
+            }
+          });
+      task.hashProgress = 1;
       if (!this.fresh(task, generation)) return;
-      Object.assign(task, metadata({ ...task, id: hash, hash }), {
+      const content = metadata({ ...task, id: hash, hash });
+      const taskId = await digest(
+        new TextEncoder().encode(hash + "\0" + content.path),
+      );
+      Object.assign(task, metadata({ ...content, id: taskId }), {
         state: "offered",
       });
       await this.control("offer", task, {
         hash,
         name: task.name,
+        path: task.path,
         size: task.size,
         mime: task.type,
       });
@@ -179,10 +188,15 @@ export class TransferEngine extends EventTarget {
             : null;
       if (!task || task !== this.current) return;
       originTask = task;
-      if (["pause", "error", "reject"].includes(data.type)) {
+      if (["pause", "error", "reject", "cancel"].includes(data.type)) {
         if (active(task)) {
           this.generation++;
-          task.state = data.type === "reject" ? "rejected" : "paused";
+          task.state =
+            data.type === "reject"
+              ? "rejected"
+              : data.type === "cancel"
+                ? "canceled"
+                : "paused";
           this.clearTimer();
           this.changed();
         }
@@ -359,6 +373,24 @@ export class TransferEngine extends EventTarget {
     this.changed();
     await this.control("complete", task);
   }
+  async cancel() {
+    const task = this.current;
+    if (
+      !task ||
+      !["hashing", "offered", "transferring", "verifying", "paused"].includes(
+        task.state,
+      )
+    )
+      return;
+    this.generation++;
+    this.clearTimer();
+    this.pending = null;
+    task.state = "canceled";
+    this.changed();
+    try {
+      if (this.connected) await this.control("cancel", task);
+    } catch {}
+  }
   pause(notify = true) {
     const tasks = [this.outgoing, this.incoming].filter(active);
     this.generation++;
@@ -373,7 +405,8 @@ export class TransferEngine extends EventTarget {
   async resume() {
     const task = this.current;
     if (task?.state !== "paused") return;
-    if (task === this.outgoing && task.file) return this.offer(task.file);
+    if (task === this.outgoing && task.file)
+      return this.offer(task.file, { hash: task.hash, path: task.path });
     if (task === this.incoming) return this.accept(task.id);
   }
   close() {

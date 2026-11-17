@@ -1,116 +1,197 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="../../assets/favicon.svg" />
-    <link rel="stylesheet" href="../../assets/ops.css" />
-    <link rel="stylesheet" href="transfer.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="icon" href="../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../assets/ops.css" />
+  <link rel="stylesheet" href="transfer.css?v=20261117b" />
   <!-- pocket-seo:start -->
-<title>文件直传 · 口袋工具箱</title>
-<meta name="description" content="文件直传：设备直连 · 断点续传 · 完整校验。口袋工具箱提供中文操作界面，可直接在浏览器中使用。">
-<link rel="canonical" href="https://tools.manshii.asia/catalog/file-transfer/">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:type" content="website"><meta property="og:site_name" content="口袋工具箱"><meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="文件直传 · 口袋工具箱"><meta property="og:description" content="文件直传：设备直连 · 断点续传 · 完整校验。口袋工具箱提供中文操作界面，可直接在浏览器中使用。"><meta property="og:url" content="https://tools.manshii.asia/catalog/file-transfer/">
-<meta property="og:image" content="https://tools.manshii.asia/assets/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="口袋工具箱">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="文件直传 · 口袋工具箱"><meta name="twitter:description" content="文件直传：设备直连 · 断点续传 · 完整校验。口袋工具箱提供中文操作界面，可直接在浏览器中使用。"><meta name="twitter:image" content="https://tools.manshii.asia/assets/share-card.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"文件直传","url":"https://tools.manshii.asia/catalog/file-transfer/","description":"文件直传：设备直连 · 断点续传 · 完整校验。口袋工具箱提供中文操作界面，可直接在浏览器中使用。","applicationCategory":"在线协作","operatingSystem":"Web","inLanguage":"zh-CN","browserRequirements":"Requires JavaScript"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"口袋工具箱","item":"https://tools.manshii.asia/"},{"@type":"ListItem","position":2,"name":"在线协作","item":"https://tools.manshii.asia/categories/meetings/"},{"@type":"ListItem","position":3,"name":"文件直传","item":"https://tools.manshii.asia/catalog/file-transfer/"}]}]}</script>
-<!-- pocket-seo:end -->
-<link rel="stylesheet" href="/assets/reference-tool-theme.css?v=20261116c"><script defer src="/assets/reference-tool-shell.js?v=20261116c"></script></head>
-  <body>
-    <div class="transfer-shell">
-      <header class="ops-header">
-        <a class="back-link" href="../../">← 工具箱</a>
+  <title>文件直传 · 口袋工具箱</title>
+  <meta name="description" content="文件直传：WebRTC 设备直连、多文件与文件夹传输、断点续传、SHA-256 校验、多设备发送。" />
+  <link rel="canonical" href="https://tools.manshii.asia/catalog/file-transfer/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" /><meta property="og:site_name" content="口袋工具箱" /><meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="文件直传 · 口袋工具箱" /><meta property="og:description" content="WebRTC 设备直连、多文件与文件夹传输、断点续传、SHA-256 校验、多设备发送。" /><meta property="og:url" content="https://tools.manshii.asia/catalog/file-transfer/" />
+  <meta property="og:image" content="https://tools.manshii.asia/assets/share-card.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content="口袋工具箱" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="文件直传 · 口袋工具箱" /><meta name="twitter:description" content="WebRTC 设备直连、多文件与文件夹传输、断点续传、SHA-256 校验、多设备发送。" /><meta name="twitter:image" content="https://tools.manshii.asia/assets/share-card.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"文件直传","url":"https://tools.manshii.asia/catalog/file-transfer/","description":"WebRTC 设备直连、多文件与文件夹传输、断点续传、SHA-256 校验、多设备发送。","applicationCategory":"在线协作","operatingSystem":"Web","inLanguage":"zh-CN","browserRequirements":"Requires JavaScript"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"口袋工具箱","item":"https://tools.manshii.asia/"},{"@type":"ListItem","position":2,"name":"在线协作","item":"https://tools.manshii.asia/categories/meetings/"},{"@type":"ListItem","position":3,"name":"文件直传","item":"https://tools.manshii.asia/catalog/file-transfer/"}]}]}</script>
+  <!-- pocket-seo:end -->
+  <link rel="stylesheet" href="/assets/reference-tool-theme.css?v=20261117a" />
+  <script defer src="/assets/reference-tool-shell.js?v=20261117a"></script>
+  <script>try{if(JSON.parse(localStorage.getItem("toolbox-file-transfer-settings-v2")||"{}").theme==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
+  <script defer src="/assets/tool-icon-paths.js?v=20261117a"></script>
+  <script defer src="/assets/tool-icons.js?v=20261117a"></script>
+  <script defer src="/vendor/qrcode.min.js?v=20261117a"></script>
+</head>
+<body>
+  <div class="transfer-shell">
+    <header class="ops-header">
+      <a class="back-link" href="../../">工具箱</a>
+      <div class="title-group">
         <h1>文件直传</h1>
-        <span class="connection-badge" id="connectionStatus">未连接</span>
-      </header>
-      <main class="transfer-main">
-        <section class="connection-panel" aria-label="连接设备">
-          <div class="connection-head">
-            <h2>连接设备</h2>
-            <button class="text-button" id="newPassword">生成密码</button>
+        <span class="privacy-mark"><span data-icon="shield-check"></span>端到端直连</span>
+      </div>
+      <div class="header-actions">
+        <span class="connection-pill" id="connectionStatus" data-state="idle" role="status" aria-live="polite">
+          <i></i><span id="connectionStatusText">未连接</span>
+        </span>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="切换深色模式"><span data-icon="moon"></span></button>
+      </div>
+    </header>
+
+    <main class="transfer-main">
+      <section class="panel connection-panel" aria-labelledby="connectionTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="connectionTitle">连接设备</h2>
+            <p id="peerCount">等待设备加入</p>
           </div>
-          <label class="field"
-            ><span>连接密码</span>
-            <div class="password-field">
-              <input
-                id="password"
-                type="password"
-                autocomplete="off"
-                spellcheck="false"
-                maxlength="128"
-                aria-describedby="passwordNote"
-              /><button
-                class="secondary"
-                id="showPassword"
-                aria-label="显示密码"
-              >
-                显示</button
-              ><button class="secondary" id="copyPassword">复制</button>
-            </div></label
-          >
-          <div class="connect-row">
-            <label class="field"
-              ><span>连接方式</span
-              ><select id="strategy">
-                <option value="mqtt">MQTT</option>
-                <option value="nostr">Nostr</option>
-              </select></label
-            ><button id="connect" class="primary">连接</button
-            ><button id="disconnect" class="secondary" hidden>断开</button>
+          <button class="icon-button" id="newPassword" type="button" aria-label="生成新密码"><span data-icon="rotate-cw"></span></button>
+        </div>
+
+        <label class="field">
+          <span>连接密码</span>
+          <div class="input-action">
+            <input id="password" type="password" autocomplete="off" spellcheck="false" maxlength="128" aria-describedby="passwordHint" />
+            <button class="input-icon" id="showPassword" type="button" aria-label="显示密码"><span data-icon="eye"></span></button>
+            <button class="input-icon" id="copyPassword" type="button" aria-label="复制密码"><span data-icon="copy"></span></button>
           </div>
-          <p id="passwordNote" class="help">两端使用相同密码和连接方式。</p>
-          <p class="status" id="connectionNote" role="status"></p>
-        </section>
-        <section class="tasks-panel" aria-label="文件传输">
-          <div class="tasks-head">
-            <h2>传输任务</h2>
-            <button id="chooseFile" class="primary" disabled>选择文件</button
-            ><input id="files" type="file" hidden />
+        </label>
+
+        <div class="field">
+          <span>信令</span>
+          <div class="segmented" id="strategy" role="radiogroup" aria-label="信令方式">
+            <button type="button" role="radio" data-value="mqtt" aria-checked="true">MQTT</button>
+            <button type="button" role="radio" data-value="nostr" aria-checked="false">Nostr</button>
           </div>
-          <div class="task-current" id="taskCurrent">
-            <div class="task-empty">连接后选择文件，接收方确认后开始。</div>
+        </div>
+
+        <div class="connect-actions">
+          <button class="primary" id="connect" type="button"><span data-icon="wifi"></span>连接</button>
+          <button class="secondary" id="disconnect" type="button" hidden><span data-icon="unplug"></span>断开</button>
+          <button class="secondary icon-text-button" id="showPair" type="button"><span data-icon="qr-code"></span>二维码</button>
+        </div>
+        <p class="inline-status" id="connectionNote" role="status"></p>
+
+        <div class="device-block">
+          <div class="subhead">
+            <h3>常用设备</h3>
+            <button class="text-button" id="saveDevice" type="button" disabled>保存当前</button>
           </div>
-          <p
-            class="status"
-            id="transferNotice"
-            role="status"
-            aria-live="polite"
-          ></p>
-          <div class="saved-head">
-            <h2>本地接收</h2>
-            <span id="storageMode"></span>
+          <div class="device-list" id="deviceList">
+            <div class="empty-inline">暂无常用设备</div>
           </div>
+        </div>
+
+        <div class="network-state">
+          <span data-icon="shield-check"></span>
+          <span id="networkDetail">信令只用于建立连接</span>
+        </div>
+      </section>
+
+      <section class="panel workbench" aria-labelledby="transferTitle">
+        <div class="section-head workbench-head">
+          <div>
+            <h2 id="transferTitle">传输</h2>
+            <p id="queueSummary">0 项 · 0 B</p>
+          </div>
+          <div class="file-actions">
+            <button class="secondary" id="chooseFolder" type="button"><span data-icon="folder-open"></span>文件夹</button>
+            <button class="primary" id="chooseFile" type="button" disabled><span data-icon="upload"></span>选择文件</button>
+            <input id="files" type="file" multiple hidden />
+            <input id="folder" type="file" webkitdirectory directory multiple hidden />
+          </div>
+        </div>
+
+        <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="拖入文件或文件夹">
+          <span class="drop-icon" data-icon="upload"></span>
+          <div><strong>拖入文件或文件夹</strong><span>也可粘贴剪贴板图片</span></div>
+          <span class="drop-shortcut">Ctrl V</span>
+        </div>
+
+        <p class="inline-status" id="transferNotice" role="status" aria-live="polite"></p>
+        <div class="task-list" id="taskList">
+          <div class="empty-state">
+            <span data-icon="files"></span>
+            <strong>暂无传输任务</strong>
+            <p>连接后添加文件</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel activity-panel" aria-label="接收和记录">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true" data-tab="received">接收</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="history">记录</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="settings">设置</button>
+        </div>
+
+        <section class="tab-panel active" data-panel="received" role="tabpanel">
+          <div class="subhead"><h2>本地文件</h2><span id="storageMode"></span></div>
           <div class="saved-list" id="savedList">
-            <div class="task-empty">暂无接收文件</div>
+            <div class="empty-state compact"><span data-icon="download"></span><strong>暂无已接收文件</strong></div>
           </div>
-          <p class="cache-note">
-            刷新后可续传，发送方需重选原文件。清理浏览器数据会移除接收缓存。
-          </p>
         </section>
-      </main>
-      <footer class="transfer-footer">
-        <span>文件经 WebRTC 直传</span><span>信令仅用于建立连接</span>
-      </footer>
-    </div>
-    <dialog id="receiveDialog" aria-labelledby="receiveTitle">
-      <h2 id="receiveTitle">接收文件</h2>
-      <p id="offerName"></p>
-      <p id="offerSize"></p>
-      <div class="dialog-actions">
-        <button id="rejectFile" class="secondary">拒绝</button
-        ><button id="acceptFile" class="primary">接收</button>
-      </div>
-    </dialog>
-    <dialog id="deleteDialog" aria-labelledby="deleteTitle">
-      <h2 id="deleteTitle">删除本地缓存</h2>
-      <p id="deleteName"></p>
-      <div class="dialog-actions">
-        <button id="cancelDelete" class="secondary">取消</button
-        ><button id="confirmDelete" class="primary">删除</button>
-      </div>
-    </dialog>
-    <script type="module" src="transfer.js"></script>
-  </body>
+
+        <section class="tab-panel" data-panel="history" role="tabpanel" hidden>
+          <div class="subhead"><h2>传输记录</h2><button class="text-button" id="clearHistory" type="button">清空</button></div>
+          <div class="history-list" id="historyList"><div class="empty-state compact">暂无记录</div></div>
+        </section>
+
+        <section class="tab-panel settings-panel" data-panel="settings" role="tabpanel" hidden>
+          <div class="subhead"><h2>接收设置</h2></div>
+          <label class="setting-row">
+            <span><strong>自动接收</strong><small>仅同一连接密码的设备</small></span>
+            <input id="autoAccept" class="switch" type="checkbox" role="switch" />
+          </label>
+          <div class="setting-row destination-row">
+            <span><strong>保存目录</strong><small id="destinationName">浏览器默认下载位置</small></span>
+            <button class="secondary" id="chooseDestination" type="button">选择</button>
+          </div>
+          <div class="setting-row">
+            <span><strong>深色模式</strong><small>跟随按钮保存</small></span>
+            <input id="darkMode" class="switch" type="checkbox" role="switch" />
+          </div>
+          <div class="setting-row readonly">
+            <span><strong>设备上限</strong><small>同一房间最多 8 台</small></span>
+            <b>8</b>
+          </div>
+          <p class="cache-note">传输缓存保存在当前浏览器；刷新后仍可继续未完成任务。</p>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <dialog id="receiveDialog" aria-labelledby="receiveTitle">
+    <div class="dialog-head"><div><h2 id="receiveTitle">接收文件</h2><p id="offerFrom"></p></div><button class="icon-button" id="closeReceive" type="button" aria-label="关闭"><span data-icon="x"></span></button></div>
+    <div class="offer-file"><span data-icon="file"></span><div><strong id="offerName"></strong><p id="offerMeta"></p></div></div>
+    <div class="dialog-actions"><button id="rejectFile" class="secondary" type="button">拒绝</button><button id="acceptFile" class="primary" type="button">接收</button></div>
+  </dialog>
+
+  <dialog id="pairDialog" aria-labelledby="pairTitle">
+    <div class="dialog-head"><div><h2 id="pairTitle">扫码配对</h2><p>另一台设备扫码后会填入连接信息</p></div><button class="icon-button" id="closePair" type="button" aria-label="关闭"><span data-icon="x"></span></button></div>
+    <div class="qr-frame"><canvas id="pairCanvas" width="232" height="232" aria-label="连接二维码"></canvas></div>
+    <p class="pair-link" id="pairLink"></p>
+    <div class="dialog-actions"><button id="copyPair" class="secondary" type="button"><span data-icon="copy"></span>复制链接</button><button id="pairConnect" class="primary" type="button">连接</button></div>
+  </dialog>
+
+  <dialog id="saveDeviceDialog" aria-labelledby="saveDeviceTitle">
+    <div class="dialog-head"><div><h2 id="saveDeviceTitle">保存常用设备</h2><p>保存密码与信令设置</p></div><button class="icon-button" id="closeSaveDevice" type="button" aria-label="关闭"><span data-icon="x"></span></button></div>
+    <label class="field"><span>设备名称</span><input id="deviceName" maxlength="32" placeholder="例如：我的笔记本" /></label>
+    <div class="dialog-actions"><button id="cancelSaveDevice" class="secondary" type="button">取消</button><button id="confirmSaveDevice" class="primary" type="button">保存</button></div>
+  </dialog>
+
+  <dialog id="previewDialog" class="preview-dialog" aria-labelledby="previewTitle">
+    <div class="dialog-head"><div><h2 id="previewTitle">文件预览</h2><p id="previewName"></p></div><button class="icon-button" id="closePreview" type="button" aria-label="关闭"><span data-icon="x"></span></button></div>
+    <div class="preview-content" id="previewContent"></div>
+  </dialog>
+
+  <dialog id="deleteDialog" aria-labelledby="deleteTitle">
+    <div class="dialog-head"><div><h2 id="deleteTitle">删除本地缓存</h2><p id="deleteName"></p></div></div>
+    <div class="dialog-actions"><button id="cancelDelete" class="secondary" type="button">取消</button><button id="confirmDelete" class="danger" type="button">删除</button></div>
+  </dialog>
+
+  <script type="module" src="transfer.js?v=20261117b"></script>
+</body>
 </html>
