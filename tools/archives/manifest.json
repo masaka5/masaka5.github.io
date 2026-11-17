@@ -18,8 +18,8 @@
     },
     {
       "file": "archive-ui.mjs",
-      "bytes": 11355,
-      "sha256": "7220e3ab6c3e41224f0b3f7aa7e2ee510758445632f7fe8dda2a5368340bb2c0"
+      "bytes": 11809,
+      "sha256": "6fbe96be64ac96cf25588dbfb73206f2eb8f5406489e48c28dcb601c7879f9f9"
     },
     {
       "file": "archive-worker.mjs",
@@ -28,13 +28,13 @@
     },
     {
       "file": "archive.css",
-      "bytes": 6327,
-      "sha256": "1336a273b4feb6d460160c02e3d3f50fa827b9b62d6c96b74c9225398cf4d3ac"
+      "bytes": 12507,
+      "sha256": "723f6c74d371c95c940ec65800b40456919c97dc3ecffe3e640da9adb1f90074"
     },
     {
       "file": "index.html",
-      "bytes": 5433,
-      "sha256": "3f08d67fc8f5f060e001529d7453da2e87be12e9d73a7764c51d7c524b78c2c1"
+      "bytes": 6717,
+      "sha256": "5337ec44f11c87ee55c610357e53e290a1fca2720a546059db2eef056454a6a0"
     }
   ]
 }

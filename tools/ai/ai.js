@@ -8,6 +8,7 @@ import {MAX_TEXT_FILE,MAX_ATTACHMENTS,LONG_PASTE,DEFAULT_ATTACHMENT_PROMPT,forma
 (() => {
   'use strict';
   const $=id=>document.getElementById(id);
+  document.querySelectorAll('[data-icon]').forEach(element=>{const icon=globalThis.ToolboxIcons?.svg?.(element.dataset.icon);if(icon)element.replaceWith(icon);});
   function pastedTextCount(){return attachments.filter(file=>file.pasted).length;}
   let config=null,history=[],localHistory=[],attachments=[],controller=null,reading=false,localBusy=false,localMode=true,localRaw='',localActive=null,apiCheckpoint=null,apiSessionId=crypto.randomUUID(),localLabel=LOCAL_LABEL;
   const localClient=new LocalAiClient({onProgress:info=>status(`${info.status} · ${Math.round(info.value*100)}%`),onReady:info=>{localLabel=info.label||LOCAL_LABEL;if(localMode){$('modelLabel').textContent=localLabel+' · WebGPU';$('cacheLabel').textContent=info.cacheStored?'已缓存':'未缓存';status(info.cacheStored?'模型已就绪':'模型已就绪，存储空间不足，缓存未完成');}},onToken:(id,text)=>{if(localActive?.id===id){localRaw+=text;renderLocal(localActive,localRaw);scheduleSave();}},onSnapshot:(id,text)=>{if(localActive?.id===id){localRaw=text;renderLocal(localActive,text);scheduleSave();}},onPhase:(id,phase)=>{if(localActive?.id===id)status(phase==='compacting'?'整理上下文…':'生成中…');},onContext:event=>contextEvent(event),onCheckpoint:()=>void persist(),onError:error=>status(error,true)});
@@ -105,6 +106,7 @@ import {MAX_TEXT_FILE,MAX_ATTACHMENTS,LONG_PASTE,DEFAULT_ATTACHMENT_PROMPT,forma
   $('newChat').onclick=()=>{clearChat();$('prompt').focus();};
   $('clearChat').onclick=()=>{clearChat();$('prompt').focus();};
   $('attach').onclick=()=>$('files').click();
+  document.querySelectorAll('[data-prompt]').forEach(button=>{button.onclick=()=>{if(controller||reading||localBusy)return;$('prompt').value=button.dataset.prompt||'';$('prompt').dispatchEvent(new Event('input',{bubbles:true}));$('prompt').focus();};});
   function renderAttachments(){
     $('attachments').replaceChildren();
     attachments.forEach((file,index)=>{
