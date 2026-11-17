@@ -14,7 +14,13 @@ self.onmessage = (event) => {
   const source = await new Response(
     response.body.pipeThrough(new DecompressionStream("gzip")),
   ).text();
-  const url = URL.createObjectURL(new Blob([source], { type: "text/javascript" }));
+  const assetRoot = new URL("/tools/doccloak/", self.location.href).href;
+  const runtimeSource = source
+    .replace('paths:"/tools/doccloak/"', "paths:" + JSON.stringify(assetRoot))
+    .replaceAll('new URL("/tools/doccloak/', 'new URL("' + assetRoot);
+  const url = URL.createObjectURL(
+    new Blob([runtimeSource], { type: "text/javascript" }),
+  );
   worker = new Worker(url, { type: "module" });
   worker.onmessage = (event) => self.postMessage(event.data);
   worker.onerror = (event) =>
