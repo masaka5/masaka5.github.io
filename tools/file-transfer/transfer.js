@@ -1,13 +1,13 @@
-import { randomPassword } from "./transfer-core.js?v=20261117b";
-import { TransferStore } from "./transfer-store.js?v=20261117b";
-import { TransferEngine } from "./transfer-engine.js?v=20261117b";
-import { TransferTransport, MAX_PEERS } from "./transfer-transport.js?v=20261117b";
+import { randomPassword } from "./transfer-core.js?v=20261117e";
+import { TransferStore } from "./transfer-store.js?v=20261117e";
+import { TransferEngine } from "./transfer-engine.js?v=20261117e";
+import { TransferTransport, MAX_PEERS } from "./transfer-transport.js?v=20261117e";
 import {
   TransferPreferences,
   TransferHistory,
   RememberedDevices,
   DestinationDirectory,
-} from "./transfer-preferences.js?v=20261117b";
+} from "./transfer-preferences.js?v=20261117e";
 
 const $ = (id) => document.getElementById(id);
 const app = (window.transferApp = {
@@ -72,9 +72,11 @@ const bytes = (value) => {
   return (n / 1024 ** units[1]).toFixed(n < 10 * 1024 ** units[1] ? 1 : 0) + " " + units[0];
 };
 const speedText = (value) => (Number(value) > 0 ? bytes(value) + "/s" : "0 B/s");
+const transferredBytes = (task) => Math.max(task?.offset || 0, task?.transferred || 0);
 const etaText = (task, speed) => {
-  if (!speed || task.offset >= task.size) return "即将完成";
-  const seconds = Math.max(1, Math.ceil((task.size - task.offset) / speed));
+  const current = transferredBytes(task);
+  if (!speed || current >= task.size) return "即将完成";
+  const seconds = Math.max(1, Math.ceil((task.size - current) / speed));
   if (seconds < 60) return seconds + " 秒";
   if (seconds < 3600) return Math.ceil(seconds / 60) + " 分钟";
   return Math.ceil(seconds / 3600) + " 小时";
@@ -410,13 +412,14 @@ function renderDevices() {
 const speedSamples = new WeakMap();
 function taskSpeed(task) {
   const now = performance.now();
+  const current = transferredBytes(task);
   let sample = speedSamples.get(task);
-  if (!sample || task.offset < sample.offset) {
-    sample = { offset: task.offset || 0, time: now, speed: 0 };
+  if (!sample || current < sample.offset) {
+    sample = { offset: current, time: now, speed: 0 };
     speedSamples.set(task, sample);
   } else if (now - sample.time >= 500) {
-    sample.speed = Math.max(0, (task.offset - sample.offset) / ((now - sample.time) / 1000));
-    sample.offset = task.offset;
+    sample.speed = Math.max(0, (current - sample.offset) / ((now - sample.time) / 1000));
+    sample.offset = current;
     sample.time = now;
   }
   return sample.speed;
@@ -497,7 +500,7 @@ function taskCard(task, engine, peerId, pendingItem = null) {
 }
 function progressInfo(task, pendingItem = null) {
   const state = pendingItem ? "queued" : task.state;
-  const current = pendingItem ? pendingItem.hashProgress || 0 : task.offset || 0;
+  const current = pendingItem ? pendingItem.hashProgress || 0 : transferredBytes(task);
   const total = pendingItem ? pendingItem.file.size : task.size || 1;
   let meta = "";
   if (pendingItem) {
@@ -512,7 +515,7 @@ function progressInfo(task, pendingItem = null) {
     meta = "SHA-256 已校验";
   } else {
     const speed = taskSpeed(task);
-    meta = state === "paused" ? bytes(task.offset) + " / " + bytes(task.size) : speedText(speed) + " · " + etaText(task, speed);
+    meta = state === "paused" ? bytes(transferredBytes(task)) + " / " + bytes(task.size) : speedText(speed) + " · " + etaText(task, speed);
   }
   return { current, total, meta, state };
 }

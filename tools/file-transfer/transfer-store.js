@@ -1,4 +1,4 @@
-import { metadata, validId, validOffset, CHUNK_SIZE } from "./transfer-core.js?v=20261117b";
+import { metadata, validId, validOffset, CHUNK_SIZE } from "./transfer-core.js?v=20261117e";
 export class TransferStore {
   constructor() {
     this.fallbackLimit = 256 * 1024 * 1024;
@@ -34,7 +34,7 @@ export class TransferStore {
       .catch((e) => acquired.reject(e));
     await ready;
     try {
-      this.worker = new Worker(new URL("./store-worker.js", import.meta.url), {
+      this.worker = new Worker(new URL("./store-worker.js?v=20261117e", import.meta.url), {
         type: "module",
       });
       this.worker.onmessage = ({ data }) => {

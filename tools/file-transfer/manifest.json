@@ -1,25 +1,25 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "files": [
     {
       "file": "index.html",
       "bytes": 14801,
-      "sha256": "aeadc9d3c38d4ac7e7144e6ee1696898bcd65e7d44046d0857ae479e783f5262"
+      "sha256": "8e5cfb4fd68450d3c75ca2444574b63cdf3fef8b0e72959ae6c077ba61db0bff"
     },
     {
       "file": "store-worker.js",
-      "bytes": 10772,
-      "sha256": "d7d9e3f13c42f7eb2f3eceeef77e59bca3f3172a455626ef6fd0a0590a674bec"
+      "bytes": 10777,
+      "sha256": "b9033e84080ff594c3265a2969d6853ff5073feefeab098b38812f8e09210953"
     },
     {
       "file": "transfer-core.js",
-      "bytes": 2517,
-      "sha256": "74a709af0243622d38c97d71923c6a1472d27bc68a169a7c594d63cc4b195c1b"
+      "bytes": 2522,
+      "sha256": "a22a0c1b464d0ab08b3a6ba282067cac6b5a60962b45fab64009497b805b467c"
     },
     {
       "file": "transfer-engine.js",
-      "bytes": 12707,
-      "sha256": "df4afe181951e9ebca6dac5a8cad3395335286126aebe4e57506ed25bd269523"
+      "bytes": 13882,
+      "sha256": "ffe21902d0db89cbc654ca949f7f204a032a08e6155c3454491c410c9182d85e"
     },
     {
       "file": "transfer-preferences.js",
@@ -28,13 +28,13 @@
     },
     {
       "file": "transfer-store.js",
-      "bytes": 4408,
-      "sha256": "c54cbe9622577aca596c639b572e242b44614ca6915af7b3460a2e09504c2c5d"
+      "bytes": 4420,
+      "sha256": "1eace895b6c85db90c689afb91759792e831351988a54815110ec246068bf47e"
     },
     {
       "file": "transfer-transport.js",
-      "bytes": 5250,
-      "sha256": "8cf715a203b79d38154023d86848fdb8126f6cbd59f9327cfd275db58cccb147"
+      "bytes": 6553,
+      "sha256": "95e5f75f02c5f6e6318532c167cedc02721ebdb674057e32af80105b2c3f6c25"
     },
     {
       "file": "transfer.css",
@@ -43,8 +43,8 @@
     },
     {
       "file": "transfer.js",
-      "bytes": 50062,
-      "sha256": "006a5caf0198d3a8815e24a7ab5d0e26a4fc5e1946899c89fa1a8e75cb06b531"
+      "bytes": 50222,
+      "sha256": "777979959caa579f45c93c507424e9f5f3ae1bdc0ce018ae855fea5786233b42"
     }
   ]
 }

@@ -6,11 +6,12 @@ import {
   digest,
   randomPassword,
   metadata,
-} from "./transfer-core.js?v=20261117b";
+} from "./transfer-core.js?v=20261117e";
 const active = (task) =>
   task &&
   ["hashing", "offered", "transferring", "verifying"].includes(task.state);
 const validToken = (t) => typeof t === "string" && /^[a-f0-9]{24}$/.test(t);
+const ACK_WINDOW_BYTES = CHUNK_SIZE * 16;
 export class TransferEngine extends EventTarget {
   constructor({ store, sendControl, sendChunk }) {
     super();
@@ -18,6 +19,8 @@ export class TransferEngine extends EventTarget {
     this.connected = false;
     this.generation = 0;
     this.closed = false;
+    this.sendingWindow = false;
+    this.chunkQueue = Promise.resolve();
   }
   get current() {
     return this.latest || null;
@@ -109,7 +112,7 @@ export class TransferEngine extends EventTarget {
       if (!this.fresh(task, generation)) return;
       const content = metadata({ ...task, id: hash, hash });
       const taskId = await digest(
-        new TextEncoder().encode(hash + "\0" + content.path),
+        new TextEncoder().encode(hash + "\0" + content.path + "\0v4"),
       );
       Object.assign(task, metadata({ ...content, id: taskId }), {
         state: "offered",
@@ -234,10 +237,11 @@ export class TransferEngine extends EventTarget {
         )
           throw new Error("确认位置无效");
         task.offset = data.offset;
+        task.transferred = Math.max(task.transferred || 0, data.offset);
         this.pending = null;
         this.clearTimer();
         this.changed();
-        await this.next(task);
+        if (!this.sendingWindow) await this.next(task);
         return;
       }
       if (
@@ -290,31 +294,61 @@ export class TransferEngine extends EventTarget {
   }
   async next(task) {
     const generation = this.generation;
-    if (!this.fresh(task, generation) || task.state !== "transferring") return;
+    if (
+      this.sendingWindow ||
+      !this.fresh(task, generation) ||
+      task.state !== "transferring"
+    )
+      return;
     if (task.offset === task.size) {
       task.state = "verifying";
+      task.transferred = task.size;
       this.changed();
       this.clearTimer();
       await this.control("finish", task);
       return;
     }
-    const offset = task.offset;
-    const bytes = new Uint8Array(
-      await task.file.slice(offset, offset + CHUNK_SIZE).arrayBuffer(),
-    );
-    const hash = await digest(bytes);
-    if (!this.fresh(task, generation) || task.state !== "transferring") return;
-    this.pending = { end: offset + bytes.length, token: task.token };
+    const windowStart = task.offset;
+    const windowEnd = Math.min(task.size, windowStart + ACK_WINDOW_BYTES);
+    this.pending = { end: windowEnd, token: task.token };
+    this.sendingWindow = true;
     this.arm();
-    await this.sendChunk(bytes, {
-      v: 1,
-      id: task.id,
-      token: task.token,
-      offset,
-      hash,
-    });
+    try {
+      let offset = windowStart;
+      while (offset < windowEnd) {
+        if (!this.fresh(task, generation) || task.state !== "transferring")
+          return;
+        const end = Math.min(task.size, offset + CHUNK_SIZE);
+        const bytes = new Uint8Array(
+          await task.file.slice(offset, end).arrayBuffer(),
+        );
+        const hash = await digest(bytes);
+        if (!this.fresh(task, generation) || task.state !== "transferring")
+          return;
+        task.transferred = end;
+        this.changed();
+        await this.sendChunk(bytes, {
+          v: 1,
+          id: task.id,
+          token: task.token,
+          offset,
+          hash,
+          ack: end === windowEnd || end === task.size,
+        });
+        offset = end;
+      }
+    } finally {
+      this.sendingWindow = false;
+    }
+    if (!this.pending && this.fresh(task, generation))
+      await this.next(task);
   }
-  async receiveChunk(bytes, meta) {
+  receiveChunk(bytes, meta) {
+    const queued = this.chunkQueue.then(() => this.processChunk(bytes, meta));
+    this.chunkQueue = queued.catch(() => {});
+    return queued;
+  }
+  async processChunk(bytes, meta) {
     const task = this.incoming;
     const generation = this.generation;
     if (
@@ -322,14 +356,12 @@ export class TransferEngine extends EventTarget {
       !task ||
       task !== this.current ||
       task.state !== "transferring" ||
-      this.writing ||
       !meta ||
       meta.v !== 1 ||
       meta.id !== task.id ||
       meta.token !== task.token
     )
       return;
-    this.writing = true;
     try {
       if (!(bytes instanceof Uint8Array)) bytes = new Uint8Array(bytes);
       if (
@@ -347,13 +379,13 @@ export class TransferEngine extends EventTarget {
       if (!this.fresh(task, generation) || task.state !== "transferring")
         return;
       task.offset = record.offset;
+      task.transferred = record.offset;
       this.changed();
       this.arm();
-      await this.control("ack", task, { offset: task.offset });
+      if (meta.ack || task.offset === task.size)
+        await this.control("ack", task, { offset: task.offset });
     } catch (e) {
       if (this.fresh(task, generation)) await this.failure(e, task);
-    } finally {
-      this.writing = false;
     }
   }
   async finishIncoming(task) {
@@ -396,6 +428,7 @@ export class TransferEngine extends EventTarget {
     this.generation++;
     this.clearTimer();
     this.pending = null;
+    this.sendingWindow = false;
     for (const task of tasks) {
       task.state = "paused";
       if (notify) this.control("pause", task).catch(() => {});

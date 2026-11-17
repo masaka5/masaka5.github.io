@@ -1,4 +1,4 @@
-export const CHUNK_SIZE = 262144;
+export const CHUNK_SIZE = 1024 * 1024;
 export const MAX_FILE_SIZE = 1024 ** 4;
 export const validId = (value) =>
   typeof value === "string" && /^[a-f0-9]{64}$/.test(value);

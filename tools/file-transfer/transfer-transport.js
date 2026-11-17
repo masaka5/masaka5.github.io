@@ -1,8 +1,31 @@
-import { deriveConnection } from "./transfer-core.js?v=20261117b";
+import { CHUNK_SIZE, deriveConnection } from "./transfer-core.js?v=20261117e";
 
 export const MAX_PEERS = 8;
+const SEND_BUFFER_THRESHOLD = 1024 * 1024;
 const jsonSize = (value) =>
   new TextEncoder().encode(JSON.stringify(value)).byteLength;
+
+let dataChannelTuned = false;
+const connectionChannels = new WeakMap();
+function installDataChannelTuning() {
+  if (dataChannelTuned || typeof RTCPeerConnection === "undefined") return;
+  dataChannelTuned = true;
+  const prototype = RTCPeerConnection.prototype;
+  const createDataChannel = prototype.createDataChannel;
+  prototype.createDataChannel = function (label, options) {
+    const channel = createDataChannel.call(this, label, options);
+    if (label === "data") {
+      connectionChannels.set(this, channel);
+      channel.binaryType = "arraybuffer";
+      queueMicrotask(() => {
+        try {
+          channel.bufferedAmountLowThreshold = SEND_BUFFER_THRESHOLD;
+        } catch {}
+      });
+    }
+    return channel;
+  };
+}
 
 export class TransferTransport extends EventTarget {
   constructor({ password, via = "mqtt" }) {
@@ -25,14 +48,25 @@ export class TransferTransport extends EventTarget {
   hasPeer(peerId) {
     return !!peerId && this.peers.has(peerId);
   }
+  tunePeerChannel(peerId) {
+    const connection = this.room?.getPeers?.()?.[peerId]?.connection;
+    const channel = connection && connectionChannels.get(connection);
+    if (!channel) return false;
+    channel.binaryType = "arraybuffer";
+    channel.bufferedAmountLowThreshold = SEND_BUFFER_THRESHOLD;
+    return true;
+  }
   addPeer(peerId) {
     if (!peerId || this.peers.has(peerId) || this.peers.size >= MAX_PEERS - 1)
       return;
     this.peers.set(peerId, { id: peerId, connectedAt: Date.now() });
+    this.tunePeerChannel(peerId);
+    setTimeout(() => this.tunePeerChannel(peerId), 250)?.unref?.();
     this.emit("connected", peerId);
   }
   async connect() {
     if (!["mqtt", "nostr"].includes(this.via)) throw Error("连接方式无效");
+    installDataChannelTuning();
     const connection = await deriveConnection(this.password);
     this.password = null;
     const library = await import("../../vendor/meeting/" + this.via + ".js");
@@ -40,11 +74,11 @@ export class TransferTransport extends EventTarget {
     this.library = library;
     const room = (this.room = library.joinRoom(
       {
-        appId: "tools.manshii.asia/file-transfer/v2",
+        appId: "tools.manshii.asia/file-transfer/v4",
         identity: "none",
         password: connection.key,
         maxUsers: MAX_PEERS,
-        maxReceiveBytes: 1024 * 1024,
+        maxReceiveBytes: CHUNK_SIZE + 65536,
         turnConfig: [],
         relayConfig: { redundancy: 4, warnOnRelayFailure: false },
       },
@@ -59,7 +93,7 @@ export class TransferTransport extends EventTarget {
     chunk.onReceive(
       ({ peerId, byteLength, metadata }) =>
         this.hasPeer(peerId) &&
-        byteLength <= 262144 &&
+        byteLength <= CHUNK_SIZE &&
         metadata &&
         jsonSize(metadata) <= 4096,
     );
@@ -76,7 +110,7 @@ export class TransferTransport extends EventTarget {
       if (
         this.hasPeer(peerId) &&
         bytes instanceof Uint8Array &&
-        bytes.byteLength <= 262144
+        bytes.byteLength <= CHUNK_SIZE
       )
         this.emit("chunk", { bytes, meta: metadata, peerId });
     });
@@ -125,8 +159,9 @@ export class TransferTransport extends EventTarget {
   }
   async sendChunk(bytes, meta, peerId = this.peer) {
     if (this.closed || !this.hasPeer(peerId)) throw Error("设备已断开");
-    if (bytes.byteLength > 262144 || jsonSize(meta) > 4096)
+    if (bytes.byteLength > CHUNK_SIZE || jsonSize(meta) > 4096)
       throw Error("文件块超出限制");
+    this.tunePeerChannel(peerId);
     await this.chunk.send(bytes, { target: peerId, metadata: meta });
   }
   async stats(peerId = this.peer) {

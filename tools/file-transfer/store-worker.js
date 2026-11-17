@@ -1,6 +1,6 @@
 /* Dedicated module worker: no file content leaves this origin. */
 import { createSHA256 } from "../../vendor/hash-wasm/hash-wasm.js";
-const CHUNK = 262144,
+const CHUNK = 1024 * 1024,
   LIMIT = 256 * 1024 * 1024,
   HASH_BLOCK = 1024 * 1024;
 let db,
