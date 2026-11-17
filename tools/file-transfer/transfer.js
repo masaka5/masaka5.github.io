@@ -50,6 +50,7 @@ const transferIconPaths = {
   upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m17 8-5-5-5 5" /><path d="M12 3v12" />',
   pause: '<rect x="14" y="4" width="4" height="16" rx="1" /><rect x="6" y="4" width="4" height="16" rx="1" />',
   play: '<path d="m6 3 14 9-14 9V3Z" />',
+  'switch-camera': '<path d="M8 7h8a4 4 0 0 1 4 4v1" /><path d="m17 4 3 3-3 3" /><path d="M16 17H8a4 4 0 0 1-4-4v-1" /><path d="m7 20-3-3 3-3" />',
 };
 const states = {
   hashing: "校验文件",
@@ -906,6 +907,220 @@ async function showPair() {
     notice(error.message || "二维码生成失败", "error");
   }
 }
+const cameraScanner = {
+  stream: null,
+  running: false,
+  generation: 0,
+  detector: null,
+  decoderKind: "",
+  front: false,
+  canvas: document.createElement("canvas"),
+  context: null,
+};
+function scanStatus(text, tone = "") {
+  const target = $("scanStatus");
+  target.textContent = text || "";
+  target.dataset.tone = tone;
+}
+function stopCameraScanner() {
+  cameraScanner.running = false;
+  cameraScanner.generation++;
+  cameraScanner.stream?.getTracks().forEach((track) => track.stop());
+  cameraScanner.stream = null;
+  const video = $("scanVideo");
+  if (video) video.srcObject = null;
+  if ($("scannerStart")) $("scannerStart").hidden = false;
+}
+function pairValuesFromUrl(raw) {
+  let url;
+  try {
+    url = new URL(raw, location.origin);
+  } catch {
+    throw Error("连接码格式无效");
+  }
+  if (url.origin !== location.origin || !url.pathname.includes("/tools/file-transfer/"))
+    throw Error("不是有效的文件直传连接码");
+  const password = url.searchParams.get("pair") || "";
+  if (password.length < 12 || password.length > 128)
+    throw Error("连接码中的密码无效");
+  return { password, via: url.searchParams.get("via") === "nostr" ? "nostr" : "mqtt" };
+}
+function acceptPairCode(raw) {
+  if (app.transport) throw Error("请先断开当前连接");
+  const pair = pairValuesFromUrl(raw);
+  $("password").value = pair.password;
+  setStrategy(pair.via);
+  $("scanDialog").close();
+  stopCameraScanner();
+  notice("连接码已识别", "success");
+  if (navigator.vibrate) navigator.vibrate(45);
+  setTimeout(() => {
+    if (!app.transport) $("connect").click();
+  }, 180);
+}
+async function cameraDevices() {
+  let devices = [];
+  try {
+    devices = await navigator.mediaDevices.enumerateDevices();
+  } catch {}
+  const selected = $("cameraSelect").value;
+  $("cameraSelect").replaceChildren();
+  const fallback = node("option", "后置 / 默认摄像头");
+  fallback.value = "";
+  $("cameraSelect").append(fallback);
+  for (const [index, device] of devices.filter((item) => item.kind === "videoinput").entries()) {
+    const option = node("option", device.label || "摄像头 " + (index + 1));
+    option.value = device.deviceId;
+    $("cameraSelect").append(option);
+  }
+  if ([...$("cameraSelect").options].some((option) => option.value === selected))
+    $("cameraSelect").value = selected;
+}
+async function prepareScannerDecoder() {
+  if (cameraScanner.detector) return cameraScanner.detector;
+  if ("BarcodeDetector" in window) {
+    try {
+      const formats = await window.BarcodeDetector.getSupportedFormats?.();
+      if (!formats || formats.includes("qr_code")) {
+        cameraScanner.detector = new window.BarcodeDetector({ formats: ["qr_code"] });
+        cameraScanner.decoderKind = "native";
+        return cameraScanner.detector;
+      }
+    } catch {}
+  }
+  const decoder = window.ZXingWASM;
+  if (!decoder) throw Error("浏览器不支持摄像头解码");
+  const wasmUrl = new URL("../../vendor/zxing/zxing_reader.wasm", import.meta.url);
+  decoder.prepareZXingModule({
+    overrides: {
+      locateFile: (file) => new URL("../../vendor/zxing/" + file, import.meta.url).href,
+    },
+  });
+  const response = await fetch(wasmUrl, { cache: "force-cache" });
+  if (!response.ok) throw Error("扫码组件加载失败");
+  cameraScanner.detector = decoder;
+  cameraScanner.decoderKind = "zxing";
+  return decoder;
+}
+async function scanVideoFrame() {
+  const video = $("scanVideo");
+  if (!video.videoWidth || !video.videoHeight) return "";
+  if (cameraScanner.decoderKind === "native") {
+    const results = await cameraScanner.detector.detect(video);
+    return results.find((item) => item.rawValue)?.rawValue || "";
+  }
+  const ratio = Math.min(1, 960 / video.videoWidth);
+  cameraScanner.canvas.width = Math.max(1, Math.round(video.videoWidth * ratio));
+  cameraScanner.canvas.height = Math.max(1, Math.round(video.videoHeight * ratio));
+  cameraScanner.context ||= cameraScanner.canvas.getContext("2d", {
+    willReadFrequently: true,
+  });
+  cameraScanner.context.drawImage(
+    video,
+    0,
+    0,
+    cameraScanner.canvas.width,
+    cameraScanner.canvas.height,
+  );
+  const results = await cameraScanner.detector.readBarcodesFromImageData(
+    cameraScanner.context.getImageData(
+      0,
+      0,
+      cameraScanner.canvas.width,
+      cameraScanner.canvas.height,
+    ),
+    { formats: ["QRCode"], tryHarder: true, maxNumberOfSymbols: 1 },
+  );
+  return results.find((item) => item.text)?.text || "";
+}
+async function scannerLoop(token) {
+  if (!cameraScanner.running || token !== cameraScanner.generation) return;
+  try {
+    const value = await scanVideoFrame();
+    if (token !== cameraScanner.generation) return;
+    if (value) {
+      acceptPairCode(value);
+      return;
+    }
+  } catch (error) {
+    if (cameraScanner.decoderKind !== "zxing" && window.ZXingWASM) {
+      cameraScanner.detector = null;
+      cameraScanner.decoderKind = "";
+      try {
+        await prepareScannerDecoder();
+      } catch (fallbackError) {
+        stopCameraScanner();
+        scanStatus(fallbackError.message || "扫码组件加载失败", "error");
+        return;
+      }
+    } else {
+      stopCameraScanner();
+      scanStatus(error.message || "扫码失败，请调整码面后重试", "error");
+      return;
+    }
+  }
+  if (cameraScanner.running && token === cameraScanner.generation)
+    setTimeout(() => scannerLoop(token), 220);
+}
+async function startCameraScanner() {
+  if (!$("scanDialog").open) $("scanDialog").showModal();
+  stopCameraScanner();
+  const token = ++cameraScanner.generation;
+  scanStatus("正在启动摄像头…");
+  if (!isSecureContext || !navigator.mediaDevices?.getUserMedia)
+    throw Error("摄像头需要 HTTPS 浏览器");
+  const deviceId = $("cameraSelect").value;
+  const constraints = deviceId
+    ? { audio: false, video: { deviceId: { exact: deviceId }, width: { ideal: 1920 }, height: { ideal: 1080 } } }
+    : {
+        audio: false,
+        video: {
+          facingMode: { ideal: cameraScanner.front ? "user" : "environment" },
+          width: { ideal: 1920 },
+          height: { ideal: 1080 },
+        },
+      };
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia(constraints);
+  } catch (error) {
+    $("scannerStart").hidden = false;
+    const messages = {
+      NotAllowedError: "摄像头权限未开启",
+      NotFoundError: "未找到可用摄像头",
+      NotReadableError: "摄像头正被其他应用占用",
+      OverconstrainedError: "当前摄像头不支持所需分辨率",
+    };
+    const message = messages[error?.name] || "无法启动摄像头";
+    scanStatus(message, "error");
+    throw Error(message);
+  }
+  if (token !== cameraScanner.generation) {
+    stream.getTracks().forEach((track) => track.stop());
+    return;
+  }
+  cameraScanner.stream = stream;
+  const video = $("scanVideo");
+  video.srcObject = stream;
+  try {
+    await video.play().catch(() => {});
+    $("scannerStart").hidden = true;
+    await prepareScannerDecoder();
+    if (token !== cameraScanner.generation) {
+      stopCameraScanner();
+      return;
+    }
+    await cameraDevices();
+    cameraScanner.running = true;
+    scanStatus("对准二维码即可自动连接");
+    scannerLoop(token);
+  } catch (error) {
+    stopCameraScanner();
+    scanStatus(error.message || "扫码组件启动失败", "error");
+    throw error;
+  }
+}
+
 function applyTheme(theme) {
   const value = theme === "dark" ? "dark" : "light";
   document.documentElement.dataset.theme = value;
@@ -922,10 +1137,14 @@ function switchTab(name) {
 }
 function initializeQueryPair() {
   const params = new URLSearchParams(location.search);
-  const password = params.get("pair");
-  if (!password) return false;
-  $("password").value = password;
-  setStrategy(params.get("via"));
+  if (!params.has("pair")) return false;
+  try {
+    const pair = pairValuesFromUrl(location.href);
+    $("password").value = pair.password;
+    setStrategy(pair.via);
+  } catch {
+    return false;
+  }
   const auto = params.get("auto") === "1";
   params.delete("pair");
   params.delete("via");
@@ -948,6 +1167,34 @@ $("copyPassword").onclick = () => run(async () => {
   $("connectionNote").textContent = "密码已复制";
 });
 $("showPair").onclick = () => run(showPair);
+$("scanPair").onclick = () => run(async () => {
+  if (app.transport) throw Error("请先断开当前连接");
+  await startCameraScanner();
+});
+$("closeScan").onclick = () => {
+  stopCameraScanner();
+  $("scanDialog").close();
+};
+$("cancelScan").onclick = () => {
+  stopCameraScanner();
+  $("scanDialog").close();
+};
+$("scanDialog").addEventListener("cancel", (event) => {
+  event.preventDefault();
+  stopCameraScanner();
+  $("scanDialog").close();
+});
+$("switchCamera").onclick = () => run(async () => {
+  const options = [...$("cameraSelect").options];
+  if (options.length > 1) {
+    const current = Math.max(0, options.findIndex((option) => option.value === $("cameraSelect").value));
+    $("cameraSelect").value = options[(current + 1) % options.length].value;
+  } else {
+    cameraScanner.front = !cameraScanner.front;
+  }
+  await startCameraScanner();
+});
+$("cameraSelect").onchange = () => run(startCameraScanner);
 $("pairConnect").onclick = () => {
   $("pairDialog").close();
   if (!app.transport) $("connect").click();
@@ -982,38 +1229,62 @@ $("dropZone").onkeydown = (event) => {
     $("files").click();
   }
 };
-for (const type of ["dragenter", "dragover"]) {
-  $("dropZone").addEventListener(type, (event) => {
-    event.preventDefault();
-    $("dropZone").classList.add("is-over");
-  });
+let pageDragDepth = 0;
+function containsFiles(dataTransfer) {
+  return [...(dataTransfer?.types || [])].includes("Files");
 }
-for (const type of ["dragleave", "drop"]) {
-  $("dropZone").addEventListener(type, (event) => {
-    event.preventDefault();
-    $("dropZone").classList.remove("is-over");
-  });
+function resetPageDrag() {
+  pageDragDepth = 0;
+  $("globalDropOverlay").hidden = true;
+  $("dropZone").classList.remove("is-over");
 }
-$("dropZone").addEventListener("drop", (event) => {
+window.addEventListener("dragenter", (event) => {
+  if (!containsFiles(event.dataTransfer)) return;
+  event.preventDefault();
+  pageDragDepth++;
+  $("globalDropOverlay").hidden = false;
+  $("dropZone").classList.add("is-over");
+});
+window.addEventListener("dragover", (event) => {
+  if (!containsFiles(event.dataTransfer)) return;
+  event.preventDefault();
+  event.dataTransfer.dropEffect = "copy";
+});
+window.addEventListener("dragleave", (event) => {
+  if (!containsFiles(event.dataTransfer)) return;
+  pageDragDepth = Math.max(0, pageDragDepth - 1);
+  if (!pageDragDepth) resetPageDrag();
+});
+window.addEventListener("drop", (event) => {
+  if (!containsFiles(event.dataTransfer)) return;
+  event.preventDefault();
+  resetPageDrag();
   run(async () => {
     const entries = await droppedEntries(event.dataTransfer);
     if (entries.length) await queueFiles(entries);
   });
 });
+window.addEventListener("dragend", resetPageDrag);
 document.addEventListener("paste", (event) => {
-  if (!app.transport) return;
-  const files = [...(event.clipboardData?.items || [])]
-    .filter((item) => item.type.startsWith("image/"))
-    .map((item) => item.getAsFile())
-    .filter(Boolean)
-    .map((file, index) => ({
-      file: new File([file], file.name || "剪贴板图片-" + Date.now() + "-" + index + ".png", { type: file.type }),
-      path: file.name || "剪贴板图片-" + Date.now() + "-" + index + ".png",
-    }));
-  if (files.length) {
-    event.preventDefault();
-    run(() => queueFiles(files));
+  const clipboard = event.clipboardData;
+  const files = [];
+  for (const item of clipboard?.items || []) {
+    if (!item.type.startsWith("image/")) continue;
+    const file = item.getAsFile();
+    if (file) files.push(file);
   }
+  for (const file of clipboard?.files || []) {
+    if (file.type.startsWith("image/") && !files.some((item) => item.name === file.name && item.size === file.size))
+      files.push(file);
+  }
+  if (!files.length) return;
+  event.preventDefault();
+  const entries = files.map((file, index) => {
+    const extension = file.type === "image/jpeg" ? "jpg" : file.type.split("/")[1]?.replace("+xml", "") || "png";
+    const name = file.name || "剪贴板图片-" + Date.now() + "-" + index + "." + extension;
+    return { file: new File([file], name, { type: file.type }), path: name };
+  });
+  run(() => queueFiles(entries));
 });
 
 $("acceptFile").onclick = () => {
@@ -1094,6 +1365,7 @@ $("confirmDelete").onclick = () => run(async () => {
 
 window.addEventListener("pagehide", (event) => {
   if (event.persisted) return;
+  stopCameraScanner();
   for (const engine of app.engines.values()) engine.close();
   app.transport?.leave().catch(() => {});
   app.store?.close();
