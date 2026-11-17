@@ -5,8 +5,8 @@
   "license": "MIT",
   "engine": "OffscreenCanvas worker pool + Canvas 2D",
   "limits": {
-    "fileBytes": 41943040,
     "files": 40,
+    "fileBytes": 41943040,
     "totalBytes": 230686720
   },
   "files": [

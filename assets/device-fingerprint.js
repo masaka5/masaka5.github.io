@@ -1,0 +1,9 @@
+(function(root){'use strict';
+ const CACHE='pocket-device-fingerprint-v1';let pending;
+ function webglLabel(){try{const canvas=document.createElement('canvas'),gl=canvas.getContext('webgl')||canvas.getContext('experimental-webgl');if(!gl)return'';const ext=gl.getExtension('WEBGL_debug_renderer_info');return ext?String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)||'').slice(0,180):String(gl.getParameter(gl.RENDERER)||'').slice(0,180);}catch{return'';}}
+ function canvasLabel(){try{const canvas=document.createElement('canvas');canvas.width=220;canvas.height=48;const ctx=canvas.getContext('2d');if(!ctx)return'';ctx.textBaseline='top';ctx.font='16px "Segoe UI",sans-serif';ctx.fillStyle='#6366f1';ctx.fillText('pocket-toolbox-fp-v1',4,7);ctx.fillStyle='rgba(15,23,42,.65)';ctx.fillRect(8,26,150,7);return canvas.toDataURL().slice(-600);}catch{return'';}}
+ function source(){const nav=navigator;return JSON.stringify({ua:nav.userAgent,platform:nav.platform||'',languages:nav.languages||[],language:nav.language||'',timezone:Intl.DateTimeFormat().resolvedOptions().timeZone||'',hardware:navigator.hardwareConcurrency||0,memory:navigator.deviceMemory||0,touch:navigator.maxTouchPoints||0,screen:[screen.width,screen.height,screen.colorDepth,screen.pixelDepth,devicePixelRatio||1],webgl:webglLabel(),canvas:canvasLabel()});}
+ async function digest(){let saved='';try{saved=sessionStorage.getItem(CACHE)||'';}catch{}if(/^[0-9a-f]{64}$/.test(saved))return saved;const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('tools.manshii.asia/comment:'+source()));const value=Array.from(new Uint8Array(bytes),n=>n.toString(16).padStart(2,'0')).join('');try{sessionStorage.setItem(CACHE,value);}catch{}return value;}
+ function fingerprint(){if(!pending)pending=digest().catch(()=> '');return pending;}
+ root.ToolboxDevice={fingerprint};
+})(typeof globalThis!=='undefined'?globalThis:this);
