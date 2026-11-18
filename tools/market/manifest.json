@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "tool": "market",
-  "version": "20261118-market1",
-  "generatedAt": "2026-11-18T09:52:02Z",
+  "version": "20261118-market2",
+  "generatedAt": "2026-11-18T10:43:52Z",
   "files": [
     {
       "path": "index.html",
@@ -21,13 +21,13 @@
     },
     {
       "path": "full/index.html",
-      "bytes": 2357,
-      "sha256": "1aa08dde6aaace5d47107970694fdbffc0c03d22899f06e98eab97c8a9c46173"
+      "bytes": 2255,
+      "sha256": "6d23bfaefe2c21f7d7ebe2ee1a4da119ccb4fce7364cad6e84f9a4092902f36d"
     },
     {
-      "path": "full/assets/index-BcYh8f1G.js",
-      "bytes": 536075,
-      "sha256": "d1e6769d42b16173417e3cfb67f05297e4e67e8ed8d05730e704caa2bfc3c730"
+      "path": "full/assets/index-OmwgzuUz.js",
+      "bytes": 536445,
+      "sha256": "8c0d0eb7645d7d482f94861985b29a4a200a424798e32b878f5f29ee1df72d6f"
     },
     {
       "path": "full/assets/index-CuI1biyn.css",
