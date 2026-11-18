@@ -8,6 +8,18 @@ export const b64uToBytes=value=>{if(typeof value!=='string'||!/^[A-Za-z0-9_-]+$/
 export function randomSecret(){return bytesToB64u(crypto.getRandomValues(new Uint8Array(32)));}
 export function validSecret(value){return typeof value==='string'&&SECRET.test(value);}
 export function validType(value){return TYPES.has(value);}
+export function detectType(value){
+ const raw=String(value??'').replace(/\r\n?/g,'\n').trim();
+ if(!raw)return 'text';
+ if(/^(?:https?:\/\/|mailto:)[^\s]+$/i.test(raw)||/^www\.[^\s]+$/i.test(raw))return 'link';
+ const compact=raw.replace(/[\s-]/g,'');
+ if(/^\d{4,10}$/.test(compact)||(/^[A-Z0-9]{6,10}$/.test(compact)&&/\d/.test(compact)))return 'otp';
+ if((raw.startsWith('{')&&raw.endsWith('}'))||(raw.startsWith('[')&&raw.endsWith(']'))){try{JSON.parse(raw);return 'code';}catch{}}
+ const codePattern=/(?:^|\n)\s*(?:#!|#include\b|package\s+|import\s+|export\s+|const\s+|let\s+|var\s+|function\s+|class\s+|def\s+|from\s+|if\s*\(|for\s*\(|while\s*\(|switch\s*\(|SELECT\s+|INSERT\s+|UPDATE\s+|DELETE\s+|git\s+|docker\s+|kubectl\s+|curl\s+|Get-[A-Za-z]+|Set-[A-Za-z]+|New-[A-Za-z]+|Remove-[A-Za-z]+)/i;
+ if(codePattern.test(raw)||/=>|<\/?[A-Za-z][^>]*>|\bconsole\.|\bprint\s*\(|\breturn\s+[^;\n]+;|;\s*(?:\n|$)/.test(raw))return 'code';
+ if(!/\s/.test(raw)&&!/[\u3400-\u9fff]/.test(raw)&&raw.length>=4&&raw.length<=256)return 'password';
+ return 'text';
+}
 export function shareURL(secret,via='mqtt'){if(!validSecret(secret))throw Error('分享密钥无效');const url=new URL(location.href);url.search='';url.hash=new URLSearchParams({s:secret,v:via==='nostr'?'nostr':'mqtt'}).toString();return url.href;}
 export function parseShareURL(value=location.href){const url=new URL(value,location.href);if(url.origin!==location.origin||url.pathname.replace(/\/index\.html$/,'')!==location.pathname.replace(/\/index\.html$/,''))throw Error('不是本工具的阅焚链接');const params=new URLSearchParams(url.hash.slice(1)),secret=params.get('s');if(!validSecret(secret))throw Error('阅焚链接无效或已失效');return{secret,via:params.get('v')==='nostr'?'nostr':'mqtt',url};}
 export async function digestHex(bytes){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),value=>value.toString(16).padStart(2,'0')).join('');}
