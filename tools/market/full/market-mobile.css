@@ -1,0 +1,25 @@
+@media (max-width:767px){
+  .market-chain-panel>header{display:grid!important;grid-template-columns:4px 14px minmax(0,1fr)!important;grid-template-rows:28px 34px!important;height:auto!important;min-height:66px!important;padding:4px 8px!important;gap:0 8px!important;align-content:center!important;overflow:visible!important}
+  .market-chain-panel>header>span:first-child{align-self:center!important;grid-column:1!important;grid-row:1!important}
+  .market-chain-panel>header>span:nth-child(2){align-self:center!important;grid-column:2!important;grid-row:1!important}
+  .market-chain-panel>header>h2{grid-column:3!important;grid-row:1!important;width:auto!important;min-width:0!important;font-size:12px!important;line-height:28px!important;visibility:visible!important}
+  .market-chain-panel>header>div:last-child{grid-column:1/-1!important;grid-row:2!important;width:100%!important;min-width:0!important;height:34px!important;padding:0 0 4px!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-x:contain;scrollbar-width:none;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .market-chain-panel>header>div:last-child::-webkit-scrollbar{display:none}
+  .market-chain-panel>header>div:last-child>*{flex:none!important;scroll-snap-align:start}
+  .market-chain-panel>header>div:last-child button{min-height:25px!important;padding:2px 7px!important;white-space:nowrap!important;line-height:1.35!important;font-size:10.5px!important}
+  .market-chain-panel>header>div:last-child .group{display:flex!important;align-items:center!important}
+  .market-chain-panel>header>div:last-child .group>button{margin-right:1px}
+  .market-chain-panel>div:last-child{overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain!important}
+  .market-chain-panel>div:last-child>div{display:flex!important;flex-direction:column!important;width:100%!important;height:auto!important;min-height:100%!important}
+  .market-chain-panel>div:last-child>div>div:first-child{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;width:100%!important;height:auto!important;flex:none!important;gap:8px!important;padding:8px!important;overflow:visible!important}
+  .market-chain-panel>div:last-child>div>div:first-child>*{grid-column:auto!important;grid-row:auto!important;width:100%!important;min-width:0!important;height:auto!important}
+  .market-chain-panel>div:last-child>div>div:first-child>div{display:flex!important;flex-direction:column!important;min-height:0!important}
+  .market-chain-panel>div:last-child>div>div:first-child>div>div:last-child{flex:none!important;height:auto!important;max-height:none!important;overflow:visible!important}
+  .market-chain-panel>div:last-child>div>div:last-child{width:100%!important;height:auto!important;min-height:360px!important;flex:none!important;border-left:0!important;border-top:1px solid rgba(71,85,105,.4)!important}
+}
+@media (max-width:360px){
+  .market-chain-panel>header{grid-template-rows:26px 32px!important;min-height:62px!important;gap:0 6px!important;padding-inline:6px!important}
+  .market-chain-panel>header>h2{line-height:26px!important;font-size:11px!important}
+  .market-chain-panel>header>div:last-child{height:32px!important;gap:3px!important}
+  .market-chain-panel>header>div:last-child button{font-size:10px!important;padding-inline:6px!important}
+}
