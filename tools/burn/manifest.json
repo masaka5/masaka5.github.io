@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "tool": "burn",
+  "version": "20261118-burn2",
+  "generatedAt": "2026-11-18T07:35:24Z",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 10218,
+      "sha256": "45ee4d196c93b0cddc5cbbff621dcc08754ffdbb02d14ddd5f381bb57480fd49"
+    },
+    {
+      "path": "burn.css",
+      "bytes": 14791,
+      "sha256": "f7ec349a1541b1f9e1fe2403996db70bd5188e8d456f7619286db88d1d1b639d"
+    },
+    {
+      "path": "burn.js",
+      "bytes": 24877,
+      "sha256": "4195868152fe1c246c19c249b0a2a2edd03c697c4679ea27960298f52ae45f09"
+    },
+    {
+      "path": "burn-core.js",
+      "bytes": 4031,
+      "sha256": "298f92b2ff7d091c6bcaeba27efcf2268feda20c28f749dd2766bd05542d6c0d"
+    },
+    {
+      "path": "burn-sw.js",
+      "bytes": 1739,
+      "sha256": "b453371bd2491fa48faa519e44246b9c2f25dc6791c0cd6c869a73de6860adf5"
+    }
+  ]
+}

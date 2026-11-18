@@ -31,6 +31,7 @@ const ToolboxCatalog = {
     {id:'web-ppt',category:'collaboration',name:'幻灯片',description:'Web-PPT · 演示 · PPTX 导出',href:'tools/web-ppt/',icon:'panels-top-left',tags:['演示','PPT','幻灯片'],keywords:'Web-PPT 演示文稿 图片 文字 排版'},
     {id:'univer',category:'data',name:'表格与文档',description:'Univer · 公式 · 数据编辑',href:'tools/office-editors/office.html',icon:'sheet',tags:['表格','文档','Univer'],keywords:'Univer 电子表格 公式 CSV 文档 办公'},
     {id:'file-transfer',category:'meetings',name:'文件直传',description:'设备直连 · 断点续传 · 完整校验',href:'tools/file-transfer/',icon:'send',tags:['P2P','WebRTC','续传'],keywords:'浏览器 文件 直传 传输 分享 设备 发送 接收 密码 断点续传 WebRTC P2P 本地'},
+    {id:'burn',category:'meetings',name:'阅完即焚',description:'AES-GCM · 一次性读取 · 扫码查看',href:'tools/burn/',icon:'zap',tags:['阅后即焚','AES-GCM','二维码'],keywords:'阅完即焚 阅后即焚 一次性查看 AES-GCM Web Crypto 加密 密码 验证码 链接 代码 图片 二维码 扫码 离线 内存 失焦隐藏 自动销毁'},
     {id:'bsod',category:'windows',name:'蓝屏分析',description:'停止代码 · 转储解析 · 驱动关联',href:'tools/bsod/',icon:'monitor-x',tags:['蓝屏','DMP','WASM'],keywords:'BlueScreenView Windows 蓝屏 minidump 内核 转储 dmp dump bugcheck 停止代码 崩溃 驱动 分析'},
     {id:'iso',category:'files',name:'镜像工具',description:'镜像浏览 · 文件提取 · 镜像制作',href:'tools/iso/',icon:'disc-3',tags:['ISO','WIM','IMG','VHD'],keywords:'iso9660 Joliet 光盘 镜像 文件夹 打包 制作 WIM ESD IMG VHD VHDX 提取 编辑 WASM'},
     {id:'folder-analysis',category:'windows',name:'文件夹分析',description:'空间分析 · 重复文件 · 类型统计',href:'tools/folder-analysis/',icon:'folder-search',tags:['文件夹','重复','空间'],keywords:'WizTree 文件夹 分析 大小 面积图 重复文件 检测 SHA256 WASM 目录 类型 CSV'},
