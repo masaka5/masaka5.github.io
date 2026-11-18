@@ -1,4 +1,5 @@
-["packet-analysis","hex-wasm","ocr","qr-batch","topospace","qwen-tts",
+["packet-analysis","hex-wasm","ocr","qr-batch","topospace",
+  "market","qwen-tts",
   "minutes",
   "netsim",
   "windows-policy",
