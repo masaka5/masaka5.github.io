@@ -9,12 +9,20 @@
   },
   "artifacts": {
     "home.js": {
-      "bytes": 793110,
-      "sha256": "cec47cb59d6552c5e47d2d77360e6b559e2230a6b229fa937f1b96fd9e7d4c7f"
+      "bytes": 236619,
+      "sha256": "f97c81740a33cdbc7f02be4401421669db41a02032784f7e0677bf52090ed923"
     },
     "home.css": {
       "bytes": 37792,
       "sha256": "c300d73ad7ab597326200fdd4bc9ef01ae5d71dad9e520a30df08c0e31e067f1"
+    },
+    "chunks/chunk-QNVTYVLH.js": {
+      "bytes": 548998,
+      "sha256": "fc36a45dd197a4184a5f41ef25296ecd3833154ccdc1c83da3e5099251db48ac"
+    },
+    "chunks/Comments-KKDX7WSJ.js": {
+      "bytes": 7514,
+      "sha256": "4065460eec4c1d9e13baaebdebce3d4fb2f8912b535afb9a256897d2dddf877e"
     }
   }
 }
