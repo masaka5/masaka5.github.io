@@ -1,12 +1,120 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/ops.css"><link rel="stylesheet" href="../../assets/studio.css"><script defer src="../../assets/ops-ui.js"></script><script defer src="record-store.js"></script><script defer src="recorder.js"></script><!-- pocket-seo:start -->
-<title>屏幕录制 · 口袋工具箱</title>
-<meta name="description" content="屏幕录制：录制预览 · 浏览器暂存 · 下载。口袋工具箱提供中文操作界面，可直接在浏览器中使用。">
-<link rel="canonical" href="https://tools.manshii.asia/catalog/recorder/">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:type" content="website"><meta property="og:site_name" content="口袋工具箱"><meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="屏幕录制 · 口袋工具箱"><meta property="og:description" content="屏幕录制：录制预览 · 浏览器暂存 · 下载。口袋工具箱提供中文操作界面，可直接在浏览器中使用。"><meta property="og:url" content="https://tools.manshii.asia/catalog/recorder/">
-<meta property="og:image" content="https://tools.manshii.asia/assets/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="口袋工具箱">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="屏幕录制 · 口袋工具箱"><meta name="twitter:description" content="屏幕录制：录制预览 · 浏览器暂存 · 下载。口袋工具箱提供中文操作界面，可直接在浏览器中使用。"><meta name="twitter:image" content="https://tools.manshii.asia/assets/share-card.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"屏幕录制","url":"https://tools.manshii.asia/catalog/recorder/","description":"屏幕录制：录制预览 · 浏览器暂存 · 下载。口袋工具箱提供中文操作界面，可直接在浏览器中使用。","applicationCategory":"音频视频","operatingSystem":"Web","inLanguage":"zh-CN","browserRequirements":"Requires JavaScript"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"口袋工具箱","item":"https://tools.manshii.asia/"},{"@type":"ListItem","position":2,"name":"音频视频","item":"https://tools.manshii.asia/categories/media/"},{"@type":"ListItem","position":3,"name":"屏幕录制","item":"https://tools.manshii.asia/catalog/recorder/"}]}]}</script>
-<!-- pocket-seo:end -->
-<link rel="stylesheet" href="/assets/reference-tool-theme.css?v=20261116c"><script defer src="/assets/reference-tool-shell.js?v=20261116c"></script></head><body><div class="studio-shell"><header class="ops-header"><a class="back-link" href="../../">← 工具箱</a><h1>屏幕录制</h1><span class="pill" id="recordClock">00:00</span></header><main class="studio-main"><aside class="studio-controls"><h2>录制设置</h2><label class="field"><span>画质</span><select id="recordQuality"><option value="4000000">标准 · 4 Mbps</option><option value="8000000" selected>高清 · 8 Mbps</option><option value="16000000">高质量 · 16 Mbps</option></select></label><label class="check"><input type="checkbox" id="systemAudio" checked>请求共享音频</label><label class="check"><input type="checkbox" id="microphoneAudio">加入麦克风</label><div class="actions"><button id="startRecord" class="primary">开始录屏</button><button id="pauseRecord" class="secondary" disabled>暂停</button><button id="stopRecord" class="secondary" disabled>结束</button></div><p id="recordStatus" class="status" role="status">选择屏幕、窗口或标签页开始录制。</p><p class="inline-note">每秒暂存到浏览器，刷新后可恢复已保存内容。刷新会结束录制，最后未保存片段可能丢失。</p><div class="panel-head"><h2>本机录制</h2><button class="text-button" id="refreshRecords">刷新</button></div><div id="recordList" class="record-list" aria-label="暂存录制列表"></div><p id="storageInfo" class="inline-note">正在检查浏览器存储…</p><button class="text-button" id="persistStorage">申请持久存储</button></aside><section class="studio-stage"><div class="panel-head"><h2 id="previewTitle">录制预览</h2><div class="actions"><button id="downloadRecord" class="secondary" disabled>下载</button><button id="deleteRecord" class="text-button danger-text" disabled>删除</button></div></div><div class="media-frame"><video id="recordVideo" playsinline controls></video><p id="recordPlaceholder">开始录屏，或选择一条已暂存的录制</p></div><p id="recordDetails" class="inline-note">录制保存在当前浏览器与当前域名下，不上传服务器。</p></section></main><footer class="studio-footer"><span>共享音频由浏览器及共享对象决定</span><span>清理网站数据会删除暂存，请及时下载</span></footer></div><dialog id="deleteDialog"><h2 style="font-size:16px">删除这条录制？</h2><p class="inline-note" style="margin:12px 0">浏览器内的暂存片段会被永久删除。</p><form method="dialog" class="actions"><button class="secondary" value="cancel">取消</button><button class="primary" value="delete">删除</button></form></dialog></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f8">
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="../../assets/design-system.css">
+  <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
+  <link rel="stylesheet" href="recorder.css?v=20261119i">
+  <script defer src="record-store.js?v=20261119b"></script>
+  <script defer src="recorder.js?v=20261119i"></script>
+  <!-- pocket-seo:start -->
+  <title>屏幕录制 · 口袋工具箱</title>
+  <meta name="description" content="教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与 WebM、MP4、GIF 导出。">
+  <link rel="canonical" href="https://tools.manshii.asia/catalog/recorder/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="口袋工具箱"><meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="屏幕录制 · 口袋工具箱"><meta property="og:description" content="教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与多格式导出。"><meta property="og:url" content="https://tools.manshii.asia/catalog/recorder/">
+  <meta property="og:image" content="https://tools.manshii.asia/assets/share-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="口袋工具箱">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="屏幕录制 · 口袋工具箱"><meta name="twitter:description" content="教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与多格式导出。"><meta name="twitter:image" content="https://tools.manshii.asia/assets/share-card.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"屏幕录制","url":"https://tools.manshii.asia/catalog/recorder/","description":"教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与多格式导出。","applicationCategory":"音频视频","operatingSystem":"Web","inLanguage":"zh-CN","browserRequirements":"Requires JavaScript"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"口袋工具箱","item":"https://tools.manshii.asia/"},{"@type":"ListItem","position":2,"name":"音频视频","item":"https://tools.manshii.asia/categories/media/"},{"@type":"ListItem","position":3,"name":"屏幕录制","item":"https://tools.manshii.asia/catalog/recorder/"}]}]}</script>
+  <!-- pocket-seo:end -->
+</head>
+<body>
+<svg class="svg-sprite" aria-hidden="true"><symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol><symbol id="i-record" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol><symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="4"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6"/></symbol><symbol id="i-library" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol><symbol id="i-pointer" viewBox="0 0 24 24"><path d="m5 3 14 8-6 2-3 6z"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="m4 20 4-1 11-11-3-3L5 16zM14 6l3 3"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M11 5h8v8"/></symbol><symbol id="i-rect" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/></symbol><symbol id="i-text" viewBox="0 0 24 24"><path d="M5 5h14M12 5v14M8 19h8"/></symbol><symbol id="i-blur" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M7 9h.01M11 9h.01M15 9h.01M9 13h.01M13 13h.01M17 13h.01M7 17h.01M11 17h.01M15 17h.01" stroke-width="3"/></symbol><symbol id="i-spotlight" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></symbol><symbol id="i-undo" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M5 12h8a6 6 0 0 1 6 6"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 20h14"/></symbol><symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol><symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></symbol></svg>
+
+<div class="recorder-app">
+  <header class="app-header">
+    <a class="back-link" href="../../" aria-label="返回工具箱">← 工具箱</a>
+    <div class="app-brand"><span class="app-mark"><svg><use href="#i-screen"/></svg></span><div><h1>屏幕录制</h1><span id="recordingState">准备就绪</span></div></div>
+    <div class="recording-clock" id="clock" data-active="false"><i></i><span>00:00</span></div>
+    <div class="mobile-actions"><button class="icon-button" id="openSettings" type="button" aria-label="录制设置"><svg><use href="#i-settings"/></svg></button><button class="icon-button" id="openLibrary" type="button" aria-label="本机作品，0"><svg><use href="#i-library"/></svg><b id="libraryCount">0</b></button></div>
+  </header>
+
+  <main class="app-main">
+    <aside class="side-panel controls-panel" id="controlsPanel" aria-label="录制设置">
+      <div class="panel-title"><h2>录制设置</h2><button class="icon-button panel-close" data-close-panel type="button" aria-label="关闭设置"><svg><use href="#i-x"/></svg></button></div>
+      <div class="settings-scroll">
+        <section class="setting-group">
+          <span class="group-label">来源</span>
+          <div class="segmented" id="sourceMode"><button type="button" data-value="screen" aria-pressed="true">屏幕</button><button type="button" data-value="camera" aria-pressed="false">摄像头</button></div>
+        </section>
+        <section class="setting-group">
+          <label class="setting-row"><span>系统音频</span><input type="checkbox" id="systemAudio" checked></label>
+          <label class="setting-row"><span>麦克风</span><input type="checkbox" id="microphone" checked></label>
+          <label class="field" id="micDeviceField"><span>输入设备</span><select id="micDevice"><option value="">默认麦克风</option></select></label>
+          <label class="setting-row compact"><span>按键说话</span><input type="checkbox" id="pushToTalk"></label>
+        </section>
+        <section class="setting-group">
+          <div class="setting-head"><span class="group-label">摄像头叠层</span><input type="checkbox" id="cameraEnabled" aria-label="摄像头叠层"></div>
+          <div id="cameraSettings" class="setting-body">
+            <label class="field"><span>摄像头</span><select id="cameraDevice"><option value="">默认摄像头</option></select></label>
+            <div class="two-fields"><label class="field"><span>形状</span><select id="cameraShape"><option value="circle">圆形</option><option value="rounded">圆角</option><option value="square">方形</option></select></label><label class="field"><span>大小</span><input type="range" id="cameraSize" min="12" max="40" value="24"></label></div>
+            <div class="inline-options"><label><input type="checkbox" id="cameraMirror" checked> 镜像</label><label><input type="checkbox" id="cameraBlur"> 柔化</label></div>
+          </div>
+        </section>
+        <section class="setting-group">
+          <span class="group-label">输出</span>
+          <div class="two-fields"><label class="field"><span>分辨率</span><select id="resolution"><option value="source">原始</option><option value="720">720p</option><option value="1080" selected>1080p</option><option value="1440">2K</option></select></label><label class="field"><span>帧率</span><select id="frameRate"><option value="24">24 fps</option><option value="30" selected>30 fps</option><option value="60">60 fps</option></select></label></div>
+          <label class="field"><span>格式</span><select id="videoFormat"><option value="auto">自动最佳</option><option value="mp4">MP4</option><option value="webm">WebM</option></select></label>
+          <div class="two-fields"><label class="field"><span>倒计时</span><select id="countdown"><option value="0">关闭</option><option value="3">3 秒</option><option value="5">5 秒</option><option value="10">10 秒</option></select></label><label class="field"><span>自动停止</span><select id="autoStop"><option value="0">关闭</option><option value="5">5 分钟</option><option value="10">10 分钟</option><option value="30">30 分钟</option><option value="60">60 分钟</option></select></label></div>
+          <label class="setting-row compact"><span>点击高亮</span><input type="checkbox" id="clickHighlight" checked></label>
+        </section>
+        <section class="setting-group annotation-settings">
+          <span class="group-label">标注</span>
+          <div class="color-size-row"><input type="color" id="annotationColor" value="#ef4444" aria-label="标注颜色"><input type="range" id="annotationSize" min="2" max="16" value="6" aria-label="画笔粗细"><span id="annotationSizeLabel">6 px</span></div>
+          <label class="field" id="textField" hidden><span>文字</span><input id="annotationText" maxlength="120" placeholder="输入后点击画面放置"></label>
+          <p class="shortcut-line">Alt+P 暂停 · Alt+S 结束 · Alt+Z 撤销</p>
+        </section>
+      </div>
+    </aside>
+
+    <section class="stage-panel" id="stagePanel">
+      <div class="stage-toolbar">
+        <div class="stage-meta"><span class="live-dot" id="liveDot"></span><strong id="sourceLabel">等待共享</strong><small id="canvasInfo">1080p · 30 fps</small></div>
+        <div class="annotation-tools" id="annotationTools" role="toolbar" aria-label="标注工具">
+          <button class="tool-button active" type="button" data-tool="none" aria-pressed="true" title="指针"><svg><use href="#i-pointer"/></svg></button>
+          <button class="tool-button" type="button" data-tool="pen" aria-pressed="false" title="画笔"><svg><use href="#i-pen"/></svg></button>
+          <button class="tool-button" type="button" data-tool="arrow" aria-pressed="false" title="箭头"><svg><use href="#i-arrow"/></svg></button>
+          <button class="tool-button" type="button" data-tool="rect" aria-pressed="false" title="方框"><svg><use href="#i-rect"/></svg></button>
+          <button class="tool-button" type="button" data-tool="text" aria-pressed="false" title="文字"><svg><use href="#i-text"/></svg></button>
+          <button class="tool-button" type="button" data-tool="blur" aria-pressed="false" title="隐私遮罩"><svg><use href="#i-blur"/></svg></button>
+          <button class="tool-button" type="button" id="spotlightToggle" aria-pressed="false" title="聚光灯"><svg><use href="#i-spotlight"/></svg></button>
+          <button class="tool-button" type="button" id="undoAnnotation" title="撤销"><svg><use href="#i-undo"/></svg></button>
+        </div>
+        <button class="icon-button" id="fullscreen" type="button" aria-label="全屏预览"><svg><use href="#i-expand"/></svg></button>
+      </div>
+      <div class="canvas-shell" id="canvasShell">
+        <canvas id="previewCanvas" width="1920" height="1080" aria-label="录制预览"></canvas>
+        <video id="playbackVideo" playsinline controls hidden></video>
+        <div class="stage-empty" id="stageEmpty"><span><svg><use href="#i-screen"/></svg></span><h2>选择来源开始录制</h2><p>屏幕、窗口、标签页或摄像头</p></div>
+        <div class="countdown-overlay" id="countdownOverlay" hidden><strong>3</strong></div>
+        <button class="close-playback" id="closePlayback" type="button" hidden>关闭预览</button>
+      </div>
+      <div class="transport">
+        <div class="transport-info"><span class="status-dot"></span><div><strong id="recordStatus">就绪</strong><small id="recordDetails">本地处理，不上传文件</small></div><div class="mic-meter" id="micMeter" role="meter" aria-label="麦克风音量" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div></div>
+        <div class="transport-actions"><button class="record-button" id="startRecord" type="button"><svg><use href="#i-record"/></svg><span>开始录制</span></button><button class="secondary-button" id="pauseRecord" type="button" aria-label="暂停录制" disabled><svg><use href="#i-pause"/></svg><span>暂停</span></button><button class="secondary-button stop" id="stopRecord" type="button" aria-label="结束录制" disabled><svg><use href="#i-stop"/></svg><span>结束</span></button></div>
+      </div>
+    </section>
+
+    <aside class="side-panel library-panel" id="libraryPanel" aria-label="本机作品">
+      <div class="panel-title"><h2>本机作品</h2><button class="icon-button panel-close" data-close-panel type="button" aria-label="关闭作品"><svg><use href="#i-x"/></svg></button></div>
+      <div class="storage-card"><div><span>浏览器存储</span><strong id="storageText">检查中</strong></div><button type="button" class="text-button" id="persistStorage">持久化</button></div>
+      <div class="editor-card" id="editorCard" hidden>
+        <label class="field"><span>名称</span><input id="recordName" maxlength="80"></label>
+        <div class="two-fields"><label class="field"><span>导出比例</span><select id="cropPreset"><option value="original">原始</option><option value="16:9">16:9</option><option value="9:16">9:16</option><option value="1:1">1:1</option></select></label><label class="setting-row compact"><span>保留音频</span><input type="checkbox" id="trimAudio" checked></label></div>
+        <div class="trim-row"><label>起点</label><input type="range" id="trimStart" min="0" max="1" step="0.1" value="0"><output id="trimStartLabel">00:00</output></div>
+        <div class="trim-row"><label>终点</label><input type="range" id="trimEnd" min="0" max="1" step="0.1" value="1"><output id="trimEndLabel">00:00</output></div>
+        <div class="editor-actions"><button type="button" class="text-button" id="exportTrim">裁剪导出</button><button type="button" class="text-button" id="exportGif">导出 GIF</button><button type="button" class="text-button danger" id="deleteRecord"><svg><use href="#i-trash"/></svg>删除</button></div>
+      </div>
+      <div class="record-list" id="recordList" aria-label="录制列表"></div>
+      <button class="library-download" id="downloadRecord" type="button" disabled><svg><use href="#i-download"/></svg>下载原片</button>
+    </aside>
+  </main>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+</div>
+<dialog id="deleteDialog"><div class="dialog-icon"><svg><use href="#i-trash"/></svg></div><h2>删除录制？</h2><p>此操作无法撤销。</p><form method="dialog"><button class="secondary-button" value="cancel">取消</button><button class="danger-button" value="delete">删除</button></form></dialog>
+</body>
+</html>
