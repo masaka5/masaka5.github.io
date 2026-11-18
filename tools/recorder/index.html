@@ -7,9 +7,9 @@
   <link rel="icon" href="../../assets/favicon.svg">
   <link rel="stylesheet" href="../../assets/design-system.css">
   <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
-  <link rel="stylesheet" href="recorder.css?v=20261119l">
+  <link rel="stylesheet" href="recorder.css?v=20261119n">
   <script defer src="record-store.js?v=20261119b"></script>
-  <script defer src="recorder.js?v=20261119l"></script>
+  <script defer src="recorder.js?v=20261119n"></script>
   <!-- pocket-seo:start -->
   <title>屏幕录制 · 口袋工具箱</title>
   <meta name="description" content="教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与 WebM、MP4、GIF 导出。">
@@ -60,12 +60,12 @@
           <div class="two-fields"><label class="field"><span>分辨率</span><select id="resolution"><option value="source">原始</option><option value="720">720p</option><option value="1080" selected>1080p</option><option value="1440">2K</option></select></label><label class="field"><span>帧率</span><select id="frameRate"><option value="24">24 fps</option><option value="30" selected>30 fps</option><option value="60">60 fps</option></select></label></div>
           <label class="field"><span>格式</span><select id="videoFormat"><option value="auto">自动最佳</option><option value="mp4">MP4</option><option value="webm">WebM</option></select></label>
           <div class="two-fields"><label class="field"><span>倒计时</span><select id="countdown"><option value="0">关闭</option><option value="3">3 秒</option><option value="5">5 秒</option><option value="10">10 秒</option></select></label><label class="field"><span>自动停止</span><select id="autoStop"><option value="0">关闭</option><option value="5">5 分钟</option><option value="10">10 分钟</option><option value="30">30 分钟</option><option value="60">60 分钟</option></select></label></div>
-          <label class="setting-row compact"><span>录制鼠标光标</span><input type="checkbox" id="showCursor" checked></label>
+          <label class="setting-row compact"><span>系统光标</span><input type="checkbox" id="showCursor" checked></label>
+          <label class="setting-row compact"><span>画面点击波纹</span><input type="checkbox" id="clickHighlight" checked></label>
         </section>
         <section class="setting-group annotation-settings">
           <span class="group-label">标注</span>
           <div class="color-size-row"><input type="color" id="annotationColor" value="#ef4444" aria-label="标注颜色"><input type="range" id="annotationSize" min="2" max="16" value="6" aria-label="画笔粗细"><span id="annotationSizeLabel">6 px</span></div>
-          <label class="field" id="textField" hidden><span>文字</span><input id="annotationText" maxlength="120" placeholder="输入后点击画面放置"></label>
           <p class="shortcut-line">Alt+P 暂停 · Alt+S 结束 · Alt+Z 撤销</p>
         </section>
       </div>
@@ -89,6 +89,7 @@
       <div class="canvas-shell" id="canvasShell">
         <canvas id="previewCanvas" width="1920" height="1080" aria-label="录制预览"></canvas>
         <video id="playbackVideo" playsinline controls hidden></video>
+        <form class="text-editor" id="textEditor" hidden><input id="annotationText" maxlength="120" placeholder="输入文字" aria-label="画布文字" autocomplete="off"><button type="submit" aria-label="确认文字">✓</button><button type="button" id="cancelText" aria-label="取消文字">×</button></form>
         <div class="stage-empty" id="stageEmpty"><span><svg><use href="#i-screen"/></svg></span><h2>选择来源开始录制</h2><p>屏幕、窗口、标签页或摄像头</p></div>
         <div class="countdown-overlay" id="countdownOverlay" hidden><strong>3</strong></div>
         <button class="close-playback" id="closePlayback" type="button" hidden>关闭预览</button>
