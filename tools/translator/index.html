@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f8">
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="../../assets/design-system.css">
+  <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
+  <link rel="stylesheet" href="translator.css?v=20261119e">
+  <script type="module" src="translator.js?v=20261119f"></script>
+  <title>在线翻译 · 口袋工具箱</title>
+  <meta name="description" content="在线多语种翻译：203 种语言、NLLB 流式翻译、多引擎选择、自动翻译与本地缓存。">
+  <link rel="canonical" href="https://tools.manshii.asia/catalog/translator/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-language" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c.5 3 2 5.5 5 7M11 5c-.7 3.2-2.5 5.6-5.5 7M14 19l3.5-9L21 19M15.3 16h4.4"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 7h15M16 4l3 3-3 3M20 17H5M8 14l-3 3 3 3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9M15 4v6M7 14v6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+</svg>
+<div class="translator-app">
+  <header class="app-header">
+    <a class="back-link" href="../../" aria-label="返回工具箱">← 工具箱</a>
+    <div class="brand"><span class="brand-mark"><svg><use href="#i-language"/></svg></span><div><h1>在线翻译</h1><small id="serviceState">203 种语言</small></div></div>
+    <div class="header-actions"><span class="service-dot" aria-hidden="true"></span><button id="settingsButton" class="icon-button" type="button" aria-label="翻译设置" title="翻译设置"><svg><use href="#i-settings"/></svg></button></div>
+  </header>
+  <main class="translator-main">
+    <section class="translator-card" aria-label="翻译工作区">
+      <div class="engine-bar">
+        <label class="engine-field"><span>引擎</span><select id="engineSelect" aria-label="翻译引擎"></select><b id="engineBadge">NLLB</b></label>
+        <label class="auto-switch"><input id="autoTranslate" type="checkbox" aria-label="自动翻译" checked><span>自动翻译</span></label>
+        <button id="translateButton" class="primary-button" type="button"><span>翻译</span><svg><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="language-bar">
+        <button id="sourceLanguage" class="language-button" type="button" aria-haspopup="dialog"><span class="lang-label">源语言</span><strong>自动识别</strong><small id="sourceCode">AUTO</small></button>
+        <button id="swapButton" class="swap-button" type="button" aria-label="交换语言和文本" title="交换"><svg><use href="#i-swap"/></svg></button>
+        <button id="targetLanguage" class="language-button target" type="button" aria-haspopup="dialog"><span class="lang-label">目标语言</span><strong>简体中文</strong><small>ZHO_HANS</small></button>
+      </div>
+      <div class="translation-grid">
+        <article class="text-pane source-pane">
+          <label class="sr-only" for="sourceText">待翻译文本</label>
+          <textarea id="sourceText" maxlength="5000" placeholder="输入或粘贴文本" spellcheck="true" autocomplete="off"></textarea>
+          <div id="samples" class="samples"></div>
+          <footer class="pane-footer"><div class="source-tools"><button id="clearButton" class="text-button" type="button" disabled><svg><use href="#i-x"/></svg>清空</button><span id="detectedLanguage" class="detected"></span></div><span id="charCount" class="char-count">0 / 5,000</span></footer>
+        </article>
+        <article class="text-pane result-pane">
+          <div id="resultText" class="result-text" aria-live="polite" aria-atomic="false"><div class="empty-result"><svg><use href="#i-language"/></svg><span>译文将在这里显示</span></div></div>
+          <footer class="pane-footer"><span id="resultMeta" class="result-meta"></span><button id="copyButton" class="text-button" type="button" disabled><svg><use href="#i-copy"/></svg><span>复制</span></button></footer>
+        </article>
+      </div>
+    </section>
+    <p id="status" class="status-line" role="status" aria-live="polite"></p>
+  </main>
+</div>
+<dialog id="languageDialog" class="sheet-dialog">
+  <div class="sheet-head"><div><small id="languageSide">源语言</small><h2>选择语言</h2></div><button id="closeLanguage" class="icon-button" type="button" aria-label="关闭"><svg><use href="#i-x"/></svg></button></div>
+  <label class="dialog-search"><svg><use href="#i-search"/></svg><input id="languageSearch" type="search" placeholder="搜索语言或代码" autocomplete="off"></label>
+  <div id="languageList" class="language-list"></div>
+</dialog>
+<dialog id="settingsDialog" class="sheet-dialog settings-dialog">
+  <form method="dialog" id="settingsForm">
+    <div class="sheet-head"><div><small>多引擎</small><h2>接口设置</h2></div><button id="closeSettings" class="icon-button" type="button" aria-label="关闭"><svg><use href="#i-x"/></svg></button></div>
+    <div class="settings-fields"><label><span>Gemini Key</span><input name="gemini" type="password" autocomplete="off"></label><label><span>Groq Key</span><input name="groq" type="password" autocomplete="off"></label><label><span>OpenAI Key</span><input name="openai" type="password" autocomplete="off"></label><label><span>OpenRouter Key</span><input name="openrouter" type="password" autocomplete="off"></label><label class="wide"><span>OpenRouter 模型</span><input name="openrouterModel" placeholder="google/gemma-4-31b-it:free" autocomplete="off"></label></div>
+    <p class="settings-note">密钥只保存在当前标签页。</p>
+    <div class="dialog-actions"><button id="clearKeys" class="secondary-button" type="button">清除密钥</button><button class="primary-button" type="submit">保存</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,1628 @@
+{
+  "languages": [
+    {
+      "code": "zho_Hans",
+      "name": "中文 (简体, 中国)",
+      "english": "Chinese (Simplified)",
+      "bcp47": "zh",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "zho_Hant",
+      "name": "中文 (繁体, 中国台湾)",
+      "english": "Chinese (Traditional)",
+      "bcp47": "zh-Hant",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "ukr_Cyrl",
+      "name": "乌克兰语 (乌克兰)",
+      "english": "Ukrainian",
+      "bcp47": "uk",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "rus_Cyrl",
+      "name": "俄语 (俄罗斯)",
+      "english": "Russian",
+      "bcp47": "ru",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "hin_Deva",
+      "name": "印地语 (印度)",
+      "english": "Hindi",
+      "bcp47": "hi",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "ind_Latn",
+      "name": "印度尼西亚语 (印度尼西亚)",
+      "english": "Indonesian",
+      "bcp47": "id",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "tur_Latn",
+      "name": "土耳其语 (土耳其)",
+      "english": "Turkish",
+      "bcp47": "tr",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "deu_Latn",
+      "name": "德语 (德国)",
+      "english": "German",
+      "bcp47": "de",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "ita_Latn",
+      "name": "意大利语 (意大利)",
+      "english": "Italian",
+      "bcp47": "it",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "jpn_Jpan",
+      "name": "日语 (日本)",
+      "english": "Japanese",
+      "bcp47": "ja",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "fra_Latn",
+      "name": "法语 (法国)",
+      "english": "French",
+      "bcp47": "fr",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "tha_Thai",
+      "name": "泰语 (泰国)",
+      "english": "Thai",
+      "bcp47": "th",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "eng_Latn",
+      "name": "英语 (美国)",
+      "english": "English",
+      "bcp47": "en",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "nld_Latn",
+      "name": "荷兰语 (荷兰)",
+      "english": "Dutch",
+      "bcp47": "nl",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "por_Latn",
+      "name": "葡萄牙语 (巴西)",
+      "english": "Portuguese",
+      "bcp47": "pt",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "spa_Latn",
+      "name": "西班牙语 (西班牙)",
+      "english": "Spanish",
+      "bcp47": "es",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "vie_Latn",
+      "name": "越南语 (越南)",
+      "english": "Vietnamese",
+      "bcp47": "vi",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "kor_Hang",
+      "name": "韩语 (韩国)",
+      "english": "Korean",
+      "bcp47": "ko",
+      "dir": "ltr",
+      "pinned": true
+    },
+    {
+      "code": "epo_Latn",
+      "name": "世界语 (世界)",
+      "english": "Esperanto",
+      "bcp47": "epo-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "knc_Latn",
+      "name": "中卡努里语（拉丁文）",
+      "english": "Central Kanuri (Latin)",
+      "bcp47": "knc-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "knc_Arab",
+      "name": "中卡努里语（阿拉伯文）",
+      "english": "Central Kanuri (Arabic)",
+      "bcp47": "knc-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "ckb_Arab",
+      "name": "中库尔德语",
+      "english": "Central Kurdish",
+      "bcp47": "ckb-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "ayr_Latn",
+      "name": "中艾马拉语",
+      "english": "Central Aymara",
+      "bcp47": "ayr-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "fon_Latn",
+      "name": "丰语",
+      "english": "Fon",
+      "bcp47": "fon-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "dan_Latn",
+      "name": "丹麦语 (丹麦)",
+      "english": "Danish",
+      "bcp47": "da",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "uzn_Latn",
+      "name": "乌兹别克语 (拉丁文, 乌兹别克斯坦)",
+      "english": "Northern Uzbek",
+      "bcp47": "uzn-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "urd_Arab",
+      "name": "乌尔都语 (巴基斯坦)",
+      "english": "Urdu",
+      "bcp47": "ur",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "cjk_Latn",
+      "name": "乔克韦语",
+      "english": "Chokwe",
+      "bcp47": "cjk-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "nob_Latn",
+      "name": "书面挪威语 (挪威)",
+      "english": "Norwegian Bokmal",
+      "bcp47": "nob-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hye_Armn",
+      "name": "亚美尼亚语 (亚美尼亚)",
+      "english": "Armenian",
+      "bcp47": "hy",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ace_Latn",
+      "name": "亚齐语（拉丁文）",
+      "english": "Acehnese (Latin)",
+      "bcp47": "ace-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ace_Arab",
+      "name": "亚齐语（阿拉伯文）",
+      "english": "Acehnese (Arabic)",
+      "bcp47": "ace-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "ibo_Latn",
+      "name": "伊博语 (尼日利亚)",
+      "english": "Igbo",
+      "bcp47": "ig",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ilo_Latn",
+      "name": "伊洛卡诺语",
+      "english": "Ilocano",
+      "bcp47": "ilo-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lmo_Latn",
+      "name": "伦巴第语",
+      "english": "Lombard",
+      "bcp47": "lmo-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bul_Cyrl",
+      "name": "保加利亚语 (保加利亚)",
+      "english": "Bulgarian",
+      "bcp47": "bg",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "snd_Arab",
+      "name": "信德语 (阿拉伯文, 巴基斯坦)",
+      "english": "Sindhi",
+      "bcp47": "snd-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "sin_Sinh",
+      "name": "僧伽罗语 (斯里兰卡)",
+      "english": "Sinhala",
+      "bcp47": "si",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kas_Arab",
+      "name": "克什米尔语 (阿拉伯文, 印度)",
+      "english": "Kashmiri (Arabic)",
+      "bcp47": "kas-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "kas_Deva",
+      "name": "克什米尔语 (天城文, 印度)",
+      "english": "Kashmiri (Devanagari)",
+      "bcp47": "kas-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hrv_Latn",
+      "name": "克罗地亚语 (克罗地亚)",
+      "english": "Croatian",
+      "bcp47": "hr",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "crh_Latn",
+      "name": "克里米亚鞑靼语",
+      "english": "Crimean Tatar",
+      "bcp47": "crh-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "isl_Latn",
+      "name": "冰岛语 (冰岛)",
+      "english": "Icelandic",
+      "bcp47": "isl-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kon_Latn",
+      "name": "刚果语",
+      "english": "Kikongo",
+      "bcp47": "kon-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lij_Latn",
+      "name": "利古里亚语",
+      "english": "Ligurian",
+      "bcp47": "lij-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "glg_Latn",
+      "name": "加利西亚语 (西班牙)",
+      "english": "Galician",
+      "bcp47": "glg-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "cat_Latn",
+      "name": "加泰罗尼亚语 (西班牙)",
+      "english": "Catalan",
+      "bcp47": "cat-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "nus_Latn",
+      "name": "努埃尔语",
+      "english": "Nuer",
+      "bcp47": "nus-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hun_Latn",
+      "name": "匈牙利语 (匈牙利)",
+      "english": "Hungarian",
+      "bcp47": "hu",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "nso_Latn",
+      "name": "北索托语",
+      "english": "Northern Sotho",
+      "bcp47": "nso-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "apc_Arab",
+      "name": "北黎凡特阿拉伯语",
+      "english": "North Levantine Arabic",
+      "bcp47": "apc-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "pbt_Arab",
+      "name": "南普什图语",
+      "english": "Southern Pashto",
+      "bcp47": "pbt-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "sot_Latn",
+      "name": "南索托语 (南非)",
+      "english": "Southern Sotho",
+      "bcp47": "sot-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "azb_Arab",
+      "name": "南阿塞拜疆语",
+      "english": "South Azerbaijani",
+      "bcp47": "azb-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "afr_Latn",
+      "name": "南非荷兰语 (南非)",
+      "english": "Afrikaans",
+      "bcp47": "af",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ajp_Arab",
+      "name": "南黎凡特阿拉伯语",
+      "english": "South Levantine Arabic",
+      "bcp47": "ajp-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "bho_Deva",
+      "name": "博杰普尔语",
+      "english": "Bhojpuri",
+      "bcp47": "bho-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kam_Latn",
+      "name": "卡姆巴语",
+      "english": "Kamba",
+      "bcp47": "kam-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kea_Latn",
+      "name": "卡布佛得鲁语",
+      "english": "Kabuverdianu",
+      "bcp47": "kea-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kab_Latn",
+      "name": "卡拜尔语",
+      "english": "Kabyle",
+      "bcp47": "kab-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kbp_Latn",
+      "name": "卡比耶语",
+      "english": "Kabiye",
+      "bcp47": "kbp-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kan_Knda",
+      "name": "卡纳达语 (印度)",
+      "english": "Kannada",
+      "bcp47": "kn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "luo_Latn",
+      "name": "卢奥语",
+      "english": "Luo",
+      "bcp47": "luo-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lua_Latn",
+      "name": "卢巴-开赛语",
+      "english": "Luba-Kasai",
+      "bcp47": "lua-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lug_Latn",
+      "name": "卢干达语 (乌干达)",
+      "english": "Ganda",
+      "bcp47": "lug-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kin_Latn",
+      "name": "卢旺达语 (卢旺达)",
+      "english": "Kinyarwanda",
+      "bcp47": "kin-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ltz_Latn",
+      "name": "卢森堡语 (卢森堡)",
+      "english": "Luxembourgish",
+      "bcp47": "ltz-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "guj_Gujr",
+      "name": "古吉拉特语 (印度)",
+      "english": "Gujarati",
+      "bcp47": "gu",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kik_Latn",
+      "name": "吉库尤语 (肯尼亚)",
+      "english": "Kikuyu",
+      "bcp47": "kik-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kaz_Cyrl",
+      "name": "哈萨克语 (西里尔文, 哈萨克斯坦)",
+      "english": "Kazakh",
+      "bcp47": "kk",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tuk_Latn",
+      "name": "土库曼语 (土库曼斯坦)",
+      "english": "Turkmen",
+      "bcp47": "tuk-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "arz_Arab",
+      "name": "埃及阿拉伯语",
+      "english": "Egyptian Arabic",
+      "bcp47": "arz-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "ewe_Latn",
+      "name": "埃维语 (加纳)",
+      "english": "Ewe",
+      "bcp47": "ewe-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "acq_Arab",
+      "name": "塔伊兹-亚丁阿拉伯语",
+      "english": "Ta'izzi-Adeni Arabic",
+      "bcp47": "acq-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "tgk_Cyrl",
+      "name": "塔吉克语 (塔吉克斯坦)",
+      "english": "Tajik",
+      "bcp47": "tgk-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "taq_Latn",
+      "name": "塔马舍克语（拉丁文）",
+      "english": "Tamasheq (Latin)",
+      "bcp47": "taq-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "taq_Tfng",
+      "name": "塔马舍克语（提非纳文）",
+      "english": "Tamasheq (Tifinagh)",
+      "bcp47": "taq-Tfng",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tzm_Tfng",
+      "name": "塔马齐格特语",
+      "english": "Central Atlas Tamazight",
+      "bcp47": "tzm-Tfng",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "srp_Cyrl",
+      "name": "塞尔维亚语 (西里尔文, 塞尔维亚)",
+      "english": "Serbian",
+      "bcp47": "sr",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "oci_Latn",
+      "name": "奥克语 (法国)",
+      "english": "Occitan",
+      "bcp47": "oci-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "gaz_Latn",
+      "name": "奥罗莫语 (埃塞俄比亚)",
+      "english": "West Central Oromo",
+      "bcp47": "gaz-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ory_Orya",
+      "name": "奥里亚语 (印度)",
+      "english": "Odia",
+      "bcp47": "ory-Orya",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "cym_Latn",
+      "name": "威尔士语 (英国)",
+      "english": "Welsh",
+      "bcp47": "cym-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "vec_Latn",
+      "name": "威尼斯语",
+      "english": "Venetian",
+      "bcp47": "vec-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ben_Beng",
+      "name": "孟加拉语 (孟加拉国)",
+      "english": "Bengali",
+      "bcp47": "bn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "dzo_Tibt",
+      "name": "宗卡语 (不丹)",
+      "english": "Dzongkha",
+      "bcp47": "dzo-Tibt",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ceb_Latn",
+      "name": "宿务语",
+      "english": "Cebuano",
+      "bcp47": "ceb-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "fuv_Latn",
+      "name": "尼日利亚富拉语",
+      "english": "Nigerian Fulfulde",
+      "bcp47": "fuv-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "npi_Deva",
+      "name": "尼泊尔语 (尼泊尔)",
+      "english": "Nepali",
+      "bcp47": "npi-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bak_Cyrl",
+      "name": "巴什基尔语 (俄罗斯)",
+      "english": "Bashkir",
+      "bcp47": "bak-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ban_Latn",
+      "name": "巴厘语",
+      "english": "Balinese",
+      "bcp47": "ban-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "eus_Latn",
+      "name": "巴斯克语 (西班牙)",
+      "english": "Basque",
+      "bcp47": "eus-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "sun_Latn",
+      "name": "巽他语 (拉丁文, 印度尼西亚)",
+      "english": "Sundanese",
+      "bcp47": "sun-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bug_Latn",
+      "name": "布吉语",
+      "english": "Buginese",
+      "bcp47": "bug-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "heb_Hebr",
+      "name": "希伯来语 (以色列)",
+      "english": "Hebrew",
+      "bcp47": "he",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "ell_Grek",
+      "name": "希腊语 (希腊)",
+      "english": "Greek",
+      "bcp47": "el",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "pap_Latn",
+      "name": "帕皮阿门托语",
+      "english": "Papiamento",
+      "bcp47": "pap-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kmr_Latn",
+      "name": "库尔德语 (土耳其)",
+      "english": "Northern Kurdish",
+      "bcp47": "kmr-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "fur_Latn",
+      "name": "弗留利语",
+      "english": "Friulian",
+      "bcp47": "fur-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hne_Deva",
+      "name": "恰蒂斯加尔语",
+      "english": "Chhattisgarhi",
+      "bcp47": "hne-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ydd_Hebr",
+      "name": "意第绪语 (乌克兰)",
+      "english": "Eastern Yiddish",
+      "bcp47": "ydd-Hebr",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "tpi_Latn",
+      "name": "托克皮辛语",
+      "english": "Tok Pisin",
+      "bcp47": "tpi-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ltg_Latn",
+      "name": "拉特加莱语",
+      "english": "Latgalian",
+      "bcp47": "ltg-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lvs_Latn",
+      "name": "拉脱维亚语 (拉脱维亚)",
+      "english": "Standard Latvian",
+      "bcp47": "lvs-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "nno_Latn",
+      "name": "挪威尼诺斯克语 (挪威)",
+      "english": "Norwegian Nynorsk",
+      "bcp47": "nno-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ces_Latn",
+      "name": "捷克语 (捷克)",
+      "english": "Czech",
+      "bcp47": "cs",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "shn_Mymr",
+      "name": "掸语",
+      "english": "Shan",
+      "bcp47": "shn-Mymr",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tir_Ethi",
+      "name": "提格利尼亚语 (埃塞俄比亚)",
+      "english": "Tigrinya",
+      "bcp47": "tir-Ethi",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mag_Deva",
+      "name": "摩揭陀语",
+      "english": "Magahi",
+      "bcp47": "mag-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ary_Arab",
+      "name": "摩洛哥阿拉伯语",
+      "english": "Moroccan Arabic",
+      "bcp47": "ary-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "fij_Latn",
+      "name": "斐济语",
+      "english": "Fijian",
+      "bcp47": "fij-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "slk_Latn",
+      "name": "斯洛伐克语 (斯洛伐克)",
+      "english": "Slovak",
+      "bcp47": "sk",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "slv_Latn",
+      "name": "斯洛文尼亚语 (斯洛文尼亚)",
+      "english": "Slovenian",
+      "bcp47": "sl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "swh_Latn",
+      "name": "斯瓦希里语 (坦桑尼亚)",
+      "english": "Swahili",
+      "bcp47": "sw",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ssw_Latn",
+      "name": "斯瓦蒂语 (南非)",
+      "english": "Swati",
+      "bcp47": "ssw-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "pan_Guru",
+      "name": "旁遮普语 (果鲁穆奇文, 印度)",
+      "english": "Eastern Panjabi",
+      "bcp47": "pa",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kac_Latn",
+      "name": "景颇语",
+      "english": "Jingpho",
+      "bcp47": "kac-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mni_Beng",
+      "name": "曼尼普尔语",
+      "english": "Meitei (Bengali)",
+      "bcp47": "mni-Beng",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bem_Latn",
+      "name": "本巴语",
+      "english": "Bemba",
+      "bcp47": "bem-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lin_Latn",
+      "name": "林加拉语 (刚果（金）)",
+      "english": "Lingala",
+      "bcp47": "lin-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lim_Latn",
+      "name": "林堡语",
+      "english": "Limburgish",
+      "bcp47": "lim-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kir_Cyrl",
+      "name": "柯尔克孜语 (吉尔吉斯斯坦)",
+      "english": "Kyrgyz",
+      "bcp47": "kir-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kat_Geor",
+      "name": "格鲁吉亚语 (格鲁吉亚)",
+      "english": "Georgian",
+      "bcp47": "ka",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "sat_Olck",
+      "name": "桑塔利语",
+      "english": "Santali",
+      "bcp47": "sat-Olck",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "sag_Latn",
+      "name": "桑戈语 (中非共和国)",
+      "english": "Sango",
+      "bcp47": "sag-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "san_Deva",
+      "name": "梵语 (印度)",
+      "english": "Sanskrit",
+      "bcp47": "san-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mri_Latn",
+      "name": "毛利语 (新西兰)",
+      "english": "Maori",
+      "bcp47": "mri-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "wol_Latn",
+      "name": "沃洛夫语 (塞内加尔)",
+      "english": "Wolof",
+      "bcp47": "wol-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "fao_Latn",
+      "name": "法罗语 (法罗群岛)",
+      "english": "Faroese",
+      "bcp47": "fao-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "pol_Latn",
+      "name": "波兰语 (波兰)",
+      "english": "Polish",
+      "bcp47": "pl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bos_Latn",
+      "name": "波斯尼亚语 (拉丁文, 波斯尼亚和黑塞哥维那)",
+      "english": "Bosnian",
+      "bcp47": "bos-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "pes_Arab",
+      "name": "波斯语 (伊朗)",
+      "english": "Western Persian",
+      "bcp47": "pes-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "tel_Telu",
+      "name": "泰卢固语 (印度)",
+      "english": "Telugu",
+      "bcp47": "te",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tam_Taml",
+      "name": "泰米尔语 (印度)",
+      "english": "Tamil",
+      "bcp47": "ta",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hat_Latn",
+      "name": "海地克里奥尔语 (海地)",
+      "english": "Haitian Creole",
+      "bcp47": "hat-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "jav_Latn",
+      "name": "爪哇语 (印度尼西亚)",
+      "english": "Javanese",
+      "bcp47": "jav-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "gle_Latn",
+      "name": "爱尔兰语 (爱尔兰)",
+      "english": "Irish",
+      "bcp47": "gle-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "est_Latn",
+      "name": "爱沙尼亚语 (爱沙尼亚)",
+      "english": "Estonian",
+      "bcp47": "et",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bam_Latn",
+      "name": "班巴拉语 (马里)",
+      "english": "Bambara",
+      "bcp47": "bam-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bjn_Latn",
+      "name": "班贾尔语（拉丁文）",
+      "english": "Banjar (Latin)",
+      "bcp47": "bjn-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bjn_Arab",
+      "name": "班贾尔语（阿拉伯文）",
+      "english": "Banjar (Arabic)",
+      "bcp47": "bjn-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "swe_Latn",
+      "name": "瑞典语 (瑞典)",
+      "english": "Swedish",
+      "bcp47": "sv",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "grn_Latn",
+      "name": "瓜拉尼语 (巴拉圭)",
+      "english": "Guarani",
+      "bcp47": "grn-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "war_Latn",
+      "name": "瓦瑞语",
+      "english": "Waray",
+      "bcp47": "war-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bel_Cyrl",
+      "name": "白俄罗斯语 (白俄罗斯)",
+      "english": "Belarusian",
+      "bcp47": "bel-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "zul_Latn",
+      "name": "祖鲁语 (南非)",
+      "english": "Zulu",
+      "bcp47": "zu",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "xho_Latn",
+      "name": "科萨语 (南非)",
+      "english": "Xhosa",
+      "bcp47": "xho-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "aeb_Arab",
+      "name": "突尼斯阿拉伯语",
+      "english": "Tunisian Arabic",
+      "bcp47": "aeb-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "lit_Latn",
+      "name": "立陶宛语 (立陶宛)",
+      "english": "Lithuanian",
+      "bcp47": "lt",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lus_Latn",
+      "name": "米佐语",
+      "english": "Mizo",
+      "bcp47": "lus-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "min_Latn",
+      "name": "米南加保语",
+      "english": "Minangkabau",
+      "bcp47": "min-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "yue_Hant",
+      "name": "粤语",
+      "english": "Yue Chinese (Cantonese)",
+      "bcp47": "yue-Hant",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "som_Latn",
+      "name": "索马里语 (索马里)",
+      "english": "Somali",
+      "bcp47": "som-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "yor_Latn",
+      "name": "约鲁巴语 (尼日利亚)",
+      "english": "Yoruba",
+      "bcp47": "yo",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ars_Arab",
+      "name": "纳吉迪阿拉伯语",
+      "english": "Najdi Arabic",
+      "bcp47": "ars-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "sna_Latn",
+      "name": "绍纳语 (津巴布韦)",
+      "english": "Shona",
+      "bcp47": "sna-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "uig_Arab",
+      "name": "维吾尔语 (中国)",
+      "english": "Uyghur",
+      "bcp47": "uig-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "mya_Mymr",
+      "name": "缅甸语 (缅甸)",
+      "english": "Burmese",
+      "bcp47": "my",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ron_Latn",
+      "name": "罗马尼亚语 (罗马尼亚)",
+      "english": "Romanian",
+      "bcp47": "ro",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "acm_Arab",
+      "name": "美索不达米亚阿拉伯语",
+      "english": "Mesopotamian Arabic",
+      "bcp47": "acm-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "umb_Latn",
+      "name": "翁本杜语",
+      "english": "Umbundu",
+      "bcp47": "umb-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "lao_Laoo",
+      "name": "老挝语 (老挝)",
+      "english": "Lao",
+      "bcp47": "lo",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tso_Latn",
+      "name": "聪加语 (南非)",
+      "english": "Tsonga",
+      "bcp47": "tso-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "fin_Latn",
+      "name": "芬兰语 (芬兰)",
+      "english": "Finnish",
+      "bcp47": "fi",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "gla_Latn",
+      "name": "苏格兰盖尔语 (英国)",
+      "english": "Scottish Gaelic",
+      "bcp47": "gla-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tsn_Latn",
+      "name": "茨瓦纳语 (南非)",
+      "english": "Tswana",
+      "bcp47": "tsn-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mos_Latn",
+      "name": "莫西语",
+      "english": "Mossi",
+      "bcp47": "mos-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tgl_Latn",
+      "name": "菲律宾语 (菲律宾)",
+      "english": "Tagalog",
+      "bcp47": "tgl-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "srd_Latn",
+      "name": "萨丁语 (意大利)",
+      "english": "Sardinian",
+      "bcp47": "srd-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "smo_Latn",
+      "name": "萨摩亚语",
+      "english": "Samoan",
+      "bcp47": "smo-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "khk_Cyrl",
+      "name": "蒙古语 (蒙古)",
+      "english": "Halh Mongolian",
+      "bcp47": "khk-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "bod_Tibt",
+      "name": "藏语 (中国)",
+      "english": "Standard Tibetan",
+      "bcp47": "bod-Tibt",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "dik_Latn",
+      "name": "西南丁卡语",
+      "english": "Southwestern Dinka",
+      "bcp47": "dik-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "scn_Latn",
+      "name": "西西里语",
+      "english": "Sicilian",
+      "bcp47": "scn-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "szl_Latn",
+      "name": "西里西亚语",
+      "english": "Silesian",
+      "bcp47": "szl-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "hau_Latn",
+      "name": "豪萨语 (尼日利亚)",
+      "english": "Hausa",
+      "bcp47": "ha",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "prs_Arab",
+      "name": "达里语",
+      "english": "Dari",
+      "bcp47": "prs-Arab",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "mai_Deva",
+      "name": "迈蒂利语",
+      "english": "Maithili",
+      "bcp47": "mai-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "dyu_Latn",
+      "name": "迪尤拉语",
+      "english": "Dyula",
+      "bcp47": "dyu-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tum_Latn",
+      "name": "通布卡语",
+      "english": "Tumbuka",
+      "bcp47": "tum-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "pag_Latn",
+      "name": "邦阿西楠语",
+      "english": "Pangasinan",
+      "bcp47": "pag-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "kmb_Latn",
+      "name": "金本杜语",
+      "english": "Kimbundu",
+      "bcp47": "kmb-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "quy_Latn",
+      "name": "阿亚库乔克丘亚语",
+      "english": "Ayacucho Quechua",
+      "bcp47": "quy-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "azj_Latn",
+      "name": "阿塞拜疆语 (拉丁文, 阿塞拜疆)",
+      "english": "North Azerbaijani",
+      "bcp47": "azj-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "amh_Ethi",
+      "name": "阿姆哈拉语 (埃塞俄比亚)",
+      "english": "Amharic",
+      "bcp47": "am",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "als_Latn",
+      "name": "阿尔巴尼亚语 (阿尔巴尼亚)",
+      "english": "Tosk Albanian",
+      "bcp47": "als-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "arb_Arab",
+      "name": "阿拉伯语 (埃及)",
+      "english": "Modern Standard Arabic",
+      "bcp47": "ar",
+      "dir": "rtl",
+      "pinned": false
+    },
+    {
+      "code": "arb_Latn",
+      "name": "阿拉伯语 (拉丁字母)",
+      "english": "Modern Standard Arabic (Latin)",
+      "bcp47": "ar",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "ast_Latn",
+      "name": "阿斯图里亚斯语",
+      "english": "Asturian",
+      "bcp47": "ast-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "awa_Deva",
+      "name": "阿瓦迪语",
+      "english": "Awadhi",
+      "bcp47": "awa-Deva",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "aka_Latn",
+      "name": "阿肯语 (加纳)",
+      "english": "Akan",
+      "bcp47": "aka-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "twi_Latn",
+      "name": "契维语 (加纳)",
+      "english": "Twi",
+      "bcp47": "twi-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "asm_Beng",
+      "name": "阿萨姆语 (印度)",
+      "english": "Assamese",
+      "bcp47": "asm-Beng",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "run_Latn",
+      "name": "隆迪语 (布隆迪)",
+      "english": "Rundi",
+      "bcp47": "run-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "tat_Cyrl",
+      "name": "鞑靼语 (俄罗斯)",
+      "english": "Tatar",
+      "bcp47": "tat-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mkd_Cyrl",
+      "name": "马其顿语 (北马其顿)",
+      "english": "Macedonian",
+      "bcp47": "mkd-Cyrl",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "plt_Latn",
+      "name": "马拉加斯语 (马达加斯加)",
+      "english": "Plateau Malagasy",
+      "bcp47": "plt-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mar_Deva",
+      "name": "马拉地语 (印度)",
+      "english": "Marathi",
+      "bcp47": "mr",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mal_Mlym",
+      "name": "马拉雅拉姆语 (印度)",
+      "english": "Malayalam",
+      "bcp47": "ml",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "zsm_Latn",
+      "name": "马来语 (马来西亚)",
+      "english": "Standard Malay",
+      "bcp47": "zsm-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "mlt_Latn",
+      "name": "马耳他语 (马耳他)",
+      "english": "Maltese",
+      "bcp47": "mlt-Latn",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "khm_Khmr",
+      "name": "高棉语 (柬埔寨)",
+      "english": "Khmer",
+      "bcp47": "km",
+      "dir": "ltr",
+      "pinned": false
+    },
+    {
+      "code": "nya_Latn",
+      "name": "齐切瓦语 (马拉维)",
+      "english": "Nyanja",
+      "bcp47": "nya-Latn",
+      "dir": "ltr",
+      "pinned": false
+    }
+  ]
+}

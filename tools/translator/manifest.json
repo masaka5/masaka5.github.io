@@ -1,0 +1,27 @@
+{
+  "name": "NLLB Translator",
+  "version": "1.0.0",
+  "generatedAt": "2026-11-19",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6648,
+      "sha256": "aeabbc669c0efc6f8f93a9318d2954227a9ef2938cd7df499a5800973bdfef8d"
+    },
+    {
+      "path": "translator.css",
+      "bytes": 12737,
+      "sha256": "1f1406cf8536c8c777aaef4c6af70851c13e743621d564fc87e7d60b9950e0f5"
+    },
+    {
+      "path": "translator.js",
+      "bytes": 25571,
+      "sha256": "9406c1e2e1819a02d84573abd42bf9db6b9dd6e024ee8274553cc887234668dc"
+    },
+    {
+      "path": "languages.json",
+      "bytes": 35822,
+      "sha256": "5dc76c92671d0970043c289904c8f9a7505e20b7eab1e498aff1d636ffed0e6e"
+    }
+  ]
+}
