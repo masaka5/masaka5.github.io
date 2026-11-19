@@ -7,8 +7,8 @@
   <link rel="icon" href="../../assets/favicon.svg">
   <link rel="stylesheet" href="../../assets/design-system.css">
   <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
-  <link rel="stylesheet" href="resume.css?v=20261120c">
-  <script defer src="resume.js?v=20261120d"></script>
+  <link rel="stylesheet" href="resume.css?v=20261120e">
+  <script defer src="resume.js?v=20261120j"></script>
   <title>简历生成器 · 口袋工具箱</title>
   <meta name="description" content="本地 AI 简历编辑器：需求生成、AI 润色、多模板、实时预览、自动保存与 PDF 导出。">
   <link rel="canonical" href="https://tools.manshii.asia/catalog/resume/">
@@ -86,7 +86,7 @@
       <div class="ai-body">
         <section id="aiGeneratePanel" class="ai-panel" role="tabpanel" aria-labelledby="aiGenerateTab">
           <label class="ai-field"><span>需求</span><textarea id="aiRequirement" maxlength="12000" placeholder="输入岗位、经历、技能、项目和求职要求"></textarea></label>
-          <button class="primary-button ai-run" id="aiGenerate" type="button"><svg><use href="#i-sparkles"/></svg>生成简历</button>
+          <button class="primary-button ai-run" id="aiGenerate" type="button"><svg><use href="#i-sparkles"/></svg>生成并填入</button>
         </section>
         <section id="aiPolishPanel" class="ai-panel" role="tabpanel" aria-labelledby="aiPolishTab" hidden>
           <label class="ai-field"><span>目标</span><select id="aiPolishTarget"></select></label>
@@ -96,7 +96,7 @@
         </section>
       </div>
       <div class="ai-progress" id="aiProgress" hidden><div><span id="aiProgressLabel">准备模型</span><b id="aiProgressValue">0%</b></div><progress id="aiProgressBar" max="100" value="0"></progress><button class="text-button danger" id="aiStop" type="button">停止</button></div>
-      <section class="ai-result" id="aiResult" hidden><div class="ai-result-head"><strong id="aiResultTitle">生成结果</strong><span id="aiResultMeta"></span></div><p id="aiResultSummary"></p><div id="aiResultSections" class="ai-result-sections"></div><textarea id="aiResultText" maxlength="12000" readonly hidden></textarea><div class="ai-result-actions"><button class="text-button" id="aiDiscard" type="button">放弃</button><button class="primary-button" id="aiApply" type="button">填入简历</button></div></section>
+      <section class="ai-result" id="aiResult" hidden><div class="ai-result-head"><strong id="aiResultTitle">生成结果</strong><span id="aiResultMeta"></span></div><p id="aiResultSummary"></p><div id="aiResultSections" class="ai-result-sections"></div><textarea id="aiResultText" maxlength="12000" readonly hidden></textarea><div class="ai-result-actions"><button class="secondary-button" id="aiUndoApply" type="button" hidden>撤销填入</button><button class="text-button" id="aiDiscard" type="button">放弃</button><button class="primary-button" id="aiApply" type="button">填入简历</button></div></section>
       <p class="ai-status" id="aiStatus" role="status" aria-live="polite"></p>
     </div>
   </dialog>

@@ -1,4 +1,4 @@
-import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261114-4b-codeblocks4';
+import {LocalAiClient,splitThinking,LOCAL_LABEL} from './local-ai-client.js?v=20261120-resume-fast1';
 import {ContextHarness,summaryPrompt} from './local-ai-harness.mjs?v=20261114-4b-codeblocks4';
 import {shouldSend} from './chat-shortcuts.mjs?v=20261114-4b-codeblocks4';
 import {ConversationStore,createTask,finishTask,readTaskReply,taskContext} from './conversation-journal.mjs?v=20261114-4b-codeblocks4';

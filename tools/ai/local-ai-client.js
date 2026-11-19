@@ -1,11 +1,11 @@
 import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-4b-codeblocks4';
 export class LocalAiClient{
- constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onContext=()=>{},onCheckpoint=()=>{},onDone=()=>{},onError=()=>{}}={}){
-  this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
+ constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onContext=()=>{},onCheckpoint=()=>{},onDone=()=>{},onError=()=>{},workerUrl=''}={}){
+  this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.workerUrl=workerUrl||new URL('./assets/local-ai-worker.js?v=20261114-4b-codeblocks4',import.meta.url);this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
  }
  ensureWorker(){
   if(this.worker)return;
-  const worker=this.worker=new Worker(new URL('./assets/local-ai-worker.js?v=20261114-4b-codeblocks4',import.meta.url),{type:'module'});
+  const worker=this.worker=new Worker(this.workerUrl,{type:'module'});
   worker.onmessage=event=>{if(this.worker===worker)this.message(event.data||{});};
   worker.onerror=event=>{
    event.preventDefault?.();
@@ -30,7 +30,7 @@ export class LocalAiClient{
  else if(message.type==='error'&&(!message.id||item)){console.error('[Spark local error]',message.code);this.fail(localError(message.code));}
  }
  load(){this.ensureWorker();if(this.ready)return Promise.resolve();if(this.loading)return this.loading;this.loading=new Promise((resolve,reject)=>{this.loadDeferred={resolve,reject};});this.worker.postMessage({type:'init'});return this.loading;}
- ask(messages,{id=crypto.randomUUID(),idleMs=120000,firstTokenMs=0,maxMs=0,task=null}={}){
+ ask(messages,{id=crypto.randomUUID(),idleMs=120000,firstTokenMs=0,maxMs=0,task=null,options=null}={}){
   this.ensureWorker();if(this.pending.size)return Promise.reject(Error('本地模型正在生成，请等待或停止。'));
   return new Promise((resolve,reject)=>{
    const item={resolve,reject,idleTimer:null,firstTimer:null,maxTimer:null,hasToken:false,
@@ -41,7 +41,7 @@ export class LocalAiClient{
    // Optional diagnostic watchdogs. Normal generation has no total time/token cap.
    if(firstTokenMs>0)item.firstTimer=setTimeout(()=>this.fail('模型未返回文本，已停止。请重试。'),firstTokenMs);
    if(maxMs>0)item.maxTimer=setTimeout(()=>this.fail('本次生成超时，已停止。请重试。'),maxMs);
-   item.touch();this.worker.postMessage({type:'generate',id,messages,task,checkpoint:this.checkpoint,sessionId:this.sessionId});
+   item.touch();this.worker.postMessage({type:'generate',id,messages,task,options,checkpoint:this.checkpoint,sessionId:this.sessionId});
   });
  }
  resetContext(){this.checkpoint=null;this.sessionId=crypto.randomUUID();this.worker?.postMessage({type:'reset'});}
