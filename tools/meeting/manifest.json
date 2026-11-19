@@ -8,8 +8,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 10995,
-      "sha256": "dccee803bc85ec4f0e81df464372ec407644f4d21a26211e3a0f0d6fe2e92e1e"
+      "bytes": 11154,
+      "sha256": "3cfd7e860a9737ba27eaa79da745aed6a193934294a851c480eea847e66dadd9"
     },
     {
       "file": "meeting-board.js",
@@ -18,8 +18,8 @@
     },
     {
       "file": "meeting-core.js",
-      "bytes": 2251,
-      "sha256": "9f67291fd0d541f040cce5f6b2d5188a1e4dffad934241052d5766ef42ad6757"
+      "bytes": 2947,
+      "sha256": "7b90ea4f0a26a7ba464cc2f9dadad85fa9f2278329fbb98cfac451181082937a"
     },
     {
       "file": "meeting-media.js",
@@ -33,8 +33,8 @@
     },
     {
       "file": "meeting-transport.js",
-      "bytes": 7243,
-      "sha256": "380dbac2ab31849e7a12883a39f188c3f99ae5126d1cc01104d22c9335ff6083"
+      "bytes": 7363,
+      "sha256": "e5769aecd06a9cf3c239f0e8b662a3fcacb6a2cc06326c90ed6e7660d4f5342c"
     },
     {
       "file": "meeting.css",
@@ -43,8 +43,8 @@
     },
     {
       "file": "meeting.js",
-      "bytes": 19564,
-      "sha256": "e6f6a10229b4634d276d1c3ba52deb61f913e9de1d27e031a22fdc4e1292ece9"
+      "bytes": 19698,
+      "sha256": "c42b040962c9f7e047de5423fdd2cfa26a0ca041bd34c7dd151e91c26216bf8e"
     }
   ]
 }

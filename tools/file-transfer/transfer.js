@@ -1,4 +1,4 @@
-import { randomPassword } from "./transfer-core.js?v=20261117e";
+import { randomPassword, stunConfig, turnConfig } from "./transfer-core.js?v=20261119ice1";
 import { TransferStore } from "./transfer-store.js?v=20261117e";
 import { TransferEngine } from "./transfer-engine.js?v=20261117e";
 import { TransferTransport, MAX_PEERS } from "./transfer-transport.js?v=20261117e";
@@ -22,6 +22,8 @@ const app = (window.transferApp = {
   ready: false,
   phase: "idle",
   strategy: "mqtt",
+  stun: [],
+  turn: [],
   deleteId: null,
   previewUrl: null,
   preferences: new TransferPreferences(),
@@ -154,8 +156,8 @@ function renderConnection() {
   const labels = { idle: "未连接", connecting: "连接中", waiting: "等待设备", connected: count + " 台已连接", failed: "连接失败" };
   $("connectionStatusText").textContent = labels[app.phase] || labels.idle;
   $("networkDetail").textContent = app.transport
-    ? "端到端直连 · 最多 " + (MAX_PEERS - 1) + " 台接收设备"
-    : "信令只用于建立连接";
+    ? "STUN " + app.transport.stun.length + " · 端到端直连 · 最多 " + (MAX_PEERS - 1) + " 台接收设备"
+    : "信令建连 · 默认 STUN";
 }
 function lockConnection(locked) {
   $("password").disabled = locked;
@@ -818,7 +820,10 @@ async function connect() {
   app.busy = true;
   lockConnection(true);
   setConnectionPhase("connecting", "连接中", "正在连接信令…");
-  const transport = (app.transport = new TransferTransport({ password, via: app.strategy }));
+  const stun = stunConfig($('stunURL').value), turn = turnConfig($('turnURL').value, $('turnUser').value, $('turnPassword').value);
+  app.stun = stun;
+  app.turn = turn;
+  const transport = (app.transport = new TransferTransport({ password, via: app.strategy, stun, turn }));
   transport.addEventListener("connected", (event) => {
     if (app.transport !== transport) return;
     makeEngine(event.detail);

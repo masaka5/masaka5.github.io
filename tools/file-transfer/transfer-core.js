@@ -91,3 +91,25 @@ export function metadata(m) {
     type: m.type,
   };
 }
+export const DEFAULT_STUN_URLS=[
+  'stun:stun.l.google.com:19302',
+  'stun:stun1.l.google.com:19302',
+  'stun:stun2.l.google.com:19302',
+  'stun:stun.cloudflare.com:3478',
+  'stun:stun.nextcloud.com:443',
+];
+export function stunConfig(raw){
+  const input=String(raw||'').split(/[\s,]+/).filter(Boolean);
+  const urls=input.length?input:DEFAULT_STUN_URLS;
+  const valid=/^stuns?:(?:[a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\])(?::\d{1,5})?(?:\?transport=(?:tcp|udp))?$/;
+  if(urls.length>8||urls.some(url=>!valid.test(url)))throw Error('请输入有效的 STUN 地址');
+  return [...new Set(urls)].map(urls=>({urls}));
+}
+export function turnConfig(raw,username,credential){
+  if(!String(raw).trim())return[];
+  const urls=[...new Set(String(raw).split(',').map(value=>value.trim()).filter(Boolean))];
+  const valid=/^turns?:(?:[a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\])(?::\d{1,5})?(?:\?transport=(?:tcp|udp))?$/;
+  if(urls.length>4||urls.some(url=>!valid.test(url)))throw Error('请输入有效的 TURN 地址');
+  if(!String(username||'').trim()||!credential)throw Error('请填写中继用户名和密码');
+  return [{urls,username:String(username).trim(),credential}];
+}

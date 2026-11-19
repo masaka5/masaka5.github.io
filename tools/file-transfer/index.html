@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <link rel="icon" href="../../assets/favicon.svg" />
   <link rel="stylesheet" href="../../assets/ops.css" />
-  <link rel="stylesheet" href="transfer.css?v=20261117d" />
+  <link rel="stylesheet" href="transfer.css?v=20261119ice1" />
   <!-- pocket-seo:start -->
   <title>文件直传 · 口袋工具箱</title>
   <meta name="description" content="文件直传：WebRTC 设备直连、多文件与文件夹传输、断点续传、SHA-256 校验、多设备发送、任意区域拖放与摄像头扫码配对。" />
@@ -67,6 +67,14 @@
             <button type="button" role="radio" data-value="nostr" aria-checked="false">Nostr</button>
           </div>
         </div>
+
+        <details class="network-options">
+          <summary>STUN / TURN</summary>
+          <p>默认使用 Google、Cloudflare 与 Nextcloud STUN；复杂网络可填写自建 coturn。</p>
+          <label class="field"><span>STUN 地址</span><input id="stunURL" placeholder="留空使用公共 STUN；多个地址用逗号分隔" autocomplete="off" spellcheck="false"></label>
+          <label class="field"><span>TURN 地址</span><input id="turnURL" placeholder="turn:example.com:3478" autocomplete="off" spellcheck="false"></label>
+          <div class="network-credentials"><label class="field"><span>用户名</span><input id="turnUser" autocomplete="off"></label><label class="field"><span>密码</span><input id="turnPassword" type="password" autocomplete="off"></label></div>
+        </details>
 
         <div class="connect-actions">
           <button class="primary" id="connect" type="button"><span data-icon="wifi"></span>连接</button>
@@ -211,6 +219,6 @@
     <div class="dialog-actions"><button id="cancelDelete" class="secondary" type="button">取消</button><button id="confirmDelete" class="danger" type="button">删除</button></div>
   </dialog>
 
-  <script type="module" src="transfer.js?v=20261117e"></script>
+  <script type="module" src="transfer.js?v=20261119ice1"></script>
 </body>
 </html>

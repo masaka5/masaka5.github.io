@@ -1,4 +1,4 @@
-import { CHUNK_SIZE, deriveConnection } from "./transfer-core.js?v=20261117e";
+import { CHUNK_SIZE, deriveConnection } from "./transfer-core.js?v=20261119ice1";
 
 export const MAX_PEERS = 8;
 const SEND_BUFFER_THRESHOLD = 1024 * 1024;
@@ -28,10 +28,12 @@ function installDataChannelTuning() {
 }
 
 export class TransferTransport extends EventTarget {
-  constructor({ password, via = "mqtt" }) {
+  constructor({ password, via = "mqtt", stun = [], turn = [] }) {
     super();
     this.password = password;
     this.via = via;
+    this.stun = stun;
+    this.turn = turn;
     this.closed = false;
     this.peers = new Map();
     this.room = null;
@@ -79,7 +81,8 @@ export class TransferTransport extends EventTarget {
         password: connection.key,
         maxUsers: MAX_PEERS,
         maxReceiveBytes: CHUNK_SIZE + 65536,
-        turnConfig: [],
+        rtcConfig: this.stun.length ? { iceServers: this.stun } : undefined,
+        turnConfig: this.turn,
         relayConfig: { redundancy: 4, warnOnRelayFailure: false },
       },
       connection.room,

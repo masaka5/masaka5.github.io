@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 14801,
-      "sha256": "8e5cfb4fd68450d3c75ca2444574b63cdf3fef8b0e72959ae6c077ba61db0bff"
+      "bytes": 15616,
+      "sha256": "2d698b6a1f4d9fc88a38e3ef1c537f08cab6f032fb57d533d08149eb2f224cc9"
     },
     {
       "file": "store-worker.js",
@@ -13,8 +13,8 @@
     },
     {
       "file": "transfer-core.js",
-      "bytes": 2522,
-      "sha256": "a22a0c1b464d0ab08b3a6ba282067cac6b5a60962b45fab64009497b805b467c"
+      "bytes": 3678,
+      "sha256": "0af7ff3da7508702474742a6d756825316e0c24f24610f9ed792b75b08265f78"
     },
     {
       "file": "transfer-engine.js",
@@ -33,18 +33,18 @@
     },
     {
       "file": "transfer-transport.js",
-      "bytes": 6553,
-      "sha256": "95e5f75f02c5f6e6318532c167cedc02721ebdb674057e32af80105b2c3f6c25"
+      "bytes": 6706,
+      "sha256": "c759476b2ed5da40db7bb3a06a5a75bec0347a860334659e0e5b5626afdff9a3"
     },
     {
       "file": "transfer.css",
-      "bytes": 26652,
-      "sha256": "83a1868dc5524e6e215a2021c3f97c6989b4a915e1c6c016810f9004b7fbc828"
+      "bytes": 27163,
+      "sha256": "7a501359f06852acd6baeaf6102f07e9e8de22f1da71c6453fbf1d21462c9684"
     },
     {
       "file": "transfer.js",
-      "bytes": 50222,
-      "sha256": "777979959caa579f45c93c507424e9f5f3ae1bdc0ce018ae855fea5786233b42"
+      "bytes": 50497,
+      "sha256": "b587d29d9762f01d0f02a90d80d2f4e869e27ef3461346d2635eaeb2c77a8378"
     }
   ]
 }

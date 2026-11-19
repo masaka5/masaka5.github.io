@@ -201,6 +201,7 @@ p { text-wrap: pretty; }
 .danger { border-color: var(--danger); background: var(--danger); color: #fff; }
 .primary svg, .secondary svg { width: 16px; height: 16px; }
 
+.network-options{border:1px solid var(--line);border-radius:10px;background:var(--surface-soft);padding:10px}.network-options summary{cursor:pointer;color:var(--text-soft);font-size:11px;font-weight:600}.network-options p{margin:7px 0 9px;color:var(--muted);font-size:10px;line-height:1.6}.network-options .field+.field{margin-top:8px}.network-credentials{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.network-options input{height:34px;font-size:11px}
 .connection-panel {
   display: flex;
   flex-direction: column;
@@ -495,7 +496,7 @@ dialog::backdrop { background: rgba(15,23,42,.45); backdrop-filter: blur(2px); }
   .connection-panel { flex: 0 0 auto; overflow: visible; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; }
   .connection-panel > .section-head, .connection-panel > .field:first-of-type, .connection-panel > .connect-actions, .connection-panel > .inline-status, .connection-panel > .device-block { grid-column: 1 / -1; }
   .connection-panel > .section-head { align-items: flex-start; }
-  .connection-panel > .field:nth-of-type(2) { grid-column: 1 / -1; }
+  .connection-panel > .field:nth-of-type(2), .connection-panel > .network-options { grid-column: 1 / -1; }
   .connect-actions { grid-template-columns: 1fr 1fr; }
   .device-block { padding-top: 9px; }
   .device-list { flex-direction: row; overflow: auto; scrollbar-width: none; }

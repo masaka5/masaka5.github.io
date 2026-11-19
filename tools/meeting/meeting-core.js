@@ -14,10 +14,25 @@ export function inviteURL(invite,base=location.href){const p=checkedInvite(invit
 export function cleanName(name){return String(name||'').replace(/[\x00-\x1f\x7f]/g,'').trim().slice(0,24)||'访客';}
 export function validChat(m){return !!m&&ID.test(m.id)&&typeof m.text==='string'&&m.text.trim().length>0&&m.text.length<=MAX_MESSAGE&&Number.isSafeInteger(m.at)&&m.at>=0;}
 export function validMedia(m){return !!m&&['mic','camera','screen'].includes(m.kind)&&ID.test(m.token);}
+export const DEFAULT_STUN_URLS=[
+  'stun:stun.l.google.com:19302',
+  'stun:stun1.l.google.com:19302',
+  'stun:stun2.l.google.com:19302',
+  'stun:stun.cloudflare.com:3478',
+  'stun:stun.nextcloud.com:443',
+];
+export function stunConfig(raw){
+  const input=String(raw||'').split(/[\s,]+/).filter(Boolean);
+  const urls=input.length?input:DEFAULT_STUN_URLS;
+  const valid=/^stuns?:(?:[a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\])(?::\d{1,5})?(?:\?transport=(?:tcp|udp))?$/;
+  if(urls.length>8||urls.some(url=>!valid.test(url)))throw Error('请输入有效的 STUN 地址');
+  return [...new Set(urls)].map(urls=>({urls}));
+}
 export function turnConfig(raw,username,credential){
- if(!String(raw).trim())return [];
- const urls=String(raw).split(',').map(s=>s.trim());
- if(urls.length>4||urls.some(u=>!/^turns?:(?:[a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\])(?::\d{1,5})?(?:\?transport=(?:tcp|udp))?$/.test(u)))throw Error('请输入有效的 TURN 地址');
- if(!username?.trim()||!credential)throw Error('请填写中继用户名和密码');
- return [{urls,username:username.trim(),credential}];
+  if(!String(raw).trim())return[];
+  const urls=[...new Set(String(raw).split(',').map(value=>value.trim()).filter(Boolean))];
+  const valid=/^turns?:(?:[a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\])(?::\d{1,5})?(?:\?transport=(?:tcp|udp))?$/;
+  if(urls.length>4||urls.some(url=>!valid.test(url)))throw Error('请输入有效的 TURN 地址');
+  if(!String(username||'').trim()||!credential)throw Error('请填写中继用户名和密码');
+  return [{urls,username:String(username).trim(),credential}];
 }
