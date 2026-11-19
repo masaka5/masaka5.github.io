@@ -1,19 +1,40 @@
 {
+  "engine": "MediaPipe WASM + ONNX Runtime WebGPU",
   "files": [
     {
       "file": "id-photo.css",
-      "bytes": 11034,
-      "sha256": "2ffbb4aa04e8942ebe4b51f8680b22a596e2978d9941f6148e578e60778586f9"
+      "bytes": 11466,
+      "sha256": "9a100d5418bc74af342c7e58ebeb2cd11ea0a4ce908a8ab0b380c06220e70503"
     },
     {
       "file": "id-photo.js",
-      "bytes": 20496,
-      "sha256": "37aa201df6d6b511d51ed09757adaa2c83ee376db6d3b5f95c137a9961165589"
+      "bytes": 23846,
+      "sha256": "afa7b3b6dea31a044bd7871efcff4878756e1dc8b18fe00a29c614c4c30a3ba3"
     },
     {
       "file": "index.html",
-      "bytes": 9404,
-      "sha256": "e9196a2da7310f5221e1ffeaa3459436f17e0f3b5441db359d47f77917900446"
+      "bytes": 9741,
+      "sha256": "c481a91d10fbc883b01918f2399028c1f6bf0692ae4ea264f09e3f9ce891eb38"
+    },
+    {
+      "file": "models/modnet/config.json",
+      "bytes": 83,
+      "sha256": "e144d8af9b1f09649785c77f592a76bbc69504ae02e43700663b2a9f00d9c8a2"
+    },
+    {
+      "file": "models/modnet/onnx/model_quantized.onnx",
+      "bytes": 6632188,
+      "sha256": "92e49898c3e05a6d7a944fc67a8cb87c4aad754ffb6ebd949528c7d1105fee3a"
+    },
+    {
+      "file": "models/modnet/preprocessor_config.json",
+      "bytes": 365,
+      "sha256": "07d83634b1fdd20142ca6e3fe55ab92b558f56d1b0f005ff3a7926f1c9e1165d"
+    },
+    {
+      "file": "models/subpixel-cnn.onnx",
+      "bytes": 240078,
+      "sha256": "85f36ff88cc504a24af5e0602148bc56a8aa09a58eca8c0da2756f3e8186035e"
     },
     {
       "file": "vendor/mediapipe/selfie_segmenter.tflite",
@@ -34,6 +55,49 @@
       "file": "vendor/mediapipe/wasm/vision_wasm_internal.wasm",
       "bytes": 13519922,
       "sha256": "0e101a010e262ef8e78f22e3c95b60a9705fd06962753c9acd6356d9fb56b7bd"
+    },
+    {
+      "file": "webgpu-models.js",
+      "bytes": 7852,
+      "sha256": "6a5a6b9dc32f2d32a49c3d8954eb963a6b4ecaf042591c1aaf08b00f2d883553"
+    }
+  ],
+  "shared": [
+    {
+      "file": "../studio/assets/transformers.web-DoWB8KLV.js",
+      "bytes": 869377,
+      "sha256": "a9761399aece4d0e1392c57acb447ee755c147adb3d271412e9660cc946a372f",
+      "package": "transformers.js"
+    },
+    {
+      "file": "../ai/assets/ort/ort.webgpu.bundle.min.mjs",
+      "bytes": 117929,
+      "sha256": "f75171b6689756d3bda7c8f48c431f1ca118f67902de0f41be320ed5c665f066",
+      "package": "onnxruntime-web"
+    },
+    {
+      "file": "../ai/assets/ort/ort-wasm-simd-threaded.asyncify.mjs",
+      "bytes": 53057,
+      "sha256": "6e83fe3ccb4f9eb918590babfccc2327ea5b31e2d47b1b607b5753ac6a3dec28",
+      "package": "onnxruntime-web"
+    },
+    {
+      "file": "../ai/assets/ort/ort-wasm-simd-threaded.asyncify.wasm",
+      "bytes": 27151063,
+      "sha256": "9b5700f7166c4092ccd275005c76c7148e26f5988ba109f514b710948a6bbc5f",
+      "package": "onnxruntime-web"
+    },
+    {
+      "file": "../ai/assets/ort/ort-wasm-simd-threaded.jsep.mjs",
+      "bytes": 46851,
+      "sha256": "7f54cc0a26b316a474016ffc0719916748d0fb70217f06e20ce7b600b8326cf7",
+      "package": "onnxruntime-web"
+    },
+    {
+      "file": "../ai/assets/ort/ort-wasm-simd-threaded.jsep.wasm",
+      "bytes": 28683347,
+      "sha256": "41c126d375c9d0e7a793a20874c780d4175288cef3cbb9bf35073081236e9b2b",
+      "package": "onnxruntime-web"
     }
   ]
 }

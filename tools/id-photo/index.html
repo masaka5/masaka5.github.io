@@ -5,10 +5,10 @@
   <link rel="icon" href="../../assets/favicon.svg">
   <link rel="stylesheet" href="../../assets/design-system.css">
   <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
-  <link rel="stylesheet" href="id-photo.css?v=20261119k">
-  <script type="module" src="id-photo.js?v=20261119l"></script>
+  <link rel="stylesheet" href="id-photo.css?v=20261119n">
+  <script type="module" src="id-photo.js?v=20261119q"></script>
   <title>在线证件照 · 口袋工具箱</title>
-  <meta name="description" content="本地证件照制作：规格预设、自定义尺寸、智能去背、换底色、裁切、美颜、单张与六寸排版下载。">
+  <meta name="description" content="本地证件照制作：51 套规格、WebGPU 去背、3 倍超分、换底色、裁切与六寸排版下载。">
   <link rel="canonical" href="https://tools.manshii.asia/catalog/id-photo/">
   <meta name="robots" content="index,follow,max-image-preview:large">
 </head>
@@ -33,7 +33,7 @@
         <section class="setting-card">
           <div class="section-title"><h2>背景</h2></div>
           <div class="backgrounds"><button class="bg-choice active" type="button" data-bg="#ffffff" style="--color:#fff" aria-label="白色"></button><button class="bg-choice" type="button" data-bg="#e8e8e8" style="--color:#e8e8e8" aria-label="浅灰"></button><button class="bg-choice" type="button" data-bg="#438edb" style="--color:#438edb" aria-label="蓝色"></button><button class="bg-choice" type="button" data-bg="#e43d30" style="--color:#e43d30" aria-label="红色"></button><label class="bg-custom"><input id="customBg" type="color" value="#d9e9f7"><span>自定义</span></label></div>
-          <label class="setting-row"><span>智能去背</span><input id="removeBg" type="checkbox" role="switch" checked></label>
+          <label class="setting-row"><span>智能去背</span><input id="removeBg" type="checkbox" role="switch" checked></label><label class="setting-row engine-row"><span>去背引擎</span><select id="bgEngine"><option value="auto">自动</option><option value="webgpu">WebGPU</option><option value="mediapipe">兼容</option></select></label>
           <label class="setting-row"><span>保留原背景</span><input id="keepBg" type="checkbox" role="switch"></label>
         </section>
         <section class="setting-card">
@@ -41,7 +41,7 @@
           <label class="slider-row"><span>缩放</span><input id="zoom" type="range" min="80" max="280" value="100"><output>100%</output></label>
           <label class="slider-row"><span>旋转</span><input id="rotate" type="range" min="-180" max="180" value="0"><output>0°</output></label>
           <label class="slider-row"><span>美白</span><input id="whiten" type="range" min="0" max="100" value="0"><output>0</output></label>
-          <label class="slider-row"><span>磨皮</span><input id="smooth" type="range" min="0" max="100" value="0"><output>0</output></label>
+          <label class="slider-row"><span>磨皮</span><input id="smooth" type="range" min="0" max="100" value="0"><output>0</output></label><label class="setting-row"><span>WebGPU 超分 <b>3×</b></span><input id="superRes" type="checkbox" role="switch"></label>
         </section>
         <section class="setting-card">
           <div class="section-title"><h2>导出</h2></div>
@@ -55,7 +55,7 @@
       <div class="stage" id="stage">
         <canvas id="cropCanvas" width="413" height="579"></canvas>
         <div class="upload-empty" id="uploadEmpty"><span><svg><use href="#i-upload"/></svg></span><strong>上传正面照片</strong><small>支持拖放、粘贴与摄像头</small><button class="primary-button" id="emptyUpload" type="button">选择照片</button></div>
-        <div class="model-progress" id="modelProgress" hidden><span>正在智能去背</span><i><b id="modelProgressBar"></b></i><output id="modelProgressText">0%</output></div>
+        <div class="model-progress" id="modelProgress" hidden><span id="modelProgressLabel">正在处理</span><i><b id="modelProgressBar"></b></i><output id="modelProgressText">0%</output></div>
       </div>
       <div class="crop-footer"><div class="zoom-note"><span>拖动画布调整位置</span><span>滚轮缩放</span></div><div class="status-inline" id="stageStatus"></div></div>
     </section>

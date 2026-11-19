@@ -1,29 +1,50 @@
 {
+  "engine": "browser filesystem + Web Worker + OffscreenCanvas",
   "files": [
     {
       "file": "folder-core.js",
-      "bytes": 1593,
-      "sha256": "9276bb0f55905ad70f948caf77b90cf5ef7fec97f0d5262c14b99ade01507e0d"
+      "bytes": 3520,
+      "sha256": "ebc317ff37a15bfd65f5ee437dfd219c1cb980191fc21ba6d9ebb6445fc8d7d1"
     },
     {
       "file": "folder-worker.js",
-      "bytes": 6486,
-      "sha256": "670f8e111f5cb01324d1fc9c538faea985a31d43bd5e642d67a881dc4d6530f9"
+      "bytes": 12703,
+      "sha256": "e23ce7870a8fa523c91a2f1d61a3af7283332207d3a6d0956963ee26155188a3"
     },
     {
       "file": "folder.css",
-      "bytes": 2140,
-      "sha256": "12db01b0650eadc0ccc3f3fda373afebd2a88474debe46e1f58d7e50fbaf6d54"
+      "bytes": 13063,
+      "sha256": "61fea5f89449c676fd3ccfa35f607f48547ef6db3180367061c7e420607b361f"
     },
     {
       "file": "folder.js",
-      "bytes": 8651,
-      "sha256": "b9e9a850179cfeb0b57684e01898efda3d4be7faa12870e673758e0f202a6b43"
+      "bytes": 17417,
+      "sha256": "0eab111dc522beb5fc872b1ddacbd9b06b75870c4f62ccd975c3e6e193241333"
     },
     {
       "file": "index.html",
-      "bytes": 4761,
-      "sha256": "940ef8ebbf33d87674b1c305709d5b7e306f1a1d30921ca9b45c9054821335b3"
+      "bytes": 10115,
+      "sha256": "6fc73f13a88c0a1eca782af389728aee0c123e7495d97dc0831c223bf8d84f72"
+    }
+  ],
+  "shared": [
+    {
+      "file": "../archives/archive-engine.mjs",
+      "bytes": 1137,
+      "sha256": "fb848cd2b5e0d00994aa47a6045d092307c849352a7c67427285757ba6dd5359",
+      "package": "pocket-archive"
+    },
+    {
+      "file": "../archives/archive-worker.mjs",
+      "bytes": 8471,
+      "sha256": "7de542e1e91d3fcb086b27a5b7e66cb4a25fa6fa87a78ff424635d48d3cc1f92",
+      "package": "pocket-archive"
+    },
+    {
+      "file": "../archives/archive-core.mjs",
+      "bytes": 2878,
+      "sha256": "9443307bc3c5dc23bbb8a7b994390c0cfc48bc9d869470c749b333249900baf7",
+      "package": "pocket-archive"
     }
   ]
 }
