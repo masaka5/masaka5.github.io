@@ -1,12 +1,12 @@
 {
   "name": "Resume Builder with Local AI",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "generatedAt": "2026-11-20",
   "files": [
     {
       "file": "index.html",
       "bytes": 12001,
-      "sha256": "8e9b47be628132d090f9d286cf69a136706690873355cf831d162bc766da90a3"
+      "sha256": "5dcf6e6b356e3c1fe67916721f9a283f9df35bfc341a0bef44642bef377c03d0"
     },
     {
       "file": "resume.css",
@@ -16,7 +16,7 @@
     {
       "file": "resume.js",
       "bytes": 36227,
-      "sha256": "345f7ba28f236515db753081e06f31f4180f2633319fb88f8f069e9e272ace82"
+      "sha256": "f6923be6b44213999c0c6649a8b174679df9134c776bc329a15cb4d04130b5b4"
     },
     {
       "file": "resume-ai.mjs",
@@ -25,8 +25,8 @@
     },
     {
       "file": "local-ai-worker.mjs",
-      "bytes": 4158,
-      "sha256": "46a8fda70b157215c8f17be5150942978fc0e46f9d60347d51ce0d1002fe1725"
+      "bytes": 102231,
+      "sha256": "b68c105fae349b29e15be96479d9cd94752c511e0fc9bb27efca2fed7ba2ec55"
     },
     {
       "file": "vendor/html2canvas.min.js",
