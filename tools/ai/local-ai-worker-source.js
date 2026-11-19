@@ -24,12 +24,12 @@ function runtime(model){
  const chatPrompt=(messages,thinking=true)=>model.chat.render(messages,{thinking});
  return {window:model.contextWindow,textTokens,chatPrompt,count:messages=>textTokens(chatPrompt(messages))};
 }
-async function infer(model,prompt,id,{onToken=()=>{},chunkTokens=768,temperature=.6,signal}={}){
+async function infer(model,prompt,id,{onToken=()=>{},chunkTokens=768,temperature=.6,topP=.95,topK=-1,signal}={}){
  signal?.throwIfAborted();
  const ids=model.chat.tokenizer.encode(prompt,{add_special_tokens:false}).ids;
  const budget=Math.min(chunkTokens,model.contextWindow-ids.length-8);if(budget<8)throw Error('local-context-overflow');
  const tokens=[],stats={};let visible='';
- for await(const token of model.generateIds(ids,{maxNewTokens:budget,temperature,signal,stats,onActivity:()=>post({type:'activity',id})})){
+ for await(const token of model.generateIds(ids,{maxNewTokens:budget,temperature,topP,topK,signal,stats,onActivity:()=>post({type:'activity',id})})){
   signal?.throwIfAborted();tokens.push(token);
   const decoded=model.chat.decode(tokens);
   if(!decoded.endsWith('�')){const delta=decoded.slice(visible.length);visible=decoded;if(delta)onToken(delta);}
@@ -40,6 +40,7 @@ async function infer(model,prompt,id,{onToken=()=>{},chunkTokens=768,temperature
 }
 async function generate(message){
  const id=message.id;if(active){post({type:'error',id,code:'local-generation-busy'});return;}
+ const options=message.options||{},fast=options.fast===true;
  const task=active={id,controller:new AbortController()};const signal=task.controller.signal;
  try{
   const model=await load(),rt=runtime(model);signal.throwIfAborted();
@@ -55,7 +56,7 @@ async function generate(message){
   const history=message.messages.map(item=>({role:item.role==='assistant'?'assistant':'user',content:String(item.content??'')}));
   const prepared=await harness.prepare(history,{checkpoint:message.checkpoint,sessionId:message.sessionId,signal});
   if(prepared.checkpoint)post({type:'checkpoint',id,checkpoint:prepared.checkpoint});
-  const result=await runLocalTurn({messages:prepared.messages,initialPrefix:'<think>',signal,
+  const result=await runLocalTurn({messages:prepared.messages,initialPrefix:fast?'':'<think>',signal,
    prepare:async(messages,prefix)=>{
     const combined=[...messages,...(prefix?[{role:'assistant',content:prefix}]:[])];
     if(rt.count(withTask(combined))<=rt.window-1024)return {messages,prefix};
@@ -67,8 +68,8 @@ async function generate(message){
    generate:({messages,prefix,onToken})=>{
     post({type:'phase',id,phase:'generating'});
     // Spark's template already supplies <think>; append only the generated suffix.
-    const prompt=rt.chatPrompt(withTask(messages))+(prefix.startsWith('<think>')?prefix.slice(7):prefix);
-    return infer(model,prompt,id,{onToken,signal});
+    const prompt=fast?rt.chatPrompt(withTask(messages),false):rt.chatPrompt(withTask(messages))+(prefix.startsWith('<think>')?prefix.slice(7):prefix);
+    return infer(model,prompt,id,{onToken,signal,...(fast?{temperature:Number.isFinite(options.temperature)?options.temperature:.18,topP:Number.isFinite(options.topP)?options.topP:.82,topK:Number.isFinite(options.topK)?options.topK:20}:{})});
    },onText:text=>post({type:'snapshot',id,text}),onEvent:()=>post({type:'activity',id})
   });
   signal.throwIfAborted();post({type:'done',id,text:result.text,device});

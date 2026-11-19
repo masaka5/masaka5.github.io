@@ -1,7 +1,7 @@
 import {LOCAL_MODEL,LOCAL_LABEL,splitThinking,localError} from './local-ai-core.mjs?v=20261114-4b-codeblocks4';
 export class LocalAiClient{
  constructor({onProgress=()=>{},onReady=()=>{},onToken=()=>{},onSnapshot=()=>{},onPhase=()=>{},onContext=()=>{},onCheckpoint=()=>{},onDone=()=>{},onError=()=>{},workerUrl=''}={}){
-  this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.workerUrl=workerUrl||new URL('./assets/local-ai-worker.js?v=20261114-4b-codeblocks4',import.meta.url);this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
+  this.handlers={onProgress,onReady,onToken,onSnapshot,onPhase,onContext,onCheckpoint,onDone,onError};this.workerUrl=workerUrl||new URL('./assets/local-ai-worker.js?v=20261120-fastmode1',import.meta.url);this.worker=null;this.pending=new Map();this.ready=false;this.loading=null;this.loadDeferred=null;this.sessionId=crypto.randomUUID();this.checkpoint=null;
  }
  ensureWorker(){
   if(this.worker)return;
