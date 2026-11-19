@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "file": "id-photo.css",
+      "bytes": 11034,
+      "sha256": "2ffbb4aa04e8942ebe4b51f8680b22a596e2978d9941f6148e578e60778586f9"
+    },
+    {
+      "file": "id-photo.js",
+      "bytes": 20496,
+      "sha256": "37aa201df6d6b511d51ed09757adaa2c83ee376db6d3b5f95c137a9961165589"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9404,
+      "sha256": "e9196a2da7310f5221e1ffeaa3459436f17e0f3b5441db359d47f77917900446"
+    },
+    {
+      "file": "vendor/mediapipe/selfie_segmenter.tflite",
+      "bytes": 249537,
+      "sha256": "191ac9529ae506ee0beefa6b2c945a172dab9d07d1e802a290a4e4038226658b"
+    },
+    {
+      "file": "vendor/mediapipe/vision_bundle.mjs",
+      "bytes": 156139,
+      "sha256": "a84921e02321e582484c1f8126d344b5f33b791fa09c640a52e20ee8632068f1"
+    },
+    {
+      "file": "vendor/mediapipe/wasm/vision_wasm_internal.js",
+      "bytes": 334128,
+      "sha256": "6522286aa32dd93eff17c3da002b0649516f87abfec7a80b5bfe5c9625caa5f8"
+    },
+    {
+      "file": "vendor/mediapipe/wasm/vision_wasm_internal.wasm",
+      "bytes": 13519922,
+      "sha256": "0e101a010e262ef8e78f22e3c95b60a9705fd06962753c9acd6356d9fb56b7bd"
+    }
+  ]
+}

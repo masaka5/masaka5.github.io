@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 8397,
+      "sha256": "68b6e21c841fdfe0a5220974b34614dfb20518b29f25db5528cfed1bc0273fe1"
+    },
+    {
+      "file": "resume.css",
+      "bytes": 15579,
+      "sha256": "95bdf84ec6943b388019aa2a03e5e276f2f8ae87812008af45c5368e7012bbfa"
+    },
+    {
+      "file": "resume.js",
+      "bytes": 24385,
+      "sha256": "0713433f649f14df84d9f1cbf845fcdf2e30c39351f2e3d2ec83208680ad1065"
+    },
+    {
+      "file": "vendor/html2canvas.min.js",
+      "bytes": 198690,
+      "sha256": "669b68b0b6828272e5298a36f20a646b027b2cdf5b524ec05b2410009e75063e"
+    },
+    {
+      "file": "vendor/jspdf.umd.min.js",
+      "bytes": 365730,
+      "sha256": "85ba2cc3ff858a20fa49fe6e457bec863ea40b55a9f3725e58a940e62f6f61a4"
+    }
+  ]
+}
