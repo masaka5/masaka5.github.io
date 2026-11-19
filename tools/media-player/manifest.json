@@ -1,6 +1,6 @@
 {
   "product": "媒体播放器",
-  "engine": "native HTMLMediaElement + shared FFmpeg WASM (not libVLC)",
+  "engine": "native HTMLMediaElement + WebCodecs transcode + shared FFmpeg WASM fallback",
   "files": [
     {
       "file": "assets/app.css",
@@ -9,8 +9,8 @@
     },
     {
       "file": "assets/app.js",
-      "bytes": 727681,
-      "sha256": "d66f0195d5b528f5870725ec72b1bc2127b096ada3d97b67786bc56021d15865"
+      "bytes": 728509,
+      "sha256": "66d223a1059d486b83d045054a9d74e77dd87b6d93feb28ad3895695ec098b63"
     },
     {
       "file": "assets/ffmpeg-worker.js",
@@ -19,8 +19,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 2687,
-      "sha256": "e822433ef9003c981b2caafd719ad8f1e16cf0a0549d17da553e17514bbd7dcd"
+      "bytes": 2849,
+      "sha256": "7cff212895bd708a965ebdd97588f9e6d08026482119c16478e331ba319a4d03"
     }
   ],
   "shared": [
@@ -35,6 +35,24 @@
       "bytes": 32232419,
       "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7",
       "package": "@ffmpeg/core@0.12.9"
+    },
+    {
+      "file": "../../assets/webcodecs-media.js",
+      "bytes": 6807,
+      "sha256": "2b78aea378c043c2b4855696cfd951c9db1f5543eb0bd9e35d852102359f2aea",
+      "package": "pocket-webcodecs"
+    },
+    {
+      "file": "../conversion/assets/index-DQZDNKpl.js",
+      "bytes": 508921,
+      "sha256": "94340f0b34c7eef87f9deb55dc5b443b8036b39c938f62d795a33108b2b4d9ba",
+      "package": "mediabunny"
+    },
+    {
+      "file": "../conversion/assets/__vite-browser-external-ke9ZaMpT.js",
+      "bytes": 130,
+      "sha256": "5f99cc47a5a551232e3490e96385e878335c58619886b588e06d959d88786746",
+      "package": "mediabunny"
     }
   ]
 }

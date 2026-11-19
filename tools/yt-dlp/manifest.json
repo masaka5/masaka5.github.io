@@ -8,8 +8,8 @@
     },
     {
       "file": "assets/app.js",
-      "bytes": 1217494,
-      "sha256": "5c5127595479c9e641c90242d3da652a76d9c55fe0f464e8952dba0ebd1b3ee4"
+      "bytes": 1217877,
+      "sha256": "9c5e1bff69c913ef93bd383b99407c5b2ffba1d2d9a536c505855fc612aad879"
     },
     {
       "file": "assets/ffmpeg-worker.js",
@@ -23,8 +23,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 2706,
-      "sha256": "86fabeeb29ae7c2810f6b575880ebb1c43233e6df1fd339eb75ee2d30a7f6f9f"
+      "bytes": 2868,
+      "sha256": "886e31d961bb9eb405836563b3bad056cd8fdec407c0bccee2e6ce1f68607ada"
     },
     {
       "file": "network.py",
@@ -50,6 +50,27 @@
       "file": "worker.js",
       "bytes": 4022,
       "sha256": "b55dd36c1dade88e5eec12d0c61fd644337496d63d886feae7546d4d5d861f2a"
+    }
+  ],
+  "engine": "yt-dlp + WebCodecs container processing + shared FFmpeg WASM fallback",
+  "shared": [
+    {
+      "file": "../../assets/webcodecs-media.js",
+      "bytes": 6807,
+      "sha256": "2b78aea378c043c2b4855696cfd951c9db1f5543eb0bd9e35d852102359f2aea",
+      "package": "pocket-webcodecs"
+    },
+    {
+      "file": "../conversion/assets/index-DQZDNKpl.js",
+      "bytes": 508921,
+      "sha256": "94340f0b34c7eef87f9deb55dc5b443b8036b39c938f62d795a33108b2b4d9ba",
+      "package": "mediabunny"
+    },
+    {
+      "file": "../conversion/assets/__vite-browser-external-ke9ZaMpT.js",
+      "bytes": 130,
+      "sha256": "5f99cc47a5a551232e3490e96385e878335c58619886b588e06d959d88786746",
+      "package": "mediabunny"
     }
   ]
 }
