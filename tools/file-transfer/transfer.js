@@ -22,7 +22,7 @@ const app = (window.transferApp = {
   ready: false,
   phase: "idle",
   strategy: "mqtt",
-  stun: [],
+  stun: stunConfig(""),
   turn: [],
   deleteId: null,
   previewUrl: null,
