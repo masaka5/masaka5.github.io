@@ -8,7 +8,7 @@ const STEP = 192;
 const PAD = 16;
 const SCALE = 3;
 let ortPromise;
-let segmenterPromise;
+const segmenterPromises = new Map();
 let capabilityPromise;
 const sessions = new Map();
 
@@ -77,36 +77,125 @@ function imageCanvas(source, width, height, alpha = false) {
   return output;
 }
 
-async function segmenter() {
-  if (!segmenterPromise) segmenterPromise = (async () => {
-    const { pipeline, env } = await import(TRANSFORMERS_URL);
-    env.allowRemoteModels = false;
-    env.allowLocalModels = true;
-    env.localModelPath = new URL('./models/', import.meta.url).href;
-    env.backends.onnx.wasm.wasmPaths = '/tools/ai/assets/ort/';
-    return pipeline('background-removal', 'modnet', { device: 'webgpu', dtype: 'q8' });
-  })();
-  try { return await segmenterPromise; }
-  catch (error) { segmenterPromise = null; throw error; }
+async function segmenter(kind = 'modnet', onProgress) {
+  if (!segmenterPromises.has(kind)) {
+    const promise = (async () => {
+      const { pipeline, env } = await import(TRANSFORMERS_URL);
+      env.allowRemoteModels = false;
+      env.allowLocalModels = true;
+      env.localModelPath = new URL('./models/', import.meta.url).href;
+      env.backends.onnx.wasm.wasmPaths = '/tools/ai/assets/ort/';
+      env.backends.onnx.wasm.numThreads = 1;
+      const report = (info) => { if (info?.status === 'progress') progress(onProgress, 5 + (Number(info.progress) || 0) * .35, kind === 'ormbg' ? '加载精细模型' : '加载快速模型'); };
+      if (kind === 'ormbg') return pipeline('background-removal', 'ormbg', { device: 'wasm', dtype: 'q8', progress_callback: report });
+      return pipeline('background-removal', 'modnet', { device: 'webgpu', dtype: 'q8', progress_callback: report });
+    })();
+    segmenterPromises.set(kind, promise);
+    promise.catch(() => segmenterPromises.delete(kind));
+  }
+  return segmenterPromises.get(kind);
 }
 
-export async function removeBackgroundWebGPU(source, onProgress) {
-  const gpu = await detectWebGPU();
-  if (!gpu.available) throw new Error(gpu.reason);
-  progress(onProgress, 3, '加载 WebGPU 去背');
-  const segment = await segmenter();
-  progress(onProgress, 24, '识别人像');
+function blurRgbCanvas(source, radius) {
+  const output = canvas(source.width, source.height);
+  const context = output.getContext('2d', { willReadFrequently: true });
+  context.filter = radius > 0 ? 'blur(' + radius + 'px)' : 'none';
+  context.drawImage(source, 0, 0);
+  return context.getImageData(0, 0, output.width, output.height);
+}
+
+function estimatePass(image, foreground, background, alpha, width, height, radius) {
+  const fa = new ImageData(width, height);
+  const ba = new ImageData(width, height);
+  const am = new ImageData(width, height);
+  for (let pixel = 0, index = 0; pixel < alpha.length; pixel++, index += 4) {
+    const a = alpha[pixel];
+    fa.data[index] = foreground[index] * a;
+    fa.data[index + 1] = foreground[index + 1] * a;
+    fa.data[index + 2] = foreground[index + 2] * a;
+    fa.data[index + 3] = 255;
+    ba.data[index] = background[index] * (1 - a);
+    ba.data[index + 1] = background[index + 1] * (1 - a);
+    ba.data[index + 2] = background[index + 2] * (1 - a);
+    ba.data[index + 3] = 255;
+    const mask = Math.round(a * 255);
+    am.data[index] = mask;
+    am.data[index + 1] = mask;
+    am.data[index + 2] = mask;
+    am.data[index + 3] = 255;
+  }
+  const layer = (data) => {
+    const value = new ImageData(data, width, height);
+    const sourceCanvas = canvas(width, height);
+    sourceCanvas.getContext('2d').putImageData(value, 0, 0);
+    return blurRgbCanvas(sourceCanvas, radius);
+  };
+  const blurredFA = layer(fa.data);
+  const blurredBA = layer(ba.data);
+  const blurredMask = layer(am.data);
+  const rgb = new Uint8ClampedArray(image.length);
+  const nextBackground = blurredBA.data;
+  for (let pixel = 0, index = 0; pixel < alpha.length; pixel++, index += 4) {
+    const a = alpha[pixel];
+    const blurredAlpha = blurredMask.data[index] / 255;
+    for (let channel = 0; channel < 3; channel++) {
+      const position = index + channel;
+      const estimatedForeground = blurredFA.data[position] / Math.max(blurredAlpha, 1e-3);
+      const estimatedBackground = blurredBA.data[position] / Math.max(1 - blurredAlpha, 1e-3);
+      const sourceValue = image[position];
+      const refined = estimatedForeground + a * (sourceValue - a * estimatedForeground - (1 - a) * estimatedBackground);
+      rgb[position] = clamp(Math.round(refined), 0, 255);
+    }
+    rgb[index + 3] = Math.round(a * 255);
+  }
+  return { rgb, background: nextBackground };
+}
+
+async function refineForeground(source, cutout, onProgress) {
+  const sourceWidth = source.naturalWidth || source.width;
+  const sourceHeight = source.naturalHeight || source.height;
+  const maxDimension = Math.max(sourceWidth, sourceHeight);
+  const scale = Math.min(1, 1600 / maxDimension);
+  const width = Math.max(1, Math.round(sourceWidth * scale));
+  const height = Math.max(1, Math.round(sourceHeight * scale));
+  const sourceCanvas = imageCanvas(source, width, height);
+  const cutoutCanvas = imageCanvas(cutout, width, height, true);
+  const image = sourceCanvas.getContext('2d', { willReadFrequently: true }).getImageData(0, 0, width, height).data;
+  const rgba = cutoutCanvas.getContext('2d', { willReadFrequently: true }).getImageData(0, 0, width, height);
+  const alpha = new Float32Array(width * height);
+  for (let pixel = 0, index = 3; pixel < alpha.length; pixel++, index += 4) alpha[pixel] = rgba.data[index] / 255;
+  progress(onProgress, 70, '估计前景颜色');
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  const radius = Math.min(90, Math.max(10, Math.round(maxDimension * 0.075)));
+  const first = estimatePass(image, image, image, alpha, width, height, radius);
+  progress(onProgress, 82, '清理背景残色');
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  const second = estimatePass(image, first.rgb, first.background, alpha, width, height, 3);
+  const result = new ImageData(width, height);
+  result.data.set(second.rgb);
+  for (let pixel = 0, index = 3; pixel < alpha.length; pixel++, index += 4) result.data[index] = rgba.data[index];
+  const output = canvas(width, height);
+  output.getContext('2d').putImageData(result, 0, 0);
+  return output;
+}
+
+export async function removeBackgroundWebGPU(source, onProgress, requestedEngine = 'auto') {
+  const precise = requestedEngine === 'precise';
   const width = source.naturalWidth || source.width;
   const height = source.naturalHeight || source.height;
+  progress(onProgress, 3, precise ? '加载精细去背' : '加载 WebGPU 去背');
+  const segment = await segmenter(precise ? 'ormbg' : 'modnet', onProgress);
+  progress(onProgress, precise ? 42 : 24, precise ? '识别人像与发丝' : '识别人像');
   const prepared = imageCanvas(source, width, height);
-  const result = await segment(prepared.toDataURL('image/jpeg', 0.94));
+  const result = await segment(prepared.toDataURL('image/jpeg', 0.96));
   const item = result?.[0];
-  if (!item?.toBlob) throw new Error('WebGPU 去背未返回结果');
+  if (!item?.toBlob) throw new Error('AI 去背未返回结果');
   const blob = await item.toBlob();
   const bitmap = await createImageBitmap(blob);
-  const output = imageCanvas(bitmap, bitmap.width, bitmap.height, true);
+  let output = imageCanvas(bitmap, bitmap.width, bitmap.height, true);
   bitmap.close?.();
-  progress(onProgress, 100, 'WebGPU 去背完成');
+  if (precise && output.width === width && output.height === height) output = await refineForeground(source, output, onProgress);
+  progress(onProgress, 100, precise ? '精细去背完成' : 'WebGPU 去背完成');
   return output;
 }
 
