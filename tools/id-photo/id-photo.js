@@ -1,5 +1,5 @@
 import {FilesetResolver,ImageSegmenter} from './vendor/mediapipe/vision_bundle.mjs';
-import {detectWebGPU,removeBackgroundWebGPU,superResolutionWebGPU} from './webgpu-models.js?v=20261121b';
+import {detectWebGPU,removeBackgroundWebGPU,superResolutionWebGPU} from './webgpu-models.js?v=20261121c';
 const $=id=>document.getElementById(id);
 const canvas=$('cropCanvas'),ctx=canvas.getContext('2d',{alpha:false,desynchronized:true}),resultCanvas=$('resultCanvas'),resultCtx=resultCanvas.getContext('2d'),layoutCanvas=$('layoutCanvas'),layoutCtx=layoutCanvas.getContext('2d');
 const specs=[

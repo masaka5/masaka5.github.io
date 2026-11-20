@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "engine": "ORMBG-ISNet (Apache-2.0) + MODNet WebGPU + MediaPipe WASM",
   "mattingModel": {
     "name": "ORMBG-ISNet",
@@ -17,12 +17,12 @@
     {
       "file": "id-photo.js",
       "bytes": 24461,
-      "sha256": "e9b2077ccb4f31a228a91b387ebc31aef5394f1a3da0c7fcd3cd9fd0097039cf"
+      "sha256": "2fed13c471aaa21f4f1133fb79d22a0a347360d65ccc6e9df7b57f8454edc37d"
     },
     {
       "file": "index.html",
       "bytes": 9923,
-      "sha256": "712c0d489f28b5b2e63b58203b3b29876d24a4324e76950a67f5ca4b643f9697"
+      "sha256": "0a592e287770c6720dce908fd5a33e30f68eb07a19620fee805ed8d07bd68845"
     },
     {
       "file": "models/ormbg/config.json",
@@ -81,8 +81,8 @@
     },
     {
       "file": "webgpu-models.js",
-      "bytes": 12764,
-      "sha256": "91cc546fd86d0e59d9437af47dd6ec3500884d147138c5db2a25f94316d2b736"
+      "bytes": 13566,
+      "sha256": "144e03fff9ce9e9c85266cd450238424e278fd44898e4ba8557244b8e13ae3d1"
     }
   ],
   "shared": [
@@ -116,5 +116,13 @@
       "bytes": 28683347,
       "sha256": "41c126d375c9d0e7a793a20874c780d4175288cef3cbb9bf35073081236e9b2b"
     }
-  ]
+  ],
+  "superResolution": {
+    "engine": "SubPixel-CNN WebGPU",
+    "tile": 224,
+    "step": 192,
+    "overlap": 32,
+    "blend": 8,
+    "mirroredPadding": true
+  }
 }

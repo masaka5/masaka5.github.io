@@ -199,19 +199,6 @@ export async function removeBackgroundWebGPU(source, onProgress, requestedEngine
   return output;
 }
 
-function paddedSource(source) {
-  const width = source.naturalWidth || source.width;
-  const height = source.naturalHeight || source.height;
-  const output = canvas(width + PAD * 2, height + PAD * 2);
-  const context = output.getContext('2d');
-  for (let row = -1; row <= 1; row++) {
-    for (let column = -1; column <= 1; column++) {
-      context.drawImage(source, column * width, row * height);
-    }
-  }
-  return { canvas: output, width, height };
-}
-
 export async function superResolutionWebGPU(source, onProgress = undefined) {
   progress(onProgress, 2, '加载 WebGPU 超分');
   const net = await session('superRes');
@@ -221,39 +208,61 @@ export async function superResolutionWebGPU(source, onProgress = undefined) {
   const width = Math.max(1, Math.round(originalWidth * ratio));
   const height = Math.max(1, Math.round(originalHeight * ratio));
   const prepared = imageCanvas(source, width, height);
-  const padded = paddedSource(prepared);
+  const sourceContext = prepared.getContext('2d', { willReadFrequently: true });
   const outputWidth = width * SCALE;
   const outputHeight = height * SCALE;
   const luma = new Float32Array(outputWidth * outputHeight);
+  const weights = new Float32Array(outputWidth * outputHeight);
   const tilesX = Math.max(1, Math.ceil(width / STEP));
   const tilesY = Math.max(1, Math.ceil(height / STEP));
   const total = tilesX * tilesY;
   const ort = await runtime();
+  const blend = 8;
   let completed = 0;
   for (let tileY = 0; tileY < tilesY; tileY++) {
     for (let tileX = 0; tileX < tilesX; tileX++) {
       const x = tileX * STEP;
       const y = tileY * STEP;
       const tile = canvas(TILE, TILE);
-      tile.getContext('2d').drawImage(padded.canvas, x, y, TILE, TILE, 0, 0, TILE, TILE);
-      const pixels = tile.getContext('2d', { willReadFrequently: true }).getImageData(0, 0, TILE, TILE).data;
+      const tileContext = tile.getContext('2d', { willReadFrequently: true });
+      tileContext.fillStyle = '#000';
+      tileContext.fillRect(0, 0, TILE, TILE);
+      tileContext.imageSmoothingEnabled = true;
+      tileContext.imageSmoothingQuality = 'high';
+      for (let row = -1; row <= 1; row++) {
+        for (let column = -1; column <= 1; column++) {
+          tileContext.drawImage(prepared, PAD - x + column * width, PAD - y + row * height);
+        }
+      }
+      const pixels = tileContext.getImageData(0, 0, TILE, TILE).data;
       const input = new Float32Array(TILE * TILE);
       for (let index = 0, pixel = 0; index < input.length; index++, pixel += 4) {
         input[index] = (0.299 * pixels[pixel] + 0.587 * pixels[pixel + 1] + 0.114 * pixels[pixel + 2]) / 255;
       }
       const result = await net.run({ [net.inputNames[0]]: new ort.Tensor('float32', input, [1, 1, TILE, TILE]) });
       const enhanced = result[net.outputNames[0]].data;
-      const cropWidth = Math.min(STEP, width - x);
-      const cropHeight = Math.min(STEP, height - y);
-      for (let py = 0; py < cropHeight * SCALE; py++) {
-        const sourceY = (PAD * SCALE + py) * TILE * SCALE;
-        const targetY = (y * SCALE + py) * outputWidth + x * SCALE;
-        for (let px = 0; px < cropWidth * SCALE; px++) {
-          luma[targetY + px] = enhanced[sourceY + PAD * SCALE + px];
+      const enhancedWidth = result[net.outputNames[0]].dims?.[3] || TILE * SCALE;
+      const enhancedHeight = result[net.outputNames[0]].dims?.[2] || TILE * SCALE;
+      for (let py = 0; py < enhancedHeight; py++) {
+        const globalY = (y - PAD) * SCALE + py;
+        if (globalY < 0 || globalY >= outputHeight) continue;
+        const sourceY = y - PAD + py / SCALE;
+        const weightY = clamp(Math.min((sourceY - y + blend) / (blend * 2), (y + STEP + blend - sourceY) / (blend * 2)), 0, 1);
+        if (!weightY) continue;
+        for (let px = 0; px < enhancedWidth; px++) {
+          const globalX = (x - PAD) * SCALE + px;
+          if (globalX < 0 || globalX >= outputWidth) continue;
+          const sourceX = x - PAD + px / SCALE;
+          const weightX = clamp(Math.min((sourceX - x + blend) / (blend * 2), (x + STEP + blend - sourceX) / (blend * 2)), 0, 1);
+          const weight = weightX * weightY;
+          if (!weight) continue;
+          const target = globalY * outputWidth + globalX;
+          luma[target] += enhanced[py * enhancedWidth + px] * weight;
+          weights[target] += weight;
         }
       }
       completed++;
-      progress(onProgress, 12 + Math.round((completed / total) * 78), 'WebGPU 超分 ' + completed + '/' + total);
+      progress(onProgress, 12 + Math.round((completed / total) * 70), 'WebGPU 超分 ' + completed + '/' + total);
     }
   }
   const color = imageCanvas(prepared, outputWidth, outputHeight);
@@ -266,7 +275,8 @@ export async function superResolutionWebGPU(source, onProgress = undefined) {
     const oldLuma = 0.299 * red + 0.587 * green + 0.114 * blue;
     const cb = (blue - oldLuma) / 1.772;
     const cr = (red - oldLuma) / 1.402;
-    const nextLuma = clamp(oldLuma * 0.32 + luma[index] * 0.68, 0, 1);
+    const enhancedLuma = weights[index] > 0 ? luma[index] / weights[index] : oldLuma;
+    const nextLuma = clamp(oldLuma * 0.32 + enhancedLuma * 0.68, 0, 1);
     image.data[pixel] = clamp((nextLuma + 1.402 * cr) * 255, 0, 255);
     image.data[pixel + 1] = clamp((nextLuma - 0.344 * cb - 0.714 * cr) * 255, 0, 255);
     image.data[pixel + 2] = clamp((nextLuma + 1.772 * cb) * 255, 0, 255);
