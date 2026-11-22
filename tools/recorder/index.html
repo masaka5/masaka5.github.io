@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="recorder.css?v=20261119n">
   <script defer src="record-store.js?v=20261119b"></script>
   <script defer src="recorder.js?v=20261119n"></script>
+  <script type="module">import {recordToolUse} from '../../assets/tool-use.mjs'; window.recordToolUse=recordToolUse;</script>
   <!-- pocket-seo:start -->
   <title>屏幕录制 · 口袋工具箱</title>
   <meta name="description" content="教程录屏、摄像头叠层、麦克风、标注、聚光灯、浏览器暂存与 WebM、MP4、GIF 导出。">
@@ -63,6 +64,21 @@
           <label class="setting-row compact"><span>系统光标</span><input type="checkbox" id="showCursor" checked></label>
           <label class="setting-row compact"><span>画面点击波纹</span><input type="checkbox" id="clickHighlight" checked></label>
         </section>
+        <section class="setting-group">
+          <span class="group-label">光标效果</span>
+          <label class="setting-row compact"><span>渲染光标</span><input type="checkbox" id="cursorOverlay" checked></label>
+          <label class="field"><span>光标大小</span><input type="range" id="cursorSize" min="70" max="180" value="100"></label>
+          <div class="two-fields"><label class="field"><span>样式</span><select id="cursorStyle"><option value="arrow">箭头</option><option value="dot">圆点</option><option value="ring">圆环</option></select></label><label class="field"><span>平滑</span><select id="cursorSmoothing"><option value="none">关闭</option><option value="soft">柔和</option><option value="strong">顺滑</option></select></label></div>
+          <label class="setting-row compact"><span>点击弹性</span><input type="checkbox" id="cursorBounce" checked></label>
+        </section>
+        <section class="setting-group">
+          <span class="group-label">画面样式</span>
+          <div class="two-fields"><label class="field"><span>背景</span><select id="frameBackground"><option value="plain">原始画面</option><option value="solid">纯色背景</option><option value="gradient">渐变背景</option></select></label><label class="field"><span>质量</span><select id="videoQuality"><option value="balanced">均衡</option><option value="quality">高质量</option><option value="size">小体积</option></select></label></div>
+          <div class="two-fields"><label class="field"><span>背景色</span><input type="color" id="frameColor" value="#0b1020"></label><label class="field"><span>渐变色</span><input type="color" id="frameColor2" value="#312e81"></label></div>
+          <div class="two-fields"><label class="field"><span>边距</span><input type="range" id="framePadding" min="0" max="12" value="0"></label><label class="field"><span>圆角</span><input type="range" id="frameRadius" min="0" max="48" value="0"></label></div>
+          <label class="setting-row compact"><span>柔化背景</span><input type="checkbox" id="frameBlur"></label>
+          <label class="setting-row compact"><span>投影</span><input type="checkbox" id="frameShadow"></label>
+        </section>
         <section class="setting-group annotation-settings">
           <span class="group-label">标注</span>
           <div class="color-size-row"><input type="color" id="annotationColor" value="#ef4444" aria-label="标注颜色"><input type="range" id="annotationSize" min="2" max="16" value="6" aria-label="画笔粗细"><span id="annotationSizeLabel">6 px</span></div>
@@ -108,8 +124,11 @@
         <div class="two-fields"><label class="field"><span>导出比例</span><select id="cropPreset"><option value="original">原始</option><option value="16:9">16:9</option><option value="9:16">9:16</option><option value="1:1">1:1</option></select></label><label class="setting-row compact"><span>保留音频</span><input type="checkbox" id="trimAudio" checked></label></div>
         <div class="trim-row"><label>起点</label><input type="range" id="trimStart" min="0" max="1" step="0.1" value="0"><output id="trimStartLabel">00:00</output></div>
         <div class="trim-row"><label>终点</label><input type="range" id="trimEnd" min="0" max="1" step="0.1" value="1"><output id="trimEndLabel">00:00</output></div>
-        <div class="editor-actions"><button type="button" class="text-button" id="exportTrim">裁剪导出</button><button type="button" class="text-button" id="exportGif">导出 GIF</button><button type="button" class="text-button danger" id="deleteRecord"><svg><use href="#i-trash"/></svg>删除</button></div>
+        <div class="editor-playback"><label class="field"><span>播放速度</span><select id="playbackSpeed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><label class="field"><span>音量</span><input type="range" id="playbackVolume" min="0" max="1" step="0.05" value="1"></label><button type="button" class="icon-button" id="pictureInPicture" title="画中画" aria-label="画中画"><svg><use href="#i-expand"/></svg></button></div>
+        <div class="editor-playback"><label class="field"><span>GIF 帧率</span><select id="gifFrameRate"><option value="4">4 fps</option><option value="6" selected>6 fps</option><option value="10">10 fps</option><option value="15">15 fps</option></select></label><label class="field"><span>GIF 尺寸</span><select id="gifSize"><option value="480">480p</option><option value="640" selected>640p</option><option value="960">960p</option></select></label><label class="setting-row compact"><span>循环</span><input type="checkbox" id="gifLoop" checked></label></div>
+        <div class="editor-actions"><button type="button" class="text-button" id="exportTrim">裁剪导出</button><button type="button" class="text-button" id="exportGif">导出 GIF</button><button type="button" class="text-button" id="exportProject">保存项目</button><button type="button" class="text-button" id="importProject">打开项目</button><button type="button" class="text-button danger" id="deleteRecord"><svg><use href="#i-trash"/></svg>删除</button></div>
       </div>
+  <input id="projectFile" type="file" accept="application/json,.recordly" hidden>
       <div class="record-list" id="recordList" aria-label="录制列表"></div>
       <button class="library-download" id="downloadRecord" type="button" disabled><svg><use href="#i-download"/></svg>下载原片</button>
     </aside>
