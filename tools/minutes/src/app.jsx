@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ConfigProvider,
@@ -40,6 +40,10 @@ import {
   LoadingOutlined,
   CopyOutlined,
   EditOutlined,
+  SearchOutlined,
+  QuestionCircleOutlined,
+  ClockCircleOutlined,
+  FileSearchOutlined,
 } from "@ant-design/icons";
 import { SpeechClient } from "../client.mjs";
 import { MeetingRecorder, audioSamples } from "../capture.mjs";
@@ -130,8 +134,13 @@ function Minutes() {
     [settings, setSettings] = useState(settingsInitial),
     [settingsOpen, setSettingsOpen] = useState(false),
     [historyOpen, setHistoryOpen] = useState(false),
+    [askOpen, setAskOpen] = useState(false),
+    [askInput, setAskInput] = useState(""),
+    [askAnswer, setAskAnswer] = useState(""),
+    [askBusy, setAskBusy] = useState(false),
     [speakerOpen, setSpeakerOpen] = useState(false),
     [query, setQuery] = useState(""),
+    [historyQuery, setHistoryQuery] = useState(""),
     [tab, setTab] = useState("transcript"),
     [audioURL, setAudioURL] = useState(""),
     [editing, setEditing] = useState(null),
@@ -149,7 +158,9 @@ function Minutes() {
     latestTime = useRef(0),
     optionsRef = useRef(settings),
     busyRef = useRef(false),
-    recordingRef = useRef(false);
+    recordingRef = useRef(false),
+    persistTimer = useRef(null),
+    livePersistTimer = useRef(null);
   const recordingError = useRef(null);
   const liveRef = useRef(null);
   const liveBuffer = useRef([]), liveBufferSize = useRef(0), liveOffset = useRef(0), liveChunkOffset = useRef(0), liveActive = useRef(false);
@@ -157,6 +168,32 @@ function Minutes() {
   current.current = meeting;
   busyRef.current = busy;
   recordingRef.current = recording;
+  const schedulePersist = (value = current.current, delay = 450) => {
+    if (persistTimer.current) clearTimeout(persistTimer.current);
+    persistTimer.current = setTimeout(() => {
+      persistTimer.current = null;
+      persist(value);
+    }, delay);
+  };
+  const scheduleLivePersist = () => {
+    if (livePersistTimer.current) return;
+    livePersistTimer.current = setTimeout(() => {
+      livePersistTimer.current = null;
+      persist(current.current);
+    }, 900);
+  };
+  const flushScheduled = async () => {
+    if (persistTimer.current) {
+      clearTimeout(persistTimer.current);
+      persistTimer.current = null;
+      await persist(current.current);
+    }
+    if (livePersistTimer.current) {
+      clearTimeout(livePersistTimer.current);
+      livePersistTimer.current = null;
+      await persist(current.current);
+    }
+  };
   const refresh = () => listMeetings().then(setHistory);
   const persist = (value) => {
     setSaved(false);
@@ -198,7 +235,14 @@ function Minutes() {
       setError("模型可使用，但缓存空间不足，下次可能需要重新下载");
     if (e.type === "segment" && activeJob.current === current.current.id){
       const segment=liveActive.current?{...e.segment,start:e.segment.start+liveChunkOffset.current,end:e.segment.end+liveChunkOffset.current}:e.segment;
-      update((m) => ({ rows: [...m.rows, segment] }));
+      const value = {
+        ...current.current,
+        rows: [...current.current.rows, segment],
+        updated: Date.now(),
+      };
+      current.current = value;
+      setMeeting(value);
+      scheduleLivePersist();
     }
     if (e.type === "fatal") setReady(false);
   };
@@ -242,6 +286,8 @@ function Minutes() {
       recordRef.current?.stop();
       speechRef.current?.dispose();
       aiRef.current?.dispose();
+      if (persistTimer.current) clearTimeout(persistTimer.current);
+      if (livePersistTimer.current) clearTimeout(livePersistTimer.current);
     };
   }, []);
   useEffect(() => {
@@ -299,6 +345,7 @@ function Minutes() {
     }
   }
   async function activate(item) {
+    await flushScheduled();
     await storeQueue.current;
     current.current = item;
     setMeeting(item);
@@ -563,6 +610,47 @@ function Minutes() {
       update({ summary: answer });
     }
   }
+  async function askMeeting() {
+    const question = askInput.trim();
+    if (!question || askBusy || busyRef.current || recordingRef.current) return;
+    setAskBusy(true);
+    setAskAnswer("");
+    setError("");
+    try {
+      if (!aiRef.current)
+        aiRef.current = new SummaryClient({
+          onProgress: (p) =>
+            setProgress({
+              label: p.status || "加载问答模型",
+              percent: Math.round((p.value || 0) * 100),
+            }),
+          onPhase: () => setProgress({ label: "正在分析会议", percent: null }),
+        });
+      await aiRef.current.load();
+      aiRef.current.resetContext();
+      const transcript = summaryBatches(current.current.rows, 2400, current.current.names).join("\n");
+      const context = [
+        current.current.summary ? `已有纪要：\n${current.current.summary}` : "",
+        current.current.notes ? `会议备注：\n${current.current.notes}` : "",
+        transcript ? `转写内容：\n${transcript}` : "",
+      ].filter(Boolean).join("\n\n");
+      const raw = await aiRef.current.ask([
+        {
+          role: "user",
+          content: `请基于下面这场会议的资料回答问题，只使用资料中的事实；如果没有依据请明确说未找到。\n问题：${question}\n\n<meeting>\n${context}\n</meeting>`,
+        },
+      ]);
+      const answer = splitThinking(raw).answer.trim();
+      if (!answer) throw Error("问答模型未返回内容");
+      setAskAnswer(answer);
+    } catch (e) {
+      setError(e.message || "问答失败");
+    } finally {
+      setAskBusy(false);
+      setProgress(null);
+    }
+  }
+
   async function transcribe() {
     await perform(async () => {
       const options = optionsRef.current;
@@ -601,6 +689,7 @@ function Minutes() {
   }
   async function exportFile(format) {
     if (busyRef.current || recordingRef.current) return;
+    await flushScheduled();
     busyRef.current = true;
     setBusy(true);
     stopRef.current = false;
@@ -633,7 +722,7 @@ function Minutes() {
         );
       else if (format === "md")
         download(
-          `# ${item.title}\n\n${item.summary}\n\n## 转写\n\n${exportTranscript(item.rows, "txt", item.names)}`,
+          `# ${item.title}\n\n${item.summary}\n\n## 会议备注\n\n${item.notes || ""}\n\n## 转写\n\n${exportTranscript(item.rows, "txt", item.names)}`,
           name + ".md",
           "text/markdown",
         );
@@ -652,19 +741,22 @@ function Minutes() {
     }
   }
   const actionsDisabled = busy || recording,
-    rows = meeting.rows.filter(
+    rows = useMemo(() => meeting.rows.filter(
       (r) => !query || r.text.toLowerCase().includes(query.toLowerCase()),
-    ),
+    ), [meeting.rows, query]),
     speakerIds = [
       ...new Set(
         meeting.rows.filter((r) => r.speaker != null).map((r) => r.speaker),
       ),
     ];
   function historyList() {
+    const visibleHistory = history.filter((item) =>
+      !historyQuery || item.title.toLowerCase().includes(historyQuery.toLowerCase()),
+    );
     return (
       <div className="history-list">
-        {history.length ? (
-          history.map((item) => (
+        {visibleHistory.length ? (
+          visibleHistory.map((item) => (
             <div
               key={item.id}
               className={
@@ -909,7 +1001,10 @@ function Minutes() {
           aria-label="会议纪要"
           value={meeting.summary}
           disabled={busy}
-          onChange={(e) => update({ summary: e.target.value })}
+          onChange={(e) => {
+            update({ summary: e.target.value }, false);
+            schedulePersist();
+          }}
         />
       ) : (
         <div className="empty-panel">
@@ -921,6 +1016,27 @@ function Minutes() {
           </p>
         </div>
       )}
+    </section>
+  );
+  const notes = (
+    <section
+      className={"content-panel notes " + (tab === "notes" ? "mobile-active" : "")}
+    >
+      <div className="panel-heading">
+        <h2>会议备注</h2>
+        <Tag bordered={false} color="blue">自动保存</Tag>
+      </div>
+      <Input.TextArea
+        className="notes-editor"
+        aria-label="会议备注"
+        value={meeting.notes || ""}
+        disabled={actionsDisabled}
+        placeholder="记录背景、重点或下一步想法…"
+        onChange={(e) => {
+          update({ notes: e.target.value }, false);
+          schedulePersist();
+        }}
+      />
     </section>
   );
   return (
@@ -947,6 +1063,14 @@ function Minutes() {
               aria-label="设置"
               icon={<SettingOutlined />}
               onClick={() => setSettingsOpen(true)}
+            />
+          </Tooltip>
+          <Tooltip title="询问会议">
+            <Button
+              aria-label="询问会议"
+              icon={<QuestionCircleOutlined />}
+              disabled={actionsDisabled || !meeting.rows.length}
+              onClick={() => setAskOpen(true)}
             />
           </Tooltip>
           <Dropdown
@@ -983,6 +1107,16 @@ function Minutes() {
               onClick={create}
             />
           </div>
+          <div className="history-search">
+            <Input
+              size="small"
+              allowClear
+              prefix={<SearchOutlined />}
+              placeholder="搜索会议"
+              value={historyQuery}
+              onChange={(e) => setHistoryQuery(e.target.value)}
+            />
+          </div>
           {historyList()}
           <div className="sidebar-foot">
             <span className={"model-dot " + (ready ? "ready" : "")} />
@@ -996,11 +1130,18 @@ function Minutes() {
               variant="borderless"
               value={meeting.title}
               disabled={actionsDisabled}
-              onChange={(e) => update({ title: e.target.value })}
+              onChange={(e) => {
+                update({ title: e.target.value }, false);
+                schedulePersist();
+              }}
             />
             <Tag color={recording ? "red" : busy ? "processing" : "default"}>
               {statusText[meeting.status] || "待处理"}
             </Tag>
+            <div className="meeting-stats">
+              <span><ClockCircleOutlined /> {clock(meeting.duration).slice(0, 8)}</span>
+              <span><FileSearchOutlined /> {meeting.rows.length} 段</span>
+            </div>
           </div>
           <div className="record-bar">
             <div className="record-controls">
@@ -1143,12 +1284,14 @@ function Minutes() {
               options={[
                 { value: "transcript", label: "语音转写" },
                 { value: "summary", label: "会议纪要" },
+                { value: "notes", label: "会议备注" },
               ]}
             />
           </div>
           <div className="editor-layout">
             {transcript}
             {summary}
+            {notes}
           </div>
           {audioURL && !recording && (
             <div className="audio-player">
@@ -1179,6 +1322,33 @@ function Minutes() {
           新建会议
         </Button>
         {historyList()}
+      </Drawer>
+      <Drawer
+        title="询问会议"
+        open={askOpen}
+        onClose={() => setAskOpen(false)}
+        width={420}
+        className="ask-drawer"
+      >
+        <div className="ask-drawer-body">
+          <Input.TextArea
+            autoSize={{ minRows: 3, maxRows: 7 }}
+            value={askInput}
+            onChange={(e) => setAskInput(e.target.value)}
+            onPressEnter={(e) => {
+              if (!e.shiftKey) {
+                e.preventDefault();
+                askMeeting();
+              }
+            }}
+            placeholder="例如：我们最终确定了哪些事项？"
+            aria-label="会议问题"
+          />
+          <Button type="primary" block loading={askBusy} disabled={!askInput.trim()} onClick={askMeeting}>
+            {askBusy ? "分析中" : "发送"}
+          </Button>
+          {askAnswer && <div className="ask-answer">{askAnswer}</div>}
+        </div>
       </Drawer>
       <Modal
         title="设置"

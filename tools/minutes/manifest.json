@@ -4,27 +4,27 @@
   "model": "Fun-ASR-Nano INT8",
   "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
   "summary": "Spark-X2.6-4B Q4 + Pi; direct-answer document mode",
-  "version": "a27d75c27ee6",
+  "version": "77e5fb639638",
   "artifacts": {
     "app.js": {
-      "bytes": 925884,
-      "sha256": "c753ff8d470cc933c87c45584d929129c0464bdcba01bddfbdbaffc78842f13d"
+      "bytes": 931578,
+      "sha256": "96f6d6e90836542308950d4008dcfbd6376b589b9653099b858b0945c7b2ae4b"
     },
     "app.css": {
-      "bytes": 9793,
-      "sha256": "d24247fb0e40275993e23404e5f10014e5a02b3942d3d8169bd1da89f14849bc"
+      "bytes": 11988,
+      "sha256": "facd5966876c355628a4fd1684212bcb61bf60e689f32ca6397135b29d353dec"
     },
     "summary-worker.js": {
-      "bytes": 111569,
-      "sha256": "482ba68c20f8cc914a95681fd0a566209bd843cb955e1c00f2ca32c0cce6d2f3"
+      "bytes": 113789,
+      "sha256": "728edcaa88d5b6f6f7c9a6dfdca77d377d8068f44f0bb4d480cf584e274436d0"
     },
     "../../assets/tool-use.mjs": {
-      "bytes": 1715,
-      "sha256": "186109389c641a8849eddebac4fb9e3840e0189e49147db7b8a882a3cb4f2c34"
+      "bytes": 2423,
+      "sha256": "0868876a644224a174b39095dbed615690e0e0e9aa9e96d4e567b97a0bf6e7dc"
     },
     "../../assets/usage.js": {
-      "bytes": 3793,
-      "sha256": "bc4f56299f7bd39d0316403e9283c88f09d70e288ce5c53f2b311dd1507dd80c"
+      "bytes": 5308,
+      "sha256": "e279a7f0848ec0f05a398915713c4e1f4743d630721960e7eca5390ad18eab36"
     },
     "../../assets/usage-config.json": {
       "bytes": 153,
@@ -43,8 +43,8 @@
       "sha256": "3dad93475b186e1b9aace6746ce4e168a0f63f6da8bbfe911a29bfde45681aa4"
     },
     "storage.mjs": {
-      "bytes": 2726,
-      "sha256": "5e140dc1cf3998190d027f23f96268186b7fdded1e379fd73a602e8af0ebd429"
+      "bytes": 2741,
+      "sha256": "98289014ab63454c2463148836cd623c8b1fe1e2c56180b59c392031a48d15da"
     },
     "media.mjs": {
       "bytes": 1840,

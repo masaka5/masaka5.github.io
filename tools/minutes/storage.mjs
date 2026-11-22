@@ -70,6 +70,7 @@ export function blankMeeting() {
     updated: Date.now(),
     rows: [],
     summary: "",
+    notes: "",
     names: {},
     duration: 0,
     status: "draft",

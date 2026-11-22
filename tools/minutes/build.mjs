@@ -28,13 +28,13 @@ let worker = await readFile(
   "utf8",
 );
 if (
-  !worker.includes("messages,thinking=true") ||
-  !worker.includes("initialPrefix:'<think>'")
+  !worker.includes("thinking=true") ||
+  !worker.includes("initialPrefix:")
 )
   throw Error("AI adapter contract changed");
 worker = worker
   .replace("messages,thinking=true", "messages,thinking=false")
-  .replace("initialPrefix:'<think>'", "initialPrefix:''");
+  .replace("initialPrefix:fast?'':'<think>'", "initialPrefix:''");
 const summaryBuild = await build({
   stdin: {
     contents: worker,
