@@ -86,7 +86,7 @@ function showTab(tab) {
   if (tab === 'queue') renderQueue(); if (tab === 'favorites') renderFavorites(); if (tab === 'library') renderLibrary();
 }
 $$('.music-tab').forEach(button => button.onclick = () => showTab(button.dataset.tab));
-toggle.onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden) { showTab('search'); $('#musicQuery').focus(); } };
+toggle.onclick = () => { panel.hidden = !panel.hidden; if (!panel.hidden) { showTab('search'); $('#musicQuery').focus(); recordToolUse('yt-dlp'); } };
 $('#musicClose').onclick = () => { panel.hidden = true; };
 $('#musicVolume').oninput = event => { $('#musicAudio').volume = Number(event.target.value); };
 
@@ -177,8 +177,9 @@ function addToPlaylist(track) {
   if (!list) return; if (!list.items.some(item => sameTrack(item, track))) list.items.push(track); saveStore(); renderFavorites(); toast(`已加入「${list.name}」`);
 }
 
-async function getStreamUrl(track) {
+async function getStreamUrl(track, {refresh = false} = {}) {
   if (track.source === 'local') return track.url;
+  if (refresh) track.streamUrl = '';
   if (track.streamUrl) return track.streamUrl;
   if (track.streamEndpoint) { const value = await textFetch(track.streamEndpoint); const direct = value?.url || value?.data?.url || value; if (typeof direct === 'string' && /^https?:/i.test(direct)) { track.streamUrl = direct; return direct; } }
   let data;
@@ -186,10 +187,15 @@ async function getStreamUrl(track) {
     const endpoint = new URL(METING_API); endpoint.searchParams.set('server', track.source); endpoint.searchParams.set('type', 'url'); endpoint.searchParams.set('id', track.urlId || track.id);
     try { data = await textFetch(endpoint.href); const candidate = data?.url || data?.data?.url || data; if (typeof candidate !== 'string' || !/^https?:/i.test(candidate)) throw Error('Meting 无可用音频流'); } catch { const params = new URLSearchParams({types: 'url', source: track.source, id: track.urlId || track.id}); data = await jsonFetch(`${GD_API}?${params}`); }
   } else {
-    const params = new URLSearchParams({types: 'url', source: track.source, id: track.urlId || track.id}); data = await jsonFetch(`${state.api || API_DEFAULT}?${params}`);
+    const params = new URLSearchParams({types: 'url', source: track.source, id: track.urlId || track.id});
+    let lastError;
+    for (const api of [...new Set([state.api || API_DEFAULT, GD_API])]) {
+      try { data = await jsonFetch(`${api}?${params}`); if (data?.url || data?.data?.url || data?.audio || (typeof data === 'string' && /^https?:/i.test(data))) break; } catch (error) { lastError = error; }
+    }
+    if (!data && lastError) throw lastError;
   }
   const url = data?.url || data?.data?.url || data?.audio || (typeof data === 'string' ? data : '');
-  if (!url) throw Error('没有找到可用音频流'); track.streamUrl = url; return url;
+  if (!/^https?:/i.test(url)) throw Error('没有找到可用音频流'); track.streamUrl = url; return url;
 }
 async function getLyrics(track) {
   if (track.lyricEndpoint) return textFetch(track.lyricEndpoint);
@@ -199,7 +205,19 @@ async function getLyrics(track) {
   return data?.lyric || data?.lrc || (typeof data === 'string' ? data : '');
 }
 async function playTrack(track) {
-  try { const url = await getStreamUrl(track); state.current = track; const audio = $('#musicAudio'); if (state.audioUrl !== url) { if (state.audioUrl) URL.revokeObjectURL(state.audioUrl); state.audioUrl = ''; audio.src = url; } await audio.play(); $('#musicNowTitle').textContent = track.title; $('#musicNowArtist').textContent = `${track.artist || ''}${track.album ? ` · ${track.album}` : ''}`; const cover = coverUrl(track); if (cover) { $('#musicCoverArt').src = cover; $('#musicCoverArt').hidden = false; } $('#musicPlay').textContent = 'Ⅱ'; } catch (error) { toast(friendlyError(error)); }
+  try {
+    const url = await getStreamUrl(track); state.current = track; const audio = $('#musicAudio');
+    if (state.audioUrl !== url) { if (state.audioUrl) URL.revokeObjectURL(state.audioUrl); state.audioUrl = ''; audio.src = url; }
+    await audio.play(); $('#musicNowTitle').textContent = track.title; $('#musicNowArtist').textContent = `${track.artist || ''}${track.album ? ` · ${track.album}` : ''}`;
+    const cover = coverUrl(track); if (cover) { $('#musicCoverArt').src = cover; $('#musicCoverArt').hidden = false; } $('#musicPlay').textContent = 'Ⅱ';
+  } catch (error) {
+    if (track.source !== 'local' && !track._streamRetry) {
+      track._streamRetry = true;
+      try { await getStreamUrl(track, {refresh: true}); track._streamRetry = false; return playTrack(track); } catch {}
+      track._streamRetry = false;
+    }
+    toast(friendlyError(error));
+  }
 }
 $('#musicPlay').onclick = () => { const audio = $('#musicAudio'); if (!audio.src && state.results[0]) return playTrack(state.results[0]); if (audio.paused) { audio.play(); $('#musicPlay').textContent = 'Ⅱ'; } else { audio.pause(); $('#musicPlay').textContent = '▶'; } };
 const playQueueOffset = direction => { const current = state.current ? state.queue.findIndex(item => sameTrack(item, state.current)) : -1; const next = state.queue[(current + direction + state.queue.length) % state.queue.length] || state.results[0]; if (next) playTrack(next); };
