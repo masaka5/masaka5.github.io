@@ -27,7 +27,7 @@ export function normaliseTrack(item, sourceHint = 'netease') {
     urlId: String(item.url_id || item.urlId || id), lyricId: String(item.lyric_id || item.lyricId || id),
     streamUrl: audioFormat?.url || (!endpoint(streamUrl) ? streamUrl : ''),
     streamEndpoint: endpoint(item.url),
-    duration: Number((item.duration && (item.bMusic || item.hMusic || item.mp3Url) ? item.duration / 1000 : item.duration) || (item.dt || item.duration_ms || 0) / 1000), ext: audioFormat?.ext || item.ext || ''
+    duration: Number((item.duration && (item.bMusic || item.hMusic || item.mp3Url || (Array.isArray(item.artists) && item.album && typeof item.album === 'object')) ? item.duration / 1000 : item.duration) || (item.dt || item.duration_ms || 0) / 1000), ext: audioFormat?.ext || item.ext || ''
   };
 }
 

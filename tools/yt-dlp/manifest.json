@@ -24,7 +24,7 @@
     {
       "file": "index.html",
       "bytes": 2949,
-      "sha256": "2dad01995774db547045f3b7e273c44e2abd01d97bb9337714af3f81658b62d4"
+      "sha256": "3898423679b796f288b0f6d6f28aded6752ae6360ce1cdb2207163fea7b07e32"
     },
     {
       "file": "network.py",
@@ -53,8 +53,8 @@
     },
     {
       "file": "music-panel.js",
-      "bytes": 72852,
-      "sha256": "039d9994698cf15c65779b2b38665534c9986dc5d8cac250233a7b4fa68525b2"
+      "bytes": 73318,
+      "sha256": "aaf62c68d3694053b962cc3feba35674ab3861ae04138d18608356e1f2d7f289"
     },
     {
       "file": "music-panel.css",
@@ -63,8 +63,8 @@
     },
     {
       "file": "music-core.mjs",
-      "bytes": 6967,
-      "sha256": "424ed52fc4f583a28db9de79e9868d7cb012541c43bacc4299cb5994a409c28b"
+      "bytes": 7048,
+      "sha256": "4289d07e5451457d593b68b83d0cf1c1aacabe32b8902b72c213bb6ccfeddd6d"
     }
   ],
   "engine": "yt-dlp + browser music workspace inspired by go-music-dl + WebCodecs + shared FFmpeg WASM",

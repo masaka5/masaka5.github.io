@@ -1,6 +1,6 @@
 import {mediaFetch, friendlyError as networkError} from './transport.mjs';
 import {recordToolUse} from '../../assets/tool-use.mjs';
-import {normaliseTrack, parseSearchData, parseMusicLink, audioExtension, parseLrc, transcodeArgs, httpUrl, embedMp3Lyrics} from './music-core.mjs?v=20261123d';
+import {normaliseTrack, parseSearchData, parseMusicLink, audioExtension, parseLrc, transcodeArgs, httpUrl, embedMp3Lyrics} from './music-core.mjs?v=20261123e';
 
 const friendlyError=error=>error?.name==='TimeoutError'?'连接超时，请稍后重试':error?.name==='NotSupportedError'?'浏览器无法播放该音源，请切换来源':error?.name==='NotAllowedError'?'请再次点击播放以允许音频播放':error?.name==='AbortError'?'操作已取消':networkError(error);
 
@@ -160,8 +160,8 @@ async function searchCollections(source, query, type, signal, page=1) {
     return (data.result?.[type === 'album' ? 'albums' : 'playlists'] || []).map(item => collectionItem(item, source, type));
   }
   if (source === 'apple' && type === 'album') {
-    const data = await jsonFetch(`https://itunes.apple.com/search?${new URLSearchParams({term:query,entity:'album',limit:'30',offset:String((page-1)*30)})}`,signal);
-    return (data.results || []).map(item => collectionItem(item, source, type));
+    const data = await jsonFetch(`https://itunes.apple.com/search?${new URLSearchParams({term:query,entity:'album',limit:'200'})}`,signal);
+    return (data.results || []).slice((page-1)*30,page*30).map(item => collectionItem(item, source, type));
   }
   throw Error(`${SOURCE_NAMES[source] || source}暂未提供可用的${type === 'album' ? '专辑' : '歌单'}搜索接口`);
 }
@@ -178,10 +178,11 @@ async function searchSource(source, query, type, signal, page=1) {
   if (type !== 'song') return searchCollections(source, query, type, signal, page);
   if (state.api === API_DEFAULT && !PUBLIC_SOURCES.includes(source)) throw Error(`${SOURCE_NAMES[source] || source}需要配置支持该平台的搜索接口`);
   if (source === 'apple') {
-    const data = await jsonFetch(`https://itunes.apple.com/search?${new URLSearchParams({term:query,entity:'song',limit:'30',offset:String((page-1)*30)})}`,signal);
-    return (data.results || []).map(row => normaliseTrack({id:row.trackId,title:row.trackName,artist:row.artistName,album:row.collectionName,url:row.previewUrl,cover:row.artworkUrl100,duration:30,preview:true},'apple')).filter(Boolean);
+    const data = await jsonFetch(`https://itunes.apple.com/search?${new URLSearchParams({term:query,entity:'song',limit:'200'})}`,signal);
+    return (data.results || []).slice((page-1)*30,page*30).map(row => normaliseTrack({id:row.trackId,title:row.trackName,artist:row.artistName,album:row.collectionName,url:row.previewUrl,cover:row.artworkUrl100,duration:30,preview:true},'apple')).filter(Boolean);
   }
-  const metingFirst = ['netease', 'qq', 'kugou', 'kuwo'].includes(source);
+  if(source==='netease'&&page>1){const data=await jsonFetch(`https://music.163.com/api/search/get?${new URLSearchParams({s:query,type:'1',offset:String((page-1)*30),limit:'30'})}`,signal);if(data.code&&data.code!==200)throw Error(data.message||'搜索接口暂不可用');return parseSearchData(data,source);}
+  const metingFirst = page===1 && ['netease', 'qq', 'kugou', 'kuwo'].includes(source);
   const primaryApi = metingFirst ? METING_API : (state.api !== METING_API ? state.api : GD_API);
   const request = async api => {
     if (api === METING_API) {
@@ -215,7 +216,7 @@ async function searchMusic(append=false) {
   const incoming=[];
   const publish=()=>{
     if(generation!==searchGeneration)return;
-    const seen=new Set();state.results=[...base,...incoming].filter(track=>{const key=`${track.kind||'song'}:${track.title}|${track.artist}|${track.album||''}`.toLowerCase();if(seen.has(key))return false;seen.add(key);return true;});renderResults();
+    const seen=new Set(),ids=new Set();state.results=[...base,...incoming].filter(track=>{const id=`${track.source}:${track.id}`;const key=`${track.kind||'song'}:${track.title}|${track.artist}|${track.album||''}`.toLowerCase();if(ids.has(id)||seen.has(key))return false;ids.add(id);seen.add(key);return true;});renderResults();
   };
   try{
     if(source==='all'){
@@ -226,8 +227,8 @@ async function searchMusic(append=false) {
     if(generation!==searchGeneration)return;
     publish();state.searchPage=page;
     state.history=[{query,source,time:Date.now()},...state.history.filter(item=>item.query!==query)].slice(0,50);saveStore();
-    status('#musicSearchStatus',state.results.length?`找到 ${state.results.length} ${type==='song'?'首':'项'}${append&&!incoming.length?' · 没有更多结果':''}`:'没有找到结果');
-    $('#musicMore').hidden=!incoming.length;recordToolUse('yt-dlp');
+    status('#musicSearchStatus',state.results.length?`找到 ${state.results.length} ${type==='song'?'首':'项'}${append&&state.results.length===base.length?' · 没有更多结果':''}`:'没有找到结果');
+    $('#musicMore').hidden=!incoming.length||(append&&state.results.length===base.length);recordToolUse('yt-dlp');
   }catch(error){if(generation===searchGeneration)status('#musicSearchStatus',friendlyError(error));}
   finally{clearTimeout(timer);if(generation===searchGeneration){$('#musicSearch').disabled=false;$('#musicMore').disabled=false;searchController=null;}}
 }
