@@ -23,8 +23,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 2868,
-      "sha256": "886e31d961bb9eb405836563b3bad056cd8fdec407c0bccee2e6ce1f68607ada"
+      "bytes": 2949,
+      "sha256": "2dad01995774db547045f3b7e273c44e2abd01d97bb9337714af3f81658b62d4"
     },
     {
       "file": "network.py",
@@ -50,9 +50,24 @@
       "file": "worker.js",
       "bytes": 4022,
       "sha256": "b55dd36c1dade88e5eec12d0c61fd644337496d63d886feae7546d4d5d861f2a"
+    },
+    {
+      "file": "music-panel.js",
+      "bytes": 72852,
+      "sha256": "039d9994698cf15c65779b2b38665534c9986dc5d8cac250233a7b4fa68525b2"
+    },
+    {
+      "file": "music-panel.css",
+      "bytes": 13151,
+      "sha256": "6f830d4154ab4aa11940276e8956e82553bd5e3e8e51c2dc4851dbcfffd0f730"
+    },
+    {
+      "file": "music-core.mjs",
+      "bytes": 6967,
+      "sha256": "424ed52fc4f583a28db9de79e9868d7cb012541c43bacc4299cb5994a409c28b"
     }
   ],
-  "engine": "yt-dlp + WebCodecs container processing + shared FFmpeg WASM fallback",
+  "engine": "yt-dlp + browser music workspace inspired by go-music-dl + WebCodecs + shared FFmpeg WASM",
   "shared": [
     {
       "file": "../../assets/webcodecs-media.js",
@@ -71,6 +86,61 @@
       "bytes": 130,
       "sha256": "5f99cc47a5a551232e3490e96385e878335c58619886b588e06d959d88786746",
       "package": "mediabunny"
+    },
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.js",
+      "package": "@ffmpeg/core",
+      "bytes": 111804,
+      "sha256": "67a48f11645f85439f3fde4f2119042c16b374b910206b7a7a24f342e28dcae3"
+    },
+    {
+      "file": "../studio/runtime/ffmpeg/ffmpeg-core.wasm",
+      "package": "@ffmpeg/core",
+      "bytes": 32232419,
+      "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7"
     }
-  ]
+  ],
+  "music": {
+    "adapter": "browser implementation inspired by go-music-dl; does not execute the original Go server",
+    "upstream": "https://github.com/guohuiyuan/go-music-dl",
+    "configurableSources": [
+      "netease",
+      "qq",
+      "kugou",
+      "kuwo",
+      "migu",
+      "bilibili",
+      "soda",
+      "joox",
+      "qianqian",
+      "5sing",
+      "jamendo",
+      "apple",
+      "spotify"
+    ],
+    "features": [
+      "song search and pagination",
+      "public Netease playlist/album search and collection details",
+      "Apple Music preview search and albums",
+      "public charts and playlist categories",
+      "audio playback, timeline, loop modes, media-session shortcuts",
+      "timed LRC display",
+      "matched source switching with URL probe",
+      "batch queue, stop/retry, validated HTTP Range resume when supported",
+      "IndexedDB local library with editable tags, lyrics and cover",
+      "MP3/WAV/FLAC conversion using local shared FFmpeg WASM",
+      "original audio stream copy when adding metadata",
+      "MP3 standard USLT lyrics and front cover embedding",
+      "favorites and playlist CRUD, JSON import/export",
+      "filename templates and optional directory selection",
+      "direct WebDAV PUT; requires server CORS permission; session-only credentials"
+    ],
+    "limitations": [
+      "Account/QR login, authenticated platform libraries and native TUI/system integration are not implemented in the static browser adaptation.",
+      "Original go-music-dl AI HTTP/SSE server is not included.",
+      "Public source availability depends on third-party APIs and platform authorization; some sources require a custom compatible API.",
+      "Apple Music results contain preview clips rather than full tracks.",
+      "HTTP Range resume is within the current page session and requires a readable strong ETag or Last-Modified validator."
+    ]
+  }
 }
