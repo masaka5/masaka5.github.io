@@ -20,6 +20,7 @@
 @media(max-width:410px){.music-player .player-button{min-width:25px;width:25px}.music-player img{display:none}.music-now strong{font-size:11px}.music-inline{gap:3px}.music-section-title .small-button{padding:5px 7px}.music-playlist>div:first-child{flex-wrap:wrap}}
 
 .music-card-actions button{display:grid;place-items:center;padding:0}.music-lyrics{bottom:100px}.music-card-actions button:disabled{opacity:.5;cursor:wait}
+.music-login-qr{display:flex;align-items:center;gap:10px;min-height:28px}.music-login-qr img{width:140px;height:140px;border:1px solid #e2e8f0;border-radius:10px;background:#fff}.music-login-qr a{color:#4f46e5;font-size:11px}.music-login-loading{color:#64748b;font-size:11px}
 @media(max-width:720px){#musicMode{top:60px;max-height:calc(100dvh - 120px)}}
 
 .music-more{text-align:center;margin-top:12px}.music-more button:disabled{opacity:.5;cursor:wait}

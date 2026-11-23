@@ -23,8 +23,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 2949,
-      "sha256": "3898423679b796f288b0f6d6f28aded6752ae6360ce1cdb2207163fea7b07e32"
+      "bytes": 2961,
+      "sha256": "ce811ee4233a02aaaa9896d2c026e6a44e79d84d9462e46808319d5a6f3b296d"
     },
     {
       "file": "network.py",
@@ -53,21 +53,41 @@
     },
     {
       "file": "music-panel.js",
-      "bytes": 73318,
-      "sha256": "aaf62c68d3694053b962cc3feba35674ab3861ae04138d18608356e1f2d7f289"
+      "bytes": 80993,
+      "sha256": "c8092be72b24197bec83310582d028b91a999b6eb7d7bad4a6ecbeecf3cc4a1f"
     },
     {
       "file": "music-panel.css",
-      "bytes": 13151,
-      "sha256": "6f830d4154ab4aa11940276e8956e82553bd5e3e8e51c2dc4851dbcfffd0f730"
+      "bytes": 13427,
+      "sha256": "9f7cbcafacc807cd2af330e754d3031daf0f428fce001c270f4aeed8ed936dba"
     },
     {
       "file": "music-core.mjs",
       "bytes": 7048,
       "sha256": "4289d07e5451457d593b68b83d0cf1c1aacabe32b8902b72c213bb6ccfeddd6d"
+    },
+    {
+      "file": "music-native.mjs",
+      "bytes": 4445,
+      "sha256": "7fd75965c2815943cf19c2d2e0c7b6a962c267b4f24dfc8bbd2575497b4f98ae"
+    },
+    {
+      "file": "runtime/music/engine-worker.js",
+      "bytes": 2676,
+      "sha256": "d27fa8d6bc6e03613c4320eb55fae04661d9777edb258aa704a72e9d35c68f59"
+    },
+    {
+      "file": "runtime/music/wasm_exec.js",
+      "bytes": 16992,
+      "sha256": "0c949f4996f9a89698e4b5c586de32249c3b69b7baadb64d220073cc04acba14"
+    },
+    {
+      "file": "runtime/music/music-engine.wasm",
+      "bytes": 16695863,
+      "sha256": "a255e370af39b74c1feedc961b5fb5d9ab7da27ed585fcd8a8dd2e0edf062e16"
     }
   ],
-  "engine": "yt-dlp + browser music workspace inspired by go-music-dl + WebCodecs + shared FFmpeg WASM",
+  "engine": "yt-dlp + go-music-dl music-lib WASM + browser media workspace + shared FFmpeg WASM",
   "shared": [
     {
       "file": "../../assets/webcodecs-media.js",
@@ -101,7 +121,7 @@
     }
   ],
   "music": {
-    "adapter": "browser implementation inspired by go-music-dl; does not execute the original Go server",
+    "adapter": "upstream go-music-dl music-lib compiled to a lazy WebAssembly worker; browser requests use the Cloudflare music relay",
     "upstream": "https://github.com/guohuiyuan/go-music-dl",
     "configurableSources": [
       "netease",
@@ -133,14 +153,19 @@
       "MP3 standard USLT lyrics and front cover embedding",
       "favorites and playlist CRUD, JSON import/export",
       "filename templates and optional directory selection",
-      "direct WebDAV PUT; requires server CORS permission; session-only credentials"
+      "direct WebDAV PUT; requires server CORS permission; session-only credentials",
+      "native music-lib provider search for 13 sources",
+      "native playlist and album search/details",
+      "native lyrics, quality resolution and link parsing",
+      "session-only platform Cookie and QR login for supported providers",
+      "native source playback and resumable downloads through the music relay",
+      "corresponding music-lib source embedded in the WASM custom section pocket.sources"
     ],
     "limitations": [
-      "Account/QR login, authenticated platform libraries and native TUI/system integration are not implemented in the static browser adaptation.",
-      "Original go-music-dl AI HTTP/SSE server is not included.",
-      "Public source availability depends on third-party APIs and platform authorization; some sources require a custom compatible API.",
-      "Apple Music results contain preview clips rather than full tracks.",
-      "HTTP Range resume is within the current page session and requires a readable strong ETag or Last-Modified validator."
-    ]
+      "Provider access still depends on upstream availability, login state, copyright and anti-bot controls.",
+      "Soda native signing may require its official client signer; Spotify may return preview-only tracks.",
+      "The original Go server TUI and AI HTTP/SSE server are not started in a static page; browser-native search, login, playback, conversion and download paths are included."
+    ],
+    "relay": "https://pocket-toolbox-media.pages.dev/music/fetch"
   }
 }

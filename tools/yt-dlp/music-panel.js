@@ -1,6 +1,7 @@
 import {mediaFetch, friendlyError as networkError} from './transport.mjs';
+import {nativeCall, nativeMediaFetch, nativeSong} from './music-native.mjs?v=20261123g';
 import {recordToolUse} from '../../assets/tool-use.mjs';
-import {normaliseTrack, parseSearchData, parseMusicLink, audioExtension, parseLrc, transcodeArgs, httpUrl, embedMp3Lyrics} from './music-core.mjs?v=20261123e';
+import {normaliseTrack, parseSearchData, parseMusicLink, audioExtension, parseLrc, transcodeArgs, httpUrl, embedMp3Lyrics} from './music-core.mjs?v=20261123f';
 
 const friendlyError=error=>error?.name==='TimeoutError'?'连接超时，请稍后重试':error?.name==='NotSupportedError'?'浏览器无法播放该音源，请切换来源':error?.name==='NotAllowedError'?'请再次点击播放以允许音频播放':error?.name==='AbortError'?'操作已取消':networkError(error);
 
@@ -16,6 +17,7 @@ const SOURCES = [
 ];
 const SOURCE_NAMES = Object.fromEntries(SOURCES);
 const PUBLIC_SOURCES = ['netease','qq','kugou','kuwo','bilibili','joox','apple'];
+const NATIVE_SOURCES = SOURCES.slice(1).map(([id])=>id);
 const DISCOVER_PRESETS = [
   ['netease:3778678', '网易云热歌榜', 'netease', '3778678'],
   ['netease:3779629', '网易云新歌榜', 'netease', '3779629'],
@@ -43,9 +45,10 @@ const state = {
   playlists: Array.isArray(stored.playlists) ? stored.playlists.filter(list=>list&&typeof list.name==='string'&&Array.isArray(list.items)).map(list=>({...list,items:list.items.filter(item=>item&&typeof item.title==='string'&&item.id!=null)})) : [],
   history: Array.isArray(stored.history) ? stored.history : [],
   playMode: ['list','single','shuffle'].includes(stored.playMode) ? stored.playMode : 'list', filename: stored.filename || '{artist} - {title}',
-  searchPage: 0, results: [], discoverResults: [], queue: [], library: [], current: null, audioUrl: '', processing: false
+  searchPage: 0, results: [], discoverResults: [], queue: [], library: [], current: null, audioUrl: '', processing: false,
+  cookies: (()=>{try{return JSON.parse(sessionStorage.getItem('pocket-music-cookies')||'{}')}catch{return {}}})()
 };
-const portableTrack = item => ({id:String(item.id),source:item.source,title:item.title,artist:item.artist||'',album:item.album||'',duration:Number(item.duration)||0,cover:httpUrl(item.cover),picId:item.picId||'',urlId:item.urlId||item.id,lyricId:item.lyricId||item.id,streamEndpoint:httpUrl(item.streamEndpoint),lyricEndpoint:httpUrl(item.lyricEndpoint),coverEndpoint:httpUrl(item.coverEndpoint),ext:item.ext||'',...(item.preview?{preview:true}:{}),...(item.source!=='local'&&item.streamUrl&&!item.streamEndpoint?{streamUrl:httpUrl(item.streamUrl)}:{})});
+const portableTrack = item => ({id:String(item.id),source:item.source,title:item.title,artist:item.artist||'',album:item.album||'',duration:Number(item.duration)||0,cover:httpUrl(item.cover),picId:item.picId||'',urlId:item.urlId||item.id,lyricId:item.lyricId||item.id,streamEndpoint:httpUrl(item.streamEndpoint),lyricEndpoint:httpUrl(item.lyricEndpoint),coverEndpoint:httpUrl(item.coverEndpoint),ext:item.ext||'',...(item.nativeSong?{nativeSong:item.nativeSong}:{ } ),...(item.preview?{preview:true}:{}),...(item.source!=='local'&&item.streamUrl&&!item.streamEndpoint?{streamUrl:httpUrl(item.streamUrl)}:{})});
 const resolveTrack = item => item?.source === 'local' ? state.library.find(row => row.id === item.id) : item;
 const saveStore = () => {
   try {
@@ -81,7 +84,7 @@ panel.innerHTML = `
   <div class="music-view" data-view="queue"><div class="music-section-title"><strong>下载任务</strong><span id="musicQueueSummary"></span></div><div class="music-actions"><button id="musicStartQueue" class="primary">开始下载</button><button id="musicStopQueue" disabled>停止</button><button id="musicClearQueue">清空已完成</button></div><div id="musicQueue" class="music-list"></div></div>
   <div class="music-view" data-view="library"><div class="music-section-title"><strong>本地音乐</strong><span>文件只保存在当前浏览器</span></div><label class="music-drop"><input id="musicFiles" type="file" accept="audio/*,.flac,.m4a,.wav,.ogg,.aac,.wma" multiple><span>选择或拖入音频文件</span></label><div id="musicLibrary" class="music-list"></div></div>
   <div class="music-view" data-view="favorites"><div class="music-section-title"><strong>收藏与歌单</strong><div class="music-inline"><button id="musicImportPlaylist" class="small-button">导入</button><button id="musicExportPlaylists" class="small-button">导出</button><button id="musicNewPlaylist" class="small-button">新建歌单</button><input id="musicPlaylistFile" type="file" accept=".json,application/json" hidden></div></div><div id="musicFavorites" class="music-list"></div><div id="musicPlaylists" class="music-playlists"></div></div>
-  <div class="music-view" data-view="settings"><div class="music-settings"><label>搜索接口<input id="musicApi" type="url" spellcheck="false"></label><div class="music-setting-row"><label>默认格式<select id="musicFormat"><option value="source">原始音频</option><option value="mp3">MP3</option><option value="wav">WAV</option><option value="flac">FLAC</option></select></label><label>音质<select id="musicQuality"><option value="128">128 kbps</option><option value="192">192 kbps</option><option value="320">320 kbps</option></select></label></div><label>文件名模板<input id="musicFilename" placeholder="{artist} - {title}" maxlength="120"></label><label class="check"><input id="musicMeta" type="checkbox">导出信息文件</label><label class="check"><input id="musicCover" type="checkbox">下载封面</label><label class="check"><input id="musicLyrics" type="checkbox">下载歌词</label><label class="check"><input id="musicEmbed" type="checkbox">内嵌标题、封面与歌词</label><details class="music-storage"><summary>下载目录与 WebDAV</summary><div class="music-storage-fields"><div class="music-inline"><button id="musicDirectory" type="button">选择目录</button><button id="musicDirectoryReset" type="button">默认位置</button><span id="musicDirectoryName">浏览器下载</span></div><label class="check"><input id="musicDavEnabled" type="checkbox">同时保存到 WebDAV</label><label>WebDAV 目录<input id="musicDavUrl" type="url" placeholder="https://dav.example.com/music/" autocomplete="off"></label><div class="music-setting-row"><label>账号<input id="musicDavUser" autocomplete="off"></label><label>密码<input id="musicDavPassword" type="password" autocomplete="new-password"></label></div><small>连接信息仅本次有效；服务端需允许跨域 PUT。</small></div></details><button id="musicSaveSettings" class="primary">保存设置</button><p class="music-note">部分平台需自定义接口。Apple Music 提供试听片段；账号登录与付费资源由原站授权。</p></div></div>
+  <div class="music-view" data-view="settings"><div class="music-settings"><label>搜索接口<input id="musicApi" type="url" spellcheck="false"></label><div class="music-setting-row"><label>默认格式<select id="musicFormat"><option value="source">原始音频</option><option value="mp3">MP3</option><option value="wav">WAV</option><option value="flac">FLAC</option></select></label><label>音质<select id="musicQuality"><option value="auto">自动</option><option value="128">128 kbps</option><option value="192">192 kbps</option><option value="320">320 kbps</option></select></label></div><label>文件名模板<input id="musicFilename" placeholder="{artist} - {title}" maxlength="120"></label><label class="check"><input id="musicMeta" type="checkbox">导出信息文件</label><label class="check"><input id="musicCover" type="checkbox">下载封面</label><label class="check"><input id="musicLyrics" type="checkbox">下载歌词</label><label class="check"><input id="musicEmbed" type="checkbox">内嵌标题、封面与歌词</label><details class="music-account"><summary>平台登录</summary><div class="music-storage-fields"><div class="music-setting-row"><label>平台<select id="musicLoginSource"><option value="netease">网易云</option><option value="qq">QQ 音乐</option><option value="kugou">酷狗</option><option value="bilibili">哔哩哔哩</option></select></label><label>登录方式<select id="musicLoginType"><option value="qr">二维码</option><option value="wx">微信</option></select></label></div><div class="music-inline"><button id="musicLogin" type="button">生成登录码</button><span id="musicLoginStatus"></span></div><div id="musicLoginQr" class="music-login-qr" hidden></div><label>会话 Cookie<input id="musicCookie" type="password" autocomplete="off" placeholder="仅保存在当前会话"></label></div></details><details class="music-storage"><summary>下载目录与 WebDAV</summary><div class="music-storage-fields"><div class="music-inline"><button id="musicDirectory" type="button">选择目录</button><button id="musicDirectoryReset" type="button">默认位置</button><span id="musicDirectoryName">浏览器下载</span></div><label class="check"><input id="musicDavEnabled" type="checkbox">同时保存到 WebDAV</label><label>WebDAV 目录<input id="musicDavUrl" type="url" placeholder="https://dav.example.com/music/" autocomplete="off"></label><div class="music-setting-row"><label>账号<input id="musicDavUser" autocomplete="off"></label><label>密码<input id="musicDavPassword" type="password" autocomplete="new-password"></label></div><small>连接信息仅本次有效；服务端需允许跨域 PUT。</small></div></details><button id="musicSaveSettings" class="primary">保存设置</button><p class="music-note">公开音源直接使用；登录会话仅保存在当前标签页。</p></div></div>
   <div class="music-player"><img id="musicCoverArt" alt="" hidden><div class="music-now"><strong id="musicNowTitle">未选择歌曲</strong><span id="musicNowArtist"></span></div><button id="musicPrev" class="player-button" aria-label="上一首">‹</button><button id="musicPlay" class="player-button primary" aria-label="播放">▶</button><button id="musicNext" class="player-button" aria-label="下一首">›</button><button id="musicPlayMode" class="player-button" aria-label="切换播放模式" title="列表循环">↻</button><input id="musicVolume" aria-label="音量" type="range" min="0" max="1" step=".01" value=".8"><audio id="musicAudio" preload="none"></audio></div><div class="music-timeline"><span id="musicElapsed">0:00</span><input id="musicSeek" type="range" min="0" max="1000" value="0" aria-label="播放进度"><span id="musicDuration">0:00</span></div>
   <div id="musicToast" class="music-toast" role="status"></div>`;
 document.body.append(panel);
@@ -135,6 +138,10 @@ function collectionItem(item, source, kind) {
   return {id: String(item.id || item.collectionId), source, kind, title: item.name || item.collectionName, artist: item.creator?.nickname || item.artist?.name || item.artistName || '', cover: httpUrl(item.coverImgUrl || item.picUrl || item.artworkUrl100), count: item.trackCount || item.size || 0};
 }
 async function readCollection(item, signal) {
+  if (item.kind && NATIVE_SOURCES.includes(item.source)) {
+    const native=await nativeCall({op:item.kind==='album'?'album':'playlist',source:item.source==='5sing'?'fivesing':item.source,cookie:state.cookies[item.source]||'',id:String(item.id)},{signal,timeout:30000});
+    return (native||[]).map(row=>normaliseTrack({...row,title:row.title||row.name,nativeSong:row},item.source)).filter(Boolean);
+  }
   if (['netease','qq','kugou','kuwo'].includes(item.source)) {
     const type=item.kind === 'album'||item.type === 'album'?'album':'playlist';
     const url=new URL(METING_API);url.searchParams.set('server',item.source);url.searchParams.set('type',type);url.searchParams.set('id',item.id);
@@ -175,6 +182,17 @@ async function openCollection(item, queue = false) {
   } catch(error) { status('#musicSearchStatus', friendlyError(error)); }
 }
 async function searchSource(source, query, type, signal, page=1) {
+  if (NATIVE_SOURCES.includes(source)) {
+    try {
+      const op=type==='playlist'?'playlists':type==='album'?'albums':'search';
+      const native=await nativeCall({op,source:source==='5sing'?'fivesing':source,cookie:state.cookies[source]||'',query,page,limit:30},{signal,timeout:30000});
+      if(type!=='song') return (native||[]).map(item=>collectionItem({id:item.id,name:item.name,creator:item.creator,coverImgUrl:item.cover,trackCount:item.track_count||item.trackCount},source,type));
+      return (native||[]).map(item=>normaliseTrack({...item,title:item.title||item.name,nativeSong:item},source)).filter(Boolean);
+    } catch (error) {
+      if (signal?.aborted) throw error;
+      if (source==='bilibili'||source==='apple'||source==='5sing'||source==='soda') throw error;
+    }
+  }
   if (type !== 'song') return searchCollections(source, query, type, signal, page);
   if (state.api === API_DEFAULT && !PUBLIC_SOURCES.includes(source)) throw Error(`${SOURCE_NAMES[source] || source}需要配置支持该平台的搜索接口`);
   if (source === 'apple') {
@@ -335,6 +353,11 @@ async function getStreamUrl(track, {refresh = false, signal} = {}) {
   if (refresh && !['apple','direct'].includes(track.source) && track.streamEndpoint) track.streamUrl = '';
   if (refresh && !track.streamEndpoint && !['apple','direct'].includes(track.source) && SOURCES.some(([id])=>id===track.source)) track.streamUrl = '';
   if (track.streamUrl) return track.streamUrl;
+  if (track.nativeSong && NATIVE_SOURCES.includes(track.source)) {
+    const result=await nativeCall({op:'resolve',source:track.source==='5sing'?'fivesing':track.source,cookie:state.cookies[track.source]||'',quality:state.quality,song:nativeSong(track)},{signal,timeout:30000});
+    const resolved=httpUrl(result?.url);
+    if (resolved) { track.streamUrl=resolved;track.nativeStream=true;return resolved; }
+  }
   const candidates = [];
   if (track.streamEndpoint && !refresh) candidates.push(track.streamEndpoint);
   const params = new URLSearchParams({types: 'url', source: track.source, id: track.urlId || track.id, br: state.quality});
@@ -353,6 +376,9 @@ async function getStreamUrl(track, {refresh = false, signal} = {}) {
 }
 async function getLyrics(track) {
   if (track.source === 'local') return resolveTrack(track)?.lyrics || '';
+  if (track.nativeSong && NATIVE_SOURCES.includes(track.source)) {
+    try { const result=await nativeCall({op:'lyrics',source:track.source==='5sing'?'fivesing':track.source,cookie:state.cookies[track.source]||'',song:nativeSong(track)},{timeout:30000}); if(typeof result==='string'&&result.trim()) return result; } catch {}
+  }
   if (track.lyricEndpoint) { try { const data=await textFetch(track.lyricEndpoint); return data?.lyric || data?.lrc || (typeof data === 'string' ? data : ''); } catch {} }
   let data;
   if (['netease', 'qq', 'kugou', 'kuwo'].includes(track.source)) { const url = new URL(METING_API); url.searchParams.set('server', track.source); url.searchParams.set('type', 'lrc'); url.searchParams.set('id', track.lyricId || track.id); data = await textFetch(url.href); }
@@ -374,7 +400,9 @@ async function playTrack(track) {
     try {
       const url = await getStreamUrl(track, {refresh: attempt > 0});
       if (request !== playbackRequest) return;
-      if (audio.src !== url) audio.src = url;
+      let playable=url;
+      if(track.nativeStream){const blob=await nativeMediaFetch(url,{signal:AbortSignal.timeout(30000)}).then(response=>{if(!response.ok)throw Error(`音频请求失败（HTTP ${response.status}）`);return response.blob();});playable=URL.createObjectURL(blob);track.playableObjectUrl=playable;}
+      if (audio.src !== playable) audio.src = playable;
       await audio.play();
       if (request !== playbackRequest) return;
       state.current = track;
@@ -498,7 +526,7 @@ async function fetchBlob(url, onProgress, signal, task) {
   let offset=saved?.blob?.size||0;
   const headers={};if(offset&&saved.validator){headers.Range=`bytes=${offset}-`;headers['If-Range']=saved.validator;}
   else offset=0;
-  let response=await mediaFetch(url,{headers,signal:signal?AbortSignal.any([signal,AbortSignal.timeout(180000)]):AbortSignal.timeout(180000)},{mode:'auto'});
+  let response=task?.nativeStream?await nativeMediaFetch(url,{headers,signal:signal?AbortSignal.any([signal,AbortSignal.timeout(180000)]):AbortSignal.timeout(180000)}):await mediaFetch(url,{headers,signal:signal?AbortSignal.any([signal,AbortSignal.timeout(180000)]):AbortSignal.timeout(180000)},{mode:'auto'});
   if(offset&&response.status===416){await response.body?.cancel();delete task.partial;return fetchBlob(url,onProgress,signal,task);}
   if(!response.ok)throw Error(`音频请求失败（HTTP ${response.status}）`);
   const type=response.headers.get('content-type')||'application/octet-stream';
@@ -587,6 +615,12 @@ async function inspectUrls(urls) {
     try {
     if (!httpUrl(url)) throw Error('链接无效');
     const link = parseMusicLink(url);
+    const nativeSource=(()=>{try{const host=new URL(url).hostname;const rows=[['netease',['music.163.com','music.126.net']],['qq',['y.qq.com','qq.com']],['kugou',['kugou.com']],['kuwo',['kuwo.cn','kuwo.com']],['migu',['migu.cn','migu.com']],['bilibili',['bilibili.com','b23.tv']],['joox',['joox.com']],['qianqian',['91q.com']],['5sing',['5sing.kugou.com']],['jamendo',['jamendo.com']],['spotify',['spotify.com']]];return rows.find(([,domains])=>domains.some(d=>host===d||host.endsWith('.'+d)))?.[0]||'';}catch{return '';}})();
+    if(nativeSource&&NATIVE_SOURCES.includes(nativeSource)){
+      const type=link?.type||(/\/playlist|\/list|disstid=/.test(url)?'playlist':/\/album|albumid=/.test(url)?'album':'song');
+      const result=await nativeCall({op:type==='playlist'?'parse-playlist':type==='album'?'parse-album':'parse',source:nativeSource==='5sing'?'fivesing':nativeSource,cookie:state.cookies[nativeSource]||'',url},{timeout:30000});
+      const songs=result?.songs||[result];tracks.push(...songs.map(row=>normaliseTrack({...row,title:row.title||row.name,nativeSong:row},nativeSource)).filter(Boolean));continue;
+    }
     if (['netease','qq','kugou','kuwo'].includes(link?.source)) {
       if (link.type !== 'song') tracks.push(...await readCollection(link, AbortSignal.timeout(15000)));
       else {
@@ -680,4 +714,20 @@ $('#musicPlaylistFile').onchange=async event=>{
 $('#musicNewPlaylist').onclick=()=>{const name=prompt('歌单名称');if(!name?.trim())return;state.playlists.push({name:name.trim(),items:[]});saveStore();renderFavorites();};
 
 $('#musicSaveSettings').onclick = () => { const api=$('#musicApi').value.trim(); if (api && !httpUrl(api)) { toast('请输入有效的 HTTP 或 HTTPS 接口'); return; } state.api = api || API_DEFAULT; state.filename=$('#musicFilename').value.trim() || '{artist} - {title}'; state.format = $('#musicFormat').value; state.quality = $('#musicQuality').value; state.withMeta = $('#musicMeta').checked; state.withCover = $('#musicCover').checked; state.withLyrics = $('#musicLyrics').checked; state.embedTags = $('#musicEmbed').checked; saveStore(); toast('设置已保存'); };
+$('#musicLoginSource').onchange=()=>{const source=$('#musicLoginSource').value;$('#musicCookie').value=state.cookies[source]||'';};
+$('#musicCookie').oninput=event=>{const source=$('#musicLoginSource').value;state.cookies[source]=event.target.value.trim();try{sessionStorage.setItem('pocket-music-cookies',JSON.stringify(state.cookies));}catch{}};
+let loginController;
+$('#musicLogin').onclick=async()=>{
+  const source=$('#musicLoginSource').value,loginType=$('#musicLoginType').value,button=$('#musicLogin');button.disabled=true;loginController?.abort();loginController=new AbortController();
+  const box=$('#musicLoginQr');box.hidden=false;box.innerHTML='<span class="music-login-loading">正在生成登录码…</span>';status('#musicLoginStatus','');
+  try{
+    const session=await nativeCall({op:'qr-create',source,loginType},{signal:loginController.signal,timeout:30000});
+    const qrUrl=`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(session.url)}`;
+    box.innerHTML=`<img src="${qrUrl}" alt="登录二维码"><a href="${escapeHtml(session.url)}" target="_blank" rel="noopener">打开登录页</a>`;status('#musicLoginStatus','请扫码后等待');
+    const deadline=Date.now()+Math.min(300000,Math.max(30000,(Number(session.expires_at||0)*1000-Date.now())||300000));
+    while(Date.now()<deadline){await new Promise(resolve=>setTimeout(resolve,2200));loginController.signal.throwIfAborted();const result=await nativeCall({op:'qr-check',source,loginType,id:session.key},{signal:loginController.signal,timeout:20000});if(result.status==='success'&&result.cookie){state.cookies[source]=result.cookie;try{sessionStorage.setItem('pocket-music-cookies',JSON.stringify(state.cookies));}catch{}$('#musicCookie').value=result.cookie;status('#musicLoginStatus','已登录');toast('平台登录已保存');break;}if(result.status==='expired'){status('#musicLoginStatus','登录码已过期');break;}status('#musicLoginStatus',result.status==='scanned'?'已扫码，确认中…':'等待扫码…');}
+  }catch(error){if(error.name!=='AbortError')status('#musicLoginStatus',friendlyError(error));}
+  finally{button.disabled=false;loginController=null;}
+};
+$('#musicCookie').value=state.cookies[$('#musicLoginSource').value]||'';
 renderResults(); renderQueue(); renderFavorites(); renderLibrary(); const libraryReady = loadLibrary();
