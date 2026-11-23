@@ -7,9 +7,10 @@
   <link rel="icon" href="../../assets/favicon.svg">
   <link rel="stylesheet" href="../../assets/design-system.css">
   <link rel="stylesheet" href="../../assets/reference-tool-theme.css?v=20261119">
-  <link rel="stylesheet" href="recorder.css?v=20261119n">
+  <link rel="stylesheet" href="recorder.css?v=20261123live2">
   <script defer src="record-store.js?v=20261119b"></script>
-  <script defer src="recorder.js?v=20261119n"></script>
+  <script defer src="capture-runtime.js?v=20261123live2"></script>
+  <script defer src="recorder.js?v=20261123live2"></script>
   <script type="module">import {recordToolUse} from '../../assets/tool-use.mjs'; window.recordToolUse=recordToolUse;</script>
   <!-- pocket-seo:start -->
   <title>屏幕录制 · 口袋工具箱</title>
@@ -36,7 +37,7 @@
 
   <main class="app-main">
     <aside class="side-panel controls-panel" id="controlsPanel" aria-label="录制设置">
-      <div class="panel-title"><h2>录制设置</h2><button class="icon-button panel-close" data-close-panel type="button" aria-label="关闭设置"><svg><use href="#i-x"/></svg></button></div>
+      <div class="panel-title"><h2>录制设置</h2><span class="settings-live" id="settingsLive" hidden>实时调整</span><button class="icon-button panel-close" data-close-panel type="button" aria-label="关闭设置"><svg><use href="#i-x"/></svg></button></div>
       <div class="settings-scroll">
         <section class="setting-group">
           <span class="group-label">来源</span>
