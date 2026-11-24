@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-24T02:20:48.188Z",
+  "updatedAt": "2026-11-24T12:41:26.413Z",
   "counts": {
     "packet-analysis": 0,
     "hex-wasm": 0,
     "ocr": 0,
     "qr-batch": 6,
     "topospace": 0,
-    "market": 32,
+    "market": 35,
     "qwen-tts": 1,
     "minutes": 4,
     "anki": 11,
