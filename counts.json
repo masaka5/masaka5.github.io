@@ -1,16 +1,16 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-26T01:50:31.772Z",
+  "updatedAt": "2026-11-26T11:04:57.003Z",
   "counts": {
     "packet-analysis": 0,
     "hex-wasm": 0,
     "ocr": 0,
     "qr-batch": 6,
     "topospace": 0,
-    "market": 38,
+    "market": 41,
     "qwen-tts": 1,
     "minutes": 4,
-    "anki": 11,
+    "anki": 12,
     "qr-transfer": 31,
     "browser-fingerprint": 5,
     "remote": 12,
@@ -20,7 +20,7 @@
     "powershell-ide": 3,
     "web-adb": 24,
     "photo-editor": 20,
-    "broadcast": 27,
+    "broadcast": 28,
     "drawio": 2,
     "tiptap": 3,
     "web-ppt": 5,
@@ -42,7 +42,7 @@
     "media-player": 9,
     "windows-errors": 1,
     "system-commands": 2,
-    "webvm": 6,
+    "webvm": 7,
     "subnet": 3,
     "ip-batch": 0,
     "mac": 0,
@@ -1134,12 +1134,12 @@
     "pinyin": 0,
     "image-watermark": 2,
     "resume-builder": 1,
-    "id-photo": 31,
+    "id-photo": 32,
     "windows-policy": 6,
     "winget-generator": 7,
     "doccloak": 0,
     "netsim": 15,
     "countdown-overlay": 0,
-    "translator": 8
+    "translator": 9
   }
 }
