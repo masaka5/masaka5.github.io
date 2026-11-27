@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-27T02:57:34.226Z",
+  "updatedAt": "2026-11-27T12:45:31.225Z",
   "counts": {
     "packet-analysis": 0,
     "hex-wasm": 0,
@@ -1138,7 +1138,7 @@
     "windows-policy": 6,
     "winget-generator": 7,
     "doccloak": 0,
-    "netsim": 17,
+    "netsim": 18,
     "countdown-overlay": 0,
     "translator": 9
   }
